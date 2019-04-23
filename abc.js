@@ -7368,7 +7368,7 @@
             }],
             gradient: [{
                 meta: {
-                    image: "gradient-0-100-d56516fd.png",
+                    image: "gradient-0-100-f1772da4.png",
                     size: {
                         w: 1024,
                         h: 1024
