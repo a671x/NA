@@ -984,7 +984,7 @@
         "use strict";
 
         function i() {
-            this._ = 0, this.pos = o.create(0, 0), this.ppu = 16, this.k = 1.5, this.I = 1.5, this.screenWidth = 1, this.screenHeight = 1, this.shakeEnabled = !0, this.shakeInt = 0
+            this._ = 0, this.pos = o.create(0, 0), this.ppu = 16, this.k = 1.5, this.I/* targetZoom888 */ = 1.5, this.screenWidth = 1, this.screenHeight = 1, this.shakeEnabled = !0, this.shakeInt = 0
         }
         var r = a("10899aea"),
             o = a("c2a798c8");
