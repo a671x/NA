@@ -5523,7 +5523,7 @@
         function i(e) {
             o(void 0 !== e), this.creator = {
                 type: e
-            }, this.Pe/* lootBarn.pool888 */ = [], this.activeCount = 0
+            }, this.Pe = [], this.activeCount = 0
         }
 
         function r(e) {
@@ -6158,7 +6158,7 @@
                         return e.static && i.push("cc-static"), i.push.apply(i, s.call(this)), d.call(this, this.options.palette), this.customStyleSelector && i.push(this.customStyleSelector), i
                     }
 
-                    function c() { /*update888*/
+                    function c() {
                         var e = {},
                             a = this.options;
                         a.showLink || (a.elements.link = "", a.elements.messagelink = a.elements.message), Object.keys(a.elements).forEach(function(i) {
@@ -15083,7 +15083,7 @@
         }
 
         function r(e, t, a, i, r, o, n, s, l, c, m, p, d) {
-            this.initialized = !1, this.teamMode = 0, this.onJoin = p, this.onQuit = d, this.pixi = e, this.Be = t, this.Le = l, this.localization = a, this.config = i, this.Re = r, this.Fe = o,/* imput.main888 */this.je = n, this.adManager = s, this.textureManager = c, this.loadoutMenu = m, this.victoryMusic = null, this.ws = null, this.connecting = !1, this.connected = !1
+            this.initialized = !1, this.teamMode = 0, this.onJoin = p, this.onQuit = d, this.pixi = e, this.Be = t, this.Le = l, this.localization = a, this.config = i, this.Re = r, this.Fe = o, this.je = n, this.adManager = s, this.textureManager = c, this.loadoutMenu = m, this.victoryMusic = null, this.ws = null, this.connecting = !1, this.connected = !1
         }
         var o = a("8b1dfb45"),
             n = a("989ad62a"),
@@ -15155,18 +15155,18 @@
                     }
                 }
             },
-            o: function() {/* init888 */
+            o: function() {
                 var e;
-                this.canvasMode = this.pixi.renderer.type == o.RENDERER_TYPE.CANVAS, this._ = !1, this.qe = !1, this.Ge = !1, this.Ue = 0, this.H = !1, this.He = !1, this.We = new j.Ke(this.Re, this.config), this.ae = new f.j, this.Ze = new L.Xe(this, this.canvasMode), this.Ye = new E.d(this.Ze), this.Je = new C/* map888 */.Qe, this.$e = new O.et, this.tt = new x.at, this.it = new M.rt, this.ot = new B.nt, this.st = new v.ke, this.lt = new D.ct(this.Be), this.mt = new w.J, this.dt = new F.p, this.ht = new b.Te, this.ut = new S.f, this.gt/*lootBarn.main888*/ = new I.yt, this.wt = new T.xt(this.canvasMode), this.Ve = new N.me(this, this.Be, this.Ye, this.lt,/*planes.main888*/ this.localization, this.canvasMode, this.We, this.Fe, this.je, this.adManager), this.ft = new V.bt(this.localization, this.Fe), this._t = new k.St(this.Be, this.Ve, this.$e, this.ae, this.Je), this.kt = new R.ze(this.Ye, this.Be, this.Ve);
-                var t = (e = {}, i(e, l.Type.Player, this.$e/*playerBarn.main888*/.Se), i(e, l.Type.Obstacle, this.Je.pe), i(e, l.Type.Loot, this.gt.vt), i(e, l.Type.DeadBody, this.ht.Me), i(e, l.Type.Building, this.Je.zt), i(e, l.Type.Structure, this.Je.Mt), i(e, l.Type.Decal, this.ut.u), i(e, l.Type.Projectile, this.ot.Tt), i(e, l.Type.Smoke, this.dt.e), i(e, l.Type.Airdrop, this.mt.Y), e);
-                this.Pt/* objectCreator888 */ = new A.Creator;
-                for (var a in t) t.hasOwnProperty(a) && this.Pt.registerType(a, t[a]);
+                this.canvasMode = this.pixi.renderer.type == o.RENDERER_TYPE.CANVAS, this._ = !1, this.qe = !1, this.Ge = 0, this.H = !1, this.Ue = !1, this.He = new j.We(this.Re, this.config), this.ae = new f.j, this.Ke = new L.Ze(this, this.canvasMode), this.Xe = new E.d(this.Ke), this.Ye = new C.Je, this.Qe = new O.$e, this.et = new x.tt, this.at = new M.it, this.rt = new B.ot, this.nt = new v.ke, this.st = new D.lt(this.Be), this.ct = new w.J, this.mt = new F.p, this.dt = new b.Te, this.ht = new S.f, this.ut = new I.gt, this.yt = new T.wt(this.canvasMode), this.Ve = new N.me(this, this.Be, this.Xe, this.st, this.localization, this.canvasMode, this.He, this.Fe, this.je, this.adManager), this.xt = new V.ft(this.localization, this.Fe), this.bt = new k._t(this.Be, this.Ve, this.Qe, this.ae, this.Ye), this.St = new R.ze(this.Xe, this.Be, this.Ve);
+                var t = (e = {}, i(e, l.Type.Player, this.Qe.Se), i(e, l.Type.Obstacle, this.Ye.pe), i(e, l.Type.Loot, this.ut.kt), i(e, l.Type.DeadBody, this.dt.Me), i(e, l.Type.Building, this.Ye.vt), i(e, l.Type.Structure, this.Ye.zt), i(e, l.Type.Decal, this.ht.u), i(e, l.Type.Projectile, this.rt.Mt), i(e, l.Type.Smoke, this.mt.e), i(e, l.Type.Airdrop, this.ct.Y), e);
+                this.Tt = new A.Creator;
+                for (var a in t) t.hasOwnProperty(a) && this.Tt.registerType(a, t[a]);
                 this.debugDisplay = new o.Graphics;
-                for (var r = [this.Je.display.ground, this.Ze.layers[0], this.Ze.ground, this.Ze.layers[1], this.Ze.layers[2], this.Ze.layers[3], this.debugDisplay, this.wt.gasRenderer.display, this.We.container, this._t.container, this.Ve.container, this.Ve.pieTimer.container, this._t.indContainer], n = 0; n < r.length; n++) {
+                for (var r = [this.Ye.display.ground, this.Ke.layers[0], this.Ke.ground, this.Ke.layers[1], this.Ke.layers[2], this.Ke.layers[3], this.debugDisplay, this.yt.gasRenderer.display, this.He.container, this.bt.container, this.Ve.container, this.Ve.pieTimer.container, this.bt.indContainer], n = 0; n < r.length; n++) {
                     var s = r[n];
                     s && (s.interactiveChildren = !1, this.pixi.stage.addChild(s))
                 }
-                this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.inputMsgTimeout = 0, this.prevInputMsg = new h.InputMsg, this.playingTicker = 0, this.updateRecvCount = 0, this.playedAssignRoleSfx = {}, this.It/*this.activeId888*/ = 0, this.Ct = 0, this.At = null,/* activePlayer.main888 */this.Et = !1, this.I/*targetZoom888*/ = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.ae.setShakeEnabled(this.config.get("screenShake")), this.name = this.config.get("playerName"), this.anonPlayerNames = this.config.get("anonPlayerNames");
+                this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.inputMsgTimeout = 0, this.prevInputMsg = new h.InputMsg, this.playingTicker = 0, this.updateRecvCount = 0, this.playedAssignRoleSfx = {}, this.Pt = 0, this.It = 0, this.Ct = null, this.At = !1, this.I = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.ae.setShakeEnabled(this.config.get("screenShake")), this.name = this.config.get("playerName"), this.anonPlayerNames = this.config.get("anonPlayerNames");
                 var c = {
                     emoteTop: m.Top,
                     emoteRight: m.Right,
@@ -15182,61 +15182,61 @@
                         _ = d.clamp(y, 1, 255);
                     this.emoteLoadout[c[g]] = _
                 }
-                this._t.updateEmoteWheel(this.emoteLoadout), document.hasFocus() || this.Be.playSound("notification_start_01", {
+                this.bt.updateEmoteWheel(this.emoteLoadout), document.hasFocus() || this.Be.playSound("notification_start_01", {
                     channel: "ui"
-                }), this.Dt(), this.initialized = !0
+                }), this.Et(), this.initialized = !0
             },
             n: function() {
                 if (this.ws && (this.ws.onmessage = function() {}, this.ws.close(), this.ws = null), this.connecting = !1, this.connected = !1, this.initialized)
-                    for (this.initialized = !1, this._t.n(), this.ft.n(), this.Ve.n(), this.wt.free(), this.mt.n(), this.lt.n(), this.Je.n(), this.Ye.n(), this.Ze.n(), this.Be.stopAll(); this.pixi.stage.children.length > 0;) {
+                    for (this.initialized = !1, this.bt.n(), this.xt.n(), this.Ve.n(), this.yt.free(), this.ct.n(), this.st.n(), this.Ye.n(), this.Xe.n(), this.Ke.n(), this.Be.stopAll(); this.pixi.stage.children.length > 0;) {
                         var e = this.pixi.stage.children[0];
                         this.pixi.stage.removeChild(e), e.destroy({
                             children: !0
                         })
                     }
             },
-            Ot: function() {
+            Dt: function() {
                 return this.initialized && this.playing && !this.spectating && !this.Ve.displayingStats
             },
             c: function(e) {
-                var t = this.dt.particles,
-                    a = this.Je.pe.m(),
+                var t = this.mt.particles,
+                    a = this.Ye.pe.m(),
                     i = 0;
                 this._ = !0, this.qe = !0;
                 var r = {};
-                r.render = r.render || {}, this.playing && (this.playingTicker += e), this.$e.c(e, this.Ct, this.teamMode, this.Ze, this.Ye, this.ae, this.Je, this.Fe, this.Be, this._t.wheelKeyTriggered, this.Ve.displayingStats, this.spectating), this.updateAmbience(), this.ae.pos = u.copy(this.At.pos), this.ae.applyShake();
-                var o = this.At.Bt(),
+                r.render = r.render || {}, this.playing && (this.playingTicker += e), this.Qe.c(e, this.It, this.teamMode, this.Ke, this.Xe, this.ae, this.Ye, this.Fe, this.Be, this.bt.wheelKeyTriggered, this.Ve.displayingStats, this.spectating), this.updateAmbience(), this.ae.pos = u.copy(this.Ct.pos), this.ae.applyShake();
+                var o = this.Ct.Ot(),
                     l = d.min(this.ae.screenWidth, this.ae.screenHeight),
                     c = d.max(this.ae.screenWidth, this.ae.screenHeight),
                     m = d.max(l * (16 / 9), c);
                 this.ae.I = .5 * m / (o * this.ae.ppu);
-                var w = this.At.zoomFast ? 3 : 2,
-                    x = this.At.zoomFast ? 3 : 1.4,
+                var w = this.Ct.zoomFast ? 3 : 2,
+                    x = this.Ct.zoomFast ? 3 : 1.4,
                     f = this.ae.I > this.ae.k ? w : x;
                 this.ae.k = d.lerp(e * f, this.ae.k, this.ae.I), this.Be.cameraPos = u.copy(this.ae.pos), this.Re.ue(P.Key.Escape) && this.Ve.toggleEscMenu(), (this.Fe.isBindPressed(s.ToggleMap) || this.Re.ue(P.Key.G) && !this.Fe.isKeyBound(P.Key.G)) && this.Ve.displayMapLarge(!1), this.Fe.isBindPressed(s.CycleUIMode) && this.Ve.cycleVisibilityMode(), (this.Fe.isBindPressed(s.HideUI) || this.Re.ue(P.Key.Escape) && !this.Ve.hudVisible) && this.Ve.cycleHud();
-                var b = this.At.pos,
+                var b = this.Ct.pos,
                     _ = this.ae.O(this.Re.de),
                     S = u.sub(_, b),
                     k = u.length(S),
                     v = k > 1e-5 ? u.div(S, k) : u.create(1, 0);
-                this._t.wheelDisplayed && (k = this.prevInputMsg.toMouseLen, v = this.prevInputMsg.toMouseDir);
+                this.bt.wheelDisplayed && (k = this.prevInputMsg.toMouseLen, v = this.prevInputMsg.toMouseDir);
                 var z = new h.InputMsg;
                 if (z.seq = this.seq, !this.spectating) {
                     if (g.touch) {
-                        var M = this.We.getTouchMovement(this.ae),
-                            T = this.We.getAimMovement(this.At, this.ae),
+                        var M = this.He.getTouchMovement(this.ae),
+                            T = this.He.getAimMovement(this.Ct, this.ae),
                             I = u.copy(T.aimMovement.toAimDir);
-                        if (this.We.turnDirTicker -= e, this.We.moveDetected && !T.touched) {
+                        if (this.He.turnDirTicker -= e, this.He.moveDetected && !T.touched) {
                             var C = u.normalizeSafe(M.toMoveDir, u.create(1, 0)),
-                                A = this.We.turnDirTicker < 0 ? C : T.aimMovement.toAimDir;
-                            this.We.setAimDir(A), I = A
+                                A = this.He.turnDirTicker < 0 ? C : T.aimMovement.toAimDir;
+                            this.He.setAimDir(A), I = A
                         }
-                        T.touched && (this.We.turnDirTicker = this.We.turnDirCooldown), this.We.moveDetected ? (z.touchMoveDir = u.normalizeSafe(M.toMoveDir, u.create(1, 0)), z.touchMoveLen = Math.round(255 * d.clamp(M.toMoveLen, 0, 1))) : z.touchMoveLen = 0, z.touchMoveActive = !0;
+                        T.touched && (this.He.turnDirTicker = this.He.turnDirCooldown), this.He.moveDetected ? (z.touchMoveDir = u.normalizeSafe(M.toMoveDir, u.create(1, 0)), z.touchMoveLen = Math.round(255 * d.clamp(M.toMoveLen, 0, 1))) : z.touchMoveLen = 0, z.touchMoveActive = !0;
                         var E = T.aimMovement.toAimLen,
-                            D = d.clamp(E / this.We.padPosRange, 0, 1) * n.player.throwableMaxMouseDist;
+                            D = d.clamp(E / this.He.padPosRange, 0, 1) * n.player.throwableMaxMouseDist;
                         z.toMouseLen = D, z.toMouseDir = I
                     } else z.moveLeft = this.Fe.isBindDown(s.MoveLeft) || this.Re.fe(P.Key.Left) && !this.Fe.isKeyBound(P.Key.Left), z.moveRight = this.Fe.isBindDown(s.MoveRight) || this.Re.fe(P.Key.Right) && !this.Fe.isKeyBound(P.Key.Right), z.moveUp = this.Fe.isBindDown(s.MoveUp) || this.Re.fe(P.Key.Up) && !this.Fe.isKeyBound(P.Key.Up), z.moveDown = this.Fe.isBindDown(s.MoveDown) || this.Re.fe(P.Key.Down) && !this.Fe.isKeyBound(P.Key.Down), z.toMouseDir = u.copy(v), z.toMouseLen = k;
-                    z.touchMoveDir = u.normalizeSafe(z.touchMoveDir, u.create(1, 0)), z.touchMoveLen = d.clamp(z.touchMoveLen, 0, 255), z.toMouseDir = u.normalizeSafe(z.toMouseDir, u.create(1, 0)), z.toMouseLen = d.clamp(z.toMouseLen, 0, h.Constants.kMouseMaxDist), z.shootStart = this.Fe.isBindPressed(s.Fire) || this.We.Lt, z.shootHold = this.Fe.isBindDown(s.Fire) || this.We.Lt, z.portrait = this.ae.screenWidth < this.ae.screenHeight;
+                    z.touchMoveDir = u.normalizeSafe(z.touchMoveDir, u.create(1, 0)), z.touchMoveLen = d.clamp(z.touchMoveLen, 0, 255), z.toMouseDir = u.normalizeSafe(z.toMouseDir, u.create(1, 0)), z.toMouseLen = d.clamp(z.toMouseLen, 0, h.Constants.kMouseMaxDist), z.shootStart = this.Fe.isBindPressed(s.Fire) || this.He.Bt, z.shootHold = this.Fe.isBindDown(s.Fire) || this.He.Bt, z.portrait = this.ae.screenWidth < this.ae.screenHeight;
                     for (var O = [s.Reload, s.Revive, s.Use, s.Loot, s.Cancel, s.EquipPrimary, s.EquipSecondary, s.EquipThrowable, s.EquipMelee, s.EquipNextWeap, s.EquipPrevWeap, s.EquipLastWeap, s.EquipOtherGun, s.EquipPrevScope, s.EquipNextScope, s.StowWeapons], B = 0; B < O.length; B++) {
                         var L = O[B];
                         this.Fe.isBindPressed(L) && z.addInput(L)
@@ -15249,9 +15249,9 @@
                         if (F.length == R.length) z.addInput(s.Interact);
                         else
                             for (var V = 0; V < F.length; V++) z.addInput(F[V])
-                    }(this.Fe.isBindPressed(s.SwapWeapSlots) || this.Ve.swapWeapSlots) && (z.addInput(s.SwapWeapSlots), this.At.gunSwitchCooldown = 0), this.Ve.reloadTouched && z.addInput(s.Reload), this.Ve.interactionTouched && (z.addInput(s.Interact), z.addInput(s.Cancel));
-                    for (var q = 0; q < this.ft.uiEvents.length; q++) {
-                        var G = this.ft.uiEvents[q];
+                    }(this.Fe.isBindPressed(s.SwapWeapSlots) || this.Ve.swapWeapSlots) && (z.addInput(s.SwapWeapSlots), this.Ct.gunSwitchCooldown = 0), this.Ve.reloadTouched && z.addInput(s.Reload), this.Ve.interactionTouched && (z.addInput(s.Interact), z.addInput(s.Cancel));
+                    for (var q = 0; q < this.xt.uiEvents.length; q++) {
+                        var G = this.xt.uiEvents[q];
                         if ("use" == G.action)
                             if ("weapon" == G.type) {
                                 var U = {
@@ -15265,16 +15265,16 @@
                             } else z.useItem = G.data
                     }
                     this.Fe.isBindPressed(s.UseBandage) ? z.useItem = "bandage" : this.Fe.isBindPressed(s.UseHealthKit) ? z.useItem = "healthkit" : this.Fe.isBindPressed(s.UseSoda) ? z.useItem = "soda" : this.Fe.isBindPressed(s.UsePainkiller) && (z.useItem = "painkiller");
-                    for (var W = !1, K = 0; K < this.ft.uiEvents.length; K++) {
-                        var Z = this.ft.uiEvents[K];
+                    for (var W = !1, K = 0; K < this.xt.uiEvents.length; K++) {
+                        var Z = this.xt.uiEvents[K];
                         if ("drop" == Z.action) {
                             var X = new h.DropItemMsg;
                             if ("weapon" == Z.type) {
-                                var Y = this.At.re.weapons;
+                                var Y = this.Ct.re.weapons;
                                 X.item = Y[Z.data].name, X.weapIdx = Z.data
                             } else {
                                 var J = "";
-                                J = "helmet" == Z.data ? this.At.ie.helmet : "chest" == Z.data ? this.At.ie.chest : Z.data, X.item = J
+                                J = "helmet" == Z.data ? this.Ct.ie.helmet : "chest" == Z.data ? this.Ct.ie.chest : Z.data, X.item = J
                             }
                             "" != X.item && (this.q(h.Msg.DropItem, X, 128), "fists" != X.item && (W = !0))
                         }
@@ -15303,51 +15303,51 @@
                         } else "toMouseLen" == re ? ie = Math.abs(this.prevInputMsg[re] - z[re]) > .5 : "shootStart" == re ? ie = z[re] || z[re] != this.prevInputMsg[re] : this.prevInputMsg[re] != z[re] && (ie = !0);
                         if (ie) break
                     }
-                if (this.inputMsgTimeout -= e, (ie || this.inputMsgTimeout < 0) && (this.seqInFlight || (this.seq = (this.seq + 1) % 256, this.seqSendTime = Date.now(), this.seqInFlight = !0, z.seq = this.seq), this.q(h.Msg.Input, z, 128), this.inputMsgTimeout = 1, this.prevInputMsg = z), this.ft.flushInput(), this.Je.c(e, this.At, this.$e, this.Ye, this.Be, this.Le, this.Ze, this.ae, t, r), this.gt.c(e, this.At, this.ae, r), this.tt.c(e, this.$e, this.Je, this.ae, this.At, this.Ze, this.Ye, this.Be), this.it.c(e, this.$e, this.Je, this.ae, this.At, this.Ze, this.Ye, this.Be), this.ot.c(e, this.Ye, this.Be, this.At, this.Je, this.Ze, this.ae), this.st.c(e, this.Je, this.$e, this.ae, this.Ye, this.Be, r), this.mt.c(e, this.At, this.ae, this.Je, this.Ye, this.Ze, this.Be), this.lt.c(e, this.ae, this.At, this.Je, this.Ze), this.dt.c(e, this.ae, this.At, this.Je, this.Ze), this.kt.c(e, this.Ct, this.$e, this.Ye, this.Be), this.Ye.c(e, this.ae, r), this.ht.c(e, this.$e, this.At, this.anonPlayerNames, this.It, this.Je, this.ae, this.Ze), this.ut.c(e, this.ae, this.Ze, r), this.Ve.c(e, this.At, this.Je, this.wt, this.gt, this.$e, this.ae, this.teamMode, this.Je.factionMode), this.ft.c(e, this.At, this.spectating, this.$e, this.gt, this.Je, this.Fe), this._t.c(e, this.It, this.At, this.teamMode, this.ht, this.Ze, this.Re, this.Fe, this.spectating), this.We.update(e, this.At, this.Je, this.ae, this.Ze), this.Ze.c(e, this.ae, this.Je, r), !this.He && this.Je.Rt && (this.Je.H || this.loadoutMenu.socialUnlocks()) && this._t.hasCustomEmotes()) {
-                    this.He = !0;
+                if (this.inputMsgTimeout -= e, (ie || this.inputMsgTimeout < 0) && (this.seqInFlight || (this.seq = (this.seq + 1) % 256, this.seqSendTime = Date.now(), this.seqInFlight = !0, z.seq = this.seq), this.q(h.Msg.Input, z, 128), this.inputMsgTimeout = 1, this.prevInputMsg = z), this.xt.flushInput(), this.Ye.c(e, this.Ct, this.Qe, this.Xe, this.Be, this.Le, this.Ke, this.ae, t, r), this.ut.c(e, this.Ct, this.ae, r), this.et.c(e, this.Qe, this.Ye, this.ae, this.Ct, this.Ke, this.Xe, this.Be), this.at.c(e, this.Qe, this.Ye, this.ae, this.Ct, this.Ke, this.Xe, this.Be), this.rt.c(e, this.Xe, this.Be, this.Ct, this.Ye, this.Ke, this.ae), this.nt.c(e, this.Ye, this.Qe, this.ae, this.Xe, this.Be, r), this.ct.c(e, this.Ct, this.ae, this.Ye, this.Xe, this.Ke, this.Be), this.st.c(e, this.ae, this.Ct, this.Ye, this.Ke), this.mt.c(e, this.ae, this.Ct, this.Ye, this.Ke), this.St.c(e, this.It, this.Qe, this.Xe, this.Be), this.Xe.c(e, this.ae, r), this.dt.c(e, this.Qe, this.Ct, this.anonPlayerNames, this.Pt, this.Ye, this.ae, this.Ke), this.ht.c(e, this.ae, this.Ke, r), this.Ve.c(e, this.Ct, this.Ye, this.yt, this.ut, this.Qe, this.ae, this.teamMode, this.Ye.factionMode), this.xt.c(e, this.Ct, this.spectating, this.Qe, this.ut, this.Ye, this.Fe), this.bt.c(e, this.Pt, this.Ct, this.teamMode, this.dt, this.Ke, this.Re, this.Fe, this.spectating), this.He.update(e, this.Ct, this.Ye, this.ae, this.Ke), this.Ke.c(e, this.ae, this.Ye, r), !this.Ue && this.Ye.Lt && (this.Ye.H || this.loadoutMenu.socialUnlocks()) && this.bt.hasCustomEmotes()) {
+                    this.Ue = !0;
                     var se = new h.LoadoutMsg;
                     se.emotes = [];
                     for (var le = 0; le < this.emoteLoadout.length; le++) se.emotes[le] = this.emoteLoadout[le];
-                    se.custom = this._t.hasCustomEmotes(), this.q(h.Msg.Loadout, se, 128)
+                    se.custom = this.bt.hasCustomEmotes(), this.q(h.Msg.Loadout, se, 128)
                 }
-                for (var ce = 0; ce < this._t.newPings.length; ce++) {
-                    var me = this._t.newPings[ce],
+                for (var ce = 0; ce < this.bt.newPings.length; ce++) {
+                    var me = this.bt.newPings[ce],
                         pe = new h.EmoteMsg;
                     pe.type = me.type, pe.pos = me.pos, pe.useLoadout = !1, pe.teamOnly = !0, pe.isPing = !0, this.q(h.Msg.Emote, pe, 128)
                 }
-                this._t.newPings = [];
-                for (var de = 0; de < this._t.newEmotes.length; de++) {
-                    var he = this._t.newEmotes[de],
+                this.bt.newPings = [];
+                for (var de = 0; de < this.bt.newEmotes.length; de++) {
+                    var he = this.bt.newEmotes[de],
                         ue = new h.EmoteMsg;
                     ue.type = he.type, ue.pos = he.pos, ue.useLoadout = he.useLoadout, ue.teamOnly = !1, ue.isPing = !1, this.q(h.Msg.Emote, ue, 128)
                 }
-                if (this._t.newEmotes = [], this.Ft(e, r), ++this.Ue % 30 == 0) {
-                    for (var ge = p.jt, ye = 0; ye < t.length; ye++) {
+                if (this.bt.newEmotes = [], this.Rt(e, r), ++this.Ge % 30 == 0) {
+                    for (var ge = p.Ft, ye = 0; ye < t.length; ye++) {
                         var we = t[ye];
-                        we.active && !we.fade && ge(we, p.Nt) && i++
+                        we.active && !we.fade && ge(we, p.jt) && i++
                     }
                     for (var xe = 0; xe < a.length; xe++) {
                         var fe = a[xe];
-                        fe.active && !fe.dead && ge(fe, p.Vt) && i++
+                        fe.active && !fe.dead && ge(fe, p.Nt) && i++
                     }
-                    i && (this.H = !0), i && this.Et && y.H(this)
+                    i && (this.H = !0), i && this.At && y.H(this)
                 }
             },
-            Ft: function(e, t) {
-                var a = this.Je.mapLoaded ? this.Je.getMapDef().biome.colors.grass : 8433481;
-                this.pixi.renderer.backgroundColor = a, this.$e.render(this.ae, t), this.tt.render(this.ae, t), this.it.render(this.ae), this.Je.render(this.ae), this.wt.render(this.ae), this.Ve.render(this.At.pos, this.wt, this.ae, this.Je, this.lt, t), this._t.render(this.ae), _.flush()
+            Rt: function(e, t) {
+                var a = this.Ye.mapLoaded ? this.Ye.getMapDef().biome.colors.grass : 8433481;
+                this.pixi.renderer.backgroundColor = a, this.Qe.render(this.ae, t), this.et.render(this.ae, t), this.at.render(this.ae), this.Ye.render(this.ae), this.yt.render(this.ae), this.Ve.render(this.Ct.pos, this.yt, this.ae, this.Ye, this.st, t), this.bt.render(this.ae), _.flush()
             },
             updateAmbience: function() {
-                var e = this.At.pos,
+                var e = this.Ct.pos,
                     t = 0,
                     a = 0,
                     i = 1;
-                if (this.Je.isInOcean(e)) t = 1, a = 0, i = 0;
+                if (this.Ye.isInOcean(e)) t = 1, a = 0, i = 0;
                 else {
-                    var r = this.Je.distanceToShore(e);
+                    var r = this.Ye.distanceToShore(e);
                     t = d.delerp(r, 50, 0), a = 0;
-                    for (var o = 0; o < this.Je.terrain.rivers.length; o++) {
-                        var n = this.Je.terrain.rivers[o],
+                    for (var o = 0; o < this.Ye.terrain.rivers.length; o++) {
+                        var n = this.Ye.terrain.rivers[o],
                             s = n.spline.getClosestTtoPoint(e),
                             l = n.spline.getPos(s),
                             c = u.length(u.sub(l, e)),
@@ -15356,62 +15356,62 @@
                             h = d.clamp(n.waterWidth / 8, .25, 1);
                         a = d.max(p * h, a)
                     }
-                    a *= 1 - t, 1 == this.At.layer && (a = 0), i = d.clamp(1 - (t + a), 0, 1)
+                    a *= 1 - t, 1 == this.Ct.layer && (a = 0), i = d.clamp(1 - (t + a), 0, 1)
                 }
                 this.Le.getTrack("wind").volume = i, this.Le.getTrack("river").volume = a, this.Le.getTrack("waves").volume = t
             },
-            Dt: function() {
-                this.ae.screenWidth = g.screenWidth, this.ae.screenHeight = g.screenHeight, this.Je.resize(this.pixi.renderer, this.canvasMode), this.wt.resize(), this.Ve.resize(this.Je, this.ae), this.We.resize(), this.Ze.resize(this.Je, this.ae)/*camera888*/
+            Et: function() {
+                this.ae.screenWidth = g.screenWidth, this.ae.screenHeight = g.screenHeight, this.Ye.resize(this.pixi.renderer, this.canvasMode), this.yt.resize(), this.Ve.resize(this.Ye, this.ae), this.He.resize(), this.Ke.resize(this.Ye, this.ae)
             },
-            qt: function(e) {
+            Vt: function(e) {
                 var t = {
                     audioManager: this.Be,
-                    renderer: this.Ze,
-                    particleBarn: this.Ye,
-                    map: this.Je,
-                    smokeBarn: this.dt,
-                    decalBarn: this.ut
+                    renderer: this.Ke,
+                    particleBarn: this.Xe,
+                    map: this.Ye,
+                    smokeBarn: this.mt,
+                    decalBarn: this.ht
                 };
-                e.activePlayerIdDirty && (this.Ct = e.activePlayerId);
-                for (var a = 0; a < e.playerInfos.length; a++) this.$e.Gt(e.playerInfos[a]);
+                e.activePlayerIdDirty && (this.It = e.activePlayerId);
+                for (var a = 0; a < e.playerInfos.length; a++) this.Qe.qt(e.playerInfos[a]);
                 for (var i = 0; i < e.deletedPlayerIds.length; i++) {
                     var r = e.deletedPlayerIds[i];
-                    this.$e.Ut(r)
+                    this.Qe.Gt(r)
                 }
-                if ((e.playerInfos.length > 0 || e.deletedPlayerIds.length > 0) && this.$e.Ht(), e.playerStatusDirty) {
-                    var o = this.$e.ne(this.Ct).teamId;
-                    this.$e.Wt(o, e.playerStatus, this.Je.factionMode)
+                if ((e.playerInfos.length > 0 || e.deletedPlayerIds.length > 0) && this.Qe.Ut(), e.playerStatusDirty) {
+                    var o = this.Qe.ne(this.It).teamId;
+                    this.Qe.Ht(o, e.playerStatus, this.Ye.factionMode)
                 }
                 if (e.groupStatusDirty) {
-                    var s = this.$e.ne(this.Ct).groupId;
-                    this.$e.Kt(s, e.groupStatus)
+                    var s = this.Qe.ne(this.It).groupId;
+                    this.Qe.Wt(s, e.groupStatus)
                 }
-                for (var l = 0; l < e.delObjIds.length; l++) e.delObjIds[l], this.Pt.deleteObj(e.delObjIds[l]);
+                for (var l = 0; l < e.delObjIds.length; l++) e.delObjIds[l], this.Tt.deleteObj(e.delObjIds[l]);
                 for (var c = 0; c < e.fullObjects.length; c++) {
                     var m = e.fullObjects[c];
-                    this.Pt.updateObjFull(m.__type, m.__id, m, t)
+                    this.Tt.updateObjFull(m.__type, m.__id, m, t)
                 }
                 for (var p = 0; p < e.partObjects.length; p++) {
                     var d = e.partObjects[p];
-                    this.Pt.updateObjPart(d.__id, d, t)
+                    this.Tt.updateObjPart(d.__id, d, t)
                 }
-                this.spectating = this.Ct != this.It, this.At = this.$e.ve(this.Ct), this.At.Zt(e.activePlayerData, this.$e), e.activePlayerData.weapsDirty && (this.Ve.weapsDirty = !0), this.spectating && (this.Ve.setSpectateTarget(this.Ct, this.It, this.teamMode, this.anonPlayerNames, this.$e), this.We.hideAll()), this.At.layer = this.At.ie.layer, this.Ze.setActiveLayer(this.At.layer), this.Be.activeLayer = this.At.layer;
-                var h = this.At.isUnderground(this.Je);
-                this.Ze.setUnderground(h), this.Be.underground = h, e.aliveDirty && (1 == e.aliveCounts.length ? this.Ve.updatePlayersAlive(e.aliveCounts[0]) : e.aliveCounts.length >= 2 && (this.Ve.updatePlayersAliveRed(e.aliveCounts[0]), this.Ve.updatePlayersAliveBlue(e.aliveCounts[1]))), this.wt.setProgress(e.gasT), e.gasDirty && this.wt.setFullState(e.gasT, e.gasData, this.Je, this.Ve);
+                this.spectating = this.It != this.Pt, this.Ct = this.Qe.ve(this.It), this.Ct.Kt(e.activePlayerData, this.Qe), e.activePlayerData.weapsDirty && (this.Ve.weapsDirty = !0), this.spectating && (this.Ve.setSpectateTarget(this.It, this.Pt, this.teamMode, this.anonPlayerNames, this.Qe), this.He.hideAll()), this.Ct.layer = this.Ct.ie.layer, this.Ke.setActiveLayer(this.Ct.layer), this.Be.activeLayer = this.Ct.layer;
+                var h = this.Ct.isUnderground(this.Ye);
+                this.Ke.setUnderground(h), this.Be.underground = h, e.aliveDirty && (1 == e.aliveCounts.length ? this.Ve.updatePlayersAlive(e.aliveCounts[0]) : e.aliveCounts.length >= 2 && (this.Ve.updatePlayersAliveRed(e.aliveCounts[0]), this.Ve.updatePlayersAliveBlue(e.aliveCounts[1]))), this.yt.setProgress(e.gasT), e.gasDirty && this.yt.setFullState(e.gasT, e.gasData, this.Ye, this.Ve);
                 for (var u = 0; u < e.bullets.length; u++) {
                     var g = e.bullets[u];
-                    n.bullets[g.bulletType].addFlare ? this.it.addFlare(g, this.$e, this.Ze) : this.tt/*bullets888*/.addBullet(g, this.$e, this.Ze), g.shotFx && this.kt.addShot(g.pos, g.layer, g.playerId, g.shotSourceType, g.shotOffhand, g.lastShot)
+                    n.bullets[g.bulletType].addFlare ? this.at.addFlare(g, this.Qe, this.Ke) : this.et.addBullet(g, this.Qe, this.Ke), g.shotFx && this.St.addShot(g.pos, g.layer, g.playerId, g.shotSourceType, g.shotOffhand, g.lastShot)
                 }
                 for (var y = 0; y < e.explosions.length; y++) {
                     var w = e.explosions[y];
-                    this.st.addExplosion(w.type, w.pos, w.layer)
+                    this.nt.addExplosion(w.type, w.pos, w.layer)
                 }
                 for (var x = 0; x < e.emotes.length; x++) {
                     var f = e.emotes[x];
-                    f.isPing ? this._t/* manager888 */.addPing(f, this.Je.factionMode) : this._t.addEmote(f)
+                    f.isPing ? this.bt.addPing(f, this.Ye.factionMode) : this.bt.addEmote(f)
                 }
-                this.lt.Xt(e.planes, this.Je);
-                for (var b = 0; b < e.airstrikeZones.length; b++) this.lt.Yt(e.airstrikeZones[b]);
+                this.st.Zt(e.planes, this.Ye);
+                for (var b = 0; b < e.airstrikeZones.length; b++) this.st.Xt(e.airstrikeZones[b]);
                 this.Ve.le(e.mapIndicators), this.updateRecvCount++
             },
             Ne: function(e, t) {
@@ -15419,66 +15419,66 @@
                 switch (e) {
                     case h.Msg.Joined:
                         var r = new h.JoinedMsg;
-                        r.deserialize(t), this.onJoin(), this.teamMode = r.teamMode, this.It = r.playerId, this.Et = !0, r.started || this.Ve.setWaitingForPlayers(!0), this.Ve/*menu888*/.removeAds(), this.victoryMusic && (this.victoryMusic.stop(), this.victoryMusic = null);
+                        r.deserialize(t), this.onJoin(), this.teamMode = r.teamMode, this.Pt = r.playerId, this.At = !0, r.started || this.Ve.setWaitingForPlayers(!0), this.Ve.removeAds(), this.victoryMusic && (this.victoryMusic.stop(), this.victoryMusic = null);
                         break;
                     case h.Msg.Map:
                         var o = new h.MapMsg;
-                        o.deserialize(t), this.Je.loadMap(o, this.ae, this.canvasMode, this.Ye);
-                        var s = this.Je.getMapDef().assets;
-                        this.Be.loadSoundList(s.audio), this.textureManager.loadAtlasList(s.atlases), this.$e.onMapLoad(this.Je), this.tt.onMapLoad(this.Je), this.Ye.onMapLoad(this.Je), this.Je.renderMap(this.pixi.renderer, this.canvasMode), this.Ve.resize(this.Je, this.ae);
+                        o.deserialize(t), this.Ye.loadMap(o, this.ae, this.canvasMode, this.Xe);
+                        var s = this.Ye.getMapDef().assets;
+                        this.Be.loadSoundList(s.audio), this.textureManager.loadAtlasList(s.atlases), this.Qe.onMapLoad(this.Ye), this.et.onMapLoad(this.Ye), this.Xe.onMapLoad(this.Ye), this.Ye.renderMap(this.pixi.renderer, this.canvasMode), this.Ve.resize(this.Ye, this.ae);
                         break;
                     case h.Msg.Update:
                         var l = new h.UpdateMsg;
-                        l.deserialize(t, this.Pt), this.playing = !0, this.qt(l);
+                        l.deserialize(t, this.Tt), this.playing = !0, this.Vt(l);
                         break;
                     case h.Msg.Kill:
                         var c = new h.KillMsg;
                         c.deserialize(t);
-                        var m = this.$e.ne(c.targetId),
-                            p = this.$e.ne(c.killCreditId),
+                        var m = this.Qe.ne(c.targetId),
+                            p = this.Qe.ne(c.killCreditId),
                             d = c.itemSourceType || c.mapSourceType,
-                            u = this.$e.ne(this.Ct).teamId,
+                            u = this.Qe.ne(this.It).teamId,
                             g = c.downed && !c.killed || c.damageType == n.DamageType.Gas || c.damageType == n.DamageType.Bleeding || c.damageType == n.DamageType.Airdrop,
-                            w = g ? p : this.$e.ne(c.killerId),
+                            w = g ? p : this.Qe.ne(c.killerId),
                             x = m.nameTruncated,
                             f = p.nameTruncated,
                             b = w.nameTruncated;
                         if (this.anonPlayerNames) {
                             var _ = function(e) {
-                                return e.playerId == a.Ct || e.teamId == u
+                                return e.playerId == a.It || e.teamId == u
                             };
                             _(m) || (x = m.anonName), _(p) || (f = p.anonName), _(w) || (b = w.anonName)
                         }
-                        x = y.htmlEscape(x), f = y.htmlEscape(f), b = y.htmlEscape(b), c.killCreditId == this.Ct ? this.Ve.showKill({
+                        x = y.htmlEscape(x), f = y.htmlEscape(f), b = y.htmlEscape(b), c.killCreditId == this.It ? this.Ve.showKill({
                             name: f,
                             kills: c.killerKills,
-                            completeKill: c.killerId == this.Ct
+                            completeKill: c.killerId == this.It
                         }, {
                             name: x,
                             suicide: c.killerId == c.targetId || c.killCreditId == c.targetId,
                             killed: c.killed,
                             downed: c.downed,
                             teamKill: m.teamId == p.teamId
-                        }, d, c.damageType, this.spectating) : c.targetId == this.Ct && c.downed && !c.killed && this.Ve.showDowned({
+                        }, d, c.damageType, this.spectating) : c.targetId == this.It && c.downed && !c.killed && this.Ve.showDowned({
                             name: f,
                             damageType: c.damageType
                         }, {
                             name: x,
                             suicide: c.killerId == c.targetId || c.killCreditId == c.targetId
                         }, d, c.damageType, this.spectating);
-                        var S = this.ft.getKillFeedText(x, w.teamId ? b : "", d, c.damageType, c.downed && !c.killed),
-                            k = this.ft.getKillFeedColor(u, m.teamId, p.teamId, this.Je.factionMode);
-                        if (this.ft.addKillFeed(S, k), c.type == n.DamageType.Player && this.tt.createBulletHit(this.$e, c.targetId, this.Be), c.targetRole == n.Role.FactionLeader) {
-                            var v = this.ft.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.FactionLeader),
-                                z = this.$e.getTeamColor(m.teamId),
+                        var S = this.xt.getKillFeedText(x, w.teamId ? b : "", d, c.damageType, c.downed && !c.killed),
+                            k = this.xt.getKillFeedColor(u, m.teamId, p.teamId, this.Ye.factionMode);
+                        if (this.xt.addKillFeed(S, k), c.type == n.DamageType.Player && this.et.createBulletHit(this.Qe, c.targetId, this.Be), c.targetRole == n.Role.FactionLeader) {
+                            var v = this.xt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.FactionLeader),
+                                z = this.Qe.getTeamColor(m.teamId),
                                 M = y.colorToHexString(z);
-                            this.ft.addKillFeed(v, M), c.killed && this.Be.playSound("leader_dead_01", {
+                            this.xt.addKillFeed(v, M), c.killed && this.Be.playSound("leader_dead_01", {
                                 channel: "ui"
                             })
                         }
                         if (c.targetRole == n.Role.WoodsKing) {
-                            var T = this.ft.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.WoodsKing);
-                            this.ft.addKillFeed(T, "#12ff00"), c.killed && this.Be.playSound("leader_dead_01", {
+                            var T = this.xt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.WoodsKing);
+                            this.xt.addKillFeed(T, "#12ff00"), c.killed && this.Be.playSound("leader_dead_01", {
                                 channel: "ui"
                             })
                         }
@@ -15486,13 +15486,13 @@
                     case h.Msg.AssignRole:
                         var P = new h.AssignRoleMsg;
                         P.deserialize(t);
-                        var I = this.$e.ne(P.playerId);
+                        var I = this.Qe.ne(P.playerId);
                         if (!I) break;
-                        var C = this.ft.getAssignRoleKillFeedText(P.role, I.nameTruncated, I.teamId);
+                        var C = this.xt.getAssignRoleKillFeedText(P.role, I.nameTruncated, I.teamId);
                         if (C) {
-                            var A = this.$e.getTeamColor(I.teamId),
+                            var A = this.Qe.getTeamColor(I.teamId),
                                 E = y.colorToHexString(A);
-                            this.ft.addKillFeed(C, E)
+                            this.xt.addKillFeed(C, E)
                         }
                         if (!this.playedAssignRoleSfx[P.role]) {
                             var D, O = (D = {}, i(D, n.Role.FactionLeader, "leader_assigned_01"), i(D, n.Role.Lieutenant, "lt_assigned_01"), D),
@@ -15501,7 +15501,7 @@
                                 channel: "ui"
                             }), this.playedAssignRoleSfx[P.role] = !0
                         }
-                        this.It == P.playerId && this.Ve.displayAssignRoleAnnouncement(P.role, I.teamId);
+                        this.Pt == P.playerId && this.Ve.displayAssignRoleAnnouncement(P.role, I.teamId);
                         break;
                     case h.Msg.PlayerStats:
                         var L = new h.PlayerStatsMsg;
@@ -15514,18 +15514,18 @@
                     case h.Msg.GameOver:
                         var F = new h.GameOverMsg;
                         F.deserialize(t), this.gameOver = F.gameOver;
-                        for (var j = this.$e.ne(this.It).teamId, N = 0; N < F.playerStats.length; N++) {
+                        for (var j = this.Qe.ne(this.Pt).teamId, N = 0; N < F.playerStats.length; N++) {
                             var V = F.playerStats[N];
-                            if (V.playerId == this.It) {
+                            if (V.playerId == this.Pt) {
                                 this.Ve.setLocalStats(V);
                                 break
                             }
                         }
-                        this.Ve.showStats(F.playerStats, F.teamId, F.teamRank, F.winningTeamId, F.gameOver, j, this.teamMode, this.spectating, this.$e, this.Le, this.Be, this.Je.factionMode), j == F.winningTeamId && (this.victoryMusic = this.Be.playSound("menu_music", {
+                        this.Ve.showStats(F.playerStats, F.teamId, F.teamRank, F.winningTeamId, F.gameOver, j, this.teamMode, this.spectating, this.Qe, this.Le, this.Be, this.Ye.factionMode), j == F.winningTeamId && (this.victoryMusic = this.Be.playSound("menu_music", {
                             channel: "music",
                             delay: 1300,
                             forceStart: !0
-                        })), this.We.hideAll();
+                        })), this.He.hideAll();
                         break;
                     case h.Msg.Pickup:
                         var q = new h.PickupMsg;
@@ -15533,8 +15533,8 @@
                             var G = n.items[q.item];
                             this.Be.playSound(G.sound.pickup, {
                                 channel: "ui"
-                            }), "throwable" == G.type && (this.At.lastThrowablePickupSfxTicker = .3)
-                        } else this.ft.displayPickupMessage(q.type);
+                            }), "throwable" == G.type && (this.Ct.lastThrowablePickupSfxTicker = .3)
+                        } else this.xt.displayPickupMessage(q.type);
                         break;
                     case h.Msg.Disconnect:
                         var U = new h.DisconnectMsg;
@@ -15544,9 +15544,9 @@
             q: function(e, t, a) {
                 var i = a || 128,
                     r = new h.MsgStream(new ArrayBuffer(i));
-                r.serializeMsg(e, t), this.Jt(r)
+                r.serializeMsg(e, t), this.Yt(r)
             },
-            Jt: function(e) {
+            Yt: function(e) {
                 if (this.ws && this.ws.readyState == this.ws.OPEN) try {
                     this.ws.send(e.getBuffer())
                 } catch (e) {
@@ -15554,7 +15554,7 @@
                 }
             }
         }, e.exports = {
-            Qt: r
+            Jt: r
         }
     },
     "9d3c0d8b": function(e, t, a) {
@@ -15865,7 +15865,7 @@
         }
 
         function r() {
-            this._ = !1, this.vt/* lootBarn.lootPool888 */ = new p.Pool(i), this.$t = null
+            this._ = !1, this.kt = new p.Pool(i), this.Qt = null
         }
         var o = a("8b1dfb45"),
             n = a("989ad62a"),
@@ -15892,8 +15892,8 @@
             }
         }, r.prototype = {
             c: function(e, t, a, i) {
-                this._ = !0, this.$t = null;
-                for (var r = Number.MAX_VALUE, o = this.vt.m(), p = 0; p < o.length; p++) {
+                this._ = !0, this.Qt = null;
+                for (var r = Number.MAX_VALUE, o = this.kt.m(), p = 0; p < o.length; p++) {
                     var d = o[p];
                     if (d.active) {
                         if (l.sameLayer(d.layer, t.layer)) {
@@ -15901,7 +15901,7 @@
                                 u = m.touch ? t.rad + d.rad * n.player.touchLootRadMult : d.rad,
                                 g = c.sub(t.pos, h),
                                 y = c.lengthSqr(g);
-                            y < u * u && y < r && (r = y, this.$t = d)
+                            y < u * u && y < r && (r = y, this.Qt = d)
                         }
                         d.ticker += e;
                         var w = s.delerp(d.ticker, 0, 1),
@@ -15912,11 +15912,11 @@
                     }
                 }
             },
-            ea: function() {
-                return this.$t
+            $t: function() {
+                return this.Qt
             }
         }, e.exports = {
-            yt: r
+            gt: r
         }
     },
     a508b62a: function(e, t, a) {
@@ -15962,11 +15962,11 @@
                 weight: 0,
                 pose: new I
             });
-            this.isOnBrightSurface = !1, this.wasInWater = !1, this.weapType = "", this.visualsDirty = !1, this.stepDistance = 0, this.zoomFast = !1, this.playedDryFire = !1, this.lastSwapIdx = -1, this.cycleSoundInstance = null, this.actionSoundInstance = null, this.useItemEmitter = null, this.useAbilityEmitter = null, this.downed = !1, this.wasDowned = !1, this.bleedTicker = 0, this.submersion = 0, this.gunRecoilL = 0, this.gunRecoilR = 0, this.fireDelay = 0, this.throwableState = "equip", this.throwableStatePrev = this.throwableState, this.lastThrowablePickupSfxTicker = 0, this.isNearDoorError = !1, this.doorErrorTicker = 0, this.noCeilingRevealTicker = 0, this.frozenTicker = 0, this.updateFrozenImage = !0, this.renderLayer = 0, this.renderZOrd = 18, this.renderZIdx = 0, this._ = !1, this.action = {}, this.ie = {},/* netData888 */this.re = {},/* localData888 */this.rad = m.player.radius, this.bodyRad = this.rad, this.pos = x.create(0, 0), this.posOld = x.create(0, 0), this.dir = x.create(1, 0), this.dirOld = x.create(1, 0), this.layer = 0
+            this.isOnBrightSurface = !1, this.wasInWater = !1, this.weapType = "", this.visualsDirty = !1, this.stepDistance = 0, this.zoomFast = !1, this.playedDryFire = !1, this.lastSwapIdx = -1, this.cycleSoundInstance = null, this.actionSoundInstance = null, this.useItemEmitter = null, this.useAbilityEmitter = null, this.downed = !1, this.wasDowned = !1, this.bleedTicker = 0, this.submersion = 0, this.gunRecoilL = 0, this.gunRecoilR = 0, this.fireDelay = 0, this.throwableState = "equip", this.throwableStatePrev = this.throwableState, this.lastThrowablePickupSfxTicker = 0, this.isNearDoorError = !1, this.doorErrorTicker = 0, this.noCeilingRevealTicker = 0, this.frozenTicker = 0, this.updateFrozenImage = !0, this.renderLayer = 0, this.renderZOrd = 18, this.renderZIdx = 0, this._ = !1, this.action = {}, this.ie = {}, this.re = {}, this.rad = m.player.radius, this.bodyRad = this.rad, this.pos = x.create(0, 0), this.posOld = x.create(0, 0), this.dir = x.create(1, 0), this.dirOld = x.create(1, 0), this.layer = 0
         }
 
         function s() {
-            this.Se = new T.Pool(n), this.ta = {},/*playerBarn.players888*/ this.playerIds = [], this.teamInfo = {}, this.groupInfo = {}, this.playerStatus = {}
+            this.Se = new T.Pool(n), this.ea = {}, this.playerIds = [], this.teamInfo = {}, this.groupInfo = {}, this.playerStatus = {}
         }
         var l = function() {
                 function e(e, t) {
@@ -16070,7 +16070,7 @@
             l: function(e, t, a, i) {
                 this.ie.pos = x.copy(e.pos), this.ie.dir = x.copy(e.dir), t && (this.ie.skin = e.skin, this.ie.backpack = e.backpack, this.ie.helmet = e.helmet, this.ie.chest = e.chest, this.ie.curWeapType = e.curWeapType, this.ie.layer = e.layer, this.ie.dead = e.dead, this.ie.downed = e.downed, this.ie.disconnected = e.disconnected, this.ie.wearingPan = e.wearingPan, this.ie.frozen = e.frozen, this.ie.frozenOri = e.frozenOri, this.ie.hasStim = e.hasStim, this.ie.role = e.role, e.animSeq != this.anim.seq && this.playAnim(e.animType, e.animSeq), this.action.type = e.actionType, this.action.seq = e.actionSeq, this.action.item = e.actionItem, this.visualsDirty = !0), a && (this.isNew = !0, this.renderLayer = this.ie.layer, this.renderZOrd = 18, this.renderZIdx = this.__id)
             },
-            Zt: function(e, t) {
+            Kt: function(e, t) {
                 var a = this.re.scope;
                 if (this.re.health = e.health, this.re.scopedIn = e.scopedIn, e.boostDirty && (this.re.boost = e.boost), e.actionDirty && (this.action.time = e.action.time, this.action.duration = e.action.duration, this.action.targetId = e.action.targetId), e.inventoryDirty) {
                     this.re.scope = e.scope, this.re.inventory = {};
@@ -16085,22 +16085,22 @@
                 }
                 e.spectatorCountDirty && (this.re.spectatorCount = e.spectatorCount), this.re.scope != a && (this.zoomFast = !0), this.re.scopedIn && (this.zoomFast = !1)
             },
-            Bt: function() {
+            Ot: function() {
                 return (v.mobile ? m.scopeZoomRadius.mobile : m.scopeZoomRadius.desktop)[this.ie.downed || this.re.scopedIn ? "1xscope" : this.re.scope]
             },
-            aa: function() {
+            ta: function() {
                 return this.ie.helmet ? m.items[this.ie.helmet].level : 0
             },
-            ia: function() {
+            aa: function() {
                 return this.ie.chest ? m.items[this.ie.chest].level : 0
             },
-            ra: function() {
+            ia: function() {
                 return m.items[this.ie.backpack].level
             },
-            oa: function() {
+            ra: function() {
                 return m.items[this.ie.curWeapType].type
             },
-            na: function(e) {
+            oa: function(e) {
                 return "" !== this.re.weapons[e].name
             },
             hasActivePan: function() {
@@ -16227,7 +16227,7 @@
                     var ce = this.re.curWeapIdx,
                         me = this.re.weapons[ce],
                         pe = m.items[me.name];
-                    if (!this.playedDryFire && "gun" == this.oa() && (o.isBindPressed(h.Fire) || o.isBindDown(h.Fire) && "auto" == pe.fireMode) && this.action.type == p.None && !c) {
+                    if (!this.playedDryFire && "gun" == this.ra() && (o.isBindPressed(h.Fire) || o.isBindDown(h.Fire) && "auto" == pe.fireMode) && this.action.type == p.None && !c) {
                         var de = this.re.inventory[pe.ammo],
                             he = me.ammo;
                         0 === de && 0 === he && (i.playSound(pe.sound.empty), this.playedDryFire = !0)
@@ -16247,15 +16247,15 @@
                         fe = ye[xe] || I.identity,
                         be = this.anim.bones[xe];
                     be.weight > 0 ? this.bones[we].copy(I.lerp(be.weight, fe, be.pose)) : this.bones[we].copy(fe)
-                }(this.visualsDirty || this.throwableStatePrev != this.throwableState) && this.sa(t, a), this.visualsDirty = !1, this.throwableStatePrev = this.throwableState, this.la(), this.ca(v, z, a), s.addPIXIObj(this.container, this.renderLayer, this.renderZOrd, this.renderZIdx), this.isNew = !1
+                }(this.visualsDirty || this.throwableStatePrev != this.throwableState) && this.na(t, a), this.visualsDirty = !1, this.throwableStatePrev = this.throwableState, this.sa(), this.la(v, z, a), s.addPIXIObj(this.container, this.renderLayer, this.renderZOrd, this.renderZIdx), this.isNew = !1
             },
-            Ft: function(e, t) {
+            Rt: function(e, t) {
                 var a = e.pointToScreen(this.pos),
                     i = e.pixels(1);
                 this.container.position.set(a.x, a.y), this.container.scale.set(i, i), this.container.visible = !this.ie.dead
             },
-            ca: function(e, t, a) {
-                for (var i = _.createCircle(this.pos, m.player.maxVisualRadius), r = !1, o = !1, n = !1, s = a.Mt.m(), l = 0; l < s.length; l++) {
+            la: function(e, t, a) {
+                for (var i = _.createCircle(this.pos, m.player.maxVisualRadius), r = !1, o = !1, n = !1, s = a.zt.m(), l = 0; l < s.length; l++) {
                     var c = s[l];
                     if (c.active) {
                         for (var p = 0; p < c.stairs.length; p++) {
@@ -16283,7 +16283,7 @@
                 var S = this.__id + (this.ie.downed ? 0 : 262144) + (e ? 65536 : 0) + (this.rad > 1 ? 131072 : 0);
                 this.renderLayer = f, this.renderZOrd = b, this.renderZIdx = S
             },
-            sa: function(e, t) {
+            na: function(e, t) {
                 var a = m.items[this.ie.skin],
                     i = a.skinImg,
                     r = this.bodyRad / m.player.radius;
@@ -16326,9 +16326,9 @@
                     var T = z.baseTint;
                     t.factionMode && (T = 1 == e.ne(this.__id).teamId ? z.baseTintRed : z.baseTintBlue), this.helmetSprite.tint = T, this.helmetSprite.visible = !0
                 }
-                if (this.ra() > 0 && !a.camo && !this.downed) {
+                if (this.ia() > 0 && !a.camo && !this.downed) {
                     var P = (m.items[this.ie.backpack], [10.25, 11.5, 12.75]),
-                        I = this.ra(),
+                        I = this.ia(),
                         C = P[f.min(I - 1, P.length - 1)],
                         A = .5 * (.4 + .03 * I);
                     this.backpackSprite.texture = c.Texture.fromImage("player-circle-base-01.img"), this.backpackSprite.position.set(-C, 0), this.backpackSprite.scale.set(A, A), this.backpackSprite.tint = i.backpackTint, this.backpackSprite.visible = !0,
@@ -16373,7 +16373,7 @@
                 for (var U = [this.bodySubmergeSprite, this.handLSubmergeSprite, this.handRSubmergeSprite, this.footLSubmergeSprite, this.footRSubmergeSprite], H = t.getMapDef().biome.colors.playerSubmerge, W = 0; W < U.length; W++) U[W].tint = H;
                 this.bodyContainer.scale.set(r, r)
             },
-            la: function() {
+            sa: function() {
                 var e = function(e, t) {
                     e.position.set(t.pos.x, t.pos.y), e.pivot.set(-t.pivot.x, -t.pivot.y), e.rotation = t.rot
                 };
@@ -16622,7 +16622,7 @@
             },
             isUnderground: function(e) {
                 if (1 != this.layer) return !1;
-                for (var t = e.Mt.m(), a = 0; a < t.length; a++) {
+                for (var t = e.zt.m(), a = 0; a < t.length; a++) {
                     var i = t[a];
                     if (!(i.layers.length < 2)) {
                         var r = i.layers[1];
@@ -16640,7 +16640,7 @@
                 }
                 var w = this.ne(t),
                     b = this.ve(t);
-                this.ma(t, {
+                this.ca(t, {
                     pos: x.copy(b.ie.pos),
                     health: b.re.health,
                     disconnected: !1,
@@ -16667,7 +16667,7 @@
             render: function(e, t) {
                 for (var a = this.Se.m(), i = 0; i < a.length; i++) {
                     var r = a[i];
-                    r.active && r.Ft(e, t)
+                    r.active && r.Rt(e, t)
                 }
             },
             ve: function(e) {
@@ -16677,8 +16677,8 @@
                 }
                 return null
             },
-            Gt: function(e) {
-                this.ta[e.playerId] = {
+            qt: function(e) {
+                this.ea[e.playerId] = {
                     playerId: e.playerId,
                     teamId: e.teamId,
                     groupId: e.groupId,
@@ -16689,21 +16689,21 @@
                     return e - t
                 })
             },
-            Ut: function(e) {
-                var t = this.playerIds.indexOf(e); - 1 !== t && this.playerIds.splice(t, 1), delete this.ta[e], delete this.playerStatus[e]
+            Gt: function(e) {
+                var t = this.playerIds.indexOf(e); - 1 !== t && this.playerIds.splice(t, 1), delete this.ea[e], delete this.playerStatus[e]
             },
             ne: function(e) {
-                return this.ta[e] || {
+                return this.ea[e] || {
                     playerId: 0,
                     groupId: 0,
                     teamId: 0,
                     name: "unknown"
                 }
             },
-            Ht: function() {
+            Ut: function() {
                 this.teamInfo = {}, this.groupInfo = {};
-                for (var e = Object.keys(this.ta), t = 0; t < e.length; t++) {
-                    var a = this.ta[e[t]],
+                for (var e = Object.keys(this.ea), t = 0; t < e.length; t++) {
+                    var a = this.ea[e[t]],
                         i = a.playerId,
                         r = a.teamId;
                     this.teamInfo[r] = this.teamInfo[r] || {
@@ -16729,17 +16729,17 @@
             getGroupInfo: function(e) {
                 return this.groupInfo[e]
             },
-            Wt: function(e, t, a) {
+            Ht: function(e, t, a) {
                 var i = this.getTeamInfo(e),
                     r = a ? this.playerIds : i.playerIds;
                 if (r.length != t.players.length) return void z.logError("PlayerIds and playerStatus.players out of sync. OurLen: " + r.length + " MsgLen: " + t.players.length + " FactionMode: " + a);
                 for (var o = 0; o < r.length; o++) {
                     var n = r[o],
                         s = t.players[o];
-                    s.hasData && this.ma(n, s)
+                    s.hasData && this.ca(n, s)
                 }
             },
-            ma: function(e, t) {
+            ca: function(e, t) {
                 var a = this.playerStatus[e] || {
                     playerId: e,
                     pos: x.copy(t.pos),
@@ -16762,7 +16762,7 @@
             se: function(e) {
                 return this.playerStatus[e]
             },
-            Kt: function(e, t) {
+            Wt: function(e, t) {
                 var a = this.getGroupInfo(e);
                 if (a.playerIds.length != t.players.length) return void z.logError("PlayerIds and groupStatus.players out of sync");
                 for (var i = 0; i < a.playerIds.length; i++) {
@@ -16783,7 +16783,7 @@
                 return t >= 0 && t < m.teamColors.length ? m.teamColors[t] : 16777215
             }
         }, e.exports = {
-            et: s
+            $e: s
         }
     },
     a5bf0544: function(e, t, a) {
@@ -17596,7 +17596,7 @@
         e.exports = {
             GasRenderer: h,
             GasSafeZoneRenderer: u,
-            xt: g
+            wt: g
         }
     },
     aaf70d05: function(e, t) {
