@@ -230,7 +230,7 @@
                     case m.Key:
                         return this.ue(e.code);
                     case m.MouseButton:
-                        return this.ge(e.code); // mousePressed888
+                        return this.ge(e.code);
                     case m.MouseWheel:
                         return this.ye() == e.code;
                     default:
@@ -277,7 +277,7 @@
             we: function(e) {
                 return !!this.keysOld[e] && !this.keys[e]
             },
-            onMouseMove: function(e) { // mousePos888
+            onMouseMove: function(e) {
                 this.he = Object.assign({}, this.de), this.de.x = e.clientX, this.de.y = e.clientY
             },
             onMouseDown: function(e) {
@@ -1709,7 +1709,7 @@
                                     y = this.roomData.roomUrl.substring(1);
                                 m.webview ? n("#team-url").html(y) : (n("#team-url").html(g), n("#team-code").html(y)), window.history && window.history.replaceState("", "", this.roomData.roomUrl)
                             }
-                            this.playBtn.html(this.roomData.findingGame || this.joiningGame ? '<div class="ui-spinner"></div>' : this.playBtn.attr("data-label")), 2 == this.roomData.gameModeIdx ? this.playBtn.addClass("btn-woods-spring-mode") : this.playBtn.removeClass("btn-woods-spring-mode");
+                            this.playBtn.html(this.roomData.findingGame || this.joiningGame ? '<div class="ui-spinner"></div>' : this.playBtn.attr("data-label"));
                             for (var w = !1, x = 0; x < this.players.length; x++) w |= this.players[x].inGame;
                             var f = n("#msg-wait-reason"),
                                 b = n("#btn-start-team");
@@ -8236,7 +8236,7 @@
                 }
             }, {
                 meta: {
-                    image: "shared-2-100-610ec76b.png",
+                    image: "shared-2-100-0718f9f8.png",
                     size: {
                         w: 4096,
                         h: 4096
