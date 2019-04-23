@@ -2945,7 +2945,7 @@
                 }
             }, {
                 meta: {
-                    image: "shared-2-50-a9cfe664.png",
+                    image: "shared-2-50-e91464de.png",
                     size: {
                         w: 2048,
                         h: 2048
@@ -12157,7 +12157,7 @@
             }],
             gradient: [{
                 meta: {
-                    image: "gradient-0-50-6e2b52de.png",
+                    image: "gradient-0-50-3eaac65b.png",
                     size: {
                         w: 512,
                         h: 512
