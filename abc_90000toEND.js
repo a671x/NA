@@ -1,3 +1,12 @@
+                        ori: 3
+                    }, {
+                        type: "concrete_wall_ext_6",
+                        pos: ve.create(40, -47),
+                        scale: 1,
+                        ori: 1
+                    }, {
+                        type: "metal_wall_ext_thicker_8",
+                        pos: ve.create(36.5, -50.5),
                         scale: 1,
                         ori: 0
                     }, {
@@ -4395,9 +4404,9 @@
             oriToRad: i,
             radToOri: r,
             getBoundingCollider: o,
-            Nt: .8,
-            Vt: .9,
-            jt: function(e, t) {
+            jt: .8,
+            Nt: .9,
+            Ft: function(e, t) {
                 return e.sprite && e.sprite.visible && e.sprite.alpha < t
             }
         }
@@ -5053,15 +5062,15 @@
                         }
                     }
                     C && (v = E.Object, P = C, I = !0);
-                    var j = r.ea();/*lootBarn.itemf888*/
+                    var j = r.$t();
                     if (j && !t.ie.downed) {
                         var N = f.items[j.name],
-                            V = t.na(f.WeaponSlot.Primary),
-                            q = t.na(f.WeaponSlot.Secondary),
+                            V = t.oa(f.WeaponSlot.Primary),
+                            q = t.oa(f.WeaponSlot.Secondary),
                             G = V && q,
-                            U = "gun" != N.type || !G || "gun" == t.oa(),
+                            U = "gun" != N.type || !G || "gun" == t.ra(),
                             H = !1;
-                        (s.touch && "helmet" == N.type && t.aa() == N.level && j.name != t.ie.helmet || "chest" == N.type && t.ia() == N.level && j.name != t.ie.chest) && (H = !0), (U || T.uiLayout == T.UiLayout.Sm) && (v = E.Loot, P = j), I = U && (!s.touch || "gun" == N.type || "melee" == N.type || "skin" == N.type || H)
+                        (s.touch && "helmet" == N.type && t.ta() == N.level && j.name != t.ie.helmet || "chest" == N.type && t.aa() == N.level && j.name != t.ie.chest) && (H = !0), (U || T.uiLayout == T.UiLayout.Sm) && (v = E.Loot, P = j), I = U && (!s.touch || "gun" == N.type || "melee" == N.type || "skin" == N.type || H)
                     }
                     if (t.action.type == S.None && !t.ie.downed)
                         for (var W = i.ne(t.__id).teamId, K = i.Se.m(), Z = 0; Z < K.length; Z++) {
@@ -5102,7 +5111,7 @@
                     var he = s.scopes[de];
                     he.visible = t.re.inventory[he.type] > 0, he.equipped = he.visible && t.re.scope == he.type, he.selectable = he.visible && !a
                 }
-                for (var ue = t.ra(), ge = 0; ge < s.loot.length; ge++) {
+                for (var ue = t.ia(), ge = 0; ge < s.loot.length; ge++) {
                     var ye = s.loot[ge],
                         we = ye.count;
                     ye.count = t.re.inventory[ye.type] || 0, ye.maximum = f.bagSizes[ye.type][ue], ye.selectable = ye.count > 0 && !a, ye.count > we && (ye.ticker = 0), this.frameCount < 2 && (ye.ticker = 1), ye.ticker += e;
@@ -5371,7 +5380,7 @@
                 return t ? t.toString() : "<Unbound>"
             }
         }, e.exports = {
-            bt: g,
+            ft: g,
             loadStaticDomImages: y
         }
     },
@@ -5411,7 +5420,7 @@
                 places: [],
                 objects: [],
                 groundPatches: []
-            }, this.mapLoaded = !1, this.mapTexture = null, this.pe = new g.Pool(_), this.zt = new g.Pool(b), this.Mt = new g.Pool(S), this.deadObstacleIds = [], this.deadCeilingIds = [], this.solvedPuzzleIds = [], this.terrain = null, this.cameraEmitter = null, this.pa = 0, this.Rt = !1, this.H = !1
+            }, this.mapLoaded = !1, this.mapTexture = null, this.pe = new g.Pool(_), this.vt = new g.Pool(b), this.zt = new g.Pool(S), this.deadObstacleIds = [], this.deadCeilingIds = [], this.solvedPuzzleIds = [], this.terrain = null, this.cameraEmitter = null, this.ma = 0, this.Lt = !1, this.H = !1
         }
         var l = a("8b1dfb45"),
             c = a("34e32c48"),
@@ -5470,17 +5479,17 @@
                     var h = m[d];
                     h.active && (h.c(e, this, a, i, r, t, n), h.render(s, c))
                 }
-                for (var g = this.zt.m(), w = 0; w < g.length; w++) {
+                for (var g = this.vt.m(), w = 0; w < g.length; w++) {
                     var f = g[w];
                     f.active && (f.c(e, this, i, r, o, t, n, s), f.render(s, c))
                 }
-                for (var b = this.Mt.m(), _ = 0; _ < b.length; _++) {
+                for (var b = this.zt.m(), _ = 0; _ < b.length; _++) {
                     var S = b[_];
                     S.active && S.c(s, c)
                 }
                 if (this.cameraEmitter) {
                     this.cameraEmitter.pos = u.copy(s.pos), this.cameraEmitter.enabled = !0;
-                    var k = 2.5 * t.Bt();
+                    var k = 2.5 * t.Ot();
                     this.cameraEmitter.radius = x.min(k, 120);
                     var v = (y.EmitterDefs.falling_leaf, this.cameraEmitter.radius),
                         z = v * v / 14400;
@@ -5488,15 +5497,15 @@
                     var M = 0 == t.layer ? 1 : 0;
                     this.cameraEmitter.alpha = x.lerp(6 * e, this.cameraEmitter.alpha, M)
                 }
-                if (++this.pa % 180 == 0) {
-                    this.Rt = !0;
-                    for (var T = 0, P = p.jt, I = 0; I < l.length; I++) {
+                if (++this.ma % 180 == 0) {
+                    this.Lt = !0;
+                    for (var T = 0, P = p.Ft, I = 0; I < l.length; I++) {
                         var C = l[I];
-                        C.active && !C.fade && P(C, p.Nt) && T++
+                        C.active && !C.fade && P(C, p.jt) && T++
                     }
                     for (var A = 0; A < m.length; A++) {
                         var E = m[A];
-                        E.active && !E.dead && P(E, p.Vt) && T++
+                        E.active && !E.dead && P(E, p.Nt) && T++
                     }
                     T && (this.H = !0)
                 }
@@ -5659,7 +5668,7 @@
                 }
             },
             getGroundSurface: function(e, t) {
-                for (var a = "", i = this.zt.m(), r = 0, o = 2 & t, n = 0; n < i.length; n++) {
+                for (var a = "", i = this.vt.m(), r = 0, o = 2 & t, n = 0; n < i.length; n++) {
                     var s = i[n];
                     if (s.active && !(s.zIdx < r) && !(s.layer != t && !o || 1 == s.layer && o))
                         for (var l = 0; l < s.surfaces.length; l++)
@@ -5687,21 +5696,21 @@
                 return x.distToPolygon(e, this.terrain.shore)
             },
             insideStructureStairs: function(e) {
-                for (var t = this.Mt.m(), a = 0; a < t.length; a++) {
+                for (var t = this.zt.m(), a = 0; a < t.length; a++) {
                     var i = t[a];
                     if (i.active && i.insideStairs(e)) return !0
                 }
                 return !1
             },
             insideStructureMask: function(e) {
-                for (var t = this.Mt.m(), a = 0; a < t.length; a++) {
+                for (var t = this.zt.m(), a = 0; a < t.length; a++) {
                     var i = t[a];
                     if (i.active && i.insideMask(e)) return !0
                 }
                 return !1
             },
             insideBuildingCeiling: function(e, t) {
-                for (var a = this.zt.m(), i = 0; i < a.length; i++) {
+                for (var a = this.vt.m(), i = 0; i < a.length; i++) {
                     var r = a[i];
                     if (r.active && (!t || !(r.ceiling.visionTicker <= 0 || r.ceilingDead || r.disableScopeIn)))
                         for (var o = 0; o < r.ceiling.scopeIn.length; o++) {
@@ -5712,7 +5721,7 @@
                 return !1
             }
         }, e.exports = {
-            Qe: s
+            Je: s
         }
     },
     d5ec3c16: function(e, t, a) {
@@ -5895,7 +5904,7 @@
             d = (a("af8ba00f"), function() {
                 function e(t, a) {
                     var r = this;
-                    i(this, e), this.input = t, this.config = a, this.container = new n.Container, this.da = new h, this.padScaleBase = 1, this.padScaleDown = .6, this.padScalePos = .25, this.moveDetected = !1, this.Lt = !1, this.ha = !1, this.touchingAim = !1, this.display = !0, this.moveStyle = "locked", this.aimStyle = "locked", this.touchAimLine = !0;
+                    i(this, e), this.input = t, this.config = a, this.container = new n.Container, this.pa = new h, this.padScaleBase = 1, this.padScaleDown = .6, this.padScalePos = .25, this.moveDetected = !1, this.Bt = !1, this.da = !1, this.touchingAim = !1, this.display = !0, this.moveStyle = "locked", this.aimStyle = "locked", this.touchAimLine = !0;
                     var o = function(e, t) {
                             var a = n.Sprite.fromImage("pad.img");
                             return a.anchor.set(.5, .5), a.scale.set(1, 1), a.alpha = .2, a.visible = !1, a.tint = t, e.addChild(a), a
@@ -5994,7 +6003,7 @@
                                 break
                             }
                         }
-                        this.ha = this.Lt, this.Lt = this.aimMovement.toAimLen > this.padPosRange / this.shotPadDetectMult && a, this.touchingAim = a, e && this.ha && a && (this.Lt = !0);
+                        this.da = this.Bt, this.Bt = this.aimMovement.toAimLen > this.padPosRange / this.shotPadDetectMult && a, this.touchingAim = a, e && this.da && a && (this.Bt = !0);
                         var u = this.touchPads[1];
                         return u.touched = a, a && "anywhere" == this.aimStyle ? u.centerPos = m.copy(i) : u.centerPos = m.copy(this.rightLockedPadCenter), u.touchPos.x = a ? r.x : this.rightLockedPadCenter.x, u.touchPos.y = a ? r.y : this.rightLockedPadCenter.y, {
                             aimMovement: this.aimMovement,
@@ -6008,7 +6017,7 @@
                             var n = this.touchPads[o];
                             n.centerSprite.position.x = n.centerPos.x, n.centerSprite.position.y = n.centerPos.y, n.centerSprite.scale.x = this.padScaleBase * this.padScaleDown, n.centerSprite.scale.y = this.padScaleBase * this.padScaleDown, n.centerSprite.visible = p.touch && this.display, n.touchSprite.position.x = n.touchPos.x, n.touchSprite.position.y = n.touchPos.y, n.touchSprite.scale.x = this.padScaleBase * this.padScalePos, n.touchSprite.scale.y = this.padScaleBase * this.padScalePos, n.touchSprite.visible = p.touch && this.display
                         }
-                        this.da.update(this, t, a, i, r)
+                        this.pa.update(this, t, a, i, r)
                     }
                 }, {
                     key: "isLeftSideTouch",
@@ -6168,7 +6177,7 @@
                                 var u = l.bullets[d.bulletType].distance;
                                 h = d.barrelLength + u
                             }
-                            var g = t.Bt(),
+                            var g = t.Ot(),
                                 y = Math.sqrt(1.414 * g * g);
                             h = Math.min(h, y);
                             for (var w = m.copy(t.pos), x = m.add(w, m.mul(t.dir, h)), f = a.pe.m(), b = 0; b < f.length; b++) {
@@ -6201,7 +6210,7 @@
                 }]), e
             }();
         e.exports = {
-            Ke: d
+            We: d
         }
     },
     e5d16b4d: function(e, t, a) {
@@ -6222,13 +6231,13 @@
 
         function n(e, t, a, i, o) {
             var n = this;
-            this.audioManager = e, this.uiManager = t, this.gameElem = s("#ui-game"), this.disable = !1, this.At = null, this.playerBarn = a, this.camera = i, this.map = o, this.worldPos = f.create(0, 0), this.zIdxNext = 0, this.emoteSelector = {
+            this.audioManager = e, this.uiManager = t, this.gameElem = s("#ui-game"), this.disable = !1, this.Ct = null, this.playerBarn = a, this.camera = i, this.map = o, this.worldPos = f.create(0, 0), this.zIdxNext = 0, this.emoteSelector = {
                 ping: g.None,
                 emote: d.None
-            }, this.emoteSoftTicker = 0, this.emoteHardTicker = 0, this.emoteCounter = 0, this.emoteWheelsGreyed = !1, this.teamEmotesGreyed = !1, this.wheelKeyTriggered = !1, this.emoteTimeoutTicker = 0, this.ua = !1, this.pingKeyDown = !1, this.pingMouseTriggered = !1, this.wheelDisplayed = !1, this.emoteMouseTriggered = !1, this.emoteScreenPos = f.create(0, 0), this.triggerPing = function() {
-                if (this.At) {
+            }, this.emoteSoftTicker = 0, this.emoteHardTicker = 0, this.emoteCounter = 0, this.emoteWheelsGreyed = !1, this.teamEmotesGreyed = !1, this.wheelKeyTriggered = !1, this.emoteTimeoutTicker = 0, this.ha = !1, this.pingKeyDown = !1, this.pingMouseTriggered = !1, this.wheelDisplayed = !1, this.emoteMouseTriggered = !1, this.emoteScreenPos = f.create(0, 0), this.triggerPing = function() {
+                if (this.Ct) {
                     var e = void 0;
-                    this.emoteSelector.ping == g.None || this.emoteWheelsGreyed ? this.emoteSelector.emote == d.None || this.emoteWheelsGreyed || (e = this.At.pos, this.sendEmote({
+                    this.emoteSelector.ping == g.None || this.emoteWheelsGreyed ? this.emoteSelector.emote == d.None || this.emoteWheelsGreyed || (e = this.Ct.pos, this.sendEmote({
                         type: this.emoteSelector.emote,
                         useLoadout: this.emoteSelector.useLoadout,
                         emoteSlot: this.emoteSelector.emoteSlot,
@@ -6236,12 +6245,12 @@
                     }), this.uiManager.displayMapLarge(!0)) : y[this.emoteSelector.ping].pingMap && (e = this.uiManager.getWorldPosFromMapPos(this.bigmapPingPos || this.emoteScreenPos, this.map, this.camera), e || (e = this.camera.O(this.emoteScreenPos)), e.x = b.clamp(e.x, 0, this.map.width), e.y = b.clamp(e.y, 0, this.map.height), this.sendPing({
                         type: this.emoteSelector.ping,
                         pos: e
-                    })), this.inputReset(), this.ua = this.pingKeyDown
+                    })), this.inputReset(), this.ha = this.pingKeyDown
                 }
             }, this.triggerEmote = function() {
-                if (this.At) {
+                if (this.Ct) {
                     var e = void 0;
-                    this.emoteSelector.emote == d.None || this.emoteWheelsGreyed || (e = this.At.pos, this.sendEmote({
+                    this.emoteSelector.emote == d.None || this.emoteWheelsGreyed || (e = this.Ct.pos, this.sendEmote({
                         type: this.emoteSelector.emote,
                         useLoadout: this.emoteSelector.useLoadout,
                         emoteSlot: this.emoteSelector.emoteSlot,
@@ -6473,7 +6482,7 @@
                 return e > 0
             },
             inputReset: function() {
-                this.pingMouseTriggered = !1, this.ua = !1, this.emoteMouseTriggered = !1, this.wheelDisplayed = !1, this.displayWheel(this.teamPingWheel, !1), this.displayWheel(this.emoteWheel, !1), this.emoteTouchedPos = null, this.bigmapPingPos = null, this.emoteTimeoutTicker = 0;
+                this.pingMouseTriggered = !1, this.ha = !1, this.emoteMouseTriggered = !1, this.wheelDisplayed = !1, this.displayWheel(this.teamPingWheel, !1), this.displayWheel(this.emoteWheel, !1), this.emoteTouchedPos = null, this.bigmapPingPos = null, this.emoteTimeoutTicker = 0;
                 for (var e = 0; e < this.displayedSelectors.length; e++) {
                     var t = this.displayedSelectors[e],
                         a = h[t.emote];
@@ -6485,10 +6494,10 @@
                 t.type = e.type, t.pos = e.pos, this.newPings.push(t), this.incrementEmote()
             },
             addPing: function(e, t) {
-                if (this.At) {
+                if (this.Ct) {
                     var a = y[e.type];
                     if (a) {
-                        this.uiManager.createPing(e.type, e.pos, e.playerId, this.At.__id, this.playerBarn, t);
+                        this.uiManager.createPing(e.type, e.pos, e.playerId, this.Ct.__id, this.playerBarn, t);
                         var i = null,
                             r = a.sound;
                         if (e.type == g.Airdrop) i = this.pingIndicators[k].ping;
@@ -6496,7 +6505,7 @@
                         else {
                             var o = this.playerBarn.ne(e.playerId);
                             if (o) {
-                                var n = this.playerBarn.ne(this.At.__id).groupId,
+                                var n = this.playerBarn.ne(this.Ct.__id).groupId,
                                     s = o.groupId;
                                 if (n == s) {
                                     var l = this.playerBarn.getGroupInfo(s),
@@ -6542,11 +6551,11 @@
                 var w = this.playerBarn,
                     k = this.camera,
                     v = f.create(p.de.x, p.de.y);
-                if (p.lostFocus && this.inputReset(), u.isBindPressed(c.TeamPingMenu) && (this.pingKeyDown || y || (this.pingKeyDown = !0, this.ua = !0)), u.isBindReleased(c.TeamPingMenu) && this.pingKeyDown && (this.pingKeyDown = !1, this.ua = this.wheelDisplayed), u.isBindPressed(c.TeamPingSingle) && (this.pingMouseTriggered || this.emoteMouseTriggered || (this.emoteScreenPos = f.copy(v), this.pingMouseTriggered = !0)), u.isBindReleased(c.TeamPingSingle) && this.pingMouseTriggered && this.triggerPing(), u.isBindPressed(c.EmoteMenu) && (this.pingMouseTriggered || this.emoteMouseTriggered || !this.pingKeyDown || (this.emoteScreenPos = f.copy(v), this.pingMouseTriggered = !0), this.pingMouseTriggered || (this.emoteScreenPos = f.copy(v), this.emoteMouseTriggered = !0)), u.isBindReleased(c.EmoteMenu) && (this.ua && this.pingMouseTriggered && this.triggerPing(), this.emoteMouseTriggered && this.triggerEmote()), this.At = a, t == a.__id && !a.ie.dead || this.disable || (this.n()/*free888*/, this.disable = !0), !this.disable) {
+                if (p.lostFocus && this.inputReset(), u.isBindPressed(c.TeamPingMenu) && (this.pingKeyDown || y || (this.pingKeyDown = !0, this.ha = !0)), u.isBindReleased(c.TeamPingMenu) && this.pingKeyDown && (this.pingKeyDown = !1, this.ha = this.wheelDisplayed), u.isBindPressed(c.TeamPingSingle) && (this.pingMouseTriggered || this.emoteMouseTriggered || (this.emoteScreenPos = f.copy(v), this.pingMouseTriggered = !0)), u.isBindReleased(c.TeamPingSingle) && this.pingMouseTriggered && this.triggerPing(), u.isBindPressed(c.EmoteMenu) && (this.pingMouseTriggered || this.emoteMouseTriggered || !this.pingKeyDown || (this.emoteScreenPos = f.copy(v), this.pingMouseTriggered = !0), this.pingMouseTriggered || (this.emoteScreenPos = f.copy(v), this.emoteMouseTriggered = !0)), u.isBindReleased(c.EmoteMenu) && (this.ha && this.pingMouseTriggered && this.triggerPing(), this.emoteMouseTriggered && this.triggerEmote()), this.Ct = a, t == a.__id && !a.ie.dead || this.disable || (this.n(), this.disable = !0), !this.disable) {
                     var z = a.re.weapons[a.re.curWeapIdx],
                         M = l.items[z.name],
                         T = "";
-                    if (M && (T = M.ammo ? M.ammo : T), this.wheelKeyTriggered = this.ua || this.emoteMouseTriggered, this.emoteSoftTicker -= e, this.emoteCounter >= l.player.emoteThreshold && this.emoteHardTicker > 0 ? (this.emoteHardTicker -= e, this.emoteHardTicker < 0 && (this.emoteCounter = 0)) : this.emoteSoftTicker < 0 && this.emoteCounter > 0 && (this.emoteCounter--, this.emoteSoftTicker = 1.5 * l.player.emoteSoftCooldown), !this.pingMouseTriggered && !this.emoteMouseTriggered || this.wheelDisplayed || (this.parentDisplayed = this.pingMouseTriggered ? this.teamPingWheel : this.emoteWheel, this.parentDisplayed.css({
+                    if (M && (T = M.ammo ? M.ammo : T), this.wheelKeyTriggered = this.ha || this.emoteMouseTriggered, this.emoteSoftTicker -= e, this.emoteCounter >= l.player.emoteThreshold && this.emoteHardTicker > 0 ? (this.emoteHardTicker -= e, this.emoteHardTicker < 0 && (this.emoteCounter = 0)) : this.emoteSoftTicker < 0 && this.emoteCounter > 0 && (this.emoteCounter--, this.emoteSoftTicker = 1.5 * l.player.emoteSoftCooldown), !this.pingMouseTriggered && !this.emoteMouseTriggered || this.wheelDisplayed || (this.parentDisplayed = this.pingMouseTriggered ? this.teamPingWheel : this.emoteWheel, this.parentDisplayed.css({
                             display: "block",
                             left: this.emoteScreenPos.x,
                             top: this.emoteScreenPos.y
@@ -6626,7 +6635,7 @@
                                 })
                             }
                             V.isNew = !1, V.pos = G, V.lifeIn > 0 ? V.lifeIn -= e : V.life > 0 ? V.life -= e : V.lifeOut > 0 && (V.lifeOut -= e);
-                            var Z = _.sameLayer(U, this.At.layer) ? 3 : U;
+                            var Z = _.sameLayer(U, this.Ct.layer) ? 3 : U;
                             m.addPIXIObj(V.container, Z, 5e4, V.zIdx), V.alive = V.alive && V.lifeOut > 0
                         } else V.alive = !1
                     }
@@ -6640,7 +6649,7 @@
                         ae = ee.pingContainer,
                         ie = ee.indContainer;
                     if (void 0 != te || ee.mapEvent) {
-                        var re = (w.ne(te), te == this.At.__id),
+                        var re = (w.ne(te), te == this.Ct.__id),
                             oe = w.se(te),
                             ne = ee.borderSprite.sprite,
                             se = ee.pingSprite.sprite,
@@ -6739,7 +6748,7 @@
                 }
             }
         }, e.exports = {
-            St: n
+            _t: n
         }
     },
     e9735f40: function(e, t, a) {
@@ -7164,7 +7173,7 @@
                 p.append(o("<li/>").append(this.uiPos)), p.append(o("<li/>").append(this.uiZoom)), p.append(o("<li/>").append(o("<hr/>"))), p.append(o("<li/>").append(this.uiMapSeed)), p.append(o("<li/>").append(i)), p.append(o("<li/>").append(n)), p.append(o("<li/>").append(o("<hr/>"))), p.append(o("<li/>").append(m)), o("#ui-editor-info-list").html(p)
             },
             c: function(e, t, a, i) {
-                t.ue(c.Key.Plus) && (this.zoom -= 8), t.ue(c.Key.Minus) && (this.zoom += 8), t.ue(c.Key.Zero) && (this.zoom = a.Bt()), this.zoom = s.clamp(this.zoom, .5, 400);
+                t.ue(c.Key.Plus) && (this.zoom -= 8), t.ue(c.Key.Minus) && (this.zoom += 8), t.ue(c.Key.Zero) && (this.zoom = a.Ot()), this.zoom = s.clamp(this.zoom, .5, 400);
                 var r = a.pos.x.toFixed(2),
                     o = a.pos.y.toFixed(2);
                 this.uiPos.html("Pos:  " + r + ", " + o), this.uiZoom.html("Zoom: " + this.zoom), this.uiMapSeed.html("Map seed: " + i.seed), this.loadNewMap || (this.mapSeed = i.seed)
@@ -7374,7 +7383,7 @@
                 }
             }
         }, e.exports = {
-            rt: i
+            it: i
         }
     },
     f2372804: function(e, t, a) {
@@ -8311,7 +8320,7 @@
         }
 
         function o(e) {
-            this.ga = [], this.ya = [], this.airstrikeZoneContainer = new n.Container, this.audioManager = e
+            this.ua = [], this.ga = [], this.airstrikeZoneContainer = new n.Container, this.audioManager = e
         }
         var n = a("8b1dfb45"),
             s = a("6b42806d"),
@@ -8340,7 +8349,7 @@
             c: function(e, t, a) {
                 this.ticker += e, this.gfx.visible = !0, this.ticker >= this.duration && (this.gfx.visible = !1, this.active = !1)
             },
-            Ft: function(e, t, a) {
+            Rt: function(e, t, a) {
                 var i = e.getMapPosFromWorldPos(this.pos, t),
                     r = e.getMapPosFromWorldPos(p.add(this.pos, p.create(this.rad, 0)), t),
                     o = p.length(p.sub(r, i)),
@@ -8352,44 +8361,44 @@
             }
         }, o.prototype = {
             n: function() {
-                for (var e = 0; e < this.ga/*planes.planes888*/.length; e++) this.ga[e].n(this.audioManager)
+                for (var e = 0; e < this.ua.length; e++) this.ua[e].n(this.audioManager)
             },
-            Xt: function(e, t) {
-                for (var a = 0; a < this.ga.length; a++) this.ga[a].dirty = !0;
+            Zt: function(e, t) {
+                for (var a = 0; a < this.ua.length; a++) this.ua[a].dirty = !0;
                 for (var i = 0; i < e.length; i++) {
-                    for (var r = e[i], o = null, n = 0; n < this.ga.length; n++) {
-                        var s = this.ga[n];
+                    for (var r = e[i], o = null, n = 0; n < this.ua.length; n++) {
+                        var s = this.ua[n];
                         if (s.active && s.id == r.id) {
                             o = s;
                             break
                         }
                     }
-                    o || (o = this.wa(r, t)), o.dirty = !1, o.actionComplete = r.actionComplete
+                    o || (o = this.ya(r, t)), o.dirty = !1, o.actionComplete = r.actionComplete
                 }
-                for (var l = 0; l < this.ga.length; l++) {
-                    var c = this.ga[l];/*planes.planes888*/
+                for (var l = 0; l < this.ua.length; l++) {
+                    var c = this.ua[l];
                     c.active && c.dirty && c.n(this.audioManager)
                 }
             },
-            wa: function(e, t) {
-                for (var a = null, r = 0; r < this.ga.length; r++)
-                    if (!this.ga[r].active) {
-                        a = this.ga[r];
+            ya: function(e, t) {
+                for (var a = null, r = 0; r < this.ua.length; r++)
+                    if (!this.ua[r].active) {
+                        a = this.ua[r];
                         break
                     }
-                return a || (a = new i, this.ga.push(a)), a.o(e, t), a
+                return a || (a = new i, this.ua.push(a)), a.o(e, t), a
             },
-            Yt: function(e) {
-                for (var t = null, a = 0; a < this.ya.length; a++)
-                    if (!this.ya[a]) {
-                        t = this.ya[a];
+            Xt: function(e) {
+                for (var t = null, a = 0; a < this.ga.length; a++)
+                    if (!this.ga[a]) {
+                        t = this.ga[a];
                         break
                     }
-                return t || (t = new r(this.airstrikeZoneContainer), this.ya.push(t)), t.o(e.pos, e.rad, e.duration), t
+                return t || (t = new r(this.airstrikeZoneContainer), this.ga.push(t)), t.o(e.pos, e.rad, e.duration), t
             },
             c: function(e, t, a, i, r) {
-                for (var o = 0; o < this.ga.length; o++) {
-                    var n = this.ga[o];
+                for (var o = 0; o < this.ua.length; o++) {
+                    var n = this.ua[o];
                     if (n.active) {
                         var d = 0;
                         if (!(m.sameLayer(d, a.layer) || 2 & a.layer) || 2 & a.layer && i.insideStructureMask(s.createCircle(n.pos, 1)) || (d |= 2), n.pos = p.add(n.pos, p.mul(n.planeDir, e * n.config.planeVel)), n.actionComplete && (n.spriteUpdateTime = Math.min(n.spriteUpdateTime + e, 2), n.spriteUpdateTime, n.rad = c.lerp(n.spriteUpdateTime, n.config.planeRad, 1.25 * n.config.planeRad), n.alpha = c.lerp(n.spriteUpdateTime, .75, .5625), n.soundRangeMult = c.max(0, c.lerp(n.spriteUpdateTime, n.config.soundRangeMult, n.config.soundRangeMult - n.config.soundRangeDelta))), n.soundInstance) n.soundUpdateThrottle < 0 ? (this.audioManager.updateSound(n.soundInstance, "sfx", n.pos, {
@@ -8426,19 +8435,19 @@
                         1 == a.layer ? f = 0 : (a.re.scopedIn || 1 & a.layer) && (f = .15), n.renderAlpha = c.lerp(3 * e, n.renderAlpha, f), n.sprite.position.set(w.x, w.y), n.sprite.scale.set(x, x), n.sprite.tint = 16776960, n.sprite.alpha = n.renderAlpha, n.sprite.visible = !0
                     }
                 }
-                for (var b = 0; b < this.ya.length; b++) {
-                    var _ = this.ya[b];
+                for (var b = 0; b < this.ga.length; b++) {
+                    var _ = this.ga[b];
                     _.active && _.c(e)
                 }
             },
             renderAirstrikeZones: function(e, t, a) {
-                for (var i = 0; i < this.ya.length; i++) {
-                    var r = this.ya[i];
-                    r.active && r.Ft(e, t, a)
+                for (var i = 0; i < this.ga.length; i++) {
+                    var r = this.ga[i];
+                    r.active && r.Rt(e, t, a)
                 }
             }
         }, e.exports = {
-            ct: o
+            lt: o
         }
     },
     feb8fc30: function(e, t, a) {
@@ -8498,4 +8507,4 @@
         }
     }
 }, ["c99e6613"]);
-//# sourceMappingURL=app.706cafe7.js.map
+//# sourceMappingURL=app.cfb6fe8b.js.map
