@@ -680,1830 +680,6 @@
                     }
                 }
             }],
-            faction: [{
-                meta: {
-                    image: "faction-0-100-7b732e78.png",
-                    size: {
-                        w: 4096,
-                        h: 4096
-                    },
-                    scale: 1
-                },
-                frames: {
-                    "map-complex-warehouse-floor-02.img": {
-                        frame: {
-                            x: 1302,
-                            y: 2,
-                            w: 1504,
-                            h: 1888
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1504,
-                            h: 1888
-                        },
-                        sourceSize: {
-                            w: 1504,
-                            h: 1888
-                        }
-                    },
-                    "map-complex-warehouse-floor-04.img": {
-                        frame: {
-                            x: 2,
-                            y: 2,
-                            w: 1296,
-                            h: 2048
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1296,
-                            h: 2048
-                        },
-                        sourceSize: {
-                            w: 1296,
-                            h: 2048
-                        }
-                    },
-                    "map-building-bridge-xlg-floor.img": {
-                        frame: {
-                            x: 2,
-                            y: 2054,
-                            w: 2464,
-                            h: 960
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 2464,
-                            h: 960
-                        },
-                        sourceSize: {
-                            w: 2464,
-                            h: 960
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-03a.img": {
-                        frame: {
-                            x: 2810,
-                            y: 2,
-                            w: 764,
-                            h: 862
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 764,
-                            h: 862
-                        },
-                        sourceSize: {
-                            w: 768,
-                            h: 864
-                        }
-                    },
-                    "map-complex-warehouse-floor-01.img": {
-                        frame: {
-                            x: 2810,
-                            y: 868,
-                            w: 338,
-                            h: 826
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 338,
-                            h: 826
-                        },
-                        sourceSize: {
-                            w: 340,
-                            h: 828
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-01b.img": {
-                        frame: {
-                            x: 2,
-                            y: 3018,
-                            w: 798,
-                            h: 770
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 798,
-                            h: 770
-                        },
-                        sourceSize: {
-                            w: 804,
-                            h: 804
-                        }
-                    },
-                    "map-building-greenhouse-floor-01.img": {
-                        frame: {
-                            x: 804,
-                            y: 3018,
-                            w: 832,
-                            h: 641
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 832,
-                            h: 641
-                        },
-                        sourceSize: {
-                            w: 834,
-                            h: 642
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-02a.img": {
-                        frame: {
-                            x: 2810,
-                            y: 1698,
-                            w: 764,
-                            h: 628
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 0,
-                            w: 764,
-                            h: 628
-                        },
-                        sourceSize: {
-                            w: 772,
-                            h: 628
-                        }
-                    },
-                    "map-bunker-chrys-chamber-floor-01b.img": {
-                        frame: {
-                            x: 1640,
-                            y: 3018,
-                            w: 928,
-                            h: 624
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 0,
-                            w: 928,
-                            h: 624
-                        },
-                        sourceSize: {
-                            w: 932,
-                            h: 628
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-01a.img": {
-                        frame: {
-                            x: 3152,
-                            y: 868,
-                            w: 228,
-                            h: 604
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 36,
-                            w: 228,
-                            h: 604
-                        },
-                        sourceSize: {
-                            w: 228,
-                            h: 644
-                        }
-                    },
-                    "map-complex-warehouse-floor-03.img": {
-                        frame: {
-                            x: 2810,
-                            y: 2330,
-                            w: 562,
-                            h: 498
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 562,
-                            h: 498
-                        },
-                        sourceSize: {
-                            w: 564,
-                            h: 499
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-01b.img": {
-                        frame: {
-                            x: 2572,
-                            y: 3018,
-                            w: 354,
-                            h: 368
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 2,
-                            w: 354,
-                            h: 368
-                        },
-                        sourceSize: {
-                            w: 356,
-                            h: 372
-                        }
-                    },
-                    "map-building-greenhouse-ceiling-01.img": {
-                        frame: {
-                            x: 2930,
-                            y: 3018,
-                            w: 400,
-                            h: 314
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 0,
-                            w: 400,
-                            h: 314
-                        },
-                        sourceSize: {
-                            w: 404,
-                            h: 316
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-03b.img": {
-                        frame: {
-                            x: 3578,
-                            y: 2,
-                            w: 352,
-                            h: 306
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 352,
-                            h: 306
-                        },
-                        sourceSize: {
-                            w: 356,
-                            h: 308
-                        }
-                    },
-                    "map-statue-01.img": {
-                        frame: {
-                            x: 3578,
-                            y: 312,
-                            w: 282,
-                            h: 282
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 67,
-                            y: 67,
-                            w: 282,
-                            h: 282
-                        },
-                        sourceSize: {
-                            w: 416,
-                            h: 416
-                        }
-                    },
-                    "map-bunker-chrys-chamber-ceiling-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 3792,
-                            w: 448,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 448,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 448,
-                            h: 272
-                        }
-                    },
-                    "map-stone-03f.img": {
-                        frame: {
-                            x: 3578,
-                            y: 598,
-                            w: 276,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 8,
-                            w: 276,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 288
-                        }
-                    },
-                    "map-planter-01.img": {
-                        frame: {
-                            x: 3578,
-                            y: 874,
-                            w: 144,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 272
-                        }
-                    },
-                    "map-planter-02.img": {
-                        frame: {
-                            x: 3726,
-                            y: 874,
-                            w: 144,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 272
-                        }
-                    },
-                    "map-planter-03.img": {
-                        frame: {
-                            x: 3578,
-                            y: 1150,
-                            w: 144,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 272
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-02b.img": {
-                        frame: {
-                            x: 3578,
-                            y: 1426,
-                            w: 352,
-                            h: 258
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 0,
-                            w: 352,
-                            h: 258
-                        },
-                        sourceSize: {
-                            w: 356,
-                            h: 260
-                        }
-                    },
-                    "map-airdrop-03.img": {
-                        frame: {
-                            x: 3578,
-                            y: 1688,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "player-patch-02.img": {
-                        frame: {
-                            x: 3384,
-                            y: 868,
-                            w: 116,
-                            h: 60
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 22,
-                            y: 1,
-                            w: 116,
-                            h: 60
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
-                    "map-crate-12.img": {
-                        frame: {
-                            x: 3578,
-                            y: 2208,
-                            w: 240,
-                            h: 240
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 240,
-                            h: 240
-                        },
-                        sourceSize: {
-                            w: 240,
-                            h: 240
-                        }
-                    },
-                    "map-crate-13.img": {
-                        frame: {
-                            x: 3578,
-                            y: 2452,
-                            w: 240,
-                            h: 240
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 240,
-                            h: 240
-                        },
-                        sourceSize: {
-                            w: 240,
-                            h: 240
-                        }
-                    },
-                    "player-helmet-leader.img": {
-                        frame: {
-                            x: 3726,
-                            y: 1150,
-                            w: 180,
-                            h: 240
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 180,
-                            h: 240
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "player-helmet-lieutenant.img": {
-                        frame: {
-                            x: 3578,
-                            y: 2696,
-                            w: 180,
-                            h: 240
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 180,
-                            h: 240
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "map-bunker-generic-floor-03.img": {
-                        frame: {
-                            x: 3762,
-                            y: 2696,
-                            w: 160,
-                            h: 230
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 230
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 230
-                        }
-                    },
-                    "map-bunker-generic-ceiling-02.img": {
-                        frame: {
-                            x: 3578,
-                            y: 2940,
-                            w: 160,
-                            h: 230
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 230
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 230
-                        }
-                    },
-                    "map-stone-res-02f.img": {
-                        frame: {
-                            x: 3578,
-                            y: 3174,
-                            w: 200,
-                            h: 200
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 200,
-                            h: 200
-                        },
-                        sourceSize: {
-                            w: 200,
-                            h: 200
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-01a.img": {
-                        frame: {
-                            x: 3742,
-                            y: 2940,
-                            w: 112,
-                            h: 192
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 112,
-                            h: 192
-                        },
-                        sourceSize: {
-                            w: 112,
-                            h: 192
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-02b.img": {
-                        frame: {
-                            x: 2810,
-                            y: 2832,
-                            w: 508,
-                            h: 180
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 20,
-                            y: 0,
-                            w: 508,
-                            h: 180
-                        },
-                        sourceSize: {
-                            w: 548,
-                            h: 180
-                        }
-                    },
-                    "map-bunker-chrys-chamber-floor-01a.img": {
-                        frame: {
-                            x: 3578,
-                            y: 3378,
-                            w: 160,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 34,
-                            y: 32,
-                            w: 160,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 228,
-                            h: 180
-                        }
-                    },
-                    "map-crate-22.img": {
-                        frame: {
-                            x: 3782,
-                            y: 3174,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-crate-02f.img": {
-                        frame: {
-                            x: 3742,
-                            y: 3378,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-statue-top-01.img": {
-                        frame: {
-                            x: 3578,
-                            y: 3530,
-                            w: 279,
-                            h: 142
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 131,
-                            y: 133,
-                            w: 279,
-                            h: 142
-                        },
-                        sourceSize: {
-                            w: 416,
-                            h: 416
-                        }
-                    },
-                    "map-statue-top-02.img": {
-                        frame: {
-                            x: 3152,
-                            y: 1476,
-                            w: 279,
-                            h: 142
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 131,
-                            y: 133,
-                            w: 279,
-                            h: 142
-                        },
-                        sourceSize: {
-                            w: 416,
-                            h: 416
-                        }
-                    },
-                    "map-planter-res-01.img": {
-                        frame: {
-                            x: 3838,
-                            y: 1688,
-                            w: 76,
-                            h: 134
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 1,
-                            w: 76,
-                            h: 134
-                        },
-                        sourceSize: {
-                            w: 86,
-                            h: 136
-                        }
-                    },
-                    "map-chest-03f.img": {
-                        frame: {
-                            x: 3578,
-                            y: 3676,
-                            w: 140,
-                            h: 102
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 140,
-                            h: 102
-                        },
-                        sourceSize: {
-                            w: 140,
-                            h: 102
-                        }
-                    },
-                    "map-planter-04.img": {
-                        frame: {
-                            x: 3822,
-                            y: 2208,
-                            w: 100,
-                            h: 100
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 100,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 100,
-                            h: 100
-                        }
-                    },
-                    "map-planter-05.img": {
-                        frame: {
-                            x: 3822,
-                            y: 2312,
-                            w: 100,
-                            h: 100
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 100,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 100,
-                            h: 100
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-02a.img": {
-                        frame: {
-                            x: 3322,
-                            y: 2832,
-                            w: 224,
-                            h: 96
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 224,
-                            h: 96
-                        },
-                        sourceSize: {
-                            w: 224,
-                            h: 96
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-03a.img": {
-                        frame: {
-                            x: 1302,
-                            y: 1894,
-                            w: 224,
-                            h: 96
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 224,
-                            h: 96
-                        },
-                        sourceSize: {
-                            w: 224,
-                            h: 96
-                        }
-                    },
-                    "player-patch-01.img": {
-                        frame: {
-                            x: 3722,
-                            y: 3676,
-                            w: 116,
-                            h: 71
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 22,
-                            y: 1,
-                            w: 116,
-                            h: 71
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
-                    "map-airdrop-04.img": {
-                        frame: {
-                            x: 3578,
-                            y: 1948,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    }
-                }
-            }],
-            desert: [{
-                meta: {
-                    image: "desert-0-100-ea7f5e98.png",
-                    size: {
-                        w: 4096,
-                        h: 4096
-                    },
-                    scale: 1
-                },
-                frames: {
-                    "map-complex-warehouse-floor-05.img": {
-                        frame: {
-                            x: 1318,
-                            y: 2,
-                            w: 522,
-                            h: 932
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 1008,
-                            w: 522,
-                            h: 932
-                        },
-                        sourceSize: {
-                            w: 1296,
-                            h: 2048
-                        }
-                    },
-                    "map-building-saloon-floor-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 2,
-                            w: 1312,
-                            h: 1312
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1312,
-                            h: 1312
-                        },
-                        sourceSize: {
-                            w: 1312,
-                            h: 1312
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-03a.img": {
-                        frame: {
-                            x: 1844,
-                            y: 2,
-                            w: 764,
-                            h: 862
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 764,
-                            h: 862
-                        },
-                        sourceSize: {
-                            w: 768,
-                            h: 864
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-01c.img": {
-                        frame: {
-                            x: 2,
-                            y: 1318,
-                            w: 798,
-                            h: 770
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 798,
-                            h: 770
-                        },
-                        sourceSize: {
-                            w: 804,
-                            h: 804
-                        }
-                    },
-                    "map-building-saloon-cellar-01.img": {
-                        frame: {
-                            x: 804,
-                            y: 1318,
-                            w: 1052,
-                            h: 668
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 1052,
-                            h: 668
-                        },
-                        sourceSize: {
-                            w: 1056,
-                            h: 672
-                        }
-                    },
-                    "map-building-greenhouse-floor-02.img": {
-                        frame: {
-                            x: 2612,
-                            y: 2,
-                            w: 832,
-                            h: 642
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 832,
-                            h: 642
-                        },
-                        sourceSize: {
-                            w: 834,
-                            h: 642
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-02a.img": {
-                        frame: {
-                            x: 2612,
-                            y: 648,
-                            w: 764,
-                            h: 628
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 0,
-                            w: 764,
-                            h: 628
-                        },
-                        sourceSize: {
-                            w: 772,
-                            h: 628
-                        }
-                    },
-                    "map-bunker-chrys-chamber-floor-01b.img": {
-                        frame: {
-                            x: 2,
-                            y: 2092,
-                            w: 928,
-                            h: 624
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 0,
-                            w: 928,
-                            h: 624
-                        },
-                        sourceSize: {
-                            w: 932,
-                            h: 628
-                        }
-                    },
-                    "map-building-saloon-ceiling-01.img": {
-                        frame: {
-                            x: 2612,
-                            y: 1280,
-                            w: 625,
-                            h: 624
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 625,
-                            h: 624
-                        },
-                        sourceSize: {
-                            w: 656,
-                            h: 656
-                        }
-                    },
-                    "map-building-greenhouse-ceiling-02.img": {
-                        frame: {
-                            x: 1860,
-                            y: 1318,
-                            w: 400,
-                            h: 624
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 400,
-                            h: 624
-                        },
-                        sourceSize: {
-                            w: 400,
-                            h: 624
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-01a.img": {
-                        frame: {
-                            x: 2264,
-                            y: 1318,
-                            w: 228,
-                            h: 604
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 36,
-                            w: 228,
-                            h: 604
-                        },
-                        sourceSize: {
-                            w: 228,
-                            h: 644
-                        }
-                    },
-                    "map-bunker-statue-chamber-floor-01.img": {
-                        frame: {
-                            x: 934,
-                            y: 2092,
-                            w: 246,
-                            h: 539
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 32,
-                            w: 246,
-                            h: 539
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 576
-                        }
-                    },
-                    "map-tree-05c.img": {
-                        frame: {
-                            x: 1184,
-                            y: 2092,
-                            w: 470,
-                            h: 492
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 21,
-                            y: 10,
-                            w: 470,
-                            h: 492
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 512
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-01b.img": {
-                        frame: {
-                            x: 1844,
-                            y: 868,
-                            w: 354,
-                            h: 368
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 2,
-                            w: 354,
-                            h: 368
-                        },
-                        sourceSize: {
-                            w: 356,
-                            h: 372
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-03b.img": {
-                        frame: {
-                            x: 2202,
-                            y: 868,
-                            w: 352,
-                            h: 306
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 352,
-                            h: 306
-                        },
-                        sourceSize: {
-                            w: 356,
-                            h: 308
-                        }
-                    },
-                    "map-statue-03.img": {
-                        frame: {
-                            x: 1318,
-                            y: 938,
-                            w: 288,
-                            h: 282
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 67,
-                            y: 67,
-                            w: 288,
-                            h: 282
-                        },
-                        sourceSize: {
-                            w: 416,
-                            h: 416
-                        }
-                    },
-                    "map-statue-04.img": {
-                        frame: {
-                            x: 1658,
-                            y: 2092,
-                            w: 288,
-                            h: 282
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 67,
-                            y: 67,
-                            w: 288,
-                            h: 282
-                        },
-                        sourceSize: {
-                            w: 416,
-                            h: 416
-                        }
-                    },
-                    "map-bunker-chrys-chamber-ceiling-01.img": {
-                        frame: {
-                            x: 1950,
-                            y: 2092,
-                            w: 448,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 448,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 448,
-                            h: 272
-                        }
-                    },
-                    "map-stone-03b.img": {
-                        frame: {
-                            x: 2402,
-                            y: 2092,
-                            w: 276,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 8,
-                            w: 276,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 288
-                        }
-                    },
-                    "map-planter-06.img": {
-                        frame: {
-                            x: 3241,
-                            y: 1280,
-                            w: 144,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 272
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-02b.img": {
-                        frame: {
-                            x: 2682,
-                            y: 2092,
-                            w: 352,
-                            h: 258
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 0,
-                            w: 352,
-                            h: 258
-                        },
-                        sourceSize: {
-                            w: 356,
-                            h: 260
-                        }
-                    },
-                    "map-tree-06.img": {
-                        frame: {
-                            x: 3038,
-                            y: 2092,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "map-bush-res-05.img": {
-                        frame: {
-                            x: 3380,
-                            y: 648,
-                            w: 56,
-                            h: 50
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 44,
-                            y: 47,
-                            w: 56,
-                            h: 50
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-bunker-generic-floor-03.img": {
-                        frame: {
-                            x: 1610,
-                            y: 938,
-                            w: 160,
-                            h: 230
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 230
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 230
-                        }
-                    },
-                    "map-bunker-generic-ceiling-02.img": {
-                        frame: {
-                            x: 2,
-                            y: 2720,
-                            w: 160,
-                            h: 230
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 230
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 230
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-01a.img": {
-                        frame: {
-                            x: 2496,
-                            y: 1318,
-                            w: 112,
-                            h: 192
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 112,
-                            h: 192
-                        },
-                        sourceSize: {
-                            w: 112,
-                            h: 192
-                        }
-                    },
-                    "map-bunker-chrys-compartment-floor-02c.img": {
-                        frame: {
-                            x: 2612,
-                            y: 1908,
-                            w: 508,
-                            h: 180
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 20,
-                            y: 0,
-                            w: 508,
-                            h: 180
-                        },
-                        sourceSize: {
-                            w: 548,
-                            h: 180
-                        }
-                    },
-                    "map-building-saloon-ceiling-02.img": {
-                        frame: {
-                            x: 3124,
-                            y: 1908,
-                            w: 192,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 192,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 192,
-                            h: 160
-                        }
-                    },
-                    "map-bunker-chrys-chamber-floor-01a.img": {
-                        frame: {
-                            x: 1658,
-                            y: 2378,
-                            w: 160,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 34,
-                            y: 32,
-                            w: 160,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 228,
-                            h: 180
-                        }
-                    },
-                    "map-crate-02f.img": {
-                        frame: {
-                            x: 3298,
-                            y: 2092,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-crate-18.img": {
-                        frame: {
-                            x: 1822,
-                            y: 2378,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-crate-22.img": {
-                        frame: {
-                            x: 1970,
-                            y: 2378,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-bush-05.img": {
-                        frame: {
-                            x: 2118,
-                            y: 2378,
-                            w: 140,
-                            h: 139
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 140,
-                            h: 139
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-planter-res-02.img": {
-                        frame: {
-                            x: 3320,
-                            y: 1908,
-                            w: 76,
-                            h: 134
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 1,
-                            w: 76,
-                            h: 134
-                        },
-                        sourceSize: {
-                            w: 86,
-                            h: 136
-                        }
-                    },
-                    "map-building-archway-ceiling-01.img": {
-                        frame: {
-                            x: 2262,
-                            y: 2378,
-                            w: 672,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 672,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 672,
-                            h: 128
-                        }
-                    },
-                    "map-stone-06.img": {
-                        frame: {
-                            x: 2938,
-                            y: 2378,
-                            w: 288,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 288,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 128
-                        }
-                    },
-                    "map-stone-res-01b.img": {
-                        frame: {
-                            x: 3230,
-                            y: 2378,
-                            w: 118,
-                            h: 118
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 118,
-                            h: 118
-                        },
-                        sourceSize: {
-                            w: 120,
-                            h: 120
-                        }
-                    },
-                    "map-case-meteor-res-01.img": {
-                        frame: {
-                            x: 166,
-                            y: 2720,
-                            w: 128,
-                            h: 115
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 13,
-                            y: 10,
-                            w: 128,
-                            h: 115
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-case-meteor-01.img": {
-                        frame: {
-                            x: 3241,
-                            y: 1800,
-                            w: 140,
-                            h: 102
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 140,
-                            h: 102
-                        },
-                        sourceSize: {
-                            w: 140,
-                            h: 102
-                        }
-                    },
-                    "map-planter-07.img": {
-                        frame: {
-                            x: 2496,
-                            y: 1514,
-                            w: 100,
-                            h: 100
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 100,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 100,
-                            h: 100
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-02a.img": {
-                        frame: {
-                            x: 804,
-                            y: 1990,
-                            w: 224,
-                            h: 96
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 224,
-                            h: 96
-                        },
-                        sourceSize: {
-                            w: 224,
-                            h: 96
-                        }
-                    },
-                    "map-bunker-chrys-compartment-ceiling-03a.img": {
-                        frame: {
-                            x: 1032,
-                            y: 1990,
-                            w: 224,
-                            h: 96
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 224,
-                            h: 96
-                        },
-                        sourceSize: {
-                            w: 224,
-                            h: 96
-                        }
-                    },
-                    "map-archway-res-01.img": {
-                        frame: {
-                            x: 1318,
-                            y: 1224,
-                            w: 358,
-                            h: 90
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 2,
-                            w: 358,
-                            h: 90
-                        },
-                        sourceSize: {
-                            w: 360,
-                            h: 96
-                        }
-                    },
-                    "map-planter-res-03.img": {
-                        frame: {
-                            x: 1844,
-                            y: 1240,
-                            w: 82,
-                            h: 74
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 6,
-                            w: 82,
-                            h: 74
-                        },
-                        sourceSize: {
-                            w: 86,
-                            h: 86
-                        }
-                    },
-                    "player-helmet-leader.img": {
-                        frame: {
-                            x: 3241,
-                            y: 1556,
-                            w: 180,
-                            h: 240
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 180,
-                            h: 240
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    }
-                }
-            }],
             main: [{
                 meta: {
                     image: "main-0-100-45aaaeff.png",
@@ -8187,7 +6363,7 @@
     "989ad62a": function(e, t, a) {
         "use strict";
         e.exports = {
-            protocolVersion: 53,
+            protocolVersion: 54,
             Input: {
                 MoveLeft: 0,
                 MoveRight: 1,
@@ -15706,7 +13882,8 @@
                         baseTint: 16777215,
                         baseTintRed: 16777215,
                         baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-forest.img"
+                        baseSprite: "player-helmet-forest.img",
+                        spriteScale: .3
                     },
                     lootImg: {
                         sprite: "player-helmet-forest.img",
@@ -15729,7 +13906,8 @@
                         baseTint: 16777215,
                         baseTintRed: 16777215,
                         baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-moon.img"
+                        baseSprite: "player-helmet-moon.img",
+                        spriteScale: .3
                     },
                     lootImg: {
                         sprite: "loot-helmet-03.img",
@@ -15752,7 +13930,8 @@
                         baseTint: 16777215,
                         baseTintRed: 16777215,
                         baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-lieutenant.img"
+                        baseSprite: "player-helmet-lieutenant.img",
+                        spriteScale: .3
                     },
                     lootImg: {
                         sprite: "loot-helmet-03.img",
@@ -15760,6 +13939,31 @@
                         border: "loot-circle-outer-01.img",
                         borderTint: 0,
                         scale: .2
+                    },
+                    sound: {
+                        pickup: "helmet_pickup_01"
+                    }
+                },
+                helmet03_lt_aged: {
+                    name: "Lieutenant Helmet",
+                    type: "helmet",
+                    level: 3,
+                    damageReduction: .55,
+                    becomeLieutenant: !0,
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-lieutenant.img",
+                        spriteScale: .3
+                    },
+                    lootImg: {
+                        sprite: "player-helmet-lieutenant.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2,
+                        rot: .5 * Math.PI
                     },
                     sound: {
                         pickup: "helmet_pickup_01"
@@ -15775,14 +13979,16 @@
                         baseTint: 16777215,
                         baseTintRed: 16777215,
                         baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-leader.img"
+                        baseSprite: "player-helmet-leader.img",
+                        spriteScale: .3
                     },
                     lootImg: {
-                        sprite: "loot-helmet-03.img",
+                        sprite: "player-helmet-leader.img",
                         tint: 16777215,
                         border: "loot-circle-outer-01.img",
                         borderTint: 0,
-                        scale: .2
+                        scale: .3,
+                        rot: .5 * Math.PI
                     },
                     sound: {
                         pickup: "helmet_pickup_01"
@@ -16067,16 +14273,16 @@
             },
             o: function() {
                 var e;
-                this.canvasMode = this.pixi.renderer.type == o.RENDERER_TYPE.CANVAS, this._ = !1, this.qe = !1, this.Ge = 0, this.H = !1, this.Ue = !1, this.He = new j.We(this.Re, this.config), this.ae = new f.j, this.Ke = new L.Ze(this, this.canvasMode), this.Xe = new E.d(this.Ke), this.Ye = new C.Je, this.Qe = new O.$e, this.et = new x.tt, this.at = new M.it, this.rt = new B.ot, this.nt = new v.ke, this.st = new D.lt(this.Be), this.ct = new w.J, this.mt = new F.p, this.dt = new b.Te, this.ht = new S.f, this.ut = new I.gt, this.yt = new T.wt(this.canvasMode), this.Ve = new N.me(this, this.Be, this.Xe, this.st, this.localization, this.canvasMode, this.He, this.Fe, this.je, this.adManager), this.xt = new V.ft(this.localization, this.Fe), this.bt = new k._t(this.Be, this.Ve, this.Qe, this.ae, this.Ye), this.St = new R.ze(this.Xe, this.Be, this.Ve);
-                var t = (e = {}, i(e, l.Type.Player, this.Qe.Se), i(e, l.Type.Obstacle, this.Ye.pe), i(e, l.Type.Loot, this.ut.kt), i(e, l.Type.DeadBody, this.dt.Me), i(e, l.Type.Building, this.Ye.vt), i(e, l.Type.Structure, this.Ye.zt), i(e, l.Type.Decal, this.ht.u), i(e, l.Type.Projectile, this.rt.Mt), i(e, l.Type.Smoke, this.mt.e), i(e, l.Type.Airdrop, this.ct.Y), e);
-                this.Tt = new A.Creator;
-                for (var a in t) t.hasOwnProperty(a) && this.Tt.registerType(a, t[a]);
+                this.canvasMode = this.pixi.renderer.type == o.RENDERER_TYPE.CANVAS, this._ = !1, this.qe = 0, this.H = !1, this.Ge = !1, this.Ue = new j.He(this.Re, this.config), this.ae = new f.j, this.We = new L.Ke(this, this.canvasMode), this.Ze = new E.d(this.We), this.Xe = new C.Ye, this.Je = new O.Qe, this.$e = new x.et, this.tt = new M.at, this.it = new B.rt, this.ot = new v.ke, this.nt = new D.st(this.Be), this.lt = new w.J, this.ct = new F.p, this.mt = new b.Te, this.dt = new S.f, this.ht = new I.ut, this.gt = new T.yt(this.canvasMode), this.Ve = new N.me(this, this.Be, this.Ze, this.nt, this.localization, this.canvasMode, this.Ue, this.Fe, this.je, this.adManager), this.wt = new V.xt(this.localization, this.Fe), this.ft = new k.bt(this.Be, this.Ve, this.Je, this.ae, this.Xe), this._t = new R.ze(this.Ze, this.Be, this.Ve);
+                var t = (e = {}, i(e, l.Type.Player, this.Je.Se), i(e, l.Type.Obstacle, this.Xe.pe), i(e, l.Type.Loot, this.ht.St), i(e, l.Type.DeadBody, this.mt.Me), i(e, l.Type.Building, this.Xe.kt), i(e, l.Type.Structure, this.Xe.vt), i(e, l.Type.Decal, this.dt.u), i(e, l.Type.Projectile, this.it.zt), i(e, l.Type.Smoke, this.ct.e), i(e, l.Type.Airdrop, this.lt.Y), e);
+                this.Mt = new A.Creator;
+                for (var a in t) t.hasOwnProperty(a) && this.Mt.registerType(a, t[a]);
                 this.debugDisplay = new o.Graphics;
-                for (var r = [this.Ye.display.ground, this.Ke.layers[0], this.Ke.ground, this.Ke.layers[1], this.Ke.layers[2], this.Ke.layers[3], this.debugDisplay, this.yt.gasRenderer.display, this.He.container, this.bt.container, this.Ve.container, this.Ve.pieTimer.container, this.bt.indContainer], n = 0; n < r.length; n++) {
+                for (var r = [this.Xe.display.ground, this.We.layers[0], this.We.ground, this.We.layers[1], this.We.layers[2], this.We.layers[3], this.debugDisplay, this.gt.gasRenderer.display, this.Ue.container, this.ft.container, this.Ve.container, this.Ve.pieTimer.container, this.ft.indContainer], n = 0; n < r.length; n++) {
                     var s = r[n];
                     s && (s.interactiveChildren = !1, this.pixi.stage.addChild(s))
                 }
-                this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.inputMsgTimeout = 0, this.prevInputMsg = new h.InputMsg, this.playingTicker = 0, this.updateRecvCount = 0, this.playedAssignRoleSfx = {}, this.Pt = 0, this.It = 0, this.Ct = null, this.At = !1, this.I = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.ae.setShakeEnabled(this.config.get("screenShake")), this.name = this.config.get("playerName"), this.anonPlayerNames = this.config.get("anonPlayerNames");
+                this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.inputMsgTimeout = 0, this.prevInputMsg = new h.InputMsg, this.playingTicker = 0, this.updateRecvCount = 0, this.playedAssignRoleSfx = {}, this.Tt = 0, this.Pt = 0, this.It = null, this.Ct = !1, this.I = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.ae.setShakeEnabled(this.config.get("screenShake")), this.name = this.config.get("playerName"), this.anonPlayerNames = this.config.get("anonPlayerNames");
                 var c = {
                     emoteTop: m.Top,
                     emoteRight: m.Right,
@@ -16092,61 +14298,61 @@
                         _ = d.clamp(y, 1, 255);
                     this.emoteLoadout[c[g]] = _
                 }
-                this.bt.updateEmoteWheel(this.emoteLoadout), document.hasFocus() || this.Be.playSound("notification_start_01", {
+                this.ft.updateEmoteWheel(this.emoteLoadout), document.hasFocus() || this.Be.playSound("notification_start_01", {
                     channel: "ui"
-                }), this.Et(), this.initialized = !0
+                }), this.At(), this.initialized = !0
             },
             n: function() {
                 if (this.ws && (this.ws.onmessage = function() {}, this.ws.close(), this.ws = null), this.connecting = !1, this.connected = !1, this.initialized)
-                    for (this.initialized = !1, this.bt.n(), this.xt.n(), this.Ve.n(), this.yt.free(), this.ct.n(), this.st.n(), this.Ye.n(), this.Xe.n(), this.Ke.n(), this.Be.stopAll(); this.pixi.stage.children.length > 0;) {
+                    for (this.initialized = !1, this.ft.n(), this.wt.n(), this.Ve.n(), this.gt.free(), this.lt.n(), this.nt.n(), this.Xe.n(), this.Ze.n(), this.We.n(), this.Be.stopAll(); this.pixi.stage.children.length > 0;) {
                         var e = this.pixi.stage.children[0];
                         this.pixi.stage.removeChild(e), e.destroy({
                             children: !0
                         })
                     }
             },
-            Dt: function() {
+            Et: function() {
                 return this.initialized && this.playing && !this.spectating && !this.Ve.displayingStats
             },
             c: function(e) {
-                var t = this.mt.particles,
-                    a = this.Ye.pe.m(),
+                var t = this.ct.particles,
+                    a = this.Xe.pe.m(),
                     i = 0;
-                this._ = !0, this.qe = !0;
+                this._ = !0;
                 var r = {};
-                r.render = r.render || {}, this.playing && (this.playingTicker += e), this.Qe.c(e, this.It, this.teamMode, this.Ke, this.Xe, this.ae, this.Ye, this.Fe, this.Be, this.bt.wheelKeyTriggered, this.Ve.displayingStats, this.spectating), this.updateAmbience(), this.ae.pos = u.copy(this.Ct.pos), this.ae.applyShake();
-                var o = this.Ct.Ot(),
+                r.render = r.render || {}, this.playing && (this.playingTicker += e), this.Je.c(e, this.Pt, this.teamMode, this.We, this.Ze, this.ae, this.Xe, this.Fe, this.Be, this.ft.wheelKeyTriggered, this.Ve.displayingStats, this.spectating), this.updateAmbience(), this.ae.pos = u.copy(this.It.pos), this.ae.applyShake();
+                var o = this.It.Dt(),
                     l = d.min(this.ae.screenWidth, this.ae.screenHeight),
                     c = d.max(this.ae.screenWidth, this.ae.screenHeight),
                     m = d.max(l * (16 / 9), c);
                 this.ae.I = .5 * m / (o * this.ae.ppu);
-                var w = this.Ct.zoomFast ? 3 : 2,
-                    x = this.Ct.zoomFast ? 3 : 1.4,
+                var w = this.It.zoomFast ? 3 : 2,
+                    x = this.It.zoomFast ? 3 : 1.4,
                     f = this.ae.I > this.ae.k ? w : x;
                 this.ae.k = d.lerp(e * f, this.ae.k, this.ae.I), this.Be.cameraPos = u.copy(this.ae.pos), this.Re.ue(P.Key.Escape) && this.Ve.toggleEscMenu(), (this.Fe.isBindPressed(s.ToggleMap) || this.Re.ue(P.Key.G) && !this.Fe.isKeyBound(P.Key.G)) && this.Ve.displayMapLarge(!1), this.Fe.isBindPressed(s.CycleUIMode) && this.Ve.cycleVisibilityMode(), (this.Fe.isBindPressed(s.HideUI) || this.Re.ue(P.Key.Escape) && !this.Ve.hudVisible) && this.Ve.cycleHud();
-                var b = this.Ct.pos,
+                var b = this.It.pos,
                     _ = this.ae.O(this.Re.de),
                     S = u.sub(_, b),
                     k = u.length(S),
                     v = k > 1e-5 ? u.div(S, k) : u.create(1, 0);
-                this.bt.wheelDisplayed && (k = this.prevInputMsg.toMouseLen, v = this.prevInputMsg.toMouseDir);
+                this.ft.wheelDisplayed && (k = this.prevInputMsg.toMouseLen, v = this.prevInputMsg.toMouseDir);
                 var z = new h.InputMsg;
                 if (z.seq = this.seq, !this.spectating) {
                     if (g.touch) {
-                        var M = this.He.getTouchMovement(this.ae),
-                            T = this.He.getAimMovement(this.Ct, this.ae),
+                        var M = this.Ue.getTouchMovement(this.ae),
+                            T = this.Ue.getAimMovement(this.It, this.ae),
                             I = u.copy(T.aimMovement.toAimDir);
-                        if (this.He.turnDirTicker -= e, this.He.moveDetected && !T.touched) {
+                        if (this.Ue.turnDirTicker -= e, this.Ue.moveDetected && !T.touched) {
                             var C = u.normalizeSafe(M.toMoveDir, u.create(1, 0)),
-                                A = this.He.turnDirTicker < 0 ? C : T.aimMovement.toAimDir;
-                            this.He.setAimDir(A), I = A
+                                A = this.Ue.turnDirTicker < 0 ? C : T.aimMovement.toAimDir;
+                            this.Ue.setAimDir(A), I = A
                         }
-                        T.touched && (this.He.turnDirTicker = this.He.turnDirCooldown), this.He.moveDetected ? (z.touchMoveDir = u.normalizeSafe(M.toMoveDir, u.create(1, 0)), z.touchMoveLen = Math.round(255 * d.clamp(M.toMoveLen, 0, 1))) : z.touchMoveLen = 0, z.touchMoveActive = !0;
+                        T.touched && (this.Ue.turnDirTicker = this.Ue.turnDirCooldown), this.Ue.moveDetected ? (z.touchMoveDir = u.normalizeSafe(M.toMoveDir, u.create(1, 0)), z.touchMoveLen = Math.round(255 * d.clamp(M.toMoveLen, 0, 1))) : z.touchMoveLen = 0, z.touchMoveActive = !0;
                         var E = T.aimMovement.toAimLen,
-                            D = d.clamp(E / this.He.padPosRange, 0, 1) * n.player.throwableMaxMouseDist;
+                            D = d.clamp(E / this.Ue.padPosRange, 0, 1) * n.player.throwableMaxMouseDist;
                         z.toMouseLen = D, z.toMouseDir = I
                     } else z.moveLeft = this.Fe.isBindDown(s.MoveLeft) || this.Re.fe(P.Key.Left) && !this.Fe.isKeyBound(P.Key.Left), z.moveRight = this.Fe.isBindDown(s.MoveRight) || this.Re.fe(P.Key.Right) && !this.Fe.isKeyBound(P.Key.Right), z.moveUp = this.Fe.isBindDown(s.MoveUp) || this.Re.fe(P.Key.Up) && !this.Fe.isKeyBound(P.Key.Up), z.moveDown = this.Fe.isBindDown(s.MoveDown) || this.Re.fe(P.Key.Down) && !this.Fe.isKeyBound(P.Key.Down), z.toMouseDir = u.copy(v), z.toMouseLen = k;
-                    z.touchMoveDir = u.normalizeSafe(z.touchMoveDir, u.create(1, 0)), z.touchMoveLen = d.clamp(z.touchMoveLen, 0, 255), z.toMouseDir = u.normalizeSafe(z.toMouseDir, u.create(1, 0)), z.toMouseLen = d.clamp(z.toMouseLen, 0, h.Constants.kMouseMaxDist), z.shootStart = this.Fe.isBindPressed(s.Fire) || this.He.Bt, z.shootHold = this.Fe.isBindDown(s.Fire) || this.He.Bt, z.portrait = this.ae.screenWidth < this.ae.screenHeight;
+                    z.touchMoveDir = u.normalizeSafe(z.touchMoveDir, u.create(1, 0)), z.touchMoveLen = d.clamp(z.touchMoveLen, 0, 255), z.toMouseDir = u.normalizeSafe(z.toMouseDir, u.create(1, 0)), z.toMouseLen = d.clamp(z.toMouseLen, 0, h.Constants.kMouseMaxDist), z.shootStart = this.Fe.isBindPressed(s.Fire) || this.Ue.Ot, z.shootHold = this.Fe.isBindDown(s.Fire) || this.Ue.Ot, z.portrait = this.ae.screenWidth < this.ae.screenHeight;
                     for (var O = [s.Reload, s.Revive, s.Use, s.Loot, s.Cancel, s.EquipPrimary, s.EquipSecondary, s.EquipThrowable, s.EquipMelee, s.EquipNextWeap, s.EquipPrevWeap, s.EquipLastWeap, s.EquipOtherGun, s.EquipPrevScope, s.EquipNextScope, s.StowWeapons], B = 0; B < O.length; B++) {
                         var L = O[B];
                         this.Fe.isBindPressed(L) && z.addInput(L)
@@ -16159,9 +14365,9 @@
                         if (F.length == R.length) z.addInput(s.Interact);
                         else
                             for (var V = 0; V < F.length; V++) z.addInput(F[V])
-                    }(this.Fe.isBindPressed(s.SwapWeapSlots) || this.Ve.swapWeapSlots) && (z.addInput(s.SwapWeapSlots), this.Ct.gunSwitchCooldown = 0), this.Ve.reloadTouched && z.addInput(s.Reload), this.Ve.interactionTouched && (z.addInput(s.Interact), z.addInput(s.Cancel));
-                    for (var q = 0; q < this.xt.uiEvents.length; q++) {
-                        var G = this.xt.uiEvents[q];
+                    }(this.Fe.isBindPressed(s.SwapWeapSlots) || this.Ve.swapWeapSlots) && (z.addInput(s.SwapWeapSlots), this.It.gunSwitchCooldown = 0), this.Ve.reloadTouched && z.addInput(s.Reload), this.Ve.interactionTouched && (z.addInput(s.Interact), z.addInput(s.Cancel));
+                    for (var q = 0; q < this.wt.uiEvents.length; q++) {
+                        var G = this.wt.uiEvents[q];
                         if ("use" == G.action)
                             if ("weapon" == G.type) {
                                 var U = {
@@ -16175,16 +14381,16 @@
                             } else z.useItem = G.data
                     }
                     this.Fe.isBindPressed(s.UseBandage) ? z.useItem = "bandage" : this.Fe.isBindPressed(s.UseHealthKit) ? z.useItem = "healthkit" : this.Fe.isBindPressed(s.UseSoda) ? z.useItem = "soda" : this.Fe.isBindPressed(s.UsePainkiller) && (z.useItem = "painkiller");
-                    for (var W = !1, K = 0; K < this.xt.uiEvents.length; K++) {
-                        var Z = this.xt.uiEvents[K];
+                    for (var W = !1, K = 0; K < this.wt.uiEvents.length; K++) {
+                        var Z = this.wt.uiEvents[K];
                         if ("drop" == Z.action) {
                             var X = new h.DropItemMsg;
                             if ("weapon" == Z.type) {
-                                var Y = this.Ct.re.weapons;
+                                var Y = this.It.re.weapons;
                                 X.item = Y[Z.data].name, X.weapIdx = Z.data
                             } else {
                                 var J = "";
-                                J = "helmet" == Z.data ? this.Ct.ie.helmet : "chest" == Z.data ? this.Ct.ie.chest : Z.data, X.item = J
+                                J = "helmet" == Z.data ? this.It.ie.helmet : "chest" == Z.data ? this.It.ie.chest : Z.data, X.item = J
                             }
                             "" != X.item && (this.q(h.Msg.DropItem, X, 128), "fists" != X.item && (W = !0))
                         }
@@ -16213,51 +14419,51 @@
                         } else "toMouseLen" == re ? ie = Math.abs(this.prevInputMsg[re] - z[re]) > .5 : "shootStart" == re ? ie = z[re] || z[re] != this.prevInputMsg[re] : this.prevInputMsg[re] != z[re] && (ie = !0);
                         if (ie) break
                     }
-                if (this.inputMsgTimeout -= e, (ie || this.inputMsgTimeout < 0) && (this.seqInFlight || (this.seq = (this.seq + 1) % 256, this.seqSendTime = Date.now(), this.seqInFlight = !0, z.seq = this.seq), this.q(h.Msg.Input, z, 128), this.inputMsgTimeout = 1, this.prevInputMsg = z), this.xt.flushInput(), this.Ye.c(e, this.Ct, this.Qe, this.Xe, this.Be, this.Le, this.Ke, this.ae, t, r), this.ut.c(e, this.Ct, this.ae, r), this.et.c(e, this.Qe, this.Ye, this.ae, this.Ct, this.Ke, this.Xe, this.Be), this.at.c(e, this.Qe, this.Ye, this.ae, this.Ct, this.Ke, this.Xe, this.Be), this.rt.c(e, this.Xe, this.Be, this.Ct, this.Ye, this.Ke, this.ae), this.nt.c(e, this.Ye, this.Qe, this.ae, this.Xe, this.Be, r), this.ct.c(e, this.Ct, this.ae, this.Ye, this.Xe, this.Ke, this.Be), this.st.c(e, this.ae, this.Ct, this.Ye, this.Ke), this.mt.c(e, this.ae, this.Ct, this.Ye, this.Ke), this.St.c(e, this.It, this.Qe, this.Xe, this.Be), this.Xe.c(e, this.ae, r), this.dt.c(e, this.Qe, this.Ct, this.anonPlayerNames, this.Pt, this.Ye, this.ae, this.Ke), this.ht.c(e, this.ae, this.Ke, r), this.Ve.c(e, this.Ct, this.Ye, this.yt, this.ut, this.Qe, this.ae, this.teamMode, this.Ye.factionMode), this.xt.c(e, this.Ct, this.spectating, this.Qe, this.ut, this.Ye, this.Fe), this.bt.c(e, this.Pt, this.Ct, this.teamMode, this.dt, this.Ke, this.Re, this.Fe, this.spectating), this.He.update(e, this.Ct, this.Ye, this.ae, this.Ke), this.Ke.c(e, this.ae, this.Ye, r), !this.Ue && this.Ye.Lt && (this.Ye.H || this.loadoutMenu.socialUnlocks()) && this.bt.hasCustomEmotes()) {
-                    this.Ue = !0;
+                if (this.inputMsgTimeout -= e, (ie || this.inputMsgTimeout < 0) && (this.seqInFlight || (this.seq = (this.seq + 1) % 256, this.seqSendTime = Date.now(), this.seqInFlight = !0, z.seq = this.seq), this.q(h.Msg.Input, z, 128), this.inputMsgTimeout = 1, this.prevInputMsg = z), this.wt.flushInput(), this.Xe.c(e, this.It, this.Je, this.Ze, this.Be, this.Le, this.We, this.ae, t, r), this.ht.c(e, this.It, this.ae, r), this.$e.c(e, this.Je, this.Xe, this.ae, this.It, this.We, this.Ze, this.Be), this.tt.c(e, this.Je, this.Xe, this.ae, this.It, this.We, this.Ze, this.Be), this.it.c(e, this.Ze, this.Be, this.It, this.Xe, this.We, this.ae), this.ot.c(e, this.Xe, this.Je, this.ae, this.Ze, this.Be, r), this.lt.c(e, this.It, this.ae, this.Xe, this.Ze, this.We, this.Be), this.nt.c(e, this.ae, this.It, this.Xe, this.We), this.ct.c(e, this.ae, this.It, this.Xe, this.We), this._t.c(e, this.Pt, this.Je, this.Ze, this.Be), this.Ze.c(e, this.ae, r), this.mt.c(e, this.Je, this.It, this.anonPlayerNames, this.Tt, this.Xe, this.ae, this.We), this.dt.c(e, this.ae, this.We, r), this.Ve.c(e, this.It, this.Xe, this.gt, this.ht, this.Je, this.ae, this.teamMode, this.Xe.factionMode), this.wt.c(e, this.It, this.spectating, this.Je, this.ht, this.Xe, this.Fe), this.ft.c(e, this.Tt, this.It, this.teamMode, this.mt, this.We, this.Re, this.Fe, this.spectating), this.Ue.update(e, this.It, this.Xe, this.ae, this.We), this.We.c(e, this.ae, this.Xe, r), !this.Ge && this.Xe.Bt && (this.Xe.H || this.loadoutMenu.socialUnlocks()) && this.ft.hasCustomEmotes()) {
+                    this.Ge = !0;
                     var se = new h.LoadoutMsg;
                     se.emotes = [];
                     for (var le = 0; le < this.emoteLoadout.length; le++) se.emotes[le] = this.emoteLoadout[le];
-                    se.custom = this.bt.hasCustomEmotes(), this.q(h.Msg.Loadout, se, 128)
+                    se.custom = this.ft.hasCustomEmotes(), this.q(h.Msg.Loadout, se, 128)
                 }
-                for (var ce = 0; ce < this.bt.newPings.length; ce++) {
-                    var me = this.bt.newPings[ce],
+                for (var ce = 0; ce < this.ft.newPings.length; ce++) {
+                    var me = this.ft.newPings[ce],
                         pe = new h.EmoteMsg;
                     pe.type = me.type, pe.pos = me.pos, pe.useLoadout = !1, pe.teamOnly = !0, pe.isPing = !0, this.q(h.Msg.Emote, pe, 128)
                 }
-                this.bt.newPings = [];
-                for (var de = 0; de < this.bt.newEmotes.length; de++) {
-                    var he = this.bt.newEmotes[de],
+                this.ft.newPings = [];
+                for (var de = 0; de < this.ft.newEmotes.length; de++) {
+                    var he = this.ft.newEmotes[de],
                         ue = new h.EmoteMsg;
                     ue.type = he.type, ue.pos = he.pos, ue.useLoadout = he.useLoadout, ue.teamOnly = !1, ue.isPing = !1, this.q(h.Msg.Emote, ue, 128)
                 }
-                if (this.bt.newEmotes = [], this.Rt(e, r), ++this.Ge % 30 == 0) {
-                    for (var ge = p.Ft, ye = 0; ye < t.length; ye++) {
+                if (this.ft.newEmotes = [], this.Lt(e, r), ++this.qe % 30 == 0) {
+                    for (var ge = p.Rt, ye = 0; ye < t.length; ye++) {
                         var we = t[ye];
-                        we.active && !we.fade && ge(we, p.jt) && i++
+                        we.active && !we.fade && ge(we, p.Ft) && i++
                     }
                     for (var xe = 0; xe < a.length; xe++) {
                         var fe = a[xe];
-                        fe.active && !fe.dead && ge(fe, p.Nt) && i++
+                        fe.active && !fe.dead && ge(fe, p.jt) && i++
                     }
-                    i && (this.H = !0), i && this.At && y.H(this)
+                    i && (this.H = !0), i && this.Ct && y.H(this)
                 }
             },
-            Rt: function(e, t) {
-                var a = this.Ye.mapLoaded ? this.Ye.getMapDef().biome.colors.grass : 8433481;
-                this.pixi.renderer.backgroundColor = a, this.Qe.render(this.ae, t), this.et.render(this.ae, t), this.at.render(this.ae), this.Ye.render(this.ae), this.yt.render(this.ae), this.Ve.render(this.Ct.pos, this.yt, this.ae, this.Ye, this.st, t), this.bt.render(this.ae), _.flush()
+            Lt: function(e, t) {
+                var a = this.Xe.mapLoaded ? this.Xe.getMapDef().biome.colors.grass : 8433481;
+                this.pixi.renderer.backgroundColor = a, this.Je.render(this.ae, t), this.$e.render(this.ae, t), this.tt.render(this.ae), this.Xe.render(this.ae), this.gt.render(this.ae), this.Ve.render(this.It.pos, this.gt, this.ae, this.Xe, this.nt, t), this.ft.render(this.ae), _.flush()
             },
             updateAmbience: function() {
-                var e = this.Ct.pos,
+                var e = this.It.pos,
                     t = 0,
                     a = 0,
                     i = 1;
-                if (this.Ye.isInOcean(e)) t = 1, a = 0, i = 0;
+                if (this.Xe.isInOcean(e)) t = 1, a = 0, i = 0;
                 else {
-                    var r = this.Ye.distanceToShore(e);
+                    var r = this.Xe.distanceToShore(e);
                     t = d.delerp(r, 50, 0), a = 0;
-                    for (var o = 0; o < this.Ye.terrain.rivers.length; o++) {
-                        var n = this.Ye.terrain.rivers[o],
+                    for (var o = 0; o < this.Xe.terrain.rivers.length; o++) {
+                        var n = this.Xe.terrain.rivers[o],
                             s = n.spline.getClosestTtoPoint(e),
                             l = n.spline.getPos(s),
                             c = u.length(u.sub(l, e)),
@@ -16266,62 +14472,62 @@
                             h = d.clamp(n.waterWidth / 8, .25, 1);
                         a = d.max(p * h, a)
                     }
-                    a *= 1 - t, 1 == this.Ct.layer && (a = 0), i = d.clamp(1 - (t + a), 0, 1)
+                    a *= 1 - t, 1 == this.It.layer && (a = 0), i = d.clamp(1 - (t + a), 0, 1)
                 }
                 this.Le.getTrack("wind").volume = i, this.Le.getTrack("river").volume = a, this.Le.getTrack("waves").volume = t
             },
-            Et: function() {
-                this.ae.screenWidth = g.screenWidth, this.ae.screenHeight = g.screenHeight, this.Ye.resize(this.pixi.renderer, this.canvasMode), this.yt.resize(), this.Ve.resize(this.Ye, this.ae), this.He.resize(), this.Ke.resize(this.Ye, this.ae)
+            At: function() {
+                this.ae.screenWidth = g.screenWidth, this.ae.screenHeight = g.screenHeight, this.Xe.resize(this.pixi.renderer, this.canvasMode), this.gt.resize(), this.Ve.resize(this.Xe, this.ae), this.Ue.resize(), this.We.resize(this.Xe, this.ae)
             },
-            Vt: function(e) {
+            Nt: function(e) {
                 var t = {
                     audioManager: this.Be,
-                    renderer: this.Ke,
-                    particleBarn: this.Xe,
-                    map: this.Ye,
-                    smokeBarn: this.mt,
-                    decalBarn: this.ht
+                    renderer: this.We,
+                    particleBarn: this.Ze,
+                    map: this.Xe,
+                    smokeBarn: this.ct,
+                    decalBarn: this.dt
                 };
-                e.activePlayerIdDirty && (this.It = e.activePlayerId);
-                for (var a = 0; a < e.playerInfos.length; a++) this.Qe.qt(e.playerInfos[a]);
+                e.activePlayerIdDirty && (this.Pt = e.activePlayerId);
+                for (var a = 0; a < e.playerInfos.length; a++) this.Je.Vt(e.playerInfos[a]);
                 for (var i = 0; i < e.deletedPlayerIds.length; i++) {
                     var r = e.deletedPlayerIds[i];
-                    this.Qe.Gt(r)
+                    this.Je.qt(r)
                 }
-                if ((e.playerInfos.length > 0 || e.deletedPlayerIds.length > 0) && this.Qe.Ut(), e.playerStatusDirty) {
-                    var o = this.Qe.ne(this.It).teamId;
-                    this.Qe.Ht(o, e.playerStatus, this.Ye.factionMode)
+                if ((e.playerInfos.length > 0 || e.deletedPlayerIds.length > 0) && this.Je.Gt(), e.playerStatusDirty) {
+                    var o = this.Je.ne(this.Pt).teamId;
+                    this.Je.Ut(o, e.playerStatus, this.Xe.factionMode)
                 }
                 if (e.groupStatusDirty) {
-                    var s = this.Qe.ne(this.It).groupId;
-                    this.Qe.Wt(s, e.groupStatus)
+                    var s = this.Je.ne(this.Pt).groupId;
+                    this.Je.Ht(s, e.groupStatus)
                 }
-                for (var l = 0; l < e.delObjIds.length; l++) e.delObjIds[l], this.Tt.deleteObj(e.delObjIds[l]);
+                for (var l = 0; l < e.delObjIds.length; l++) e.delObjIds[l], this.Mt.deleteObj(e.delObjIds[l]);
                 for (var c = 0; c < e.fullObjects.length; c++) {
                     var m = e.fullObjects[c];
-                    this.Tt.updateObjFull(m.__type, m.__id, m, t)
+                    this.Mt.updateObjFull(m.__type, m.__id, m, t)
                 }
                 for (var p = 0; p < e.partObjects.length; p++) {
                     var d = e.partObjects[p];
-                    this.Tt.updateObjPart(d.__id, d, t)
+                    this.Mt.updateObjPart(d.__id, d, t)
                 }
-                this.spectating = this.It != this.Pt, this.Ct = this.Qe.ve(this.It), this.Ct.Kt(e.activePlayerData, this.Qe), e.activePlayerData.weapsDirty && (this.Ve.weapsDirty = !0), this.spectating && (this.Ve.setSpectateTarget(this.It, this.Pt, this.teamMode, this.anonPlayerNames, this.Qe), this.He.hideAll()), this.Ct.layer = this.Ct.ie.layer, this.Ke.setActiveLayer(this.Ct.layer), this.Be.activeLayer = this.Ct.layer;
-                var h = this.Ct.isUnderground(this.Ye);
-                this.Ke.setUnderground(h), this.Be.underground = h, e.aliveDirty && (1 == e.aliveCounts.length ? this.Ve.updatePlayersAlive(e.aliveCounts[0]) : e.aliveCounts.length >= 2 && (this.Ve.updatePlayersAliveRed(e.aliveCounts[0]), this.Ve.updatePlayersAliveBlue(e.aliveCounts[1]))), this.yt.setProgress(e.gasT), e.gasDirty && this.yt.setFullState(e.gasT, e.gasData, this.Ye, this.Ve);
+                this.spectating = this.Pt != this.Tt, this.It = this.Je.ve(this.Pt), this.It.Wt(e.activePlayerData, this.Je), e.activePlayerData.weapsDirty && (this.Ve.weapsDirty = !0), this.spectating && (this.Ve.setSpectateTarget(this.Pt, this.Tt, this.teamMode, this.anonPlayerNames, this.Je), this.Ue.hideAll()), this.It.layer = this.It.ie.layer, this.We.setActiveLayer(this.It.layer), this.Be.activeLayer = this.It.layer;
+                var h = this.It.isUnderground(this.Xe);
+                this.We.setUnderground(h), this.Be.underground = h, e.aliveDirty && (1 == e.aliveCounts.length ? this.Ve.updatePlayersAlive(e.aliveCounts[0]) : e.aliveCounts.length >= 2 && (this.Ve.updatePlayersAliveRed(e.aliveCounts[0]), this.Ve.updatePlayersAliveBlue(e.aliveCounts[1]))), this.gt.setProgress(e.gasT), e.gasDirty && this.gt.setFullState(e.gasT, e.gasData, this.Xe, this.Ve);
                 for (var u = 0; u < e.bullets.length; u++) {
                     var g = e.bullets[u];
-                    n.bullets[g.bulletType].addFlare ? this.at.addFlare(g, this.Qe, this.Ke) : this.et.addBullet(g, this.Qe, this.Ke), g.shotFx && this.St.addShot(g.pos, g.layer, g.playerId, g.shotSourceType, g.shotOffhand, g.lastShot)
+                    n.bullets[g.bulletType].addFlare ? this.tt.addFlare(g, this.Je, this.We) : this.$e.addBullet(g, this.Je, this.We), g.shotFx && this._t.addShot(g.pos, g.layer, g.playerId, g.shotSourceType, g.shotOffhand, g.lastShot)
                 }
                 for (var y = 0; y < e.explosions.length; y++) {
                     var w = e.explosions[y];
-                    this.nt.addExplosion(w.type, w.pos, w.layer)
+                    this.ot.addExplosion(w.type, w.pos, w.layer)
                 }
                 for (var x = 0; x < e.emotes.length; x++) {
                     var f = e.emotes[x];
-                    f.isPing ? this.bt.addPing(f, this.Ye.factionMode) : this.bt.addEmote(f)
+                    f.isPing ? this.ft.addPing(f, this.Xe.factionMode) : this.ft.addEmote(f)
                 }
-                this.st.Zt(e.planes, this.Ye);
-                for (var b = 0; b < e.airstrikeZones.length; b++) this.st.Xt(e.airstrikeZones[b]);
+                this.nt.Kt(e.planes, this.Xe);
+                for (var b = 0; b < e.airstrikeZones.length; b++) this.nt.Zt(e.airstrikeZones[b]);
                 this.Ve.le(e.mapIndicators), this.updateRecvCount++
             },
             Ne: function(e, t) {
@@ -16329,66 +14535,66 @@
                 switch (e) {
                     case h.Msg.Joined:
                         var r = new h.JoinedMsg;
-                        r.deserialize(t), this.onJoin(), this.teamMode = r.teamMode, this.Pt = r.playerId, this.At = !0, r.started || this.Ve.setWaitingForPlayers(!0), this.Ve.removeAds(), this.victoryMusic && (this.victoryMusic.stop(), this.victoryMusic = null);
+                        r.deserialize(t), this.onJoin(), this.teamMode = r.teamMode, this.Tt = r.playerId, this.Ct = !0, r.started || this.Ve.setWaitingForPlayers(!0), this.Ve.removeAds(), this.victoryMusic && (this.victoryMusic.stop(), this.victoryMusic = null);
                         break;
                     case h.Msg.Map:
                         var o = new h.MapMsg;
-                        o.deserialize(t), this.Ye.loadMap(o, this.ae, this.canvasMode, this.Xe);
-                        var s = this.Ye.getMapDef().assets;
-                        this.Be.loadSoundList(s.audio), this.textureManager.loadAtlasList(s.atlases), this.Qe.onMapLoad(this.Ye), this.et.onMapLoad(this.Ye), this.Xe.onMapLoad(this.Ye), this.Ye.renderMap(this.pixi.renderer, this.canvasMode), this.Ve.resize(this.Ye, this.ae);
+                        o.deserialize(t), this.Xe.loadMap(o, this.ae, this.canvasMode, this.Ze);
+                        var s = this.Xe.getMapDef().assets;
+                        this.Be.loadSoundList(s.audio), this.textureManager.loadAtlasList(s.atlases), this.Je.onMapLoad(this.Xe), this.$e.onMapLoad(this.Xe), this.Ze.onMapLoad(this.Xe), this.Xe.renderMap(this.pixi.renderer, this.canvasMode), this.Ve.resize(this.Xe, this.ae);
                         break;
                     case h.Msg.Update:
                         var l = new h.UpdateMsg;
-                        l.deserialize(t, this.Tt), this.playing = !0, this.Vt(l);
+                        l.deserialize(t, this.Mt), this.playing = !0, this.Nt(l);
                         break;
                     case h.Msg.Kill:
                         var c = new h.KillMsg;
                         c.deserialize(t);
-                        var m = this.Qe.ne(c.targetId),
-                            p = this.Qe.ne(c.killCreditId),
+                        var m = this.Je.ne(c.targetId),
+                            p = this.Je.ne(c.killCreditId),
                             d = c.itemSourceType || c.mapSourceType,
-                            u = this.Qe.ne(this.It).teamId,
+                            u = this.Je.ne(this.Pt).teamId,
                             g = c.downed && !c.killed || c.damageType == n.DamageType.Gas || c.damageType == n.DamageType.Bleeding || c.damageType == n.DamageType.Airdrop,
-                            w = g ? p : this.Qe.ne(c.killerId),
+                            w = g ? p : this.Je.ne(c.killerId),
                             x = m.nameTruncated,
                             f = p.nameTruncated,
                             b = w.nameTruncated;
                         if (this.anonPlayerNames) {
                             var _ = function(e) {
-                                return e.playerId == a.It || e.teamId == u
+                                return e.playerId == a.Pt || e.teamId == u
                             };
                             _(m) || (x = m.anonName), _(p) || (f = p.anonName), _(w) || (b = w.anonName)
                         }
-                        x = y.htmlEscape(x), f = y.htmlEscape(f), b = y.htmlEscape(b), c.killCreditId == this.It ? this.Ve.showKill({
+                        x = y.htmlEscape(x), f = y.htmlEscape(f), b = y.htmlEscape(b), c.killCreditId == this.Pt ? this.Ve.showKill({
                             name: f,
                             kills: c.killerKills,
-                            completeKill: c.killerId == this.It
+                            completeKill: c.killerId == this.Pt
                         }, {
                             name: x,
                             suicide: c.killerId == c.targetId || c.killCreditId == c.targetId,
                             killed: c.killed,
                             downed: c.downed,
                             teamKill: m.teamId == p.teamId
-                        }, d, c.damageType, this.spectating) : c.targetId == this.It && c.downed && !c.killed && this.Ve.showDowned({
+                        }, d, c.damageType, this.spectating) : c.targetId == this.Pt && c.downed && !c.killed && this.Ve.showDowned({
                             name: f,
                             damageType: c.damageType
                         }, {
                             name: x,
                             suicide: c.killerId == c.targetId || c.killCreditId == c.targetId
                         }, d, c.damageType, this.spectating);
-                        var S = this.xt.getKillFeedText(x, w.teamId ? b : "", d, c.damageType, c.downed && !c.killed),
-                            k = this.xt.getKillFeedColor(u, m.teamId, p.teamId, this.Ye.factionMode);
-                        if (this.xt.addKillFeed(S, k), c.type == n.DamageType.Player && this.et.createBulletHit(this.Qe, c.targetId, this.Be), c.targetRole == n.Role.FactionLeader) {
-                            var v = this.xt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.FactionLeader),
-                                z = this.Qe.getTeamColor(m.teamId),
+                        var S = this.wt.getKillFeedText(x, w.teamId ? b : "", d, c.damageType, c.downed && !c.killed),
+                            k = this.wt.getKillFeedColor(u, m.teamId, p.teamId, this.Xe.factionMode);
+                        if (this.wt.addKillFeed(S, k), c.type == n.DamageType.Player && this.$e.createBulletHit(this.Je, c.targetId, this.Be), c.targetRole == n.Role.FactionLeader) {
+                            var v = this.wt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.FactionLeader),
+                                z = this.Je.getTeamColor(m.teamId),
                                 M = y.colorToHexString(z);
-                            this.xt.addKillFeed(v, M), c.killed && this.Be.playSound("leader_dead_01", {
+                            this.wt.addKillFeed(v, M), c.killed && this.Be.playSound("leader_dead_01", {
                                 channel: "ui"
                             })
                         }
                         if (c.targetRole == n.Role.WoodsKing) {
-                            var T = this.xt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.WoodsKing);
-                            this.xt.addKillFeed(T, "#12ff00"), c.killed && this.Be.playSound("leader_dead_01", {
+                            var T = this.wt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.WoodsKing);
+                            this.wt.addKillFeed(T, "#12ff00"), c.killed && this.Be.playSound("leader_dead_01", {
                                 channel: "ui"
                             })
                         }
@@ -16396,13 +14602,13 @@
                     case h.Msg.AssignRole:
                         var P = new h.AssignRoleMsg;
                         P.deserialize(t);
-                        var I = this.Qe.ne(P.playerId);
+                        var I = this.Je.ne(P.playerId);
                         if (!I) break;
-                        var C = this.xt.getAssignRoleKillFeedText(P.role, I.nameTruncated, I.teamId);
+                        var C = this.wt.getAssignRoleKillFeedText(P.role, I.nameTruncated, I.teamId);
                         if (C) {
-                            var A = this.Qe.getTeamColor(I.teamId),
+                            var A = this.Je.getTeamColor(I.teamId),
                                 E = y.colorToHexString(A);
-                            this.xt.addKillFeed(C, E)
+                            this.wt.addKillFeed(C, E)
                         }
                         if (!this.playedAssignRoleSfx[P.role]) {
                             var D, O = (D = {}, i(D, n.Role.FactionLeader, "leader_assigned_01"), i(D, n.Role.Lieutenant, "lt_assigned_01"), D),
@@ -16411,7 +14617,7 @@
                                 channel: "ui"
                             }), this.playedAssignRoleSfx[P.role] = !0
                         }
-                        this.Pt == P.playerId && this.Ve.displayAssignRoleAnnouncement(P.role, I.teamId);
+                        this.Tt == P.playerId && this.Ve.displayAssignRoleAnnouncement(P.role, I.teamId);
                         break;
                     case h.Msg.PlayerStats:
                         var L = new h.PlayerStatsMsg;
@@ -16424,18 +14630,18 @@
                     case h.Msg.GameOver:
                         var F = new h.GameOverMsg;
                         F.deserialize(t), this.gameOver = F.gameOver;
-                        for (var j = this.Qe.ne(this.Pt).teamId, N = 0; N < F.playerStats.length; N++) {
+                        for (var j = this.Je.ne(this.Tt).teamId, N = 0; N < F.playerStats.length; N++) {
                             var V = F.playerStats[N];
-                            if (V.playerId == this.Pt) {
+                            if (V.playerId == this.Tt) {
                                 this.Ve.setLocalStats(V);
                                 break
                             }
                         }
-                        this.Ve.showStats(F.playerStats, F.teamId, F.teamRank, F.winningTeamId, F.gameOver, j, this.teamMode, this.spectating, this.Qe, this.Le, this.Be, this.Ye.factionMode), j == F.winningTeamId && (this.victoryMusic = this.Be.playSound("menu_music", {
+                        this.Ve.showStats(F.playerStats, F.teamId, F.teamRank, F.winningTeamId, F.gameOver, j, this.teamMode, this.spectating, this.Je, this.Le, this.Be, this.Xe.factionMode), j == F.winningTeamId && (this.victoryMusic = this.Be.playSound("menu_music", {
                             channel: "music",
                             delay: 1300,
                             forceStart: !0
-                        })), this.He.hideAll();
+                        })), this.Ue.hideAll();
                         break;
                     case h.Msg.Pickup:
                         var q = new h.PickupMsg;
@@ -16443,8 +14649,8 @@
                             var G = n.items[q.item];
                             this.Be.playSound(G.sound.pickup, {
                                 channel: "ui"
-                            }), "throwable" == G.type && (this.Ct.lastThrowablePickupSfxTicker = .3)
-                        } else this.xt.displayPickupMessage(q.type);
+                            }), "throwable" == G.type && (this.It.lastThrowablePickupSfxTicker = .3)
+                        } else this.wt.displayPickupMessage(q.type);
                         break;
                     case h.Msg.Disconnect:
                         var U = new h.DisconnectMsg;
@@ -16454,9 +14660,9 @@
             q: function(e, t, a) {
                 var i = a || 128,
                     r = new h.MsgStream(new ArrayBuffer(i));
-                r.serializeMsg(e, t), this.Yt(r)
+                r.serializeMsg(e, t), this.Xt(r)
             },
-            Yt: function(e) {
+            Xt: function(e) {
                 if (this.ws && this.ws.readyState == this.ws.OPEN) try {
                     this.ws.send(e.getBuffer())
                 } catch (e) {
@@ -16464,7 +14670,7 @@
                 }
             }
         }, e.exports = {
-            Jt: r
+            Yt: r
         }
     },
     "9d3c0d8b": function(e, t, a) {
@@ -16775,7 +14981,7 @@
         }
 
         function r() {
-            this._ = !1, this.kt = new p.Pool(i), this.Qt = null
+            this._ = !1, this.St = new p.Pool(i), this.Jt = null
         }
         var o = a("8b1dfb45"),
             n = a("989ad62a"),
@@ -16795,15 +15001,17 @@
                 if (this.updatedData = !0, this.pos = c.copy(e.pos), t && (this.layer = e.layer, this.name = e.name, this.count = e.count, this.isOld = e.isOld), a) {
                     this.ticker = 0, this.isOld && (this.ticker = 10);
                     var r = n.items[this.name];
-                    this.rad = n.lootRadius[r.type], this.imgScale = 1.25 * r.lootImg.scale, this.sprite.texture = o.Texture.fromImage(r.lootImg.sprite), this.sprite.tint = r.lootImg.tint, this.container.texture = r.lootImg.border ? o.Texture.fromImage(r.lootImg.border) : o.Texture.EMPTY;
-                    var s = n.items[r.ammo];
-                    s ? this.container.tint = s.lootImg.tintDark : r.lootImg.borderTint ? this.container.tint = r.lootImg.borderTint : this.container.tint = 0, this.sprite.rotation = r.lootImg.rot ? r.lootImg.rot : 0, this.sprite.scale.x = r.lootImg.mirror ? -.8 : .8, this.container.visible = !0
+                    this.rad = n.lootRadius[r.type], this.imgScale = 1.25 * r.lootImg.scale;
+                    var s = r.lootImg.innerScale || .8;
+                    this.sprite.scale.set(s, s), this.sprite.texture = o.Texture.fromImage(r.lootImg.sprite), this.sprite.tint = r.lootImg.tint, this.container.texture = r.lootImg.border ? o.Texture.fromImage(r.lootImg.border) : o.Texture.EMPTY;
+                    var l = n.items[r.ammo];
+                    l ? this.container.tint = l.lootImg.tintDark : r.lootImg.borderTint ? this.container.tint = r.lootImg.borderTint : this.container.tint = 0, this.sprite.rotation = r.lootImg.rot ? r.lootImg.rot : 0, this.sprite.scale.x = r.lootImg.mirror ? -s : s, this.container.visible = !0
                 }(a || t) && i.renderer.addPIXIObj(this.container, this.layer, 13, this.__id)
             }
         }, r.prototype = {
             c: function(e, t, a, i) {
-                this._ = !0, this.Qt = null;
-                for (var r = Number.MAX_VALUE, o = this.kt.m(), p = 0; p < o.length; p++) {
+                this._ = !0, this.Jt = null;
+                for (var r = Number.MAX_VALUE, o = this.St.m(), p = 0; p < o.length; p++) {
                     var d = o[p];
                     if (d.active) {
                         if (l.sameLayer(d.layer, t.layer)) {
@@ -16811,7 +15019,7 @@
                                 u = m.touch ? t.rad + d.rad * n.player.touchLootRadMult : d.rad,
                                 g = c.sub(t.pos, h),
                                 y = c.lengthSqr(g);
-                            y < u * u && y < r && (r = y, this.Qt = d)
+                            y < u * u && y < r && (r = y, this.Jt = d)
                         }
                         d.ticker += e;
                         var w = s.delerp(d.ticker, 0, 1),
@@ -16822,11 +15030,11 @@
                     }
                 }
             },
-            $t: function() {
-                return this.Qt
+            Qt: function() {
+                return this.Jt
             }
         }, e.exports = {
-            gt: r
+            ut: r
         }
     },
     a508b62a: function(e, t, a) {
@@ -16876,7 +15084,7 @@
         }
 
         function s() {
-            this.Se = new T.Pool(n), this.ea = {}, this.playerIds = [], this.teamInfo = {}, this.groupInfo = {}, this.playerStatus = {}
+            this.Se = new T.Pool(n), this.$t = {}, this.playerIds = [], this.teamInfo = {}, this.groupInfo = {}, this.playerStatus = {}
         }
         var l = function() {
                 function e(e, t) {
@@ -16980,7 +15188,7 @@
             l: function(e, t, a, i) {
                 this.ie.pos = x.copy(e.pos), this.ie.dir = x.copy(e.dir), t && (this.ie.skin = e.skin, this.ie.backpack = e.backpack, this.ie.helmet = e.helmet, this.ie.chest = e.chest, this.ie.curWeapType = e.curWeapType, this.ie.layer = e.layer, this.ie.dead = e.dead, this.ie.downed = e.downed, this.ie.disconnected = e.disconnected, this.ie.wearingPan = e.wearingPan, this.ie.frozen = e.frozen, this.ie.frozenOri = e.frozenOri, this.ie.hasStim = e.hasStim, this.ie.role = e.role, e.animSeq != this.anim.seq && this.playAnim(e.animType, e.animSeq), this.action.type = e.actionType, this.action.seq = e.actionSeq, this.action.item = e.actionItem, this.visualsDirty = !0), a && (this.isNew = !0, this.renderLayer = this.ie.layer, this.renderZOrd = 18, this.renderZIdx = this.__id)
             },
-            Kt: function(e, t) {
+            Wt: function(e, t) {
                 var a = this.re.scope;
                 if (this.re.health = e.health, this.re.scopedIn = e.scopedIn, e.boostDirty && (this.re.boost = e.boost), e.actionDirty && (this.action.time = e.action.time, this.action.duration = e.action.duration, this.action.targetId = e.action.targetId), e.inventoryDirty) {
                     this.re.scope = e.scope, this.re.inventory = {};
@@ -16995,22 +15203,22 @@
                 }
                 e.spectatorCountDirty && (this.re.spectatorCount = e.spectatorCount), this.re.scope != a && (this.zoomFast = !0), this.re.scopedIn && (this.zoomFast = !1)
             },
-            Ot: function() {
+            Dt: function() {
                 return (v.mobile ? m.scopeZoomRadius.mobile : m.scopeZoomRadius.desktop)[this.ie.downed || this.re.scopedIn ? "1xscope" : this.re.scope]
             },
-            ta: function() {
+            ea: function() {
                 return this.ie.helmet ? m.items[this.ie.helmet].level : 0
             },
-            aa: function() {
+            ta: function() {
                 return this.ie.chest ? m.items[this.ie.chest].level : 0
             },
-            ia: function() {
+            aa: function() {
                 return m.items[this.ie.backpack].level
             },
-            ra: function() {
+            ia: function() {
                 return m.items[this.ie.curWeapType].type
             },
-            oa: function(e) {
+            ra: function(e) {
                 return "" !== this.re.weapons[e].name
             },
             hasActivePan: function() {
@@ -17024,7 +15232,7 @@
                 var k = m.items[this.ie.curWeapType],
                     v = this.__id == l,
                     z = t.ve(l);
-                this.posOld = x.copy(this.pos), this.dirOld = x.copy(this.dir), this.pos = x.copy(this.ie.pos), this.dir = x.copy(this.ie.dir), this.layer = this.ie.layer, this.downed = this.ie.downed, this._ = !0, this.qe = !0;
+                this.posOld = x.copy(this.pos), this.dirOld = x.copy(this.dir), this.pos = x.copy(this.ie.pos), this.dir = x.copy(this.ie.dir), this.layer = this.ie.layer, this.downed = this.ie.downed, this._ = !0, this.oa = !0;
                 var M = this.ie.role == u.FactionLeader || this.ie.role == u.WoodsKing ? 1.25 : 1;
                 if (this.rad = M * m.player.radius, !f.eqAbs(this.rad, this.bodyRad)) {
                     var T = this.rad - this.bodyRad,
@@ -17137,7 +15345,7 @@
                     var ce = this.re.curWeapIdx,
                         me = this.re.weapons[ce],
                         pe = m.items[me.name];
-                    if (!this.playedDryFire && "gun" == this.ra() && (o.isBindPressed(h.Fire) || o.isBindDown(h.Fire) && "auto" == pe.fireMode) && this.action.type == p.None && !c) {
+                    if (!this.playedDryFire && "gun" == this.ia() && (o.isBindPressed(h.Fire) || o.isBindDown(h.Fire) && "auto" == pe.fireMode) && this.action.type == p.None && !c) {
                         var de = this.re.inventory[pe.ammo],
                             he = me.ammo;
                         0 === de && 0 === he && (i.playSound(pe.sound.empty), this.playedDryFire = !0)
@@ -17159,13 +15367,13 @@
                     be.weight > 0 ? this.bones[we].copy(I.lerp(be.weight, fe, be.pose)) : this.bones[we].copy(fe)
                 }(this.visualsDirty || this.throwableStatePrev != this.throwableState) && this.na(t, a), this.visualsDirty = !1, this.throwableStatePrev = this.throwableState, this.sa(), this.la(v, z, a), s.addPIXIObj(this.container, this.renderLayer, this.renderZOrd, this.renderZIdx), this.isNew = !1
             },
-            Rt: function(e, t) {
+            Lt: function(e, t) {
                 var a = e.pointToScreen(this.pos),
                     i = e.pixels(1);
                 this.container.position.set(a.x, a.y), this.container.scale.set(i, i), this.container.visible = !this.ie.dead
             },
             la: function(e, t, a) {
-                for (var i = _.createCircle(this.pos, m.player.maxVisualRadius), r = !1, o = !1, n = !1, s = a.zt.m(), l = 0; l < s.length; l++) {
+                for (var i = _.createCircle(this.pos, m.player.maxVisualRadius), r = !1, o = !1, n = !1, s = a.vt.m(), l = 0; l < s.length; l++) {
                     var c = s[l];
                     if (c.active) {
                         for (var p = 0; p < c.stairs.length; p++) {
@@ -17232,13 +15440,13 @@
                     var v = m.items[this.ie.helmet],
                         z = v.skinImg,
                         M = 3.33 * (this.downed ? 1 : -1);
-                    this.helmetSprite.texture = c.Texture.fromImage(z.baseSprite), this.helmetSprite.position.set(M, 0), "helmet03_moon" == this.ie.helmet || "helmet03_forest" == this.ie.helmet ? this.helmetSprite.scale.set(.3, .3) : this.helmetSprite.scale.set(.15, .15);
+                    this.helmetSprite.texture = c.Texture.fromImage(z.baseSprite), this.helmetSprite.position.set(M, 0), z.spriteScale ? this.helmetSprite.scale.set(z.spriteScale, z.spriteScale) : this.helmetSprite.scale.set(.15, .15);
                     var T = z.baseTint;
                     t.factionMode && (T = 1 == e.ne(this.__id).teamId ? z.baseTintRed : z.baseTintBlue), this.helmetSprite.tint = T, this.helmetSprite.visible = !0
                 }
-                if (this.ia() > 0 && !a.camo && !this.downed) {
+                if (this.aa() > 0 && !a.camo && !this.downed) {
                     var P = (m.items[this.ie.backpack], [10.25, 11.5, 12.75]),
-                        I = this.ia(),
+                        I = this.aa(),
                         C = P[f.min(I - 1, P.length - 1)],
                         A = .5 * (.4 + .03 * I);
                     this.backpackSprite.texture = c.Texture.fromImage("player-circle-base-01.img"), this.backpackSprite.position.set(-C, 0), this.backpackSprite.scale.set(A, A), this.backpackSprite.tint = i.backpackTint, this.backpackSprite.visible = !0,
@@ -17532,7 +15740,7 @@
             },
             isUnderground: function(e) {
                 if (1 != this.layer) return !1;
-                for (var t = e.zt.m(), a = 0; a < t.length; a++) {
+                for (var t = e.vt.m(), a = 0; a < t.length; a++) {
                     var i = t[a];
                     if (!(i.layers.length < 2)) {
                         var r = i.layers[1];
@@ -17577,7 +15785,7 @@
             render: function(e, t) {
                 for (var a = this.Se.m(), i = 0; i < a.length; i++) {
                     var r = a[i];
-                    r.active && r.Rt(e, t)
+                    r.active && r.Lt(e, t)
                 }
             },
             ve: function(e) {
@@ -17587,8 +15795,8 @@
                 }
                 return null
             },
-            qt: function(e) {
-                this.ea[e.playerId] = {
+            Vt: function(e) {
+                this.$t[e.playerId] = {
                     playerId: e.playerId,
                     teamId: e.teamId,
                     groupId: e.groupId,
@@ -17599,21 +15807,21 @@
                     return e - t
                 })
             },
-            Gt: function(e) {
-                var t = this.playerIds.indexOf(e); - 1 !== t && this.playerIds.splice(t, 1), delete this.ea[e], delete this.playerStatus[e]
+            qt: function(e) {
+                var t = this.playerIds.indexOf(e); - 1 !== t && this.playerIds.splice(t, 1), delete this.$t[e], delete this.playerStatus[e]
             },
             ne: function(e) {
-                return this.ea[e] || {
+                return this.$t[e] || {
                     playerId: 0,
                     groupId: 0,
                     teamId: 0,
                     name: "unknown"
                 }
             },
-            Ut: function() {
+            Gt: function() {
                 this.teamInfo = {}, this.groupInfo = {};
-                for (var e = Object.keys(this.ea), t = 0; t < e.length; t++) {
-                    var a = this.ea[e[t]],
+                for (var e = Object.keys(this.$t), t = 0; t < e.length; t++) {
+                    var a = this.$t[e[t]],
                         i = a.playerId,
                         r = a.teamId;
                     this.teamInfo[r] = this.teamInfo[r] || {
@@ -17639,7 +15847,7 @@
             getGroupInfo: function(e) {
                 return this.groupInfo[e]
             },
-            Ht: function(e, t, a) {
+            Ut: function(e, t, a) {
                 var i = this.getTeamInfo(e),
                     r = a ? this.playerIds : i.playerIds;
                 if (r.length != t.players.length) return void z.logError("PlayerIds and playerStatus.players out of sync. OurLen: " + r.length + " MsgLen: " + t.players.length + " FactionMode: " + a);
@@ -17672,7 +15880,7 @@
             se: function(e) {
                 return this.playerStatus[e]
             },
-            Wt: function(e, t) {
+            Ht: function(e, t) {
                 var a = this.getGroupInfo(e);
                 if (a.playerIds.length != t.players.length) return void z.logError("PlayerIds and groupStatus.players out of sync");
                 for (var i = 0; i < a.playerIds.length; i++) {
@@ -17693,7 +15901,7 @@
                 return t >= 0 && t < m.teamColors.length ? m.teamColors[t] : 16777215
             }
         }, e.exports = {
-            $e: s
+            Qe: s
         }
     },
     a5bf0544: function(e, t, a) {
@@ -18506,14 +16714,14 @@
         e.exports = {
             GasRenderer: h,
             GasSafeZoneRenderer: u,
-            wt: g
+            yt: g
         }
     },
     aaf70d05: function(e, t) {
         e.exports = {
             shared: [{
                 meta: {
-                    image: "shared-0-50-5bd1e450.png",
+                    image: "shared-0-50-2941c829.png",
                     size: {
                         w: 2048,
                         h: 2048
@@ -18821,7 +17029,7 @@
                             h: 224
                         }
                     },
-                    "map-wall-14.img": {
+                    "map-wall-14-rounded.img": {
                         frame: {
                             x: 1958,
                             y: 1338,
@@ -18841,7 +17049,7 @@
                             h: 224
                         }
                     },
-                    "map-wall-14-rounded.img": {
+                    "map-wall-14.img": {
                         frame: {
                             x: 1433,
                             y: 1806,
@@ -18941,7 +17149,7 @@
                             h: 192
                         }
                     },
-                    "map-wall-12.img": {
+                    "map-wall-glass-12.img": {
                         frame: {
                             x: 1949,
                             y: 1806,
@@ -18961,7 +17169,7 @@
                             h: 192
                         }
                     },
-                    "map-wall-glass-12.img": {
+                    "map-wall-12.img": {
                         frame: {
                             x: 1979,
                             y: 2,
@@ -19021,7 +17229,7 @@
                             h: 176
                         }
                     },
-                    "map-wall-11.img": {
+                    "map-wall-11-rounded.img": {
                         frame: {
                             x: 1999,
                             y: 182,
@@ -19041,7 +17249,7 @@
                             h: 176
                         }
                     },
-                    "map-wall-11-rounded.img": {
+                    "map-wall-11.img": {
                         frame: {
                             x: 2019,
                             y: 182,
@@ -19181,7 +17389,7 @@
                             h: 160
                         }
                     },
-                    "map-wall-glass-10.img": {
+                    "map-wall-10-rounded.img": {
                         frame: {
                             x: 2019,
                             y: 528,
@@ -19201,7 +17409,7 @@
                             h: 160
                         }
                     },
-                    "map-wall-10-rounded.img": {
+                    "map-wall-glass-10.img": {
                         frame: {
                             x: 1999,
                             y: 692,
@@ -19261,7 +17469,7 @@
                             h: 152
                         }
                     },
-                    "map-wall-09-rounded.img": {
+                    "map-wall-09.img": {
                         frame: {
                             x: 2019,
                             y: 692,
@@ -19281,7 +17489,7 @@
                             h: 144
                         }
                     },
-                    "map-wall-09.img": {
+                    "map-wall-09-rounded.img": {
                         frame: {
                             x: 1999,
                             y: 856,
@@ -19361,7 +17569,7 @@
                             h: 121
                         }
                     },
-                    "gun-awc-02.img": {
+                    "gun-awc-01.img": {
                         frame: {
                             x: 1999,
                             y: 1138,
@@ -19381,7 +17589,7 @@
                             h: 118
                         }
                     },
-                    "gun-awc-01.img": {
+                    "gun-awc-02.img": {
                         frame: {
                             x: 1999,
                             y: 1256,
@@ -19721,24 +17929,24 @@
                             h: 98
                         }
                     },
-                    "map-wall-05-rounded.img": {
+                    "map-wall-outhouse-bot.img": {
                         frame: {
-                            x: 1979,
-                            y: 492,
-                            w: 16,
-                            h: 80
+                            x: 1377,
+                            y: 1782,
+                            w: 36,
+                            h: 12
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 16,
-                            h: 80
+                            w: 36,
+                            h: 12
                         },
                         sourceSize: {
-                            w: 16,
-                            h: 80
+                            w: 36,
+                            h: 12
                         }
                     },
                     "map-wall-05.img": {
@@ -19761,7 +17969,7 @@
                             h: 80
                         }
                     },
-                    "gun-med-01.img": {
+                    "map-wall-04.img": {
                         frame: {
                             x: 1979,
                             y: 660,
@@ -19801,7 +18009,7 @@
                             h: 64
                         }
                     },
-                    "map-wall-04.img": {
+                    "gun-med-01.img": {
                         frame: {
                             x: 1979,
                             y: 796,
@@ -19841,24 +18049,24 @@
                             h: 64
                         }
                     },
-                    "crosshair022.img": {
+                    "map-door-01.img": {
                         frame: {
-                            x: 2019,
-                            y: 840,
-                            w: 8,
-                            h: 6
+                            x: 1979,
+                            y: 932,
+                            w: 12,
+                            h: 64
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 12,
-                            y: 13,
-                            w: 8,
-                            h: 6
+                            x: 0,
+                            y: 0,
+                            w: 12,
+                            h: 64
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 32
+                            w: 12,
+                            h: 64
                         }
                     },
                     "map-door-03.img": {
@@ -19981,7 +18189,7 @@
                             h: 64
                         }
                     },
-                    "map-recorder-01.img": {
+                    "map-recorder-02.img": {
                         frame: {
                             x: 1936,
                             y: 1726,
@@ -20001,7 +18209,7 @@
                             h: 48
                         }
                     },
-                    "map-wall-03.img": {
+                    "map-wall-03-rounded.img": {
                         frame: {
                             x: 1979,
                             y: 1226,
@@ -20021,7 +18229,7 @@
                             h: 48
                         }
                     },
-                    "map-wall-03-rounded.img": {
+                    "map-wall-03.img": {
                         frame: {
                             x: 1979,
                             y: 1278,
@@ -20041,7 +18249,7 @@
                             h: 48
                         }
                     },
-                    "pilgrim-hat.img": {
+                    "loot-medical-pill.img": {
                         frame: {
                             x: 1687,
                             y: 1240,
@@ -20061,7 +18269,7 @@
                             h: 64
                         }
                     },
-                    "loot-medical-pill.img": {
+                    "pilgrim-hat.img": {
                         frame: {
                             x: 1751,
                             y: 1240,
@@ -20441,7 +18649,7 @@
                             h: 32
                         }
                     },
-                    "map-wall-02.img": {
+                    "map-wall-02-rounded.img": {
                         frame: {
                             x: 1979,
                             y: 1330,
@@ -20461,7 +18669,7 @@
                             h: 32
                         }
                     },
-                    "map-wall-02-rounded.img": {
+                    "map-wall-02.img": {
                         frame: {
                             x: 1979,
                             y: 1366,
@@ -20481,7 +18689,7 @@
                             h: 32
                         }
                     },
-                    "map-bush-res-01.img": {
+                    "map-candle-01.img": {
                         frame: {
                             x: 1999,
                             y: 2020,
@@ -20489,41 +18697,21 @@
                             h: 26
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 23,
-                            y: 23,
+                            x: 0,
+                            y: 0,
                             w: 26,
                             h: 26
                         },
                         sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "crosshair158.img": {
-                        frame: {
-                            x: 758,
-                            y: 1782,
-                            w: 32,
-                            h: 20
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 6,
-                            w: 32,
-                            h: 20
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
+                            w: 26,
+                            h: 26
                         }
                     },
                     "hatchet.img": {
                         frame: {
-                            x: 794,
+                            x: 758,
                             y: 1782,
                             w: 23,
                             h: 20
@@ -20541,69 +18729,9 @@
                             h: 24
                         }
                     },
-                    "crosshair045.img": {
-                        frame: {
-                            x: 821,
-                            y: 1782,
-                            w: 20,
-                            h: 20
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 6,
-                            w: 20,
-                            h: 20
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "crosshair184.img": {
-                        frame: {
-                            x: 845,
-                            y: 1782,
-                            w: 20,
-                            h: 20
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 6,
-                            w: 20,
-                            h: 20
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "crosshair040.img": {
-                        frame: {
-                            x: 869,
-                            y: 1782,
-                            w: 20,
-                            h: 20
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 6,
-                            w: 20,
-                            h: 20
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
                     "player-hands-01.img": {
                         frame: {
-                            x: 893,
+                            x: 785,
                             y: 1782,
                             w: 19,
                             h: 19
@@ -20641,29 +18769,9 @@
                             h: 19
                         }
                     },
-                    "map-barrel-03.img": {
-                        frame: {
-                            x: 916,
-                            y: 1782,
-                            w: 45,
-                            h: 18
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 45,
-                            h: 18
-                        },
-                        sourceSize: {
-                            w: 45,
-                            h: 18
-                        }
-                    },
                     "map-barrel-04.img": {
                         frame: {
-                            x: 965,
+                            x: 808,
                             y: 1782,
                             w: 45,
                             h: 18
@@ -20681,49 +18789,29 @@
                             h: 18
                         }
                     },
-                    "crosshair181.img": {
+                    "map-barrel-03.img": {
                         frame: {
-                            x: 1014,
+                            x: 857,
                             y: 1782,
-                            w: 18,
+                            w: 45,
                             h: 18
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 7,
-                            y: 7,
-                            w: 18,
+                            x: 0,
+                            y: 0,
+                            w: 45,
                             h: 18
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "crosshair173.img": {
-                        frame: {
-                            x: 1036,
-                            y: 1782,
-                            w: 18,
+                            w: 45,
                             h: 18
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 7,
-                            w: 18,
-                            h: 18
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
                         }
                     },
                     "dot.img": {
                         frame: {
-                            x: 1058,
+                            x: 906,
                             y: 1782,
                             w: 18,
                             h: 18
@@ -20739,66 +18827,6 @@
                         sourceSize: {
                             w: 18,
                             h: 18
-                        }
-                    },
-                    "crosshair038.img": {
-                        frame: {
-                            x: 1080,
-                            y: 1782,
-                            w: 18,
-                            h: 18
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 7,
-                            w: 18,
-                            h: 18
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "crosshair086.img": {
-                        frame: {
-                            x: 1102,
-                            y: 1782,
-                            w: 18,
-                            h: 18
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 7,
-                            w: 18,
-                            h: 18
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "crosshair000.img": {
-                        frame: {
-                            x: 1124,
-                            y: 1782,
-                            w: 18,
-                            h: 18
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 7,
-                            w: 18,
-                            h: 18
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
                         }
                     },
                     "map-switch-01.img": {
@@ -20843,7 +18871,7 @@
                     },
                     "gun-qbb97-bot-01.img": {
                         frame: {
-                            x: 1146,
+                            x: 928,
                             y: 1782,
                             w: 30,
                             h: 16
@@ -20861,30 +18889,10 @@
                             h: 16
                         }
                     },
-                    "map-bottle-02.img": {
-                        frame: {
-                            x: 1979,
-                            y: 1444,
-                            w: 16,
-                            h: 16
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 16,
-                            h: 16
-                        },
-                        sourceSize: {
-                            w: 16,
-                            h: 16
-                        }
-                    },
                     "ping-part-circle.img": {
                         frame: {
                             x: 1979,
-                            y: 1464,
+                            y: 1444,
                             w: 16,
                             h: 16
                         },
@@ -20901,6 +18909,26 @@
                             h: 64
                         }
                     },
+                    "map-bottle-01.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1464,
+                            w: 16,
+                            h: 16
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 16
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 16
+                        }
+                    },
                     "map-wall-01-rounded.img": {
                         frame: {
                             x: 1979,
@@ -20908,3 +18936,1050 @@
                             w: 16,
                             h: 16
                         },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 16
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 16
+                        }
+                    },
+                    "ping-part-circle-highlight.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1504,
+                            w: 16,
+                            h: 16
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 24,
+                            y: 24,
+                            w: 16,
+                            h: 16
+                        },
+                        sourceSize: {
+                            w: 64,
+                            h: 64
+                        }
+                    },
+                    "map-bottle-02.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1524,
+                            w: 16,
+                            h: 16
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 16
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 16
+                        }
+                    },
+                    "map-bottle-03.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1544,
+                            w: 16,
+                            h: 16
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 16
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 16
+                        }
+                    },
+                    "ping-part-circle-auto-highlight.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1564,
+                            w: 15,
+                            h: 15
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 15,
+                            h: 15
+                        },
+                        sourceSize: {
+                            w: 15,
+                            h: 15
+                        }
+                    },
+                    "ping-part-circle-auto-outer.img": {
+                        frame: {
+                            x: 2029,
+                            y: 2020,
+                            w: 14,
+                            h: 14
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 14,
+                            h: 14
+                        },
+                        sourceSize: {
+                            w: 14,
+                            h: 14
+                        }
+                    },
+                    "ping-part-circle-auto.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1583,
+                            w: 14,
+                            h: 14
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 14,
+                            h: 14
+                        },
+                        sourceSize: {
+                            w: 14,
+                            h: 14
+                        }
+                    },
+                    "map-wall-shack-top.img": {
+                        frame: {
+                            x: 962,
+                            y: 1782,
+                            w: 180,
+                            h: 12
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 180,
+                            h: 12
+                        },
+                        sourceSize: {
+                            w: 180,
+                            h: 12
+                        }
+                    },
+                    "map-wall-shack-bot.img": {
+                        frame: {
+                            x: 1146,
+                            y: 1782,
+                            w: 121,
+                            h: 12
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 121,
+                            h: 12
+                        },
+                        sourceSize: {
+                            w: 121,
+                            h: 12
+                        }
+                    },
+                    "map-wall-outhouse-top.img": {
+                        frame: {
+                            x: 1271,
+                            y: 1782,
+                            w: 102,
+                            h: 12
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 102,
+                            h: 12
+                        },
+                        sourceSize: {
+                            w: 102,
+                            h: 12
+                        }
+                    },
+                    "map-wall-05-rounded.img": {
+                        frame: {
+                            x: 1979,
+                            y: 492,
+                            w: 16,
+                            h: 80
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 80
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 80
+                        }
+                    }
+                }
+            }, {
+                meta: {
+                    image: "shared-1-50-ed4f3d16.png",
+                    size: {
+                        w: 2048,
+                        h: 2048
+                    },
+                    scale: .5
+                },
+                frames: {
+                    "map-building-house-floor-01.img": {
+                        frame: {
+                            x: 486,
+                            y: 2,
+                            w: 480,
+                            h: 432
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 480,
+                            h: 432
+                        },
+                        sourceSize: {
+                            w: 480,
+                            h: 432
+                        }
+                    },
+                    "map-building-house-floor-02.img": {
+                        frame: {
+                            x: 2,
+                            y: 2,
+                            w: 480,
+                            h: 432
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 480,
+                            h: 432
+                        },
+                        sourceSize: {
+                            w: 480,
+                            h: 432
+                        }
+                    },
+                    "map-building-mansion-ceiling.img": {
+                        frame: {
+                            x: 2,
+                            y: 438,
+                            w: 457,
+                            h: 402
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 15,
+                            w: 457,
+                            h: 402
+                        },
+                        sourceSize: {
+                            w: 512,
+                            h: 432
+                        }
+                    },
+                    "map-building-bank-floor-01.img": {
+                        frame: {
+                            x: 970,
+                            y: 2,
+                            w: 848,
+                            h: 401
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 848,
+                            h: 401
+                        },
+                        sourceSize: {
+                            w: 848,
+                            h: 401
+                        }
+                    },
+                    "map-building-mansion-cellar-01a.img": {
+                        frame: {
+                            x: 970,
+                            y: 407,
+                            w: 433,
+                            h: 401
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 433,
+                            h: 401
+                        },
+                        sourceSize: {
+                            w: 433,
+                            h: 401
+                        }
+                    },
+                    "map-building-warehouse-floor-01.img": {
+                        frame: {
+                            x: 463,
+                            y: 438,
+                            w: 500,
+                            h: 400
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 500,
+                            h: 400
+                        },
+                        sourceSize: {
+                            w: 500,
+                            h: 400
+                        }
+                    },
+                    "map-building-warehouse-floor-02.img": {
+                        frame: {
+                            x: 2,
+                            y: 844,
+                            w: 440,
+                            h: 400
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 440,
+                            h: 400
+                        },
+                        sourceSize: {
+                            w: 440,
+                            h: 400
+                        }
+                    },
+                    "map-building-bridge-lg-floor.img": {
+                        frame: {
+                            x: 446,
+                            y: 844,
+                            w: 1010,
+                            h: 354
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 79,
+                            y: 127,
+                            w: 1010,
+                            h: 354
+                        },
+                        sourceSize: {
+                            w: 1168,
+                            h: 608
+                        }
+                    },
+                    "map-bunker-egg-chamber-floor-01a.img": {
+                        frame: {
+                            x: 1407,
+                            y: 407,
+                            w: 361,
+                            h: 348
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 0,
+                            w: 361,
+                            h: 348
+                        },
+                        sourceSize: {
+                            w: 369,
+                            h: 353
+                        }
+                    },
+                    "map-building-container-open-floor.img": {
+                        frame: {
+                            x: 1460,
+                            y: 844,
+                            w: 90,
+                            h: 343
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 1,
+                            w: 90,
+                            h: 343
+                        },
+                        sourceSize: {
+                            w: 90,
+                            h: 346
+                        }
+                    },
+                    "map-building-vault-floor.img": {
+                        frame: {
+                            x: 2,
+                            y: 1248,
+                            w: 322,
+                            h: 337
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 322,
+                            h: 337
+                        },
+                        sourceSize: {
+                            w: 433,
+                            h: 337
+                        }
+                    },
+                    "map-building-dock-floor-01b.img": {
+                        frame: {
+                            x: 1554,
+                            y: 844,
+                            w: 81,
+                            h: 332
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 81,
+                            h: 332
+                        },
+                        sourceSize: {
+                            w: 81,
+                            h: 332
+                        }
+                    },
+                    "map-building-house-ceiling.img": {
+                        frame: {
+                            x: 328,
+                            y: 1248,
+                            w: 360,
+                            h: 324
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 360,
+                            h: 324
+                        },
+                        sourceSize: {
+                            w: 360,
+                            h: 324
+                        }
+                    },
+                    "map-building-police-floor-02.img": {
+                        frame: {
+                            x: 692,
+                            y: 1248,
+                            w: 305,
+                            h: 321
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 32,
+                            w: 305,
+                            h: 321
+                        },
+                        sourceSize: {
+                            w: 305,
+                            h: 785
+                        }
+                    },
+                    "map-building-barn-ceiling-01.img": {
+                        frame: {
+                            x: 1001,
+                            y: 1248,
+                            w: 600,
+                            h: 312
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 600,
+                            h: 312
+                        },
+                        sourceSize: {
+                            w: 600,
+                            h: 312
+                        }
+                    },
+                    "map-building-teahouse-ceiling-01.img": {
+                        frame: {
+                            x: 2,
+                            y: 1589,
+                            w: 468,
+                            h: 306
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 7,
+                            w: 468,
+                            h: 306
+                        },
+                        sourceSize: {
+                            w: 480,
+                            h: 320
+                        }
+                    },
+                    "map-bunker-crossing-compartment-floor-02.img": {
+                        frame: {
+                            x: 1639,
+                            y: 844,
+                            w: 159,
+                            h: 304
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 0,
+                            w: 159,
+                            h: 304
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 304
+                        }
+                    },
+                    "map-building-cabin-ceiling-01a.img": {
+                        frame: {
+                            x: 474,
+                            y: 1589,
+                            w: 456,
+                            h: 288
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 456,
+                            h: 288
+                        },
+                        sourceSize: {
+                            w: 456,
+                            h: 288
+                        }
+                    },
+                    "map-building-teahouse-floor-01.img": {
+                        frame: {
+                            x: 934,
+                            y: 1589,
+                            w: 448,
+                            h: 288
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 448,
+                            h: 288
+                        },
+                        sourceSize: {
+                            w: 448,
+                            h: 288
+                        }
+                    },
+                    "map-bunker-conch-compartment-ceiling-01.img": {
+                        frame: {
+                            x: 1386,
+                            y: 1589,
+                            w: 244,
+                            h: 280
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 244,
+                            h: 280
+                        },
+                        sourceSize: {
+                            w: 244,
+                            h: 280
+                        }
+                    },
+                    "map-building-container-floor-01.img": {
+                        frame: {
+                            x: 1605,
+                            y: 1248,
+                            w: 90,
+                            h: 266
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 90,
+                            h: 266
+                        },
+                        sourceSize: {
+                            w: 90,
+                            h: 268
+                        }
+                    },
+                    "map-bunker-conch-compartment-floor-01b.img": {
+                        frame: {
+                            x: 1822,
+                            y: 2,
+                            w: 200,
+                            h: 214
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 200,
+                            h: 214
+                        },
+                        sourceSize: {
+                            w: 200,
+                            h: 224
+                        }
+                    },
+                    "map-building-hut-ceiling-02.img": {
+                        frame: {
+                            x: 1822,
+                            y: 220,
+                            w: 190,
+                            h: 197
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 7,
+                            w: 190,
+                            h: 197
+                        },
+                        sourceSize: {
+                            w: 204,
+                            h: 204
+                        }
+                    },
+                    "map-building-hut-ceiling-01.img": {
+                        frame: {
+                            x: 1822,
+                            y: 421,
+                            w: 190,
+                            h: 197
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 7,
+                            w: 190,
+                            h: 197
+                        },
+                        sourceSize: {
+                            w: 204,
+                            h: 204
+                        }
+                    },
+                    "map-building-panicroom-ceiling.img": {
+                        frame: {
+                            x: 1822,
+                            y: 622,
+                            w: 144,
+                            h: 192
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 144,
+                            h: 192
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 192
+                        }
+                    },
+                    "map-building-panicroom-floor.img": {
+                        frame: {
+                            x: 1822,
+                            y: 818,
+                            w: 144,
+                            h: 192
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 144,
+                            h: 192
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 192
+                        }
+                    },
+                    "map-building-container-open-ceiling-01.img": {
+                        frame: {
+                            x: 1822,
+                            y: 1014,
+                            w: 90,
+                            h: 192
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 77,
+                            w: 90,
+                            h: 192
+                        },
+                        sourceSize: {
+                            w: 90,
+                            h: 346
+                        }
+                    },
+                    "map-bunker-storm-floor-02.img": {
+                        frame: {
+                            x: 1822,
+                            y: 1210,
+                            w: 160,
+                            h: 191
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 160,
+                            h: 191
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 192
+                        }
+                    },
+                    "map-building-container-ceiling-05.img": {
+                        frame: {
+                            x: 1916,
+                            y: 1014,
+                            w: 90,
+                            h: 191
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 90,
+                            h: 191
+                        },
+                        sourceSize: {
+                            w: 90,
+                            h: 268
+                        }
+                    },
+                    "map-building-container-ceiling-03.img": {
+                        frame: {
+                            x: 1822,
+                            y: 1405,
+                            w: 90,
+                            h: 191
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 90,
+                            h: 191
+                        },
+                        sourceSize: {
+                            w: 90,
+                            h: 268
+                        }
+                    },
+                    "map-building-container-ceiling-01.img": {
+                        frame: {
+                            x: 1916,
+                            y: 1405,
+                            w: 90,
+                            h: 191
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 90,
+                            h: 191
+                        },
+                        sourceSize: {
+                            w: 90,
+                            h: 268
+                        }
+                    },
+                    "map-building-container-ceiling-02.img": {
+                        frame: {
+                            x: 1822,
+                            y: 1600,
+                            w: 90,
+                            h: 191
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 90,
+                            h: 191
+                        },
+                        sourceSize: {
+                            w: 90,
+                            h: 268
+                        }
+                    },
+                    "map-building-bank-ceiling-03.img": {
+                        frame: {
+                            x: 1699,
+                            y: 1248,
+                            w: 108,
+                            h: 181
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 95,
+                            w: 108,
+                            h: 181
+                        },
+                        sourceSize: {
+                            w: 108,
+                            h: 276
+                        }
+                    },
+                    "map-bunker-egg-chamber-ceiling-01.img": {
+                        frame: {
+                            x: 1634,
+                            y: 1589,
+                            w: 160,
+                            h: 153
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 71,
+                            w: 160,
+                            h: 153
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 224
+                        }
+                    },
+                    "map-building-shack-ceiling-03.img": {
+                        frame: {
+                            x: 2,
+                            y: 1899,
+                            w: 205,
+                            h: 145
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 11,
+                            y: 0,
+                            w: 205,
+                            h: 145
+                        },
+                        sourceSize: {
+                            w: 216,
+                            h: 168
+                        }
+                    },
+                    "map-pipes-01.img": {
+                        frame: {
+                            x: 1970,
+                            y: 622,
+                            w: 45,
+                            h: 144
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 45,
+                            h: 144
+                        },
+                        sourceSize: {
+                            w: 45,
+                            h: 144
+                        }
+                    },
+                    "map-bunker-generic-floor-01.img": {
+                        frame: {
+                            x: 211,
+                            y: 1899,
+                            w: 148,
+                            h: 141
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 0,
+                            w: 148,
+                            h: 141
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 144
+                        }
+                    },
+                    "map-bunker-generic-floor-02.img": {
+                        frame: {
+                            x: 363,
+                            y: 1899,
+                            w: 148,
+                            h: 141
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 0,
+                            w: 148,
+                            h: 141
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 144
+                        }
+                    },
+                    "map-stone-03.img": {
+                        frame: {
+                            x: 515,
+                            y: 1899,
+                            w: 138,
+                            h: 138
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 3,
+                            w: 138,
+                            h: 138
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 144
+                        }
+                    },
+                    "map-bush-04.img": {
+                        frame: {
+                            x: 657,
+                            y: 1899,
+                            w: 136,
+                            h: 132
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 9,
+                            w: 136,
+                            h: 132
+                        },
+                        sourceSize: {
+                            w: 150,
+                            h: 150
+                        }
+                    },
+                    "map-bunker-conch-floor-01.img": {
+                        frame: {
+                            x: 797,
+                            y: 1899,
+                            w: 290,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 0,
+                            w: 290,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 300,
+                            h: 128
+                        }
+                    },
+                    "map-tree-03.img": {
+                        frame: {
+                            x: 1091,
