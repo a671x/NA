@@ -1,23 +1,23 @@
-    16: [function(_0x466ba5, _0x509ac7, _0x4582aa) {
+    16: [function(_0x2e6aca, _0x45c408, _0x328b05) {
         'use strict';
-        var _0x3c5157 = function() {
-            function _0x466ba5(_0x466ba5, _0x509ac7) {
-                for (var _0x4582aa = 0x0; _0x4582aa < _0x509ac7['length']; _0x4582aa++) {
-                    var _0x3c5157 = _0x509ac7[_0x4582aa];
-                    _0x3c5157['enumerable'] = _0x3c5157['enumerable'] || !0x1, _0x3c5157[_0x3e93('0x192')] = !0x0, 'value' in _0x3c5157 && (_0x3c5157['writable'] = !0x0), Object['defineProperty'](_0x466ba5, _0x3c5157[_0x3e93('0x193')], _0x3c5157);
+        var _0x30717e = function() {
+            function _0x2e6aca(_0x2e6aca, _0x45c408) {
+                for (var _0x328b05 = 0x0; _0x328b05 < _0x45c408['length']; _0x328b05++) {
+                    var _0x30717e = _0x45c408[_0x328b05];
+                    _0x30717e['enumerable'] = _0x30717e['enumerable'] || !0x1, _0x30717e['configurable'] = !0x0, 'value' in _0x30717e && (_0x30717e['writable'] = !0x0), Object['defineProperty'](_0x2e6aca, _0x30717e['key'], _0x30717e);
                 }
             }
-            return function(_0x509ac7, _0x4582aa, _0x3c5157) {
-                return _0x4582aa && _0x466ba5(_0x509ac7[_0x55c2('0x3c')], _0x4582aa), _0x3c5157 && _0x466ba5(_0x509ac7, _0x3c5157), _0x509ac7;
+            return function(_0x45c408, _0x328b05, _0x30717e) {
+                return _0x328b05 && _0x2e6aca(_0x45c408['prototype'], _0x328b05), _0x30717e && _0x2e6aca(_0x45c408, _0x30717e), _0x45c408;
             };
         }();
-        var _0x24bc1f = function() {
-            function _0x466ba5() {
-                ! function(_0x466ba5, _0x509ac7) {
-                    if (!(_0x466ba5 instanceof _0x509ac7)) throw new TypeError('Cannot call a class as a function');
-                }(this, _0x466ba5);
+        var _0x55029b = function() {
+            function _0x2e6aca() {
+                ! function(_0x2e6aca, _0x45c408) {
+                    if (!(_0x2e6aca instanceof _0x45c408)) throw new TypeError('Cannot call a class as a function');
+                }(this, _0x2e6aca);
             }
-            return _0x3c5157(_0x466ba5, null, [{
+            return _0x30717e(_0x2e6aca, null, [{
                 'key': 'getSelfPos',
                 'value': function() {
                     return this['main']['game']['scope'][this['main']['obfuscate']['activePlayer']['main']]['pos'];
@@ -25,59 +25,58 @@
             }, {
                 'key': 'isNoEnemy',
                 'value': function() {
-                    var _0x466ba5 = this['main']['game']['scope'][this['main']['obfuscate']['playerBarn']['main']][this['main']['obfuscate']['playerBarn']['players']];
-                    if (!_0x466ba5[this['main']['game']['scope'][this['main']['obfuscate']['activeId']]]) return !0x1;
-                    for (var _0x509ac7 = _0x466ba5[this['main']['game']['scope'][this['main']['obfuscate']['activeId']]]['teamId'], _0x4582aa = Object['keys'](_0x466ba5), _0x3c5157 = this['main']['game']['scope'][this['main']['obfuscate']['objectCreator']]['idToObj'], _0x24bc1f = 0x0; _0x24bc1f < _0x4582aa['length']; _0x24bc1f++) {
-                        var _0x910638 = _0x4582aa[_0x24bc1f];
-                        if (_0x3c5157[_0x910638] && !_0x3c5157[_0x910638][this['main']['obfuscate']['activePlayer']['netData']]['dead'] && !_0x3c5157[_0x910638][this['main']['obfuscate']['activePlayer']['netData']]['downed'] && _0x466ba5[_0x910638]['teamId'] != _0x509ac7) return !0x1;
+                    var _0x2e6aca = this['main']['game']['scope'][this['main']['obfuscate']['playerBarn']['main']][this['main']['obfuscate']['playerBarn']['players']];
+                    if (!_0x2e6aca[this['main']['game']['scope'][this['main']['obfuscate']['activeId']]]) return !0x1;
+                    for (var _0x45c408 = _0x2e6aca[this['main']['game']['scope'][this['main']['obfuscate']['activeId']]]['teamId'], _0x328b05 = Object['keys'](_0x2e6aca), _0x30717e = this['main']['game']['scope'][this['main']['obfuscate']['objectCreator']]['idToObj'], _0x55029b = 0x0; _0x55029b < _0x328b05['length']; _0x55029b++) {
+                        var _0x338da9 = _0x328b05[_0x55029b];
+                        if (_0x30717e[_0x338da9] && !_0x30717e[_0x338da9][this['main']['obfuscate']['activePlayer']['netData']]['dead'] && !_0x30717e[_0x338da9][this['main']['obfuscate']['activePlayer']['netData']]['downed'] && _0x2e6aca[_0x338da9]['teamId'] != _0x45c408) return !0x1;
                     }
                     return !0x0;
                 }
             }, {
                 'key': 'isNoMotion',
                 'value': function() {
-                    var _0x466ba5 = this['main']['game']['scope'][this['main']['obfuscate']['input']['main']][this['main']['obfuscate']['input']['input']]['keys'];
-                    return !(_0x466ba5[this['main']['gameObjects']['key']['W']] || _0x466ba5[this['main']['gameObjects']['key']['D']] || _0x466ba5[this['main']['gameObjects']['key']['S']] || _0x466ba5[this['main']['gameObjects']['key']['A']]);
+                    var _0x2e6aca = this['main']['game']['scope'][this['main']['obfuscate']['input']['main']][this['main']['obfuscate']['input']['input']]['keys'];
+                    return !(_0x2e6aca[this['main']['gameObjects']['key']['W']] || _0x2e6aca[this['main']['gameObjects']['key']['D']] || _0x2e6aca[this['main']['gameObjects']['key']['S']] || _0x2e6aca[this['main']['gameObjects']['key']['A']]);
                 }
             }, {
                 'key': 'isNotReloadingOrHealing',
                 'value': function() {
-                    var _0x466ba5 = this['main']['game']['scope'][this['main']['obfuscate']['activePlayer']['main']]['action'];
-                    return 0x1 != _0x466ba5[_0x55c2('0xc4')] && 0x2 != _0x466ba5['type'] && 0x3 != _0x466ba5[_0x55c2('0xc4')];
+                    var _0x2e6aca = this['main']['game']['scope'][this['main']['obfuscate']['activePlayer']['main']]['action'];
+                    return 0x1 != _0x2e6aca['type'] && 0x2 != _0x2e6aca['type'];
                 }
             }, {
                 'key': 'isNotReloading',
                 'value': function() {
-                    var _0x466ba5 = this['main']['game']['scope'][this['main']['obfuscate']['activePlayer']['main']]['action'];
-                    return 0x1 != _0x466ba5[_0x55c2('0xc4')] && 0x2 != _0x466ba5[_0x55c2('0xc4')];
+                    return 0x1 != this['main']['game']['scope'][this['main']['obfuscate']['activePlayer']['main']]['action']['type'];
                 }
             }, {
                 'key': 'detectEnemies',
                 'value': function() {
-                    var _0x466ba5 = this['main']['game']['scope'][this['main']['obfuscate']['playerBarn']['main']][this['main']['obfuscate']['playerBarn']['players']],
-                        _0x509ac7 = this['main']['game']['scope'][this['main']['obfuscate']['activeId']],
-                        _0x4582aa = [];
-                    if (!_0x466ba5[_0x509ac7]) return _0x4582aa;
-                    for (var _0x3c5157 = this['main']['game']['scope'][this['main']['obfuscate']['objectCreator']]['idToObj'], _0x24bc1f = _0x466ba5[_0x509ac7]['teamId'], _0x9a0270 = Object['keys'](_0x466ba5), _0x32bc4f = 0x0; _0x32bc4f < _0x9a0270['length']; _0x32bc4f++) !_0x3c5157[_0x9a0270[_0x32bc4f]] || _0x3c5157[_0x9a0270[_0x32bc4f]][this['main']['obfuscate']['activePlayer']['netData']]['dead'] || _0x3c5157[_0x9a0270[_0x32bc4f]][this['main']['obfuscate']['activePlayer']['netData']]['downed'] || _0x466ba5[_0x9a0270[_0x32bc4f]]['teamId'] == _0x24bc1f || _0x9a0270[_0x32bc4f] != _0x509ac7 && (_0x4582aa[_0x9a0270[_0x32bc4f]] = _0x3c5157[_0x9a0270[_0x32bc4f]]);
-                    return _0x4582aa;
+                    var _0x2e6aca = this['main']['game']['scope'][this['main']['obfuscate']['playerBarn']['main']][this['main']['obfuscate']['playerBarn']['players']],
+                        _0x45c408 = this['main']['game']['scope'][this['main']['obfuscate']['activeId']],
+                        _0x328b05 = [];
+                    if (!_0x2e6aca[_0x45c408]) return _0x328b05;
+                    for (var _0x30717e = this['main']['game']['scope'][this['main']['obfuscate']['objectCreator']]['idToObj'], _0x55029b = _0x2e6aca[_0x45c408]['teamId'], _0x926d2 = Object['keys'](_0x2e6aca), _0xb59072 = 0x0; _0xb59072 < _0x926d2['length']; _0xb59072++) !_0x30717e[_0x926d2[_0xb59072]] || _0x30717e[_0x926d2[_0xb59072]][this['main']['obfuscate']['activePlayer']['netData']]['dead'] || _0x30717e[_0x926d2[_0xb59072]][this['main']['obfuscate']['activePlayer']['netData']]['downed'] || _0x2e6aca[_0x926d2[_0xb59072]]['teamId'] == _0x55029b || _0x926d2[_0xb59072] != _0x45c408 && (_0x328b05[_0x926d2[_0xb59072]] = _0x30717e[_0x926d2[_0xb59072]]);
+                    return _0x328b05;
                 }
             }, {
                 'key': 'playerIsActive',
-                'value': function(_0x466ba5) {
-                    return !_0x466ba5[this['main']['obfuscate']['activePlayer']['netData']]['dead'] && !_0x466ba5[this['main']['obfuscate']['activePlayer']['netData']]['downed'];
+                'value': function(_0x2e6aca) {
+                    return !_0x2e6aca[this['main']['obfuscate']['activePlayer']['netData']]['dead'] && !_0x2e6aca[this['main']['obfuscate']['activePlayer']['netData']]['downed'];
                 }
             }, {
                 'key': 'isTeammate',
-                'value': function(_0x466ba5, _0x509ac7, _0x4582aa, _0x3c5157) {
-                    return _0x4582aa['teamId'] == _0x509ac7 || _0x3c5157 == _0x466ba5;
+                'value': function(_0x2e6aca, _0x45c408, _0x328b05, _0x30717e) {
+                    return _0x328b05['teamId'] == _0x45c408 || _0x30717e == _0x2e6aca;
                 }
             }, {
                 'key': 'canSeeEnemy',
-                'value': function(_0x466ba5, _0x509ac7) {
-                    var _0x4582aa = !0x0;
-                    return !(arguments['length'] > 0x2 && void 0x0 !== arguments[0x2]) || arguments[0x2] || _0x466ba5['layer'] == _0x509ac7['layer'] || 0x2 == _0x509ac7['layer'] || 0x2 == _0x466ba5['layer'] || 0x3 == _0x509ac7['layer'] || 0x3 == _0x466ba5['layer'] || (_0x4582aa = !0x1), _0x4582aa;
+                'value': function(_0x2e6aca, _0x45c408) {
+                    var _0x328b05 = !0x0;
+                    return !(arguments['length'] > 0x2 && void 0x0 !== arguments[0x2]) || arguments[0x2] || _0x2e6aca['layer'] == _0x45c408['layer'] || 0x2 == _0x45c408['layer'] || 0x2 == _0x2e6aca['layer'] || 0x3 == _0x45c408['layer'] || 0x3 == _0x2e6aca['layer'] || (_0x328b05 = !0x1), _0x328b05;
                 }
-            }]), _0x466ba5;
+            }]), _0x2e6aca;
         }();
-        _0x509ac7['exports'] = _0x24bc1f;
+        _0x45c408['exports'] = _0x55029b;
     }, {}],
