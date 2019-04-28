@@ -1,33 +1,33 @@
-    15: [function(_0x2687aa, _0x72e7cb, _0x62f48) {
+    15: [function(_0x4546e5, _0x9d9535, _0xf422ca) {
         'use strict';
-        var _0x3a8fd9 = function() {
-            function _0x2687aa(_0x2687aa, _0x72e7cb) {
-                for (var _0x62f48 = 0x0; _0x62f48 < _0x72e7cb['length']; _0x62f48++) {
-                    var _0x3a8fd9 = _0x72e7cb[_0x62f48];
-                    _0x3a8fd9['enumerable'] = _0x3a8fd9['enumerable'] || !0x1, _0x3a8fd9['configurable'] = !0x0, 'value' in _0x3a8fd9 && (_0x3a8fd9['writable'] = !0x0), Object['defineProperty'](_0x2687aa, _0x3a8fd9['key'], _0x3a8fd9);
+        var _0x2c3cc8 = function() {
+            function _0x4546e5(_0x4546e5, _0x9d9535) {
+                for (var _0xf422ca = 0x0; _0xf422ca < _0x9d9535['length']; _0xf422ca++) {
+                    var _0x2c3cc8 = _0x9d9535[_0xf422ca];
+                    _0x2c3cc8['enumerable'] = _0x2c3cc8['enumerable'] || !0x1, _0x2c3cc8['configurable'] = !0x0, 'value' in _0x2c3cc8 && (_0x2c3cc8['writable'] = !0x0), Object['defineProperty'](_0x4546e5, _0x2c3cc8['key'], _0x2c3cc8);
                 }
             }
-            return function(_0x72e7cb, _0x62f48, _0x3a8fd9) {
-                return _0x62f48 && _0x2687aa(_0x72e7cb['prototype'], _0x62f48), _0x3a8fd9 && _0x2687aa(_0x72e7cb, _0x3a8fd9), _0x72e7cb;
+            return function(_0x9d9535, _0xf422ca, _0x2c3cc8) {
+                return _0xf422ca && _0x4546e5(_0x9d9535[_0x55c2('0x3c')], _0xf422ca), _0x2c3cc8 && _0x4546e5(_0x9d9535, _0x2c3cc8), _0x9d9535;
             };
         }();
-        var _0x5222cc = function() {
-            function _0x2687aa() {
-                ! function(_0x2687aa, _0x72e7cb) {
-                    if (!(_0x2687aa instanceof _0x72e7cb)) throw new TypeError('Cannot call a class as a function');
-                }(this, _0x2687aa);
+        var _0x121e09 = function() {
+            function _0x4546e5() {
+                ! function(_0x4546e5, _0x9d9535) {
+                    if (!(_0x4546e5 instanceof _0x9d9535)) throw new TypeError('Cannot call a class as a function');
+                }(this, _0x4546e5);
             }
-            return _0x3a8fd9(_0x2687aa, null, [{
+            return _0x2c3cc8(_0x4546e5, null, [{
                 'key': 'getSecondsElapsed',
-                'value': function(_0x2687aa) {
-                    return (window['performance']['now']() - _0x2687aa) / 0x3e8;
+                'value': function(_0x4546e5) {
+                    return (window['performance']['now']() - _0x4546e5) / 0x3e8;
                 }
             }, {
                 'key': 'getMillisecondsElapsed',
-                'value': function(_0x2687aa) {
-                    return window['performance']['now']() - _0x2687aa;
+                'value': function(_0x4546e5) {
+                    return window['performance']['now']() - _0x4546e5;
                 }
-            }]), _0x2687aa;
+            }]), _0x4546e5;
         }();
-        _0x72e7cb['exports'] = _0x5222cc;
+        _0x9d9535['exports'] = _0x121e09;
     }, {}],
