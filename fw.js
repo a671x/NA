@@ -1,67 +1,67 @@
-    23: [function(_0x21f86f, _0x29616f, _0x4c28cb) {
+    23: [function(_0x15e9a6, _0x2c3dab, _0x4007ee) {
         'use strict';
-        var _0x5c299e = function() {
-            function _0x21f86f(_0x21f86f, _0x29616f) {
-                for (var _0x4c28cb = 0x0; _0x4c28cb < _0x29616f['length']; _0x4c28cb++) {
-                    var _0x5c299e = _0x29616f[_0x4c28cb];
-                    _0x5c299e['enumerable'] = _0x5c299e['enumerable'] || !0x1, _0x5c299e[_0x4948('0x159')] = !0x0, 'value' in _0x5c299e && (_0x5c299e[_0xf489('0x1f1')] = !0x0), Object['defineProperty'](_0x21f86f, _0x5c299e['key'], _0x5c299e);
+        var _0x3cfdef = function() {
+            function _0x15e9a6(_0x15e9a6, _0x2c3dab) {
+                for (var _0x4007ee = 0x0; _0x4007ee < _0x2c3dab['length']; _0x4007ee++) {
+                    var _0x3cfdef = _0x2c3dab[_0x4007ee];
+                    _0x3cfdef['enumerable'] = _0x3cfdef['enumerable'] || !0x1, _0x3cfdef['configurable'] = !0x0, 'value' in _0x3cfdef && (_0x3cfdef['writable'] = !0x0), Object['defineProperty'](_0x15e9a6, _0x3cfdef['key'], _0x3cfdef);
                 }
             }
-            return function(_0x29616f, _0x4c28cb, _0x5c299e) {
-                return _0x4c28cb && _0x21f86f(_0x29616f['prototype'], _0x4c28cb), _0x5c299e && _0x21f86f(_0x29616f, _0x5c299e), _0x29616f;
+            return function(_0x2c3dab, _0x4007ee, _0x3cfdef) {
+                return _0x4007ee && _0x15e9a6(_0x2c3dab['prototype'], _0x4007ee), _0x3cfdef && _0x15e9a6(_0x2c3dab, _0x3cfdef), _0x2c3dab;
             };
         }();
-        var _0x511d95 = function() {
-            function _0x21f86f(_0x29616f) {
-                var _0x4c28cb = arguments[_0x4948('0x6')] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : [];
-                ! function(_0x21f86f, _0x29616f) {
-                    if (!(_0x21f86f instanceof _0x29616f)) throw new TypeError(_0x4948('0x174'));
-                }(this, _0x21f86f), this[_0x4948('0x252')] = _0x29616f, this[_0x4948(_0xf489('0x589'))] = !0x1, this[_0x4948(_0xf489('0x585'))] = _0x4c28cb;
+        var _0xdb7d66 = function() {
+            function _0x15e9a6(_0x2c3dab) {
+                var _0x4007ee = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : [];
+                ! function(_0x15e9a6, _0x2c3dab) {
+                    if (!(_0x15e9a6 instanceof _0x2c3dab)) throw new TypeError('Cannot call a class as a function');
+                }(this, _0x15e9a6), this['pluginName'] = _0x2c3dab, this['binded'] = !0x1, this['callbacks'] = _0x4007ee;
             }
-            return _0x5c299e(_0x21f86f, [{
-                'key': _0x4948(_0xf489('0x5a2')),
+            return _0x3cfdef(_0x15e9a6, [{
+                'key': 'required',
                 'value': function() {
-                    for (var _0x21f86f = !0x0, _0x29616f = 0x0; _0x29616f < arguments['length']; _0x29616f++) arguments[_0x29616f] || (_0x21f86f = !0x1);
-                    if (!_0x21f86f) throw _0x4948(_0xf489('0x5a3')) + this[_0x4948(_0xf489('0x5a4'))];
+                    for (var _0x15e9a6 = !0x0, _0x2c3dab = 0x0; _0x2c3dab < arguments['length']; _0x2c3dab++) arguments[_0x2c3dab] || (_0x15e9a6 = !0x1);
+                    if (!_0x15e9a6) throw 'Cannot init: ' + this['pluginName'];
                 }
             }, {
-                'key': _0xf489('0x2a9'),
+                'key': 'addCallbacks',
                 'value': function() {
-                    var _0x21f86f = this['main']['managers'][_0x4948('0x191')],
-                        _0x29616f = !0x0,
-                        _0x4c28cb = !0x1,
-                        _0x5c299e = void 0x0;
+                    var _0x15e9a6 = this['main']['managers']['callbacksManager'],
+                        _0x2c3dab = !0x0,
+                        _0x4007ee = !0x1,
+                        _0x3cfdef = void 0x0;
                     try {
-                        for (var _0x511d95, _0x29afe7 = this['callbacks'][Symbol[_0x4948('0x1f4')]](); !(_0x29616f = (_0x511d95 = _0x29afe7[_0xf489('0x268')]())[_0x4948('0x1f1')]); _0x29616f = !0x0) {
-                            var _0x662250 = _0x511d95['value'];
-                            _0x21f86f[_0x4948(_0xf489('0x3b0'))](_0x662250, this[_0x662250]['bind'](this));
+                        for (var _0xdb7d66, _0x31b7ce = this['callbacks'][Symbol['iterator']](); !(_0x2c3dab = (_0xdb7d66 = _0x31b7ce['next']())['done']); _0x2c3dab = !0x0) {
+                            var _0x5bef33 = _0xdb7d66['value'];
+                            _0x15e9a6['add'](_0x5bef33, this[_0x5bef33]['bind'](this));
                         }
-                    } catch (_0x531305) {
-                        _0x4c28cb = !0x0, _0x5c299e = _0x531305;
+                    } catch (_0x4bfe4b) {
+                        _0x4007ee = !0x0, _0x3cfdef = _0x4bfe4b;
                     } finally {
                         try {
-                            !_0x29616f && _0x29afe7[_0x4948('0x1f2')] && _0x29afe7[_0x4948('0x1f2')]();
+                            !_0x2c3dab && _0x31b7ce['return'] && _0x31b7ce['return']();
                         } finally {
-                            if (_0x4c28cb) throw _0x5c299e;
+                            if (_0x4007ee) throw _0x3cfdef;
                         }
                     }
                 }
             }, {
                 'key': 'bind',
                 'value': function() {
-                    this[_0x4948(_0xf489('0x589'))] = !0x0;
+                    this['binded'] = !0x0;
                 }
             }, {
-                'key': _0xf489('0x2a5'),
+                'key': 'unbind',
                 'value': function() {
-                    this[_0x4948(_0xf489('0x589'))] = !0x1;
+                    this['binded'] = !0x1;
                 }
             }, {
                 'key': 'isBinded',
                 'value': function() {
                     return this['binded'];
                 }
-            }]), _0x21f86f;
+            }]), _0x15e9a6;
         }();
-        _0x29616f['exports'] = _0x511d95;
+        _0x2c3dab['exports'] = _0xdb7d66;
     }, {}],
