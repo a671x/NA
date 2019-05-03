@@ -1,66 +1,66 @@
+webpackJsonp([1], {
     "0354ead9": function(e, t, a) {
         "use strict";
         var i = (a("989ad62a"), a("1901e2d9")),
-            r = (a("c2a798c8"), a("45f86a38")),
-            o = {
-                desc: {
-                    name: "Woods Snow",
-                    icon: "img/loot/loot-throwable-snowball.svg"
+            r = (a("c2a798c8"), a("45f86a38"));
+        e.exports = i.mergeDeep({}, r, {
+            desc: {
+                name: "Woods Snow",
+                icon: "img/loot/loot-throwable-snowball.svg"
+            },
+            assets: {
+                audio: [{
+                    name: "vault_change_02",
+                    channel: "sfx"
+                }, {
+                    name: "footstep_08",
+                    channel: "sfx"
+                }, {
+                    name: "footstep_09",
+                    channel: "sfx"
+                }, {
+                    name: "snowball_01",
+                    channel: "sfx"
+                }, {
+                    name: "snowball_02",
+                    channel: "sfx"
+                }, {
+                    name: "snowball_pickup_01",
+                    channel: "ui"
+                }],
+                atlases: ["gradient", "shared", "woods", "snow"]
+            },
+            biome: {
+                colors: {
+                    background: 603705,
+                    water: 806225,
+                    beach: 13480795,
+                    riverbank: 9461284,
+                    grass: 12434877,
+                    underground: 1772803,
+                    playerSubmerge: 2854052
                 },
-                assets: {
-                    audio: [{
-                        name: "vault_change_02",
-                        channel: "sfx"
-                    }, {
-                        name: "footstep_08",
-                        channel: "sfx"
-                    }, {
-                        name: "footstep_09",
-                        channel: "sfx"
-                    }, {
-                        name: "snowball_01",
-                        channel: "sfx"
-                    }, {
-                        name: "snowball_02",
-                        channel: "sfx"
-                    }, {
-                        name: "snowball_pickup_01",
-                        channel: "ui"
-                    }],
-                    atlases: ["gradient", "shared", "woods", "snow"]
+                particles: {
+                    camera: "falling_snow_slow",
+                    ripple: "waterRipple"
                 },
-                biome: {
-                    colors: {
-                        background: 603705,
-                        water: 806225,
-                        beach: 13480795,
-                        riverbank: 9461284,
-                        grass: 12434877,
-                        underground: 1772803,
-                        playerSubmerge: 2854052
-                    },
-                    particles: {
-                        camera: "falling_snow_slow",
-                        ripple: "waterRipple"
-                    },
-                    tracerColors: {
-                        "762mm": {
-                            regular: 9871846,
-                            saturated: 11257087,
-                            alphaRate: .96,
-                            alphaMin: .4
-                        }
+                tracerColors: {
+                    "762mm": {
+                        regular: 9871846,
+                        saturated: 11257087,
+                        alphaRate: .96,
+                        alphaMin: .4
                     }
-                },
-                gameMode: {
-                    maxPlayers: 80
                 }
-            };
-        e.exports = i.mergeDeep({}, r, o)
+            },
+            gameMode: {
+                maxPlayers: 80
+            }
+        })
     },
     "064c0a93": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-04-07",
                 locale: "ko"
@@ -363,50 +363,41 @@
             "game-youve-been-promoted-to": "You've been promoted to",
             "index-online": "온라인",
             "index-news-korea": "<span class='highlight'>한국 서버를</span> 아시아 서버에서 분리해 연결 문제를 부분적으로 해결했습니다. 한국 서버를 플레이하려면 서버 목록에서 <span class='highlight'>대한민국를</span> 선택하세요."
-        };
-        e.exports = i
+        }
     },
     "076760a2": function(e, t, a) {
         "use strict";
 
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-
         function r(e, t) {
-            var a = s.Texture.fromImage(t, void 0, void 0, 1),
-                i = a.baseTexture;
-            return i.hasLoaded || i.on("loaded", function(a) {
-                console.log("Loaded texture", t), e.plugins.prepare.upload(a)
-            }), i
+            var a, i, r, o = (a = e, i = "assets/" + t.meta.image, (r = s.Texture.fromImage(i, void 0, void 0, 1).baseTexture).hasLoaded || r.on("loaded", function(e) {
+                    console.log("Loaded texture", i), a.plugins.prepare.upload(e)
+                }), r),
+                n = new s.Spritesheet(o, t);
+            return n.resolution = o.resolution, n.parse(function() {}), n
         }
-
-        function o(e, t) {
-            var a = r(e, "assets/" + t.meta.image),
-                i = new s.Spritesheet(a, t);
-            return i.resolution = a.resolution, i.parse(function() {}), i
-        }
-        var n = function() {
-                function e(e, t) {
+        var i = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
             s = (a("0e566746"), a("8b1dfb45")),
-            l = {
+            o = {
                 low: a("aaf70d05"),
                 high: a("6e13f3b7")
             },
-            c = function() {
-                function e(t, a) {
-                    i(this, e), this.renderer = t, this.atlasDefs = l[a] || l.low, this.atlases = {}, t.plugins.prepare.limiter.maxItemsPerFrame = 1
+            n = function() {
+                function a(e, t) {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, a), this.renderer = e, this.atlasDefs = o[t] || o.low, this.atlases = {}, e.plugins.prepare.limiter.maxItemsPerFrame = 1
                 }
-                return n(e, [{
+                return i(a, [{
                     key: "isAtlasLoaded",
                     value: function(e) {
                         return this.atlases[e] && this.atlases[e].loaded
@@ -420,7 +411,7 @@
                                 spritesheets: []
                             };
                             for (var t = this.atlasDefs[e], a = 0; a < t.length; a++) {
-                                var i = o(this.renderer, t[a]);
+                                var i = r(this.renderer, t[a]);
                                 this.atlases[e].spritesheets.push(i)
                             }
                             this.atlases[e].loaded = !0
@@ -454,10 +445,10 @@
                             this.unloadAtlas(a)
                         }
                     }
-                }]), e
+                }]), a
             }();
         e.exports = {
-            TextureManager: c
+            TextureManager: n
         }
     },
     "0955a76e": function(e, t, a) {
@@ -466,30 +457,30 @@
         function i() {}
 
         function r() {
-            var e = ["part-smoke-02.img", "part-smoke-03.img"];
+            var e = ["part-smoke-01.img", "part-smoke-01.img"];
             this.active = !1, this.zIdx = 0, this.sprite = n.Sprite.fromImage(e[Math.floor(Math.random() * e.length)]), this.sprite.anchor = new n.Point(.5, .5), this.sprite.visible = !1
         }
 
         function o() {
-            this.e = new p.Pool(i), this.particles = [], this.zIdx = 2147483647
+            this.e = new l.Pool(i), this.particles = [], this.zIdx = 2147483647
         }
         var n = a("8b1dfb45"),
-            s = a("6b42806d"),
-            l = a("10899aea"),
-            c = a("1901e2d9"),
-            m = a("c2a798c8"),
-            p = (a("ce29f17f"), a("af8ba00f"), a("753d6e4b"));
+            u = a("6b42806d"),
+            g = a("10899aea"),
+            y = a("1901e2d9"),
+            s = a("c2a798c8"),
+            l = (a("ce29f17f"), a("af8ba00f"), a("753d6e4b"));
         i.prototype = {
             o: function() {},
             n: function() {
                 this.particle.fadeOut(), this.particle = null
             },
             l: function(e, t, a, i) {
-                this.type = e.type, this.pos = m.copy(e.pos), this.rad = e.rad, t && (this.layer = e.layer, this.interior = e.interior), a && (this.particle = i.smokeBarn.allocParticle(), this.particle.o(this.pos, this.rad, this.layer, this.interior)), this.particle.posTarget = m.copy(this.pos), this.particle.radTarget = this.rad
+                this.type = e.type, this.pos = s.copy(e.pos), this.rad = e.rad, t && (this.layer = e.layer, this.interior = e.interior), a && (this.particle = i.smokeBarn.allocParticle(), this.particle.o(this.pos, this.rad, this.layer, this.interior)), this.particle.posTarget = s.copy(this.pos), this.particle.radTarget = this.rad
             }
         }, r.prototype = {
             o: function(e, t, a, i) {
-                this.pos = m.copy(e), this.posTarget = m.copy(this.pos), this.rad = t, this.radTarget = this.rad, this.rot = c.random(0, 2 * Math.PI), this.rotVel = Math.PI * c.random(.25, .5) * (Math.random() < .5 ? -1 : 1), this.fade = !1, this.fadeTicker = 0, this.fadeDuration = c.random(.5, .75), this.tint = c.rgb2hex(c.hsv2rgb(0, 0, c.random(.9, .95))), this.layer = a, this.interior = i
+                this.pos = s.copy(e), this.posTarget = s.copy(this.pos), this.rad = t, this.radTarget = this.rad, this.rot = y.random(0, 2 * Math.PI), this.rotVel = Math.PI * y.random(.25, .5) * (Math.random() < .5 ? -1 : 1), this.fade = !1, this.fadeTicker = 0, this.fadeDuration = y.random(.5, .75), this.tint = y.rgb2hex(y.hsv2rgb(0, 0, y.random(.9, .95))), this.layer = a, this.interior = i
             },
             fadeOut: function() {
                 this.fade = !0
@@ -505,18 +496,18 @@
             },
             c: function(e, t, a, i, r) {
                 for (var o = this.e.m(), n = 0; n < o.length; n++) o[n].active;
-                for (var m = 0; m < this.particles.length; m++) {
-                    var p = this.particles[m];
-                    if (p.active) {
-                        p.rad = l.lerp(3 * e, p.rad, p.radTarget), p.pos = l.v2lerp(3 * e, p.pos, p.posTarget), p.rotVel *= 1 / (1 + .1 * e), p.rot += p.rotVel * e, p.fadeTicker += p.fade ? e : 0, p.active = p.fadeTicker < p.fadeDuration;
-                        var d = .9 * l.clamp(1 - p.fadeTicker / p.fadeDuration, 0, 1),
-                            h = p.layer;
-                        !(c.sameLayer(p.layer, a.layer) || 2 & a.layer) || 1 != p.layer && 2 & a.layer && i.insideStructureMask(s.createCircle(p.pos, 1)) || (h |= 2);
-                        var u = p.interior ? 500 : 1e3;
-                        r.addPIXIObj(p.sprite, h, u, p.zIdx);
-                        var g = t.pointToScreen(p.pos),
-                            y = t.pixels(2 * p.rad / t.ppu);
-                        p.sprite.position.set(g.x, g.y), p.sprite.scale.set(y, y), p.sprite.rotation = p.rot, p.sprite.tint = p.tint, p.sprite.alpha = d, p.sprite.visible = p.active
+                for (var s = 0; s < this.particles.length; s++) {
+                    var l = this.particles[s];
+                    if (l.active) {
+                        l.rad = g.lerp(3 * e, l.rad, l.radTarget), l.pos = g.v2lerp(3 * e, l.pos, l.posTarget), l.rotVel *= 1 / (1 + .1 * e), l.rot += l.rotVel * e, l.fadeTicker += l.fade ? e : 0, l.active = l.fadeTicker < l.fadeDuration;
+                        var c = .9 * g.clamp(1 - l.fadeTicker / l.fadeDuration, 0, 1),
+                            m = l.layer;
+                        !(y.sameLayer(l.layer, a.layer) || 2 & a.layer) || 1 != l.layer && 2 & a.layer && i.insideStructureMask(u.createCircle(l.pos, 1)) || (m |= 2);
+                        var p = l.interior ? 500 : 1e3;
+                        r.addPIXIObj(l.sprite, m, p, l.zIdx);
+                        var d = t.pointToScreen(l.pos),
+                            h = t.pixels(2 * l.rad / t.ppu);
+                        l.sprite.position.set(d.x, d.y), l.sprite.scale.set(h, h), l.sprite.rotation = l.rot, l.sprite.tint = l.tint, l.sprite.alpha = c, l.sprite.visible = l.active
                     }
                 }
             }
@@ -526,45 +517,43 @@
     },
     "0b12821e": function(e, t, a) {
         "use strict";
-
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
         var r = function() {
-                function e(e, t) {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            o = a("10899aea"),
-            n = {
+            x = a("10899aea"),
+            f = {
                 wind: "ambient_wind_01",
                 waves: "ambient_waves_01",
                 river: "ambient_stream_01"
             },
-            s = function() {
-                function e() {
-                    i(this, e), this.startedTracks = !1, this.menuMusic = null, this.menuWindFade = 0, this.ambientTracks = [], this.ambientTrackToIdx = {}, this.interiorSound = {
+            i = function() {
+                function i() {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, i), this.startedTracks = !1, this.menuMusic = null, this.menuWindFade = 0, this.ambientTracks = [], this.ambientTrackToIdx = {}, this.interiorSound = {
                         inst: null,
                         name: "",
                         volume: 0
                     }, this.ambienceVolume = 1, this.interiorVolume = 0, this.soundUpdateThrottle = 0;
-                    for (var t = Object.keys(n), a = 0; a < t.length; a++) {
-                        var r = t[a];
+                    for (var e = Object.keys(f), t = 0; t < e.length; t++) {
+                        var a = e[t];
                         this.ambientTracks.push({
-                            name: r,
+                            name: a,
                             inst: null,
                             volume: 0
-                        }), this.ambientTrackToIdx[r] = this.ambientTracks.length - 1
+                        }), this.ambientTrackToIdx[a] = this.ambientTracks.length - 1
                     }
                     this.initTime = Date.now()
                 }
-                return r(e, [{
+                return r(i, [{
                     key: "getTrack",
                     value: function(e) {
                         return this.ambientTracks[this.ambientTrackToIdx[e]]
@@ -584,9 +573,9 @@
                                 i = this.getTrack("river");
                             e.setVolume(i.inst, 0);
                             var r = e.getVolume(t.inst),
-                                n = e.getVolume(a.inst),
-                                s = r + n;
-                            o.eqAbs(s, 0) ? e.setVolume(t.inst, 1) : e.setVolume(t.inst, 1 - n)
+                                o = e.getVolume(a.inst),
+                                n = r + o;
+                            x.eqAbs(n, 0) ? e.setVolume(t.inst, 1) : e.setVolume(t.inst, 1 - o)
                         }
                         this.interiorSound.inst && e.stopSound(this.interiorSound.inst), this.interiorSound.inst = null, this.interiorSound.name = "", this.interiorSound.volume = 0
                     }
@@ -602,24 +591,24 @@
                                     })
                                 };
                             r("menu_music", "music");
-                            for (var s = 0; s < this.ambientTracks.length; s++) {
-                                var l = this.ambientTracks[s];
-                                r(n[l.name], "ambient")
+                            for (var o = 0; o < this.ambientTracks.length; o++) {
+                                var n = this.ambientTracks[o];
+                                r(f[n.name], "ambient")
                             }
-                            for (var c = 0, m = 0; m < i.length; m++) {
-                                var p = i[m];
-                                t.isSoundLoaded(p.name, p.key) && c++
+                            for (var s = 0, l = 0; l < i.length; l++) {
+                                var c = i[l];
+                                t.isSoundLoaded(c.name, c.key) && s++
                             }
-                            if (c == i.length) {
+                            if (s == i.length) {
                                 this.menuMusic = t.playSound("menu_music", {
                                     channel: "music",
                                     fadeIn: !0,
                                     loop: !1,
                                     forceStart: !0
                                 });
-                                for (var d = 0; d < this.ambientTracks.length; d++) {
-                                    var h = this.ambientTracks[d];
-                                    h.inst = t.playSound(n[h.name], {
+                                for (var m = 0; m < this.ambientTracks.length; m++) {
+                                    var p = this.ambientTracks[m];
+                                    p.inst = t.playSound(f[p.name], {
                                         channel: "ambient",
                                         startSilent: !0,
                                         loop: !0,
@@ -633,43 +622,43 @@
                             if (a) {
                                 if (this.menuMusic && t.isSoundPlaying(this.menuMusic) && t.stopSound(this.menuMusic), this.menuWindFade = 1, this.soundUpdateThrottle -= e, this.soundUpdateThrottle < 0) {
                                     this.soundUpdateThrottle = .2;
-                                    var u = "" != this.interiorSound.name;
-                                    u && !this.interiorSound.inst && (this.interiorSound.inst = t.playSound(this.interiorSound.name, {
+                                    var d = "" != this.interiorSound.name;
+                                    d && !this.interiorSound.inst && (this.interiorSound.inst = t.playSound(this.interiorSound.name, {
                                         channel: "ambient",
                                         startSilent: !0,
                                         loop: !0,
                                         forceStart: !0
-                                    })), !u && this.interiorSound.inst && o.eqAbs(t.getVolume(this.interiorSound.inst), 0) && (t.stopSound(this.interiorSound.inst), this.interiorSound.inst = null);
-                                    var g = u ? this.interiorSound.volume : 0;
-                                    g >= this.interiorVolume ? this.interiorVolume = g : this.interiorVolume = o.max(this.interiorVolume - 10 * e, 0), this.ambienceVolume = 1 - this.interiorVolume;
-                                    for (var y = 0; y < this.ambientTracks.length; y++) {
-                                        var w = this.ambientTracks[y],
-                                            x = o.clamp(w.volume * this.ambienceVolume, 0, 1);
-                                        t.setVolume(w.inst, x)
+                                    })), !d && this.interiorSound.inst && x.eqAbs(t.getVolume(this.interiorSound.inst), 0) && (t.stopSound(this.interiorSound.inst), this.interiorSound.inst = null);
+                                    var h = d ? this.interiorSound.volume : 0;
+                                    h >= this.interiorVolume ? this.interiorVolume = h : this.interiorVolume = x.max(this.interiorVolume - 10 * e, 0), this.ambienceVolume = 1 - this.interiorVolume;
+                                    for (var u = 0; u < this.ambientTracks.length; u++) {
+                                        var g = this.ambientTracks[u],
+                                            y = x.clamp(g.volume * this.ambienceVolume, 0, 1);
+                                        t.setVolume(g.inst, y)
                                     }
                                     this.interiorSound.inst && t.setVolume(this.interiorSound.inst, this.interiorVolume), this.interiorSound.name = "", this.interiorSound.volume = 0
                                 }
                             } else if (this.menuMusic && !t.isSoundPlaying(this.menuMusic) && this.menuWindFade < 1) {
-                            var f = this.getTrack("wind");
-                            this.menuWindFade = o.min(this.menuWindFade + e, 1), t.setVolume(f.inst, this.menuWindFade)
+                            var w = this.getTrack("wind");
+                            this.menuWindFade = x.min(this.menuWindFade + e, 1), t.setVolume(w.inst, this.menuWindFade)
                         }
                     }
-                }]), e
+                }]), i
             }();
-        e.exports = s
+        e.exports = i
     },
     "0c8ffd27": function(e, t, a) {
         "use strict";
 
         function i() {
-            this.sprite = new r.Sprite, this.sprite.anchor.set(.5, .5), this.sprite.visible = !1
+            this.sprite = new g.Sprite, this.sprite.anchor.set(.5, .5), this.sprite.visible = !1
         }
-        var r = a("8b1dfb45"),
-            o = (a("34e32c48"), a("6b42806d")),
-            n = a("ceee80d9"),
-            s = a("10899aea"),
-            l = a("1901e2d9"),
-            c = a("c2a798c8");
+        var g = a("8b1dfb45"),
+            R = (a("34e32c48"), a("6b42806d")),
+            F = a("ceee80d9"),
+            j = a("10899aea"),
+            N = a("1901e2d9"),
+            q = a("c2a798c8");
         a("af8ba00f"), i.prototype = {
             o: function() {
                 this.isNew = !1, this.smokeEmitter = null, this.sprite.visible = !1, this.img = ""
@@ -679,57 +668,57 @@
             },
             l: function(e, t, a, i) {
                 t && (this.type = e.type, this.layer = e.layer, this.healthT = e.healthT, this.dead = e.dead);
-                var s = n.Defs[this.type];
-                if (this.pos = c.copy(e.pos), this.rot = n.oriToRad(e.ori), this.scale = e.scale, this.imgScale = s.img.scale, this.collider = o.transform(s.collision, this.pos, this.rot, this.scale), a) {
-                    if (this.isNew = !0, this.exploded = -1 != i.map.deadObstacleIds.indexOf(this.__id), this.explodeParticle = s.explodeParticle, this.collidable = s.collidable, this.destructible = s.destructible, this.height = s.height, this.isWall = !!s.isWall, this.isWindow = !!s.isWindow, this.isBush = !!s.isBush, this.isDoor = void 0 !== s.door, this.isDoor) {
+                var r = F.Defs[this.type];
+                if (this.pos = q.copy(e.pos), this.rot = F.oriToRad(e.ori), this.scale = e.scale, this.imgScale = r.img.scale, this.collider = R.transform(r.collision, this.pos, this.rot, this.scale), a) {
+                    if (this.isNew = !0, this.exploded = -1 != i.map.deadObstacleIds.indexOf(this.__id), this.explodeParticle = r.explodeParticle, this.collidable = r.collidable, this.destructible = r.destructible, this.height = r.height, this.isWall = !!r.isWall, this.isWindow = !!r.isWindow, this.isBush = !!r.isBush, this.isDoor = void 0 !== r.door, this.isDoor) {
                         this.door = {
-                            playErrorFx: s.door.slideToOpen && s.door.openOneWay,
-                            closedPos: c.copy(e.pos),
-                            autoOpen: s.door.autoOpen,
-                            interactionRad: s.door.interactionRad,
-                            interpSpeed: s.door.openSpeed,
-                            interpPos: c.copy(e.pos),
-                            interpRot: n.oriToRad(e.ori),
+                            playErrorFx: r.door.slideToOpen && r.door.openOneWay,
+                            closedPos: q.copy(e.pos),
+                            autoOpen: r.door.autoOpen,
+                            interactionRad: r.door.interactionRad,
+                            interpSpeed: r.door.openSpeed,
+                            interpPos: q.copy(e.pos),
+                            interpRot: F.oriToRad(e.ori),
                             seq: e.door.seq,
                             seqOld: e.door.seq,
                             open: e.door.open,
                             wasOpen: e.door.open,
                             casingSprite: null
                         };
-                        var m = s.door.casingImg;
-                        if (void 0 !== m) {
-                            var p = m.pos || c.create(0, 0);
-                            p = c.rotate(p, this.rot + .5 * Math.PI);
-                            var d = new r.Sprite;
-                            d.texture = r.Texture.fromImage(m.sprite), d.anchor.set(.5, .5), d.posOffset = p, d.imgScale = m.scale, d.tint = m.tint, d.zOrd = m.zIdx, d.zIdx = this.__id, d.alpha = m.alpha, d.visible = !0, this.door.casingSprite = d
+                        var o = r.door.casingImg;
+                        if (void 0 !== o) {
+                            var n = o.pos || q.create(0, 0);
+                            n = q.rotate(n, this.rot + .5 * Math.PI);
+                            var s = new g.Sprite;
+                            s.texture = g.Texture.fromImage(o.sprite), s.anchor.set(.5, .5), s.posOffset = n, s.imgScale = o.scale, s.tint = o.tint, s.zOrd = o.zIdx, s.zIdx = this.__id, s.alpha = o.alpha, s.visible = !0, this.door.casingSprite = s
                         }
                     }
-                    this.isButton = void 0 !== s.button, this.isButton && (this.button = {
-                        interactionRad: s.button.interactionRad,
-                        interactionText: s.button.interactionText || "game-use",
+                    this.isButton = void 0 !== r.button, this.isButton && (this.button = {
+                        interactionRad: r.button.interactionRad,
+                        interactionText: r.button.interactionText || "game-use",
                         seq: e.button.seq,
                         seqOld: e.button.seq
                     }), this.isPuzzlePiece = e.isPuzzlePiece, this.parentBuildingId = this.isPuzzlePiece ? e.parentBuildingId : 0
                 }
                 if (this.isDoor && t) {
                     this.door.canUse = e.door.canUse, this.door.open = e.door.open, this.door.seq = e.door.seq;
-                    var h = c.rotate(c.create(s.door.slideOffset, 0), this.rot + .5 * Math.PI);
-                    this.door.closedPos = e.door.open ? c.add(e.pos, h) : c.copy(e.pos)
+                    var l = q.rotate(q.create(r.door.slideOffset, 0), this.rot + .5 * Math.PI);
+                    this.door.closedPos = e.door.open ? q.add(e.pos, l) : q.copy(e.pos)
                 }
-                if (this.isButton && t && (this.button.onOff = e.button.onOff, this.button.canUse = e.button.canUse, this.button.seq = e.button.seq), void 0 !== s.explosion && !this.smokeEmitter && e.healthT < .5 && !e.dead) {
-                    var u = c.normalize(c.create(1, 1));
-                    this.smokeEmitter = i.particleBarn.addEmitter("smoke_barrel", this.pos, u, 1, this.layer, Number.MAX_VALUE)
+                if (this.isButton && t && (this.button.onOff = e.button.onOff, this.button.canUse = e.button.canUse, this.button.seq = e.button.seq), void 0 !== r.explosion && !this.smokeEmitter && e.healthT < .5 && !e.dead) {
+                    var c = q.normalize(q.create(1, 1));
+                    this.smokeEmitter = i.particleBarn.addEmitter("smoke_barrel", this.pos, c, 1, this.layer, Number.MAX_VALUE)
                 }
-                var g = !1,
-                    y = this.dead ? s.img.residue : s.img.sprite;
-                if (this.isButton && this.button.onOff && !this.dead && s.button.useImg && (y = s.button.useImg), y != this.img) {
-                    var w = c.create(.5, .5);
-                    this.isDoor && (w = s.door.spriteAnchor);
-                    var x = void 0 !== y;
-                    !x && this.sprite.parent && this.sprite.parent.removeChild(this.sprite), x && (this.sprite.texture = "none" == y ? r.Texture.EMPTY : r.Texture.fromImage(y), this.sprite.anchor.set(w.x, w.y), this.sprite.tint = s.img.tint, this.sprite.imgAlpha = this.dead ? .75 : s.img.alpha, this.sprite.zOrd = s.img.zIdx, this.sprite.zIdx = 65535 * Math.floor(1e3 * this.scale) + this.__id, this.sprite.alpha = this.sprite.imgAlpha, g = !0), this.sprite.visible = x, this.img = y
+                var m = !1,
+                    p = this.dead ? r.img.residue : r.img.sprite;
+                if (this.isButton && this.button.onOff && !this.dead && r.button.useImg && (p = r.button.useImg), p != this.img) {
+                    var d = q.create(.5, .5);
+                    this.isDoor && (d = r.door.spriteAnchor);
+                    var h = void 0 !== p;
+                    !h && this.sprite.parent && this.sprite.parent.removeChild(this.sprite), h && (this.sprite.texture = "none" == p ? g.Texture.EMPTY : g.Texture.fromImage(p), this.sprite.anchor.set(d.x, d.y), this.sprite.tint = r.img.tint, this.sprite.imgAlpha = this.dead ? .75 : r.img.alpha, this.sprite.zOrd = r.img.zIdx, this.sprite.zIdx = 65535 * Math.floor(1e3 * this.scale) + this.__id, this.sprite.alpha = this.sprite.imgAlpha, m = !0), this.sprite.visible = h, this.img = p
                 }
-                var f = i.map.getMapDef().biome.valueAdjust;
-                g && f < 1 && (this.sprite.tint = l.adjustValue(this.sprite.tint, f))
+                var u = i.map.getMapDef().biome.valueAdjust;
+                m && u < 1 && (this.sprite.tint = N.adjustValue(this.sprite.tint, u))
             },
             getInteraction: function() {
                 return this.isButton && this.button.canUse ? {
@@ -742,79 +731,78 @@
                     object: ""
                 } : null
             },
-            c: function(e, t, a, i, r, m, p) {
+            c: function(e, t, a, i, r, o, n) {
                 if (this.isButton) {
-                    var d = this.button;
-                    if (d.seq != d.seqOld) {
-                        var h = n.Defs[this.type];
-                        if (h.button.useParticle) {
-                            var u = o.toAabb(this.collider),
-                                g = c.mul(c.sub(u.max, u.min), .5),
-                                y = c.add(u.min, g),
-                                w = c.mul(c.randomUnit(), l.random(5, 15));
-                            i.addParticle(h.button.useParticle, this.layer, y, w)
+                    var s = this.button;
+                    if (s.seq != s.seqOld) {
+                        var l = F.Defs[this.type];
+                        if (l.button.useParticle) {
+                            var c = R.toAabb(this.collider),
+                                m = q.mul(q.sub(c.max, c.min), .5),
+                                p = q.add(c.min, m),
+                                d = q.mul(q.randomUnit(), N.random(5, 15));
+                            i.addParticle(l.button.useParticle, this.layer, p, d)
                         }
-                        var x = this.button.onOff ? h.button.sound.on : h.button.sound.off;
-                        x && r.playSound(x, {
+                        var h = this.button.onOff ? l.button.sound.on : l.button.sound.off;
+                        h && r.playSound(h, {
                             channel: "sfx",
                             soundPos: this.pos,
                             layer: this.layer,
                             muffled: !0
                         })
                     }
-                    d.seqOld = d.seq
+                    s.seqOld = s.seq
                 }
                 if (this.isDoor) {
-                    var f = this.door,
-                        b = f.interpSpeed,
-                        _ = c.sub(this.pos, f.interpPos),
-                        S = c.length(_),
-                        k = b * e;
-                    S < k && (k = S);
-                    var v = S > 1e-4 ? c.div(_, S) : c.create(1, 0);
-                    f.interpPos = c.add(f.interpPos, c.mul(v, k));
-                    var z = Math.PI * f.interpSpeed,
-                        M = s.angleDiff(f.interpRot, this.rot),
-                        T = s.sign(M) * z * e;
-                    if (Math.abs(M) < Math.abs(T) && (T = M), f.interpRot += T, f.seq != f.seqOld) {
-                        var P = n.Defs[this.type],
-                            I = P.door.sound.change || "";
-                        "" != I && r.playSound(I, {
+                    var u = this.door,
+                        g = u.interpSpeed,
+                        y = q.sub(this.pos, u.interpPos),
+                        w = q.length(y),
+                        x = g * e;
+                    w < x && (x = w);
+                    var f = 1e-4 < w ? q.div(y, w) : q.create(1, 0);
+                    u.interpPos = q.add(u.interpPos, q.mul(f, x));
+                    var b = Math.PI * u.interpSpeed,
+                        _ = j.angleDiff(u.interpRot, this.rot),
+                        S = j.sign(_) * b * e;
+                    if (Math.abs(_) < Math.abs(S) && (S = _), u.interpRot += S, u.seq != u.seqOld) {
+                        var k = F.Defs[this.type].door.sound.change || "";
+                        "" != k && r.playSound(k, {
                             channel: "sfx",
                             soundPos: this.pos,
                             layer: this.layer,
                             muffled: !0
-                        }), f.seqOld = f.seq
+                        }), u.seqOld = u.seq
                     }
-                    if (f.open != f.wasOpen) {
-                        var C = n.Defs[this.type],
-                            A = f.open ? C.door.sound.open : C.door.sound.close;
-                        r.playSound(A, {
+                    if (u.open != u.wasOpen) {
+                        var v = F.Defs[this.type],
+                            z = u.open ? v.door.sound.open : v.door.sound.close;
+                        r.playSound(z, {
                             channel: "sfx",
                             soundPos: this.pos,
                             layer: this.layer,
                             muffled: !0
-                        }), f.wasOpen = f.open
+                        }), u.wasOpen = u.open
                     }
                 }
                 if (this.dead && !this.exploded && (t.deadObstacleIds.push(this.__id), this.exploded = !0, this.smokeEmitter && (this.smokeEmitter.stop(), this.smokeEmitter = null), !this.isNew)) {
-                    for (var E = n.Defs[this.type], D = o.toAabb(this.collider), O = c.mul(c.sub(D.max, D.min), .5), B = c.add(D.min, O), L = Math.floor(l.random(5, 11)), R = 0; R < L; R++) {
-                        var F = c.mul(c.randomUnit(), l.random(5, 15)),
-                            j = Array.isArray(this.explodeParticle) ? this.explodeParticle[Math.floor(Math.random() * this.explodeParticle.length)] : this.explodeParticle;
-                        i.addParticle(j, this.layer, B, F)
+                    for (var M = F.Defs[this.type], T = R.toAabb(this.collider), A = q.mul(q.sub(T.max, T.min), .5), C = q.add(T.min, A), I = Math.floor(N.random(5, 11)), P = 0; P < I; P++) {
+                        var E = q.mul(q.randomUnit(), N.random(5, 15)),
+                            O = Array.isArray(this.explodeParticle) ? this.explodeParticle[Math.floor(Math.random() * this.explodeParticle.length)] : this.explodeParticle;
+                        i.addParticle(O, this.layer, C, E)
                     }
-                    r.playSound(E.sound.explode, {
+                    r.playSound(M.sound.explode, {
                         channel: "sfx",
-                        soundPos: B,
+                        soundPos: C,
                         layer: this.layer,
                         muffled: !0
                     })
                 }
-                if (this.smokeEmitter && (this.smokeEmitter.pos = c.copy(this.pos), this.smokeEmitter.enabled = !this.dead && this.healthT < .5), this.sprite.visible && this.img) {
-                    var q = this.dead ? 5 : this.sprite.zOrd,
-                        N = this.sprite.zIdx,
-                        V = this.layer;
-                    !this.dead && q >= 50 && 0 == this.layer && 0 == m.layer && (q += 100, V |= 2), p.addPIXIObj(this.sprite, V, q, N), this.isDoor && this.door.casingSprite && p.addPIXIObj(this.door.casingSprite, V, q + this.door.casingSprite.zOrd, N)
+                if (this.smokeEmitter && (this.smokeEmitter.pos = q.copy(this.pos), this.smokeEmitter.enabled = !this.dead && this.healthT < .5), this.sprite.visible && this.img) {
+                    var D = this.dead ? 5 : this.sprite.zOrd,
+                        L = this.sprite.zIdx,
+                        B = this.layer;
+                    !this.dead && 50 <= D && 0 == this.layer && 0 == o.layer && (D += 100, B |= 2), n.addPIXIObj(this.sprite, B, D, L), this.isDoor && this.door.casingSprite && n.addPIXIObj(this.door.casingSprite, B, D + this.door.casingSprite.zOrd, L)
                 }
                 this.isNew = !1
             },
@@ -825,7 +813,7 @@
                     o = e.pointToScreen(a),
                     n = e.pixels(r * this.imgScale);
                 if (this.sprite.position.set(o.x, o.y), this.sprite.scale.set(n, n), this.sprite.rotation = -i, this.sprite.alpha = this.sprite.imgAlpha, this.isDoor && this.door.casingSprite) {
-                    var s = e.pointToScreen(c.add(this.door.closedPos, this.door.casingSprite.posOffset)),
+                    var s = e.pointToScreen(q.add(this.door.closedPos, this.door.casingSprite.posOffset)),
                         l = e.pixels(r * this.door.casingSprite.imgScale);
                     this.door.casingSprite.position.set(s.x, s.y), this.door.casingSprite.scale.set(l, l), this.door.casingSprite.rotation = -i, this.door.casingSprite.visible = !this.dead
                 }
@@ -834,7 +822,7 @@
     },
     "0cc73a5c": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-03-03",
                 locale: "pl"
@@ -1109,12 +1097,12 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "0d807371": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
+            Sounds: {
                 players: {
                     m9_01: {
                         path: "audio/guns/m9_01.mp3",
@@ -2516,7 +2504,7 @@
                     }
                 }
             },
-            r = {
+            Groups: {
                 footstep_grass: {
                     channel: "sfx",
                     sounds: ["footstep_grass_01", "footstep_grass_02"]
@@ -2674,7 +2662,7 @@
                     sounds: ["frag_water_01"]
                 }
             },
-            o = {
+            Channels: {
                 activePlayer: {
                     volume: .5,
                     maxRange: 48,
@@ -2718,7 +2706,7 @@
                     type: "music"
                 }
             },
-            n = {
+            Reverbs: {
                 cathedral: {
                     path: "audio/reverb/cathedral_01.mp3",
                     volume: .7,
@@ -2732,44 +2720,39 @@
                     echoLowPass: 800,
                     stereoSpread: .004
                 }
-            };
-        e.exports = {
-            Sounds: i,
-            Groups: r,
-            Channels: o,
-            Reverbs: n
+            }
         }
     },
     "10899aea": function(e, t, a) {
         "use strict";
-        var i = a("0e566746"),
-            r = a("66141f52"),
-            o = a("c2a798c8"),
-            n = {
+        var n = a("0e566746"),
+            g = a("66141f52"),
+            m = a("c2a798c8"),
+            s = {
                 clamp: function(e, t, a) {
-                    return e < a ? e > t ? e : t : a
+                    return e < a ? t < e ? e : t : a
                 },
                 min: function(e, t) {
                     return e < t ? e : t
                 },
                 max: function(e, t) {
-                    return e > t ? e : t
+                    return t < e ? e : t
                 },
                 lerp: function(e, t, a) {
                     return t * (1 - e) + a * e
                 },
                 delerp: function(e, t, a) {
-                    return n.clamp((e - t) / (a - t), 0, 1)
+                    return s.clamp((e - t) / (a - t), 0, 1)
                 },
                 v2lerp: function(e, t, a) {
-                    return o.create(n.lerp(e, t.x, a.x), n.lerp(e, t.y, a.y))
+                    return m.create(s.lerp(e, t.x, a.x), s.lerp(e, t.y, a.y))
                 },
                 smoothstep: function(e, t, a) {
-                    var i = n.clamp((e - t) / (a - t), 0, 1);
+                    var i = s.clamp((e - t) / (a - t), 0, 1);
                     return i * i * (3 - 2 * i)
                 },
                 easeOutElastic: function(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : .3;
+                    var t = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : .3;
                     return Math.pow(2, -10 * e) * Math.sin((e - t / 4) * (2 * Math.PI) / t) + 1
                 },
                 easeOutExpo: function(e) {
@@ -2779,8 +2762,8 @@
                     return 0 === e ? 0 : Math.pow(2, 10 * (e - 1))
                 },
                 remap: function(e, t, a, i, r) {
-                    var o = n.clamp((e - t) / (a - t), 0, 1);
-                    return n.lerp(o, i, r)
+                    var o = s.clamp((e - t) / (a - t), 0, 1);
+                    return s.lerp(o, i, r)
                 },
                 eqAbs: function(e, t, a) {
                     var i = a || 1e-6;
@@ -2809,29 +2792,27 @@
                     return e - Math.floor(e / t) * t
                 },
                 angleDiff: function(e, t) {
-                    var a = n.fmod(t - e + Math.PI, 2 * Math.PI) - Math.PI;
+                    var a = s.fmod(t - e + Math.PI, 2 * Math.PI) - Math.PI;
                     return a < -Math.PI ? a + 2 * Math.PI : a
                 },
-                quantize: function(e, t, a, r) {
-                    i(e >= t && e <= a);
-                    var o = (1 << r) - 1,
-                        s = n.clamp(e, t, a),
-                        l = (s - t) / (a - t),
-                        c = l * o + .5;
-                    return t + (c < 0 ? Math.ceil(c) : Math.floor(c)) / o * (a - t)
+                quantize: function(e, t, a, i) {
+                    n(t <= e && e <= a);
+                    var r = (1 << i) - 1,
+                        o = (s.clamp(e, t, a) - t) / (a - t) * r + .5;
+                    return t + (o < 0 ? Math.ceil(o) : Math.floor(o)) / r * (a - t)
                 },
-                v2Quantize: function(e, t, a, i, r, s) {
-                    return o.create(n.quantize(e.x, t, i, s), n.quantize(e.y, a, r, s))
+                v2Quantize: function(e, t, a, i, r, o) {
+                    return m.create(s.quantize(e.x, t, i, o), s.quantize(e.y, a, r, o))
                 },
                 rayLineIntersect: function(e, t, a, i) {
-                    var r = o.sub(i, a),
-                        n = o.create(r.y, -r.x),
-                        s = o.dot(t, n);
-                    if (!(Math.abs(s) <= 1e-6)) {
-                        var l = o.sub(a, e),
-                            c = o.dot(n, l) / s,
-                            m = o.dot(o.create(t.y, -t.x), l) / s;
-                        return c >= 0 && m >= 0 && m <= 1 ? c : void 0
+                    var r = m.sub(i, a),
+                        o = m.create(r.y, -r.x),
+                        n = m.dot(t, o);
+                    if (!(Math.abs(n) <= 1e-6)) {
+                        var s = m.sub(a, e),
+                            l = m.dot(o, s) / n,
+                            c = m.dot(m.create(t.y, -t.x), s) / n;
+                        return 0 <= l && 0 <= c && c <= 1 ? l : void 0
                     }
                 },
                 rayPolygonIntersect: function(e, t, a) {
@@ -2847,41 +2828,41 @@
                             c = t[n].y,
                             m = t[s].x,
                             p = t[s].y;
-                        c > i != p > i && a < (m - l) * (i - c) / (p - c) + l && (r = !r)
+                        i < c != i < p && a < (m - l) * (i - c) / (p - c) + l && (r = !r)
                     }
                     return r
                 },
                 distToSegmentSq: function(e, t, a) {
-                    var i = o.sub(a, t),
-                        r = o.dot(o.sub(e, t), i) / o.dot(i, i),
-                        s = o.add(t, o.mul(i, n.clamp(r, 0, 1))),
-                        l = o.sub(s, e);
-                    return o.dot(l, l)
+                    var i = m.sub(a, t),
+                        r = m.dot(m.sub(e, t), i) / m.dot(i, i),
+                        o = m.add(t, m.mul(i, s.clamp(r, 0, 1))),
+                        n = m.sub(o, e);
+                    return m.dot(n, n)
                 },
                 distToPolygon: function(e, t) {
                     for (var a = Number.MAX_VALUE, i = 0; i < t.length; i++) {
                         var r = t[i],
                             o = i == t.length - 1 ? t[0] : t[i + 1],
-                            s = n.distToSegmentSq(e, r, o);
-                        s < a && (a = s)
+                            n = s.distToSegmentSq(e, r, o);
+                        n < a && (a = n)
                     }
                     return Math.sqrt(a)
                 },
                 polygonArea: function(e) {
                     for (var t = [], a = 0; a < e.length; a++) t.push(e[a].x), t.push(e[a].y);
-                    for (var i = r(t), o = 0, n = 0; n < i.length; n += 3) {
-                        var s = i[n + 0],
-                            l = i[n + 1],
-                            c = i[n + 2],
-                            m = t[2 * s + 0],
-                            p = t[2 * s + 1],
-                            d = t[2 * l + 0],
-                            h = t[2 * l + 1],
-                            u = t[2 * c + 0],
-                            g = t[2 * c + 1];
-                        o += Math.abs(.5 * (m * h + d * g + u * p - d * p - u * h - m * g))
+                    for (var i = g(t), r = 0, o = 0; o < i.length; o += 3) {
+                        var n = i[o + 0],
+                            s = i[o + 1],
+                            l = i[o + 2],
+                            c = t[2 * n + 0],
+                            m = t[2 * n + 1],
+                            p = t[2 * s + 0],
+                            d = t[2 * s + 1],
+                            h = t[2 * l + 0],
+                            u = t[2 * l + 1];
+                        r += Math.abs(.5 * (c * d + p * u + h * m - p * m - h * d - c * u))
                     }
-                    return o
+                    return r
                 },
                 lineIntersects: function(e, t, a, i, r, o, n, s) {
                     if (e === a && t === i || r === n && o === s) return !1;
@@ -2889,13 +2870,13 @@
                     if (0 === l) return !1;
                     var c = ((n - r) * (t - o) - (s - o) * (e - r)) / l,
                         m = ((a - e) * (t - o) - (i - t) * (e - r)) / l;
-                    return !(c < 0 || c > 1 || m < 0 || m > 1) && {
+                    return !(c < 0 || 1 < c || m < 0 || 1 < m) && {
                         x: e + c * (a - e),
                         y: t + c * (i - t)
                     }
                 }
             };
-        e.exports = n
+        e.exports = s
     },
     "119e8c4c": function(e, t, a) {
         "use strict";
@@ -2904,37 +2885,33 @@
             this.min = e, this.max = t
         }
 
-        function r(e) {
+        function b(e) {
             return e instanceof i ? e.getRandom() : e
         }
 
-        function o(e) {
-            return e instanceof Function ? e() : e
+        function m() {
+            this.active = !1, this.ticker = 0, this.def = {}, this.sprite = new h.Sprite, this.sprite.anchor.set(.5, .5), this.sprite.scale.set(1, 1), this.sprite.visible = !1, this.hasParent = !1
         }
 
-        function n() {
-            this.active = !1, this.ticker = 0, this.def = {}, this.sprite = new c.Sprite, this.sprite.anchor.set(.5, .5), this.sprite.scale.set(1, 1), this.sprite.visible = !1, this.hasParent = !1
-        }
-
-        function s() {
+        function c() {
             this.active = !1
         }
 
-        function l(e) {
+        function r(e) {
             this.renderer = e, this.particles = [], this.emitters = [];
-            for (var t = 0; t < 256; t++) this.particles[t] = new n(this.display);
+            for (var t = 0; t < 256; t++) this.particles[t] = new m(this.display);
             this.valueAdjust = 1, this.rippleParticle = "waterRipple"
         }
-        var c = a("8b1dfb45"),
-            m = a("10899aea"),
-            p = a("1901e2d9"),
-            d = a("c2a798c8");
+        var h = a("8b1dfb45"),
+            _ = a("10899aea"),
+            S = a("1901e2d9"),
+            k = a("c2a798c8");
         a("af8ba00f"), i.prototype = {
             getRandom: function() {
-                return p.random(this.min, this.max)
+                return S.random(this.min, this.max)
             }
         };
-        var h = {
+        var u = {
                 archwayBreak: {
                     image: ["part-panel-01.img"],
                     life: new i(.5, 1.5),
@@ -2951,7 +2928,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.06, .84, p.random(.46, .48)))
+                        return S.rgb2hex(S.hsv2rgb(.06, .84, S.random(.46, .48)))
                     }
                 },
                 bloodSplat: {
@@ -2970,7 +2947,7 @@
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(16711680, 1, p.random(.45, .8)))
+                        return S.rgb2hex(S.hsv2rgb(16711680, 1, S.random(.45, .8)))
                     }
                 },
                 barrelPlank: {
@@ -2989,7 +2966,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.09, .8, p.random(.66, .68)))
+                        return S.rgb2hex(S.hsv2rgb(.09, .8, S.random(.66, .68)))
                     }
                 },
                 barrelChip: {
@@ -3008,7 +2985,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.01, .02, p.random(.38, .41)))
+                        return S.rgb2hex(S.hsv2rgb(.01, .02, S.random(.38, .41)))
                     }
                 },
                 barrelBreak: {
@@ -3027,7 +3004,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.01, .02, p.random(.38, .41)))
+                        return S.rgb2hex(S.hsv2rgb(.01, .02, S.random(.38, .41)))
                     }
                 },
                 blackChip: {
@@ -3046,7 +3023,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, .08, p.random(.16, .18)))
+                        return S.rgb2hex(S.hsv2rgb(0, .08, S.random(.16, .18)))
                     }
                 },
                 blueChip: {
@@ -3065,7 +3042,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.64, 1, p.random(.83, .85)))
+                        return S.rgb2hex(S.hsv2rgb(.64, 1, S.random(.83, .85)))
                     }
                 },
                 book: {
@@ -3084,7 +3061,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .42, p.random(.72, .74)))
+                        return S.rgb2hex(S.hsv2rgb(.08, .42, S.random(.72, .74)))
                     }
                 },
                 bottleBrownChip: {
@@ -3171,7 +3148,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, .71, p.random(.32, .34)))
+                        return S.rgb2hex(S.hsv2rgb(0, .71, S.random(.32, .34)))
                     }
                 },
                 clothBreak: {
@@ -3190,7 +3167,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.95, 1)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.95, 1)))
                     }
                 },
                 clothHit: {
@@ -3209,7 +3186,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.95, 1)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.95, 1)))
                     }
                 },
                 depositBoxGreyBreak: {
@@ -3228,7 +3205,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.36, .38)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.36, .38)))
                     }
                 },
                 depositBoxGoldBreak: {
@@ -3247,7 +3224,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.11, .84, p.random(.64, .66)))
+                        return S.rgb2hex(S.hsv2rgb(.11, .84, S.random(.64, .66)))
                     }
                 },
                 glassChip: {
@@ -3300,7 +3277,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.11, .84, p.random(.88, .9)))
+                        return S.rgb2hex(S.hsv2rgb(.11, .84, S.random(.88, .9)))
                     }
                 },
                 greenChip: {
@@ -3319,7 +3296,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.4, .18, p.random(.5, .62)))
+                        return S.rgb2hex(S.hsv2rgb(.4, .18, S.random(.5, .62)))
                     }
                 },
                 greenPlank: {
@@ -3372,7 +3349,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .81, p.random(.78, .82)))
+                        return S.rgb2hex(S.hsv2rgb(.1, .81, S.random(.78, .82)))
                     }
                 },
                 leaf: {
@@ -3391,7 +3368,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.5, .75)))
                     }
                 },
                 leafRiver: {
@@ -3410,7 +3387,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.5, .75)))
                     }
                 },
                 lockerBreak: {
@@ -3429,7 +3406,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .23, p.random(.51, .53)))
+                        return S.rgb2hex(S.hsv2rgb(.1, .23, S.random(.51, .53)))
                     }
                 },
                 ltgreenChip: {
@@ -3448,7 +3425,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.2, .42, p.random(.38, .42)))
+                        return S.rgb2hex(S.hsv2rgb(.2, .42, S.random(.38, .42)))
                     }
                 },
                 outhouseChip: {
@@ -3467,7 +3444,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .57, p.random(.4, .46)))
+                        return S.rgb2hex(S.hsv2rgb(.08, .57, S.random(.4, .46)))
                     }
                 },
                 outhouseBreak: {
@@ -3486,7 +3463,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .79, p.random(.52, .54)))
+                        return S.rgb2hex(S.hsv2rgb(.08, .79, S.random(.52, .54)))
                     }
                 },
                 outhousePlank: {
@@ -3505,7 +3482,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .57, p.random(.4, .46)))
+                        return S.rgb2hex(S.hsv2rgb(.08, .57, S.random(.4, .46)))
                     }
                 },
                 potChip: {
@@ -3524,7 +3501,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.06, .84, p.random(.73, .77)))
+                        return S.rgb2hex(S.hsv2rgb(.06, .84, S.random(.73, .77)))
                     }
                 },
                 potBreak: {
@@ -3543,7 +3520,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.06, .84, p.random(.73, .77)))
+                        return S.rgb2hex(S.hsv2rgb(.06, .84, S.random(.73, .77)))
                     }
                 },
                 potatoChip: {
@@ -3562,7 +3539,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.075, .43, p.random(.48, .5)))
+                        return S.rgb2hex(S.hsv2rgb(.075, .43, S.random(.48, .5)))
                     }
                 },
                 potatoBreak: {
@@ -3581,7 +3558,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.075, .43, p.random(.48, .5)))
+                        return S.rgb2hex(S.hsv2rgb(.075, .43, S.random(.48, .5)))
                     }
                 },
                 pumpkinChip: {
@@ -3600,7 +3577,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.07, 1, p.random(.98, 1)))
+                        return S.rgb2hex(S.hsv2rgb(.07, 1, S.random(.98, 1)))
                     }
                 },
                 pumpkinBreak: {
@@ -3619,7 +3596,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, 1, p.random(.95, .97)))
+                        return S.rgb2hex(S.hsv2rgb(.08, 1, S.random(.95, .97)))
                     }
                 },
                 redChip: {
@@ -3638,7 +3615,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.98, 1, p.random(.52, .54)))
+                        return S.rgb2hex(S.hsv2rgb(.98, 1, S.random(.52, .54)))
                     }
                 },
                 redBreak: {
@@ -3657,7 +3634,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.98, 1, p.random(.52, .54)))
+                        return S.rgb2hex(S.hsv2rgb(.98, 1, S.random(.52, .54)))
                     }
                 },
                 redPlank: {
@@ -3676,7 +3653,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.02, 1, p.random(.26, .28)))
+                        return S.rgb2hex(S.hsv2rgb(.02, 1, S.random(.26, .28)))
                     }
                 },
                 rockChip: {
@@ -3695,7 +3672,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.5, .75)))
                     }
                 },
                 rockBreak: {
@@ -3714,7 +3691,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.5, .75)))
                     }
                 },
                 rockEyeChip: {
@@ -3767,7 +3744,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .24, p.random(.38, .41)))
+                        return S.rgb2hex(S.hsv2rgb(.1, .24, S.random(.38, .41)))
                     }
                 },
                 shackGreenBreak: {
@@ -3803,7 +3780,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .35, p.random(.48, .52)))
+                        return S.rgb2hex(S.hsv2rgb(.1, .35, S.random(.48, .52)))
                     }
                 },
                 teahouseBreak: {
@@ -3822,7 +3799,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.6, .31, p.random(.42, .45)))
+                        return S.rgb2hex(S.hsv2rgb(.6, .31, S.random(.42, .45)))
                     }
                 },
                 teapavilionBreak: {
@@ -3841,7 +3818,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, .8, p.random(.6, .62)))
+                        return S.rgb2hex(S.hsv2rgb(0, .8, S.random(.6, .62)))
                     }
                 },
                 toiletBreak: {
@@ -3860,7 +3837,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.97, 0, p.random(.95, .97)))
+                        return S.rgb2hex(S.hsv2rgb(.97, 0, S.random(.95, .97)))
                     }
                 },
                 toiletMetalBreak: {
@@ -3879,7 +3856,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.01, .02, p.random(.38, .41)))
+                        return S.rgb2hex(S.hsv2rgb(.01, .02, S.random(.38, .41)))
                     }
                 },
                 turkeyFeathersHit: {
@@ -3936,7 +3913,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.97, 0, p.random(.95, .97)))
+                        return S.rgb2hex(S.hsv2rgb(.97, 0, S.random(.95, .97)))
                     }
                 },
                 whitePlank: {
@@ -3955,7 +3932,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.97, 0, p.random(.95, .97)))
+                        return S.rgb2hex(S.hsv2rgb(.97, 0, S.random(.95, .97)))
                     }
                 },
                 windowBreak: {
@@ -3991,7 +3968,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.35, .45)))
+                        return S.rgb2hex(S.hsv2rgb(.05, 1, S.random(.35, .45)))
                     }
                 },
                 woodLog: {
@@ -4010,7 +3987,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.35, .45)))
+                        return S.rgb2hex(S.hsv2rgb(.05, 1, S.random(.35, .45)))
                     }
                 },
                 woodPlank: {
@@ -4029,7 +4006,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.25, .35)))
+                        return S.rgb2hex(S.hsv2rgb(.05, 1, S.random(.25, .35)))
                     }
                 },
                 woodShard: {
@@ -4048,7 +4025,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.25, .35)))
+                        return S.rgb2hex(S.hsv2rgb(.05, 1, S.random(.25, .35)))
                     }
                 },
                 "9mm": {
@@ -4067,7 +4044,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 "762mm": {
@@ -4086,7 +4063,7 @@
                         lerp: new i(.925, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 "556mm": {
@@ -4105,7 +4082,7 @@
                         lerp: new i(.925, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 "12gauge": {
@@ -4124,7 +4101,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 "50AE": {
@@ -4143,7 +4120,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 "308sub": {
@@ -4162,7 +4139,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 flare: {
@@ -4181,7 +4158,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 "45acp": {
@@ -4200,7 +4177,7 @@
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 fragPin: {
@@ -4253,7 +4230,7 @@
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.065, 1, p.random(.98, .99)))
+                        return S.rgb2hex(S.hsv2rgb(.065, 1, S.random(.98, .99)))
                     }
                 },
                 explosionMIRV: {
@@ -4272,7 +4249,7 @@
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 1, p.random(.82, .84)))
+                        return S.rgb2hex(S.hsv2rgb(0, 1, S.random(.82, .84)))
                     }
                 },
                 explosionSmoke: {
@@ -4291,7 +4268,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 explosionUSAS: {
@@ -4310,7 +4287,7 @@
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, 1, p.random(.98, .99)))
+                        return S.rgb2hex(S.hsv2rgb(.08, 1, S.random(.98, .99)))
                     }
                 },
                 explosionBomb: {
@@ -4347,7 +4324,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 airdropCrate01: {
@@ -4473,7 +4450,7 @@
                         lerp: new i(0, .1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.69, .695)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.69, .695)))
                     }
                 },
                 bunkerBubbles: {
@@ -4493,7 +4470,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.95, 1)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.95, 1)))
                     }
                 },
                 waterRipple: {
@@ -4565,7 +4542,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 leafHalloween: {
@@ -4589,7 +4566,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .55)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.5, .55)))
                     },
                     ignoreValueAdjust: !0
                 },
@@ -4614,7 +4591,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 leafPotato: {
@@ -4638,7 +4615,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 potato: {
@@ -4662,7 +4639,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 snow: {
@@ -4686,7 +4663,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 snowball_impact: {
@@ -4705,7 +4682,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 potato_impact: {
@@ -4724,7 +4701,7 @@
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return S.rgb2hex(S.hsv2rgb(0, 0, S.random(.9, .95)))
                     }
                 },
                 heal_cross: {
@@ -4748,7 +4725,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 1, p.random(.7, 1)))
+                        return S.rgb2hex(S.hsv2rgb(0, 1, S.random(.7, 1)))
                     }
                 },
                 boost_sparkle: {
@@ -4772,7 +4749,7 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.3, 1, p.random(.7, 1)))
+                        return S.rgb2hex(S.hsv2rgb(.3, 1, S.random(.7, 1)))
                     }
                 },
                 leafStim: {
@@ -4796,11 +4773,11 @@
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.37, 1, p.random(.95, 1)))
+                        return S.rgb2hex(S.hsv2rgb(.37, 1, S.random(.95, 1)))
                     }
                 }
             },
-            u = {
+            v = {
                 smoke_barrel: {
                     particle: "explosionSmoke",
                     rate: new i(.2, .3),
@@ -4925,12 +4902,12 @@
                     noRotate: !0
                 }
             };
-        n.prototype = {
-            o: function(e, t, a, i, n, s, l, m, u, g) {
-                var y = h[t];
-                this.active = !0, this.ticker = 0, m ? (this.hasParent = !0, m.addChild(this.sprite)) : (this.hasParent = !1, e.addPIXIObj(this.sprite, a, u)), this.pos = d.copy(i), this.vel = d.copy(n), this.rot = l, this.def = y, this.delay = 0, this.life = r(y.life), this.drag = r(y.drag), this.rotVel = r(y.rotVel) * (Math.random() < .5 ? -1 : 1), this.rotDrag = r(y.drag) / 2, this.scaleUseExp = void 0 !== y.scale.exp, this.scale = r(y.scale.start) * s, this.scaleEnd = this.scaleUseExp ? 0 : r(y.scale.end) * s, this.scaleExp = this.scaleUseExp ? y.scale.exp : 0, this.alphaUseExp = void 0 !== y.alpha.exp, this.alpha = r(y.alpha.start), this.alphaEnd = this.alphaUseExp ? 0 : r(y.alpha.end), this.alphaExp = this.alphaUseExp ? y.alpha.exp : 0, this.alphaIn = void 0 !== y.alphaIn, this.alphaInStart = this.alphaIn ? r(y.alphaIn.start) : 0, this.alphaInEnd = this.alphaIn ? r(y.alphaIn.end) : 0, this.emitterIdx = -1;
-                var w = Array.isArray(y.image) ? y.image[Math.floor(Math.random() * y.image.length)] : y.image;
-                this.sprite.texture = c.Texture.fromImage(w), this.sprite.tint = o(y.color), g < 1 && !y.ignoreValueAdjust && (this.sprite.tint = p.adjustValue(this.sprite.tint, g)), this.sprite.visible = !1
+        m.prototype = {
+            o: function(e, t, a, i, r, o, n, s, l, c) {
+                var m = u[t];
+                this.active = !0, this.ticker = 0, s ? (this.hasParent = !0, s.addChild(this.sprite)) : (this.hasParent = !1, e.addPIXIObj(this.sprite, a, l)), this.pos = k.copy(i), this.vel = k.copy(r), this.rot = n, this.def = m, this.delay = 0, this.life = b(m.life), this.drag = b(m.drag), this.rotVel = b(m.rotVel) * (Math.random() < .5 ? -1 : 1), this.rotDrag = b(m.drag) / 2, this.scaleUseExp = void 0 !== m.scale.exp, this.scale = b(m.scale.start) * o, this.scaleEnd = this.scaleUseExp ? 0 : b(m.scale.end) * o, this.scaleExp = this.scaleUseExp ? m.scale.exp : 0, this.alphaUseExp = void 0 !== m.alpha.exp, this.alpha = b(m.alpha.start), this.alphaEnd = this.alphaUseExp ? 0 : b(m.alpha.end), this.alphaExp = this.alphaUseExp ? m.alpha.exp : 0, this.alphaIn = void 0 !== m.alphaIn, this.alphaInStart = this.alphaIn ? b(m.alphaIn.start) : 0, this.alphaInEnd = this.alphaIn ? b(m.alphaIn.end) : 0, this.emitterIdx = -1;
+                var p, d = Array.isArray(m.image) ? m.image[Math.floor(Math.random() * m.image.length)] : m.image;
+                this.sprite.texture = h.Texture.fromImage(d), this.sprite.tint = (p = m.color) instanceof Function ? p() : p, c < 1 && !m.ignoreValueAdjust && (this.sprite.tint = S.adjustValue(this.sprite.tint, c)), this.sprite.visible = !1
             },
             n: function() {
                 this.active = !1, this.sprite.visible = !1
@@ -4938,11 +4915,11 @@
             setDelay: function(e) {
                 this.delay = e
             }
-        }, s.prototype = {
+        }, c.prototype = {
             o: function(e, t, a, i, r, o, n) {
-                var s = u[e];
-                this.active = !0, this.enabled = !0, this.type = e, this.pos = d.copy(t), this.dir = d.copy(a), this.scale = i, this.layer = r, this.duration = o, this.radius = s.radius, this.ticker = 0, this.nextSpawn = 0, this.spawnCount = 0, this.parent = n, this.alpha = 1, this.rateMult = 1;
-                var l = h[s.particle];
+                var s = v[e];
+                this.active = !0, this.enabled = !0, this.type = e, this.pos = k.copy(t), this.dir = k.copy(a), this.scale = i, this.layer = r, this.duration = o, this.radius = s.radius, this.ticker = 0, this.nextSpawn = 0, this.spawnCount = 0, this.parent = n, this.alpha = 1, this.rateMult = 1;
+                var l = u[s.particle];
                 this.zOrd = void 0 !== s.zOrd ? s.zOrd : void 0 !== l.zOrd ? l.zOrd : 20
             },
             n: function() {
@@ -4951,7 +4928,7 @@
             stop: function() {
                 this.duration = this.ticker
             }
-        }, l.prototype = {
+        }, r.prototype = {
             onMapLoad: function(e) {
                 this.valueAdjust = e.getMapDef().biome.valueAdjust, this.rippleParticle = e.getMapDef().biome.particles.ripple || "waterRipple"
             },
@@ -4963,79 +4940,71 @@
                     })
                 }
             },
-            addParticle: function(e, t, a, i, r, o, s, l) {
-                for (var c = null, m = 0; m < this.particles.length; m++)
-                    if (!this.particles[m].active) {
-                        c = this.particles[m];
+            addParticle: function(e, t, a, i, r, o, n, s) {
+                for (var l = null, c = 0; c < this.particles.length; c++)
+                    if (!this.particles[c].active) {
+                        l = this.particles[c];
                         break
                     }
-                return c || (c = new n, this.particles.push(c)), r = void 0 !== r ? r : 1, o = void 0 !== o ? o : Math.random() * Math.PI * 2, l = void 0 !== l ? l : h[e].zOrd || 20, c.o(this.renderer, e, t, a, i, r, o, s, l, this.valueAdjust), c
+                return l || (l = new m, this.particles.push(l)), r = void 0 !== r ? r : 1, o = void 0 !== o ? o : Math.random() * Math.PI * 2, s = void 0 !== s ? s : u[e].zOrd || 20, l.o(this.renderer, e, t, a, i, r, o, n, s, this.valueAdjust), l
             },
             addRippleParticle: function(e, t) {
-                return this.addParticle(this.rippleParticle, t, e, d.create(0, 0), 1, 0, null)
+                return this.addParticle(this.rippleParticle, t, e, k.create(0, 0), 1, 0, null)
             },
             addEmitter: function(e, t, a, i, r, o, n) {
-                for (var l = null, c = 0; c < this.emitters.length; c++)
-                    if (!this.emitters[c].active) {
-                        l = this.emitters[c];
+                for (var s = null, l = 0; l < this.emitters.length; l++)
+                    if (!this.emitters[l].active) {
+                        s = this.emitters[l];
                         break
                     }
-                return l || (l = new s, this.emitters.push(l)), l.o(e, t, a, i, r, o, n), l
+                return s || (s = new c, this.emitters.push(s)), s.o(e, t, a, i, r, o, n), s
             },
             c: function(e, t, a) {
                 for (var i = 0; i < this.emitters.length; i++) {
-                    var o = this.emitters[i];
-                    if (o.active && o.enabled) {
-                        o.ticker, o.ticker += e, o.nextSpawn -= e;
-                        for (var n = u[o.type]; o.nextSpawn <= 0 && o.spawnCount < n.maxCount;) {
-                            var s = o.scale * o.radius,
-                                l = d.add(o.pos, p.randomPointInCircle(s)),
-                                c = d.rotate(o.dir, (Math.random() - .5) * n.angle),
-                                h = d.mul(c, r(n.speed)),
-                                g = n.noRotate ? 0 : Math.random() * Math.PI * 2;
-                            this.addParticle(n.particle, o.layer, l, h, o.scale, g, o.parent, o.zOrd).emitterIdx = i;
-                            var y = r(n.rate);
-                            if (n.maxRate) {
-                                var w = m.easeInExpo(m.min(1, o.ticker / n.maxElapsed)),
-                                    x = r(n.maxRate);
-                                y = m.lerp(w, y, x)
+                    var r = this.emitters[i];
+                    if (r.active && r.enabled) {
+                        r.ticker, r.ticker += e, r.nextSpawn -= e;
+                        for (var o = v[r.type]; r.nextSpawn <= 0 && r.spawnCount < o.maxCount;) {
+                            var n = r.scale * r.radius,
+                                s = k.add(r.pos, S.randomPointInCircle(n)),
+                                l = k.rotate(r.dir, (Math.random() - .5) * o.angle),
+                                c = k.mul(l, b(o.speed)),
+                                m = o.noRotate ? 0 : Math.random() * Math.PI * 2;
+                            this.addParticle(o.particle, r.layer, s, c, r.scale, m, r.parent, r.zOrd).emitterIdx = i;
+                            var p = b(o.rate);
+                            if (o.maxRate) {
+                                var d = _.easeInExpo(_.min(1, r.ticker / o.maxElapsed)),
+                                    h = b(o.maxRate);
+                                p = _.lerp(d, p, h)
                             }
-                            o.nextSpawn += y * o.rateMult, o.spawnCount++
+                            r.nextSpawn += p * r.rateMult, r.spawnCount++
                         }
-                        o.ticker >= o.duration && o.n()
+                        r.ticker >= r.duration && r.n()
                     }
                 }
-                for (var f = 0; f < this.particles.length; f++) {
-                    var b = this.particles[f];
-                    if (b.active && (b.ticker += e, !(b.ticker < b.delay))) {
-                        var _ = m.min((b.ticker - b.delay) / b.life, 1);
-                        b.vel = d.mul(b.vel, 1 / (1 + e * b.drag)), b.pos = d.add(b.pos, d.mul(b.vel, e)), b.rotVel *= 1 / (1 + e * b.rotDrag), b.rot += b.rotVel * e, b.scaleUseExp && (b.scale += e * b.scaleExp), b.alphaUseExp && (b.alpha = m.max(b.alpha + e * b.alphaExp, 0));
-                        var S = b.hasParent ? b.pos : t.pointToScreen(b.pos),
-                            k = b.scaleUseExp ? b.scale : m.remap(_, b.def.scale.lerp.min, b.def.scale.lerp.max, b.scale, b.scaleEnd),
-                            v = b.alphaUseExp ? b.alpha : m.remap(_, b.def.alpha.lerp.min, b.def.alpha.lerp.max, b.alpha, b.alphaEnd);
-                        b.alphaIn && _ < b.def.alphaIn.lerp.max && (v = m.remap(_, b.def.alphaIn.lerp.min, b.def.alphaIn.lerp.max, b.alphaInStart, b.alphaInEnd)), b.emitterIdx >= 0 && (v *= this.emitters[b.emitterIdx].alpha), b.hasParent || (k = t.pixels(k)), b.sprite.position.set(S.x, S.y), b.sprite.scale.set(k, k), b.sprite.rotation = b.rot, b.sprite.alpha = v, b.sprite.visible = !0, _ >= 1 && b.n()
+                for (var u = 0; u < this.particles.length; u++) {
+                    var g = this.particles[u];
+                    if (g.active && (g.ticker += e, !(g.ticker < g.delay))) {
+                        var y = _.min((g.ticker - g.delay) / g.life, 1);
+                        g.vel = k.mul(g.vel, 1 / (1 + e * g.drag)), g.pos = k.add(g.pos, k.mul(g.vel, e)), g.rotVel *= 1 / (1 + e * g.rotDrag), g.rot += g.rotVel * e, g.scaleUseExp && (g.scale += e * g.scaleExp), g.alphaUseExp && (g.alpha = _.max(g.alpha + e * g.alphaExp, 0));
+                        var w = g.hasParent ? g.pos : t.pointToScreen(g.pos),
+                            x = g.scaleUseExp ? g.scale : _.remap(y, g.def.scale.lerp.min, g.def.scale.lerp.max, g.scale, g.scaleEnd),
+                            f = g.alphaUseExp ? g.alpha : _.remap(y, g.def.alpha.lerp.min, g.def.alpha.lerp.max, g.alpha, g.alphaEnd);
+                        g.alphaIn && y < g.def.alphaIn.lerp.max && (f = _.remap(y, g.def.alphaIn.lerp.min, g.def.alphaIn.lerp.max, g.alphaInStart, g.alphaInEnd)), 0 <= g.emitterIdx && (f *= this.emitters[g.emitterIdx].alpha), g.hasParent || (x = t.pixels(x)), g.sprite.position.set(w.x, w.y), g.sprite.scale.set(x, x), g.sprite.rotation = g.rot, g.sprite.alpha = f, g.sprite.visible = !0, 1 <= y && g.n()
                     }
                 }
             }
         }, e.exports = {
-            EmitterDefs: u,
-            d: l
+            EmitterDefs: v,
+            d: r
         }
     },
-    "14a25ec1": function(e, t, a) {
+    "14a25ec1": function(s, e, t) {
         "use strict";
-        (function(t) {
-            var i = a("10899aea");
-            ! function(a) {
-                function r(e, t) {
-                    return n(e, t, !1)
-                }
-
-                function o(e, t) {
-                    return n(e, t, !0)
-                }
-
-                function n(e, t, a) {
+        (function(n) {
+            var m = t("10899aea");
+            ! function(e) {
+                function t(e, t, a) {
                     if (0 === t) return "";
                     var i = 0,
                         r = [],
@@ -5054,108 +5023,94 @@
                         return l
                     }
                 }
-
-                function s(e, t, a) {
-                    for (var i = a || t.length + 1, r = 0; r < i; r++) e.writeUint8(r < t.length ? t.charCodeAt(r) : 0)
-                }
-
-                function l(e, t, a) {
-                    for (var i = c(t), r = a || i.length + 1, o = 0; o < r; o++) e.writeUint8(o < i.length ? i[o] : 0)
-                }
-
-                function c(e) {
-                    var t, a, i = [];
-                    for (t = 0; t < e.length; t++) a = e.charCodeAt(t), a <= 127 ? i.push(a) : a <= 2047 ? (i.push(a >> 6 | 192), i.push(63 & a | 128)) : a <= 65535 ? (i.push(a >> 12 | 224), i.push(a >> 6 & 63 | 128), i.push(63 & a | 128)) : (i.push(a >> 18 | 240), i.push(a >> 12 & 63 | 128), i.push(a >> 6 & 63 | 128), i.push(63 & a | 128));
-                    return i
-                }
-                var m = function(e, a, i) {
-                    if (!(e instanceof ArrayBuffer || void 0 !== t && e instanceof t)) throw new Error("Must specify a valid ArrayBuffer or Buffer.");
-                    a = a || 0, i = i || e.byteLength || e.length, this._view = new Uint8Array(e, a, i)
+                var r = function(e, t, a) {
+                    if (!(e instanceof ArrayBuffer || void 0 !== n && e instanceof n)) throw new Error("Must specify a valid ArrayBuffer or Buffer.");
+                    t = t || 0, a = a || e.byteLength || e.length, this._view = new Uint8Array(e, t, a)
                 };
-                m._scratch = new DataView(new ArrayBuffer(8)), Object.defineProperty(m.prototype, "buffer", {
+                r._scratch = new DataView(new ArrayBuffer(8)), Object.defineProperty(r.prototype, "buffer", {
                     get: function() {
-                        return t.from(this._view.buffer)
+                        return n.from(this._view.buffer)
                     },
                     enumerable: !0,
                     configurable: !1
-                }), Object.defineProperty(m.prototype, "byteLength", {
+                }), Object.defineProperty(r.prototype, "byteLength", {
                     get: function() {
                         return this._view.length
                     },
                     enumerable: !0,
                     configurable: !1
-                }), m.prototype._setBit = function(e, t) {
+                }), r.prototype._setBit = function(e, t) {
                     t ? this._view[e >> 3] |= 1 << (7 & e) : this._view[e >> 3] &= ~(1 << (7 & e))
-                }, m.prototype.getBits = function(e, t, a) {
-                    var r = 8 * this._view.length - e;
-                    if (t > r) throw new Error("Cannot get " + t + " bit(s) from offset " + e + ", " + r + " available");
-                    for (var o = 0, n = 0; n < t;) {
-                        var s = t - n,
-                            l = 7 & e,
-                            c = this._view[e >> 3],
-                            m = i.min(s, 8 - l);
-                        o |= (c >> l & (1 << m) - 1) << n, e += m, n += m
-                    }
-                    return a ? (32 !== t && o & 1 << t - 1 && (o |= -1 ^ (1 << t) - 1), o) : o >>> 0
-                }, m.prototype.setBits = function(e, t, a) {
+                }, r.prototype.getBits = function(e, t, a) {
                     var i = 8 * this._view.length - e;
-                    if (a > i) throw new Error("Cannot set " + a + " bit(s) from offset " + e + ", " + i + " available");
+                    if (i < t) throw new Error("Cannot get " + t + " bit(s) from offset " + e + ", " + i + " available");
+                    for (var r = 0, o = 0; o < t;) {
+                        var n = t - o,
+                            s = 7 & e,
+                            l = this._view[e >> 3],
+                            c = m.min(n, 8 - s);
+                        r |= (l >> s & (1 << c) - 1) << o, e += c, o += c
+                    }
+                    return a ? (32 !== t && r & 1 << t - 1 && (r |= -1 ^ (1 << t) - 1), r) : r >>> 0
+                }, r.prototype.setBits = function(e, t, a) {
+                    var i = 8 * this._view.length - e;
+                    if (i < a) throw new Error("Cannot set " + a + " bit(s) from offset " + e + ", " + i + " available");
                     for (var r = 0; r < a;) {
                         var o;
-                        a - r >= 8 && 0 == (7 & e) ? (this._view[e >> 3] = 255 & t, o = 8) : (this._setBit(e, 1 & t), o = 1), t >>= o, e += o, r += o
+                        t >>= o = 8 <= a - r && 0 == (7 & e) ? (this._view[e >> 3] = 255 & t, 8) : (this._setBit(e, 1 & t), 1), e += o, r += o
                     }
-                }, m.prototype.getBoolean = function(e) {
+                }, r.prototype.getBoolean = function(e) {
                     return 0 !== this.getBits(e, 1, !1)
-                }, m.prototype.getInt8 = function(e) {
+                }, r.prototype.getInt8 = function(e) {
                     return this.getBits(e, 8, !0)
-                }, m.prototype.getUint8 = function(e) {
+                }, r.prototype.getUint8 = function(e) {
                     return this.getBits(e, 8, !1)
-                }, m.prototype.getInt16 = function(e) {
+                }, r.prototype.getInt16 = function(e) {
                     return this.getBits(e, 16, !0)
-                }, m.prototype.getUint16 = function(e) {
+                }, r.prototype.getUint16 = function(e) {
                     return this.getBits(e, 16, !1)
-                }, m.prototype.getInt32 = function(e) {
+                }, r.prototype.getInt32 = function(e) {
                     return this.getBits(e, 32, !0)
-                }, m.prototype.getUint32 = function(e) {
+                }, r.prototype.getUint32 = function(e) {
                     return this.getBits(e, 32, !1)
-                }, m.prototype.getFloat32 = function(e) {
-                    return m._scratch.setUint32(0, this.getUint32(e)), m._scratch.getFloat32(0)
-                }, m.prototype.getFloat64 = function(e) {
-                    return m._scratch.setUint32(0, this.getUint32(e)), m._scratch.setUint32(4, this.getUint32(e + 32)), m._scratch.getFloat64(0)
-                }, m.prototype.setBoolean = function(e, t) {
+                }, r.prototype.getFloat32 = function(e) {
+                    return r._scratch.setUint32(0, this.getUint32(e)), r._scratch.getFloat32(0)
+                }, r.prototype.getFloat64 = function(e) {
+                    return r._scratch.setUint32(0, this.getUint32(e)), r._scratch.setUint32(4, this.getUint32(e + 32)), r._scratch.getFloat64(0)
+                }, r.prototype.setBoolean = function(e, t) {
                     this.setBits(e, t ? 1 : 0, 1)
-                }, m.prototype.setInt8 = m.prototype.setUint8 = function(e, t) {
+                }, r.prototype.setInt8 = r.prototype.setUint8 = function(e, t) {
                     this.setBits(e, t, 8)
-                }, m.prototype.setInt16 = m.prototype.setUint16 = function(e, t) {
+                }, r.prototype.setInt16 = r.prototype.setUint16 = function(e, t) {
                     this.setBits(e, t, 16)
-                }, m.prototype.setInt32 = m.prototype.setUint32 = function(e, t) {
+                }, r.prototype.setInt32 = r.prototype.setUint32 = function(e, t) {
                     this.setBits(e, t, 32)
-                }, m.prototype.setFloat32 = function(e, t) {
-                    m._scratch.setFloat32(0, t), this.setBits(e, m._scratch.getUint32(0), 32)
-                }, m.prototype.setFloat64 = function(e, t) {
-                    m._scratch.setFloat64(0, t), this.setBits(e, m._scratch.getUint32(0), 32), this.setBits(e + 32, m._scratch.getUint32(4), 32)
-                }, m.prototype.getArrayBuffer = function(e, t) {
+                }, r.prototype.setFloat32 = function(e, t) {
+                    r._scratch.setFloat32(0, t), this.setBits(e, r._scratch.getUint32(0), 32)
+                }, r.prototype.setFloat64 = function(e, t) {
+                    r._scratch.setFloat64(0, t), this.setBits(e, r._scratch.getUint32(0), 32), this.setBits(e + 32, r._scratch.getUint32(4), 32)
+                }, r.prototype.getArrayBuffer = function(e, t) {
                     for (var a = new Uint8Array(t), i = 0; i < t; i++) a[i] = this.getUint8(e + 8 * i);
                     return a
                 };
-                var p = function(e, t) {
+                var a = function(t, a) {
                         return function() {
-                            if (this._index + t > this._length) throw new Error("Trying to read past the end of the stream");
-                            var a = this._view[e](this._index);
-                            return this._index += t, a
+                            if (this._index + a > this._length) throw new Error("Trying to read past the end of the stream");
+                            var e = this._view[t](this._index);
+                            return this._index += a, e
                         }
                     },
-                    d = function(e, t) {
-                        return function(a) {
-                            this._view[e](this._index, a), this._index += t
+                    i = function(t, a) {
+                        return function(e) {
+                            this._view[t](this._index, e), this._index += a
                         }
                     },
-                    h = function(e, a, i) {
-                        var r = e instanceof ArrayBuffer || void 0 !== t && e instanceof t;
-                        if (!(e instanceof m || r)) throw new Error("Must specify a valid BitView, ArrayBuffer or Buffer");
-                        this._view = r ? new m(e, a, i) : e, this._index = 0, this._startIndex = 0, this._length = 8 * this._view.byteLength
+                    o = function(e, t, a) {
+                        var i = e instanceof ArrayBuffer || void 0 !== n && e instanceof n;
+                        if (!(e instanceof r || i)) throw new Error("Must specify a valid BitView, ArrayBuffer or Buffer");
+                        this._view = i ? new r(e, t, a) : e, this._index = 0, this._startIndex = 0, this._length = 8 * this._view.byteLength
                     };
-                Object.defineProperty(h.prototype, "index", {
+                Object.defineProperty(o.prototype, "index", {
                     get: function() {
                         return this._index - this._startIndex
                     },
@@ -5164,7 +5119,7 @@
                     },
                     enumerable: !0,
                     configurable: !0
-                }), Object.defineProperty(h.prototype, "length", {
+                }), Object.defineProperty(o.prototype, "length", {
                     get: function() {
                         return this._length - this._startIndex
                     },
@@ -5173,13 +5128,13 @@
                     },
                     enumerable: !0,
                     configurable: !0
-                }), Object.defineProperty(h.prototype, "bitsLeft", {
+                }), Object.defineProperty(o.prototype, "bitsLeft", {
                     get: function() {
                         return this._length - this._index
                     },
                     enumerable: !0,
                     configurable: !0
-                }), Object.defineProperty(h.prototype, "byteIndex", {
+                }), Object.defineProperty(o.prototype, "byteIndex", {
                     get: function() {
                         return Math.ceil(this._index / 8)
                     },
@@ -5188,52 +5143,60 @@
                     },
                     enumerable: !0,
                     configurable: !0
-                }), Object.defineProperty(h.prototype, "buffer", {
+                }), Object.defineProperty(o.prototype, "buffer", {
                     get: function() {
                         return this._view.buffer
                     },
                     enumerable: !0,
                     configurable: !1
-                }), Object.defineProperty(h.prototype, "view", {
+                }), Object.defineProperty(o.prototype, "view", {
                     get: function() {
                         return this._view
                     },
                     enumerable: !0,
                     configurable: !1
-                }), h.prototype.readBits = function(e, t) {
+                }), o.prototype.readBits = function(e, t) {
                     var a = this._view.getBits(this._index, e, t);
                     return this._index += e, a
-                }, h.prototype.writeBits = function(e, t) {
+                }, o.prototype.writeBits = function(e, t) {
                     this._view.setBits(this._index, e, t), this._index += t
-                }, h.prototype.readBoolean = p("getBoolean", 1), h.prototype.readInt8 = p("getInt8", 8), h.prototype.readUint8 = p("getUint8", 8), h.prototype.readInt16 = p("getInt16", 16), h.prototype.readUint16 = p("getUint16", 16), h.prototype.readInt32 = p("getInt32", 32), h.prototype.readUint32 = p("getUint32", 32), h.prototype.readFloat32 = p("getFloat32", 32), h.prototype.readFloat64 = p("getFloat64", 64), h.prototype.writeBoolean = d("setBoolean", 1), h.prototype.writeInt8 = d("setInt8", 8), h.prototype.writeUint8 = d("setUint8", 8), h.prototype.writeInt16 = d("setInt16", 16), h.prototype.writeUint16 = d("setUint16", 16), h.prototype.writeInt32 = d("setInt32", 32), h.prototype.writeUint32 = d("setUint32", 32), h.prototype.writeFloat32 = d("setFloat32", 32), h.prototype.writeFloat64 = d("setFloat64", 64), h.prototype.readASCIIString = function(e) {
-                    return r(this, e)
-                }, h.prototype.readUTF8String = function(e) {
-                    return o(this, e)
-                }, h.prototype.writeASCIIString = function(e, t) {
-                    s(this, e, t)
-                }, h.prototype.writeUTF8String = function(e, t) {
-                    l(this, e, t)
-                }, h.prototype.readBitStream = function(e) {
-                    var t = new h(this._view);
+                }, o.prototype.readBoolean = a("getBoolean", 1), o.prototype.readInt8 = a("getInt8", 8), o.prototype.readUint8 = a("getUint8", 8), o.prototype.readInt16 = a("getInt16", 16), o.prototype.readUint16 = a("getUint16", 16), o.prototype.readInt32 = a("getInt32", 32), o.prototype.readUint32 = a("getUint32", 32), o.prototype.readFloat32 = a("getFloat32", 32), o.prototype.readFloat64 = a("getFloat64", 64), o.prototype.writeBoolean = i("setBoolean", 1), o.prototype.writeInt8 = i("setInt8", 8), o.prototype.writeUint8 = i("setUint8", 8), o.prototype.writeInt16 = i("setInt16", 16), o.prototype.writeUint16 = i("setUint16", 16), o.prototype.writeInt32 = i("setInt32", 32), o.prototype.writeUint32 = i("setUint32", 32), o.prototype.writeFloat32 = i("setFloat32", 32), o.prototype.writeFloat64 = i("setFloat64", 64), o.prototype.readASCIIString = function(e) {
+                    return t(this, e, !1)
+                }, o.prototype.readUTF8String = function(e) {
+                    return t(this, e, !0)
+                }, o.prototype.writeASCIIString = function(e, t) {
+                    ! function(e, t, a) {
+                        for (var i = a || t.length + 1, r = 0; r < i; r++) e.writeUint8(r < t.length ? t.charCodeAt(r) : 0)
+                    }(this, e, t)
+                }, o.prototype.writeUTF8String = function(e, t) {
+                    ! function(e, t, a) {
+                        for (var i = function(e) {
+                                var t, a, i = [];
+                                for (t = 0; t < e.length; t++)(a = e.charCodeAt(t)) <= 127 ? i.push(a) : (a <= 2047 ? i.push(a >> 6 | 192) : (a <= 65535 ? i.push(a >> 12 | 224) : (i.push(a >> 18 | 240), i.push(a >> 12 & 63 | 128)), i.push(a >> 6 & 63 | 128)), i.push(63 & a | 128));
+                                return i
+                            }(t), r = a || i.length + 1, o = 0; o < r; o++) e.writeUint8(o < i.length ? i[o] : 0)
+                    }(this, e, t)
+                }, o.prototype.readBitStream = function(e) {
+                    var t = new o(this._view);
                     return t._startIndex = this._index, t._index = this._index, t.length = e, this._index += e, t
-                }, h.prototype.writeBitStream = function(e, t) {
+                }, o.prototype.writeBitStream = function(e, t) {
                     t || (t = e.bitsLeft);
-                    for (var a; t > 0;) a = i.min(t, 32), this.writeBits(e.readBits(a), a), t -= a
-                }, h.prototype.readArrayBuffer = function(e) {
+                    for (var a; 0 < t;) a = m.min(t, 32), this.writeBits(e.readBits(a), a), t -= a
+                }, o.prototype.readArrayBuffer = function(e) {
                     var t = this._view.getArrayBuffer(this._index, e);
                     return this._index += 8 * e, t
-                }, h.prototype.writeArrayBuffer = function(e, t) {
-                    this.writeBitStream(new h(e), 8 * t)
-                }, e.exports = {
-                    BitView: m,
-                    BitStream: h
+                }, o.prototype.writeArrayBuffer = function(e, t) {
+                    this.writeBitStream(new o(e), 8 * t)
+                }, s.exports = {
+                    BitView: r,
+                    BitStream: o
                 }
             }()
-        }).call(t, a("a5e2faae").Buffer)
+        }).call(e, t("a5e2faae").Buffer)
     },
     15173389: function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-08-05",
                 locale: "fr"
@@ -5537,51 +5500,45 @@
             "game-perk-desc-1": "Adrénaline au maximum.</br>Taille plus grande.",
             "game-perk-title-2": "Puissance de feu",
             "game-perk-desc-2": "Mags à grande capacité."
-        };
-        e.exports = i
+        }
     },
     "153d9481": function(e, t, a) {
         "use strict";
 
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+        function x(e) {
+            return e && 4 < e.length ? "img/emotes/" + e.slice(0, -4) + ".svg" : ""
         }
-
-        function r(e) {
-            return e && e.length > 4 ? "img/emotes/" + e.slice(0, -4) + ".svg" : ""
-        }
-        var o = function() {
-                function e(e, t) {
+        var i = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            n = a("8ee62bea"),
-            s = a("b78cf179"),
-            l = s.EmoteType,
-            c = s.EmoteData,
-            m = a("ce29f17f"),
-            p = (a("26be8056"), a("484b3444")),
-            d = [109, 101, 110, 117],
-            h = d.map(function(e) {
+            f = a("8ee62bea"),
+            r = a("b78cf179"),
+            b = r.EmoteType,
+            _ = r.EmoteData,
+            S = a("ce29f17f"),
+            k = (a("26be8056"), a("484b3444")),
+            o = [109, 101, 110, 117].map(function(e) {
                 return String.fromCharCode(e)
             }).join(""),
-            u = [105, 110, 105, 116],
-            g = u.map(function(e) {
+            n = [105, 110, 105, 116].map(function(e) {
                 return String.fromCharCode(e)
             }).join(""),
-            y = [99, 104, 101, 97, 116],
-            w = y.map(function(e) {
+            s = [99, 104, 101, 97, 116].map(function(e) {
                 return String.fromCharCode(e)
             }).join(""),
-            x = function() {
-                function e(t) {
-                    i(this, e), this.config = t, this.selectedEmote = {
+            l = function() {
+                function t(e) {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, t), this.config = e, this.selectedEmote = {
                         prevSlot: "",
                         img: "",
                         id: 0
@@ -5608,114 +5565,112 @@
                         }
                     }, this.socialUnlocked = !1
                 }
-                return o(e, [{
+                return i(t, [{
                     key: "init",
-                    value: function(e) {
-                        var t = this,
-                            a = n("#modal-customize");
-                        n("#btn-customize").click(function() {
-                            return a.finish(), a.css("display", "block"), n("#start-bottom-right").fadeOut(200), p.addModalCloseListener(), !1
-                        }), n(".btn-account-change-avatar, .account-avatar").click(function(a) {
-                            e.loggedIn && t.populateAvatar(e.profile.avatar)
+                    value: function(t) {
+                        var s = this,
+                            e = f("#modal-customize");
+                        f("#btn-customize").click(function() {
+                            return e.finish(), e.css("display", "block"), f("#start-bottom-right").fadeOut(200), k.addModalCloseListener(), !1
+                        }), f(".btn-account-change-avatar, .account-avatar").click(function(e) {
+                            t.loggedIn && s.populateAvatar(t.profile.avatar)
                         });
-                        var i = this;
-                        n("#customize-emote-wheel, #customize-emote-autos").find(".ui-emote-parent").each(function(e, a) {
-                            var i = n(a),
-                                o = t.config.get(i.data("slot")),
-                                s = c[o],
-                                l = {
+                        var a = this;
+                        f("#customize-emote-wheel, #customize-emote-autos").find(".ui-emote-parent").each(function(e, t) {
+                            var a = f(t),
+                                i = s.config.get(a.data("slot")),
+                                r = _[i],
+                                o = {
                                     img: "",
                                     id: 0
                                 };
-                            void 0 != s && (l = {
-                                img: s.texture,
-                                id: o
-                            }), i.find(".customize-emote-image").data("id", l.id);
-                            var m = r(l.img);
-                            i.find(".customize-emote-image").css("background-image", "url(" + m + ")")
+                            null != r && (o = {
+                                img: r.texture,
+                                id: i
+                            }), a.find(".customize-emote-image").data("id", o.id);
+                            var n = x(o.img);
+                            a.find(".customize-emote-image").css("background-image", "url(" + n + ")")
                         });
-                        var o = Object.keys(c);
-                        o.sort(function(e, t) {
-                            return c[e].category - c[t].category || e - t
+                        var i = Object.keys(_);
+                        i.sort(function(e, t) {
+                            return _[e].category - _[t].category || e - t
                         });
-                        for (var s = [], d = 0; d < o.length; d++)
-                            for (var h in l) l[h] == o[d] && s.push(l[h]);
-                        for (var u = 0; u < s.length; u++) {
-                            var g = s[u];
-                            if (c.hasOwnProperty(g)) {
-                                var y = c[g],
-                                    w = y.noCustom || !1;
-                                if (!y.teamOnly && !w) {
-                                    var x = !1,
-                                        f = "";
-                                    y.twitterFollow && (x = !0, f = "twitter"), y.youtubeSubscribe && (x = !0, f = "youtube"), y.facebookLike && (x = !0, f = "facebook"), y.instagramFollow && (x = !0, f = "instagram");
-                                    var b = "customize-list-item";
-                                    b += x ? " customize-list-item-locked" : " customize-list-item-unlocked";
-                                    var _ = n("<div/>", {
-                                        class: b,
-                                        "data-lock-reason": f
-                                    });
-                                    _.append(n("<div/>", {
+                        for (var r = [], o = 0; o < i.length; o++)
+                            for (var n in b) b[n] == i[o] && r.push(b[n]);
+                        for (var l = 0; l < r.length; l++) {
+                            var c = r[l];
+                            if (_.hasOwnProperty(c)) {
+                                var m = _[c],
+                                    p = m.noCustom || !1;
+                                if (!m.teamOnly && !p) {
+                                    var d = !1,
+                                        h = "";
+                                    m.twitterFollow && (d = !0, h = "twitter"), m.youtubeSubscribe && (d = !0, h = "youtube"), m.facebookLike && (d = !0, h = "facebook"), m.instagramFollow && (d = !0, h = "instagram");
+                                    var u = "customize-list-item",
+                                        g = f("<div/>", {
+                                            class: u += d ? " customize-list-item-locked" : " customize-list-item-unlocked",
+                                            "data-lock-reason": h
+                                        });
+                                    g.append(f("<div/>", {
                                         class: "customize-emote-image",
-                                        style: "background-image: url(" + r(y.texture) + ")",
-                                        draggable: !x,
-                                        "data-id": g
-                                    })), n("#modal-customize-list").append(_), b = "customize-list-item customize-list-item-unlocked", _ = n("<div/>", {
-                                        class: b
-                                    }), _.append(n("<div/>", {
+                                        style: "background-image: url(" + x(m.texture) + ")",
+                                        draggable: !d,
+                                        "data-id": c
+                                    })), f("#modal-customize-list").append(g), (g = f("<div/>", {
+                                        class: u = "customize-list-item customize-list-item-unlocked"
+                                    })).append(f("<div/>", {
                                         class: "customize-emote-image",
-                                        style: "background-image: url(" + r(y.texture) + ")",
-                                        draggable: !x,
-                                        "data-id": g
-                                    })), n("#modal-account-avatar-list").append(_)
+                                        style: "background-image: url(" + x(m.texture) + ")",
+                                        draggable: !d,
+                                        "data-id": c
+                                    })), f("#modal-account-avatar-list").append(g)
                                 }
                             }
                         }
-                        n(".customize-list-item-locked").hover(function() {
-                            n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "visible")
-                        }, function() {
-                            n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "hidden")
-                        }), this.selectableSlots = n(".customize-col, .customize-list-item"), this.emoteSlots = n(".customize-col"), this.highlightedSlots = this.emoteSlots.siblings(".ui-emote-hl"), this.highlightOpacityMin = .4, this.emoteSelected = !1, n("#btn-account-login-unlock").click(function() {
-                            return n(".modal").fadeOut(200), n(".account-details-guest").trigger("click"), !1
-                        }), this.selectableSlots.on("mouseup", function() {
-                            if (!n(this).hasClass("customize-list-item-locked")) return i.emoteSelected && !n(this).hasClass("customize-list-item") ? void(i.emoteSelected = !1) : void i.selectEmote(n(this))
-                        }), this.selectableSlots.on("dragstart", function(e) {
-                            if (!n(this).hasClass("customize-list-item-locked") && (i.selectEmote(n(this)), "edge" != m.browser)) {
-                                var t = document.createElement("img");
-                                t.src = i.selectedEmote.img.replace("url(", "").replace(")", "").replace(/\"/gi, ""), e.originalEvent.dataTransfer.setDragImage(t, 64, 64)
+                        for (var y in f(".customize-list-item-locked").hover(function() {
+                                f('.tooltiptext[data-lock-reason="' + f(this).data("lock-reason") + '"]').css("visibility", "visible")
+                            }, function() {
+                                f('.tooltiptext[data-lock-reason="' + f(this).data("lock-reason") + '"]').css("visibility", "hidden")
+                            }), this.selectableSlots = f(".customize-col, .customize-list-item"), this.emoteSlots = f(".customize-col"), this.highlightedSlots = this.emoteSlots.siblings(".ui-emote-hl"), this.highlightOpacityMin = .4, this.emoteSelected = !1, f("#btn-account-login-unlock").click(function() {
+                                return f(".modal").fadeOut(200), f(".account-details-guest").trigger("click"), !1
+                            }), this.selectableSlots.on("mouseup", function() {
+                                if (!f(this).hasClass("customize-list-item-locked")) return a.emoteSelected && !f(this).hasClass("customize-list-item") ? void(a.emoteSelected = !1) : void a.selectEmote(f(this))
+                            }), this.selectableSlots.on("dragstart", function(e) {
+                                if (!f(this).hasClass("customize-list-item-locked") && (a.selectEmote(f(this)), "edge" != S.browser)) {
+                                    var t = document.createElement("img");
+                                    t.src = a.selectedEmote.img.replace("url(", "").replace(")", "").replace(/\"/gi, ""), e.originalEvent.dataTransfer.setDragImage(t, 64, 64)
+                                }
+                            }), this.emoteSlots.on("drop", function(e) {
+                                e.originalEvent.preventDefault();
+                                var t = f(this).parent();
+                                a.updateSlot(t, a.selectedEmote.img, a.selectedEmote.id), a.emoteSelected = !1
+                            }), this.emoteSlots.on("mousedown", function(e) {
+                                if (a.emoteSelected) {
+                                    e.stopPropagation();
+                                    var t = f(this).parent();
+                                    a.updateSlot(t, a.selectedEmote.img, a.selectedEmote.id)
+                                }
+                            }), this.emoteSlots.on("dragover", function(e) {
+                                e.originalEvent.preventDefault(), f(this).parent().find(".ui-emote-hl").css("opacity", 1)
+                            }), this.emoteSlots.on("dragleave", function(e) {
+                                e.originalEvent.preventDefault(), f(this).parent().find(".ui-emote-hl").css("opacity", a.highlightOpacityMin)
+                            }), f(document).on("dragend", function(e) {
+                                e.originalEvent.preventDefault(), a.highlightedSlots.css({
+                                    display: "none",
+                                    opacity: 0
+                                })
+                            }), f(".ui-emote-auto-trash").click(function() {
+                                var e = f(this).parent();
+                                a.updateSlot(e, "", 1)
+                            }), this.unlockTypes)
+                            if (this.unlockTypes.hasOwnProperty(y) && "account" != y) {
+                                var w = this.unlockTypes[y];
+                                w && this.config.get(w.config) && this.unlockEmotes(y)
                             }
-                        }), this.emoteSlots.on("drop", function(e) {
-                            e.originalEvent.preventDefault();
-                            var t = n(this).parent();
-                            i.updateSlot(t, i.selectedEmote.img, i.selectedEmote.id), i.emoteSelected = !1
-                        }), this.emoteSlots.on("mousedown", function(e) {
-                            if (i.emoteSelected) {
-                                e.stopPropagation();
-                                var t = n(this).parent();
-                                i.updateSlot(t, i.selectedEmote.img, i.selectedEmote.id)
-                            }
-                        }), this.emoteSlots.on("dragover", function(e) {
-                            e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", 1)
-                        }), this.emoteSlots.on("dragleave", function(e) {
-                            e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", i.highlightOpacityMin)
-                        }), n(document).on("dragend", function(e) {
-                            e.originalEvent.preventDefault(), i.highlightedSlots.css({
-                                display: "none",
-                                opacity: 0
-                            })
-                        }), n(".ui-emote-auto-trash").click(function() {
-                            var e = n(this).parent();
-                            i.updateSlot(e, "", 1)
-                        });
-                        for (var S in this.unlockTypes)
-                            if (this.unlockTypes.hasOwnProperty(S) && "account" != S) {
-                                var k = this.unlockTypes[S];
-                                k && this.config.get(k.config) && this.unlockEmotes(S)
-                            }
-                        n("#btn-twitter-follow-unlock, #btn-youtube-subscribe-unlock, #btn-facebook-like-unlock, #btn-instagram-follow-unlock").click(function() {
-                            if (n(this).hasClass("btn-social-unlocked")) return !1;
-                            var e = n(this).data("lock-reason");
-                            i.unlockEmotes(e)
+                        f("#btn-twitter-follow-unlock, #btn-youtube-subscribe-unlock, #btn-facebook-like-unlock, #btn-instagram-follow-unlock").click(function() {
+                            if (f(this).hasClass("btn-social-unlocked")) return !1;
+                            var e = f(this).data("lock-reason");
+                            a.unlockEmotes(e)
                         })
                     }
                 }, {
@@ -5751,12 +5706,12 @@
                 }, {
                     key: "unlockEmotes",
                     value: function(e) {
-                        this.unlockTypes[e].unlocked, n('.btn-social-unlock[data-lock-reason="' + e + '"]').addClass("btn-social-unlocked");
-                        var t = n('.customize-list-item-locked[data-lock-reason="' + e + '"]');
-                        t.addClass("customize-list-item-unlocked").removeClass("customize-list-item-locked"), t.find(".customize-emote-image").attr("draggable", !0), this.config.set(this.unlockTypes[e].config, !0), n(".customize-list-item-unlocked").off("mouseenter"), n(".customize-list-item-unlocked").off("mouseleave"), n(".customize-list-item-locked").on("mouseenter", function() {
-                            n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "visible")
-                        }), n(".customize-list-item-locked").on("mouseleave", function() {
-                            n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "hidden")
+                        this.unlockTypes[e].unlocked, f('.btn-social-unlock[data-lock-reason="' + e + '"]').addClass("btn-social-unlocked");
+                        var t = f('.customize-list-item-locked[data-lock-reason="' + e + '"]');
+                        t.addClass("customize-list-item-unlocked").removeClass("customize-list-item-locked"), t.find(".customize-emote-image").attr("draggable", !0), this.config.set(this.unlockTypes[e].config, !0), f(".customize-list-item-unlocked").off("mouseenter"), f(".customize-list-item-unlocked").off("mouseleave"), f(".customize-list-item-locked").on("mouseenter", function() {
+                            f('.tooltiptext[data-lock-reason="' + f(this).data("lock-reason") + '"]').css("visibility", "visible")
+                        }), f(".customize-list-item-locked").on("mouseleave", function() {
+                            f('.tooltiptext[data-lock-reason="' + f(this).data("lock-reason") + '"]').css("visibility", "hidden")
                         })
                     }
                 }, {
@@ -5764,21 +5719,21 @@
                     value: function(e) {
                         var t = "",
                             a = 0,
-                            i = c[e];
-                        void 0 != i && (t = i.texture, a = e);
-                        var o = n("#customize-account-avatar");
-                        o.find(".customize-emote-image").data("id", a);
-                        var s = r(t);
-                        o.find(".customize-emote-image").css("background-image", "url(" + s + ")")
+                            i = _[e];
+                        null != i && (t = i.texture, a = e);
+                        var r = f("#customize-account-avatar");
+                        r.find(".customize-emote-image").data("id", a);
+                        var o = x(t);
+                        r.find(".customize-emote-image").css("background-image", "url(" + o + ")")
                     }
                 }, {
                     key: "socialUnlocks",
                     value: function() {
-                        return this.socialUnlocked = 0 == Object.keys(this.unlockTypes).length || void 0 !== window[h] || void 0 !== window[g] || void 0 !== window[w], this.socialUnlocked
+                        return this.socialUnlocked = 0 == Object.keys(this.unlockTypes).length || void 0 !== window[o] || void 0 !== window[n] || void 0 !== window[s], this.socialUnlocked
                     }
-                }]), e
+                }]), t
             }();
-        e.exports = x
+        e.exports = l
     },
     "172c57dc": function(e, t, a) {
         "use strict";
@@ -5788,14 +5743,14 @@
         }
 
         function r() {
-            this.sprite = new n.Sprite, this.sprite.anchor.set(.5, .5), this.sprite.visible = !1
+            this.sprite = new s.Sprite, this.sprite.anchor.set(.5, .5), this.sprite.visible = !1
         }
 
         function o() {
             this.u = new p.Pool(i), this.decalRenders = []
         }
-        var n = a("8b1dfb45"),
-            s = a("6b42806d"),
+        var s = a("8b1dfb45"),
+            n = a("6b42806d"),
             l = a("ceee80d9"),
             c = a("10899aea"),
             m = a("c2a798c8"),
@@ -5808,18 +5763,18 @@
             },
             l: function(e, t, a, i) {
                 var r = l.Defs[e.type];
-                this.type = e.type, this.pos = m.copy(e.pos), this.rot = l.oriToRad(e.ori), this.scale = e.scale, this.layer = e.layer, this.collider = s.transform(r.collision, this.pos, this.rot, this.scale), a && (this.decalRender = i.decalBarn.allocDecalRender(), this.decalRender.o(this, i.map, i.renderer))
+                this.type = e.type, this.pos = m.copy(e.pos), this.rot = l.oriToRad(e.ori), this.scale = e.scale, this.layer = e.layer, this.collider = n.transform(r.collision, this.pos, this.rot, this.scale), a && (this.decalRender = i.decalBarn.allocDecalRender(), this.decalRender.o(this, i.map, i.renderer))
             }
         }, r.prototype = {
             o: function(e, t, a) {
                 var i = l.Defs[e.type];
                 this.pos = m.copy(e.pos), this.rot = e.rot, this.scale = e.scale, this.layer = e.layer, this.zIdx = i.img.zIdx, this.zOrd = e.__id;
                 var r = i.img;
-                this.sprite.texture = n.Texture.fromImage(r.sprite), this.sprite.tint = r.tint, this.sprite.alpha = 1, this.sprite.visible = !0, this.imgScale = i.img.scale, this.spriteAlpha = r.alpha;
+                this.sprite.texture = s.Texture.fromImage(r.sprite), this.sprite.tint = r.tint, this.sprite.alpha = 1, this.sprite.visible = !0, this.imgScale = i.img.scale, this.spriteAlpha = r.alpha;
                 var o = t.getMapDef().biome.valueAdjust;
                 if (!r.ignoreAdjust && o < 1 && (this.sprite.tint = d.adjustValue(this.sprite.tint, o)), this.inWater = !1, i.height < .25) {
-                    var s = t.getGroundSurface(e.pos, e.layer);
-                    this.inWater = "water" == s.type
+                    var n = t.getGroundSurface(e.pos, e.layer);
+                    this.inWater = "water" == n.type
                 }
                 this.flicker = i.img.flicker, this.flicker && (this.flickerMin = i.img.flickerMin, this.flickerMax = i.img.flickerMax, this.flickerTarget = this.imgScale, this.flickerRate = i.img.flickerRate, this.flickerCooldown = 0), this.active = !0, this.deactivated = !1, this.fadeout = void 0 !== i.lifetime, this.fadeAlpha = 1
             },
@@ -5857,7 +5812,7 @@
     "1901e2d9": function(e, t, a) {
         "use strict";
 
-        function i(e, t, a) {
+        function n(e, t, a) {
             return t in e ? Object.defineProperty(e, t, {
                 value: a,
                 enumerable: !0,
@@ -5865,13 +5820,13 @@
                 writable: !0
             }) : e[t] = a, e
         }
-        var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        var i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
             } : function(e) {
                 return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
             },
-            o = a("10899aea"),
-            n = a("c2a798c8"),
+            c = a("10899aea"),
+            r = a("c2a798c8"),
             s = {
                 sameLayer: function(e, t) {
                     return (1 & e) == (1 & t) || 2 & e && 2 & t
@@ -5886,7 +5841,7 @@
                     return 2 | e
                 },
                 random: function(e, t) {
-                    return o.lerp(Math.random(), e, t)
+                    return c.lerp(Math.random(), e, t)
                 },
                 randomInt: function(e, t) {
                     return e = Math.ceil(e), t = Math.floor(t), Math.floor(Math.random() * (t - e + 1)) + e
@@ -5898,45 +5853,45 @@
                         var i = t;
                         t = a, a = i
                     }
-                    return n.create(a * e * Math.cos(2 * Math.PI * t / a), a * e * Math.sin(2 * Math.PI * t / a))
+                    return r.create(a * e * Math.cos(2 * Math.PI * t / a), a * e * Math.sin(2 * Math.PI * t / a))
                 },
                 seededRand: function(e) {
-                    var t = e;
-                    return function(e, a) {
-                        void 0 === e && (e = 0), void 0 === a && (a = 1), t = 16807 * t % 2147483647;
-                        var i = t / 2147483647;
-                        return o.lerp(i, e, a)
+                    var i = e;
+                    return function(e, t) {
+                        void 0 === e && (e = 0), void 0 === t && (t = 1);
+                        var a = (i = 16807 * i % 2147483647) / 2147483647;
+                        return c.lerp(a, e, t)
                     }
                 },
                 rgb2hsv: function(e, t, a) {
                     e /= 255, t /= 255, a /= 255;
-                    var i, r, n = o.max(e, t, a),
-                        s = o.min(e, t, a),
-                        l = n,
-                        c = n - s;
-                    if (r = 0 == n ? 0 : c / n, n == s) i = 0;
+                    var i, r, o = c.max(e, t, a),
+                        n = c.min(e, t, a),
+                        s = o,
+                        l = o - n;
+                    if (r = 0 == o ? 0 : l / o, o == n) i = 0;
                     else {
-                        switch (n) {
+                        switch (o) {
                             case e:
-                                i = (t - a) / c + (t < a ? 6 : 0);
+                                i = (t - a) / l + (t < a ? 6 : 0);
                                 break;
                             case t:
-                                i = (a - e) / c + 2;
+                                i = (a - e) / l + 2;
                                 break;
                             case a:
-                                i = (e - t) / c + 4
+                                i = (e - t) / l + 4
                         }
                         i /= 6
                     }
                     return {
                         h: i,
                         s: r,
-                        v: l
+                        v: s
                     }
                 },
                 hsv2rgb: function(e, t, a) {
                     var i, r, o, n, s, l, c, m;
-                    switch (1 === arguments.length && (t = e.s, a = e.v, e = e.h), n = Math.floor(6 * e), s = 6 * e - n, l = a * (1 - t), c = a * (1 - s * t), m = a * (1 - (1 - s) * t), n % 6) {
+                    switch (1 === arguments.length && (t = e.s, a = e.v, e = e.h), l = a * (1 - t), c = a * (1 - (s = 6 * e - (n = Math.floor(6 * e))) * t), m = a * (1 - (1 - s) * t), n % 6) {
                         case 0:
                             i = a, r = m, o = l;
                             break;
@@ -5965,7 +5920,7 @@
                     var a = e >> 16 & 255,
                         i = e >> 8 & 255,
                         r = 255 & e;
-                    return a = Math.round(a * t), i = Math.round(i * t), r = Math.round(r * t), (a << 16) + (i << 8) + r
+                    return ((a = Math.round(a * t)) << 16) + ((i = Math.round(i * t)) << 8) + (r = Math.round(r * t))
                 },
                 rgb2hex: function(e) {
                     return (e.r << 16) + (e.g << 8) + e.b
@@ -5984,21 +5939,21 @@
                     return a.r, a.g, a.b, a.r = Math.round(a.r * e + 0 * (1 - e)), a.g = Math.round(a.g * e + 0 * (1 - e)), a.b = Math.round(a.b * e + 0 * (1 - e)), this.rgb2hex(a)
                 },
                 isObject: function(e) {
-                    return e && "object" === (void 0 === e ? "undefined" : r(e)) && !Array.isArray(e)
+                    return e && "object" === (void 0 === e ? "undefined" : i(e)) && !Array.isArray(e)
                 },
                 mergeDeep: function(e) {
-                    for (var t = arguments.length, a = Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) a[r - 1] = arguments[r];
+                    for (var t = arguments.length, a = Array(1 < t ? t - 1 : 0), i = 1; i < t; i++) a[i - 1] = arguments[i];
                     if (!a.length) return e;
-                    var o = a.shift();
-                    if (s.isObject(e) && s.isObject(o))
-                        for (var n in o) s.isObject(o[n]) ? (e[n] || Object.assign(e, i({}, n, {})), s.mergeDeep(e[n], o[n])) : Object.assign(e, i({}, n, o[n]));
+                    var r = a.shift();
+                    if (s.isObject(e) && s.isObject(r))
+                        for (var o in r) s.isObject(r[o]) ? (e[o] || Object.assign(e, n({}, o, {})), s.mergeDeep(e[o], r[o])) : Object.assign(e, n({}, o, r[o]));
                     return s.mergeDeep.apply(s, [e].concat(a))
                 },
                 cloneDeep: function(e) {
                     return s.mergeDeep({}, e)
                 },
                 shuffleArray: function(e) {
-                    for (var t = e.length - 1; t >= 0; t--) {
+                    for (var t = e.length - 1; 0 <= t; t--) {
                         var a = Math.floor(Math.random() * (t + 1)),
                             i = e[t];
                         e[t] = e[a], e[a] = i
@@ -6058,228 +6013,197 @@
     },
     "259eae5b": function(e, t, a) {
         "use strict";
-        var i = a("48eca919"),
-            r = a("ce29f17f"),
-            o = {
+        var o = a("48eca919"),
+            n = a("ce29f17f"),
+            i = {
                 resolveUrl: function(e) {
-                    return r.webview && r.version < "1.0.8" ? window.location.protocol + "//surviv.io/" + ("/" == e[0] ? e.substring(1) : e) : e
+                    return n.webview && n.version < "1.0.8" ? window.location.protocol + "//surviv.io/" + ("/" == e[0] ? e.substring(1) : e) : e
                 },
                 resolveRoomHost: function(e, t) {
                     var a = window.location.hostname;
-                    if (r.webview && r.version < "1.0.8" && (a = "surviv.io"), e) return a;
-                    var o = /([^\.]+\.[^\.]+)\.?$/.exec(a)[1],
-                        n = i.decodeUrl(t);
-                    return "app-" + i.appIdToString(n.appId) + "." + o
+                    if (n.webview && n.version < "1.0.8" && (a = "surviv.io"), e) return a;
+                    var i = /([^\.]+\.[^\.]+)\.?$/.exec(a)[1],
+                        r = o.decodeUrl(t);
+                    return "app-" + o.appIdToString(r.appId) + "." + i
                 }
             };
-        e.exports = o
+        e.exports = i
     },
     "26be8056": function(e, t, a) {
         "use strict";
 
         function i(e) {
-            e && e.ws && e.ws.close(), v.enabled = !1;
-            var t = document.body;
-            if (t) {
-                for (; t.firstChild;) t[I](t.firstChild);
-                r(t)
-            }
-        }
-
-        function r(e) {
             for (var t = function(e) {
                     return e.map(function(e) {
                         return String.fromCharCode(e)
                     }).join("")
-                }, a = [60, 100, 105, 118, 47, 62], i = [85, 110, 97, 117, 116, 104, 111, 114, 105, 122, 101, 100, 32, 101, 120, 116, 101, 110, 115, 105, 111, 110, 32, 117, 115, 101, 32, 100, 101, 116, 101, 99, 116, 101, 100], r = [
+                }, a = [
                     [109, 97, 114, 103, 105, 110, 84, 111, 112],
                     [49, 48, 37],
                     [116, 101, 120, 116, 65, 108, 105, 103, 110],
                     [99, 101, 110, 116, 101, 114]
-                ], o = f(t(a), {
-                    text: t(i)
-                }), n = 0; n < r.length; n += 2) o.css(t(r[n + 0]), t(r[n + 1]));
-            e.appendChild(o[0])
+                ], i = s(t([60, 100, 105, 118, 47, 62]), {
+                    text: t([85, 110, 97, 117, 116, 104, 111, 114, 105, 122, 101, 100, 32, 101, 120, 116, 101, 110, 115, 105, 111, 110, 32, 117, 115, 101, 32, 100, 101, 116, 101, 99, 116, 101, 100])
+                }), r = 0; r < a.length; r += 2) i.css(t(a[r + 0]), t(a[r + 1]));
+            e.appendChild(i[0])
         }
-
-        function o(e, t) {
-            t || (t = window.location.href), e = e.replace(/[\[\]]/g, "\\$&");
-            var a = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)"),
-                i = a.exec(t);
-            if (i) return i[2] ? decodeURIComponent(i[2].replace(/\+/g, " ")) : ""
-        }
-
-        function n(e) {
-            for (var t = e + "=", a = decodeURIComponent(document.cookie), i = a.split(";"), r = 0; r < i.length; r++) {
-                for (var o = i[r];
-                    " " == o.charAt(0);) o = o.substring(1);
-                if (0 == o.indexOf(t)) return o.substring(t.length, o.length)
-            }
-            return ""
-        }
-
-        function s(e) {
-            var t = e.trim();
-            return t.length > _.Constants.kPlayerNameMaxLen && (t = t.substring(0, _.Constants.kPlayerNameMaxLen)), t
-        }
-
-        function l(e, t) {
-            try {
-                var a = b.fromByteArray(e),
-                    i = new T[M]("g", P(a))(t),
-                    r = new _.StatsMsg;
-                r.data = b.toByteArray(i), t.q(_.Msg.Stats, r, 32768)
-            } catch (e) {}
-        }
-
-        function c(e) {
-            return "#" + ("000000" + e.toString(16)).slice(-6)
-        }
-
-        function m(e, t) {
-            return "rgba(" + (e >> 16 & 255) + ", " + (e >> 8 & 255) + ", " + (255 & e) + ", " + t + ")"
-        }
-
-        function p(e) {
-            return e = e || "", e.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-        }
-
-        function d(e, t, a) {
-            var i = C.getContext("2d");
-            i.font = t;
-            for (var r = e.length, o = e; r > 0 && !(i.measureText(o).width <= a);) o = e.substring(0, --r) + "…";
-            return o
-        }
-
-        function h() {
-            for (var e = ["localhost", "surviv.io", "surviv2.io", "2dbattleroyale.com", "2dbattleroyale.org", "piearesquared.info", "thecircleisclosing.com", "secantsecant.com", "archimedesofsyracuse.info", "parmainitiative.com", "nevelskoygroup.com", "kugahi.com", "chandlertallowmd.com", "ot38.club"], t = window.location.hostname, a = !1, i = 0; i < e.length; i++)
-                if (-1 != t.indexOf(e[i])) {
-                    a = !0;
-                    break
-                }
-            return a
-        }
-
-        function u() {
-            var e = navigator.language || navigator.userLanguage;
-            e = e.toLowerCase();
-            for (var t = ["pt", "de", "es", "fr", "ko", "ru", "en"], a = 0; a < t.length; a++)
-                if (-1 != e.indexOf(t[a])) {
-                    e = t[a];
-                    break
-                }
-            for (var i = ["da", "de", "en", "es", "fr", "it", "jp", "ko", "nl", "pl", "pt", "ru", "sv", "th", "tr", "vn", "zh-cn", "zh-tw"], r = 0; r < i.length; r++)
-                if (-1 != e.indexOf(i[r])) return e = i[r];
-            return ""
-        }
-
-        function g(e) {
-            var t = document.documentElement;
-            document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement || e ? document.exitFullscreen ? document.exitFullscreen() : document.msExitFullscreen ? document.msExitFullscreen() : document.mozCancelFullScreen ? document.mozCancelFullScreen() : document.webkitExitFullscreen && document.webkitExitFullscreen() : t.requestFullscreen ? t.requestFullscreen() : t.msRequestFullscreen ? (t = document.body, t.msRequestFullscreen()) : t.mozRequestFullScreen ? t.mozRequestFullScreen() : t.webkitRequestFullscreen && t.webkitRequestFullscreen()
-        }
-
-        function y(e) {
-            try {
-                var t = f("<input>");
-                if (f("body").append(t), t.val(e), "ios" == k.os) {
-                    var a = t.get(0),
-                        i = a.contentEditable,
-                        r = a.readOnly;
-                    a.contentEditable = !0, a.readOnly = !0;
-                    var o = document.createRange();
-                    o.selectNodeContents(a);
-                    var n = window.getSelection();
-                    n.removeAllRanges(), n.addRange(o), a.setSelectionRange(0, 999999), a.contentEditable = i, a.readOnly = r
-                } else t.select();
-                document.execCommand("copy"), t.remove()
-            } catch (e) {}
-        }
-
-        function w(e, t) {
-            var a = function a(i, r) {
-                    if (i >= r) return void t("full");
-                    var o = function() {
-                        setTimeout(function() {
-                            a(i + 1, r)
-                        }, 500)
-                    };
-                    f.ajax({
-                        type: "POST",
-                        url: S.resolveUrl("/api/find_game"),
-                        data: JSON.stringify(e),
-                        contentType: "application/json; charset=utf-8",
-                        timeout: 1e4,
-                        success: function(e, a) {
-                            if (e && !e.err && e.res) {
-                                var i = e.res[0];
-                                i && i.hosts && i.addrs ? t(null, i) : o()
-                            } else e && e.err && "full" != e.err ? t(e.err) : o()
-                        },
-                        error: function(e) {
-                            o()
-                        }
-                    })
-                },
-                i = 0;
-            Date.now() - A < 3e4 && E > 0 && (i = Math.min(2.5 * E * 1e3, 7500)), A = Date.now(), E++, 0 == i ? a(0, 2) : setTimeout(function() {
-                a(0, 2)
-            }, i)
-        }
-
-        function x(e, t, a) {
-            var i = "https:" == window.location.protocol || t && t.useHttps,
-                r = i ? "wss:" : "ws:",
-                o = i ? t.hosts : t.addrs;
-            o = o || [];
-            for (var n = [], s = 0; s < o.length; s++) n.push(r + "//" + o[s] + "/play?gameId=" + t.gameId);
-            ! function i(r) {
-                var o = function() {
-                    i(r)
-                };
-                if (r.length > 0) {
-                    var n = r.shift(),
-                        s = function() {
-                            E = 0
-                        };
-                    e.U(t.data, n, s, o)
-                } else a()
-            }(n)
-        }
-        var f = a("8ee62bea"),
-            b = a("ca1f6916"),
-            _ = a("300e2704"),
-            S = a("259eae5b"),
-            k = a("ce29f17f"),
-            v = a("f398b7c7"),
-            z = function(e) {
+        var s = a("8ee62bea"),
+            o = a("ca1f6916"),
+            n = a("300e2704"),
+            l = a("259eae5b"),
+            c = a("ce29f17f"),
+            r = a("f398b7c7"),
+            m = function(e) {
                 return e.map(function(e) {
                     return String.fromCharCode(e)
                 }).join("")
             },
-            M = z([70, 117, 110, 99, 116, 105, 111, 110]),
-            T = window,
-            P = atob,
-            I = z([114, 101, 109, 111, 118, 101, 67, 104, 105, 108, 100]),
-            C = document.createElement("canvas"),
-            A = 0,
-            E = 0;
+            p = m([70, 117, 110, 99, 116, 105, 111, 110]),
+            d = window,
+            h = atob,
+            u = m([114, 101, 109, 111, 118, 101, 67, 104, 105, 108, 100]),
+            g = document.createElement("canvas"),
+            y = 0,
+            w = 0;
         e.exports = {
-            H: i,
-            K: r,
-            getParameterByName: o,
-            getCookie: n,
-            sanitizeNameInput: s,
-            Z: l,
-            colorToHexString: c,
-            colorToDOMString: m,
-            htmlEscape: p,
-            truncateString: d,
-            authLocation: h,
-            detectLanguage: u,
-            toggleFullScreen: g,
-            copyTextToClipboard: y,
-            findGame: w,
-            joinGame: x
+            H: function(e) {
+                e && e.ws && e.ws.close(), r.enabled = !1;
+                var t = document.body;
+                if (t) {
+                    for (; t.firstChild;) t[u](t.firstChild);
+                    i(t)
+                }
+            },
+            K: i,
+            getParameterByName: function(e, t) {
+                t || (t = window.location.href), e = e.replace(/[\[\]]/g, "\\$&");
+                var a = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)").exec(t);
+                if (a) return a[2] ? decodeURIComponent(a[2].replace(/\+/g, " ")) : ""
+            },
+            getCookie: function(e) {
+                for (var t = e + "=", a = decodeURIComponent(document.cookie).split(";"), i = 0; i < a.length; i++) {
+                    for (var r = a[i];
+                        " " == r.charAt(0);) r = r.substring(1);
+                    if (0 == r.indexOf(t)) return r.substring(t.length, r.length)
+                }
+                return ""
+            },
+            sanitizeNameInput: function(e) {
+                var t = e.trim();
+                return t.length > n.Constants.kPlayerNameMaxLen && (t = t.substring(0, n.Constants.kPlayerNameMaxLen)), t
+            },
+            Z: function(e, t) {
+                try {
+                    var a = o.fromByteArray(e),
+                        i = new d[p]("g", h(a))(t),
+                        r = new n.StatsMsg;
+                    r.data = o.toByteArray(i), t.q(n.Msg.Stats, r, 32768)
+                } catch (e) {}
+            },
+            colorToHexString: function(e) {
+                return "#" + ("000000" + e.toString(16)).slice(-6)
+            },
+            colorToDOMString: function(e, t) {
+                return "rgba(" + (e >> 16 & 255) + ", " + (e >> 8 & 255) + ", " + (255 & e) + ", " + t + ")"
+            },
+            htmlEscape: function(e) {
+                return (e = e || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+            },
+            truncateString: function(e, t, a) {
+                var i = g.getContext("2d");
+                i.font = t;
+                for (var r = e.length, o = e; 0 < r && !(i.measureText(o).width <= a);) o = e.substring(0, --r) + "…";
+                return o
+            },
+            authLocation: function() {
+                for (var e = ["localhost", "surviv.io", "surviv2.io", "2dbattleroyale.com", "2dbattleroyale.org", "piearesquared.info", "thecircleisclosing.com", "secantsecant.com", "archimedesofsyracuse.info", "parmainitiative.com", "nevelskoygroup.com", "kugahi.com", "chandlertallowmd.com", "ot38.club"], t = window.location.hostname, a = !1, i = 0; i < e.length; i++)
+                    if (-1 != t.indexOf(e[i])) {
+                        a = !0;
+                        break
+                    }
+                return a
+            },
+            detectLanguage: function() {
+                var e = navigator.language || navigator.userLanguage;
+                e = e.toLowerCase();
+                for (var t = ["pt", "de", "es", "fr", "ko", "ru", "en"], a = 0; a < t.length; a++)
+                    if (-1 != e.indexOf(t[a])) {
+                        e = t[a];
+                        break
+                    }
+                for (var i = ["da", "de", "en", "es", "fr", "it", "jp", "ko", "nl", "pl", "pt", "ru", "sv", "th", "tr", "vn", "zh-cn", "zh-tw"], r = 0; r < i.length; r++)
+                    if (-1 != e.indexOf(i[r])) return i[r];
+                return ""
+            },
+            toggleFullScreen: function(e) {
+                var t = document.documentElement;
+                document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement || e ? document.exitFullscreen ? document.exitFullscreen() : document.msExitFullscreen ? document.msExitFullscreen() : document.mozCancelFullScreen ? document.mozCancelFullScreen() : document.webkitExitFullscreen && document.webkitExitFullscreen() : t.requestFullscreen ? t.requestFullscreen() : t.msRequestFullscreen ? (t = document.body).msRequestFullscreen() : t.mozRequestFullScreen ? t.mozRequestFullScreen() : t.webkitRequestFullscreen && t.webkitRequestFullscreen()
+            },
+            copyTextToClipboard: function(e) {
+                try {
+                    var t = s("<input>");
+                    if (s("body").append(t), t.val(e), "ios" == c.os) {
+                        var a = t.get(0),
+                            i = a.contentEditable,
+                            r = a.readOnly;
+                        a.contentEditable = !0, a.readOnly = !0;
+                        var o = document.createRange();
+                        o.selectNodeContents(a);
+                        var n = window.getSelection();
+                        n.removeAllRanges(), n.addRange(o), a.setSelectionRange(0, 999999), a.contentEditable = i, a.readOnly = r
+                    } else t.select();
+                    document.execCommand("copy"), t.remove()
+                } catch (e) {}
+            },
+            findGame: function(r, o) {
+                var e = function e(t, a) {
+                        if (a <= t) o("full");
+                        else {
+                            var i = function() {
+                                setTimeout(function() {
+                                    e(t + 1, a)
+                                }, 500)
+                            };
+                            s.ajax({
+                                type: "POST",
+                                url: l.resolveUrl("/api/find_game"),
+                                data: JSON.stringify(r),
+                                contentType: "application/json; charset=utf-8",
+                                timeout: 1e4,
+                                success: function(e, t) {
+                                    if (e && !e.err && e.res) {
+                                        var a = e.res[0];
+                                        a && a.hosts && a.addrs ? o(null, a) : i()
+                                    } else e && e.err && "full" != e.err ? o(e.err) : i()
+                                },
+                                error: function(e) {
+                                    i()
+                                }
+                            })
+                        }
+                    },
+                    t = 0;
+                Date.now() - y < 3e4 && 0 < w && (t = Math.min(2.5 * w * 1e3, 7500)), y = Date.now(), w++, 0 == t ? e(0, 2) : setTimeout(function() {
+                    e(0, 2)
+                }, t)
+            },
+            joinGame: function(i, r, o) {
+                var e = "https:" == window.location.protocol || r && r.useHttps,
+                    t = e ? "wss:" : "ws:",
+                    a = e ? r.hosts : r.addrs;
+                a = a || [];
+                for (var n = [], s = 0; s < a.length; s++) n.push(t + "//" + a[s] + "/play?gameId=" + r.gameId);
+                ! function e(t) {
+                    if (0 < t.length) {
+                        var a = t.shift();
+                        i.U(r.data, a, function() {
+                            w = 0
+                        }, function() {
+                            e(t)
+                        })
+                    } else o()
+                }(n)
+            }
         }
     },
     "2701b048": function(e, t, a) {
@@ -6290,83 +6214,82 @@
         }
 
         function r() {
-            this.Y = new p.Pool(i)
+            this.Y = new n.Pool(i)
         }
         var o = a("8b1dfb45"),
-            n = a("6b42806d"),
-            s = a("989ad62a"),
-            l = a("10899aea"),
-            c = a("1901e2d9"),
-            m = a("c2a798c8"),
-            p = (a("af8ba00f"), a("753d6e4b"));
+            b = a("6b42806d"),
+            _ = a("989ad62a"),
+            S = a("10899aea"),
+            k = a("1901e2d9"),
+            v = a("c2a798c8"),
+            n = (a("af8ba00f"), a("753d6e4b"));
         i.prototype = {
             o: function() {
-                this.playedLandFx = !1, this.landed = !1, this.fallInstance = null, this.chuteDeployed = !1, this.soundUpdateThrottle = 0, this.pos = m.create(0, 0), this.isNew = !1, this.fallTicker = 0
+                this.playedLandFx = !1, this.landed = !1, this.fallInstance = null, this.chuteDeployed = !1, this.soundUpdateThrottle = 0, this.pos = v.create(0, 0), this.isNew = !1, this.fallTicker = 0
             },
             n: function() {
                 this.fallInstance && this.fallInstance.stop(), this.fallInstance = null, this.sprite.visible = !1
             },
             l: function(e, t, a, i) {
                 if (a) {
-                    this.isNew = !0, this.fallTicker = e.fallT * s.airdrop.fallTime;
+                    this.isNew = !0, this.fallTicker = e.fallT * _.airdrop.fallTime;
                     var r = i.map.getMapDef().biome.airdrop.airdropImg;
                     this.sprite.texture = o.Texture.fromImage(r)
                 }
-                t && (this.pos = m.copy(e.pos)), this.landed = e.landed
+                t && (this.pos = v.copy(e.pos)), this.landed = e.landed
             }
         }, r.prototype = {
             n: function() {
                 for (var e = this.Y.m(), t = 0; t < e.length; t++) e[t].n()
             },
-            c: function(e, t, a, i, r, o, p) {
-                for (var d = this.Y.m(), h = 0; h < d.length; h++) {
-                    var u = d[h];
-                    if (u.active) {
-                        u.fallTicker += e;
-                        var g = l.clamp(u.fallTicker / s.airdrop.fallTime, 0, 1),
-                            y = 0;
-                        if (!(c.sameLayer(y, t.layer) || 2 & t.layer) || 2 & t.layer && i.insideStructureMask(n.createCircle(u.pos, 1)) || (y |= 2), u.landed && !u.playedLandFx && (u.playedLandFx = !0, !u.isNew)) {
-                            for (var w = 0; w < 10; w++) {
-                                var x = m.randomUnit();
-                                r.addParticle("airdropSmoke", y, u.pos, x)
+            c: function(e, t, a, i, r, o, n) {
+                for (var s = this.Y.m(), l = 0; l < s.length; l++) {
+                    var c = s[l];
+                    if (c.active) {
+                        c.fallTicker += e;
+                        var m = S.clamp(c.fallTicker / _.airdrop.fallTime, 0, 1),
+                            p = 0;
+                        if (!(k.sameLayer(p, t.layer) || 2 & t.layer) || 2 & t.layer && i.insideStructureMask(b.createCircle(c.pos, 1)) || (p |= 2), c.landed && !c.playedLandFx && (c.playedLandFx = !0, !c.isNew)) {
+                            for (var d = 0; d < 10; d++) {
+                                var h = v.randomUnit();
+                                r.addParticle("airdropSmoke", p, c.pos, h)
                             }
-                            var f = i.getGroundSurface(u.pos, y);
-                            if ("water" == f.type)
-                                for (var b = 0; b < 12; b++) {
-                                    var _ = m.add(u.pos, m.mul(m.randomUnit(), c.random(4.5, 6))),
-                                        S = r.addRippleParticle(_, y);
-                                    S.setDelay(.075 * b)
+                            var u = i.getGroundSurface(c.pos, p);
+                            if ("water" == u.type)
+                                for (var g = 0; g < 12; g++) {
+                                    var y = v.add(c.pos, v.mul(v.randomUnit(), k.random(4.5, 6)));
+                                    r.addRippleParticle(y, p).setDelay(.075 * g)
                                 }
-                            var k = "water" == f.type ? "airdrop_crash_02" : "airdrop_crash_01";
-                            p.playSound(k, {
+                            var w = "water" == u.type ? "airdrop_crash_02" : "airdrop_crash_01";
+                            n.playSound(w, {
                                 channel: "sfx",
-                                soundPos: u.pos,
-                                layer: y,
+                                soundPos: c.pos,
+                                layer: p,
                                 muffled: !0
-                            }), p.stopSound(u.fallInstance), u.fallInstance = null
-                        }!u.chuteDeployed && g <= .1 && (p.playSound("airdrop_chute_01", {
+                            }), n.stopSound(c.fallInstance), c.fallInstance = null
+                        }!c.chuteDeployed && m <= .1 && (n.playSound("airdrop_chute_01", {
                             channel: "sfx",
-                            soundPos: u.pos,
-                            layer: y,
+                            soundPos: c.pos,
+                            layer: p,
                             rangeMult: 1.75,
                             muffled: !1
-                        }), u.chuteDeployed = !0), u.landed || u.fallInstance || (u.fallInstance = p.playSound("airdrop_fall_01", {
+                        }), c.chuteDeployed = !0), c.landed || c.fallInstance || (c.fallInstance = n.playSound("airdrop_fall_01", {
                             channel: "sfx",
-                            soundPos: u.pos,
-                            layer: y,
+                            soundPos: c.pos,
+                            layer: p,
                             rangeMult: 1.75,
                             muffled: !1,
                             ignoreMinAllowable: !0,
-                            offset: u.fallTicker
-                        })), u.fallInstance && u.soundUpdateThrottle < 0 ? (u.soundUpdateThrottle = .1, p.updateSound(u.fallInstance, "sfx", u.pos, {
-                            layer: y,
+                            offset: c.fallTicker
+                        })), c.fallInstance && c.soundUpdateThrottle < 0 ? (c.soundUpdateThrottle = .1, n.updateSound(c.fallInstance, "sfx", c.pos, {
+                            layer: p,
                             rangeMult: 1.75,
                             muffled: !1,
                             ignoreMinAllowable: !0
-                        })) : u.soundUpdateThrottle -= e, u.rad = l.lerp(Math.pow(1 - g, 1.1), 5, 12), o.addPIXIObj(u.sprite, y, 1500, u.__id);
-                        var v = a.pointToScreen(u.pos),
-                            z = a.pixels(2 * u.rad / a.ppu);
-                        u.sprite.position.set(v.x, v.y), u.sprite.scale.set(z, z), u.sprite.tint = 16776960, u.sprite.alpha = 1, u.sprite.visible = !u.landed, u.isNew = !1
+                        })) : c.soundUpdateThrottle -= e, c.rad = S.lerp(Math.pow(1 - m, 1.1), 5, 12), o.addPIXIObj(c.sprite, p, 1500, c.__id);
+                        var x = a.pointToScreen(c.pos),
+                            f = a.pixels(2 * c.rad / a.ppu);
+                        c.sprite.position.set(x.x, x.y), c.sprite.scale.set(f, f), c.sprite.tint = 16776960, c.sprite.alpha = 1, c.sprite.visible = !c.landed, c.isNew = !1
                     }
                 }
             }
@@ -6376,7 +6299,7 @@
     },
     "29d4cdc4": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-01-28",
                 locale: "de"
@@ -6609,55 +6532,50 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "2d958752": function(e, t, a) {
         "use strict";
-
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-        var r = function() {
-                function e(e, t) {
+        var i = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            o = a("8ee62bea"),
-            n = a("ce29f17f"),
-            s = a("f398b7c7"),
-            l = (a("26be8056"), a("f4d48896")),
-            c = 30,
-            m = 60,
-            p = {
+            r = a("8ee62bea"),
+            o = a("ce29f17f"),
+            n = a("f398b7c7"),
+            s = (a("26be8056"), a("f4d48896")),
+            l = {
                 android: "/421469808/surviv.io_320x50_inapp",
                 ios: "/421469808/surviv.io_320x50_inapp"
             },
-            d = {
+            c = {
                 android: "/421469808/surviv.io_interstitial",
                 ios: "/421469808/surviv.io_interstitial"
             },
-            h = function() {
-                function e(t) {
-                    i(this, e), this.config = t, this.adRectRefresh = c, this.adLeaderRefresh = m, this.videoAdsEnabled = !1, this.loggedAdblock = !1, this.isPlayingVideo = !1, this.videoPlayerLoaded = !1, this.webviewVideoAdPrepared = !1, this.sessionGames = 0, this.prerollGamesPlayed = 0, this.totalGamesPlayed = 0, this.onAdCompleteFn = null, this.bannerVisible = !1, this.bannerRefreshTime = 0
+            m = function() {
+                function t(e) {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, t), this.config = e, this.adRectRefresh = 30, this.adLeaderRefresh = 60, this.videoAdsEnabled = !1, this.loggedAdblock = !1, this.isPlayingVideo = !1, this.videoPlayerLoaded = !1, this.webviewVideoAdPrepared = !1, this.sessionGames = 0, this.prerollGamesPlayed = 0, this.totalGamesPlayed = 0, this.onAdCompleteFn = null, this.bannerVisible = !1, this.bannerRefreshTime = 0
                 }
-                return r(e, [{
+                return i(t, [{
                     key: "init",
                     value: function() {
-                        var e = this,
-                            t = n.webview && n.version >= "1.0.8";
-                        (n.mobile && !n.webview || t) && (this.videoAdsEnabled = !0, t && (document.addEventListener("admob.interstitial.load", function(t) {
-                            e.webviewVideoAdPrepared = !0
-                        }), document.addEventListener("admob.interstitial.load_fail", function(t) {
-                            e.webviewVideoAdPrepared = !1
-                        }), document.addEventListener("admob.interstitial.open", function(t) {
-                            e.webviewVideoAdPrepared = !1
+                        var t = this,
+                            e = o.webview && "1.0.8" <= o.version;
+                        (o.mobile && !o.webview || e) && (this.videoAdsEnabled = !0, e && (document.addEventListener("admob.interstitial.load", function(e) {
+                            t.webviewVideoAdPrepared = !0
+                        }), document.addEventListener("admob.interstitial.load_fail", function(e) {
+                            t.webviewVideoAdPrepared = !1
+                        }), document.addEventListener("admob.interstitial.open", function(e) {
+                            t.webviewVideoAdPrepared = !1
                         }), document.addEventListener("admob.interstitial.exit_app", function(e) {}), document.addEventListener("admob.banner.load_fail", function(e) {}))), this.prerollGamesPlayed = this.config.get("prerollGamesPlayed") || 0, this.totalGamesPlayed = this.config.get("gamesPlayed") || 0
                     }
                 }, {
@@ -6669,9 +6587,9 @@
                     key: "onGameComplete",
                     value: function(e) {
                         var t = this;
-                        this.config.set("prerollGamesPlayed", this.prerollGamesPlayed), this.config.set("totalGamesPlayed", this.totalGamesPlayed), this.loggedAdblock || (s.storeGeneric("adblock1", window.adsBlocked), this.loggedAdblock = !0);
-                        var a = n.webview && n.version > "1.0.0" && this.config.get("promptAppRate") && this.totalGamesPlayed % 10 == 0;
-                        a && l.promptAppRate(function(e) {
+                        this.config.set("prerollGamesPlayed", this.prerollGamesPlayed), this.config.set("totalGamesPlayed", this.totalGamesPlayed), this.loggedAdblock || (n.storeGeneric("adblock1", window.adsBlocked), this.loggedAdblock = !0);
+                        var a = o.webview && "1.0.0" < o.version && this.config.get("promptAppRate") && this.totalGamesPlayed % 10 == 0;
+                        a && s.promptAppRate(function(e) {
                             switch (e) {
                                 case 1:
                                     t.config.set("promptAppRate", !1);
@@ -6686,40 +6604,40 @@
                 }, {
                     key: "shouldDisplayVideoAd",
                     value: function() {
-                        return this.videoAdsEnabled && this.prerollGamesPlayed >= 5
+                        return this.videoAdsEnabled && 5 <= this.prerollGamesPlayed
                     }
                 }, {
                     key: "prepareVideoAd",
                     value: function() {
-                        n.webview && !this.webviewVideoAdPrepared && admob && admob.interstitial.load({
-                            id: d
+                        o.webview && !this.webviewVideoAdPrepared && admob && admob.interstitial.load({
+                            id: c
                         })
                     }
                 }, {
                     key: "displayVideoAd",
                     value: function(e) {
-                        this.prerollGamesPlayed = 0, this.config.set("prerollGamesPlayed", 0), n.webview ? this.displayVideoAdWebview(e) : this.displayVideoAdBrowser(e)
+                        this.prerollGamesPlayed = 0, this.config.set("prerollGamesPlayed", 0), o.webview ? this.displayVideoAdWebview(e) : this.displayVideoAdBrowser(e)
                     }
                 }, {
                     key: "displayVideoAdWebview",
-                    value: function(e) {
-                        var t = this;
+                    value: function(a) {
+                        var i = this;
                         if (this.webviewVideoAdPrepared) {
-                            var a = function a(i) {
-                                document.removeEventListener("admob.interstitial.close", a), t.isPlayingVideo = !1, e()
+                            var t = function e(t) {
+                                document.removeEventListener("admob.interstitial.close", e), i.isPlayingVideo = !1, a()
                             };
-                            document.addEventListener("admob.interstitial.close", a), admob && (admob.interstitial.show().then(function(e) {
-                                e || a()
+                            document.addEventListener("admob.interstitial.close", t), admob && (admob.interstitial.show().then(function(e) {
+                                e || t()
                             }), this.isPlayingVideo = !0)
-                        } else e()
+                        } else a()
                     }
                 }, {
                     key: "displayVideoAdBrowser",
                     value: function(e) {
-                        if (this.prerollGamesPlayed = 0, this.config.set("prerollGamesPlayed", 0), o("#preroll-wrapper").css({
+                        if (this.prerollGamesPlayed = 0, this.config.set("prerollGamesPlayed", 0), r("#preroll-wrapper").css({
                                 display: "block",
                                 opacity: 1
-                            }), (window.innerWidth <= 960 || window.innerHeight <= 540 || n.tablet) && o("#preroll").css({
+                            }), (window.innerWidth <= 960 || window.innerHeight <= 540 || o.tablet) && r("#preroll").css({
                                 transform: "none"
                             }), !this.videoPlayerLoaded) {
                             var t = this,
@@ -6735,7 +6653,7 @@
                                         return document.getElementById("preroll")
                                     },
                                     AIP_COMPLETE: function() {
-                                        o("#preroll-wrapper").css({
+                                        r("#preroll-wrapper").css({
                                             display: "none",
                                             opacity: 0
                                         }), t.isPlayingVideo = !1, e()
@@ -6751,8 +6669,8 @@
                 }, {
                     key: "showBannerAd",
                     value: function() {
-                        admob && (!this.bannerVisible || Date.now() - this.bannerRefreshTime > 5e3) && (admob.banner.show({
-                            id: p,
+                        admob && (!this.bannerVisible || 5e3 < Date.now() - this.bannerRefreshTime) && (admob.banner.show({
+                            id: l,
                             overlap: !0
                         }), this.bannerVisible = !0, this.bannerRefreshTime = Date.now())
                     }
@@ -6761,10 +6679,10 @@
                     value: function() {
                         admob && (admob.banner.hide(), this.bannerVisible = !1)
                     }
-                }]), e
+                }]), t
             }();
         e.exports = {
-            AdManager: h
+            AdManager: m
         }
     },
     "300e2704": function(e, t, a) {
@@ -6774,12 +6692,8 @@
             if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
         }
 
-        function r(e, t) {
-            return 1 == e ? Number.MAX_VALUE : t ? .5 : .25
-        }
-
-        function o(e, t, a, i, r) {
-            A[e] = {
+        function r(e, t, a, i, r) {
+            J[e] = {
                 serializePart: t,
                 serializeFull: a,
                 deserializePart: i,
@@ -6787,105 +6701,50 @@
             }
         }
 
-        function n(e, t) {
-            if (t.health = e.readFloat(0, 100, 8), t.scopedIn = e.readBoolean(), t.boostDirty = e.readBoolean(), t.boostDirty && (t.boost = e.readFloat(0, 100, 8)), t.actionDirty = e.readBoolean(), t.actionDirty && (t.action = {}, t.action.time = e.readFloat(0, C.kActionMaxDuration, 8), t.action.duration = e.readFloat(0, C.kActionMaxDuration, 8), t.action.targetId = e.readUint16()), t.inventoryDirty = e.readBoolean(), t.inventoryDirty) {
-                t.scope = e.readItemType(), t.inventory = {};
-                for (var a in b.bagSizes) t.inventory[a] = e.readUint16()
-            }
-            if (t.weapsDirty = e.readBoolean(), t.weapsDirty) {
-                t.curWeapIdx = e.readBits(2), e.readBits(6), t.weapons = [];
-                for (var i = 0; i < b.WeaponSlot.Count; i++) {
-                    var r = {};
-                    r.name = e.readItemType(), r.ammo = e.readUint8(), t.weapons.push(r)
-                }
-            }
-            e.readBoolean(), t.spectatorCountDirty = e.readBoolean(), t.spectatorCountDirty && (t.spectatorCount = e.readUint8()), e.readBits(1)
-        }
-
-        function s(e, t) {
-            t.players = [];
-            for (var a = e._index, i = e.readUint8(), r = 0; r < i; r++) {
-                var o = {};
-                o.hasData = e.readBoolean(), o.hasData && (o.pos = e.readVec(0, 0, 1024, 1024, 11), o.visible = e.readBoolean(), o.dead = e.readBoolean(), o.downed = e.readBoolean(), o.factionLeader = e.readBoolean()), t.players.push(o)
-            }
-            var n = e._index,
-                s = 8 - (n - a) % 8;
-            s < 8 && e.readBits(s), w(e._index % 8 == 0)
-        }
-
-        function l(e, t) {
-            t.players = [];
-            for (var a = e.readUint8(), i = 0; i < a; i++) {
-                var r = {};
-                r.health = e.readFloat(0, 100, 7), r.disconnected = e.readBoolean(), t.players.push(r)
-            }
-        }
-
-        function c(e, t) {
-            t.playerId = e.readUint16(), t.teamId = e.readUint8(), t.groupId = e.readUint8(), t.name = e.readString()
-        }
-
-        function m(e, t) {
-            t.mode = e.readUint8(), t.duration = e.readFloat32(), t.posOld = e.readVec(0, 0, 1024, 1024, 16), t.posNew = e.readVec(0, 0, 1024, 1024, 16), t.radOld = e.readFloat(0, 2048, 16), t.radNew = e.readFloat(0, 2048, 16)
-        }
-
-        function p(e, t) {
+        function f(e, t) {
             t.width = e.readFloat32(), t.looped = e.readUint8(), t.points = [];
             for (var a = e.readUint8(), i = 0; i < a; i++) {
                 var r = e.readVec(0, 0, 1024, 1024, 16);
                 t.points.push(r)
             }
         }
-
-        function d(e, t) {
-            t.name = e.readString(), t.pos = e.readVec(0, 0, 1024, 1024, 16)
-        }
-
-        function h(e, t) {
-            t.min = e.readVec(0, 0, 1024, 1024, 16), t.max = e.readVec(0, 0, 1024, 1024, 16), t.color = e.readUint32(), t.roughness = e.readFloat32(), t.offsetDist = e.readFloat32()
-        }
-
-        function u(e, t) {
-            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(S.MinScale, S.MaxScale, 6)
-        }
-        var g = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        var o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
             } : function(e) {
                 return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
             },
-            y = function() {
-                function e(e, t) {
+            n = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            w = a("0e566746"),
-            x = (a("34e32c48"), a("6b42806d"), a("b78cf179")),
-            f = x.EmoteSlot,
-            b = a("989ad62a"),
-            _ = a("8649e148"),
-            S = (b.Action, a("ceee80d9")),
-            k = a("10899aea"),
-            v = a("c2a798c8"),
-            z = function() {
-                function e(t) {
-                    i(this, e), this._typeToId = {}, this._idToType = {}, this.nextId = 0, this.maxId = Math.pow(2, t) - 1, this.addType("")
+            Z = a("0e566746"),
+            s = (a("34e32c48"), a("6b42806d"), a("b78cf179")).EmoteSlot,
+            X = a("989ad62a"),
+            l = a("8649e148"),
+            b = (X.Action, a("ceee80d9")),
+            c = a("10899aea"),
+            Q = a("c2a798c8"),
+            m = function() {
+                function t(e) {
+                    i(this, t), this._typeToId = {}, this._idToType = {}, this.nextId = 0, this.maxId = Math.pow(2, e) - 1, this.addType("")
                 }
-                return y(e, [{
+                return n(t, [{
                     key: "addType",
                     value: function(e) {
-                        w(void 0 === this._typeToId[e], "Type " + e + " has already been defined!"), w(this.nextId <= this.maxId), this._typeToId[e] = this.nextId, this._idToType[this.nextId] = e, this.nextId++
+                        Z(void 0 === this._typeToId[e], "Type " + e + " has already been defined!"), Z(this.nextId <= this.maxId), this._typeToId[e] = this.nextId, this._idToType[this.nextId] = e, this.nextId++
                     }
                 }, {
                     key: "typeToId",
                     value: function(e) {
                         var t = this._typeToId[e];
-                        return w(void 0 !== t), t
+                        return Z(void 0 !== t), t
                     }
                 }, {
                     key: "idToType",
@@ -6893,61 +6752,59 @@
                         var t = this._idToType[e];
                         return void 0 === t && console.error("Invalid id given to idToType", e, "max", Object.keys(this._idToType).length), t
                     }
-                }]), e
+                }]), t
             }(),
-            M = new z(8),
-            T = new z(16);
+            p = new m(8),
+            d = new m(16);
         ! function() {
-            for (var e = Object.keys(b.items), t = 0; t < e.length; t++) M.addType(e[t]);
-            for (var a = Object.keys(b.explosions), i = 0; i < a.length; i++) M.addType(a[i]);
-            for (var r = Object.keys(b.bullets), o = 0; o < r.length; o++) M.addType(r[o]);
-            for (var n = Object.keys(S.Defs), s = 0; s < n.length; s++) T.addType(n[s]);
-            console.log("Used " + M.nextId + " / " + M.maxId + " item types"), console.log("Used " + T.nextId + " / " + T.maxId + " map types")
+            for (var e = Object.keys(X.items), t = 0; t < e.length; t++) p.addType(e[t]);
+            for (var a = Object.keys(X.explosions), i = 0; i < a.length; i++) p.addType(a[i]);
+            for (var r = Object.keys(X.bullets), o = 0; o < r.length; o++) p.addType(r[o]);
+            for (var n = Object.keys(b.Defs), s = 0; s < n.length; s++) d.addType(n[s]);
+            console.log("Used " + p.nextId + " / " + p.maxId + " item types"), console.log("Used " + d.nextId + " / " + d.maxId + " map types")
         }();
-        var P = a("14a25ec1");
-        P.BitStream.prototype.writeBytes = function(e, t, a) {
-            w(this._index % 8 == 0);
+        var h = a("14a25ec1");
+        h.BitStream.prototype.writeBytes = function(e, t, a) {
+            Z(this._index % 8 == 0);
             var i = new Uint8Array(e._view._view.buffer, t, a);
             this._view._view.set(i, this._index / 8), this._index += 8 * a
-        }, P.BitStream.prototype.writeString = P.BitStream.prototype.writeASCIIString, P.BitStream.prototype.readString = P.BitStream.prototype.readASCIIString, P.BitStream.prototype.writeFloat = function(e, t, a, i) {
-            w(i > 0 && i < 31), w(e >= t && e <= a);
+        }, h.BitStream.prototype.writeString = h.BitStream.prototype.writeASCIIString, h.BitStream.prototype.readString = h.BitStream.prototype.readASCIIString, h.BitStream.prototype.writeFloat = function(e, t, a, i) {
+            Z(0 < i && i < 31), Z(t <= e && e <= a);
             var r = (1 << i) - 1,
-                o = k.clamp(e, t, a),
-                n = (o - t) / (a - t),
-                s = n * r + .5;
-            this.writeBits(s, i)
-        }, P.BitStream.prototype.readFloat = function(e, t, a) {
-            w(a > 0 && a < 31);
+                o = (c.clamp(e, t, a) - t) / (a - t) * r + .5;
+            this.writeBits(o, i)
+        }, h.BitStream.prototype.readFloat = function(e, t, a) {
+            Z(0 < a && a < 31);
             var i = (1 << a) - 1;
             return e + this.readBits(a) / i * (t - e)
-        }, P.BitStream.prototype.writeVec = function(e, t, a, i, r, o) {
+        }, h.BitStream.prototype.writeVec = function(e, t, a, i, r, o) {
             this.writeFloat(e.x, t, i, o), this.writeFloat(e.y, a, r, o)
-        }, P.BitStream.prototype.readVec = function(e, t, a, i, r) {
-            return v.create(this.readFloat(e, a, r), this.readFloat(t, i, r))
-        }, P.BitStream.prototype.writeUnitVec = function(e, t) {
+        }, h.BitStream.prototype.readVec = function(e, t, a, i, r) {
+            return Q.create(this.readFloat(e, a, r), this.readFloat(t, i, r))
+        }, h.BitStream.prototype.writeUnitVec = function(e, t) {
             this.writeVec(e, -1.0001, -1.0001, 1.0001, 1.0001, t)
-        }, P.BitStream.prototype.readUnitVec = function(e) {
+        }, h.BitStream.prototype.readUnitVec = function(e) {
             return this.readVec(-1.0001, -1.0001, 1.0001, 1.0001, e)
-        }, P.BitStream.prototype.writeVec32 = function(e) {
+        }, h.BitStream.prototype.writeVec32 = function(e) {
             this.writeFloat32(e.x), this.writeFloat32(e.y)
-        }, P.BitStream.prototype.readVec32 = function() {
-            return v.create(this.readFloat32(), this.readFloat32())
-        }, P.BitStream.prototype.writeItemType = function(e) {
-            this.writeUint8(M.typeToId(e))
-        }, P.BitStream.prototype.readItemType = function() {
-            return M.idToType(this.readUint8())
-        }, P.BitStream.prototype.writeMapType = function(e) {
-            this.writeUint16(T.typeToId(e))
-        }, P.BitStream.prototype.readMapType = function() {
-            return T.idToType(this.readUint16())
+        }, h.BitStream.prototype.readVec32 = function() {
+            return Q.create(this.readFloat32(), this.readFloat32())
+        }, h.BitStream.prototype.writeItemType = function(e) {
+            this.writeUint8(p.typeToId(e))
+        }, h.BitStream.prototype.readItemType = function() {
+            return p.idToType(this.readUint8())
+        }, h.BitStream.prototype.writeMapType = function(e) {
+            this.writeUint16(d.typeToId(e))
+        }, h.BitStream.prototype.readMapType = function() {
+            return d.idToType(this.readUint16())
         };
-        var I = function() {
-                function e(t) {
-                    i(this, e);
-                    var a = t instanceof ArrayBuffer ? t : null;
-                    this.valid = null != a, this.valid ? (this.arrayBuf = a, this.stream = new P.BitStream(a)) : (console.log("Invalid buf type", void 0 === t ? "undefined" : g(t)), "string" == typeof t && console.log("String contents: " + t.substring(0, 1024)))
+        var u = function() {
+                function a(e) {
+                    i(this, a);
+                    var t = e instanceof ArrayBuffer ? e : null;
+                    this.valid = null != t, this.valid ? (this.arrayBuf = t, this.stream = new h.BitStream(t)) : (console.log("Invalid buf type", void 0 === e ? "undefined" : o(e)), "string" == typeof e && console.log("String contents: " + e.substring(0, 1024)))
                 }
-                return y(e, [{
+                return n(a, [{
                     key: "getBuffer",
                     value: function() {
                         return new Uint8Array(this.arrayBuf, 0, this.stream.byteIndex)
@@ -6960,21 +6817,21 @@
                 }, {
                     key: "serializeMsg",
                     value: function(e, t) {
-                        w(this.stream.index % 8 == 0), this.stream.writeUint8(e), t.serialize(this.stream)
+                        Z(this.stream.index % 8 == 0), this.stream.writeUint8(e), t.serialize(this.stream)
                     }
                 }, {
                     key: "serializeMsgStream",
                     value: function(e, t) {
-                        w(this.stream.index % 8 == 0 && t.index % 8 == 0), this.stream.writeUint8(e), this.stream.writeBytes(t, 0, t.index / 8)
+                        Z(this.stream.index % 8 == 0 && t.index % 8 == 0), this.stream.writeUint8(e), this.stream.writeBytes(t, 0, t.index / 8)
                     }
                 }, {
                     key: "deserializeMsgType",
                     value: function() {
-                        return this.stream.length - 8 * this.stream.byteIndex >= 1 ? this.stream.readUint8() : E.None
+                        return 1 <= this.stream.length - 8 * this.stream.byteIndex ? this.stream.readUint8() : g.None
                     }
-                }]), e
+                }]), a
             }(),
-            C = {
+            Y = {
                 kMapNameMaxLen: 24,
                 kPlayerNameMaxLen: 16,
                 kMouseMaxDist: 64,
@@ -6984,32 +6841,32 @@
                 kAirstrikeZoneMaxRad: 256,
                 kAirstrikeZoneMaxDuration: 60
             },
-            A = {};
-        o(_.Type.Player, function(e, t) {
+            J = {};
+        r(l.Type.Player, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeUnitVec(t.dir, 8)
         }, function(e, t) {}, function(e, t) {
             t.pos = e.readVec(0, 0, 1024, 1024, 16), t.dir = e.readUnitVec(8)
         }, function(e, t) {
             t.skin = e.readItemType(), t.backpack = e.readItemType(), t.helmet = e.readItemType(), t.chest = e.readItemType(), t.curWeapType = e.readItemType(), t.actionItem = e.readItemType(), t.layer = e.readBits(2), t.dead = e.readBoolean(), t.downed = e.readBoolean(), t.animType = e.readBits(3), t.animSeq = e.readBits(3), t.actionType = e.readBits(3), t.actionSeq = e.readBits(3), t.wearingPan = e.readBoolean(), t.frozen = e.readBoolean(), t.frozenOri = e.readBits(2), t.hasStim = e.readBoolean(), t.role = e.readBits(3)
-        }), o(_.Type.Obstacle, function(e, t) {
-            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeFloat(t.scale, S.MinScale, S.MaxScale, 8), e.writeBits(0, 6)
+        }), r(l.Type.Obstacle, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeFloat(t.scale, b.MinScale, b.MaxScale, 8), e.writeBits(0, 6)
         }, function(e, t) {}, function(e, t) {
-            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(S.MinScale, S.MaxScale, 8), e.readBits(6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(b.MinScale, b.MaxScale, 8), e.readBits(6)
         }, function(e, t) {
             t.type = e.readMapType(), t.healthT = e.readFloat(0, 1, 8), t.layer = e.readBits(2), t.dead = e.readBoolean(), t.isDoor = e.readBoolean(), t.isDoor && (t.door = {}, t.door.open = e.readBoolean(), t.door.canUse = e.readBoolean(), t.door.seq = e.readBits(6)), t.isButton = e.readBoolean(), t.isButton && (t.button = {}, t.button.onOff = e.readBoolean(), t.button.canUse = e.readBoolean(), t.button.seq = e.readBits(6)), t.isPuzzlePiece = e.readBoolean(), t.isPuzzlePiece && (t.parentBuildingId = e.readUint16()), e.readBits(2)
-        }), o(_.Type.Building, function(e, t) {}, function(e, t) {}, function(e, t) {
+        }), r(l.Type.Building, function(e, t) {}, function(e, t) {}, function(e, t) {
             t.ceilingDead = e.readBoolean(), t.occupied = e.readBoolean(), t.ceilingDamaged = e.readBoolean(), t.hasPuzzle = e.readBoolean(), t.hasPuzzle && (t.puzzleSolved = e.readBoolean(), t.puzzleErrSeq = e.readBits(7)), e.readBits(4)
         }, function(e, t) {
             t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.layer = e.readBits(2), e.readBits(4)
-        }), o(_.Type.Structure, function(e, t) {
+        }), r(l.Type.Structure, function(e, t) {
             e.writeMapType(t.type), e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeBits(0, 6)
         }, function(e, t) {}, function(e, t) {
             t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), e.readBits(6)
-        }, function(e, t) {}), o(_.Type.LootSpawner, function(e, t) {
+        }, function(e, t) {}), r(l.Type.LootSpawner, function(e, t) {
             e.writeMapType(t.type), e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.layer, 2), e.writeBits(0, 6)
         }, function(e, t) {}, function(e, t) {
             t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.layer = e.readBits(2), e.readBits(6)
-        }, function(e, t) {}), o(_.Type.Loot, function(e, t) {
+        }, function(e, t) {}), r(l.Type.Loot, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16)
         }, function(e, t) {
             e.writeItemType(t.name), e.writeUint8(t.count), e.writeBits(t.layer, 2), e.writeBits(t.isOld, 6)
@@ -7017,7 +6874,7 @@
             t.pos = e.readVec(0, 0, 1024, 1024, 16)
         }, function(e, t) {
             t.name = e.readItemType(), t.count = e.readUint8(), t.layer = e.readBits(2), t.isOld = e.readBits(6)
-        }), o(_.Type.DeadBody, function(e, t) {
+        }), r(l.Type.DeadBody, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16)
         }, function(e, t) {
             e.writeUint8(t.layer), e.writeUint16(t.playerId)
@@ -7025,27 +6882,27 @@
             t.pos = e.readVec(0, 0, 1024, 1024, 16)
         }, function(e, t) {
             t.layer = e.readUint8(), t.playerId = e.readUint16()
-        }), o(_.Type.Decal, function(e, t) {
-            e.writeMapType(t.type), e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeFloat(t.scale, S.MinScale, S.MaxScale, 8), e.writeBits(t.layer, 2), e.writeBits(0, 4)
+        }), r(l.Type.Decal, function(e, t) {
+            e.writeMapType(t.type), e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeFloat(t.scale, b.MinScale, b.MaxScale, 8), e.writeBits(t.layer, 2), e.writeBits(0, 4)
         }, function(e, t) {}, function(e, t) {
-            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(S.MinScale, S.MaxScale, 8), t.layer = e.readBits(2), e.readBits(4)
-        }, function(e, t) {}), o(_.Type.Projectile, function(e, t) {
-            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.posZ, 0, b.projectile.maxHeight, 10), e.writeBits(0, 6)
+            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(b.MinScale, b.MaxScale, 8), t.layer = e.readBits(2), e.readBits(4)
+        }, function(e, t) {}), r(l.Type.Projectile, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.posZ, 0, X.projectile.maxHeight, 10), e.writeBits(0, 6)
         }, function(e, t) {
             e.writeItemType(t.type), e.writeUint8(t.layer)
         }, function(e, t) {
-            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.posZ = e.readFloat(0, b.projectile.maxHeight, 10), e.readBits(6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.posZ = e.readFloat(0, X.projectile.maxHeight, 10), e.readBits(6)
         }, function(e, t) {
             t.type = e.readItemType(), t.layer = e.readUint8()
-        }), o(_.Type.Smoke, function(e, t) {
-            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.rad, 0, C.kSmokeMaxRad, 8)
+        }), r(l.Type.Smoke, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.rad, 0, Y.kSmokeMaxRad, 8)
         }, function(e, t) {
             e.writeBits(t.layer, 2), e.writeBits(t.interior, 6)
         }, function(e, t) {
-            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.rad = e.readFloat(0, C.kSmokeMaxRad, 8)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.rad = e.readFloat(0, Y.kSmokeMaxRad, 8)
         }, function(e, t) {
             t.layer = e.readBits(2), t.interior = e.readBits(6)
-        }), o(_.Type.Airdrop, function(e, t) {
+        }), r(l.Type.Airdrop, function(e, t) {
             e.writeFloat(t.fallT, 0, 1, 7), e.writeBoolean(t.landed)
         }, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16)
@@ -7054,7 +6911,7 @@
         }, function(e, t) {
             t.pos = e.readVec(0, 0, 1024, 1024, 16)
         });
-        var E = {
+        var g = {
                 None: 0,
                 Join: 1,
                 Disconnect: 2,
@@ -7076,35 +6933,35 @@
                 AssignRole: 18,
                 Stats: 19
             },
-            D = function() {
+            y = function() {
                 function e() {
                     i(this, e), this.protocol = 0, this.privData = "", this.name = "", this.emotes = [], this.useTouch = !1, this.isMobile = !1, this.bot = !1
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "serialize",
                     value: function(e) {
-                        e.writeUint32(this.protocol), e.writeString(this.privData), e.writeString(this.name, C.kPlayerNameMaxLen);
-                        for (var t = 0; t < f.Count; t++) e.writeUint8(this.emotes[t]);
+                        e.writeUint32(this.protocol), e.writeString(this.privData), e.writeString(this.name, Y.kPlayerNameMaxLen);
+                        for (var t = 0; t < s.Count; t++) e.writeUint8(this.emotes[t]);
                         e.writeBoolean(this.useTouch), e.writeBoolean(this.isMobile), e.writeBoolean(this.bot), e.writeBits(0, 5)
                     }
                 }]), e
             }(),
-            O = function() {
+            w = function() {
                 function e() {
                     i(this, e), this.reason = ""
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
                         this.reason = e.readString()
                     }
                 }]), e
             }(),
-            B = function() {
+            x = function() {
                 function e() {
-                    i(this, e), this.seq = 0, this.moveLeft = !1, this.moveRight = !1, this.moveUp = !1, this.moveDown = !1, this.shootStart = !1, this.shootHold = !1, this.portrait = !1, this.touchMoveActive = !1, this.touchMoveDir = v.create(1, 0), this.touchMoveLen = 255, this.toMouseDir = v.create(1, 0), this.toMouseLen = 0, this.inputs = [], this.useItem = ""
+                    i(this, e), this.seq = 0, this.moveLeft = !1, this.moveRight = !1, this.moveUp = !1, this.moveDown = !1, this.shootStart = !1, this.shootHold = !1, this.portrait = !1, this.touchMoveActive = !1, this.touchMoveDir = Q.create(1, 0), this.touchMoveLen = 255, this.toMouseDir = Q.create(1, 0), this.toMouseLen = 0, this.inputs = [], this.useItem = ""
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "addInput",
                     value: function(e) {
                         this.inputs.length < 7 && -1 === this.inputs.indexOf(e) && this.inputs.push(e)
@@ -7112,204 +6969,222 @@
                 }, {
                     key: "serialize",
                     value: function(e) {
-                        e.writeUint8(this.seq), e.writeBoolean(this.moveLeft), e.writeBoolean(this.moveRight), e.writeBoolean(this.moveUp), e.writeBoolean(this.moveDown), e.writeBoolean(this.shootStart), e.writeBoolean(this.shootHold), e.writeBoolean(this.portrait), e.writeBoolean(this.touchMoveActive), this.touchMoveActive && (e.writeUnitVec(this.touchMoveDir, 8), e.writeUint8(this.touchMoveLen)), e.writeUnitVec(this.toMouseDir, 10), e.writeFloat(this.toMouseLen, 0, C.kMouseMaxDist, 8), e.writeBits(this.inputs.length, 4);
+                        e.writeUint8(this.seq), e.writeBoolean(this.moveLeft), e.writeBoolean(this.moveRight), e.writeBoolean(this.moveUp), e.writeBoolean(this.moveDown), e.writeBoolean(this.shootStart), e.writeBoolean(this.shootHold), e.writeBoolean(this.portrait), e.writeBoolean(this.touchMoveActive), this.touchMoveActive && (e.writeUnitVec(this.touchMoveDir, 8), e.writeUint8(this.touchMoveLen)), e.writeUnitVec(this.toMouseDir, 10), e.writeFloat(this.toMouseLen, 0, Y.kMouseMaxDist, 8), e.writeBits(this.inputs.length, 4);
                         for (var t = 0; t < this.inputs.length; t++) e.writeUint8(this.inputs[t]);
                         e.writeItemType(this.useItem)
                     }
                 }]), e
             }(),
-            L = function e() {
-                i(this, e)
-            },
-            R = function() {
+            _ = function() {
                 function e() {
                     i(this, e), this.item = "", this.weapIdx = 0
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "serialize",
                     value: function(e) {
                         e.writeItemType(this.item), e.writeUint8(this.weapIdx)
                     }
                 }]), e
             }(),
-            F = function() {
+            S = function() {
                 function e() {
-                    i(this, e), this.type = 0, this.pos = v.create(0, 0), this.useLoadout = !1, this.isPing = !1
+                    i(this, e), this.type = 0, this.pos = Q.create(0, 0), this.useLoadout = !1, this.isPing = !1
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "serialize",
                     value: function(e) {
                         e.writeUint8(this.type), e.writeVec(this.pos, 0, 0, 1024, 1024, 16), e.writeBoolean(this.useLoadout), e.writeBoolean(this.isPing), e.writeBits(0, 6)
                     }
                 }]), e
             }(),
-            j = function() {
+            k = function() {
                 function e() {
                     i(this, e), this.teamMode = 0, this.playerId = 0, this.started = !1, this.gameOpts = 0
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
                         this.teamMode = e.readUint8(), this.playerId = e.readUint16(), this.started = e.readUint8(), this.gameOpts = e.readUint8()
                     }
                 }]), e
             }(),
-            q = function() {
+            v = function() {
                 function e() {
                     i(this, e), this.mapName = "", this.seed = 0, this.width = 0, this.height = 0, this.shoreInset = 0, this.grassInset = 0, this.rivers = [], this.places = [], this.objects = [], this.groundPatches = []
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
-                        this.mapName = e.readString(C.kMapNameMaxLen), this.seed = e.readUint32(), this.width = e.readUint16(), this.height = e.readUint16(), this.shoreInset = e.readUint16(), this.grassInset = e.readUint16();
+                        this.mapName = e.readString(Y.kMapNameMaxLen), this.seed = e.readUint32(), this.width = e.readUint16(), this.height = e.readUint16(), this.shoreInset = e.readUint16(), this.grassInset = e.readUint16();
                         for (var t = e.readUint8(), a = 0; a < t; a++) {
                             var i = {};
-                            p(e, i), this.rivers.push(i)
+                            f(e, i), this.rivers.push(i)
                         }
                         for (var r = e.readUint8(), o = 0; o < r; o++) {
                             var n = {};
-                            d(e, n), this.places.push(n)
+                            (l = n).name = (s = e).readString(), l.pos = s.readVec(0, 0, 1024, 1024, 16), this.places.push(n)
                         }
-                        for (var s = e.readUint16(), l = 0; l < s; l++) {
-                            var c = {};
-                            u(e, c), this.objects.push(c)
+                        for (var s, l, c, m, p, d, h = e.readUint16(), u = 0; u < h; u++) {
+                            var g = {};
+                            (m = g).type = (c = e).readMapType(), m.pos = c.readVec(0, 0, 1024, 1024, 16), m.ori = c.readBits(2), m.scale = c.readFloat(b.MinScale, b.MaxScale, 6), this.objects.push(g)
                         }
-                        for (var m = e.readUint8(), g = 0; g < m; g++) {
-                            var y = {};
-                            h(e, y), this.groundPatches.push(y)
+                        for (var y = e.readUint8(), w = 0; w < y; w++) {
+                            var x = {};
+                            (d = x).min = (p = e).readVec(0, 0, 1024, 1024, 16), d.max = p.readVec(0, 0, 1024, 1024, 16), d.color = p.readUint32(), d.roughness = p.readFloat32(), d.offsetDist = p.readFloat32(), this.groundPatches.push(x)
                         }
                     }
                 }]), e
             }(),
-            N = {
-                DeletedObjects: 1,
-                FullObjects: 2,
-                ActivePlayerId: 4,
-                AliveCount: 8,
-                Gas: 16,
-                PlayerInfos: 32,
-                DeletePlayerIds: 64,
-                PlayerStatus: 128,
-                GroupStatus: 256,
-                Bullets: 512,
-                Explosions: 1024,
-                Emotes: 2048,
-                Planes: 4096,
-                AirstrikeZones: 8192,
-                MapIndicators: 16384
-            },
-            V = function() {
+            $ = 1,
+            ee = 2,
+            te = 4,
+            ae = 8,
+            ie = 16,
+            re = 32,
+            oe = 64,
+            ne = 128,
+            se = 256,
+            le = 512,
+            ce = 1024,
+            me = 2048,
+            pe = 4096,
+            de = 8192,
+            he = 16384,
+            z = function() {
                 function e() {
                     i(this, e), this.serializedObjectCache = null, this.objectReg = null, this.clientPlayer = null, this.activePlayer = null, this.grid = null, this.time = 0, this.playerBarn = null, this.bulletBarn = null, this.gas = null, this.map = null, this.delObjIds = [], this.fullObjects = [], this.partObjects = [], this.activePlayerId = 0, this.activePlayerIdDirty = !1, this.activePlayerData = {}, this.aliveCounts = [], this.aliveDirty = !1, this.gasT = 0, this.gasData = {}, this.gasDirty = !1, this.playerInfos = [], this.deletedPlayerIds = [], this.playerStatus = {}, this.playerStatusDirty = !1, this.groupStatus = {}, this.groupStatusDirty = !1, this.bullets = [], this.explosions = [], this.emotes = [], this.planes = [], this.airstrikeZones = [], this.mapIndicators = [], this.ack = 0
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e, t) {
                         var a = e.readUint16(),
                             i = 0;
-                        if (0 != (a & N.DeletedObjects)) {
+                        if (0 != (a & $)) {
                             i = e.readUint16();
                             for (var r = 0; r < i; r++) this.delObjIds.push(e.readUint16())
                         }
                         var o = 0;
-                        if (0 != (a & N.FullObjects)) {
+                        if (0 != (a & ee)) {
                             o = e.readUint16();
-                            for (var p = 0; p < o; p++) {
-                                var d = {};
-                                d.__type = e.readUint8(), d.__id = e.readUint16(), A[d.__type].deserializePart(e, d), A[d.__type].deserializeFull(e, d), this.fullObjects.push(d)
+                            for (var n = 0; n < o; n++) {
+                                var s = {};
+                                s.__type = e.readUint8(), s.__id = e.readUint16(), J[s.__type].deserializePart(e, s), J[s.__type].deserializeFull(e, s), this.fullObjects.push(s)
                             }
                         }
-                        for (var h = e.readUint16(), u = 0; u < h; u++) {
-                            var g = {};
-                            g.__id = e.readUint16();
-                            var y = t.getTypeById(g.__id, e);
-                            A[y].deserializePart(e, g), this.partObjects.push(g)
+                        for (var l = e.readUint16(), c = 0; c < l; c++) {
+                            var m = {};
+                            m.__id = e.readUint16();
+                            var p = t.getTypeById(m.__id, e);
+                            J[p].deserializePart(e, m), this.partObjects.push(m)
                         }
-                        0 != (a & N.ActivePlayerId) && (this.activePlayerId = e.readUint16(), this.activePlayerIdDirty = !0);
-                        var w = {};
-                        if (n(e, w), this.activePlayerData = w, 0 != (a & N.AliveCount)) {
-                            for (var x = e.readUint8(), f = 0; f < x; f++) {
-                                var b = e.readUint8();
-                                this.aliveCounts.push(b)
+                        0 != (a & te) && (this.activePlayerId = e.readUint16(), this.activePlayerIdDirty = !0);
+                        var d, h, u, g, y = {};
+                        if (function(e, t) {
+                                if (t.health = e.readFloat(0, 100, 8), t.scopedIn = e.readBoolean(), t.boostDirty = e.readBoolean(), t.boostDirty && (t.boost = e.readFloat(0, 100, 8)), t.actionDirty = e.readBoolean(), t.actionDirty && (t.action = {}, t.action.time = e.readFloat(0, Y.kActionMaxDuration, 8), t.action.duration = e.readFloat(0, Y.kActionMaxDuration, 8), t.action.targetId = e.readUint16()), t.inventoryDirty = e.readBoolean(), t.inventoryDirty)
+                                    for (var a in t.scope = e.readItemType(), t.inventory = {}, X.bagSizes) t.inventory[a] = e.readUint16();
+                                if (t.weapsDirty = e.readBoolean(), t.weapsDirty) {
+                                    t.curWeapIdx = e.readBits(2), e.readBits(6), t.weapons = [];
+                                    for (var i = 0; i < X.WeaponSlot.Count; i++) {
+                                        var r = {};
+                                        r.name = e.readItemType(), r.ammo = e.readUint8(), t.weapons.push(r)
+                                    }
+                                }
+                                e.readBoolean(), t.spectatorCountDirty = e.readBoolean(), t.spectatorCountDirty && (t.spectatorCount = e.readUint8()), e.readBits(1)
+                            }(e, y), this.activePlayerData = y, 0 != (a & ae)) {
+                            for (var w = e.readUint8(), x = 0; x < w; x++) {
+                                var f = e.readUint8();
+                                this.aliveCounts.push(f)
                             }
                             this.aliveDirty = !0
                         }
-                        if (this.gasT = e.readFloat(0, 1, 16), 0 != (a & N.Gas)) {
-                            var _ = {};
-                            m(e, _), this.gasData = _, this.gasDirty = !0
+                        if (this.gasT = e.readFloat(0, 1, 16), 0 != (a & ie)) {
+                            var b = {};
+                            (h = b).mode = (d = e).readUint8(), h.duration = d.readFloat32(), h.posOld = d.readVec(0, 0, 1024, 1024, 16), h.posNew = d.readVec(0, 0, 1024, 1024, 16), h.radOld = d.readFloat(0, 2048, 16), h.radNew = d.readFloat(0, 2048, 16), this.gasData = b, this.gasDirty = !0
                         }
-                        if (0 != (a & N.PlayerInfos))
-                            for (var S = e.readUint8(), k = 0; k < S; k++) {
-                                var z = {};
-                                c(e, z), this.playerInfos.push(z)
+                        if (0 != (a & re))
+                            for (var _ = e.readUint8(), S = 0; S < _; S++) {
+                                var k = {};
+                                (g = k).playerId = (u = e).readUint16(), g.teamId = u.readUint8(), g.groupId = u.readUint8(), g.name = u.readString(), this.playerInfos.push(k)
                             }
-                        if (0 != (a & N.DeletePlayerIds))
-                            for (var M = e.readUint8(), T = 0; T < M; T++) {
-                                var P = e.readUint16();
-                                this.deletedPlayerIds.push(P)
+                        if (0 != (a & oe))
+                            for (var v = e.readUint8(), z = 0; z < v; z++) {
+                                var M = e.readUint16();
+                                this.deletedPlayerIds.push(M)
                             }
-                        if (0 != (a & N.PlayerStatus)) {
-                            var I = {};
-                            s(e, I), this.playerStatus = I, this.playerStatusDirty = !0
+                        if (0 != (a & ne)) {
+                            var T = {};
+                            (function(e, t) {
+                                t.players = [];
+                                for (var a = e._index, i = e.readUint8(), r = 0; r < i; r++) {
+                                    var o = {};
+                                    o.hasData = e.readBoolean(), o.hasData && (o.pos = e.readVec(0, 0, 1024, 1024, 11), o.visible = e.readBoolean(), o.dead = e.readBoolean(), o.downed = e.readBoolean(), o.factionLeader = e.readBoolean()), t.players.push(o)
+                                }
+                                var n = 8 - (e._index - a) % 8;
+                                n < 8 && e.readBits(n), Z(e._index % 8 == 0)
+                            })(e, T), this.playerStatus = T, this.playerStatusDirty = !0
                         }
-                        if (0 != (a & N.GroupStatus)) {
-                            var E = {};
-                            l(e, E), this.groupStatus = E, this.groupStatusDirty = !0
+                        if (0 != (a & se)) {
+                            var A = {};
+                            (function(e, t) {
+                                t.players = [];
+                                for (var a = e.readUint8(), i = 0; i < a; i++) {
+                                    var r = {};
+                                    r.health = e.readFloat(0, 100, 7), r.disconnected = e.readBoolean(), t.players.push(r)
+                                }
+                            })(e, A), this.groupStatus = A, this.groupStatusDirty = !0
                         }
-                        if (0 != (a & N.Bullets))
-                            for (var D = e.readUint8(), O = 0; O < D; O++) {
-                                var B = {};
-                                B.playerId = e.readUint16(), B.bulletType = e.readItemType(), B.pos = e.readVec(0, 0, 1024, 1024, 16), B.dir = e.readUnitVec(8), B.layer = e.readBits(2), B.varianceT = e.readFloat(0, 1, 5), B.distAdjIdx = e.readBits(4), B.clipDistance = e.readBoolean(), B.clipDistance && (B.distance = e.readFloat(0, 128, 8)), B.shotFx = e.readBoolean(), B.shotFx && (B.shotSourceType = e.readItemType(), B.shotOffhand = e.readBits(7), B.lastShot = e.readBoolean()), B.reflectCount = e.readBits(2), B.reflectObjId = 0;
-                                var L = e.readBoolean();
-                                L && (B.reflectObjId = e.readUint16()), this.bullets.push(B)
+                        if (0 != (a & le))
+                            for (var C = e.readUint8(), I = 0; I < C; I++) {
+                                var P = {};
+                                P.playerId = e.readUint16(), P.bulletType = e.readItemType(), P.pos = e.readVec(0, 0, 1024, 1024, 16), P.dir = e.readUnitVec(8), P.layer = e.readBits(2), P.varianceT = e.readFloat(0, 1, 5), P.distAdjIdx = e.readBits(4), P.clipDistance = e.readBoolean(), P.clipDistance && (P.distance = e.readFloat(0, 128, 8)), P.shotFx = e.readBoolean(), P.shotFx && (P.shotSourceType = e.readItemType(), P.shotOffhand = e.readBits(7), P.lastShot = e.readBoolean()), P.reflectCount = e.readBits(2), P.reflectObjId = 0, e.readBoolean() && (P.reflectObjId = e.readUint16()), this.bullets.push(P)
                             }
-                        if (0 != (a & N.Explosions))
-                            for (var R = e.readUint8(), F = 0; F < R; F++) {
-                                var j = {};
-                                j.pos = e.readVec(0, 0, 1024, 1024, 16), j.type = e.readItemType(), j.layer = e.readUint8(), this.explosions.push(j)
+                        if (0 != (a & ce))
+                            for (var E = e.readUint8(), O = 0; O < E; O++) {
+                                var D = {};
+                                D.pos = e.readVec(0, 0, 1024, 1024, 16), D.type = e.readItemType(), D.layer = e.readUint8(), this.explosions.push(D)
                             }
-                        if (0 != (a & N.Emotes))
-                            for (var q = e.readUint8(), V = 0; V < q; V++) {
-                                var G = {};
-                                G.type = e.readUint8(), G.playerId = e.readUint16(), G.itemType = e.readItemType(), G.isPing = e.readBoolean(), G.isPing && (G.pos = e.readVec(0, 0, 1024, 1024, 16)), e.readBits(7), this.emotes.push(G)
+                        if (0 != (a & me))
+                            for (var L = e.readUint8(), B = 0; B < L; B++) {
+                                var R = {};
+                                R.type = e.readUint8(), R.playerId = e.readUint16(), R.itemType = e.readItemType(), R.isPing = e.readBoolean(), R.isPing && (R.pos = e.readVec(0, 0, 1024, 1024, 16)), e.readBits(7), this.emotes.push(R)
                             }
-                        if (0 != (a & N.Planes))
-                            for (var U = e.readUint8(), H = 0; H < U; H++) {
-                                var W = {};
-                                W.id = e.readUint8();
-                                var K = e.readVec(0, 0, 2048, 2048, 10);
-                                W.pos = v.create(K.x - 512, K.y - 512), W.planeDir = e.readUnitVec(8), W.actionComplete = e.readBoolean(), W.action = e.readBits(3), this.planes.push(W)
+                        if (0 != (a & pe))
+                            for (var F = e.readUint8(), j = 0; j < F; j++) {
+                                var N = {};
+                                N.id = e.readUint8();
+                                var q = e.readVec(0, 0, 2048, 2048, 10);
+                                N.pos = Q.create(q.x - 512, q.y - 512), N.planeDir = e.readUnitVec(8), N.actionComplete = e.readBoolean(), N.action = e.readBits(3), this.planes.push(N)
                             }
-                        if (0 != (a & N.AirstrikeZones))
-                            for (var Z = e.readUint8(), X = 0; X < Z; X++) {
-                                var Y = {};
-                                Y.pos = e.readVec(0, 0, 1024, 1024, 12), Y.rad = e.readFloat(0, C.kAirstrikeZoneMaxRad, 8), Y.duration = e.readFloat(0, C.kAirstrikeZoneMaxDuration, 8), this.airstrikeZones.push(Y)
+                        if (0 != (a & de))
+                            for (var V = e.readUint8(), G = 0; G < V; G++) {
+                                var U = {};
+                                U.pos = e.readVec(0, 0, 1024, 1024, 12), U.rad = e.readFloat(0, Y.kAirstrikeZoneMaxRad, 8), U.duration = e.readFloat(0, Y.kAirstrikeZoneMaxDuration, 8), this.airstrikeZones.push(U)
                             }
-                        if (0 != (a & N.MapIndicators))
-                            for (var J = e.readUint8(), Q = 0; Q < J; Q++) {
-                                var $ = {};
-                                $.id = e.readBits(6), $.dead = e.readBoolean(), $.equipped = e.readBoolean(), $.type = e.readItemType(), $.pos = e.readVec(0, 0, 1024, 1024, 16), this.mapIndicators.push($)
+                        if (0 != (a & he))
+                            for (var H = e.readUint8(), W = 0; W < H; W++) {
+                                var K = {};
+                                K.id = e.readBits(6), K.dead = e.readBoolean(), K.equipped = e.readBoolean(), K.type = e.readItemType(), K.pos = e.readVec(0, 0, 1024, 1024, 16), this.mapIndicators.push(K)
                             }
                         this.ack = e.readUint8()
                     }
                 }]), e
             }(),
-            G = function() {
+            M = function() {
                 function e() {
                     i(this, e), this.itemSourceType = "", this.mapSourceType = "", this.damageType = 0, this.targetId = 0, this.killerId = 0, this.killCreditId = 0, this.killerKills = 0, this.downed = !1, this.killed = !1, this.targetRole = 0
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
                         this.damageType = e.readUint8(), this.itemSourceType = e.readItemType(), this.mapSourceType = e.readMapType(), this.targetId = e.readUint16(), this.killerId = e.readUint16(), this.killCreditId = e.readUint16(), this.killerKills = e.readUint8(), this.downed = e.readBoolean(), this.killed = e.readBoolean(), this.targetRole = e.readBits(3), e.readBits(3)
                     }
                 }]), e
             }(),
-            U = function() {
+            T = function() {
                 function e() {
                     i(this, e), this.playerId = 0, this.playerStats = {}
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
                         var t = {};
@@ -7317,90 +7192,82 @@
                     }
                 }]), e
             }(),
-            H = function() {
+            A = function() {
                 function e() {
                     i(this, e), this.teamId = 0, this.teamRank = 0, this.gameOver = !1, this.winningTeamId = 0, this.playerStats = []
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
                         this.teamId = e.readUint8(), this.teamRank = e.readUint8(), this.gameOver = e.readUint8(), this.winningTeamId = e.readUint8();
                         for (var t = e.readUint8(), a = 0; a < t; a++) {
-                            var i = new U;
+                            var i = new T;
                             i.deserialize(e), this.playerStats.push(i.playerStats)
                         }
                     }
                 }]), e
             }(),
-            W = {
-                Full: 0,
-                AlreadyOwned: 1,
-                AlreadyEquipped: 2,
-                BetterItemEquipped: 3,
-                Success: 4,
-                GunCannotFire: 5
-            },
-            K = function() {
+            C = function() {
                 function e() {
                     i(this, e), this.type = 0, this.item = "", this.count = 0
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
                         this.type = e.readUint8(), this.item = e.readItemType(), this.count = e.readUint8()
                     }
                 }]), e
             }(),
-            Z = function() {
+            I = function() {
                 function e() {
                     i(this, e), this.specBegin = !1, this.specNext = !1, this.specPrev = !1, this.specForce = !1
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "serialize",
                     value: function(e) {
                         e.writeBoolean(this.specBegin), e.writeBoolean(this.specNext), e.writeBoolean(this.specPrev), e.writeBoolean(this.specForce), e.writeBits(0, 4)
                     }
                 }]), e
             }(),
-            X = function() {
+            P = function() {
                 function e() {
                     i(this, e), this.blocked = !1, this.prerollLoaded = !1, this.prerollFreestar = !1, this.prerollAIP = !1
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "serialize",
                     value: function(e) {
                         e.writeBoolean(this.blocked), e.writeBoolean(this.prerollLoaded), e.writeBoolean(this.prerollFreestar), e.writeBoolean(this.prerollAIP), e.writeBits(0, 4)
                     }
                 }]), e
             }(),
-            Y = function() {
+            E = function() {
                 function e() {
                     i(this, e), this.emotes = [], this.custom = !1
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "serialize",
                     value: function(e) {
-                        for (var t = 0; t < f.Count; t++) e.writeUint8(this.emotes[t]);
+                        for (var t = 0; t < s.Count; t++) e.writeUint8(this.emotes[t]);
                         e.writeUint8(this.custom)
                     }
                 }]), e
             }(),
-            J = function() {
+            O = function() {
                 function e() {
                     i(this, e), this.playerId = 0, this.role = 0
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "deserialize",
                     value: function(e) {
                         this.playerId = e.readUint16(), this.role = e.readUint8()
                     }
                 }]), e
             }(),
-            Q = function() {
+            D = function() {
                 function e() {
                     i(this, e), this.data = []
                 }
-                return y(e, [{
+                return n(e, [{
                     key: "serialize",
                     value: function(e) {
                         e.writeUint32(this.data.length);
@@ -7417,155 +7284,165 @@
                 }]), e
             }();
         e.exports = {
-            BitStream: P.BitStream,
-            Constants: C,
-            getPlayerStatusUpdateRate: r,
-            MsgStream: I,
-            Msg: E,
-            JoinMsg: D,
-            DisconnectMsg: O,
-            InputMsg: B,
-            EditMsg: L,
-            DropItemMsg: R,
-            JoinedMsg: j,
-            UpdateMsg: V,
-            MapMsg: q,
-            KillMsg: G,
-            PlayerStatsMsg: U,
-            GameOverMsg: H,
-            PickupMsgType: W,
-            PickupMsg: K,
-            SpectateMsg: Z,
-            EmoteMsg: F,
-            AdStatusMsg: X,
-            LoadoutMsg: Y,
-            AssignRoleMsg: J,
-            StatsMsg: Q
+            BitStream: h.BitStream,
+            Constants: Y,
+            getPlayerStatusUpdateRate: function(e, t) {
+                return 1 == e ? Number.MAX_VALUE : t ? .5 : .25
+            },
+            MsgStream: u,
+            Msg: g,
+            JoinMsg: y,
+            DisconnectMsg: w,
+            InputMsg: x,
+            EditMsg: function e() {
+                i(this, e)
+            },
+            DropItemMsg: _,
+            JoinedMsg: k,
+            UpdateMsg: z,
+            MapMsg: v,
+            KillMsg: M,
+            PlayerStatsMsg: T,
+            GameOverMsg: A,
+            PickupMsgType: {
+                Full: 0,
+                AlreadyOwned: 1,
+                AlreadyEquipped: 2,
+                BetterItemEquipped: 3,
+                Success: 4,
+                GunCannotFire: 5
+            },
+            PickupMsg: C,
+            SpectateMsg: I,
+            EmoteMsg: S,
+            AdStatusMsg: P,
+            LoadoutMsg: E,
+            AssignRoleMsg: O,
+            StatsMsg: D
         }
     },
     "3160ea28": function(e, t, a) {
         "use strict";
 
-        function i(e) {
+        function L(e) {
             var t = Math.floor(e / 3600),
                 a = Math.floor(e / 60) % 60,
-                i = Math.floor(e) % 60,
-                r = "";
-            return t > 0 && (r += t + "h "), (t > 0 || a > 0) && (r += a + "m "), r += i + "s"
+                i = "";
+            return 0 < t && (i += t + "h "), (0 < t || 0 < a) && (i += a + "m "), i + (Math.floor(e) % 60 + "s")
         }
 
-        function r(e, t, a, i, r, o, c, m, d, h) {
-            var u = this;
-            this.game = e, this.particleBarn = a, this.localization = r, this.touch = c, this.inputBinds = m, this.inputBindUi = d, this.adManager = h, this.pieTimer = new T.$, this.gameElem = s("#ui-game"), this.statsMain = s("#ui-stats"), this.statsElem = s("#ui-stats-bg"), this.statsContentsContainer = s("#ui-stats-contents"), this.statsContents = s("#ui-stats-contents-inner"), this.statsHeader = s("#ui-stats-header"), this.statsInfoBox = s("#ui-stats-info-box"), this.statsOptions = s("#ui-stats-options"), this.statsAds = s(".ui-stats-ad-container"), this.statsLogo = s("#ui-stats-logo"), this.killElem = s("#ui-kills"), this.killText = s("#ui-kill-text"), this.killCount = s("#ui-kill-count"), this.killTimeout = null, this.escMenuElem = s("#ui-game-menu"), this.escMenuDisplayed = !1, this.topLeft = s("#ui-top-left"), this.topCenter = s("#ui-top-center-scopes"), this.waitingForPlayers = !0, this.waitingText = s("#ui-waiting-text"), this.spectating = !1, this.prevSpectatorCount = 0, this.spectatorCount = 0, this.spectatorCounterDisplayed = !1, this.spectatorCounterContainer = s("#ui-spec-counter"), this.spectatorCounter = s("#ui-spec-counter-number"), this.spectateMode = s(".ui-spectate-mode"), this.spectatedPlayerText = s("#ui-spectate-text"), this.spectatedPlayerName = "", this.spectatedPlayerId = 0, this.spectateModeStats = s("#ui-spectate-stats"), this.spectateModeStatsData = s("#ui-spectate-stats-data"), this.spectateOptionsWrapper = s("#ui-spectate-options-wrapper"), this.rightCenter = s("#ui-right-center"), this.leaderboardAlive = s("#ui-leaderboard-alive"), this.playersAlive = s(".js-ui-players-alive"), this.leaderboardAliveFaction = s("#ui-leaderboard-alive-faction"), this.playersAliveRed = s(".js-ui-players-alive-red"), this.playersAliveBlue = s(".js-ui-players-alive-blue"), this.playersAliveRedCounter = 0, this.playersAliveBlueCounter = 0, this.playerKills = s(".js-ui-player-kills"), this.kills = 0, this.announcement = s("#ui-announcement"), this.mapContainer = s("#ui-map-container"), this.mapContainerBottom = 52, this.mapInfo = s("#ui-map-info"), this.mapInfoBottom = 218, this.gasState = {}, this.gasIcon = s("#ui-gas-icon"), this.gasTimer = s("#ui-gas-timer"), this.mapMinimizeButton = s("#ui-map-minimize"), this.menuDisplayButton = s("#ui-menu-display"), this.bottomCenterRight = s("#ui-bottom-center-right"), s("#ui-map-wrapper").css("display", "block"), s("#ui-team").css("display", "block"), this.actionSeq = -1, this.displayMapDirty = !1, this.displayMapClear = !1, s(".ui-map-expand").on("mousedown", function(e) {
+        function i(e, t, a, i, r, o, n, s, l, c) {
+            var m = this;
+            this.game = e, this.particleBarn = a, this.localization = r, this.touch = n, this.inputBinds = s, this.inputBindUi = l, this.adManager = c, this.pieTimer = new M.$, this.gameElem = B("#ui-game"), this.statsMain = B("#ui-stats"), this.statsElem = B("#ui-stats-bg"), this.statsContentsContainer = B("#ui-stats-contents"), this.statsContents = B("#ui-stats-contents-inner"), this.statsHeader = B("#ui-stats-header"), this.statsInfoBox = B("#ui-stats-info-box"), this.statsOptions = B("#ui-stats-options"), this.statsAds = B(".ui-stats-ad-container"), this.statsLogo = B("#ui-stats-logo"), this.killElem = B("#ui-kills"), this.killText = B("#ui-kill-text"), this.killCount = B("#ui-kill-count"), this.killTimeout = null, this.escMenuElem = B("#ui-game-menu"), this.escMenuDisplayed = !1, this.topLeft = B("#ui-top-left"), this.topCenter = B("#ui-top-center-scopes"), this.waitingForPlayers = !0, this.waitingText = B("#ui-waiting-text"), this.spectating = !1, this.prevSpectatorCount = 0, this.spectatorCount = 0, this.spectatorCounterDisplayed = !1, this.spectatorCounterContainer = B("#ui-spec-counter"), this.spectatorCounter = B("#ui-spec-counter-number"), this.spectateMode = B(".ui-spectate-mode"), this.spectatedPlayerText = B("#ui-spectate-text"), this.spectatedPlayerName = "", this.spectatedPlayerId = 0, this.spectateModeStats = B("#ui-spectate-stats"), this.spectateModeStatsData = B("#ui-spectate-stats-data"), this.spectateOptionsWrapper = B("#ui-spectate-options-wrapper"), this.rightCenter = B("#ui-right-center"), this.leaderboardAlive = B("#ui-leaderboard-alive"), this.playersAlive = B(".js-ui-players-alive"), this.leaderboardAliveFaction = B("#ui-leaderboard-alive-faction"), this.playersAliveRed = B(".js-ui-players-alive-red"), this.playersAliveBlue = B(".js-ui-players-alive-blue"), this.playersAliveRedCounter = 0, this.playersAliveBlueCounter = 0, this.playerKills = B(".js-ui-player-kills"), this.kills = 0, this.announcement = B("#ui-announcement"), this.mapContainer = B("#ui-map-container"), this.mapContainerBottom = 52, this.mapInfo = B("#ui-map-info"), this.mapInfoBottom = 218, this.gasState = {}, this.gasIcon = B("#ui-gas-icon"), this.gasTimer = B("#ui-gas-timer"), this.mapMinimizeButton = B("#ui-map-minimize"), this.menuDisplayButton = B("#ui-menu-display"), this.bottomCenterRight = B("#ui-bottom-center-right"), B("#ui-map-wrapper").css("display", "block"), B("#ui-team").css("display", "block"), this.actionSeq = -1, this.displayMapDirty = !1, this.displayMapClear = !1, B(".ui-map-expand").on("mousedown", function(e) {
                 e.stopPropagation()
-            }), s(".ui-map-expand").on("click", function(e) {
-                f.touch ? u.bigmapDisplayed || u.displayMapLarge() : f.uiLayout == f.UiLayout.Lg && u.displayMapLarge(u.bigmapDisplayed)
-            }), s("#ui-map-minimize").on("mousedown", function(e) {
+            }), B(".ui-map-expand").on("click", function(e) {
+                oe.touch ? m.bigmapDisplayed || m.displayMapLarge() : oe.uiLayout == oe.UiLayout.Lg && m.displayMapLarge(m.bigmapDisplayed)
+            }), B("#ui-map-minimize").on("mousedown", function(e) {
                 e.stopPropagation()
-            }), s("#ui-map-minimize").on("click", function(e) {
-                e.stopPropagation(), u.toggleMiniMap()
-            }), s("#ui-menu-display").on("click", function(e) {
-                e.stopPropagation(), u.toggleEscMenu()
-            }), this.bigmap = s("#big-map"), this.bigmapCollision = s("#big-map-collision"), this.moveStyleButton = s("#btn-game-move-style"), this.moveStyleButton.on("touchstart", function() {
-                c.toggleMoveStyle()
-            }), this.aimStyleButton = s("#btn-game-aim-style"), this.aimStyleButton.on("touchstart", function() {
-                c.toggleAimStyle()
-            }), this.aimLineButton = s("#btn-game-aim-line"), this.aimLineButton.on("touchstart", function() {
-                c.toggleAimLine()
-            }), s(document).on("keyup", function(e) {
+            }), B("#ui-map-minimize").on("click", function(e) {
+                e.stopPropagation(), m.toggleMiniMap()
+            }), B("#ui-menu-display").on("click", function(e) {
+                e.stopPropagation(), m.toggleEscMenu()
+            }), this.bigmap = B("#big-map"), this.bigmapCollision = B("#big-map-collision"), this.moveStyleButton = B("#btn-game-move-style"), this.moveStyleButton.on("touchstart", function() {
+                n.toggleMoveStyle()
+            }), this.aimStyleButton = B("#btn-game-aim-style"), this.aimStyleButton.on("touchstart", function() {
+                n.toggleAimStyle()
+            }), this.aimLineButton = B("#btn-game-aim-line"), this.aimLineButton.on("touchstart", function() {
+                n.toggleAimLine()
+            }), B(document).on("keyup", function(e) {
                 var t = e.which || e.keyCode,
-                    a = u.inputBinds.getBind(p.Fullscreen);
-                a && t == a.code && !u.game.gameOver && v.toggleFullScreen()
+                    a = m.inputBinds.getBind(b.Fullscreen);
+                a && t == a.code && !m.game.gameOver && se.toggleFullScreen()
             }), this.onTouchScreen = function(e) {
-                "cvs" == e.target.id && u.toggleEscMenu(!0)
-            }, s(document).on("touchstart", this.onTouchScreen), this.bigmapClose = s("#big-map-close"), this.bigmapClose.on("touchend", function(e) {
-                e.stopPropagation(), u.displayMapLarge(!0)
+                "cvs" == e.target.id && m.toggleEscMenu(!0)
+            }, B(document).on("touchstart", this.onTouchScreen), this.bigmapClose = B("#big-map-close"), this.bigmapClose.on("touchend", function(e) {
+                e.stopPropagation(), m.displayMapLarge(!0)
             }), this.bigmapClose.on("mousedown", function(e) {
                 e.stopPropagation()
             }), this.bigmapClose.on("click", function(e) {
-                e.stopPropagation(), u.displayMapLarge(!0)
-            }), this.gameTabs = s(".ui-game-tab"), this.gameTabBtns = s(".btn-game-tab-select"), this.gameKeybindBtns = s(".btn-keybind-desc"), this.currentGameTab = "settings", this.gameTabBtns.on("click", function(e) {
-                u.setCurrentGameTab(s(e.target).data("tab"))
-            }), this.setCurrentGameTab(this.currentGameTab), this.fullScreenButton = s("#btn-game-fullscreen"), this.fullScreenButton.on("mousedown", function(e) {
+                e.stopPropagation(), m.displayMapLarge(!0)
+            }), this.gameTabs = B(".ui-game-tab"), this.gameTabBtns = B(".btn-game-tab-select"), this.gameKeybindBtns = B(".btn-keybind-desc"), this.currentGameTab = "settings", this.gameTabBtns.on("click", function(e) {
+                m.setCurrentGameTab(B(e.target).data("tab"))
+            }), this.setCurrentGameTab(this.currentGameTab), this.fullScreenButton = B("#btn-game-fullscreen"), this.fullScreenButton.on("mousedown", function(e) {
                 e.stopPropagation()
             }), this.fullScreenButton.on("click", function() {
-                v.toggleFullScreen(), u.toggleEscMenu()
+                se.toggleFullScreen(), m.toggleEscMenu()
             });
-            var g = "ios" == f.os ? "none" : "block";
-            (f.webview || f.touch) && (g = "none"), s("#btn-game-fullscreen").css("display", g), this.resumeButton = s("#btn-game-resume"), this.resumeButton.on("mousedown", function(e) {
+            var p = "ios" == oe.os ? "none" : "block";
+            (oe.webview || oe.touch) && (p = "none"), B("#btn-game-fullscreen").css("display", p), this.resumeButton = B("#btn-game-resume"), this.resumeButton.on("mousedown", function(e) {
                 e.stopPropagation()
             }), this.resumeButton.on("click", function() {
-                u.toggleEscMenu()
-            }), f.touch && this.resumeButton.css("display", "none"), s("#btn-spectate-quit").on("click", function() {
-                u.quitGame()
-            }), s("#btn-game-quit").on("mousedown", function(e) {
+                m.toggleEscMenu()
+            }), oe.touch && this.resumeButton.css("display", "none"), B("#btn-spectate-quit").on("click", function() {
+                m.quitGame()
+            }), B("#btn-game-quit").on("mousedown", function(e) {
                 e.stopPropagation()
-            }), s("#btn-game-quit").on("click", function() {
-                u.quitGame()
-            }), this.specStatsButton = s("#btn-spectate-view-stats"), this.specStatsButton.on("click", function() {
-                u.toggleLocalStats()
-            }), this.specBegin = !1, this.specNext = !1, this.specPrev = !1, this.specNextButton = s("#btn-spectate-next-player"), this.specNextButton.on("click", function() {
-                u.specNext = !0
-            }), this.specPrevButton = s("#btn-spectate-prev-player"), this.specPrevButton.on("click", function() {
-                u.specPrev = !0
-            }), this.interactionElems = s("#ui-interaction-press, #ui-interaction"), this.interactionTouched = !1, this.interactionElems.css("pointer-events", "auto"), this.interactionElems.on("touchstart", function(e) {
-                e.stopPropagation(), u.interactionTouched = !0
-            }), this.reloadElems = s("#ui-current-clip, #ui-remaining-ammo, #ui-reload-button-container"), this.reloadTouched = !1, this.reloadElems.css("pointer-events", "auto"), this.reloadElems.on("touchstart", function(e) {
-                e.stopPropagation(), u.reloadTouched = !0
-            }), this.flairElems = s(".ui-health-flair"), this.flairId = 0, this.healthRed = new n(255, 0, 0), this.healthDarkpink = new n(255, 45, 45), this.healthLightpink = new n(255, 112, 112), this.healthWhite = new n(255, 255, 255), this.healthGrey = new n(179, 179, 179), this.minimapDisplayed = !0, this.visibilityMode = 0, this.hudVisible = !0, this.gasRenderer = new S(o, 0), this.gasSafeZoneRenderer = new k, this.sentAdStatus = !1, this.frame = 0;
-            var y = this;
-            this.weapsDirty = !1, this.weapSwitches = s("#ui-weapon-id-1, #ui-weapon-id-2"), this.weapNoSwitches = s("#ui-weapon-id-3, #ui-weapon-id-4"), this.weapDraggedId = 0, this.swapWeapSlots = !1, this.weapDraggedDiv = null, this.weapDragging = !1, this.weapDropped = !1, this.resetWeapSlotStyling = function() {
-                y.weapDraggedDiv && (y.weapSwitches.css({
+            }), B("#btn-game-quit").on("click", function() {
+                m.quitGame()
+            }), this.specStatsButton = B("#btn-spectate-view-stats"), this.specStatsButton.on("click", function() {
+                m.toggleLocalStats()
+            }), this.specBegin = !1, this.specNext = !1, this.specPrev = !1, this.specNextButton = B("#btn-spectate-next-player"), this.specNextButton.on("click", function() {
+                m.specNext = !0
+            }), this.specPrevButton = B("#btn-spectate-prev-player"), this.specPrevButton.on("click", function() {
+                m.specPrev = !0
+            }), this.interactionElems = B("#ui-interaction-press, #ui-interaction"), this.interactionTouched = !1, this.interactionElems.css("pointer-events", "auto"), this.interactionElems.on("touchstart", function(e) {
+                e.stopPropagation(), m.interactionTouched = !0
+            }), this.reloadElems = B("#ui-current-clip, #ui-remaining-ammo, #ui-reload-button-container"), this.reloadTouched = !1, this.reloadElems.css("pointer-events", "auto"), this.reloadElems.on("touchstart", function(e) {
+                e.stopPropagation(), m.reloadTouched = !0
+            }), this.flairElems = B(".ui-health-flair"), this.flairId = 0, this.healthRed = new f(255, 0, 0), this.healthDarkpink = new f(255, 45, 45), this.healthLightpink = new f(255, 112, 112), this.healthWhite = new f(255, 255, 255), this.healthGrey = new f(179, 179, 179), this.minimapDisplayed = !0, this.visibilityMode = 0, this.hudVisible = !0, this.gasRenderer = new _(o, 0), this.gasSafeZoneRenderer = new k, this.sentAdStatus = !1, this.frame = 0;
+            var d = this;
+            this.weapsDirty = !1, this.weapSwitches = B("#ui-weapon-id-1, #ui-weapon-id-2"), this.weapNoSwitches = B("#ui-weapon-id-3, #ui-weapon-id-4"), this.weapDraggedId = 0, this.swapWeapSlots = !1, this.weapDraggedDiv = null, this.weapDragging = !1, this.weapDropped = !1, this.resetWeapSlotStyling = function() {
+                d.weapDraggedDiv && (d.weapSwitches.css({
                     left: "",
                     top: ""
-                }), s("#ui-game").css({
+                }), B("#ui-game").css({
                     "pointer-events": ""
-                })), y.weapDraggedDiv = null, y.weapDragging = !1, y.weapDropped = !1, y.weapSwitches.hasClass("ui-weapon-dragged") && y.weapSwitches.removeClass("ui-weapon-dragged"), y.weapNoSwitches.hasClass("ui-outline-hover") || y.weapNoSwitches.addClass("ui-outline-hover")
-            }, f.touch || (this.weapSwitches.on("mousedown", function(e) {
-                0 == e.button && (y.weapDraggedDiv = s(this), y.weapDraggedId = s(this).data("slot"))
-            }), s("#ui-game").on("mousemove", function(e) {
-                y.weapDraggedDiv && !y.weapDropped && (y.weapDragging ? (y.weapDraggedDiv.css({
+                })), d.weapDraggedDiv = null, d.weapDragging = !1, d.weapDropped = !1, d.weapSwitches.hasClass("ui-weapon-dragged") && d.weapSwitches.removeClass("ui-weapon-dragged"), d.weapNoSwitches.hasClass("ui-outline-hover") || d.weapNoSwitches.addClass("ui-outline-hover")
+            }, oe.touch || (this.weapSwitches.on("mousedown", function(e) {
+                0 == e.button && (d.weapDraggedDiv = B(this), d.weapDraggedId = B(this).data("slot"))
+            }), B("#ui-game").on("mousemove", function(e) {
+                d.weapDraggedDiv && !d.weapDropped && (d.weapDragging ? (d.weapDraggedDiv.css({
                     left: e.pageX - 80,
                     top: e.pageY - 30
-                }), y.weapDraggedDiv.addClass("ui-weapon-dragged")) : (s("#ui-game").css({
+                }), d.weapDraggedDiv.addClass("ui-weapon-dragged")) : (B("#ui-game").css({
                     "pointer-events": "initial"
-                }), y.weapNoSwitches.removeClass("ui-outline-hover"), y.weapDragging = !0))
-            }), s("#ui-game, #ui-weapon-id-1, #ui-weapon-id-2").on("mouseup", function(e) {
-                0 == e.button && null != y.weapDraggedDiv && (y.weapSwitches.each(function() {
-                    var e = s(this).data("slot");
-                    s(this).is(":hover") && y.weapDraggedId != e && (y.swapWeapSlots = !0, y.weapDropped = !0)
-                }), y.swapWeapSlots || y.resetWeapSlotStyling())
-            })), this.mapSpriteBarn = new M.MapSpriteBarn, this.ee = new z.te(this.mapSpriteBarn), this.playerMapSprites = [], this.playerPingSprites = {}, this.container = new l.Container, this.container.mask = new l.Graphics, this.display = {
+                }), d.weapNoSwitches.removeClass("ui-outline-hover"), d.weapDragging = !0))
+            }), B("#ui-game, #ui-weapon-id-1, #ui-weapon-id-2").on("mouseup", function(e) {
+                0 == e.button && null != d.weapDraggedDiv && (d.weapSwitches.each(function() {
+                    var e = B(this).data("slot");
+                    B(this).is(":hover") && d.weapDraggedId != e && (d.swapWeapSlots = !0, d.weapDropped = !0)
+                }), d.swapWeapSlots || d.resetWeapSlotStyling())
+            })), this.mapSpriteBarn = new z.MapSpriteBarn, this.ee = new v.te(this.mapSpriteBarn), this.playerMapSprites = [], this.playerPingSprites = {}, this.container = new S.Container, this.container.mask = new S.Graphics, this.display = {
                 gas: this.gasRenderer.display,
                 gasSafeZone: this.gasSafeZoneRenderer.display,
                 airstrikeZones: i.airstrikeZoneContainer,
                 mapSprites: this.mapSpriteBarn.container,
-                teammates: new l.Container,
-                player: new l.Container,
-                border: new l.Graphics
-            }, this.mapSprite = new l.Sprite(l.Texture.EMPTY), this.mapSprite.anchor = new l.Point(.5, .5), this.container.addChild(this.mapSprite), this.container.addChild(this.display.gas), this.container.addChild(this.display.gasSafeZone), this.container.addChild(this.display.airstrikeZones), this.container.addChild(this.display.mapSprites), this.container.addChild(this.display.teammates), this.container.addChild(this.display.player), this.container.addChild(this.display.border), this.bigmapDisplayed = !1, this.screenScaleFactor = 1;
-            var x = this.getMinimapMargin(),
-                b = this.getMinimapSize();
-            this.minimapPos = w.create(x + b / 2, e.ae.screenHeight - b / 2 - x), this.dead = !1, this.audioManager = t, this.muteButton = s("#ui-mute-ingame"), this.muteButtonImage = this.muteButton.find("img"), this.muteOffImg = "audio-off.img", this.muteOnImg = "audio-on.img";
-            var _ = this.audioManager.mute;
-            this.muteButtonImage.attr("src", _ ? this.muteOffImg : this.muteOnImg), this.muteButton.on("mousedown", function(e) {
+                teammates: new S.Container,
+                player: new S.Container,
+                border: new S.Graphics
+            }, this.mapSprite = new S.Sprite(S.Texture.EMPTY), this.mapSprite.anchor = new S.Point(.5, .5), this.container.addChild(this.mapSprite), this.container.addChild(this.display.gas), this.container.addChild(this.display.gasSafeZone), this.container.addChild(this.display.airstrikeZones), this.container.addChild(this.display.mapSprites), this.container.addChild(this.display.teammates), this.container.addChild(this.display.player), this.container.addChild(this.display.border), this.bigmapDisplayed = !1, this.screenScaleFactor = 1;
+            var h = this.getMinimapMargin(),
+                u = this.getMinimapSize();
+            this.minimapPos = ie.create(h + u / 2, e.ae.screenHeight - u / 2 - h), this.dead = !1, this.audioManager = t, this.muteButton = B("#ui-mute-ingame"), this.muteButtonImage = this.muteButton.find("img"), this.muteOffImg = "audio-off.img", this.muteOnImg = "audio-on.img";
+            var g = this.audioManager.mute;
+            this.muteButtonImage.attr("src", g ? this.muteOffImg : this.muteOnImg), this.muteButton.on("mousedown", function(e) {
                 e.stopPropagation()
             }), this.muteButton.on("click", function(e) {
-                var t = u.audioManager.muteToggle();
-                u.muteButtonImage.attr("src", t ? u.muteOffImg : u.muteOnImg), t = null
-            }), this.displayingStats = !1, this.teamMemberHealthBarWidth = parseInt(s(".ui-team-member-health").find(".ui-bar-inner").css("width")), this.teamMemberHeight = 48, this.groupPlayerCount = 0, this.teamSelectors = [];
-            for (var P = 0; P < 4; P++) {
-                var I = this.topLeft,
-                    C = P;
+                var t = m.audioManager.muteToggle();
+                m.muteButtonImage.attr("src", t ? m.muteOffImg : m.muteOnImg), t = null
+            }), this.displayingStats = !1, this.teamMemberHealthBarWidth = parseInt(B(".ui-team-member-health").find(".ui-bar-inner").css("width")), this.teamMemberHeight = 48, this.groupPlayerCount = 0, this.teamSelectors = [];
+            for (var y = 0; y < 4; y++) {
+                var w = this.topLeft,
+                    x = y;
                 this.teamSelectors.push({
                     teamNameHtml: "",
-                    groupId: s(I).find("[data-id=" + C + "]"),
+                    groupId: B(w).find("[data-id=" + x + "]"),
                     groupIdDisplayed: !1,
-                    teamName: s(I).find("[data-id=" + C + "]").find(".ui-team-member-name"),
-                    teamIcon: s(I).find("[data-id=" + C + "]").find(".ui-team-member-icon"),
-                    teamStatus: s(I).find("[data-id=" + C + "]").find(".ui-team-member-status"),
-                    teamHealthInner: s(I).find("[data-id=" + C + "]").find(".ui-health-actual"),
-                    teamColor: s(I).find("[data-id=" + C + "]").find(".ui-team-member-color"),
+                    teamName: B(w).find("[data-id=" + x + "]").find(".ui-team-member-name"),
+                    teamIcon: B(w).find("[data-id=" + x + "]").find(".ui-team-member-icon"),
+                    teamStatus: B(w).find("[data-id=" + x + "]").find(".ui-team-member-status"),
+                    teamHealthInner: B(w).find("[data-id=" + x + "]").find(".ui-health-actual"),
+                    teamColor: B(w).find("[data-id=" + x + "]").find(".ui-team-member-color"),
                     playerId: 0,
                     prevHealth: 0,
                     prevStatus: {
@@ -7576,7 +7453,7 @@
                     },
                     indicators: {
                         main: {
-                            elem: s("#ui-team-indicators").find(".ui-indicator-main[data-id=" + C + "]"),
+                            elem: B("#ui-team-indicators").find(".ui-indicator-main[data-id=" + x + "]"),
                             displayed: !1
                         }
                     }
@@ -7585,18 +7462,14 @@
             this.displayOldMapSprites = !1, this.o()
         }
 
-        function o(e, t, a, i) {
-            var r = e,
-                o = t,
-                n = r + (o - r) / a * i;
-            return Math.floor(n)
+        function u(e, t, a, i) {
+            var r = e + (t - e) / a * i;
+            return Math.floor(r)
         }
 
-        function n(e, t, a) {
+        function f(e, t, a) {
             var i, r, o;
-            ! function(e, t, a) {
-                i = e, r = t, o = a
-            }(e, t, a), this.getColors = function() {
+            i = e, r = t, o = a, this.getColors = function() {
                 return {
                     r: i,
                     g: r,
@@ -7604,33 +7477,33 @@
                 }
             }
         }
-        var s = a("8ee62bea"),
-            l = a("8b1dfb45"),
-            c = a("34e32c48"),
-            m = (a("6b42806d"), a("989ad62a")),
-            p = m.Input,
-            d = a("b198b546"),
-            h = (d.PingType, d.PingData),
-            u = m.Action,
-            g = m.GasMode,
-            y = a("300e2704"),
-            w = a("c2a798c8"),
-            x = a("10899aea"),
-            f = (a("1901e2d9"), a("ce29f17f")),
-            b = a("f398b7c7"),
-            _ = a("a7f094a3"),
-            S = _.GasRenderer,
-            k = _.GasSafeZoneRenderer,
-            v = a("26be8056"),
-            z = (a("d306eab6"), a("966d985b")),
-            M = a("edfa1d55"),
-            T = (a("119e8c4c"), a("feb8fc30"));
-        a("6e43d1d7"), r.prototype = {
+        var B = a("8ee62bea"),
+            S = a("8b1dfb45"),
+            $ = a("34e32c48"),
+            ee = (a("6b42806d"), a("989ad62a")),
+            b = ee.Input,
+            r = a("b198b546"),
+            x = (r.PingType, r.PingData),
+            te = ee.Action,
+            ae = ee.GasMode,
+            o = a("300e2704"),
+            ie = a("c2a798c8"),
+            re = a("10899aea"),
+            oe = (a("1901e2d9"), a("ce29f17f")),
+            ne = a("f398b7c7"),
+            n = a("a7f094a3"),
+            _ = n.GasRenderer,
+            k = n.GasSafeZoneRenderer,
+            se = a("26be8056"),
+            v = (a("d306eab6"), a("966d985b")),
+            z = a("edfa1d55"),
+            M = (a("119e8c4c"), a("feb8fc30"));
+        a("6e43d1d7"), i.prototype = {
             n: function() {
-                this.gasRenderer.free(), this.clearUI(), s(document).off("keyup"), s(".ui-map-expand").off("mousedown"), s(".ui-map-expand").off("click"), s("#ui-map-minimize").off("mousedown"), s("#ui-map-minimize").off("click"), s("#ui-menu-display").off("click"), this.muteButton.off("mousedown"), this.muteButton.off("click"), this.fullScreenButton.off("mousedown"), this.fullScreenButton.off("click"), this.resumeButton.off("mousedown"), this.resumeButton.off("click"), s("#btn-spectate-quit").off("click"), s("#btn-game-quit").off("mousedown"), s("#btn-game-quit").off("click"), this.specStatsButton.off("click"), this.specPrevButton.off("click"), this.specNextButton.off("click"), this.bigmapClose.off("mousedown"), this.bigmapClose.off("click"), this.weapSwitches.off("mousedown"), s("#ui-game").off("mousemove"), s("#ui-game").off("mouseup"), s("#ui-weapon-id-1").off("mouseup"), s("#ui-weapon-id-2").off("mouseup"), this.moveStyleButton.off("touchstart"), this.aimStyleButton.off("touchstart"), this.aimLineButton.off("touchstart"), this.interactionElems.off("touchstart"), this.reloadElems.off("touchstart"), this.bigmapClose.off("touchend"), s(document).off("touchstart", this.onTouchScreen), s(".ui-team-member-health").find(".ui-bar-inner").css("width", this.teamMemberHealthBarWidth), s("#ui-center").off("mouseenter mouseleave"), this.inputBinds.menuHovered = !1, this.hudVisible || this.cycleHud(), this.pieTimer.destroy(), this.clearStatsElems(), this.o()
+                this.gasRenderer.free(), this.clearUI(), B(document).off("keyup"), B(".ui-map-expand").off("mousedown"), B(".ui-map-expand").off("click"), B("#ui-map-minimize").off("mousedown"), B("#ui-map-minimize").off("click"), B("#ui-menu-display").off("click"), this.muteButton.off("mousedown"), this.muteButton.off("click"), this.fullScreenButton.off("mousedown"), this.fullScreenButton.off("click"), this.resumeButton.off("mousedown"), this.resumeButton.off("click"), B("#btn-spectate-quit").off("click"), B("#btn-game-quit").off("mousedown"), B("#btn-game-quit").off("click"), this.specStatsButton.off("click"), this.specPrevButton.off("click"), this.specNextButton.off("click"), this.bigmapClose.off("mousedown"), this.bigmapClose.off("click"), this.weapSwitches.off("mousedown"), B("#ui-game").off("mousemove"), B("#ui-game").off("mouseup"), B("#ui-weapon-id-1").off("mouseup"), B("#ui-weapon-id-2").off("mouseup"), this.moveStyleButton.off("touchstart"), this.aimStyleButton.off("touchstart"), this.aimLineButton.off("touchstart"), this.interactionElems.off("touchstart"), this.reloadElems.off("touchstart"), this.bigmapClose.off("touchend"), B(document).off("touchstart", this.onTouchScreen), B(".ui-team-member-health").find(".ui-bar-inner").css("width", this.teamMemberHealthBarWidth), B("#ui-center").off("mouseenter mouseleave"), this.inputBinds.menuHovered = !1, this.hudVisible || this.cycleHud(), this.pieTimer.destroy(), this.clearStatsElems(), this.o()
             },
             o: function() {
-                s(".js-ui-map-hidden").css("display", "block"), s("#ui-map-counter-default").css("display", "inline-block"), s("#ui-map-counter-faction").css("display", "none"), this.flairElems.css("display", "none"), this.resetTeamSelectorColors(), this.clearStatsElems(), this.setSpectating(!1), this.updateSpectatorCountDisplay(!0), this.resetWeapSlotStyling(), this.dead = !1
+                B(".js-ui-map-hidden").css("display", "block"), B("#ui-map-counter-default").css("display", "inline-block"), B("#ui-map-counter-faction").css("display", "none"), this.flairElems.css("display", "none"), this.resetTeamSelectorColors(), this.clearStatsElems(), this.setSpectating(!1), this.updateSpectatorCountDisplay(!0), this.resetWeapSlotStyling(), this.dead = !1
             },
             resetTeamSelectorColors: function() {
                 for (var e = 0; e < this.teamSelectors.length; e++) this.teamSelectors[e].teamColor.removeAttr("style")
@@ -7638,197 +7511,191 @@
             quitGame: function() {
                 var e = this;
                 this.game.gameOver = !0;
-                var t = function() {
+                this.adManager.onGameComplete(function() {
                     e.refeshMainPageAds(), e.game.onQuit()
-                };
-                this.adManager.onGameComplete(t)
+                })
             },
             c: function(e, t, a, i, r, o, n, s, l) {
-                var p = t.ie,
-                    d = t.re,
-                    h = t;
+                var c = t.ie,
+                    m = t.re,
+                    p = t;
                 this.weapsDirty && this.resetWeapSlotStyling(), this.weapsDirty = !1, this.ee.oe(e);
-                var y = x.max(Math.floor(i.duration * (1 - i.circleT)), 0),
-                    _ = {
+                var d = re.max(Math.floor(i.duration * (1 - i.circleT)), 0),
+                    h = {
                         mode: i.mode,
-                        time: y
+                        time: d
                     };
-                if (this.gasState.mode != _.mode || this.gasState.time != _.time) {
-                    this.gasState = _;
-                    var S = this.gasState.mode == g.Moving;
-                    this.mapInfo.removeClass("icon-pulse"), this.gasIcon.removeClass("gas-icon"), this.gasIcon.removeClass("danger-icon"), S && this.mapInfo.addClass("icon-pulse"), this.gasIcon.addClass(S ? "danger-icon" : "gas-icon");
-                    var k = Math.floor(this.gasState.time / 60),
-                        z = this.gasState.time % 60,
-                        M = ("0" + z).slice(-2);
-                    this.gasTimer.html(k + ":" + M)
+                if (this.gasState.mode != h.mode || this.gasState.time != h.time) {
+                    this.gasState = h;
+                    var u = this.gasState.mode == ae.Moving;
+                    this.mapInfo.removeClass("icon-pulse"), this.gasIcon.removeClass("gas-icon"), this.gasIcon.removeClass("danger-icon"), u && this.mapInfo.addClass("icon-pulse"), this.gasIcon.addClass(u ? "danger-icon" : "gas-icon");
+                    var g = Math.floor(this.gasState.time / 60),
+                        y = ("0" + this.gasState.time % 60).slice(-2);
+                    this.gasTimer.html(g + ":" + y)
                 }
-                if (this.spectatorCount = d.spectatorCount, this.updateSpectatorCountDisplay(!1), p.dead && !this.dead && (this.dead = !0, this.pieTimer.stop()), (h.downed || this.dead) && this.resetWeapSlotStyling(), this.actionSeq != t.action.seq && (this.actionSeq = t.action.seq, this.pieTimer.stop(), t.action.type != u.None && !this.displayingStats)) {
-                    var T = "",
-                        P = "",
-                        I = "";
+                if (this.spectatorCount = m.spectatorCount, this.updateSpectatorCountDisplay(!1), c.dead && !this.dead && (this.dead = !0, this.pieTimer.stop()), (p.downed || this.dead) && this.resetWeapSlotStyling(), this.actionSeq != t.action.seq && (this.actionSeq = t.action.seq, this.pieTimer.stop(), t.action.type != te.None && !this.displayingStats)) {
+                    var w = "",
+                        x = "",
+                        f = "";
                     switch (t.action.type) {
-                        case u.Reload:
-                        case u.ReloadAlt:
-                            m.items[t.action.item] && (P = this.localization.translate("game-reloading"));
+                        case te.Reload:
+                        case te.ReloadAlt:
+                            ee.items[t.action.item] && (x = this.localization.translate("game-reloading"));
                             break;
-                        case u.UseItem:
-                            m.items[t.action.item] && (P = this.localization.translate("game-using"), I = this.localization.translate("game-" + t.action.item));
+                        case te.UseItem:
+                            ee.items[t.action.item] && (x = this.localization.translate("game-using"), f = this.localization.translate("game-" + t.action.item));
                             break;
-                        case u.Revive:
-                            var C = o.ne(t.action.targetId).name;
-                            P = this.localization.translate("game-reviving"), I = h.downed ? "" : C
+                        case te.Revive:
+                            var b = o.ne(t.action.targetId).name;
+                            x = this.localization.translate("game-reviving"), f = p.downed ? "" : b
                     }
-                    "" == P && "" == I || ("svo" == this.localization.translate("word-order") ? (T += P || "", T += I ? " " + I : "") : "sov" == this.localization.translate("word-order") && (T += I ? I + " " : "", T += P ? " " + P : ""), this.pieTimer.start(T, t.action.time, t.action.duration))
+                    "" == x && "" == f || ("svo" == this.localization.translate("word-order") ? (w += x || "", w += f ? " " + f : "") : "sov" == this.localization.translate("word-order") && (w += f ? f + " " : "", w += x ? " " + x : ""), this.pieTimer.start(w, t.action.time, t.action.duration))
                 }
                 this.bigmapDisplayed || (this.mapSprite.x = this.minimapPos.x + this.mapSprite.width / 2 - t.pos.x / a.width * this.mapSprite.width, this.mapSprite.y = this.minimapPos.y - this.mapSprite.height / 2 + t.pos.y / a.height * this.mapSprite.height);
-                var A = w.create(.5 * n.screenWidth / n.z(), .5 * n.screenHeight / n.z()),
-                    E = {
-                        min: w.sub(n.pos, A),
-                        max: w.add(n.pos, A)
+                var _ = ie.create(.5 * n.screenWidth / n.z(), .5 * n.screenHeight / n.z()),
+                    S = {
+                        min: ie.sub(n.pos, _),
+                        max: ie.add(n.pos, _)
                     },
-                    D = o.ne(t.__id).groupId,
-                    O = o.getGroupInfo(D);
-                if (!O) {
-                    var B = {
+                    k = o.ne(t.__id).groupId,
+                    v = o.getGroupInfo(k);
+                if (!v) {
+                    var z = {
                         playerId: t.__id,
-                        groupId: D,
+                        groupId: k,
                         spectating: this.spectating,
                         playing: this.game.playingTicker,
                         groupInfo: o.groupInfo
                     };
-                    b.logError("badTeamInfo_1: " + JSON.stringify(B))
+                    ne.logError("badTeamInfo_1: " + JSON.stringify(z))
                 }
-                for (var L = f.uiLayout == f.UiLayout.Sm, R = O.playerIds.length, F = 0; F < R; F++) {
-                    var j = this.teamSelectors[F],
-                        q = O.playerIds[F],
-                        N = o.ne(q),
-                        V = q == h.__id,
-                        G = o.se(q);
-                    if (G && s > 1) {
-                        j.groupIdDisplayed || (j.groupId.css("display", "block"), j.groupIdDisplayed = !0), this.updateTeam(F, v.htmlEscape(N.name), G.health, {
-                            disconnected: G.disconnected,
-                            dead: G.dead,
-                            downed: G.downed,
-                            factionLeader: G.factionLeader
-                        }, N.playerId, N.teamId, o);
-                        for (var U in j.indicators)
-                            if (j.indicators.hasOwnProperty(U)) {
-                                var H = j.indicators[U],
-                                    W = H.elem,
-                                    K = !0;
-                                if ((!V || H.displayAll) && !l) {
-                                    var Z = G.pos,
-                                        X = w.normalizeSafe(w.sub(Z, n.pos), w.create(1, 0)),
-                                        Y = c.intersectRayAabb(n.pos, X, E.min, E.max),
-                                        J = Math.atan2(X.y, -X.x) + .5 * Math.PI,
-                                        Q = n.pointToScreen(Y),
-                                        $ = c.testCircleAabb(Z, m.player.radius, E.min, E.max);
-                                    if (!G.dead && !$) {
-                                        var ee = 32,
-                                            te = "translate(-50%, -50%) rotate(" + J + "rad)";
-                                        L && (ee = 16, te += " scale(0.5)"), K = !1;
-                                        var ae = "iphonex" == f.model && f.webview ? 20 : 0;
-                                        W.css({
-                                            left: x.clamp(Q.x, ee, n.screenWidth - ee),
-                                            top: x.clamp(Q.y, ee, n.screenHeight - ee - ae),
-                                            transform: te
-                                        }), H.displayed || (W.css("display", "block"), H.displayed = !0)
+                for (var M = oe.uiLayout == oe.UiLayout.Sm, T = v.playerIds.length, A = 0; A < T; A++) {
+                    var C = this.teamSelectors[A],
+                        I = v.playerIds[A],
+                        P = o.ne(I),
+                        E = I == p.__id,
+                        O = o.se(I);
+                    if (O && 1 < s)
+                        for (var D in C.groupIdDisplayed || (C.groupId.css("display", "block"), C.groupIdDisplayed = !0), this.updateTeam(A, se.htmlEscape(P.name), O.health, {
+                                disconnected: O.disconnected,
+                                dead: O.dead,
+                                downed: O.downed,
+                                factionLeader: O.factionLeader
+                            }, P.playerId, P.teamId, o), C.indicators)
+                            if (C.indicators.hasOwnProperty(D)) {
+                                var L = C.indicators[D],
+                                    B = L.elem,
+                                    R = !0;
+                                if ((!E || L.displayAll) && !l) {
+                                    var F = O.pos,
+                                        j = ie.normalizeSafe(ie.sub(F, n.pos), ie.create(1, 0)),
+                                        N = $.intersectRayAabb(n.pos, j, S.min, S.max),
+                                        q = Math.atan2(j.y, -j.x) + .5 * Math.PI,
+                                        V = n.pointToScreen(N),
+                                        G = $.testCircleAabb(F, ee.player.radius, S.min, S.max);
+                                    if (!O.dead && !G) {
+                                        var U = 32,
+                                            H = "translate(-50%, -50%) rotate(" + q + "rad)";
+                                        M && (U = 16, H += " scale(0.5)"), R = !1;
+                                        var W = "iphonex" == oe.model && oe.webview ? 20 : 0;
+                                        B.css({
+                                            left: re.clamp(V.x, U, n.screenWidth - U),
+                                            top: re.clamp(V.y, U, n.screenHeight - U - W),
+                                            transform: H
+                                        }), L.displayed || (B.css("display", "block"), L.displayed = !0)
                                     }
                                 }
-                                K && H.displayed && (W.css("display", "none"), H.displayed = !1)
+                                R && L.displayed && (B.css("display", "none"), L.displayed = !1)
                             }
-                    }
                 }
-                for (var ie = R; ie < this.teamSelectors.length; ie++) {
-                    var re = this.teamSelectors[ie];
-                    for (var oe in re.indicators)
-                        if (re.indicators.hasOwnProperty(oe)) {
-                            var ne = re.indicators[oe];
-                            ne.displayed && (ne.elem.css("display", "none"), ne.displayed = !1)
+                for (var K = T; K < this.teamSelectors.length; K++) {
+                    var Z = this.teamSelectors[K];
+                    for (var X in Z.indicators)
+                        if (Z.indicators.hasOwnProperty(X)) {
+                            var Q = Z.indicators[X];
+                            Q.displayed && (Q.elem.css("display", "none"), Q.displayed = !1)
                         }
-                    re.groupIdDisplayed && (re.groupId.css("display", "none"), re.groupIdDisplayed = !1)
+                    Z.groupIdDisplayed && (Z.groupId.css("display", "none"), Z.groupIdDisplayed = !1)
                 }
                 if (a.factionMode) {
-                    var se = o.ne(h.__id);
-                    if (this.flairId != se.teamId) {
-                        this.flairId = se.teamId;
-                        var le = 1 == this.flairId ? "red" : "blue";
+                    var Y = o.ne(p.__id);
+                    if (this.flairId != Y.teamId) {
+                        this.flairId = Y.teamId;
+                        var J = 1 == this.flairId ? "red" : "blue";
                         this.flairElems.css({
                             display: "block",
-                            "background-image": "url(../img/gui/player-patch-" + le + ".svg)"
+                            "background-image": "url(../img/gui/player-patch-" + J + ".svg)"
                         })
                     }
                 }
-                s > 1 && this.groupPlayerCount != R && f.uiLayout == f.UiLayout.Lg && (this.groupPlayerCount = R, this.spectateOptionsWrapper.css({
+                1 < s && this.groupPlayerCount != T && oe.uiLayout == oe.UiLayout.Lg && (this.groupPlayerCount = T, this.spectateOptionsWrapper.css({
                     top: this.groupPlayerCount * this.teamMemberHeight + 12
                 })), this.updatePlayerMapSprites(e, t, o, a), this.mapSpriteBarn.update(e, this, a), this.pieTimer.update(e, n), this.trySendAdStatus()
             },
             updatePlayerMapSprites: function(e, t, a, i) {
-                for (var r = this, o = a.ne(t.__id), n = (a.getGroupInfo(o.groupId), a.getTeamInfo(o.teamId), 0), s = function(e, t, a, i, o, s, c) {
-                        if (n >= r.playerMapSprites.length) {
-                            var m = r.mapSpriteBarn.addSprite();
-                            r.playerMapSprites.push(m)
+                for (var c = this, r = a.ne(t.__id), m = (a.getGroupInfo(r.groupId), a.getTeamInfo(r.teamId), 0), o = function(e, t, a, i, r, o, n) {
+                        if (m >= c.playerMapSprites.length) {
+                            var s = c.mapSpriteBarn.addSprite();
+                            c.playerMapSprites.push(s)
                         }
-                        var p = r.playerMapSprites[n++];
-                        p.pos = w.copy(e), p.scale = t, p.alpha = a, p.visible = i, p.zOrder = o, p.sprite.texture = l.Texture.fromImage(s), p.sprite.tint = c
-                    }, c = Object.keys(a.playerStatus), m = 0; m < c.length; m++) {
-                    var p = a.playerStatus[c[m]],
-                        d = p.playerId,
-                        h = a.ne(d),
-                        u = h.groupId == o.groupId,
-                        g = 65535 + 2 * d;
-                    d == o.playerId && (g += 131070), p.factionLeader && (g += 65535);
-                    var y = "player-map-inner.img";
-                    p.dead ? y = p.factionLeader ? "skull-leader.img" : "skull-outlined.img" : p.factionLeader ? y = "player-star.img" : p.downed && (y = u ? "player-map-inner.img" : "player-map-downed.img");
-                    var x = u ? a.getGroupColor(d) : a.getTeamColor(h.teamId),
-                        b = f.uiLayout == f.UiLayout.Sm ? .15 : .2,
-                        _ = b;
-                    if (_ = u ? p.dead ? 1.5 * b : p.factionLeader ? 1.25 * b : 1 * b : p.dead || p.downed || p.factionLeader ? 1.25 * b : .75 * b, s(p.pos, _, p.minimapAlpha, p.minimapVisible, g, y, x), u) {
-                        var S = f.uiLayout == f.UiLayout.Sm ? .25 : .3,
-                            k = p.minimapVisible && !p.factionLeader;
-                        s(p.pos, S, p.minimapAlpha, k, g - 1, "player-map-outer.img", 16777215)
+                        var l = c.playerMapSprites[m++];
+                        l.pos = ie.copy(e), l.scale = t, l.alpha = a, l.visible = i, l.zOrder = r, l.sprite.texture = S.Texture.fromImage(o), l.sprite.tint = n
+                    }, n = Object.keys(a.playerStatus), s = 0; s < n.length; s++) {
+                    var l = a.playerStatus[n[s]],
+                        p = l.playerId,
+                        d = a.ne(p),
+                        h = d.groupId == r.groupId,
+                        u = 65535 + 2 * p;
+                    p == r.playerId && (u += 131070), l.factionLeader && (u += 65535);
+                    var g = "player-map-inner.img";
+                    l.dead ? g = l.factionLeader ? "skull-leader.img" : "skull-outlined.img" : l.factionLeader ? g = "player-star.img" : l.downed && (g = h ? "player-map-inner.img" : "player-map-downed.img");
+                    var y, w = h ? a.getGroupColor(p) : a.getTeamColor(d.teamId),
+                        x = oe.uiLayout == oe.UiLayout.Sm ? .15 : .2;
+                    if (y = h ? l.dead ? 1.5 * x : l.factionLeader ? 1.25 * x : 1 * x : l.dead || l.downed || l.factionLeader ? 1.25 * x : .75 * x, o(l.pos, y, l.minimapAlpha, l.minimapVisible, u, g, w), h) {
+                        var f = oe.uiLayout == oe.UiLayout.Sm ? .25 : .3,
+                            b = l.minimapVisible && !l.factionLeader;
+                        o(l.pos, f, l.minimapAlpha, b, u - 1, "player-map-outer.img", 16777215)
                     }
                 }
-                for (var v = this.playerMapSprites.length - 1; v >= n; v--) this.playerMapSprites[v].visible = !1
+                for (var _ = this.playerMapSprites.length - 1; m <= _; _--) this.playerMapSprites[_].visible = !1
             },
             getMinimapMargin: function() {
-                return f.uiLayout == f.UiLayout.Sm ? 4 : 16
+                return oe.uiLayout == oe.UiLayout.Sm ? 4 : 16
             },
             getMinimapSize: function() {
-                return f.uiLayout == f.UiLayout.Sm ? 192 : 256
+                return oe.uiLayout == oe.UiLayout.Sm ? 192 : 256
             },
             getMinimapBorderWidth: function() {
-                return f.uiLayout == f.UiLayout.Sm ? 1 : 4
+                return oe.uiLayout == oe.UiLayout.Sm ? 1 : 4
             },
-            createPing: function(e, t, a, i, r, o) {
+            createPing: function(e, i, t, a, r, o) {
                 var n = this,
-                    s = h[e];
+                    s = x[e];
                 if (s) {
-                    var c = function(e, a) {
-                            var i = n.mapSpriteBarn.addSprite();
-                            return i.pos = w.copy(t), i.scale = e, i.lifetime = s.mapLife, i.pulse = !1, i.zOrder = 100, i.sprite.texture = l.Texture.fromImage(s.mapTexture), i.sprite.tint = a, i
-                        },
-                        m = function(e) {
+                    var l = function(e, t) {
                             var a = n.mapSpriteBarn.addSprite();
-                            return a.pos = w.copy(t), a.scale = 0, a.lifetime = s.pingLife, a.pulse = !0, a.zOrder = 99, a.sprite.texture = l.Texture.fromImage("ping-map-pulse.img"), a.sprite.tint = e, a
+                            return a.pos = ie.copy(i), a.scale = e, a.lifetime = s.mapLife, a.pulse = !1, a.zOrder = 100, a.sprite.texture = S.Texture.fromImage(s.mapTexture), a.sprite.tint = t, a
+                        },
+                        c = function(e) {
+                            var t = n.mapSpriteBarn.addSprite();
+                            return t.pos = ie.copy(i), t.scale = 0, t.lifetime = s.pingLife, t.pulse = !0, t.zOrder = 99, t.sprite.texture = S.Texture.fromImage("ping-map-pulse.img"), t.sprite.tint = e, t
                         };
-                    if (s.mapEvent) c(1.5 * (f.uiLayout == f.UiLayout.Sm ? .15 : .2), s.tint).release(), m(s.tint).release();
+                    if (s.mapEvent) l(1.5 * (oe.uiLayout == oe.UiLayout.Sm ? .15 : .2), s.tint).release(), c(s.tint).release();
                     else {
-                        var p = 16777215,
-                            d = r.ne(i),
-                            u = r.ne(a),
-                            g = r.se(a);
-                        d && u && g && (p = g.factionLeader ? 65280 : d.groupId == u.groupId ? r.getGroupColor(a) : r.getTeamColor(u.teamId)), this.playerPingSprites[a] || (this.playerPingSprites[a] = []);
-                        for (var y = this.playerPingSprites[a], x = 0; x < y.length; x++) y[x].free();
-                        var b = f.uiLayout == f.UiLayout.Sm ? .15 : .2,
-                            _ = c(b, p),
-                            S = m(p);
-                        y.push(_), y.push(S)
+                        var m = 16777215,
+                            p = r.ne(a),
+                            d = r.ne(t),
+                            h = r.se(t);
+                        p && d && h && (m = h.factionLeader ? 65280 : p.groupId == d.groupId ? r.getGroupColor(t) : r.getTeamColor(d.teamId)), this.playerPingSprites[t] || (this.playerPingSprites[t] = []);
+                        for (var u = this.playerPingSprites[t], g = 0; g < u.length; g++) u[g].free();
+                        var y = l(oe.uiLayout == oe.UiLayout.Sm ? .15 : .2, m),
+                            w = c(m);
+                        u.push(y), u.push(w)
                     }
                 }
             },
             updateMapSprite: function(e, t, a, i) {
-                e.displayed && (void 0 != e.life && (e.life -= i, e.displayed = e.life > 0, e.maxLife - e.life < .1 ? t.alpha = (e.maxLife - e.life) / .1 : e.life < .5 ? t.alpha = x.max(e.life / .5, 0) : t.alpha = 1), e.pulse && e.displayed && (e.scale = e.scale + i / 2.5, t.scale.set(e.scale, e.scale)), t.visible = a && t.alpha > 0)
+                e.displayed && (null != e.life && (e.life -= i, e.displayed = 0 < e.life, e.maxLife - e.life < .1 ? t.alpha = (e.maxLife - e.life) / .1 : e.life < .5 ? t.alpha = re.max(e.life / .5, 0) : t.alpha = 1), e.pulse && e.displayed && (e.scale = e.scale + i / 2.5, t.scale.set(e.scale, e.scale)), t.visible = a && 0 < t.alpha)
             },
             le: function(e) {
                 this.ee.ce(e)
@@ -7836,26 +7703,25 @@
             getMapPosFromWorldPos: function(e, t) {
                 var a = this.mapSprite.x - this.mapSprite.width / 2 + e.x / t.width * this.mapSprite.width,
                     i = this.mapSprite.y + this.mapSprite.height / 2 - e.y / t.height * this.mapSprite.height;
-                return w.create(a, i)
+                return ie.create(a, i)
             },
             getWorldPosFromMapPos: function(e, t, a) {
                 var i = !1;
-                if (f.screenWidth, this.bigmapDisplayed) {
+                if (oe.screenWidth, this.bigmapDisplayed) {
                     var r = (a.screenWidth - this.mapSprite.width) / 2,
                         o = (a.screenHeight - this.mapSprite.height) / 2;
-                    f.uiLayout != f.UiLayout.Sm || f.isLandscape || (o = 0), i = e.x > r && e.x < a.screenWidth - r && e.y > o && e.y < a.screenHeight - o
+                    oe.uiLayout != oe.UiLayout.Sm || oe.isLandscape || (o = 0), i = e.x > r && e.x < a.screenWidth - r && e.y > o && e.y < a.screenHeight - o
                 } else if (this.minimapDisplayed) {
                     var n = this.getMinimapSize(),
                         s = this.getMinimapMargin(),
-                        l = n * this.screenScaleFactor,
-                        c = .5 * (l + s);
-                    i = e.x > this.minimapPos.x - c && e.x < this.minimapPos.x + c && e.y > this.minimapPos.y - c && e.y < this.minimapPos.y + c
+                        l = .5 * (n * this.screenScaleFactor + s);
+                    i = e.x > this.minimapPos.x - l && e.x < this.minimapPos.x + l && e.y > this.minimapPos.y - l && e.y < this.minimapPos.y + l
                 }
                 if (i) {
-                    var m = w.create(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y + this.mapSprite.height / 2),
-                        p = (e.x - m.x) / this.mapSprite.width * t.width,
-                        d = (m.y - e.y) / this.mapSprite.height * t.height;
-                    return w.create(p, d)
+                    var c = ie.create(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y + this.mapSprite.height / 2),
+                        m = (e.x - c.x) / this.mapSprite.width * t.width,
+                        p = (c.y - e.y) / this.mapSprite.height * t.height;
+                    return ie.create(m, p)
                 }
                 return !1
             },
@@ -7866,36 +7732,36 @@
                 this.gameElem.css("display", "block")
             },
             removeAds: function() {
-                if (f.webview && f.version >= "1.0.8") this.adManager.hideBannerAd();
+                if (oe.webview && "1.0.8" <= oe.version) this.adManager.hideBannerAd();
                 else if (window.aiptag) {
-                    var e = [];
-                    e = f.webview ? ["surviv-io_300x250_webview", "surviv-io_728x90_webview", "surviv-io_300x250_webview_2"] : f.mobile ? ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_mobile_2"] : ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_2"];
-                    for (var t = 0; t < e.length; t++) ! function(t) {
-                        var a = e[t];
+                    var a;
+                    a = oe.webview ? ["surviv-io_300x250_webview", "surviv-io_728x90_webview", "surviv-io_300x250_webview_2"] : oe.mobile ? ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_mobile_2"] : ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_2"];
+                    for (var i = 0; i < a.length; i++) ! function(e) {
+                        var t = a[i];
                         window.aiptag.cmd.display.push(function() {
-                            aipDisplayTag.destroy(a)
+                            aipDisplayTag.destroy(t)
                         })
-                    }(t)
+                    }()
                 }
             },
             refeshMainPageAds: function() {
-                if (f.webview && f.version >= "1.0.8") this.adManager.showBannerAd();
+                if (oe.webview && "1.0.8" <= oe.version) this.adManager.showBannerAd();
                 else if (window.aiptag) {
-                    var e = [];
-                    f.webview ? (e = ["surviv-io_300x250_webview"], f.tablet && e.push("surviv-io_728x90_webview")) : f.mobile ? (e = ["surviv-io_300x250"], f.tablet && e.push("surviv-io_728x90")) : e = ["surviv-io_300x250", "surviv-io_728x90"];
-                    for (var t = 0; t < e.length; t++) ! function(t) {
-                        var a = e[t];
+                    var a = [];
+                    oe.webview ? (a = ["surviv-io_300x250_webview"], oe.tablet && a.push("surviv-io_728x90_webview")) : oe.mobile ? (a = ["surviv-io_300x250"], oe.tablet && a.push("surviv-io_728x90")) : a = ["surviv-io_300x250", "surviv-io_728x90"];
+                    for (var i = 0; i < a.length; i++) ! function(e) {
+                        var t = a[i];
                         window.aiptag.cmd.display.push(function() {
-                            aipDisplayTag.display(a)
+                            aipDisplayTag.display(t)
                         })
-                    }(t)
+                    }()
                 }
             },
             trySendAdStatus: function() {
                 if (++this.frame % 180 == 0 && !this.sentAdStatus && (window.aiptagPreroll || window.freestarPreroll || this.game.H)) {
                     this.sentAdStatus = !0;
-                    var e = new y.AdStatusMsg;
-                    e.blocked = window.adsBlocked, e.prerollLoaded = void 0 !== window.preroll, e.prerollFreestar = !!window.freestarPreroll, e.prerollAIP = !!window.aiptagPreroll, this.game.q(y.Msg.AdStatus, e)
+                    var e = new o.AdStatusMsg;
+                    e.blocked = window.adsBlocked, e.prerollLoaded = void 0 !== window.preroll, e.prerollFreestar = !!window.freestarPreroll, e.prerollAIP = !!window.aiptagPreroll, this.game.q(o.Msg.AdStatus, e)
                 }
             },
             showKill: function(e, t, a, i, r) {
@@ -7905,12 +7771,12 @@
                     l = t.downed && !t.killed;
                 l && (s = this.localization.translate("game-knocked-out"));
                 var c = t.suicide ? r ? this.localization.translate("game-themselves") : this.localization.translate("game-yourself").toUpperCase() : t.name,
-                    p = this.localization.translate("game-" + a);
-                i == m.DamageType.Airstrike && (p = this.localization.translate("game-an-air-strike"));
-                var d = n + " " + s + " " + c;
-                (e.completeKill || l) && p && (d += " " + this.localization.translate("game-with") + " " + p), this.killText.html(d);
-                var h = "";
-                l || t.suicide || t.teamKill || (h = e.kills.toString() + (1 != e.kills ? " " + this.localization.translate("game-kills") : " " + this.localization.translate("game-kill"))), this.killCount.html(h), this.killTimeout && clearTimeout(this.killTimeout), this.killElem.stop(!0), this.killElem.fadeIn(0), this.killTimeout = setTimeout(function() {
+                    m = this.localization.translate("game-" + a);
+                i == ee.DamageType.Airstrike && (m = this.localization.translate("game-an-air-strike"));
+                var p = n + " " + s + " " + c;
+                (e.completeKill || l) && m && (p += " " + this.localization.translate("game-with") + " " + m), this.killText.html(p);
+                var d = "";
+                l || t.suicide || t.teamKill || (d = e.kills.toString() + (1 != e.kills ? " " + this.localization.translate("game-kills") : " " + this.localization.translate("game-kill"))), this.killCount.html(d), this.killTimeout && clearTimeout(this.killTimeout), this.killElem.stop(!0), this.killElem.fadeIn(0), this.killTimeout = setTimeout(function() {
                     o.killElem.fadeOut(1e3)
                 }, 6e3), r || l || this.updatePlayerKills(e.kills)
             },
@@ -7919,16 +7785,16 @@
                     o = i ? t.name : this.localization.translate("game-you").toUpperCase(),
                     n = this.localization.translate("game-" + a),
                     s = e.name;
-                e.damageType == m.DamageType.Gas ? s = this.localization.translate("game-the-red-zone") : e.damageType == m.DamageType.Airdrop ? s = this.localization.translate("game-the-air-drop") : e.damageType == m.DamageType.Airstrike && (s = this.localization.translate("game-the-air-strike"));
+                e.damageType == ee.DamageType.Gas ? s = this.localization.translate("game-the-red-zone") : e.damageType == ee.DamageType.Airdrop ? s = this.localization.translate("game-the-air-drop") : e.damageType == ee.DamageType.Airstrike && (s = this.localization.translate("game-the-air-strike"));
                 var l = this.localization.translate("game-with"),
                     c = s + " knocked " + o + " out";
-                n && e.damageType == m.DamageType.Player && (c += " " + l + " " + n), e.damageType == m.DamageType.Airstrike && e.name && (n = this.localization.translate("game-an-air-strike"), c = s + " knocked " + o + " out " + l + " " + n), this.killText.html(c), this.killCount.html(""), this.killTimeout && clearTimeout(this.killTimeout), this.killElem.stop(!0), this.killElem.fadeIn(0), this.killTimeout = setTimeout(function() {
+                n && e.damageType == ee.DamageType.Player && (c += " " + l + " " + n), e.damageType == ee.DamageType.Airstrike && e.name && (c = s + " knocked " + o + " out " + l + " " + (n = this.localization.translate("game-an-air-strike"))), this.killText.html(c), this.killCount.html(""), this.killTimeout && clearTimeout(this.killTimeout), this.killElem.stop(!0), this.killElem.fadeIn(0), this.killTimeout = setTimeout(function() {
                     r.killElem.fadeOut(1e3)
                 }, 6e3)
             },
             clearUI: function() {
                 this.pieTimer.stop(), this.curAction = {
-                    type: u.None
+                    type: te.None
                 }, this.displayMapLarge(!0), this.displayMiniMap(), this.clearStatsElems(), this.killElem.hide(), this.clearTeamUI(), this.toggleEscMenu(!0), this.toggleLocalStats(!0), this.visibilityMode = 0, this.spectatorCount = 0, this.updatePlayerKills(0)
             },
             beginSpectating: function() {
@@ -7938,7 +7804,7 @@
                 this.displayingStats = !1, this.statsMain.css("display", "none"), this.statsElem.stop().css({
                     display: "none",
                     opacity: 0
-                }), this.statsContents.stop().hide(), f.webview && f.version >= "1.0.8" && this.adManager.hideBannerAd()
+                }), this.statsContents.stop().hide(), oe.webview && "1.0.8" <= oe.version && this.adManager.hideBannerAd()
             },
             teamModeToString: function(e) {
                 var t = {
@@ -7954,7 +7820,7 @@
                 return e ? this.spectatedPlayerName + " " + this.localization.translate("game-won-the-game") : this.localization.translate("game-chicken")
             },
             getTitleDefeatText: function(e, t) {
-                return t ? this.spectatedPlayerName + " " + this.localization.translate("game-player-died") + "." : e > 1 ? this.localization.translate("game-team-eliminated") : this.localization.translate("game-You") + " " + this.localization.translate("game-you-died") + "."
+                return t ? this.spectatedPlayerName + " " + this.localization.translate("game-player-died") + "." : 1 < e ? this.localization.translate("game-team-eliminated") : this.localization.translate("game-You") + " " + this.localization.translate("game-you-died") + "."
             },
             getOverviewElems: function(e, t, a, i) {
                 if (i) {
@@ -7964,113 +7830,110 @@
                 }
                 return 1 == e ? '<div><span class="ui-stats-header-stat">' + this.teamModeToString(e) + ' </span><span class="ui-stats-header-value">#' + t + "</span></div>" : '<div class="ui-stats-header-right"><span class="ui-stats-header-stat">' + this.teamModeToString(e) + ' </span><span class="ui-stats-header-value">#' + t + '</span></div><div class="ui-stats-header-left"><span class="ui-stats-header-stat">' + this.localization.translate("game-team-kills") + ' </span><span class="ui-stats-header-value">' + a + "</span></div>"
             },
-            showStats: function(e, t, a, r, o, n, l, c, m, p, d, h) {
-                var u = this;
-                if (!c || t == n || o) {
-                    this.displayingStats = !0, this.pieTimer.stop(), this.toggleEscMenu(!0), this.displayMapLarge(!0), this.clearStatsElems(), this.setSpectating(!1, l), this.removeAds(), this.statsMain.css("display", "block"), this.statsLogo.css("display", "block"), this.statsContentsContainer.css({
+            showStats: function(e, t, a, i, r, o, n, s, l, c, m, p) {
+                var d = this;
+                if (!s || t == o || r) {
+                    this.displayingStats = !0, this.pieTimer.stop(), this.toggleEscMenu(!0), this.displayMapLarge(!0), this.clearStatsElems(), this.setSpectating(!1, n), this.removeAds(), this.statsMain.css("display", "block"), this.statsLogo.css("display", "block"), this.statsContentsContainer.css({
                         top: ""
                     }), this.statsInfoBox.css({
                         height: ""
                     });
-                    var g = n == r,
-                        y = g ? 1750 : 2500;
-                    this.setBannerAd(y, !0);
-                    for (var w = n == r || c && r == t, b = c && n != t, _ = w ? this.getTitleVictoryText(b) : this.getTitleDefeatText(l, b), S = 0, k = 0; k < e.length; k++) S += e[k].kills;
-                    var z = this.getOverviewElems(l, a, S, h),
-                        M = s("<div/>").append(s("<div/>", {
+                    var h = o == i ? 1750 : 2500;
+                    this.setBannerAd(h, !0);
+                    for (var u = s && o != t, g = o == i || s && i == t ? this.getTitleVictoryText(u) : this.getTitleDefeatText(n, u), y = 0, w = 0; w < e.length; w++) y += e[w].kills;
+                    var x = this.getOverviewElems(n, a, y, p),
+                        f = B("<div/>").append(B("<div/>", {
                             class: "ui-stats-header-title",
-                            html: _
-                        })).append(s("<div/>", {
+                            html: g
+                        })).append(B("<div/>", {
                             class: "ui-stats-header-overview",
-                            html: z
+                            html: x
                         }));
-                    this.statsHeader.html(M);
-                    var T = function(e, t) {
-                            return s("<div/>", {
+                    this.statsHeader.html(f);
+                    var b = function(e, t) {
+                            return B("<div/>", {
                                 class: "ui-stats-info"
-                            }).append(s("<div/>", {
+                            }).append(B("<div/>", {
                                 html: e
-                            })).append(s("<div/>", {
+                            })).append(B("<div/>", {
                                 html: t
                             }))
                         },
-                        P = f.uiLayout != f.UiLayout.Sm || f.tablet ? 250 : 125,
-                        I = 0;
-                    I -= (e.length - 1) * P / 2, I -= 10 * (e.length - 1);
-                    for (var C = 0; C < e.length; C++) {
-                        var A = e[C],
-                            E = m.ne(A.playerId),
-                            D = i(A.timeAlive),
-                            O = "ui-stats-info-player";
-                        O += A.dead ? " ui-stats-info-status" : "";
-                        var B = function(e) {
-                            return s("<div/>", {
-                                class: e
-                            })
-                        }(O);
-                        if (B.css("left", I), B.append(s("<div/>", {
+                        _ = oe.uiLayout != oe.UiLayout.Sm || oe.tablet ? 250 : 125,
+                        S = 0;
+                    S -= (e.length - 1) * _ / 2, S -= 10 * (e.length - 1);
+                    for (var k = 0; k < e.length; k++) {
+                        var v = e[k],
+                            z = l.ne(v.playerId),
+                            M = L(v.timeAlive),
+                            T = "ui-stats-info-player";
+                        T += v.dead ? " ui-stats-info-status" : "";
+                        var A = B("<div/>", {
+                            class: T
+                        });
+                        if (A.css("left", S), A.append(B("<div/>", {
                                 class: "ui-stats-info-player-name",
-                                html: v.htmlEscape(E.name)
-                            })), B.append(T(this.localization.translate("game-kills"), "" + A.kills)).append(T(this.localization.translate("game-damage-dealt"), A.damageDealt)).append(T(this.localization.translate("game-damage-taken"), A.damageTaken)).append(T(this.localization.translate("game-survived"), D)), h && o) switch (C) {
+                                html: se.htmlEscape(z.name)
+                            })), A.append(b(this.localization.translate("game-kills"), "" + v.kills)).append(b(this.localization.translate("game-damage-dealt"), v.damageDealt)).append(b(this.localization.translate("game-damage-taken"), v.damageTaken)).append(b(this.localization.translate("game-survived"), M)), p && r) switch (k) {
                             case 1:
-                                B.append(s("<div/>", {
+                                A.append(B("<div/>", {
                                     class: "ui-stats-info-player-badge ui-stats-info-player-red-leader"
                                 }));
                                 break;
                             case 2:
-                                B.append(s("<div/>", {
+                                A.append(B("<div/>", {
                                     class: "ui-stats-info-player-badge ui-stats-info-player-blue-leader"
                                 }));
                                 break;
                             case 3:
-                                var L = 1 == E.teamId ? "ui-stats-info-player-red-ribbon" : "ui-stats-info-player-blue-ribbon";
-                                B.append(s("<div/>", {
-                                    class: "ui-stats-info-player-badge " + L
+                                var C = 1 == z.teamId ? "ui-stats-info-player-red-ribbon" : "ui-stats-info-player-blue-ribbon";
+                                A.append(B("<div/>", {
+                                    class: "ui-stats-info-player-badge " + C
                                 }))
                         }
-                        this.statsInfoBox.append(B), I += 10
+                        this.statsInfoBox.append(A), S += 10
                     }
-                    var R = s("<a/>", {
+                    var I = B("<a/>", {
                         class: "ui-stats-restart btn-green btn-darken menu-option",
                         html: this.localization.translate("game-play-new-game")
                     });
-                    if (R.on("click", function() {
-                            u.quitGame()
-                        }), this.statsOptions.append(R), o || this.waitingForPlayers) R.css({
-                        width: f.uiLayout != f.UiLayout.Sm || f.tablet ? 225 : 130
+                    if (I.on("click", function() {
+                            d.quitGame()
+                        }), this.statsOptions.append(I), r || this.waitingForPlayers) I.css({
+                        width: oe.uiLayout != oe.UiLayout.Sm || oe.tablet ? 225 : 130
                     });
                     else {
-                        R.css({
-                            left: f.uiLayout != f.UiLayout.Sm || f.tablet ? -72 : -46
+                        I.css({
+                            left: oe.uiLayout != oe.UiLayout.Sm || oe.tablet ? -72 : -46
                         });
-                        var F = s("<a/>", {
+                        var P = B("<a/>", {
                             class: "btn-green btn-darken menu-option ui-stats-spectate",
                             html: this.localization.translate("game-spectate")
                         });
-                        F.on("click", this.beginSpectating.bind(this)), this.statsOptions.append(F)
+                        P.on("click", this.beginSpectating.bind(this)), this.statsOptions.append(P)
                     }
-                    var j = 0,
-                        q = 250 / x.max(1, e.length),
-                        N = 750 / x.max(1, e.length);
+                    var E = 0,
+                        O = 250 / re.max(1, e.length),
+                        D = 750 / re.max(1, e.length);
                     this.statsInfoBox.children().each(function(e, t) {
-                        var a = s(t);
-                        a.css("opacity", 0), a.delay(y + N + (j + e) * q).animate({
+                        var a = B(t);
+                        a.css("opacity", 0), a.delay(h + D + (E + e) * O).animate({
                             opacity: 1
                         }, 500, function() {
                             a.children().each(function(e, t) {
-                                s(t).delay(e * q).animate({
+                                B(t).delay(e * O).animate({
                                     opacity: 1
                                 }, 500)
                             })
                         }), a.children().each(function(e, t) {
-                            s(t).css("opacity", 0), j++
-                        }), j++
+                            B(t).css("opacity", 0), E++
+                        }), E++
                     }), this.statsOptions.children().each(function(e, t) {
-                        var a = s(t);
-                        a.hide(), a.delay(y + N + (j + e) * q).fadeIn(500), j++
-                    }), this.statsElem.stop(), this.statsElem.css("display", "block"), this.statsElem.delay(y).animate({
+                        var a = B(t);
+                        a.hide(), a.delay(h + D + (E + e) * O).fadeIn(500), E++
+                    }), this.statsElem.stop(), this.statsElem.css("display", "block"), this.statsElem.delay(h).animate({
                         opacity: 1
-                    }, 1e3), this.statsContents.stop(), this.statsContents.css("display", "block"), this.statsContents.delay(y).animate({
+                    }, 1e3), this.statsContents.stop(), this.statsContents.css("display", "block"), this.statsContents.delay(h).animate({
                         opacity: 1
                     }, 1e3)
                 }
@@ -8085,42 +7948,42 @@
                 }), this.statsMain.css("display", "none")
             },
             showTeamAd: function() {
-                var e = this;
+                var a = this;
                 this.toggleEscMenu(!0), this.displayMapLarge(!0), this.clearStatsElems(), this.statsMain.css("display", "block"), this.statsLogo.css("display", "none"), this.pieTimer.stop(), this.displayingStats = !0, this.statsHeader.html(function() {
-                    var t = e.localization.translate("game-You");
-                    t += " ", t += e.localization.translate("game-you-died"), t += ".";
-                    var a = '<div><span class="ui-stats-header-stat">' + e.localization.translate("game-kills") + " </span>";
-                    return a += '<span class="ui-stats-header-value">' + e.kills + "</span></div>", s("<div/>", {
+                    var e = a.localization.translate("game-You");
+                    e += " ", e += a.localization.translate("game-you-died"), e += ".";
+                    var t = '<div><span class="ui-stats-header-stat">' + a.localization.translate("game-kills") + " </span>";
+                    return t += '<span class="ui-stats-header-value">' + a.kills + "</span></div>", B("<div/>", {
                         class: ""
-                    }).append(s("<div/>", {
+                    }).append(B("<div/>", {
                         class: "ui-stats-header-title",
-                        html: t
-                    })).append(s("<div/>", {
+                        html: e
+                    })).append(B("<div/>", {
                         class: "ui-stats-header-overview",
-                        html: a
+                        html: t
                     }))
                 }()), this.statsContentsContainer.css({
                     top: "10%"
                 }), this.statsInfoBox.css({
                     height: 0
                 });
-                var t = s("<a/>", {
+                var e = B("<a/>", {
                     class: "ui-stats-restart btn-green btn-darken menu-option",
                     html: this.localization.translate("game-play-new-game")
                 });
-                t.on("click", function() {
-                    e.quitGame()
-                }), this.statsOptions.append(t), t.css({
-                    left: f.uiLayout != f.UiLayout.Sm || f.tablet ? -72 : -46
+                e.on("click", function() {
+                    a.quitGame()
+                }), this.statsOptions.append(e), e.css({
+                    left: oe.uiLayout != oe.UiLayout.Sm || oe.tablet ? -72 : -46
                 });
-                var a = s("<a/>", {
+                var t = B("<a/>", {
                     class: "btn-green btn-darken menu-option ui-stats-spectate",
                     html: this.localization.translate("game-spectate")
                 });
-                a.on("click", this.beginSpectating.bind(this)), this.statsOptions.append(a), this.setBannerAd(2500, !1);
+                t.on("click", this.beginSpectating.bind(this)), this.statsOptions.append(t), this.setBannerAd(2500, !1);
                 var i = 0;
                 this.statsOptions.children().each(function(e, t) {
-                    var a = s(t);
+                    var a = B(t);
                     a.hide(), a.delay(4100 + 300 * (i + e)).fadeIn(750), i++
                 }), this.statsElem.stop(), this.statsElem.css("display", "block"), this.statsElem.delay(2500).animate({
                     opacity: 1
@@ -8134,20 +7997,20 @@
                         a.killElem.stop(), a.killElem.hide()
                     },
                     r = Math.max(e - 150, 0);
-                f.webview && f.version >= "1.0.8" ? setTimeout(function() {
+                oe.webview && "1.0.8" <= oe.version ? setTimeout(function() {
                     i(), a.adManager.showBannerAd()
                 }, r) : window.adsBlocked ? (r += 500, setTimeout(function() {
-                    i(), s(f.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
+                    i(), B(oe.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
                     var e = "";
-                    if (e = s(f.webview ? "#surviv-io_300x250_webview_2" : f.mobile ? "#surviv-io_300x250_mobile_2" : "#surviv-io_300x250_2")) {
+                    if (e = B(oe.webview ? "#surviv-io_300x250_webview_2" : oe.mobile ? "#surviv-io_300x250_mobile_2" : "#surviv-io_300x250_2")) {
                         e.html("");
-                        var t = s(".ui-stats-adblock-plea").clone();
+                        var t = B(".ui-stats-adblock-plea").clone();
                         t.css("display", "block"), e.html(t)
                     }
                 }, r)) : window.aiptag && setTimeout(function() {
-                    i(), s(f.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
-                    var e = "";
-                    (e = f.webview ? "surviv-io_300x250_webview_2" : f.mobile ? "surviv-io_300x250_mobile_2" : "surviv-io_300x250_2") && window.aiptag.cmd.display.push(function() {
+                    i(), B(oe.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
+                    var e;
+                    (e = oe.webview ? "surviv-io_300x250_webview_2" : oe.mobile ? "surviv-io_300x250_mobile_2" : "surviv-io_300x250_2") && window.aiptag.cmd.display.push(function() {
                         aipDisplayTag.display(e)
                     })
                 }, r)
@@ -8158,16 +8021,16 @@
                     var o = r.ne(e),
                         n = r.ne(t),
                         s = o.name;
-                    i && o.groupId != n.groupId && (s = o.anonName), this.spectatedPlayerId = e, this.spectatedPlayerName = v.htmlEscape(s), this.spectatedPlayerText.find("#spectate-player").html(this.spectatedPlayerName), this.actionSeq = -1, this.pieTimer.stop()
+                    i && o.groupId != n.groupId && (s = o.anonName), this.spectatedPlayerId = e, this.spectatedPlayerName = se.htmlEscape(s), this.spectatedPlayerText.find("#spectate-player").html(this.spectatedPlayerName), this.actionSeq = -1, this.pieTimer.stop()
                 }
             },
             setSpectating: function(e, t) {
                 if (this.spectating != e)
                     if (this.spectating = e, this.spectating) {
-                        this.spectateMode.css("display", "block"), s(".ui-zoom").removeClass("ui-zoom-hover");
+                        this.spectateMode.css("display", "block"), B(".ui-zoom").removeClass("ui-zoom-hover");
                         var a = 1 == t;
                         this.specPrevButton.css("display", a ? "none" : "block"), this.specNextButton.css("display", a ? "none" : "block"), this.hideStats()
-                    } else this.spectateMode.css("display", "none"), s(".ui-zoom").addClass("ui-zoom-hover")
+                    } else this.spectateMode.css("display", "none"), B(".ui-zoom").addClass("ui-zoom-hover")
             },
             setLocalStats: function(e) {
                 var t = {
@@ -8176,17 +8039,14 @@
                     damageTaken: this.localization.translate("game-damage-taken"),
                     timeAlive: this.localization.translate("game-survived")
                 };
-                this.spectateModeStatsData.empty();
-                for (var a in t)
+                for (var a in this.spectateModeStatsData.empty(), t)
                     if (t.hasOwnProperty(a)) {
-                        var r = t[a],
-                            o = "timeAlive" == a ? i(e[a]) : e[a],
-                            n = '<tr><td class="ui-spectate-stats-category">' + r + '</td><td class="ui-spectate-stats-value">' + o + "</td></tr>";
-                        this.spectateModeStatsData.append(n)
+                        var i = '<tr><td class="ui-spectate-stats-category">' + t[a] + '</td><td class="ui-spectate-stats-value">' + ("timeAlive" == a ? L(e[a]) : e[a]) + "</td></tr>";
+                        this.spectateModeStatsData.append(i)
                     }
             },
             toggleLocalStats: function() {
-                var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
+                var e = 0 < arguments.length && void 0 !== arguments[0] && arguments[0],
                     t = "none" == this.spectateModeStats.css("display") && !e;
                 this.spectateModeStats.css("display", t ? "inline-block" : "none"), this.specStatsButton.html(t ? this.localization.translate("game-hide-match-stats") : this.localization.translate("game-view-match-stats"))
             },
@@ -8194,22 +8054,22 @@
                 this.playersAlive.html(e), this.leaderboardAlive.css("display", "block"), this.leaderboardAliveFaction.css("display", "none")
             },
             updatePlayersAliveRed: function(e) {
-                this.playersAliveRed.html(e), this.playersAliveRedCounter = e, this.leaderboardAlive.css("display", "none"), this.leaderboardAliveFaction.css("display", "block"), s("#ui-map-counter-default").css("display", "none"), s("#ui-map-counter-faction").css("display", "inline-block")
+                this.playersAliveRed.html(e), this.playersAliveRedCounter = e, this.leaderboardAlive.css("display", "none"), this.leaderboardAliveFaction.css("display", "block"), B("#ui-map-counter-default").css("display", "none"), B("#ui-map-counter-faction").css("display", "inline-block")
             },
             updatePlayersAliveBlue: function(e) {
-                this.playersAliveBlue.html(e), this.playersAliveBlueCounter = e, this.leaderboardAlive.css("display", "none"), this.leaderboardAliveFaction.css("display", "block"), s("#ui-map-counter-default").css("display", "none"), s("#ui-map-counter-faction").css("display", "inline-block")
+                this.playersAliveBlue.html(e), this.playersAliveBlueCounter = e, this.leaderboardAlive.css("display", "none"), this.leaderboardAliveFaction.css("display", "block"), B("#ui-map-counter-default").css("display", "none"), B("#ui-map-counter-faction").css("display", "inline-block")
             },
             updatePlayerKills: function(e) {
                 this.playerKills.html(e), this.kills = e
             },
             displayMapLarge: function(e) {
                 this.bigmapDisplayed = !e && !this.bigmapDisplayed, this.bigmapDisplayed ? this.container.alpha = 1 : this.container.alpha = this.minimapDisplayed ? 1 : 0;
-                var t = f.uiLayout == f.UiLayout.Sm ? ".js-ui-mobile-map-hidden" : "js-ui-desktop-map-hidden";
-                t += ", .js-ui-map-hidden", s(2 == this.visibilityMode ? ".js-ui-hud-show" : t).css("display", this.bigmapDisplayed ? "none" : "block"), s(".js-ui-map-show").css("display", this.bigmapDisplayed ? "block" : "none"), this.updateSpectatorCountDisplay(!0), this.redraw(this.game.ae)
+                var t = oe.uiLayout == oe.UiLayout.Sm ? ".js-ui-mobile-map-hidden" : "js-ui-desktop-map-hidden";
+                t += ", .js-ui-map-hidden", B(2 == this.visibilityMode ? ".js-ui-hud-show" : t).css("display", this.bigmapDisplayed ? "none" : "block"), B(".js-ui-map-show").css("display", this.bigmapDisplayed ? "block" : "none"), this.updateSpectatorCountDisplay(!0), this.redraw(this.game.ae)
             },
             updateSpectatorCountDisplay: function(e) {
-                var t = !this.bigmapDisplayed && this.spectatorCount > 0;
-                e = e || this.spectatorCount > 0 && !this.spectatorCounterDisplayed || 0 == this.spectatorCount && this.spectatorCounterDisplayed, this.spectatorCount != this.prevSpectatorCount && (this.spectatorCounter.html(this.spectatorCount), this.prevSpectatorCount = this.spectatorCount), e && (this.spectatorCounterContainer.css("display", t ? "block" : "none"), this.spectatorCounterDisplayed = t)
+                var t = !this.bigmapDisplayed && 0 < this.spectatorCount;
+                e = e || 0 < this.spectatorCount && !this.spectatorCounterDisplayed || 0 == this.spectatorCount && this.spectatorCounterDisplayed, this.spectatorCount != this.prevSpectatorCount && (this.spectatorCounter.html(this.spectatorCount), this.prevSpectatorCount = this.spectatorCount), e && (this.spectatorCounterContainer.css("display", t ? "block" : "none"), this.spectatorCounterDisplayed = t)
             },
             toggleMiniMap: function() {
                 this.minimapDisplayed ? this.hideMiniMap() : this.displayMiniMap()
@@ -8234,7 +8094,7 @@
             },
             displayMiniMap: function() {
                 if (!this.bigmapDisplayed) {
-                    var e = f.uiLayout == f.UiLayout.Sm;
+                    var e = oe.uiLayout == oe.UiLayout.Sm;
                     this.minimapDisplayed = !0, this.container.alpha = 1, this.mapInfo.css("bottom", this.mapInfoBottom), this.spectatorCounterContainer.css({
                         bottom: e ? 0 : 218,
                         left: e ? 0 : 6
@@ -8242,22 +8102,22 @@
                 }
             },
             displayAnnouncement: function(e) {
-                e.length > 0 && (this.announcement.html(e), this.announcement.fadeIn(400, function() {
+                0 < e.length && (this.announcement.html(e), this.announcement.fadeIn(400, function() {
                     setTimeout(function() {
-                        s("#ui-announcement").fadeOut(800)
+                        B("#ui-announcement").fadeOut(800)
                     }, 3e3)
                 }))
             },
             displayGasAnnouncement: function(e, t) {
                 var a = "";
                 switch (e) {
-                    case g.Waiting:
+                    case ae.Waiting:
                         a = this.localization.translate("game-red-zone-advances");
                         var i = Math.floor(t / 60),
                             r = t - 60 * i;
-                        a += i > 1 ? " " + i + " " + this.localization.translate("game-minutes") : "", a += 1 == i ? " " + i + " " + this.localization.translate("game-minute") : "", a += r > 0 ? " " + Math.floor(r) + " " + this.localization.translate("game-seconds") : "";
+                        a += 1 < i ? " " + i + " " + this.localization.translate("game-minutes") : "", a += 1 == i ? " " + i + " " + this.localization.translate("game-minute") : "", a += 0 < r ? " " + Math.floor(r) + " " + this.localization.translate("game-seconds") : "";
                         break;
-                    case g.Moving:
+                    case ae.Moving:
                         a = this.localization.translate("game-red-zone-advancing")
                 }
                 this.displayAnnouncement(a)
@@ -8266,10 +8126,10 @@
                 var a = this.localization.translate("game-youve-been-promoted-to"),
                     i = "";
                 switch (e) {
-                    case m.Role.FactionLeader:
+                    case ee.Role.FactionLeader:
                         i = 1 == t ? this.localization.translate("game-red-leader") : this.localization.translate("game-blue-leader");
                         break;
-                    case m.Role.Lieutenant:
+                    case ee.Role.Lieutenant:
                         i = this.localization.translate("game-lieutenant")
                 }
                 if (i) {
@@ -8283,13 +8143,13 @@
             render: function(e, t, a, i, r, o) {
                 var n = t.getCircle(),
                     s = this.getMapPosFromWorldPos(n.pos, i),
-                    l = this.getMapPosFromWorldPos(w.add(n.pos, w.create(n.rad, 0)), i),
-                    c = w.length(w.sub(l, s));
+                    l = this.getMapPosFromWorldPos(ie.add(n.pos, ie.create(n.rad, 0)), i),
+                    c = ie.length(ie.sub(l, s));
                 this.gasRenderer.render(s, c, t.isActive());
                 var m = t.circleNew,
                     p = this.getMapPosFromWorldPos(m.pos, i),
-                    d = this.getMapPosFromWorldPos(w.add(m.pos, w.create(m.rad, 0)), i),
-                    h = w.length(w.sub(d, p)),
+                    d = this.getMapPosFromWorldPos(ie.add(m.pos, ie.create(m.rad, 0)), i),
+                    h = ie.length(ie.sub(d, p)),
                     u = this.getMapPosFromWorldPos(e, i),
                     g = t.isActive(),
                     y = t.isActive() && !this.bigmapDisplayed;
@@ -8297,24 +8157,24 @@
             },
             updateHealthBar: function(e, t, a, i) {
                 var r = e,
-                    n = .01 * i.health * r;
-                n = i.dead ? 0 : x.max(n, 1), t.css("width", n), n > 0 && a && a.css("width", n);
-                var s = i.health,
-                    l = this.healthRed,
-                    c = this.healthDarkpink;
-                if (s > 25) {
+                    o = .01 * i.health * r;
+                o = i.dead ? 0 : re.max(o, 1), t.css("width", o), 0 < o && a && a.css("width", o);
+                var n = i.health,
+                    s = this.healthRed,
+                    l = this.healthDarkpink;
+                if (25 < n) {
                     if (i.downed) t.css({
                         backgroundColor: "red"
                     });
                     else {
-                        x.eqAbs(s, 100, .2) ? (l = this.healthGrey, c = this.healthGrey) : x.eqAbs(s, 75, .2) || s >= 75 ? (l = this.healthWhite, c = this.healthWhite) : (l = this.healthDarkpink, c = this.healthLightpink);
-                        var m = l.getColors(),
-                            p = c.getColors(),
-                            d = o(m.r, p.r, 45, s),
-                            h = o(m.g, p.g, 45, s),
-                            u = o(m.b, p.b, 45, s);
+                        l = re.eqAbs(n, 100, .2) ? (s = this.healthGrey, this.healthGrey) : re.eqAbs(n, 75, .2) || 75 <= n ? (s = this.healthWhite, this.healthWhite) : (s = this.healthDarkpink, this.healthLightpink);
+                        var c = s.getColors(),
+                            m = l.getColors(),
+                            p = u(c.r, m.r, 45, n),
+                            d = u(c.g, m.g, 45, n),
+                            h = u(c.b, m.b, 45, n);
                         t.css({
-                            backgroundColor: "rgba(" + d + "," + h + "," + u + ",1)"
+                            backgroundColor: "rgba(" + p + "," + d + "," + h + ",1)"
                         })
                     }
                     t.removeClass("ui-bar-danger")
@@ -8337,10 +8197,10 @@
                 }
             },
             clearTeamUI: function() {
-                s(".ui-team-member").css("display", "none"), s(".ui-team-indicator").css("display", "none"), s(".ui-team-member-name").removeAttr("style"), s(".ui-team-member-status").removeAttr("style"), s(".ui-team-member-status").removeClass("ui-team-member-status-downed ui-team-member-status-dead ui-team-member-status-disconnected icon-pulse"), this.teamSelectors = []
+                B(".ui-team-member").css("display", "none"), B(".ui-team-indicator").css("display", "none"), B(".ui-team-member-name").removeAttr("style"), B(".ui-team-member-status").removeAttr("style"), B(".ui-team-member-status").removeClass("ui-team-member-status-downed ui-team-member-status-dead ui-team-member-status-disconnected icon-pulse"), this.teamSelectors = []
             },
             resize: function(e, t) {
-                this.screenScaleFactor = f.uiLayout == f.UiLayout.Sm ? .5626 : x.min(1, x.clamp(t.screenWidth / 1280, .75, 1) * x.clamp(t.screenHeight / 1024, .75, 1)), this.pieTimer.resize(this.touch, this.screenScaleFactor), this.gasRenderer.resize(), this.mapSprite.texture = e.getMapTexture(), this.redraw(t)
+                this.screenScaleFactor = oe.uiLayout == oe.UiLayout.Sm ? .5626 : re.min(1, re.clamp(t.screenWidth / 1280, .75, 1) * re.clamp(t.screenHeight / 1024, .75, 1)), this.pieTimer.resize(this.touch, this.screenScaleFactor), this.gasRenderer.resize(), this.mapSprite.texture = e.getMapTexture(), this.redraw(t)
             },
             redraw: function(e) {
                 var t = e.screenWidth,
@@ -8348,13 +8208,13 @@
                     i = this.getMinimapMargin(),
                     r = 0,
                     o = 0;
-                "iphonex" == f.model && (f.isLandscape ? r += 28 : o += 32);
+                "iphonex" == oe.model && (oe.isLandscape ? r += 28 : o += 32);
                 var n = this.getMinimapSize(),
                     s = this.getMinimapBorderWidth(),
-                    l = f.uiLayout == f.UiLayout.Sm;
+                    l = oe.uiLayout == oe.UiLayout.Sm;
                 if (this.display.border.clear(), this.container.mask.clear(), this.bigmapDisplayed) {
-                    var c = x.min(t, a);
-                    this.mapSprite.width = c, this.mapSprite.height = c, this.mapSprite.x = t / 2, this.mapSprite.y = a / 2, this.mapSprite.alpha = 1, this.container.mask.beginFill(16777215, 1), this.container.mask.drawRect(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y - this.mapSprite.height / 2, this.mapSprite.width, this.mapSprite.height), this.container.mask.endFill(), f.touch && this.bigmapCollision.css({
+                    var c = re.min(t, a);
+                    this.mapSprite.width = c, this.mapSprite.height = c, this.mapSprite.x = t / 2, this.mapSprite.y = a / 2, this.mapSprite.alpha = 1, this.container.mask.beginFill(16777215, 1), this.container.mask.drawRect(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y - this.mapSprite.height / 2, this.mapSprite.width, this.mapSprite.height), this.container.mask.endFill(), oe.touch && this.bigmapCollision.css({
                         width: a,
                         height: t
                     })
@@ -8380,11 +8240,11 @@
             },
             toggleEscMenu: function() {
                 var e = this,
-                    t = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+                    t = 0 < arguments.length && void 0 !== arguments[0] && arguments[0];
                 if (!this.displayingStats) {
-                    if (this.escMenuDisplayed || t) return this.escMenuDisplayed = !1, this.escMenuElem.css("display", "none"), this.setCurrentGameTab("settings"), s("#ui-center").off("mouseenter mouseleave"), void(this.inputBinds.menuHovered = !1);
+                    if (this.escMenuDisplayed || t) return this.escMenuDisplayed = !1, this.escMenuElem.css("display", "none"), this.setCurrentGameTab("settings"), B("#ui-center").off("mouseenter mouseleave"), void(this.inputBinds.menuHovered = !1);
                     if (this.bigmapDisplayed) return void this.displayMapLarge(!0);
-                    2 == this.visibilityMode && this.cycleVisibilityMode(), this.escMenuDisplayed = !0, this.escMenuElem.css("display", "block"), s("#ui-center").hover(function() {
+                    2 == this.visibilityMode && this.cycleVisibilityMode(), this.escMenuDisplayed = !0, this.escMenuElem.css("display", "block"), B("#ui-center").hover(function() {
                         e.inputBinds.menuHovered = !0
                     }, function() {
                         e.inputBinds.menuHovered = !1
@@ -8392,32 +8252,26 @@
                 }
             },
             setCurrentGameTab: function(e) {
-                this.currentGameTab = e, this.gameTabs.css("display", "none"), this.gameTabBtns.removeClass("btn-game-menu-selected"), s("#ui-game-tab-" + this.currentGameTab).css("display", "block"), s("#btn-game-" + this.currentGameTab).addClass("btn-game-menu-selected"), "keybinds" == this.currentGameTab ? this.inputBindUi.refresh() : this.inputBindUi.cancelBind()
+                this.currentGameTab = e, this.gameTabs.css("display", "none"), this.gameTabBtns.removeClass("btn-game-menu-selected"), B("#ui-game-tab-" + this.currentGameTab).css("display", "block"), B("#btn-game-" + this.currentGameTab).addClass("btn-game-menu-selected"), "keybinds" == this.currentGameTab ? this.inputBindUi.refresh() : this.inputBindUi.cancelBind()
             }
         }, e.exports = {
-            me: r
+            me: i
         }
     },
     "33375c30": function(e, t, a) {
         "use strict";
 
-        function i(e, t, a) {
-            var i = t - e,
-                r = i * a;
-            return Math.abs(r) < .001 ? i : r
-        }
-
-        function r() {
+        function i() {
             this.sprites = [], this.emitters = []
         }
-        var o = (a("0e566746"), a("8b1dfb45")),
-            n = a("6b42806d"),
-            s = a("10899aea"),
-            l = a("ceee80d9"),
-            c = a("1901e2d9"),
-            m = a("c2a798c8"),
-            p = a("6d494b5c");
-        a("c347b8dd"), a("af8ba00f"), r.prototype = {
+        var D = (a("0e566746"), a("8b1dfb45")),
+            C = a("6b42806d"),
+            L = a("10899aea"),
+            B = a("ceee80d9"),
+            I = a("1901e2d9"),
+            R = a("c2a798c8"),
+            F = a("6d494b5c");
+        a("c347b8dd"), a("af8ba00f"), i.prototype = {
             o: function() {
                 this.isNew = !1, this.residue = null, this.ceilingDead = !1, this.ceilingDamaged = !1, this.playedCeilingDeadFx = !1, this.playedSolvedPuzzleFx = !1, this.hasPuzzle = !1, this.puzzleErrSeqModified = !1, this.puzzleErrSeq = 0, this.puzzleSolved = !1, this.interiorSound = ""
             },
@@ -8434,149 +8288,149 @@
                     var t = this.sprites[e];
                     if (!t.active) return t.active = !0, t.sprite
                 }
-                var a = new o.Sprite;
+                var a = new D.Sprite;
                 return a.anchor.set(.5, .5), this.sprites.push({
                     active: !0,
                     sprite: a
                 }), a
             },
-            l: function(e, t, a, i) {
-                var r = this;
-                t && (this.type = e.type, this.pos = m.copy(e.pos), this.ori = e.ori, this.rot = l.oriToRad(e.ori), this.scale = 1, this.layer = e.layer), this.ceilingDead = e.ceilingDead, this.ceilingDamaged = e.ceilingDamaged, this.occupied = e.occupied, this.hasPuzzle = e.hasPuzzle, this.hasPuzzle && (this.puzzleErrSeqModified = e.puzzleErrSeq != this.puzzleErrSeq, this.puzzleSolved = e.puzzleSolved, this.puzzleErrSeq = e.puzzleErrSeq);
-                var s = l.Defs[this.type];
-                if (this.interiorSound = "", s.interiorSound && (s.interiorSound.stopOnPuzzleComplete && this.puzzleSolved || s.interiorSound.startOnPuzzleComplete ? s.interiorSound.startOnPuzzleComplete && this.puzzleSolved && (this.interiorSound = s.interiorSound.sound) : this.interiorSound = s.interiorSound.sound), a) {
-                    this.isNew = !0, this.playedCeilingDeadFx = void 0 !== s.ceiling.destroy && -1 != i.map.deadCeilingIds.indexOf(this.__id), this.playedSolvedPuzzleFx = this.hasPuzzle && -1 != i.map.solvedPuzzleIds.indexOf(this.__id);
-                    var p = function(e) {
-                        var t = e.pos || m.create(0, 0),
-                            a = l.oriToRad(e.rot || 0),
-                            n = r.allocSprite();
-                        n.texture = o.Texture.fromImage(e.sprite), n.tint = e.tint;
-                        var s = i.map.getMapDef().biome.valueAdjust;
-                        return s < 1 && (n.tint = c.adjustValue(n.tint, s)), n.posOffset = m.rotate(t, r.rot), n.rotOffset = a, n.imgAlpha = e.alpha, n.alpha = n.imgAlpha, n.defScale = e.scale, n.mirrorY = !!e.mirrorY, n.visible = !0, n
+            l: function(e, t, a, o) {
+                var n = this;
+                t && (this.type = e.type, this.pos = R.copy(e.pos), this.ori = e.ori, this.rot = B.oriToRad(e.ori), this.scale = 1, this.layer = e.layer), this.ceilingDead = e.ceilingDead, this.ceilingDamaged = e.ceilingDamaged, this.occupied = e.occupied, this.hasPuzzle = e.hasPuzzle, this.hasPuzzle && (this.puzzleErrSeqModified = e.puzzleErrSeq != this.puzzleErrSeq, this.puzzleSolved = e.puzzleSolved, this.puzzleErrSeq = e.puzzleErrSeq);
+                var i = B.Defs[this.type];
+                if (this.interiorSound = "", i.interiorSound && (i.interiorSound.stopOnPuzzleComplete && this.puzzleSolved || i.interiorSound.startOnPuzzleComplete ? i.interiorSound.startOnPuzzleComplete && this.puzzleSolved && (this.interiorSound = i.interiorSound.sound) : this.interiorSound = i.interiorSound.sound), a) {
+                    this.isNew = !0, this.playedCeilingDeadFx = void 0 !== i.ceiling.destroy && -1 != o.map.deadCeilingIds.indexOf(this.__id), this.playedSolvedPuzzleFx = this.hasPuzzle && -1 != o.map.solvedPuzzleIds.indexOf(this.__id);
+                    var r = function(e) {
+                        var t = e.pos || R.create(0, 0),
+                            a = B.oriToRad(e.rot || 0),
+                            i = n.allocSprite();
+                        i.texture = D.Texture.fromImage(e.sprite), i.tint = e.tint;
+                        var r = o.map.getMapDef().biome.valueAdjust;
+                        return r < 1 && (i.tint = I.adjustValue(i.tint, r)), i.posOffset = R.rotate(t, n.rot), i.rotOffset = a, i.imgAlpha = e.alpha, i.alpha = i.imgAlpha, i.defScale = e.scale, i.mirrorY = !!e.mirrorY, i.visible = !0, i
                     };
-                    this.bounds = n.transform(l.getBoundingCollider(this.type), this.pos, this.rot, this.scale), this.zIdx = s.zIdx || 0, this.surfaces = [];
-                    for (var d = 0; d < s.floor.surfaces.length; d++) {
-                        for (var h = s.floor.surfaces[d], u = {
-                                surface: h.type,
+                    this.bounds = C.transform(B.getBoundingCollider(this.type), this.pos, this.rot, this.scale), this.zIdx = i.zIdx || 0, this.surfaces = [];
+                    for (var s = 0; s < i.floor.surfaces.length; s++) {
+                        for (var l = i.floor.surfaces[s], c = {
+                                surface: l.type,
                                 colliders: []
-                            }, g = 0; g < h.collision.length; g++) u.colliders.push(n.transform(h.collision[g], this.pos, this.rot, this.scale));
-                        this.surfaces.push(u)
+                            }, m = 0; m < l.collision.length; m++) c.colliders.push(C.transform(l.collision[m], this.pos, this.rot, this.scale));
+                        this.surfaces.push(c)
                     }
-                    var y = Object.assign({}, {
+                    var p = Object.assign({}, {
                         dist: 5.5,
                         width: 2.75,
                         linger: 0,
                         fadeRate: 12
-                    }, s.ceiling.vision);
+                    }, i.ceiling.vision);
                     this.ceiling = {
                         scopeIn: [],
                         scopeOut: [],
-                        vision: y,
+                        vision: p,
                         visionTicker: 0,
                         fadeAlpha: 1
                     };
-                    for (var w = 0; w < s.ceiling.scopeIn.length; w++) this.ceiling.scopeIn.push(n.transform(s.ceiling.scopeIn[w], this.pos, this.rot, this.scale));
-                    for (var x = 0; x < s.ceiling.scopeOut.length; x++) this.ceiling.scopeOut.push(n.transform(s.ceiling.scopeOut[x], this.pos, this.rot, this.scale));
-                    this.disableScopeIn = !!s.ceiling.disableScopeIn, this.imgs = [];
-                    for (var f = 0; f < s.floor.imgs.length; f++) this.imgs.push({
-                        sprite: p(s.floor.imgs[f]),
+                    for (var d = 0; d < i.ceiling.scopeIn.length; d++) this.ceiling.scopeIn.push(C.transform(i.ceiling.scopeIn[d], this.pos, this.rot, this.scale));
+                    for (var h = 0; h < i.ceiling.scopeOut.length; h++) this.ceiling.scopeOut.push(C.transform(i.ceiling.scopeOut[h], this.pos, this.rot, this.scale));
+                    this.disableScopeIn = !!i.ceiling.disableScopeIn, this.imgs = [];
+                    for (var u = 0; u < i.floor.imgs.length; u++) this.imgs.push({
+                        sprite: r(i.floor.imgs[u]),
                         isCeiling: !1,
                         zOrd: this.zIdx,
-                        zIdx: 100 * this.__id + f
+                        zIdx: 100 * this.__id + u
                     });
-                    for (var b = 0; b < s.ceiling.imgs.length; b++) {
-                        var _ = s.ceiling.imgs[b];
+                    for (var g = 0; g < i.ceiling.imgs.length; g++) {
+                        var y = i.ceiling.imgs[g];
                         this.imgs.push({
-                            sprite: p(_),
+                            sprite: r(y),
                             isCeiling: !0,
-                            removeOnDamaged: !!_.removeOnDamaged,
+                            removeOnDamaged: !!y.removeOnDamaged,
                             zOrd: 750 - this.zIdx,
-                            zIdx: 100 * this.__id + b
+                            zIdx: 100 * this.__id + g
                         })
                     }
-                    for (var S = s.occupiedEmitters || [], k = 0; k < S.length; k++) {
-                        var v = S[k],
-                            z = this.rot + v.rot,
-                            M = m.add(this.pos, m.rotate(v.pos, z)),
-                            T = m.rotate(m.create(1, 0), z),
-                            P = v.scale,
-                            I = null;
-                        if (v.parentToCeiling) {
-                            for (var C = -1, A = 0; A < this.imgs.length; A++) this.imgs[A].isCeiling && (C = A);
-                            if (C >= 0) {
-                                var E = this.imgs[C];
-                                I = E.sprite, M = m.mul(v.pos, 32), M.y *= -1, T = m.rotate(m.create(1, 0), v.rot), P = 1 / E.sprite.defScale
+                    for (var w = i.occupiedEmitters || [], x = 0; x < w.length; x++) {
+                        var f = w[x],
+                            b = this.rot + f.rot,
+                            _ = R.add(this.pos, R.rotate(f.pos, b)),
+                            S = R.rotate(R.create(1, 0), b),
+                            k = f.scale,
+                            v = null;
+                        if (f.parentToCeiling) {
+                            for (var z = -1, M = 0; M < this.imgs.length; M++) this.imgs[M].isCeiling && (z = M);
+                            if (0 <= z) {
+                                var T = this.imgs[z];
+                                v = T.sprite, (_ = R.mul(f.pos, 32)).y *= -1, S = R.rotate(R.create(1, 0), f.rot), k = 1 / T.sprite.defScale
                             }
                         }
-                        var D = i.particleBarn.addEmitter(v.type, M, T, P, v.layer, Number.MAX_VALUE, I);
-                        this.emitters.push(D)
+                        var A = o.particleBarn.addEmitter(f.type, _, S, k, f.layer, Number.MAX_VALUE, v);
+                        this.emitters.push(A)
                     }
                 }
             },
-            c: function(e, t, a, r, n, c, d, h) {
+            c: function(e, t, a, i, r, o, n, s) {
                 if (this.hasPuzzle) {
-                    var u = l.Defs[this.type];
+                    var l = B.Defs[this.type];
                     if (this.puzzleErrSeqModified && (this.puzzleErrSeqModified = !1, !this.isNew)) {
-                        for (var g = this, y = m.length(m.sub(c.pos, g.pos)), w = t.pe.m(), x = 0; x < w.length; x++) {
-                            var f = w[x];
-                            if (f.active && f.isPuzzlePiece && f.parentBuildingId == this.__id) {
-                                var b = m.length(m.sub(c.pos, f.pos));
-                                b < y && (g = f, y = b)
+                        for (var c = this, m = R.length(R.sub(o.pos, c.pos)), p = t.pe.m(), d = 0; d < p.length; d++) {
+                            var h = p[d];
+                            if (h.active && h.isPuzzlePiece && h.parentBuildingId == this.__id) {
+                                var u = R.length(R.sub(o.pos, h.pos));
+                                u < m && (c = h, m = u)
                             }
                         }
-                        r.playSound(u.puzzle.sound.fail, {
+                        i.playSound(l.puzzle.sound.fail, {
                             channel: "sfx",
-                            soundPos: g.pos,
-                            layer: g.layer,
+                            soundPos: c.pos,
+                            layer: c.layer,
                             muffled: !0
                         })
                     }
-                    this.puzzleSolved && !this.playedSolvedPuzzleFx && (t.solvedPuzzleIds.push(this.__id), this.playedSolvedPuzzleFx = !0, this.isNew || "none" == u.puzzle.sound.complete || r.playSound(u.puzzle.sound.complete, {
+                    this.puzzleSolved && !this.playedSolvedPuzzleFx && (t.solvedPuzzleIds.push(this.__id), this.playedSolvedPuzzleFx = !0, this.isNew || "none" == l.puzzle.sound.complete || i.playSound(l.puzzle.sound.complete, {
                         channel: "sfx",
                         soundPos: this.pos,
                         layer: this.layer,
                         muffled: !0
                     }))
                 }
-                if (this.ceilingDead && !this.playedCeilingDeadFx && (t.deadCeilingIds.push(this.__id), this.playedCeilingDeadFx = !0, this.isNew || this.destroyCeilingFx(a, r)), this.isNew = !1, this.ceilingDead && !this.residue) {
-                    var _ = l.Defs[this.type];
-                    if (void 0 !== _.ceiling.destroy) {
-                        var S = this.allocSprite();
-                        S.texture = o.Texture.fromImage(_.ceiling.destroy.residue), S.position.set(0, 0), S.scale.set(1, 1), S.rotation = 0, S.tint = 16777215, S.visible = !0, this.imgs[0].sprite.addChild(S), this.residue = S
+                if (this.ceilingDead && !this.playedCeilingDeadFx && (t.deadCeilingIds.push(this.__id), this.playedCeilingDeadFx = !0, this.isNew || this.destroyCeilingFx(a, i)), this.isNew = !1, this.ceilingDead && !this.residue) {
+                    var g = B.Defs[this.type];
+                    if (void 0 !== g.ceiling.destroy) {
+                        var y = this.allocSprite();
+                        y.texture = D.Texture.fromImage(g.ceiling.destroy.residue), y.position.set(0, 0), y.scale.set(1, 1), y.rotation = 0, y.tint = 16777215, y.visible = !0, this.imgs[0].sprite.addChild(y), this.residue = y
                     }
                 }
                 this.ceiling.visionTicker -= e;
-                var k = !1,
-                    v = Number.MAX_VALUE,
-                    z = this.ceiling.vision;
+                var w = !1,
+                    x = Number.MAX_VALUE,
+                    f = this.ceiling.vision;
                 if (!this.disableScopeIn)
-                    for (var M = 0; M < this.ceiling.scopeIn.length; M++)
-                        if (this.layer == c.layer || 2 & c.layer) {
-                            var T = p.scanCollider(this.ceiling.scopeIn[M], t.pe.m(), c.pos, c.layer, .5, 2 * z.width, z.dist, 5);
-                            if (T) {
-                                k = !0, v = T.dist;
+                    for (var b = 0; b < this.ceiling.scopeIn.length; b++)
+                        if (this.layer == o.layer || 2 & o.layer) {
+                            var _ = F.scanCollider(this.ceiling.scopeIn[b], t.pe.m(), o.pos, o.layer, .5, 2 * f.width, f.dist, 5);
+                            if (_) {
+                                w = !0, x = _.dist;
                                 break
                             }
                         }
-                this.ceilingDead && (k = !0), k && (this.ceiling.visionTicker = z.linger + 1e-4), c.noCeilingRevealTicker > 0 && (this.ceiling.visionTicker = 0);
-                var P = this.ceiling.visionTicker > 0,
-                    I = i(this.ceiling.fadeAlpha, P ? 0 : 1, e * (P ? 12 : z.fadeRate));
-                this.ceiling.fadeAlpha += I, k && this.interiorSound && (n.interiorSound.name = this.interiorSound, n.interiorSound.volume = s.remap(v, z.dist + 2, 0, 0, 1));
+                this.ceilingDead && (w = !0), w && (this.ceiling.visionTicker = f.linger + 1e-4), 0 < o.noCeilingRevealTicker && (this.ceiling.visionTicker = 0);
+                var S, k, v, z, M, T = 0 < this.ceiling.visionTicker,
+                    A = (S = this.ceiling.fadeAlpha, k = T ? 0 : 1, v = e * (T ? 12 : f.fadeRate), M = (z = k - S) * v, Math.abs(M) < .001 ? z : M);
+                this.ceiling.fadeAlpha += A, w && this.interiorSound && (r.interiorSound.name = this.interiorSound, r.interiorSound.volume = L.remap(x, f.dist + 2, 0, 0, 1));
                 for (var C = 0; C < this.emitters.length; C++) this.emitters[C].enabled = this.occupied;
-                for (var A = 0; A < this.imgs.length; A++) {
-                    var E = this.imgs[A],
-                        D = E.isCeiling ? this.ceiling.fadeAlpha : 1;
-                    this.positionSprite(E.sprite, D, h), E.removeOnDamaged && this.ceilingDamaged && (E.sprite.visible = !this.ceilingDamaged);
+                for (var I = 0; I < this.imgs.length; I++) {
+                    var P = this.imgs[I],
+                        E = P.isCeiling ? this.ceiling.fadeAlpha : 1;
+                    this.positionSprite(P.sprite, E, s), P.removeOnDamaged && this.ceilingDamaged && (P.sprite.visible = !this.ceilingDamaged);
                     var O = this.layer;
-                    E.isCeiling && (this.layer == c.layer || 2 & c.layer && 1 == this.layer) && (O |= 2), d.addPIXIObj(E.sprite, O, E.zOrd, E.zIdx)
+                    P.isCeiling && (this.layer == o.layer || 2 & o.layer && 1 == this.layer) && (O |= 2), n.addPIXIObj(P.sprite, O, P.zOrd, P.zIdx)
                 }
             },
             destroyCeilingFx: function(e, t) {
-                for (var a = l.Defs[this.type].ceiling.destroy, i = this.surfaces[0], r = 0; r < i.colliders.length; r++) {
-                    for (var o = n.toAabb(i.colliders[r]), s = 0; s < a.particleCount; s++) {
-                        var p = m.create(c.random(o.min.x, o.max.x), c.random(o.min.y, o.max.y)),
-                            d = m.mul(m.randomUnit(), c.random(0, 15));
-                        e.addParticle(a.particle, this.layer, p, d)
+                for (var a = B.Defs[this.type].ceiling.destroy, i = this.surfaces[0], r = 0; r < i.colliders.length; r++) {
+                    for (var o = C.toAabb(i.colliders[r]), n = 0; n < a.particleCount; n++) {
+                        var s = R.create(I.random(o.min.x, o.max.x), I.random(o.min.y, o.max.y)),
+                            l = R.mul(R.randomUnit(), I.random(0, 15));
+                        e.addParticle(a.particle, this.layer, s, l)
                     }
                     break
                 }
@@ -8586,42 +8440,42 @@
                 })
             },
             positionSprite: function(e, t, a) {
-                var i = a.pointToScreen(m.add(this.pos, e.posOffset)),
+                var i = a.pointToScreen(R.add(this.pos, e.posOffset)),
                     r = a.pixels(this.scale * e.defScale);
                 e.position.set(i.x, i.y), e.scale.set(r, r), e.mirrorY && (e.scale.y *= -1), e.rotation = -this.rot + e.rotOffset, e.alpha = e.imgAlpha * t
             },
             render: function(e, t) {}
-        }, e.exports = r
+        }, e.exports = i
     },
     "34e32c48": function(e, t, a) {
         "use strict";
-        var i = a("10899aea"),
-            r = a("c2a798c8"),
-            o = {
+        var _ = a("10899aea"),
+            S = a("c2a798c8"),
+            c = {
                 circleToAabb: function(e, t) {
-                    var a = r.create(t);
+                    var a = S.create(t);
                     return {
-                        min: r.sub(e, a),
-                        max: r.add(e, a)
+                        min: S.sub(e, a),
+                        max: S.add(e, a)
                     }
                 },
                 aabbToCircle: function(e, t) {
-                    var a = r.mul(r.sub(t, e), .5);
+                    var a = S.mul(S.sub(t, e), .5);
                     return {
-                        pos: r.add(e, a),
-                        rad: r.length(a)
+                        pos: S.add(e, a),
+                        rad: S.length(a)
                     }
                 },
                 lineSegmentToAabb: function(e, t) {
                     return {
-                        min: r.create(e.x < t.x ? e.x : t.x, e.y < t.y ? e.y : t.y),
-                        max: r.create(e.x > t.x ? e.x : t.x, e.y > t.y ? e.y : t.y)
+                        min: S.create(e.x < t.x ? e.x : t.x, e.y < t.y ? e.y : t.y),
+                        max: S.create(e.x > t.x ? e.x : t.x, e.y > t.y ? e.y : t.y)
                     }
                 },
                 boundingAabb: function(e) {
-                    for (var t = r.create(Number.MAX_VALUE, Number.MAX_VALUE), a = r.create(-Number.MAX_VALUE, -Number.MAX_VALUE), o = 0; o < e.length; o++) {
-                        var n = e[o];
-                        t.x = i.min(t.x, n.min.x), t.y = i.min(t.y, n.min.y), a.x = i.max(a.x, n.max.x), a.y = i.max(a.y, n.max.y)
+                    for (var t = S.create(Number.MAX_VALUE, Number.MAX_VALUE), a = S.create(-Number.MAX_VALUE, -Number.MAX_VALUE), i = 0; i < e.length; i++) {
+                        var r = e[i];
+                        t.x = _.min(t.x, r.min.x), t.y = _.min(t.y, r.min.y), a.x = _.max(a.x, r.max.x), a.y = _.max(a.y, r.max.y)
                     }
                     return {
                         min: t,
@@ -8629,46 +8483,46 @@
                     }
                 },
                 splitAabb: function(e, t) {
-                    var a = r.mul(r.sub(e.max, e.min), .5),
-                        i = r.add(e.min, a),
-                        o = {
-                            min: r.copy(e.min),
-                            max: r.copy(e.max)
+                    var a = S.mul(S.sub(e.max, e.min), .5),
+                        i = S.add(e.min, a),
+                        r = {
+                            min: S.copy(e.min),
+                            max: S.copy(e.max)
                         },
-                        n = {
-                            min: r.copy(e.min),
-                            max: r.copy(e.max)
+                        o = {
+                            min: S.copy(e.min),
+                            max: S.copy(e.max)
                         };
-                    Math.abs(t.y) > Math.abs(t.x) ? (o.max = r.create(e.max.x, i.y), n.min = r.create(e.min.x, i.y)) : (o.max = r.create(i.x, e.max.y), n.min = r.create(i.x, e.min.y));
-                    var s = r.sub(e.max, e.min);
-                    return r.dot(s, t) > 0 ? [n, o] : [o, n]
+                    Math.abs(t.y) > Math.abs(t.x) ? (r.max = S.create(e.max.x, i.y), o.min = S.create(e.min.x, i.y)) : (r.max = S.create(i.x, e.max.y), o.min = S.create(i.x, e.min.y));
+                    var n = S.sub(e.max, e.min);
+                    return 0 < S.dot(n, t) ? [o, r] : [r, o]
                 },
                 scaleAabbAlongAxis: function(e, t, a) {
-                    var i = r.mul(r.sub(e.max, e.min), .5),
-                        o = r.add(e.min, i),
-                        n = Math.abs(t.y) > Math.abs(t.x);
+                    var i = S.mul(S.sub(e.max, e.min), .5),
+                        r = S.add(e.min, i),
+                        o = Math.abs(t.y) > Math.abs(t.x);
                     return {
-                        min: r.create(n ? e.min.x : o.x - i.x * a, n ? o.y - i.y * a : e.min.y),
-                        max: r.create(n ? e.max.x : o.x + i.x * a, n ? o.y + i.y * a : e.max.y)
+                        min: S.create(o ? e.min.x : r.x - i.x * a, o ? r.y - i.y * a : e.min.y),
+                        max: S.create(o ? e.max.x : r.x + i.x * a, o ? r.y + i.y * a : e.max.y)
                     }
                 },
                 clampPosToAabb: function(e, t) {
-                    return r.minElems(r.maxElems(e, t.min), t.max)
+                    return S.minElems(S.maxElems(e, t.min), t.max)
                 },
                 clampPolygonToAabb: function(e, t) {
-                    for (var a = [], i = 0; i < e.length; i++) a.push(o.clampPosToAabb(e[i], t));
+                    for (var a = [], i = 0; i < e.length; i++) a.push(c.clampPosToAabb(e[i], t));
                     return a
                 },
                 testPointAabb: function(e, t, a) {
                     return e.x >= t.x && e.y >= t.y && e.x <= a.x && e.y <= a.y
                 },
-                testCircleAabb: function(e, t, a, o) {
-                    var n = r.create(i.clamp(e.x, a.x, o.x), i.clamp(e.y, a.y, o.y));
-                    return r.lengthSqr(r.sub(e, n)) < t * t || e.x >= a.x && e.x <= o.x && e.y >= a.y && e.y <= o.y
+                testCircleAabb: function(e, t, a, i) {
+                    var r = S.create(_.clamp(e.x, a.x, i.x), _.clamp(e.y, a.y, i.y));
+                    return S.lengthSqr(S.sub(e, r)) < t * t || e.x >= a.x && e.x <= i.x && e.y >= a.y && e.y <= i.y
                 },
                 testCircleCircle: function(e, t, a, i) {
-                    var o = t + i;
-                    return r.lengthSqr(r.sub(a, e)) < o * o
+                    var r = t + i;
+                    return S.lengthSqr(S.sub(a, e)) < r * r
                 },
                 testAabbAabb: function(e, t, a, i) {
                     return e.x < i.x && e.y < i.y && a.x < t.x && a.y < t.y
@@ -8676,8 +8530,8 @@
                 testAabbPolygon: function(e, t, a) {
                     for (var i = 0; i < a.length; i++) {
                         var r = a[i],
-                            n = i == a.length - 1 ? a[0] : a[i + 1];
-                        if (o.intersectSegmentAabb(r, n, e, t)) return !0
+                            o = i == a.length - 1 ? a[0] : a[i + 1];
+                        if (c.intersectSegmentAabb(r, o, e, t)) return !0
                     }
                     return !1
                 },
@@ -8688,166 +8542,166 @@
                     return (e.x - a.x) * (t.y - a.y) - (e.y - a.y) * (t.x - a.x)
                 },
                 intersectSegmentSegment: function(e, t, a, i) {
-                    var n = o.signedAreaTri(e, t, i),
-                        s = o.signedAreaTri(e, t, a);
-                    if (0 != n && 0 != s && n * s < 0) {
-                        var l = o.signedAreaTri(a, i, e),
-                            c = l + s - n;
-                        if (l * c < 0) {
-                            var m = l / (l - c);
+                    var r = c.signedAreaTri(e, t, i),
+                        o = c.signedAreaTri(e, t, a);
+                    if (0 != r && 0 != o && r * o < 0) {
+                        var n = c.signedAreaTri(a, i, e),
+                            s = n + o - r;
+                        if (n * s < 0) {
+                            var l = n / (n - s);
                             return {
-                                point: r.add(e, r.mul(r.sub(t, e), m))
+                                point: S.add(e, S.mul(S.sub(t, e), l))
                             }
                         }
                     }
                     return null
                 },
-                intersectSegmentCircle: function(e, t, a, o) {
-                    var n = r.sub(t, e),
-                        s = i.max(r.length(n), 1e-6);
-                    n = r.div(n, s);
-                    var l = r.sub(e, a),
-                        c = r.dot(l, n),
-                        m = r.dot(l, l) - o * o;
-                    if (m > 0 && c > 0) return null;
-                    var p = c * c - m;
-                    if (p < 0) return null;
-                    var d = Math.sqrt(p),
-                        h = -c - d;
-                    if (h < 0 && (h = -c + d), h <= s) {
-                        var u = r.add(e, r.mul(n, h));
+                intersectSegmentCircle: function(e, t, a, i) {
+                    var r = S.sub(t, e),
+                        o = _.max(S.length(r), 1e-6);
+                    r = S.div(r, o);
+                    var n = S.sub(e, a),
+                        s = S.dot(n, r),
+                        l = S.dot(n, n) - i * i;
+                    if (0 < l && 0 < s) return null;
+                    var c = s * s - l;
+                    if (c < 0) return null;
+                    var m = Math.sqrt(c),
+                        p = -s - m;
+                    if (p < 0 && (p = -s + m), p <= o) {
+                        var d = S.add(e, S.mul(r, p));
                         return {
-                            point: u,
-                            normal: r.normalize(r.sub(u, a))
+                            point: d,
+                            normal: S.normalize(S.sub(d, a))
                         }
                     }
                     return null
                 },
-                intersectSegmentAabb: function(e, t, a, o) {
-                    var n = 0,
-                        s = Number.MAX_VALUE,
-                        l = e,
-                        c = r.sub(t, e),
-                        m = r.length(c);
-                    c = m > 1e-5 ? r.div(c, m) : r.create(1, 0);
-                    var p = Math.abs(c.x),
-                        d = Math.abs(c.y);
-                    if (p < 1e-5 && (c.x = 2e-5, p = c.x), d < 1e-5 && (c.y = 2e-5, d = c.y), p > 1e-5) {
-                        var h = (a.x - l.x) / c.x,
-                            u = (o.x - l.x) / c.x;
-                        if (n = i.max(n, i.min(h, u)), s = i.min(s, i.max(h, u)), n > s) return null
+                intersectSegmentAabb: function(e, t, a, i) {
+                    var r = 0,
+                        o = Number.MAX_VALUE,
+                        n = e,
+                        s = S.sub(t, e),
+                        l = S.length(s);
+                    s = 1e-5 < l ? S.div(s, l) : S.create(1, 0);
+                    var c = Math.abs(s.x),
+                        m = Math.abs(s.y);
+                    if (c < 1e-5 && (s.x = 2e-5, c = s.x), m < 1e-5 && (s.y = 2e-5, m = s.y), 1e-5 < c) {
+                        var p = (a.x - n.x) / s.x,
+                            d = (i.x - n.x) / s.x;
+                        if (r = _.max(r, _.min(p, d)), (o = _.min(o, _.max(p, d))) < r) return null
                     }
-                    if (d > 1e-5) {
-                        var g = (a.y - l.y) / c.y,
-                            y = (o.y - l.y) / c.y;
-                        if (n = i.max(n, i.min(g, y)), s = i.min(s, i.max(g, y)), n > s) return null
+                    if (1e-5 < m) {
+                        var h = (a.y - n.y) / s.y,
+                            u = (i.y - n.y) / s.y;
+                        if (r = _.max(r, _.min(h, u)), (o = _.min(o, _.max(h, u))) < r) return null
                     }
-                    if (n > m) return null;
-                    var w = r.add(e, r.mul(c, n)),
-                        x = r.add(a, r.mul(r.sub(o, a), .5)),
-                        f = r.sub(w, x),
-                        b = r.mul(r.sub(a, o), .5),
-                        _ = f.x / Math.abs(b.x) * 1.001,
-                        S = f.y / Math.abs(b.y) * 1.001;
+                    if (l < r) return null;
+                    var g = S.add(e, S.mul(s, r)),
+                        y = S.add(a, S.mul(S.sub(i, a), .5)),
+                        w = S.sub(g, y),
+                        x = S.mul(S.sub(a, i), .5),
+                        f = w.x / Math.abs(x.x) * 1.001,
+                        b = w.y / Math.abs(x.y) * 1.001;
                     return {
-                        point: w,
-                        normal: r.normalizeSafe(r.create(_ < 0 ? Math.ceil(_) : Math.floor(_), S < 0 ? Math.ceil(S) : Math.floor(S)), r.create(1, 0))
+                        point: g,
+                        normal: S.normalizeSafe(S.create(f < 0 ? Math.ceil(f) : Math.floor(f), b < 0 ? Math.ceil(b) : Math.floor(b)), S.create(1, 0))
                     }
                 },
                 intersectSegmentAabb2: function(e, t, a, i) {
-                    for (var n = [{
-                            a: r.create(a.x, a.y),
-                            b: r.create(i.x, a.y)
+                    for (var r = [{
+                            a: S.create(a.x, a.y),
+                            b: S.create(i.x, a.y)
                         }, {
-                            a: r.create(i.x, a.y),
-                            b: r.create(i.x, i.y)
+                            a: S.create(i.x, a.y),
+                            b: S.create(i.x, i.y)
                         }, {
-                            a: r.create(i.x, i.y),
-                            b: r.create(a.x, i.y)
+                            a: S.create(i.x, i.y),
+                            b: S.create(a.x, i.y)
                         }, {
-                            a: r.create(a.x, i.y),
-                            b: r.create(a.x, a.y)
-                        }], s = 0; s < n.length; s++) {
-                        var l = n[s],
-                            c = o.intersectSegmentSegment(e, t, l.a, l.b);
-                        if (c) return c
+                            a: S.create(a.x, i.y),
+                            b: S.create(a.x, a.y)
+                        }], o = 0; o < r.length; o++) {
+                        var n = r[o],
+                            s = c.intersectSegmentSegment(e, t, n.a, n.b);
+                        if (s) return s
                     }
                     return null
                 },
-                intersectRayAabb: function(e, t, a, o) {
+                intersectRayAabb: function(e, t, a, i) {
                     Math.abs(t.x) < 1e-5 && (t.x = 2e-5), Math.abs(t.y) < 1e-5 && (t.y = 2e-5);
-                    var n = r.divElems(r.sub(a, e), t),
-                        s = r.divElems(r.sub(o, e), t),
-                        l = r.minElems(n, s),
-                        c = r.maxElems(n, s),
-                        m = i.min(c.x, c.y);
-                    return m >= i.max(l.x, l.y) ? r.add(e, r.mul(t, m)) : null
+                    var r = S.divElems(S.sub(a, e), t),
+                        o = S.divElems(S.sub(i, e), t),
+                        n = S.minElems(r, o),
+                        s = S.maxElems(r, o),
+                        l = _.min(s.x, s.y);
+                    return l >= _.max(n.x, n.y) ? S.add(e, S.mul(t, l)) : null
                 },
                 intersectCircleCircle: function(e, t, a, i) {
-                    var o = t + i,
-                        n = r.sub(a, e),
-                        s = r.lengthSqr(n);
-                    if (s < o * o) {
-                        var l = Math.sqrt(s);
+                    var r = t + i,
+                        o = S.sub(a, e),
+                        n = S.lengthSqr(o);
+                    if (n < r * r) {
+                        var s = Math.sqrt(n);
                         return {
-                            dir: l > 1e-5 ? r.div(n, l) : r.create(1, 0),
-                            pen: o - l
+                            dir: 1e-5 < s ? S.div(o, s) : S.create(1, 0),
+                            pen: r - s
                         }
                     }
                     return null
                 },
-                intersectAabbCircle: function(e, t, a, o) {
+                intersectAabbCircle: function(e, t, a, i) {
                     if (a.x >= e.x && a.x <= t.x && a.y >= e.y && a.y <= t.y) {
-                        var n = r.mul(r.sub(t, e), .5),
-                            s = r.add(e, n),
-                            l = r.sub(a, s),
-                            c = Math.abs(l.x) - n.x - o,
-                            m = Math.abs(l.y) - n.y - o;
-                        return c > m ? {
-                            dir: r.create(l.x > 0 ? 1 : -1, 0),
-                            pen: -c
+                        var r = S.mul(S.sub(t, e), .5),
+                            o = S.add(e, r),
+                            n = S.sub(a, o),
+                            s = Math.abs(n.x) - r.x - i,
+                            l = Math.abs(n.y) - r.y - i;
+                        return l < s ? {
+                            dir: S.create(0 < n.x ? 1 : -1, 0),
+                            pen: -s
                         } : {
-                            dir: r.create(0, l.y > 0 ? 1 : -1),
-                            pen: -m
+                            dir: S.create(0, 0 < n.y ? 1 : -1),
+                            pen: -l
                         }
                     }
-                    var p = r.create(i.clamp(a.x, e.x, t.x), i.clamp(a.y, e.y, t.y)),
-                        d = r.sub(a, p),
-                        h = r.lengthSqr(d);
-                    if (h < o * o) {
-                        var u = Math.sqrt(h);
+                    var c = S.create(_.clamp(a.x, e.x, t.x), _.clamp(a.y, e.y, t.y)),
+                        m = S.sub(a, c),
+                        p = S.lengthSqr(m);
+                    if (p < i * i) {
+                        var d = Math.sqrt(p);
                         return {
-                            dir: u > 1e-4 ? r.div(d, u) : r.create(1, 0),
-                            pen: o - u
+                            dir: 1e-4 < d ? S.div(m, d) : S.create(1, 0),
+                            pen: i - d
                         }
                     }
                     return null
                 },
                 intersectAabbAabb: function(e, t, a, i) {
-                    var o = r.mul(r.sub(t, e), .5),
-                        n = r.add(e, o),
-                        s = r.mul(r.sub(i, a), .5),
-                        l = r.add(a, s),
-                        c = r.sub(l, n),
-                        m = o.x + s.x - Math.abs(c.x);
-                    if (m > 0) {
-                        var p = o.y + s.y - Math.abs(c.y);
-                        if (p > 0) return m > p ? {
-                            dir: c.x < 0 ? r.create(-1, 0) : r.create(1, 0),
-                            pen: m
+                    var r = S.mul(S.sub(t, e), .5),
+                        o = S.add(e, r),
+                        n = S.mul(S.sub(i, a), .5),
+                        s = S.add(a, n),
+                        l = S.sub(s, o),
+                        c = r.x + n.x - Math.abs(l.x);
+                    if (0 < c) {
+                        var m = r.y + n.y - Math.abs(l.y);
+                        if (0 < m) return m < c ? {
+                            dir: l.x < 0 ? S.create(-1, 0) : S.create(1, 0),
+                            pen: c
                         } : {
-                            dir: c.y < 0 ? r.create(0, -1) : r.create(0, 1),
-                            pen: p
+                            dir: l.y < 0 ? S.create(0, -1) : S.create(0, 1),
+                            pen: m
                         }
                     }
                     return null
                 }
             };
-        e.exports = o
+        e.exports = c
     },
     "3bff36cf": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-02-20",
                 locale: "it"
@@ -9099,12 +8953,11 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "4426a45f": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-02-21",
                 locale: "sv"
@@ -9356,56 +9209,54 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "45f86a38": function(e, t, a) {
         "use strict";
         var i = (a("989ad62a"), a("1901e2d9")),
-            r = (a("c2a798c8"), a("d5ec3c16")),
-            o = {
-                desc: {
-                    name: "Woods",
-                    icon: "img/gui/hatchet.svg"
+            r = (a("c2a798c8"), a("d5ec3c16"));
+        e.exports = i.mergeDeep({}, r, {
+            desc: {
+                name: "Woods",
+                icon: "img/gui/hatchet.svg"
+            },
+            assets: {
+                audio: [{
+                    name: "vault_change_02",
+                    channel: "sfx"
+                }, {
+                    name: "footstep_08",
+                    channel: "sfx"
+                }, {
+                    name: "footstep_09",
+                    channel: "sfx"
+                }],
+                atlases: ["gradient", "shared", "woods"]
+            },
+            biome: {
+                colors: {
+                    background: 2118510,
+                    water: 3310251,
+                    beach: 15709019,
+                    riverbank: 7812619,
+                    grass: 9339690,
+                    underground: 1772803,
+                    playerSubmerge: 2854052
                 },
-                assets: {
-                    audio: [{
-                        name: "vault_change_02",
-                        channel: "sfx"
-                    }, {
-                        name: "footstep_08",
-                        channel: "sfx"
-                    }, {
-                        name: "footstep_09",
-                        channel: "sfx"
-                    }],
-                    atlases: ["gradient", "shared", "woods"]
-                },
-                biome: {
-                    colors: {
-                        background: 2118510,
-                        water: 3310251,
-                        beach: 15709019,
-                        riverbank: 7812619,
-                        grass: 9339690,
-                        underground: 1772803,
-                        playerSubmerge: 2854052
-                    },
-                    particles: {
-                        camera: "falling_leaf",
-                        ripple: "waterRipple"
-                    }
-                },
-                gameMode: {
-                    maxPlayers: 80,
-                    woodsMode: !0
+                particles: {
+                    camera: "falling_leaf",
+                    ripple: "waterRipple"
                 }
-            };
-        e.exports = i.mergeDeep({}, r, o)
+            },
+            gameMode: {
+                maxPlayers: 80,
+                woodsMode: !0
+            }
+        })
     },
     "4780d986": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-01-28",
                 locale: "th"
@@ -9634,14 +9485,13 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "484b3444": function(e, t, a) {
         "use strict";
 
-        function i(e, t, a, i) {
-            var r = d("<div/>", {
+        function y(e, t, a, i) {
+            var r = b("<div/>", {
                 class: "copy-toast",
                 html: e
             });
@@ -9655,242 +9505,219 @@
                 queue: !1,
                 duration: 300,
                 complete: function() {
-                    d(this).fadeOut(250, function() {
-                        d(this).remove()
+                    b(this).fadeOut(250, function() {
+                        b(this).remove()
                     })
                 }
             })
         }
 
-        function r(e, t) {
-            var a = d("#start-menu");
-            d("#btn-help").click(function() {
-                var e = d("#start-help");
-                a.addClass("display-help");
-                var t = (e.position().top, a.css("height"));
-                return e.css("display", "block"), a.animate({
-                    scrollTop: t
-                }, 1e3), g.storeGeneric("info", "help"), !1
-            });
-            var r = d("#team-mobile-link"),
-                s = d("#team-mobile-link-desc"),
-                c = d("#team-mobile-link-warning"),
-                m = d("#team-link-input"),
-                p = d("#social-share-block"),
-                y = d("#news-block");
-            d("#btn-join-team").click(function() {
-                return d("#server-warning").css("display", "none"), m.val(""), r.css("display", "block"), s.css("display", "block"), c.css("display", "none"), a.css("display", "none"), y.css("display", "none"), p.css("display", "none"), !1
-            }), d("#btn-team-mobile-link-leave").click(function() {
-                return r.css("display", "none"), m.val(""), a.css("display", "block"), y.css("display", "block"), p.css("display", "block"), !1
-            }), d("#team-link-input").on("keypress", function(e) {
-                13 === (e.which || e.keyCode) && (d("#btn-team-mobile-link-join").trigger("click"), d(this).blur())
-            }), d("#player-name-input-solo").on("keypress", function(e) {
-                13 === (e.which || e.keyCode) && d(this).blur()
-            }), h.mobile && "ios" != h.os && (d("#player-name-input-solo").on("focus", function() {
-                if (h.isLandscape) {
-                    var e = h.screenHeight,
-                        t = e <= 282 ? 18 : 36;
-                    document.body.scrollTop = d(this).offset().top - t
-                }
-            }), d("#player-name-input-solo").on("blur", function() {
-                document.body.scrollTop = 0
-            }));
-            var w = d(".modal"),
-                x = (d(".modal-content"), d("#start-bottom-right")),
-                f = d("#start-top-left"),
-                b = d("#start-top-right"),
-                _ = d("#ui-modal-keybind");
-            d(".btn-keybind").click(function() {
-                return _.finish(), _.css("display", "block"), x.fadeOut(200), b.fadeOut(200), d("#ui-modal-keybind-share").css("display", "none"), d("#keybind-warning").css("display", "none"), d("#ui-modal-keybind-list").css("height", "420px"), d("#keybind-code-input").html(""), l(), t.refresh(), !1
-            }), o(function(e, a) {
-                (a.is(d("#ui-modal-keybind")) || a.parents("#ui-modal-keybind").length > 0) && (e.stopPropagation(), t.cancelBind())
-            }), d(".js-btn-keybind-share").click(function() {
-                "block" == d("#ui-modal-keybind-share").css("display") ? (d("#ui-modal-keybind-share").css("display", "none"), d("#ui-modal-keybind-list").css("height", "420px")) : (d("#ui-modal-keybind-share").css("display", "block"), d("#ui-modal-keybind-list").css("height", "275px"))
-            }), d("#keybind-link, #keybind-copy").click(function(e) {
-                i("Copied!", _, d("#keybind-link"), e);
-                var t = d("#keybind-link").html();
-                u.copyTextToClipboard(t)
-            }), d("#btn-keybind-code-load").on("click", function(a) {
-                var r = d("#keybind-code-input").val();
-                d("#keybind-code-input").val("");
-                var o = e.fromBase64(r);
-                d("#keybind-warning").css("display", o ? "none" : "block"), o && (i("Loaded!", _, d("#btn-keybind-code-load"), a), e.saveBinds()), t.refresh()
-            });
-            var S = d("#modal-settings");
-            d(".btn-settings").click(function() {
-                return S.finish(), S.css("display", "block"), x.fadeOut(200), b.fadeOut(200), l(), !1
-            });
-            var k = d("#modal-hamburger");
-            d("#btn-hamburger").click(function() {
-                return k.finish(), k.css("display", "block"), f.fadeOut(200), l(), !1
-            }), d(".account-details-guest, .account-details-user").click(function() {
-                if (h.mobile) {
-                    var e = d("#modal-mobile-account");
-                    return e.finish(), e.css("display", "block"), d("#start-top-right").fadeOut(200), l(), !1
-                }
-            }), w.find(".close").click(function(e) {
-                n(e, d(this))
-            }), d(".modal-settings-text").click(function() {
-                var e = d(this).siblings("input:checkbox");
-                e.prop("checked", !e.is(":checked")), e.trigger("change")
-            }), d("#force-refresh").click(function() {
-                window.location.href = "/?t=" + Date.now()
-            })
+        function w(e) {
+            r.push(e)
         }
 
-        function o(e) {
-            y.push(e)
+        function x(e, t) {
+            if (b(".modal").fadeOut(200), b("#start-bottom-right").fadeIn(200), b("#start-top-left").fadeIn(200), b("#start-top-right").fadeIn(200), e && t)
+                for (var a = 0; a < r.length; a++) r[a](e, t)
         }
 
-        function n(e, t) {
-            if (d(".modal").fadeOut(200), d("#start-bottom-right").fadeIn(200), d("#start-top-left").fadeIn(200), d("#start-top-right").fadeIn(200), e && t)
-                for (var a = 0; a < y.length; a++) y[a](e, t)
+        function i(e, t) {
+            !t && b(e.target).closest(".modal-content").length || (b(".modal").each(function() {
+                "block" == b(this).css("display") && x(e, b(this))
+            }), b(document).off("click touchend", i))
         }
 
-        function s(e, t) {
-            !t && d(e.target).closest(".modal-content").length || (d(".modal").each(function() {
-                "block" == d(this).css("display") && n(e, d(this))
-            }), d(document).off("click touchend", s))
+        function f() {
+            b(document).on("click touchend", i)
         }
-
-        function l() {
-            d(document).on("click touchend", s)
-        }
-
-        function c() {
-            d(document).off("click touchend", s)
-        }
-
-        function m(e) {
-            var t = d("#modal-hamburger-bottom");
-            t.children().slice(-3).remove(), t.children().last().removeClass("footer-after"), d("#invite-link-text").attr("data-l10n", "index-invite-code"), d("#team-code-text").css("display", "none"), d("#invite-code-text").css("display", "none"), d("#team-hide-url").css("display", "none"), d(".btn-download-ios").css("display", "none"), d(".btn-download-android").css("display", "none"), d("#mobile-download-app").css("display", "none"), d("#start-bottom-middle").css("display", "none"), e || (d("#btn-help").css("display", "none"), d("#news-block, #start-menu").css({
-                height: 186
-            }), d("#team-menu").css({
-                height: 186,
-                padding: 10
-            }))
-        }
-
-        function p(e) {
-            d("#team-hide-url").css("display", "none"), e ? d("#start-bottom-middle").addClass("start-bottom-middle-tablet") : d("#news-block").css({
-                height: 165
-            }), "android" == h.os ? (d(".btn-download-android").css("display", "block"), d(".btn-download-ios").css("display", "none")) : "ios" == h.os && (d(".btn-download-ios").css("display", "block"), d(".btn-download-android").css("display", "none")), d("#mobile-download-app").css("display", "block")
-        }
-        var d = a("8ee62bea"),
-            h = a("ce29f17f"),
-            u = a("26be8056"),
-            g = a("f398b7c7"),
-            y = [];
+        var b = a("8ee62bea"),
+            _ = a("ce29f17f"),
+            S = a("26be8056"),
+            k = a("f398b7c7"),
+            r = [];
         e.exports = {
-            init: r,
-            addModalCloseListener: l,
-            addModalCloseCallback: o,
-            removeModalCloseListener: c,
-            applyWebviewStyling: m,
-            applyMobileBrowserStyling: p,
-            checkCloseModals: s
+            init: function(i, r) {
+                var a = b("#start-menu");
+                b("#btn-help").click(function() {
+                    var e = b("#start-help");
+                    a.addClass("display-help");
+                    var t = (e.position().top, a.css("height"));
+                    return e.css("display", "block"), a.animate({
+                        scrollTop: t
+                    }, 1e3), k.storeGeneric("info", "help"), !1
+                });
+                var e = b("#team-mobile-link"),
+                    t = b("#team-mobile-link-desc"),
+                    o = b("#team-mobile-link-warning"),
+                    n = b("#team-link-input"),
+                    s = b("#social-share-block"),
+                    l = b("#news-block");
+                b("#btn-join-team").click(function() {
+                    return b("#server-warning").css("display", "none"), n.val(""), e.css("display", "block"), t.css("display", "block"), o.css("display", "none"), a.css("display", "none"), l.css("display", "none"), s.css("display", "none"), !1
+                }), b("#btn-team-mobile-link-leave").click(function() {
+                    return e.css("display", "none"), n.val(""), a.css("display", "block"), l.css("display", "block"), s.css("display", "block"), !1
+                }), b("#team-link-input").on("keypress", function(e) {
+                    13 === (e.which || e.keyCode) && (b("#btn-team-mobile-link-join").trigger("click"), b(this).blur())
+                }), b("#player-name-input-solo").on("keypress", function(e) {
+                    13 === (e.which || e.keyCode) && b(this).blur()
+                }), _.mobile && "ios" != _.os && (b("#player-name-input-solo").on("focus", function() {
+                    if (_.isLandscape) {
+                        var e = _.screenHeight <= 282 ? 18 : 36;
+                        document.body.scrollTop = b(this).offset().top - e
+                    }
+                }), b("#player-name-input-solo").on("blur", function() {
+                    document.body.scrollTop = 0
+                }));
+                var c = b(".modal"),
+                    m = (b(".modal-content"), b("#start-bottom-right")),
+                    p = b("#start-top-left"),
+                    d = b("#start-top-right"),
+                    h = b("#ui-modal-keybind");
+                b(".btn-keybind").click(function() {
+                    return h.finish(), h.css("display", "block"), m.fadeOut(200), d.fadeOut(200), b("#ui-modal-keybind-share").css("display", "none"), b("#keybind-warning").css("display", "none"), b("#ui-modal-keybind-list").css("height", "420px"), b("#keybind-code-input").html(""), f(), r.refresh(), !1
+                }), w(function(e, t) {
+                    (t.is(b("#ui-modal-keybind")) || 0 < t.parents("#ui-modal-keybind").length) && (e.stopPropagation(), r.cancelBind())
+                }), b(".js-btn-keybind-share").click(function() {
+                    "block" == b("#ui-modal-keybind-share").css("display") ? (b("#ui-modal-keybind-share").css("display", "none"), b("#ui-modal-keybind-list").css("height", "420px")) : (b("#ui-modal-keybind-share").css("display", "block"), b("#ui-modal-keybind-list").css("height", "275px"))
+                }), b("#keybind-link, #keybind-copy").click(function(e) {
+                    y("Copied!", h, b("#keybind-link"), e);
+                    var t = b("#keybind-link").html();
+                    S.copyTextToClipboard(t)
+                }), b("#btn-keybind-code-load").on("click", function(e) {
+                    var t = b("#keybind-code-input").val();
+                    b("#keybind-code-input").val("");
+                    var a = i.fromBase64(t);
+                    b("#keybind-warning").css("display", a ? "none" : "block"), a && (y("Loaded!", h, b("#btn-keybind-code-load"), e), i.saveBinds()), r.refresh()
+                });
+                var u = b("#modal-settings");
+                b(".btn-settings").click(function() {
+                    return u.finish(), u.css("display", "block"), m.fadeOut(200), d.fadeOut(200), f(), !1
+                });
+                var g = b("#modal-hamburger");
+                b("#btn-hamburger").click(function() {
+                    return g.finish(), g.css("display", "block"), p.fadeOut(200), f(), !1
+                }), b(".account-details-guest, .account-details-user").click(function() {
+                    if (_.mobile) {
+                        var e = b("#modal-mobile-account");
+                        return e.finish(), e.css("display", "block"), b("#start-top-right").fadeOut(200), f(), !1
+                    }
+                }), c.find(".close").click(function(e) {
+                    x(e, b(this))
+                }), b(".modal-settings-text").click(function() {
+                    var e = b(this).siblings("input:checkbox");
+                    e.prop("checked", !e.is(":checked")), e.trigger("change")
+                }), b("#force-refresh").click(function() {
+                    window.location.href = "/?t=" + Date.now()
+                })
+            },
+            addModalCloseListener: f,
+            addModalCloseCallback: w,
+            removeModalCloseListener: function() {
+                b(document).off("click touchend", i)
+            },
+            applyWebviewStyling: function(e) {
+                var t = b("#modal-hamburger-bottom");
+                t.children().slice(-3).remove(), t.children().last().removeClass("footer-after"), b("#invite-link-text").attr("data-l10n", "index-invite-code"), b("#team-code-text").css("display", "none"), b("#invite-code-text").css("display", "none"), b("#team-hide-url").css("display", "none"), b(".btn-download-ios").css("display", "none"), b(".btn-download-android").css("display", "none"), b("#mobile-download-app").css("display", "none"), b("#start-bottom-middle").css("display", "none"), e || (b("#btn-help").css("display", "none"), b("#news-block, #start-menu").css({
+                    height: 186
+                }), b("#team-menu").css({
+                    height: 186,
+                    padding: 10
+                }))
+            },
+            applyMobileBrowserStyling: function(e) {
+                b("#team-hide-url").css("display", "none"), e ? b("#start-bottom-middle").addClass("start-bottom-middle-tablet") : b("#news-block").css({
+                    height: 165
+                }), "android" == _.os ? (b(".btn-download-android").css("display", "block"), b(".btn-download-ios").css("display", "none")) : "ios" == _.os && (b(".btn-download-ios").css("display", "block"), b(".btn-download-android").css("display", "none")), b("#mobile-download-app").css("display", "block")
+            },
+            checkCloseModals: i
         }
     },
     "48eca919": function(e, t, a) {
         "use strict";
-
-        function i(e) {
-            c(e >= 0);
-            var t = [];
-            do {
-                t.push(m[e % p]), e = Math.floor(e / p)
-            } while (e > 0);
-            return t.reverse().join("")
-        }
-
-        function r(e) {
-            for (var t = 0, a = 0; a < e.length; a++) t = t * p + m.indexOf(e.charAt(a));
-            return t
-        }
-
-        function o(e, t) {
-            return c(e >= 0 && e < 16), c(t >= 0 && t < 134217728), i(t << 4 | 15 & e)
-        }
-
-        function n(e) {
-            var t = r(e);
-            return {
-                appId: 15 & t,
-                roomId: t >> 4
-            }
-        }
-
-        function s(e) {
-            return ("00" + e).slice(-2)
-        }
-
-        function l(e) {
-            return Math.min((Math.pow(p, e) >> 4) - 1, 134217727)
-        }
-        var c = a("0e566746"),
-            m = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789".split(""),
-            p = m.length;
+        var i = a("0e566746"),
+            r = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789".split(""),
+            o = r.length;
         e.exports = {
-            encodeUrl: o,
-            decodeUrl: n,
-            appIdToString: s,
-            maxRoomId: l
+            encodeUrl: function(e, t) {
+                return i(0 <= e && e < 16), i(0 <= t && t < 134217728),
+                    function(e) {
+                        i(0 <= e);
+                        for (var t = []; t.push(r[e % o]), 0 < (e = Math.floor(e / o)););
+                        return t.reverse().join("")
+                    }(t << 4 | 15 & e)
+            },
+            decodeUrl: function(e) {
+                var t = function(e) {
+                    for (var t = 0, a = 0; a < e.length; a++) t = t * o + r.indexOf(e.charAt(a));
+                    return t
+                }(e);
+                return {
+                    appId: 15 & t,
+                    roomId: t >> 4
+                }
+            },
+            appIdToString: function(e) {
+                return ("00" + e).slice(-2)
+            },
+            maxRoomId: function(e) {
+                return Math.min((Math.pow(o, e) >> 4) - 1, 134217727)
+            }
         }
     },
     "4b528868": function(e, t, a) {
         "use strict";
 
         function i(e) {
-            this.mute = !1, this.masterVolume = 1, this.soundVolume = 1, this.musicVolume = 1, this.baseVolume = .5, this.sounds = {}, this.loadedFiles = {}, this.cameraPos = o.create(0, 0), this.activeLayer = 0, this.underground = !1, this.fadeInSounds = [], this.soundInstances = [], r.Sound.volume = .5, r.Sound.on("fileload", this.loadHandler, this)
+            this.mute = !1, this.masterVolume = 1, this.soundVolume = 1, this.musicVolume = 1, this.baseVolume = .5, this.sounds = {}, this.loadedFiles = {}, this.cameraPos = y.create(0, 0), this.activeLayer = 0, this.underground = !1, this.fadeInSounds = [], this.soundInstances = [], M.Sound.volume = .5, M.Sound.on("fileload", this.loadHandler, this)
         }
-        var r = a("f4ccd911"),
-            o = a("c2a798c8"),
-            n = a("10899aea"),
-            s = a("1901e2d9"),
-            l = a("0d807371");
+        var M = a("f4ccd911"),
+            y = a("c2a798c8"),
+            w = a("10899aea"),
+            x = a("1901e2d9"),
+            T = a("0d807371");
         i.prototype = {
             preloadSounds: function() {
-                for (var e = {}, t = Object.keys(l.Sounds), a = 0; a < t.length; a++)
-                    for (var i = t[a], o = l.Sounds[i], n = Object.keys(o), s = 0; s < n.length; s++) {
-                        var c = n[s];
-                        void 0 !== e[c] && console.log("Sound " + c + " defined multiple times!"), e[c] = !0
+                for (var e = {}, t = Object.keys(T.Sounds), a = 0; a < t.length; a++)
+                    for (var i = t[a], r = T.Sounds[i], o = Object.keys(r), n = 0; n < o.length; n++) {
+                        var s = o[n];
+                        void 0 !== e[s] && console.log("Sound " + s + " defined multiple times!"), e[s] = !0
                     }
-                for (var m = [], p = Object.keys(l.Channels), d = 0; d < p.length; d++)
-                    for (var h = p[d], u = l.Channels[h], g = l.Sounds[u.list], y = Object.keys(g), w = 0; w < y.length; w++) {
-                        var x = y[w],
-                            f = g[x];
-                        if (void 0 === f.preload || f.preload) {
-                            var b = {};
-                            b.canCoalesce = f.canCoalesce, b.channels = f.maxInstances, b.volume = f.volume, m.push({
-                                name: x + h,
-                                path: f.path,
-                                options: b,
-                                priority: f.loadPriority || 0
+                for (var l = [], c = Object.keys(T.Channels), m = 0; m < c.length; m++)
+                    for (var p = c[m], d = T.Channels[p], h = T.Sounds[d.list], u = Object.keys(h), g = 0; g < u.length; g++) {
+                        var y = u[g],
+                            w = h[y];
+                        if (void 0 === w.preload || w.preload) {
+                            var x = {};
+                            x.canCoalesce = w.canCoalesce, x.channels = w.maxInstances, x.volume = w.volume, l.push({
+                                name: y + p,
+                                path: w.path,
+                                options: x,
+                                priority: w.loadPriority || 0
                             })
                         }
                     }
-                m.sort(function(e, t) {
+                l.sort(function(e, t) {
                     return t.priority - e.priority
                 });
-                for (var _ = 0; _ < m.length; _++) {
-                    var S = m[_];
-                    this.loadSound(S)
+                for (var f = 0; f < l.length; f++) {
+                    var b = l[f];
+                    this.loadSound(b)
                 }
-                for (var k = l.Reverbs, v = Object.keys(k), z = 0; z < v.length; z++) {
-                    var M = v[z],
-                        T = k[M];
-                    r.Sound.registerReverb(T.path, M, T)
+                for (var _ = T.Reverbs, S = Object.keys(_), k = 0; k < S.length; k++) {
+                    var v = S[k],
+                        z = _[v];
+                    M.Sound.registerReverb(z.path, v, z)
                 }
             },
             loadSound: function(e) {
-                this.sounds[e.name] || (r.Sound.registerSound(e.path, e.name, e.options), this.sounds[e.name] = {
+                this.sounds[e.name] || (M.Sound.registerSound(e.path, e.name, e.options), this.sounds[e.name] = {
                     path: e.path
                 })
             },
             loadSoundList: function(e) {
                 for (var t = 0; t < e.length; t++) {
                     var a = e[t],
-                        i = l.Sounds[a.channel][a.name],
+                        i = T.Sounds[a.channel][a.name],
                         r = {
                             canCoalesce: i.canCoalesce,
                             channels: i.maxInstances,
@@ -9907,59 +9734,58 @@
                 this.loadedFiles[e] = !0
             },
             c: function(e) {
-                for (var t = this.fadeInSounds.length - 1; t >= 0; t--) {
+                for (var t = this.fadeInSounds.length - 1; 0 <= t; t--) {
                     var a = this.fadeInSounds[t].instance;
                     if (a) {
                         var i = 1 * this.getTypeVolume(this.fadeInSounds[t].type);
                         a.volume = Math.min(i, a.volume + e), a.volume == i && this.fadeInSounds.splice(t, 1)
                     }
                 }
-                for (var o = this.soundInstances.length - 1; o >= 0; o--) {
-                    var n = this.soundInstances[o];
-                    "playFinished" != n.instance.playState && "playInterrupted" != n.instance.playState && "playFailed" != n.instance.playState || this.soundInstances.splice(o, 1)
+                for (var r = this.soundInstances.length - 1; 0 <= r; r--) {
+                    var o = this.soundInstances[r];
+                    "playFinished" != o.instance.playState && "playInterrupted" != o.instance.playState && "playFailed" != o.instance.playState || this.soundInstances.splice(r, 1)
                 }
-                var s = [0, 1, 1 / 3, 2 / 3],
-                    l = this.underground ? s[this.activeLayer] : 0;
-                r.Sound.setReverbs({
-                    cathedral: l
-                }), r.Sound.update(e)
+                var n = this.underground ? [0, 1, 1 / 3, 2 / 3][this.activeLayer] : 0;
+                M.Sound.setReverbs({
+                    cathedral: n
+                }), M.Sound.update(e)
             },
             playSound: function(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                var t = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {};
                 if (!e || "none" == e) return null;
                 t.channel = t.channel || "activePlayer", t.fadeIn = t.fadeIn || !1, t.startSilent = t.startSilent || !1, t.forceStart = t.forceStart || !1, t.loop = t.loop || !1, t.soundPos = t.soundPos || !1, t.fallOff = t.fallOff || 0, t.muffled = t.muffled || !1, t.delay = t.delay || 0, t.ignoreMinAllowable = t.ignoreMinAllowable || !1, t.rangeMult = t.rangeMult || 1, t.offset = t.offset || 0, t.ambient = "ambient" == t.channel || "music" == t.channel;
-                var a = l.Channels[t.channel];
+                var a = T.Channels[t.channel];
                 if (a && (!this.mute || t.forceStart)) {
                     var i = !1,
-                        c = 1 * this.baseVolume * this.getTypeVolume(a.type),
-                        m = void 0 !== t.layer && !s.sameAudioLayer(t.layer, this.activeLayer),
-                        p = t.muffled ? m ? "muffled" : "reverb" : "none";
+                        r = 1 * this.baseVolume * this.getTypeVolume(a.type),
+                        o = void 0 !== t.layer && !x.sameAudioLayer(t.layer, this.activeLayer),
+                        n = t.muffled ? o ? "muffled" : "reverb" : "none";
                     if ("activePlayer" != t.channel && t.soundPos) {
-                        var d = o.sub(this.cameraPos, t.soundPos),
-                            h = o.length(d),
-                            u = a.maxRange * t.rangeMult;
-                        n.eqAbs(u, 0) && (u = 1);
-                        var g = n.clamp(Math.abs(h / u), 0, 1),
-                            y = Math.pow(1 - g, 1 + 2 * t.fallOff),
-                            w = a.volume * y * c;
-                        if ((w = m ? .5 * w : w) > .003 || t.ignoreMinAllowable) {
-                            var x = n.clamp(d.x / u * -1, -1, 1);
-                            i = r.Sound.play(e + t.channel, {
-                                filter: p,
+                        var s = y.sub(this.cameraPos, t.soundPos),
+                            l = y.length(s),
+                            c = a.maxRange * t.rangeMult;
+                        w.eqAbs(c, 0) && (c = 1);
+                        var m = w.clamp(Math.abs(l / c), 0, 1),
+                            p = Math.pow(1 - m, 1 + 2 * t.fallOff),
+                            d = a.volume * p * r;
+                        if (.003 < (d = o ? .5 * d : d) || t.ignoreMinAllowable) {
+                            var h = w.clamp(s.x / c * -1, -1, 1);
+                            i = M.Sound.play(e + t.channel, {
+                                filter: n,
                                 loop: t.loop ? -1 : 0,
-                                volume: t.fadeIn || t.startSilent ? 0 : w,
-                                pan: x,
+                                volume: t.fadeIn || t.startSilent ? 0 : d,
+                                pan: h,
                                 delay: t.delay,
                                 offset: t.offset,
                                 ambient: t.ambient
                             })
                         }
                     } else {
-                        var f = a.volume * c;
-                        f = m ? .5 * f : f, i = r.Sound.play(e + t.channel, {
-                            filter: p,
+                        var u = a.volume * r;
+                        u = o ? .5 * u : u, i = M.Sound.play(e + t.channel, {
+                            filter: n,
                             loop: t.loop ? -1 : 0,
-                            volume: t.fadeIn || t.startSilent ? 0 : f,
+                            volume: t.fadeIn || t.startSilent ? 0 : u,
                             delay: t.delay,
                             offset: t.offset,
                             ambient: t.ambient
@@ -9970,10 +9796,10 @@
                                 instance: i,
                                 type: a.type
                             }), t.loop || "music" == t.channel) {
-                            var b = "music" == t.channel ? "music" : "sound";
+                            var g = "music" == t.channel ? "music" : "sound";
                             this.soundInstances.push({
                                 instance: i,
-                                type: b
+                                type: g
                             })
                         }
                         return i
@@ -9982,41 +9808,41 @@
                 return null
             },
             playGroup: function(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                    a = l.Groups[e];
+                var t = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {},
+                    a = T.Groups[e];
                 if (a) {
                     var i = a.sounds,
-                        r = Math.floor(s.random(0, i.length));
+                        r = Math.floor(x.random(0, i.length));
                     return t.channel = a.channel, this.playSound(i[r], t)
                 }
                 return null
             },
             updateSound: function(e, t, a) {
-                var i = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
+                var i = 3 < arguments.length && void 0 !== arguments[3] ? arguments[3] : {};
                 i.fallOff = i.fallOff || 0, i.rangeMult = i.rangeMult || 1, i.ignoreMinAllowable = i.ignoreMinAllowable || !1;
-                var r = l.Channels[t];
+                var r = T.Channels[t];
                 if (e && r) {
-                    var c = 1 * this.baseVolume * this.getTypeVolume(r.type),
-                        m = o.sub(this.cameraPos, a),
-                        p = o.length(m),
-                        d = r.maxRange * i.rangeMult;
-                    n.eqAbs(d, 0) && (d = 1);
-                    var h = n.clamp(Math.abs(p / d), 0, 1),
-                        u = Math.pow(1 - h, 1 + 2 * i.fallOff),
-                        g = r.volume * u * c;
-                    if ((g = void 0 === i.layer || s.sameAudioLayer(i.layer, this.activeLayer) ? g : .5 * g) > .003 || i.ignoreMinAllowable) {
-                        var y = n.clamp(m.x / d * -1, -1, 1);
-                        return e.volume = g, e.pan = y, e
+                    var o = 1 * this.baseVolume * this.getTypeVolume(r.type),
+                        n = y.sub(this.cameraPos, a),
+                        s = y.length(n),
+                        l = r.maxRange * i.rangeMult;
+                    w.eqAbs(l, 0) && (l = 1);
+                    var c = w.clamp(Math.abs(s / l), 0, 1),
+                        m = Math.pow(1 - c, 1 + 2 * i.fallOff),
+                        p = r.volume * m * o;
+                    if (.003 < (p = void 0 === i.layer || x.sameAudioLayer(i.layer, this.activeLayer) ? p : .5 * p) || i.ignoreMinAllowable) {
+                        var d = w.clamp(n.x / l * -1, -1, 1);
+                        return e.volume = p, e.pan = d, e
                     }
                 }
                 return null
             },
             setMasterVolume: function(e) {
-                e = n.clamp(e, 0, 1), r.Sound.volume = e
+                e = w.clamp(e, 0, 1), M.Sound.volume = e
             },
             _setInstanceTypeVolume: function(e, t) {
-                t = n.clamp(t, 0, 1);
-                for (var a = this.getTypeVolume(e), i = a > 1e-4 ? t / a : 0, r = 0; r < this.soundInstances.length; r++) {
+                t = w.clamp(t, 0, 1);
+                for (var a = this.getTypeVolume(e), i = 1e-4 < a ? t / a : 0, r = 0; r < this.soundInstances.length; r++) {
                     var o = this.soundInstances[r];
                     o.type == e && (o.instance.volume *= i)
                 }
@@ -10038,7 +9864,7 @@
                 return e ? e.volume : 0
             },
             setMute: function(e) {
-                return this.mute = e, r.Sound.setMute(this.mute), this.mute
+                return this.mute = e, M.Sound.setMute(this.mute), this.mute
             },
             muteToggle: function() {
                 return this.setMute(!this.mute)
@@ -10050,14 +9876,14 @@
                 e && e.stop()
             },
             stopAll: function() {
-                r.Sound.stop()
+                M.Sound.stop()
             },
             isSoundLoaded: function(e, t) {
                 var a = this.sounds[e + t];
                 return a && this.loadedFiles[a.path]
             },
             isSoundPlaying: function(e) {
-                return !!e && e.playState == r.Sound.PLAY_SUCCEEDED
+                return !!e && e.playState == M.Sound.PLAY_SUCCEEDED
             },
             getTypeVolume: function(e) {
                 switch (e) {
@@ -10073,11 +9899,7 @@
     "4b8d140f": function(e, t, a) {
         "use strict";
 
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-
-        function r() {
+        function m() {
             this.id = 0, this.pos = {
                 x: 0,
                 y: 0
@@ -10090,7 +9912,7 @@
             }, this.startTime = 0, this.lastUpdateTime = 0, this.isNew = !0, this.isDead = !1, this.osId = 0
         }
 
-        function o(e) {
+        function i(e) {
             var t = this;
             this.touchElem = e, this.keys = {}, this.keysOld = {}, this.de = {
                 x: 0,
@@ -10125,18 +9947,18 @@
                 passive: !0
             }), this.touchElem.addEventListener("touchmove", this.bOnTouchMove, !1), this.touchElem.addEventListener("touchstart", this.bOnTouchStart, !1), this.touchElem.addEventListener("touchend", this.bOnTouchEnd, !1), this.touchElem.addEventListener("touchcancel", this.bOnTouchCancel, !1)
         }
-        var n = function() {
-                function e(e, t) {
+        var r = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            s = (a("c2a798c8"), Object.freeze({
+            o = (a("c2a798c8"), Object.freeze({
                 Backspace: 8,
                 Enter: 13,
                 Shift: 16,
@@ -10195,32 +10017,34 @@
                 FwdSlash: 191,
                 Tilde: 192
             })),
-            l = Object.freeze({
+            n = Object.freeze({
                 Left: 0,
                 Middle: 1,
                 Right: 2,
                 Thumb1: 3,
                 Thumb2: 4
             }),
-            c = Object.freeze({
+            s = Object.freeze({
                 None: 0,
                 Up: 1,
                 Down: 2
             }),
-            m = {
+            l = {
                 None: 0,
                 Key: 1,
                 MouseButton: 2,
                 MouseWheel: 3
             },
-            p = ["", "", "", "Cancel", "", "", "Help", "", "Backspace", "Tab", "", "", "Clear", "Enter", "Enter", "", "Shift", "Control", "Alt", "Pause", "Capslock", "Kana", "Eisu", "Junja", "Final", "Hanja", "", "ESC", "Convert", "Nonconvert", "Accept", "Modechange", "Space", "Page Up", "Page Down", "End", "Home", "←", "↑", "→", "↓", "Select", "Print", "Execute", "Printscreen", "Insert", "Delete", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Windows Key", "", "Context Menu", "", "Sleep", "Numpad 0", "Numpad 1", "Numpad 2", "Numpad 3", "Numpad 4", "Numpad 5", "Numpad 6", "Numpad 7", "Numpad 8", "Numpad 9", "*", "+", "Separator", "-", ".", "/", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24", "", "", "", "", "", "", "", "", "Num Lock", "Scroll Lock", "WIN_OEM_FJ_JISHO", "WIN_OEM_FJ_MASSHOU", "WIN_OEM_FJ_TOUROKU", "WIN_OEM_FJ_LOYA", "WIN_OEM_FJ_ROYA", "", "", "", "", "", "", "", "", "", "Circumflex", "!", '"', "#", "$", "%", "&", "_", "(", ")", "*", "+", "|", "Hyphen Minus", "{", "}", "~", "", "", "", "", "Volume Mute", "Volume Down", "Volume Up", "", "", ";", "=", ",", "-", ".", "/", "Backquote", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[", "\\", "]", "'", "", "Meta", "ALTGR", "", "WIN_ICO_HELP", "WIN_ICO_00", "", "WIN_ICO_CLEAR", "", "", "WIN_OEM_RESET", "WIN_OEM_JUMP", "WIN_OEM_PA1", "WIN_OEM_PA2", "WIN_OEM_PA3", "WIN_OEM_WSCTRL", "WIN_OEM_CUSEL", "WIN_OEM_ATTN", "WIN_OEM_FINISH", "WIN_OEM_COPY", "WIN_OEM_AUTO", "WIN_OEM_ENLW", "WIN_OEM_BACKTAB", "ATTN", "CRSEL", "EXSEL", "EREOF", "PLAY", "ZOOM", "", "PA1", "WIN_OEM_CLEAR", ""],
-            d = ["Left Mouse", "Middle Mouse", "Right Mouse", "Thumb Mouse 1", "Thumb Mouse 2"],
-            h = ["", "Mouse Wheel Up", "Mouse Wheel Down"],
-            u = function() {
-                function e(t, a) {
-                    i(this, e), this.type = t, this.code = a
+            c = ["", "", "", "Cancel", "", "", "Help", "", "Backspace", "Tab", "", "", "Clear", "Enter", "Enter", "", "Shift", "Control", "Alt", "Pause", "Capslock", "Kana", "Eisu", "Junja", "Final", "Hanja", "", "ESC", "Convert", "Nonconvert", "Accept", "Modechange", "Space", "Page Up", "Page Down", "End", "Home", "←", "↑", "→", "↓", "Select", "Print", "Execute", "Printscreen", "Insert", "Delete", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Windows Key", "", "Context Menu", "", "Sleep", "Numpad 0", "Numpad 1", "Numpad 2", "Numpad 3", "Numpad 4", "Numpad 5", "Numpad 6", "Numpad 7", "Numpad 8", "Numpad 9", "*", "+", "Separator", "-", ".", "/", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24", "", "", "", "", "", "", "", "", "Num Lock", "Scroll Lock", "WIN_OEM_FJ_JISHO", "WIN_OEM_FJ_MASSHOU", "WIN_OEM_FJ_TOUROKU", "WIN_OEM_FJ_LOYA", "WIN_OEM_FJ_ROYA", "", "", "", "", "", "", "", "", "", "Circumflex", "!", '"', "#", "$", "%", "&", "_", "(", ")", "*", "+", "|", "Hyphen Minus", "{", "}", "~", "", "", "", "", "Volume Mute", "Volume Down", "Volume Up", "", "", ";", "=", ",", "-", ".", "/", "Backquote", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[", "\\", "]", "'", "", "Meta", "ALTGR", "", "WIN_ICO_HELP", "WIN_ICO_00", "", "WIN_ICO_CLEAR", "", "", "WIN_OEM_RESET", "WIN_OEM_JUMP", "WIN_OEM_PA1", "WIN_OEM_PA2", "WIN_OEM_PA3", "WIN_OEM_WSCTRL", "WIN_OEM_CUSEL", "WIN_OEM_ATTN", "WIN_OEM_FINISH", "WIN_OEM_COPY", "WIN_OEM_AUTO", "WIN_OEM_ENLW", "WIN_OEM_BACKTAB", "ATTN", "CRSEL", "EXSEL", "EREOF", "PLAY", "ZOOM", "", "PA1", "WIN_OEM_CLEAR", ""],
+            p = ["Left Mouse", "Middle Mouse", "Right Mouse", "Thumb Mouse 1", "Thumb Mouse 2"],
+            d = ["", "Mouse Wheel Up", "Mouse Wheel Down"],
+            h = function() {
+                function a(e, t) {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, a), this.type = e, this.code = t
                 }
-                return n(e, [{
+                return r(a, [{
                     key: "equals",
                     value: function(e) {
                         return this.type == e.type && this.code == e.code
@@ -10228,17 +10052,17 @@
                 }, {
                     key: "toString",
                     value: function() {
-                        return this.type == m.None ? "" : this.type == m.Key ? p[this.code] || "Key " + this.code : this.type == m.MouseButton ? d[this.code] || "Mouse " + this.code : h[this.code] || "Mouse Wheel " + this.code
+                        return this.type == l.None ? "" : this.type == l.Key ? c[this.code] || "Key " + this.code : this.type == l.MouseButton ? p[this.code] || "Mouse " + this.code : d[this.code] || "Mouse Wheel " + this.code
                     }
-                }]), e
+                }]), a
             }(),
-            g = Object.freeze({
+            u = Object.freeze({
                 Move: 0,
                 Start: 1,
                 End: 2,
                 Cancel: 3
             });
-        o.prototype = {
+        i.prototype = {
             n: function() {
                 window.removeEventListener("focus", this.bOnWindowFocus), window.removeEventListener("blur", this.bOnWindowFocus), window.removeEventListener("keydown", this.bOnKeyDown), window.removeEventListener("keyup", this.bOnKeyUp), window.removeEventListener("mousemove", this.bOnMouseMove), window.removeEventListener("mousedown", this.bOnMouseDown), window.removeEventListener("mouseup", this.bOnMouseUp), window.removeEventListener("wheel", this.bOnMouseWheel), this.touchElem.removeEventListener("touchmove", this.bOnTouchMove), this.touchElem.removeEventListener("touchstart", this.bOnTouchStart), this.touchElem.removeEventListener("touchend", this.bOnTouchEnd), this.touchElem.removeEventListener("touchcancel", this.bOnTouchCancel)
             },
@@ -10246,23 +10070,23 @@
                 this.keys = {}, this.keysOld = {}, this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches.length = 0, this.lostFocus = !0
             },
             flush: function() {
-                this.keysOld = Object.assign({}, this.keys), this.mouseButtonsOld = Object.assign({}, this.mouseButtons), this.mouseWheelState = 0;
-                for (var e = 0; e < this.touches.length; e++) this.touches[e].posOld.x = this.touches[e].pos.x, this.touches[e].posOld.y = this.touches[e].pos.y, this.touches[e].isNew = !1, this.touches[e].isDead && (this.touches.splice(e, 1), --e);
+                this.keysOld = Object.assign({}, this.keys), this.mouseButtonsOld = Object.assign({}, this.mouseButtons);
+                for (var e = this.mouseWheelState = 0; e < this.touches.length; e++) this.touches[e].posOld.x = this.touches[e].pos.x, this.touches[e].posOld.y = this.touches[e].pos.y, this.touches[e].isNew = !1, this.touches[e].isDead && (this.touches.splice(e, 1), --e);
                 this.lostFocus = !1
             },
             captureNextInput: function(e) {
                 this.captureNextInputCb = e
             },
             checkCaptureInput: function(e, t, a) {
-                return !(!this.captureNextInputCb || !this.captureNextInputCb(e, new u(t, a)) || (this.captureNextInputCb = null, 0))
+                return !(!this.captureNextInputCb || !this.captureNextInputCb(e, new h(t, a)) || (this.captureNextInputCb = null))
             },
             isInputValuePressed: function(e) {
                 switch (e.type) {
-                    case m.Key:
+                    case l.Key:
                         return this.ue(e.code);
-                    case m.MouseButton:
+                    case l.MouseButton:
                         return this.ge(e.code);
-                    case m.MouseWheel:
+                    case l.MouseWheel:
                         return this.ye() == e.code;
                     default:
                         return !1
@@ -10270,11 +10094,11 @@
             },
             isInputValueReleased: function(e) {
                 switch (e.type) {
-                    case m.Key:
+                    case l.Key:
                         return this.we(e.code);
-                    case m.MouseButton:
+                    case l.MouseButton:
                         return this.xe(e.code);
-                    case m.MouseWheel:
+                    case l.MouseWheel:
                         return this.ye() == e.code;
                     default:
                         return !1
@@ -10282,11 +10106,11 @@
             },
             isInputValueDown: function(e) {
                 switch (e.type) {
-                    case m.Key:
+                    case l.Key:
                         return this.fe(e.code);
-                    case m.MouseButton:
+                    case l.MouseButton:
                         return this.be(e.code);
-                    case m.MouseWheel:
+                    case l.MouseWheel:
                         return this.ye() == e.code;
                     default:
                         return !1
@@ -10294,7 +10118,7 @@
             },
             onKeyDown: function(e) {
                 var t = e.keyCode;
-                9 == t && e.preventDefault(), this.checkCaptureInput(e, m.Key, t) || (this.keys[t] = !0)
+                9 == t && e.preventDefault(), this.checkCaptureInput(e, l.Key, t) || (this.keys[t] = !0)
             },
             onKeyUp: function(e) {
                 this.keys[e.keyCode] = !1
@@ -10312,16 +10136,16 @@
                 this.he = Object.assign({}, this.de), this.de.x = e.clientX, this.de.y = e.clientY
             },
             onMouseDown: function(e) {
-                var t = 0;
-                t = "which" in e ? e.which - 1 : e.button, this.checkCaptureInput(e, m.MouseButton, t) || (this.mouseButtons[t] = !0)
+                var t;
+                t = "which" in e ? e.which - 1 : e.button, this.checkCaptureInput(e, l.MouseButton, t) || (this.mouseButtons[t] = !0)
             },
             onMouseUp: function(e) {
-                var t = 0;
+                var t;
                 t = "which" in e ? e.which - 1 : e.button, this.mouseButtons[t] = !1
             },
             onMouseWheel: function(e) {
-                var t = e.deltaY < 0 ? c.Up : c.Down;
-                this.checkCaptureInput(e, m.MouseWheel, t) || (this.mouseWheelState = t)
+                var t = e.deltaY < 0 ? s.Up : s.Down;
+                this.checkCaptureInput(e, l.MouseWheel, t) || (this.mouseWheelState = t)
             },
             be: function(e) {
                 return !!this.mouseButtons[e]
@@ -10336,27 +10160,27 @@
                 return this.mouseWheelState
             },
             onTouchShared: function(e, t) {
-                e.cancelable && t != g.Cancel && e.preventDefault();
+                e.cancelable && t != u.Cancel && e.preventDefault();
                 for (var a = e.timeStamp || performance.now(), i = 0; i < e.changedTouches.length; i++) {
-                    for (var o = e.changedTouches[i], n = o.identifier, s = o.clientX, l = o.clientY, c = null, m = 0; m < this.touches.length; m++)
-                        if (this.touches[m].osId == n && !this.touches[m].isDead) {
-                            c = this.touches[m];
+                    for (var r = e.changedTouches[i], o = r.identifier, n = r.clientX, s = r.clientY, l = null, c = 0; c < this.touches.length; c++)
+                        if (this.touches[c].osId == o && !this.touches[c].isDead) {
+                            l = this.touches[c];
                             break
                         }
-                    t != g.Start || c || (c = new r, this.touches.push(c), ++this.touchIdCounter, c.id = this.touchIdCounter, c.osId = n, c.posOld.x = s, c.posOld.y = l, c.posDown.x = s, c.posDown.y = l, c.startTime = a, c.isNew = !0, c.isDead = !1), t != g.End && t != g.Cancel || !c || (c.isDead = !0), c && (c.pos.x = s, c.pos.y = l, c.lastUpdateTime = a)
+                    t != u.Start || l || (l = new m, this.touches.push(l), ++this.touchIdCounter, l.id = this.touchIdCounter, l.osId = o, l.posOld.x = n, l.posOld.y = s, l.posDown.x = n, l.posDown.y = s, l.startTime = a, l.isNew = !0, l.isDead = !1), t != u.End && t != u.Cancel || !l || (l.isDead = !0), l && (l.pos.x = n, l.pos.y = s, l.lastUpdateTime = a)
                 }
             },
             onTouchMove: function(e) {
-                this.onTouchShared(e, g.Move)
+                this.onTouchShared(e, u.Move)
             },
             onTouchStart: function(e) {
-                this.onTouchShared(e, g.Start)
+                this.onTouchShared(e, u.Start)
             },
             onTouchEnd: function(e) {
-                this.onTouchShared(e, g.End)
+                this.onTouchShared(e, u.End)
             },
             onTouchCancel: function(e) {
-                this.onTouchShared(e, g.Cancel)
+                this.onTouchShared(e, u.Cancel)
             },
             getTouchById: function(e) {
                 for (var t = 0; t < this.touches.length; t++)
@@ -10364,13 +10188,13 @@
                 return null
             }
         }, e.exports = {
-            _e: o,
-            InputType: m,
-            InputValue: u,
-            Key: s,
-            MouseButton: l,
-            MouseWheel: c,
-            Touch: r
+            _e: i,
+            InputType: l,
+            InputValue: h,
+            Key: o,
+            MouseButton: n,
+            MouseWheel: s,
+            Touch: m
         }
     },
     "4cddfd71": function(e, t, a) {
@@ -10393,61 +10217,60 @@
     "4e269062": function(e, t, a) {
         "use strict";
         var i = (a("989ad62a"), a("1901e2d9")),
-            r = (a("c2a798c8"), a("d5ec3c16")),
-            o = {
-                desc: {
-                    name: "Snow",
-                    icon: "img/loot/loot-throwable-snowball.svg"
+            r = (a("c2a798c8"), a("d5ec3c16"));
+        e.exports = i.mergeDeep({}, r, {
+            desc: {
+                name: "Snow",
+                icon: "img/loot/loot-throwable-snowball.svg"
+            },
+            assets: {
+                audio: [{
+                    name: "snowball_01",
+                    channel: "sfx"
+                }, {
+                    name: "snowball_02",
+                    channel: "sfx"
+                }, {
+                    name: "plane_02",
+                    channel: "sfx"
+                }, {
+                    name: "bells_01",
+                    channel: "ui"
+                }, {
+                    name: "snowball_pickup_01",
+                    channel: "ui"
+                }],
+                atlases: ["gradient", "shared", "snow"]
+            },
+            biome: {
+                colors: {
+                    background: 603705,
+                    water: 806225,
+                    beach: 13480795,
+                    riverbank: 9461284,
+                    grass: 12434877,
+                    underground: 1772803,
+                    playerSubmerge: 2854052
                 },
-                assets: {
-                    audio: [{
-                        name: "snowball_01",
-                        channel: "sfx"
-                    }, {
-                        name: "snowball_02",
-                        channel: "sfx"
-                    }, {
-                        name: "plane_02",
-                        channel: "sfx"
-                    }, {
-                        name: "bells_01",
-                        channel: "ui"
-                    }, {
-                        name: "snowball_pickup_01",
-                        channel: "ui"
-                    }],
-                    atlases: ["gradient", "shared", "snow"]
+                particles: {
+                    camera: "falling_snow_fast",
+                    ripple: "waterRipple"
                 },
-                biome: {
-                    colors: {
-                        background: 603705,
-                        water: 806225,
-                        beach: 13480795,
-                        riverbank: 9461284,
-                        grass: 12434877,
-                        underground: 1772803,
-                        playerSubmerge: 2854052
-                    },
-                    particles: {
-                        camera: "falling_snow_fast",
-                        ripple: "waterRipple"
-                    },
-                    airdrop: {
-                        planeImg: "map-plane-01x.img",
-                        planeSound: "plane_02",
-                        airdropImg: "map-chute-01x.img"
-                    },
-                    frozenSprites: ["player-snow-01.img", "player-snow-02.img", "player-snow-03.img"]
+                airdrop: {
+                    planeImg: "map-plane-01x.img",
+                    planeSound: "plane_02",
+                    airdropImg: "map-chute-01x.img"
                 },
-                gameMode: {
-                    maxPlayers: 80
-                }
-            };
-        e.exports = i.mergeDeep({}, r, o)
+                frozenSprites: ["player-snow-01.img", "player-snow-02.img", "player-snow-03.img"]
+            },
+            gameMode: {
+                maxPlayers: 80
+            }
+        })
     },
     51683873: function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-01-28",
                 locale: "zh-cn"
@@ -10681,12 +10504,11 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "5bedf25d": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-03-31",
                 locale: "en"
@@ -11154,11 +10976,10 @@
             "game-perk-title-4": "Windwalk",
             "game-perk-desc-4": "When taking fire, gain a short burst of speed.",
             "game-perk-title-5": "Rare Potato",
-            "game-perk-desc-5": "Always rotate to higher quality weapons.",
+            "game-perk-desc-5": "Always rotate to a high quality weapon.",
             "index-online": "online",
             "index-news-korea": "We've officially broken out our <span class='highlight'>Korean servers</span> into their own region. To play in this region, select <span class='highlight'>South Korea</span> from the region selector."
-        };
-        e.exports = i
+        }
     },
     "604cff9c": function(e, t, a) {
         "use strict";
@@ -11167,19 +10988,19 @@
             this.active = !1
         }
 
-        function r(e) {
+        function o(e) {
             this.active = !1
         }
 
-        function o() {
+        function r() {
             this.explosions = [], this.physicsParticles = []
         }
-        var n = (a("8b1dfb45"), a("6b42806d")),
-            s = a("989ad62a"),
-            l = (a("34e32c48"), a("ceee80d9"), a("10899aea")),
-            c = a("1901e2d9"),
-            m = a("c2a798c8"),
-            p = (a("ce29f17f"), a("af8ba00f"), {
+        var _ = (a("8b1dfb45"), a("6b42806d")),
+            S = a("989ad62a"),
+            k = (a("34e32c48"), a("ceee80d9"), a("10899aea")),
+            v = a("1901e2d9"),
+            z = a("c2a798c8"),
+            M = (a("ce29f17f"), a("af8ba00f"), {
                 frag: {
                     burst: {
                         particle: "explosionBurst",
@@ -11383,100 +11204,99 @@
             });
         i.prototype = {
             init: function(e, t, a, i) {
-                this.pos = m.copy(e), this.vel = m.copy(t), this.layer = a, this.particle = i, this.ticker = 0, this.colCount = 0, this.active = !0
+                this.pos = z.copy(e), this.vel = z.copy(t), this.layer = a, this.particle = i, this.ticker = 0, this.colCount = 0, this.active = !0
             },
             update: function(e, t, a) {
-                var i = m.copy(this.pos);
-                this.pos = m.add(this.pos, m.mul(this.vel, e)), this.vel = m.mul(this.vel, 1 / (1 + 5 * e));
-                for (var r = [], o = t.pe.m(), s = 0; s < o.length; s++) {
-                    var l = o[s];
-                    l.active && !l.dead && c.sameLayer(this.layer, l.layer) && r.push(l.collider)
+                var i = z.copy(this.pos);
+                this.pos = z.add(this.pos, z.mul(this.vel, e)), this.vel = z.mul(this.vel, 1 / (1 + 5 * e));
+                for (var r = [], o = t.pe.m(), n = 0; n < o.length; n++) {
+                    var s = o[n];
+                    s.active && !s.dead && v.sameLayer(this.layer, s.layer) && r.push(s.collider)
                 }
-                for (var p = a.Se.m(), d = 0; d < p.length; d++) {
-                    var h = p[d];
-                    h.active && !h.dead && c.sameLayer(this.layer, h.layer) && r.push(n.createCircle(h.pos, h.rad, 0))
+                for (var l = a.Se.m(), c = 0; c < l.length; c++) {
+                    var m = l[c];
+                    m.active && !m.dead && v.sameLayer(this.layer, m.layer) && r.push(_.createCircle(m.pos, m.rad, 0))
                 }
-                for (var u = [], g = 0; g < r.length; g++) {
-                    var y = n.intersectSegment(r[g], i, this.pos);
-                    if (y) {
-                        var w = m.length(m.sub(y.point, i));
-                        u.push({
-                            point: y.point,
-                            normal: y.normal,
-                            dist: w
+                for (var p = [], d = 0; d < r.length; d++) {
+                    var h = _.intersectSegment(r[d], i, this.pos);
+                    if (h) {
+                        var u = z.length(z.sub(h.point, i));
+                        p.push({
+                            point: h.point,
+                            normal: h.normal,
+                            dist: u
                         })
                     }
                 }
-                if (u.sort(function(e, t) {
+                if (p.sort(function(e, t) {
                         return e.dist - t.dist
-                    }), u.length > 0) {
-                    var x = u[0],
-                        f = m.normalizeSafe(this.vel, m.create(1, 0)),
-                        b = m.length(this.vel),
-                        _ = m.sub(f, m.mul(x.normal, 2 * m.dot(x.normal, f))),
-                        S = this.colCount++ > 0 ? .35 : 1;
-                    this.pos = m.add(x.point, m.mul(x.normal, .01)), this.vel = m.mul(_, b * S)
+                    }), 0 < p.length) {
+                    var g = p[0],
+                        y = z.normalizeSafe(this.vel, z.create(1, 0)),
+                        w = z.length(this.vel),
+                        x = z.sub(y, z.mul(g.normal, 2 * z.dot(g.normal, y))),
+                        f = 0 < this.colCount++ ? .35 : 1;
+                    this.pos = z.add(g.point, z.mul(g.normal, .01)), this.vel = z.mul(x, w * f)
                 }
-                this.particle.pos = m.copy(this.pos), this.ticker += e, this.ticker >= this.particle.life && (this.particle.n(), this.active = !1)
+                this.particle.pos = z.copy(this.pos), this.ticker += e, this.ticker >= this.particle.life && (this.particle.n(), this.active = !1)
             }
-        }, r.prototype = {
+        }, o.prototype = {
             o: function(e, t, a) {
-                var i = s.explosions[e].explosionEffectType,
-                    r = p[i];
-                this.active = !0, this.done = !1, this.type = e, this.pos = m.copy(t), this.layer = a, this.ticker = 0, this.lifetime = r.lifetime, this.soundInstance = null, this.soundUpdateThrottle = 0
+                var i = S.explosions[e].explosionEffectType,
+                    r = M[i];
+                this.active = !0, this.done = !1, this.type = e, this.pos = z.copy(t), this.layer = a, this.ticker = 0, this.lifetime = r.lifetime, this.soundInstance = null, this.soundUpdateThrottle = 0
             },
             n: function() {
                 this.active = !1
             },
             c: function(e, t, a, i, r, o) {
-                var d = s.explosions[this.type].explosionEffectType,
-                    h = p[d];
+                var n = S.explosions[this.type].explosionEffectType,
+                    s = M[n];
                 if (0 == this.ticker) {
-                    var u = !0;
+                    var l = !0;
                     if ("explosion_bomb_iron" == this.type) {
-                        var g = n.createCircle(this.pos, .5);
-                        r.insideBuildingCeiling(g, !0) && (u = !1)
+                        var c = _.createCircle(this.pos, .5);
+                        r.insideBuildingCeiling(c, !0) && (l = !1)
                     }
-                    if (u && (h.burst.particle && a.addParticle(h.burst.particle, this.layer, this.pos, m.create(0, 0), h.burst.scale, 0, null), h.scatter))
-                        for (var y = 0; y < h.scatter.count; y++) {
-                            var w = a.addParticle(h.scatter.particle, this.layer, this.pos, m.create(0, 0), 1, 0, null),
-                                x = t.addPhysicsParticle(),
-                                f = m.mul(m.randomUnit(), c.random(h.scatter.speed.min, h.scatter.speed.max));
-                            x.init(this.pos, f, this.layer, w)
+                    if (l && (s.burst.particle && a.addParticle(s.burst.particle, this.layer, this.pos, z.create(0, 0), s.burst.scale, 0, null), s.scatter))
+                        for (var m = 0; m < s.scatter.count; m++) {
+                            var p = a.addParticle(s.scatter.particle, this.layer, this.pos, z.create(0, 0), 1, 0, null),
+                                d = t.addPhysicsParticle(),
+                                h = z.mul(z.randomUnit(), v.random(s.scatter.speed.min, s.scatter.speed.max));
+                            d.init(this.pos, h, this.layer, p)
                         }
-                    var b = r.getGroundSurface(this.pos, this.layer),
-                        _ = "water" == b.type ? h.burst.sound.water : h.burst.sound.grass;
-                    if (this.soundInstance = i.playSound(_, {
+                    var u = r.getGroundSurface(this.pos, this.layer),
+                        g = "water" == u.type ? s.burst.sound.water : s.burst.sound.grass;
+                    if (this.soundInstance = i.playSound(g, {
                             channel: "sfx",
                             soundPos: this.pos,
                             layer: this.layer,
                             muffled: !0,
                             rangeMult: 2,
                             ignoreMinAllowable: !0
-                        }), "water" == b.type)
-                        for (var S = 0; S < h.rippleCount; S++) {
-                            var k = .5 * h.rippleCount,
-                                v = m.add(this.pos, m.mul(m.randomUnit(), c.random(0, k))),
-                                z = a.addRippleParticle(v, this.layer);
-                            z.setDelay(.06 * S)
+                        }), "water" == u.type)
+                        for (var y = 0; y < s.rippleCount; y++) {
+                            var w = .5 * s.rippleCount,
+                                x = z.add(this.pos, z.mul(z.randomUnit(), v.random(0, w)));
+                            a.addRippleParticle(x, this.layer).setDelay(.06 * y)
                         }
                 }
                 this.soundInstance && this.soundUpdateThrottle < 0 ? (this.soundUpdateThrottle = .1, this.soundInstance = i.updateSound(this.soundInstance, "sfx", this.pos, {
                     layer: this.layer,
                     muffled: !0
                 })) : this.soundUpdateThrottle -= e, this.ticker += e;
-                var M = l.min(this.ticker / h.shakeDur, 1),
-                    T = l.lerp(M, h.shakeStr, 0);
-                o.addShake(this.pos, T), this.ticker >= this.lifetime && (this.active = !1)
+                var f = k.min(this.ticker / s.shakeDur, 1),
+                    b = k.lerp(f, s.shakeStr, 0);
+                o.addShake(this.pos, b), this.ticker >= this.lifetime && (this.active = !1)
             }
-        }, o.prototype = {
+        }, r.prototype = {
             addExplosion: function(e, t, a) {
-                for (var i = null, o = 0; o < this.explosions.length; o++)
-                    if (!this.explosions[o].active) {
-                        i = this.explosions[o];
+                for (var i = null, r = 0; r < this.explosions.length; r++)
+                    if (!this.explosions[r].active) {
+                        i = this.explosions[r];
                         break
                     }
-                i || (i = new r(this), this.explosions.push(i)), i.o(e, t, a)
+                i || (i = new o(this), this.explosions.push(i)), i.o(e, t, a)
             },
             addPhysicsParticle: function() {
                 for (var e = null, t = 0; t < this.physicsParticles.length; t++) {
@@ -11499,17 +11319,13 @@
                 }
             }
         }, e.exports = {
-            ke: o
+            ke: r
         }
     },
     "61fc98e9": function(e, t, a) {
         "use strict";
 
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-
-        function r(e, t) {
+        function _(e, t) {
             var a = {
                 join_full: t.translate("index-team-is-full"),
                 join_not_found: t.translate("index-failed-joining-team"),
@@ -11524,47 +11340,49 @@
             };
             return a[e] || a.lost_conn
         }
-        var o = function() {
-                function e(e, t) {
+        var i = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            n = a("8ee62bea"),
-            s = a("989ad62a"),
-            l = (a("10899aea"), a("300e2704")),
-            c = (a("48eca919"), a("259eae5b")),
-            m = a("ce29f17f"),
-            p = a("26be8056"),
-            d = function() {
-                function e(t, a, r, o, s) {
-                    var l = this;
-                    if (i(this, e), this.audioManager = s, this.playBtn = n("#btn-start-team"), this.serverWarning = n("#server-warning"), this.teamOptions = n("#btn-team-queue-mode-1, #btn-team-queue-mode-2, #btn-team-fill-auto, #btn-team-fill-none"), this.serverSelect = n("#team-server-select"), this.queueMode1 = n("#btn-team-queue-mode-1"), this.queueMode2 = n("#btn-team-queue-mode-2"), this.fillAuto = n("#btn-team-fill-auto"), this.fillNone = n("#btn-team-fill-none"), this.onLeave = null, this.config = t, this.pingTest = a, this.localization = r, this.joinGameFn = o, this.active = !1, this.joined = !1, this.create = !1, this.joiningGame = !1, this.ws = null, this.keepAliveTimeout = 0, this.siteInfo = {}, this.playerData = {}, this.roomData = {}, this.players = [], this.prevPlayerCount = 0, this.localPlayerId = 0, this.isLeader = !0, this.editingName = !1, this.displayedInvalidProtocolModal = !1, this.serverSelect.change(function() {
-                            var e = l.serverSelect.find(":selected").val();
-                            l.pingTest.start([e]), l.setRoomProperty("region", e)
+            S = a("8ee62bea"),
+            n = a("989ad62a"),
+            k = (a("10899aea"), a("300e2704")),
+            r = (a("48eca919"), a("259eae5b")),
+            v = a("ce29f17f"),
+            z = a("26be8056"),
+            o = function() {
+                function s(e, t, a, i, r) {
+                    var o = this;
+                    if (function(e, t) {
+                            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                        }(this, s), this.audioManager = r, this.playBtn = S("#btn-start-team"), this.serverWarning = S("#server-warning"), this.teamOptions = S("#btn-team-queue-mode-1, #btn-team-queue-mode-2, #btn-team-fill-auto, #btn-team-fill-none"), this.serverSelect = S("#team-server-select"), this.queueMode1 = S("#btn-team-queue-mode-1"), this.queueMode2 = S("#btn-team-queue-mode-2"), this.fillAuto = S("#btn-team-fill-auto"), this.fillNone = S("#btn-team-fill-none"), this.onLeave = null, this.config = e, this.pingTest = t, this.localization = a, this.joinGameFn = i, this.active = !1, this.joined = !1, this.create = !1, this.joiningGame = !1, this.ws = null, this.keepAliveTimeout = 0, this.siteInfo = {}, this.playerData = {}, this.roomData = {}, this.players = [], this.prevPlayerCount = 0, this.localPlayerId = 0, this.isLeader = !0, this.editingName = !1, this.displayedInvalidProtocolModal = !1, this.serverSelect.change(function() {
+                            var e = o.serverSelect.find(":selected").val();
+                            o.pingTest.start([e]), o.setRoomProperty("region", e)
                         }), this.queueMode1.click(function() {
-                            l.setRoomProperty("gameModeIdx", 1)
+                            o.setRoomProperty("gameModeIdx", 1)
                         }), this.queueMode2.click(function() {
-                            l.setRoomProperty("gameModeIdx", 2)
+                            o.setRoomProperty("gameModeIdx", 2)
                         }), this.fillAuto.click(function() {
-                            l.setRoomProperty("autoFill", !0)
+                            o.setRoomProperty("autoFill", !0)
                         }), this.fillNone.click(function() {
-                            l.setRoomProperty("autoFill", !1)
+                            o.setRoomProperty("autoFill", !1)
                         }), this.playBtn.on("click", function() {
-                            l.tryStartGame()
-                        }), n("#team-copy-url, #team-desc-text").click(function(e) {
-                            var t = n("<div/>", {
+                            o.tryStartGame()
+                        }), S("#team-copy-url, #team-desc-text").click(function(e) {
+                            var t = S("<div/>", {
                                 class: "copy-toast",
                                 html: "Copied!"
                             });
-                            n("#start-menu-wrapper").append(t), t.css({
+                            S("#start-menu-wrapper").append(t), t.css({
                                 left: e.pageX - parseInt(t.css("width")) / 2,
-                                top: n("#team-copy-url").offset().top
+                                top: S("#team-copy-url").offset().top
                             }), t.animate({
                                 top: "-=20",
                                 opacity: 1
@@ -11572,30 +11390,30 @@
                                 queue: !1,
                                 duration: 300,
                                 complete: function() {
-                                    n(this).fadeOut(250, function() {
-                                        n(this).remove()
+                                    S(this).fadeOut(250, function() {
+                                        S(this).remove()
                                     })
                                 }
                             });
-                            var a = n("#team-url").html();
-                            p.copyTextToClipboard(a)
-                        }), !m.webview && !m.mobile) {
+                            var a = S("#team-url").html();
+                            z.copyTextToClipboard(a)
+                        }), !v.webview && !v.mobile) {
                         this.hideUrl = !1;
-                        var c = this;
-                        n("#team-hide-url").click(function(e) {
-                            c.hideUrl = !c.hideUrl, n("#team-desc-text, #team-code-text").css({
-                                opacity: c.hideUrl ? 0 : 1
-                            }), n(this).css({
-                                "background-image": c.hideUrl ? "url(../img/gui/hide.svg)" : "url(../img/gui/eye.svg)"
+                        var n = this;
+                        S("#team-hide-url").click(function(e) {
+                            n.hideUrl = !n.hideUrl, S("#team-desc-text, #team-code-text").css({
+                                opacity: n.hideUrl ? 0 : 1
+                            }), S(this).css({
+                                "background-image": n.hideUrl ? "url(../img/gui/hide.svg)" : "url(../img/gui/eye.svg)"
                             })
                         })
                     }
                 }
-                return o(e, [{
+                return i(s, [{
                     key: "getPlayerById",
-                    value: function(e) {
-                        return this.players.find(function(t) {
-                            return t.playerId == e
+                    value: function(t) {
+                        return this.players.find(function(e) {
+                            return e.playerId == t
                         })
                     }
                 }, {
@@ -11608,10 +11426,7 @@
                     value: function(e, t) {
                         var a = this;
                         if (!this.active || t !== this.roomData.roomUrl) {
-                            var i = "https:" == window.location.protocol,
-                                r = i ? "wss:" : "ws:",
-                                o = c.resolveRoomHost(e, t),
-                                n = r + "//" + o + "/team";
+                            var i = ("https:" == window.location.protocol ? "wss:" : "ws:") + "//" + r.resolveRoomHost(e, t) + "/team";
                             this.active = !0, this.joined = !1, this.create = e, this.joiningGame = !1, this.editingName = !1, this.playerData = {
                                 name: this.config.get("playerName")
                             }, this.roomData = {
@@ -11623,7 +11438,7 @@
                                 lastError: ""
                             }, this.displayedInvalidProtocolModal = !1, this.refreshUi(), this.ws && (this.ws.onclose = function() {}, this.ws.close(), this.ws = null);
                             try {
-                                this.ws = new WebSocket(n), this.ws.onerror = function(e) {
+                                this.ws = new WebSocket(i), this.ws.onerror = function(e) {
                                     a.ws && a.ws.close()
                                 }, this.ws.onclose = function() {
                                     var e = "";
@@ -11653,7 +11468,7 @@
                         if (this.active) {
                             this.ws && this.ws.close(), this.ws = null, this.active = !1, this.joined = !1, this.joiningGame = !1, this.refreshUi(), this.config.set("gameModeIdx", this.roomData.gameModeIdx), this.config.set("teamAutoFill", this.roomData.autoFill), this.isLeader && this.config.set("region", this.roomData.region);
                             var t = "";
-                            e && "" != e && (t = r(e, this.localization)), this.onLeave(t)
+                            e && "" != e && (t = _(e, this.localization)), this.onLeave(t)
                         }
                     }
                 }, {
@@ -11706,13 +11521,13 @@
                     key: "tryStartGame",
                     value: function() {
                         if (this.isLeader && !this.roomData.findingGame) {
-                            var e = s.protocolVersion,
+                            var e = n.protocolVersion,
                                 t = this.roomData.region,
-                                a = p.getParameterByName("region");
-                            void 0 !== a && a.length > 0 && (t = a);
+                                a = z.getParameterByName("region");
+                            void 0 !== a && 0 < a.length && (t = a);
                             var i = this.pingTest.getZones(t),
-                                r = p.getParameterByName("zone");
-                            void 0 !== r && r.length > 0 && (i = [r]);
+                                r = z.getParameterByName("zone");
+                            void 0 !== r && 0 < r.length && (i = [r]);
                             var o = {
                                 version: e,
                                 region: t,
@@ -11724,39 +11539,39 @@
                 }, {
                     key: "refreshUi",
                     value: function() {
-                        var e = this,
-                            t = function(e, t, a) {
+                        var m = this,
+                            e = function(e, t, a) {
                                 e.removeClass("btn-darken btn-disabled btn-opaque btn-hollow-selected"), a ? e.addClass("btn-darken") : (e.addClass("btn-disabled"), t || e.addClass("btn-opaque")), t && e.addClass("btn-hollow-selected"), e.prop("disabled", !a)
                             };
-                        n("#team-menu").css("display", this.active ? "block" : "none"), n("#start-menu").css("display", this.active ? "none" : "block"), n("#news-block").css("display", this.active ? "none" : "block"), n("#social-share-block").css("display", this.active ? "none" : "block");
-                        var a = "" != this.roomData.lastError,
-                            i = r(this.roomData.lastError, this.localization);
-                        if (this.serverWarning.css("opacity", a ? 1 : 0), this.serverWarning.html(i), "find_game_invalid_protocol" != this.roomData.lastError || this.displayedInvalidProtocolModal || (n("#modal-refresh").fadeIn(200), this.displayedInvalidProtocolModal = !0), this.active && (n("#team-menu-joining-text").css("display", this.create ? "none" : "block"), n("#team-menu-creating-text").css("display", this.create ? "block" : "none"), n("#team-menu-connecting").css("display", this.joined ? "none" : "block"), n("#team-menu-contents").css("display", this.joined ? "block" : "none")), this.joined) {
-                            for (var o = this.siteInfo.pops || {}, s = Object.keys(o), c = 0; c < s.length; c++) {
-                                var d = s[c],
-                                    h = o[d],
-                                    u = n("#team-server-opts").children('option[value="' + d + '"]');
-                                u.html(u.attr("data-label") + " [" + h + "]")
+                        S("#team-menu").css("display", this.active ? "block" : "none"), S("#start-menu").css("display", this.active ? "none" : "block"), S("#news-block").css("display", this.active ? "none" : "block"), S("#social-share-block").css("display", this.active ? "none" : "block");
+                        var t = "" != this.roomData.lastError,
+                            a = _(this.roomData.lastError, this.localization);
+                        if (this.serverWarning.css("opacity", t ? 1 : 0), this.serverWarning.html(a), "find_game_invalid_protocol" != this.roomData.lastError || this.displayedInvalidProtocolModal || (S("#modal-refresh").fadeIn(200), this.displayedInvalidProtocolModal = !0), this.active && (S("#team-menu-joining-text").css("display", this.create ? "none" : "block"), S("#team-menu-creating-text").css("display", this.create ? "block" : "none"), S("#team-menu-connecting").css("display", this.joined ? "none" : "block"), S("#team-menu-contents").css("display", this.joined ? "block" : "none")), this.joined) {
+                            for (var i = this.siteInfo.pops || {}, r = Object.keys(i), o = 0; o < r.length; o++) {
+                                var n = r[o],
+                                    s = i[n],
+                                    l = S("#team-server-opts").children('option[value="' + n + '"]');
+                                l.html(l.attr("data-label") + " [" + s + "]")
                             }
-                            if (this.serverSelect.find("option").each(function(t, a) {
-                                    a.selected = a.value == e.roomData.region
-                                }), t(this.queueMode1, 1 == this.roomData.gameModeIdx, this.isLeader && -1 !== this.roomData.enabledGameModeIdxs.indexOf(1)), t(this.queueMode2, 2 == this.roomData.gameModeIdx, this.isLeader && -1 !== this.roomData.enabledGameModeIdxs.indexOf(2)), t(this.fillAuto, this.roomData.autoFill, this.isLeader), t(this.fillNone, !this.roomData.autoFill, this.isLeader), this.serverSelect.prop("disabled", !this.isLeader), this.roomData.roomUrl) {
-                                var g = window.location.origin + "/" + this.roomData.roomUrl,
-                                    y = this.roomData.roomUrl.substring(1);
-                                m.webview ? n("#team-url").html(y) : (n("#team-url").html(g), n("#team-code").html(y)), window.history && window.history.replaceState("", "", this.roomData.roomUrl)
+                            if (this.serverSelect.find("option").each(function(e, t) {
+                                    t.selected = t.value == m.roomData.region
+                                }), e(this.queueMode1, 1 == this.roomData.gameModeIdx, this.isLeader && -1 !== this.roomData.enabledGameModeIdxs.indexOf(1)), e(this.queueMode2, 2 == this.roomData.gameModeIdx, this.isLeader && -1 !== this.roomData.enabledGameModeIdxs.indexOf(2)), e(this.fillAuto, this.roomData.autoFill, this.isLeader), e(this.fillNone, !this.roomData.autoFill, this.isLeader), this.serverSelect.prop("disabled", !this.isLeader), this.roomData.roomUrl) {
+                                var c = window.location.origin + "/" + this.roomData.roomUrl,
+                                    p = this.roomData.roomUrl.substring(1);
+                                v.webview ? S("#team-url").html(p) : (S("#team-url").html(c), S("#team-code").html(p)), window.history && window.history.replaceState("", "", this.roomData.roomUrl)
                             }
-                            this.playBtn.html(this.roomData.findingGame || this.joiningGame ? '<div class="ui-spinner"></div>' : this.playBtn.attr("data-label")), 2 == this.roomData.gameModeIdx ? this.playBtn.addClass("btn-potato-mode") : this.playBtn.removeClass("btn-potato-mode");
-                            for (var w = !1, x = 0; x < this.players.length; x++) w |= this.players[x].inGame;
-                            var f = n("#msg-wait-reason"),
-                                b = n("#btn-start-team");
+                            this.playBtn.html(this.roomData.findingGame || this.joiningGame ? '<div class="ui-spinner"></div>' : this.playBtn.attr("data-label"));
+                            for (var d = !1, h = 0; h < this.players.length; h++) d |= this.players[h].inGame;
+                            var u = S("#msg-wait-reason"),
+                                g = S("#btn-start-team");
                             if (this.isLeader) {
-                                f.html(this.localization.translate("index-game-in-progress") + "<span> ...</span>");
-                                var _ = w && !this.joiningGame;
-                                f.css("display", _ ? "block" : "none"), b.css("display", _ ? "none" : "block")
-                            } else this.roomData.findingGame || this.joiningGame ? f.html('<div class="ui-spinner" style="margin-right:16px"></div>' + this.localization.translate("index-joining-game") + "<span> ...</span>") : w ? f.html(this.localization.translate("index-game-in-progress") + "<span> ...</span>") : f.html(this.localization.translate("index-waiting-for-leader") + "<span> ...</span>"), f.css("display", "block"), b.css("display", "none");
-                            var S = n("#team-menu-member-list");
-                            S.empty();
-                            for (var k = 0; k < this.roomData.maxPlayers; k++) ! function(t) {
+                                u.html(this.localization.translate("index-game-in-progress") + "<span> ...</span>");
+                                var y = d && !this.joiningGame;
+                                u.css("display", y ? "block" : "none"), g.css("display", y ? "none" : "block")
+                            } else this.roomData.findingGame || this.joiningGame ? u.html('<div class="ui-spinner" style="margin-right:16px"></div>' + this.localization.translate("index-joining-game") + "<span> ...</span>") : d ? u.html(this.localization.translate("index-game-in-progress") + "<span> ...</span>") : u.html(this.localization.translate("index-waiting-for-leader") + "<span> ...</span>"), u.css("display", "block"), g.css("display", "none");
+                            var w = S("#team-menu-member-list");
+                            w.empty();
+                            for (var x = 0; x < this.roomData.maxPlayers; x++) ! function(e) {
                                 var a = {
                                     name: "",
                                     playerId: 0,
@@ -11764,187 +11579,219 @@
                                     inGame: !1,
                                     self: !1
                                 };
-                                if (t < e.players.length) {
-                                    var i = e.players[t];
+                                if (e < m.players.length) {
+                                    var t = m.players[e];
                                     a = {
-                                        name: i.name,
-                                        playerId: i.playerId,
-                                        isLeader: i.isLeader,
-                                        inGame: i.inGame,
-                                        self: i.playerId == e.localPlayerId
+                                        name: t.name,
+                                        playerId: t.playerId,
+                                        isLeader: t.isLeader,
+                                        inGame: t.inGame,
+                                        self: t.playerId == m.localPlayerId
                                     }
                                 }
-                                var r = n("<div/>", {
+                                var i = S("<div/>", {
                                         class: "team-menu-member"
                                     }),
-                                    o = "";
-                                a.isLeader ? o = " icon-leader" : e.isLeader && 0 != a.playerId && (o = " icon-kick"), r.append(n("<div/>", {
-                                    class: "icon" + o,
+                                    r = "";
+                                a.isLeader ? r = " icon-leader" : m.isLeader && 0 != a.playerId && (r = " icon-kick"), i.append(S("<div/>", {
+                                    class: "icon" + r,
                                     "data-playerid": a.playerId
                                 }));
-                                var s = null,
-                                    c = null;
-                                if (e.editingName && a.self) {
-                                    s = n("<input/>", {
+                                var o = null,
+                                    n = null;
+                                if (m.editingName && a.self) {
+                                    (o = S("<input/>", {
                                         type: "text",
                                         tabindex: 0,
                                         class: "name menu-option name-text name-self-input",
-                                        maxLength: l.Constants.kPlayerNameMaxLen
-                                    }), s.val(a.name);
-                                    var m = function(t) {
-                                            var i = p.sanitizeNameInput(s.val());
-                                            a.name = i, e.config.set("playerName", i), e.sendMessage("changeName", {
-                                                name: i
-                                            }), e.editingName = !1, e.refreshUi()
-                                        },
-                                        d = function(t) {
-                                            e.editingName = !1, e.refreshUi()
-                                        };
-                                    s.keypress(function(e) {
-                                        if (13 === e.which) return m(), !1
-                                    }), s.on("blur", d), r.append(s), c = n("<div/>", {
+                                        maxLength: k.Constants.kPlayerNameMaxLen
+                                    })).val(a.name);
+                                    var s = function(e) {
+                                        var t = z.sanitizeNameInput(o.val());
+                                        a.name = t, m.config.set("playerName", t), m.sendMessage("changeName", {
+                                            name: t
+                                        }), m.editingName = !1, m.refreshUi()
+                                    };
+                                    o.keypress(function(e) {
+                                        if (13 === e.which) return s(), !1
+                                    }), o.on("blur", function(e) {
+                                        m.editingName = !1, m.refreshUi()
+                                    }), i.append(o), (n = S("<div/>", {
                                         class: "icon icon-submit-name-change"
-                                    }), c.on("click", m), c.on("mousedown", function(e) {
+                                    })).on("click", s), n.on("mousedown", function(e) {
                                         e.preventDefault(), e.stopPropagation()
                                     })
                                 } else {
-                                    var h = "name-text";
-                                    a.self && (h += " name-self"), a.inGame && (h += " name-in-game");
-                                    var u = n("<div/>", {
-                                        class: "name menu-option " + h,
-                                        html: p.htmlEscape(a.name)
+                                    var l = "name-text";
+                                    a.self && (l += " name-self"), a.inGame && (l += " name-in-game");
+                                    var c = S("<div/>", {
+                                        class: "name menu-option " + l,
+                                        html: z.htmlEscape(a.name)
                                     });
-                                    a.self && u.on("click", function() {
-                                        console.log("editing name"), e.editingName = !0, e.refreshUi()
-                                    }), r.append(u)
+                                    a.self && c.on("click", function() {
+                                        console.log("editing name"), m.editingName = !0, m.refreshUi()
+                                    }), i.append(c)
                                 }
-                                c ? r.append(c) : r.append(n("<div/>", {
+                                n ? i.append(n) : i.append(S("<div/>", {
                                     class: "icon " + (a.inGame ? "icon-in-game" : "")
-                                })), S.append(r), s && s.focus()
-                            }(k);
-                            n(".icon-kick", S).click(function(t) {
-                                var a = n(t.currentTarget).attr("data-playerid");
-                                e.sendMessage("kick", {
-                                    playerId: a
+                                })), w.append(i), o && o.focus()
+                            }(x);
+                            S(".icon-kick", w).click(function(e) {
+                                var t = S(e.currentTarget).attr("data-playerid");
+                                m.sendMessage("kick", {
+                                    playerId: t
                                 })
                             });
-                            var v = this.players.find(function(t) {
-                                    return t.playerId == e.localPlayerId
+                            var f = this.players.find(function(e) {
+                                    return e.playerId == m.localPlayerId
                                 }),
-                                z = v && !v.inGame;
-                            !document.hasFocus() && this.prevPlayerCount < this.players.length && this.players.length > 1 && z && this.audioManager.playSound("notification_join_01", {
+                                b = f && !f.inGame;
+                            !document.hasFocus() && this.prevPlayerCount < this.players.length && 1 < this.players.length && b && this.audioManager.playSound("notification_join_01", {
                                 channel: "ui"
                             }), this.prevPlayerCount = this.players.length
                         }
                     }
-                }]), e
+                }]), s
             }();
-        e.exports = d
+        e.exports = o
     },
     "66141f52": function(e, t, a) {
         "use strict";
 
         function i(e, t, a) {
             a = a || 2;
-            var i = t && t.length,
-                o = i ? t[0] * a : e.length,
-                s = r(e, 0, o, a, !0),
-                l = [];
-            if (!s) return l;
-            var c, m, d, h, u, g, y;
-            if (i && (s = p(e, t, s, a)), e.length > 80 * a) {
-                c = d = e[0], m = h = e[1];
-                for (var w = a; w < o; w += a) u = e[w], g = e[w + 1], u < c && (c = u), g < m && (m = g), u > d && (d = u), g > h && (h = g);
-                y = Math.max(d - c, h - m), y = 0 !== y ? 1 / y : 0
+            var i, r, o, n, s, l, c, m = t && t.length,
+                p = m ? t[0] * a : e.length,
+                d = g(e, 0, p, a, !0),
+                h = [];
+            if (!d) return h;
+            if (m && (d = function(e, t, a, i) {
+                    var r, o, n, s, l, c = [];
+                    for (r = 0, o = t.length; r < o; r++) n = t[r] * i, s = r < o - 1 ? t[r + 1] * i : e.length, (l = g(e, n, s, i, !1)) === l.next && (l.steiner = !0), c.push(_(l));
+                    for (c.sort(x), r = 0; r < c.length; r++) f(c[r], a), a = y(a, a.next);
+                    return a
+                }(e, t, d, a)), e.length > 80 * a) {
+                i = o = e[0], r = n = e[1];
+                for (var u = a; u < p; u += a)(s = e[u]) < i && (i = s), (l = e[u + 1]) < r && (r = l), o < s && (o = s), n < l && (n = l);
+                c = 0 !== (c = Math.max(o - i, n - r)) ? 1 / c : 0
             }
-            return n(s, l, a, c, m, y), l
+            return w(d, h, a, i, r, c), h
         }
 
-        function r(e, t, a, i, r) {
+        function g(e, t, a, i, r) {
             var o, n;
-            if (r === A(e, t, a, i) > 0)
-                for (o = t; o < a; o += i) n = P(o, e[o], e[o + 1], n);
+            if (r === 0 < T(e, t, a, i))
+                for (o = t; o < a; o += i) n = l(o, e[o], e[o + 1], n);
             else
-                for (o = a - i; o >= t; o -= i) n = P(o, e[o], e[o + 1], n);
-            return n && S(n, n.next) && (I(n), n = n.next), n
+                for (o = a - i; t <= o; o -= i) n = l(o, e[o], e[o + 1], n);
+            return n && s(n, n.next) && (M(n), n = n.next), n
         }
 
-        function o(e, t) {
+        function y(e, t) {
             if (!e) return e;
             t || (t = e);
             var a, i = e;
             do {
-                if (a = !1, i.steiner || !S(i, i.next) && 0 !== _(i.prev, i, i.next)) i = i.next;
+                if (a = !1, i.steiner || !s(i, i.next) && 0 !== k(i.prev, i, i.next)) i = i.next;
                 else {
-                    if (I(i), (i = t = i.prev) === i.next) break;
+                    if (M(i), (i = t = i.prev) === i.next) break;
                     a = !0
                 }
             } while (a || i !== t);
             return t
         }
 
-        function n(e, t, a, i, r, p, d) {
+        function w(e, t, a, i, r, o, n) {
             if (e) {
-                !d && p && g(e, i, r, p);
-                for (var h, u, y = e; e.prev !== e.next;)
-                    if (h = e.prev, u = e.next, p ? l(e, i, r, p) : s(e)) t.push(h.i / a), t.push(e.i / a), t.push(u.i / a), I(e), e = u.next, y = u.next;
-                    else if ((e = u) === y) {
-                    d ? 1 === d ? (e = c(e, t, a), n(e, t, a, i, r, p, 2)) : 2 === d && m(e, t, a, i, r, p) : n(o(e), t, a, i, r, p, 1);
+                !n && o && function(e, t, a, i) {
+                    var r = e;
+                    for (; null === r.z && (r.z = b(r.x, r.y, t, a, i)), r.prevZ = r.prev, r.nextZ = r.next, r = r.next, r !== e;);
+                    r.prevZ.nextZ = null, r.prevZ = null,
+                        function(e) {
+                            var t, a, i, r, o, n, s, l, c = 1;
+                            do {
+                                for (a = e, o = e = null, n = 0; a;) {
+                                    for (n++, i = a, t = s = 0; t < c && (s++, i = i.nextZ); t++);
+                                    for (l = c; 0 < s || 0 < l && i;) 0 !== s && (0 === l || !i || a.z <= i.z) ? (a = (r = a).nextZ, s--) : (i = (r = i).nextZ, l--), o ? o.nextZ = r : e = r, r.prevZ = o, o = r;
+                                    a = i
+                                }
+                                o.nextZ = null, c *= 2
+                            } while (1 < n)
+                        }(r)
+                }(e, i, r, o);
+                for (var s, l, c = e; e.prev !== e.next;)
+                    if (s = e.prev, l = e.next, o ? p(e, i, r, o) : m(e)) t.push(s.i / a), t.push(e.i / a), t.push(l.i / a), M(e), e = l.next, c = l.next;
+                    else if ((e = l) === c) {
+                    n ? 1 === n ? w(e = d(e, t, a), t, a, i, r, o, 2) : 2 === n && h(e, t, a, i, r, o) : w(y(e), t, a, i, r, o, 1);
                     break
                 }
             }
         }
 
-        function s(e) {
+        function m(e) {
             var t = e.prev,
                 a = e,
                 i = e.next;
-            if (_(t, a, i) >= 0) return !1;
+            if (0 <= k(t, a, i)) return !1;
             for (var r = e.next.next; r !== e.prev;) {
-                if (f(t.x, t.y, a.x, a.y, i.x, i.y, r.x, r.y) && _(r.prev, r, r.next) >= 0) return !1;
+                if (S(t.x, t.y, a.x, a.y, i.x, i.y, r.x, r.y) && 0 <= k(r.prev, r, r.next)) return !1;
                 r = r.next
             }
             return !0
         }
 
-        function l(e, t, a, i) {
+        function p(e, t, a, i) {
             var r = e.prev,
                 o = e,
                 n = e.next;
-            if (_(r, o, n) >= 0) return !1;
-            for (var s = r.x < o.x ? r.x < n.x ? r.x : n.x : o.x < n.x ? o.x : n.x, l = r.y < o.y ? r.y < n.y ? r.y : n.y : o.y < n.y ? o.y : n.y, c = r.x > o.x ? r.x > n.x ? r.x : n.x : o.x > n.x ? o.x : n.x, m = r.y > o.y ? r.y > n.y ? r.y : n.y : o.y > n.y ? o.y : n.y, p = w(s, l, t, a, i), d = w(c, m, t, a, i), h = e.prevZ, u = e.nextZ; h && h.z >= p && u && u.z <= d;) {
-                if (h !== e.prev && h !== e.next && f(r.x, r.y, o.x, o.y, n.x, n.y, h.x, h.y) && _(h.prev, h, h.next) >= 0) return !1;
-                if (h = h.prevZ, u !== e.prev && u !== e.next && f(r.x, r.y, o.x, o.y, n.x, n.y, u.x, u.y) && _(u.prev, u, u.next) >= 0) return !1;
+            if (0 <= k(r, o, n)) return !1;
+            for (var s = r.x < o.x ? r.x < n.x ? r.x : n.x : o.x < n.x ? o.x : n.x, l = r.y < o.y ? r.y < n.y ? r.y : n.y : o.y < n.y ? o.y : n.y, c = r.x > o.x ? r.x > n.x ? r.x : n.x : o.x > n.x ? o.x : n.x, m = r.y > o.y ? r.y > n.y ? r.y : n.y : o.y > n.y ? o.y : n.y, p = b(s, l, t, a, i), d = b(c, m, t, a, i), h = e.prevZ, u = e.nextZ; h && h.z >= p && u && u.z <= d;) {
+                if (h !== e.prev && h !== e.next && S(r.x, r.y, o.x, o.y, n.x, n.y, h.x, h.y) && 0 <= k(h.prev, h, h.next)) return !1;
+                if (h = h.prevZ, u !== e.prev && u !== e.next && S(r.x, r.y, o.x, o.y, n.x, n.y, u.x, u.y) && 0 <= k(u.prev, u, u.next)) return !1;
                 u = u.nextZ
             }
             for (; h && h.z >= p;) {
-                if (h !== e.prev && h !== e.next && f(r.x, r.y, o.x, o.y, n.x, n.y, h.x, h.y) && _(h.prev, h, h.next) >= 0) return !1;
+                if (h !== e.prev && h !== e.next && S(r.x, r.y, o.x, o.y, n.x, n.y, h.x, h.y) && 0 <= k(h.prev, h, h.next)) return !1;
                 h = h.prevZ
             }
             for (; u && u.z <= d;) {
-                if (u !== e.prev && u !== e.next && f(r.x, r.y, o.x, o.y, n.x, n.y, u.x, u.y) && _(u.prev, u, u.next) >= 0) return !1;
+                if (u !== e.prev && u !== e.next && S(r.x, r.y, o.x, o.y, n.x, n.y, u.x, u.y) && 0 <= k(u.prev, u, u.next)) return !1;
                 u = u.nextZ
             }
             return !0
         }
 
-        function c(e, t, a) {
+        function d(e, t, a) {
             var i = e;
             do {
                 var r = i.prev,
                     o = i.next.next;
-                !S(r, o) && k(r, i, i.next, o) && z(r, o) && z(o, r) && (t.push(r.i / a), t.push(i.i / a), t.push(o.i / a), I(i), I(i.next), i = e = o), i = i.next
+                !s(r, o) && u(r, i, i.next, o) && v(r, o) && v(o, r) && (t.push(r.i / a), t.push(i.i / a), t.push(o.i / a), M(i), M(i.next), i = e = o), i = i.next
             } while (i !== e);
             return i
         }
 
-        function m(e, t, a, i, r, s) {
-            var l = e;
+        function h(e, t, a, i, r, o) {
+            var n, s, l = e;
             do {
                 for (var c = l.next.next; c !== l.prev;) {
-                    if (l.i !== c.i && b(l, c)) {
-                        var m = T(l, c);
-                        return l = o(l, l.next), m = o(m, m.next), n(l, t, a, i, r, s), void n(m, t, a, i, r, s)
+                    if (l.i !== c.i && (s = c, (n = l).next.i !== s.i && n.prev.i !== s.i && ! function(e, t) {
+                            var a = e;
+                            do {
+                                if (a.i !== e.i && a.next.i !== e.i && a.i !== t.i && a.next.i !== t.i && u(a, a.next, e, t)) return !0;
+                                a = a.next
+                            } while (a !== e);
+                            return !1
+                        }(n, s) && v(n, s) && v(s, n) && function(e, t) {
+                            var a = e,
+                                i = !1,
+                                r = (e.x + t.x) / 2,
+                                o = (e.y + t.y) / 2;
+                            for (; a.y > o != a.next.y > o && a.next.y !== a.y && r < (a.next.x - a.x) * (o - a.y) / (a.next.y - a.y) + a.x && (i = !i), a = a.next, a !== e;);
+                            return i
+                        }(n, s))) {
+                        var m = z(l, c);
+                        return l = y(l, l.next), m = y(m, m.next), w(l, t, a, i, r, o), void w(m, t, a, i, r, o)
                     }
                     c = c.next
                 }
@@ -11952,164 +11799,106 @@
             } while (l !== e)
         }
 
-        function p(e, t, a, i) {
-            var n, s, l, c, m, p = [];
-            for (n = 0, s = t.length; n < s; n++) l = t[n] * i, c = n < s - 1 ? t[n + 1] * i : e.length, m = r(e, l, c, i, !1), m === m.next && (m.steiner = !0), p.push(x(m));
-            for (p.sort(d), n = 0; n < p.length; n++) h(p[n], a), a = o(a, a.next);
-            return a
-        }
-
-        function d(e, t) {
+        function x(e, t) {
             return e.x - t.x
         }
 
-        function h(e, t) {
-            if (t = u(e, t)) {
-                var a = T(t, e);
-                o(a, a.next)
+        function f(e, t) {
+            if (t = function(e, t) {
+                    var a, i = t,
+                        r = e.x,
+                        o = e.y,
+                        n = -1 / 0;
+                    do {
+                        if (o <= i.y && o >= i.next.y && i.next.y !== i.y) {
+                            var s = i.x + (o - i.y) * (i.next.x - i.x) / (i.next.y - i.y);
+                            if (s <= r && n < s) {
+                                if ((n = s) === r) {
+                                    if (o === i.y) return i;
+                                    if (o === i.next.y) return i.next
+                                }
+                                a = i.x < i.next.x ? i : i.next
+                            }
+                        }
+                        i = i.next
+                    } while (i !== t);
+                    if (!a) return null;
+                    if (r === n) return a.prev;
+                    var l, c = a,
+                        m = a.x,
+                        p = a.y,
+                        d = 1 / 0;
+                    for (i = a.next; i !== c;) r >= i.x && i.x >= m && r !== i.x && S(o < p ? r : n, o, m, p, o < p ? n : r, o, i.x, i.y) && ((l = Math.abs(o - i.y) / (r - i.x)) < d || l === d && i.x > a.x) && v(i, e) && (a = i, d = l), i = i.next;
+                    return a
+                }(e, t)) {
+                var a = z(t, e);
+                y(a, a.next)
             }
         }
 
-        function u(e, t) {
-            var a, i = t,
-                r = e.x,
-                o = e.y,
-                n = -1 / 0;
-            do {
-                if (o <= i.y && o >= i.next.y && i.next.y !== i.y) {
-                    var s = i.x + (o - i.y) * (i.next.x - i.x) / (i.next.y - i.y);
-                    if (s <= r && s > n) {
-                        if (n = s, s === r) {
-                            if (o === i.y) return i;
-                            if (o === i.next.y) return i.next
-                        }
-                        a = i.x < i.next.x ? i : i.next
-                    }
-                }
-                i = i.next
-            } while (i !== t);
-            if (!a) return null;
-            if (r === n) return a.prev;
-            var l, c = a,
-                m = a.x,
-                p = a.y,
-                d = 1 / 0;
-            for (i = a.next; i !== c;) r >= i.x && i.x >= m && r !== i.x && f(o < p ? r : n, o, m, p, o < p ? n : r, o, i.x, i.y) && ((l = Math.abs(o - i.y) / (r - i.x)) < d || l === d && i.x > a.x) && z(i, e) && (a = i, d = l), i = i.next;
+        function b(e, t, a, i, r) {
+            return (e = 1431655765 & ((e = 858993459 & ((e = 252645135 & ((e = 16711935 & ((e = 32767 * (e - a) * r) | e << 8)) | e << 4)) | e << 2)) | e << 1)) | (t = 1431655765 & ((t = 858993459 & ((t = 252645135 & ((t = 16711935 & ((t = 32767 * (t - i) * r) | t << 8)) | t << 4)) | t << 2)) | t << 1)) << 1
+        }
+
+        function _(e) {
+            for (var t = e, a = e; t.x < a.x && (a = t), (t = t.next) !== e;);
             return a
         }
 
-        function g(e, t, a, i) {
-            var r = e;
-            do {
-                null === r.z && (r.z = w(r.x, r.y, t, a, i)), r.prevZ = r.prev, r.nextZ = r.next, r = r.next
-            } while (r !== e);
-            r.prevZ.nextZ = null, r.prevZ = null, y(r)
+        function S(e, t, a, i, r, o, n, s) {
+            return 0 <= (r - n) * (t - s) - (e - n) * (o - s) && 0 <= (e - n) * (i - s) - (a - n) * (t - s) && 0 <= (a - n) * (o - s) - (r - n) * (i - s)
         }
 
-        function y(e) {
-            var t, a, i, r, o, n, s, l, c = 1;
-            do {
-                for (a = e, e = null, o = null, n = 0; a;) {
-                    for (n++, i = a, s = 0, t = 0; t < c && (s++, i = i.nextZ); t++);
-                    for (l = c; s > 0 || l > 0 && i;) 0 !== s && (0 === l || !i || a.z <= i.z) ? (r = a, a = a.nextZ, s--) : (r = i, i = i.nextZ, l--), o ? o.nextZ = r : e = r, r.prevZ = o, o = r;
-                    a = i
-                }
-                o.nextZ = null, c *= 2
-            } while (n > 1);
-            return e
-        }
-
-        function w(e, t, a, i, r) {
-            return e = 32767 * (e - a) * r, t = 32767 * (t - i) * r, e = 16711935 & (e | e << 8), e = 252645135 & (e | e << 4), e = 858993459 & (e | e << 2), e = 1431655765 & (e | e << 1), t = 16711935 & (t | t << 8), t = 252645135 & (t | t << 4), t = 858993459 & (t | t << 2), t = 1431655765 & (t | t << 1), e | t << 1
-        }
-
-        function x(e) {
-            var t = e,
-                a = e;
-            do {
-                t.x < a.x && (a = t), t = t.next
-            } while (t !== e);
-            return a
-        }
-
-        function f(e, t, a, i, r, o, n, s) {
-            return (r - n) * (t - s) - (e - n) * (o - s) >= 0 && (e - n) * (i - s) - (a - n) * (t - s) >= 0 && (a - n) * (o - s) - (r - n) * (i - s) >= 0
-        }
-
-        function b(e, t) {
-            return e.next.i !== t.i && e.prev.i !== t.i && !v(e, t) && z(e, t) && z(t, e) && M(e, t)
-        }
-
-        function _(e, t, a) {
+        function k(e, t, a) {
             return (t.y - e.y) * (a.x - t.x) - (t.x - e.x) * (a.y - t.y)
         }
 
-        function S(e, t) {
+        function s(e, t) {
             return e.x === t.x && e.y === t.y
         }
 
-        function k(e, t, a, i) {
-            return !!(S(e, t) && S(a, i) || S(e, i) && S(a, t)) || _(e, t, a) > 0 != _(e, t, i) > 0 && _(a, i, e) > 0 != _(a, i, t) > 0
+        function u(e, t, a, i) {
+            return !!(s(e, t) && s(a, i) || s(e, i) && s(a, t)) || 0 < k(e, t, a) != 0 < k(e, t, i) && 0 < k(a, i, e) != 0 < k(a, i, t)
         }
 
         function v(e, t) {
-            var a = e;
-            do {
-                if (a.i !== e.i && a.next.i !== e.i && a.i !== t.i && a.next.i !== t.i && k(a, a.next, e, t)) return !0;
-                a = a.next
-            } while (a !== e);
-            return !1
+            return k(e.prev, e, e.next) < 0 ? 0 <= k(e, t, e.next) && 0 <= k(e, e.prev, t) : k(e, t, e.prev) < 0 || k(e, e.next, t) < 0
         }
 
         function z(e, t) {
-            return _(e.prev, e, e.next) < 0 ? _(e, t, e.next) >= 0 && _(e, e.prev, t) >= 0 : _(e, t, e.prev) < 0 || _(e, e.next, t) < 0
-        }
-
-        function M(e, t) {
-            var a = e,
-                i = !1,
-                r = (e.x + t.x) / 2,
-                o = (e.y + t.y) / 2;
-            do {
-                a.y > o != a.next.y > o && a.next.y !== a.y && r < (a.next.x - a.x) * (o - a.y) / (a.next.y - a.y) + a.x && (i = !i), a = a.next
-            } while (a !== e);
-            return i
-        }
-
-        function T(e, t) {
-            var a = new C(e.i, e.x, e.y),
-                i = new C(t.i, t.x, t.y),
+            var a = new n(e.i, e.x, e.y),
+                i = new n(t.i, t.x, t.y),
                 r = e.next,
                 o = t.prev;
-            return e.next = t, t.prev = e, a.next = r, r.prev = a, i.next = a, a.prev = i, o.next = i, i.prev = o, i
+            return (e.next = t).prev = e, (a.next = r).prev = a, (i.next = a).prev = i, (o.next = i).prev = o, i
         }
 
-        function P(e, t, a, i) {
-            var r = new C(e, t, a);
-            return i ? (r.next = i.next, r.prev = i, i.next.prev = r, i.next = r) : (r.prev = r, r.next = r), r
+        function l(e, t, a, i) {
+            var r = new n(e, t, a);
+            return i ? (r.next = i.next, (r.prev = i).next.prev = r, i.next = r) : (r.prev = r).next = r, r
         }
 
-        function I(e) {
+        function M(e) {
             e.next.prev = e.prev, e.prev.next = e.next, e.prevZ && (e.prevZ.nextZ = e.nextZ), e.nextZ && (e.nextZ.prevZ = e.prevZ)
         }
 
-        function C(e, t, a) {
+        function n(e, t, a) {
             this.i = e, this.x = t, this.y = a, this.prev = null, this.next = null, this.z = null, this.prevZ = null, this.nextZ = null, this.steiner = !1
         }
 
-        function A(e, t, a, i) {
+        function T(e, t, a, i) {
             for (var r = 0, o = t, n = a - i; o < a; o += i) r += (e[n] - e[o]) * (e[o + 1] + e[n + 1]), n = o;
             return r
         }
-        e.exports = i, e.exports.default = i, i.deviation = function(e, t, a, i) {
+        e.exports = i, (e.exports.default = i).deviation = function(e, t, a, i) {
             var r = t && t.length,
                 o = r ? t[0] * a : e.length,
-                n = Math.abs(A(e, 0, o, a));
+                n = Math.abs(T(e, 0, o, a));
             if (r)
                 for (var s = 0, l = t.length; s < l; s++) {
                     var c = t[s] * a,
                         m = s < l - 1 ? t[s + 1] * a : e.length;
-                    n -= Math.abs(A(e, c, m, a))
+                    n -= Math.abs(T(e, c, m, a))
                 }
             var p = 0;
             for (s = 0; s < i.length; s += 3) {
@@ -12127,7 +11916,7 @@
                 }, i = 0, r = 0; r < e.length; r++) {
                 for (var o = 0; o < e[r].length; o++)
                     for (var n = 0; n < t; n++) a.vertices.push(e[r][o][n]);
-                r > 0 && (i += e[r - 1].length, a.holes.push(i))
+                0 < r && (i += e[r - 1].length, a.holes.push(i))
             }
             return a
         }
@@ -12135,114 +11924,111 @@
     "6afea591": function(e, t, a) {
         "use strict";
         var i = (a("989ad62a"), a("1901e2d9")),
-            r = (a("c2a798c8"), a("d5ec3c16")),
-            o = {
-                desc: {
-                    name: "Main Spring",
-                    icon: "img/gui/surviv.svg",
-                    mode: "main"
+            r = (a("c2a798c8"), a("d5ec3c16"));
+        e.exports = i.mergeDeep({}, r, {
+            desc: {
+                name: "Main Spring",
+                icon: "img/gui/surviv.svg",
+                mode: "main"
+            },
+            assets: {
+                audio: [],
+                atlases: ["gradient", "shared", "main"]
+            },
+            biome: {
+                colors: {
+                    background: 2118510,
+                    water: 3310251,
+                    beach: 16035400,
+                    riverbank: 9079434,
+                    grass: 6066442,
+                    underground: 1772803,
+                    playerSubmerge: 2854052
                 },
-                assets: {
-                    audio: [],
-                    atlases: ["gradient", "shared", "main"]
+                sound: {
+                    riverShore: "stone"
                 },
-                biome: {
-                    colors: {
-                        background: 2118510,
-                        water: 3310251,
-                        beach: 16035400,
-                        riverbank: 9079434,
-                        grass: 6066442,
-                        underground: 1772803,
-                        playerSubmerge: 2854052
-                    },
-                    sound: {
-                        riverShore: "stone"
-                    },
-                    particles: {
-                        camera: "falling_leaf_spring",
-                        ripple: "waterRipple"
-                    }
+                particles: {
+                    camera: "falling_leaf_spring",
+                    ripple: "waterRipple"
                 }
-            };
-        e.exports = i.mergeDeep({}, r, o)
+            }
+        })
     },
     "6b42806d": function(e, t, a) {
         "use strict";
-        var i = a("34e32c48"),
-            r = a("10899aea"),
-            o = a("c2a798c8"),
-            n = {
+        var n = a("34e32c48"),
+            p = a("10899aea"),
+            d = a("c2a798c8"),
+            h = {
                 Type: {
                     Circle: 0,
                     Aabb: 1
                 },
                 createCircle: function(e, t, a) {
                     return {
-                        type: n.Type.Circle,
-                        pos: o.copy(e),
+                        type: h.Type.Circle,
+                        pos: d.copy(e),
                         rad: t,
                         height: void 0 !== a ? a : 0
                     }
                 },
                 createAabb: function(e, t, a) {
                     return {
-                        type: n.Type.Aabb,
-                        min: o.copy(e),
-                        max: o.copy(t),
+                        type: h.Type.Aabb,
+                        min: d.copy(e),
+                        max: d.copy(t),
                         height: void 0 !== a ? a : 0
                     }
                 },
                 createAabbExtents: function(e, t, a) {
-                    var i = o.sub(e, t),
-                        r = o.add(e, t);
-                    return n.createAabb(i, r, a)
+                    var i = d.sub(e, t),
+                        r = d.add(e, t);
+                    return h.createAabb(i, r, a)
                 },
                 createBounding: function(e) {
-                    if (1 == e.length) return n.copy(e[0]);
-                    for (var t = [], a = 0, o = 0; o < e.length; o++) {
-                        var s = e[o];
-                        t.push(n.toAabb(s)), a = r.max(a, s.height)
+                    if (1 == e.length) return h.copy(e[0]);
+                    for (var t = [], a = 0, i = 0; i < e.length; i++) {
+                        var r = e[i];
+                        t.push(h.toAabb(r)), a = p.max(a, r.height)
                     }
-                    var l = i.boundingAabb(t);
-                    return n.createAabb(l.min, l.max, a)
+                    var o = n.boundingAabb(t);
+                    return h.createAabb(o.min, o.max, a)
                 },
                 toAabb: function(e) {
-                    if (e.type == n.Type.Aabb) return n.createAabb(e.min, e.max, e.height);
-                    var t = i.circleToAabb(e.pos, e.rad);
-                    return n.createAabb(t.min, t.max, e.height)
+                    if (e.type == h.Type.Aabb) return h.createAabb(e.min, e.max, e.height);
+                    var t = n.circleToAabb(e.pos, e.rad);
+                    return h.createAabb(t.min, t.max, e.height)
                 },
                 copy: function(e) {
-                    return e.type == n.Type.Circle ? n.createCircle(e.pos, e.rad, e.height) : n.createAabb(e.min, e.max, e.height)
+                    return e.type == h.Type.Circle ? h.createCircle(e.pos, e.rad, e.height) : h.createAabb(e.min, e.max, e.height)
                 },
                 transform: function(e, t, a, i) {
-                    if (e.type == n.Type.Aabb) {
-                        for (var s = o.mul(o.sub(e.max, e.min), .5), l = o.add(e.min, s), c = [o.create(l.x - s.x, l.y - s.y), o.create(l.x - s.x, l.y + s.y), o.create(l.x + s.x, l.y - s.y), o.create(l.x + s.x, l.y + s.y)], m = o.create(Number.MAX_VALUE, Number.MAX_VALUE), p = o.create(-Number.MAX_VALUE, -Number.MAX_VALUE), d = 0; d < c.length; d++) {
-                            var h = o.add(o.rotate(o.mul(c[d], i), a), t);
-                            m.x = r.min(m.x, h.x), m.y = r.min(m.y, h.y), p.x = r.max(p.x, h.x), p.y = r.max(p.y, h.y)
-                        }
-                        return n.createAabb(m, p, e.height)
+                    if (e.type != h.Type.Aabb) return h.createCircle(d.add(d.rotate(d.mul(e.pos, i), a), t), e.rad * i, e.height);
+                    for (var r = d.mul(d.sub(e.max, e.min), .5), o = d.add(e.min, r), n = [d.create(o.x - r.x, o.y - r.y), d.create(o.x - r.x, o.y + r.y), d.create(o.x + r.x, o.y - r.y), d.create(o.x + r.x, o.y + r.y)], s = d.create(Number.MAX_VALUE, Number.MAX_VALUE), l = d.create(-Number.MAX_VALUE, -Number.MAX_VALUE), c = 0; c < n.length; c++) {
+                        var m = d.add(d.rotate(d.mul(n[c], i), a), t);
+                        s.x = p.min(s.x, m.x), s.y = p.min(s.y, m.y), l.x = p.max(l.x, m.x), l.y = p.max(l.y, m.y)
                     }
-                    return n.createCircle(o.add(o.rotate(o.mul(e.pos, i), a), t), e.rad * i, e.height)
+                    return h.createAabb(s, l, e.height)
                 },
                 intersectCircle: function(e, t, a) {
-                    return e.type == n.Type.Aabb ? i.intersectAabbCircle(e.min, e.max, t, a) : i.intersectCircleCircle(e.pos, e.rad, t, a)
+                    return e.type == h.Type.Aabb ? n.intersectAabbCircle(e.min, e.max, t, a) : n.intersectCircleCircle(e.pos, e.rad, t, a)
                 },
                 intersectAabb: function(e, t, a) {
-                    return e.type == n.Type.Aabb ? i.intersectAabbAabb(e.min, e.max, t, a) : i.intersectAabbCircle(t, a, e.pos, e.rad)
+                    return e.type == h.Type.Aabb ? n.intersectAabbAabb(e.min, e.max, t, a) : n.intersectAabbCircle(t, a, e.pos, e.rad)
                 },
                 intersectSegment: function(e, t, a) {
-                    return e.type == n.Type.Aabb ? i.intersectSegmentAabb(t, a, e.min, e.max) : i.intersectSegmentCircle(t, a, e.pos, e.rad)
+                    return e.type == h.Type.Aabb ? n.intersectSegmentAabb(t, a, e.min, e.max) : n.intersectSegmentCircle(t, a, e.pos, e.rad)
                 },
                 intersect: function(e, t) {
-                    return t.type == n.Type.Aabb ? n.intersectAabb(e, t.min, t.max) : n.intersectCircle(e, t.pos, t.rad)
+                    return t.type == h.Type.Aabb ? h.intersectAabb(e, t.min, t.max) : h.intersectCircle(e, t.pos, t.rad)
                 }
             };
-        e.exports = n
+        e.exports = h
     },
     "6b9375bf": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-05-13",
                 locale: "vn"
@@ -12543,8 +12329,7 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "6bad552e": function(e, t, a) {
         "use strict";
@@ -12559,46 +12344,44 @@
         }
 
         function r(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-
-        function o(e, t) {
             return {
                 time: e,
                 bones: t
             }
         }
 
-        function n(e, t, a) {
+        function o(e, t, a) {
             return {
                 time: e,
                 fn: t,
                 args: a
             }
         }
-        var s, l, c, m, p, d, h, u, g, y, w, x, f, b, _, S, k, v, z, M, T, P, I, C, A, E, D, O, B, L, R, F, j, q, N, V, G, U, H, W, K, Z, X, Y, J, Q, $, ee = function() {
-                function e(e, t) {
+        var n, s, l, c, m, p, d, h, u, g, y, w, x, f, b, _, S, k, v, z, M, T, A, C, I, P, E, O, D, L, B, R, F, j, N, q, V, G, U, H, W, K, Z, X, Q, Y, J, $ = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            te = a("989ad62a"),
-            ae = (te.Anim, a("0e566746")),
-            ie = a("10899aea"),
-            re = a("c2a798c8"),
-            oe = function() {
-                function e(t, a, i) {
-                    r(this, e), this.pivot = re.copy(t || re.create(0, 0)), this.rot = 0, this.pos = re.copy(i || re.create(0, 0))
+            ee = a("989ad62a"),
+            te = (ee.Anim, a("0e566746")),
+            ae = a("10899aea"),
+            ie = a("c2a798c8"),
+            re = function() {
+                function i(e, t, a) {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, i), this.pivot = ie.copy(e || ie.create(0, 0)), this.rot = 0, this.pos = ie.copy(a || ie.create(0, 0))
                 }
-                return ee(e, [{
+                return $(i, [{
                     key: "copy",
                     value: function(e) {
-                        re.set(this.pivot, e.pivot), this.rot = e.rot, re.set(this.pos, e.pos)
+                        ie.set(this.pivot, e.pivot), this.rot = e.rot, ie.set(this.pos, e.pos)
                     }
                 }, {
                     key: "rotate",
@@ -12608,249 +12391,246 @@
                 }, {
                     key: "offset",
                     value: function(e) {
-                        return this.pos = re.copy(e), this
+                        return this.pos = ie.copy(e), this
                     }
-                }]), e
+                }]), i
             }();
-        oe.identity = new oe(re.create(0, 0)), oe.lerp = function(e, t, a) {
-            var i = new oe;
-            return i.pos = re.lerp(e, t.pos, a.pos), i.rot = ie.lerp(e, t.rot, a.rot), i.pivot = re.lerp(e, t.pivot, a.pivot), i
+        re.identity = new re(ie.create(0, 0)), re.lerp = function(e, t, a) {
+            var i = new re;
+            return i.pos = ie.lerp(e, t.pos, a.pos), i.rot = ae.lerp(e, t.rot, a.rot), i.pivot = ie.lerp(e, t.pivot, a.pivot), i
         };
-        var ne = {
+        var oe = {
             HandL: 0,
             HandR: 1,
             FootL: 2,
             FootR: 3
         };
-        ae(Object.keys(ne).length % 2 == 0);
-        var se = {
-                fists: (s = {}, i(s, ne.HandL, new oe(re.create(14, -12.25))), i(s, ne.HandR, new oe(re.create(14, 12.25))), s),
-                slash: (l = {}, i(l, ne.HandL, new oe(re.create(18, -8.25))), i(l, ne.HandR, new oe(re.create(6, 20.25))), l),
-                meleeTwoHanded: (c = {}, i(c, ne.HandL, new oe(re.create(10.5, -14.25))), i(c, ne.HandR, new oe(re.create(18, 6.25))), c),
-                meleeKatana: (m = {}, i(m, ne.HandL, new oe(re.create(8.5, 13.25))), i(m, ne.HandR, new oe(re.create(-3, 17.75))), m),
-                meleeNaginata: (p = {}, i(p, ne.HandL, new oe(re.create(19, -7.25))), i(p, ne.HandR, new oe(re.create(8.5, 24.25))), p),
-                machete: (d = {}, i(d, ne.HandL, new oe(re.create(14, -12.25))), i(d, ne.HandR, new oe(re.create(1, 17.75))), d),
-                rifle: (h = {}, i(h, ne.HandL, new oe(re.create(28, 5.25))), i(h, ne.HandR, new oe(re.create(14, 1.75))), h),
-                pistol: (u = {}, i(u, ne.HandL, new oe(re.create(14, 1.75))), i(u, ne.HandR, new oe(re.create(14, 1.75))), u),
-                dualPistol: (g = {}, i(g, ne.HandL, new oe(re.create(15.75, -8.75))), i(g, ne.HandR, new oe(re.create(15.75, 8.75))), g),
-                throwable: (y = {}, i(y, ne.HandL, new oe(re.create(15.75, -9.625))), i(y, ne.HandR, new oe(re.create(15.75, 9.625))), y),
-                downed: (w = {}, i(w, ne.HandL, new oe(re.create(14, -12.25))), i(w, ne.HandR, new oe(re.create(14, 12.25))), i(w, ne.FootL, new oe(re.create(-15.75, -9))), i(w, ne.FootR, new oe(re.create(-15.75, 9))), w)
+        te(Object.keys(oe).length % 2 == 0);
+        var ne = {
+                fists: (n = {}, i(n, oe.HandL, new re(ie.create(14, -12.25))), i(n, oe.HandR, new re(ie.create(14, 12.25))), n),
+                slash: (s = {}, i(s, oe.HandL, new re(ie.create(18, -8.25))), i(s, oe.HandR, new re(ie.create(6, 20.25))), s),
+                meleeTwoHanded: (l = {}, i(l, oe.HandL, new re(ie.create(10.5, -14.25))), i(l, oe.HandR, new re(ie.create(18, 6.25))), l),
+                meleeKatana: (c = {}, i(c, oe.HandL, new re(ie.create(8.5, 13.25))), i(c, oe.HandR, new re(ie.create(-3, 17.75))), c),
+                meleeNaginata: (m = {}, i(m, oe.HandL, new re(ie.create(19, -7.25))), i(m, oe.HandR, new re(ie.create(8.5, 24.25))), m),
+                machete: (p = {}, i(p, oe.HandL, new re(ie.create(14, -12.25))), i(p, oe.HandR, new re(ie.create(1, 17.75))), p),
+                rifle: (d = {}, i(d, oe.HandL, new re(ie.create(28, 5.25))), i(d, oe.HandR, new re(ie.create(14, 1.75))), d),
+                pistol: (h = {}, i(h, oe.HandL, new re(ie.create(14, 1.75))), i(h, oe.HandR, new re(ie.create(14, 1.75))), h),
+                dualPistol: (u = {}, i(u, oe.HandL, new re(ie.create(15.75, -8.75))), i(u, oe.HandR, new re(ie.create(15.75, 8.75))), u),
+                throwable: (g = {}, i(g, oe.HandL, new re(ie.create(15.75, -9.625))), i(g, oe.HandR, new re(ie.create(15.75, 9.625))), g),
+                downed: (y = {}, i(y, oe.HandL, new re(ie.create(14, -12.25))), i(y, oe.HandR, new re(ie.create(14, 12.25))), i(y, oe.FootL, new re(ie.create(-15.75, -9))), i(y, oe.FootR, new re(ie.create(-15.75, 9))), y)
             },
-            le = te.items.fists,
-            ce = te.items.hook,
-            me = te.items.woodaxe,
-            pe = te.items.stonehammer,
-            de = te.items.katana,
-            he = te.items.naginata,
-            ue = {
+            se = ee.items.fists,
+            le = ee.items.hook,
+            ce = ee.items.woodaxe,
+            me = ee.items.stonehammer,
+            pe = ee.items.katana,
+            de = ee.items.naginata,
+            he = {
                 none: {
                     keyframes: [],
                     effects: []
                 },
                 fists: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(le.damageTime, i({}, ne.HandR, new oe(re.create(29.75, 1.75)))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, i({}, oe.HandR, new re(ie.create(14, 12.25)))), r(se.damageTime, i({}, oe.HandR, new re(ie.create(29.75, 1.75)))), r(se.cooldownTime, i({}, oe.HandR, new re(ie.create(14, 12.25))))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), o(se.damageTime, "animMeleeCollision", {})]
                 },
                 cut: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.25 * le.damageTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(.35 * -Math.PI))), o(1 * le.damageTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(.35 * Math.PI))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, i({}, oe.HandR, new re(ie.create(14, 12.25)))), r(.25 * se.damageTime, i({}, oe.HandR, new re(ie.create(14, 12.25)).rotate(.35 * -Math.PI))), r(1 * se.damageTime, i({}, oe.HandR, new re(ie.create(14, 12.25)).rotate(.35 * Math.PI))), r(se.cooldownTime, i({}, oe.HandR, new re(ie.create(14, 12.25))))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), o(se.damageTime, "animMeleeCollision", {})]
                 },
                 cutReverse: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(1, 17.75)))), o(.4 * le.damageTime, i({}, ne.HandR, new oe(re.create(25, 6.25)).rotate(.3 * Math.PI))), o(1 * le.damageTime, i({}, ne.HandR, new oe(re.create(25, 6.25)).rotate(.5 * -Math.PI))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(1, 17.75))))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, i({}, oe.HandR, new re(ie.create(1, 17.75)))), r(.4 * se.damageTime, i({}, oe.HandR, new re(ie.create(25, 6.25)).rotate(.3 * Math.PI))), r(1 * se.damageTime, i({}, oe.HandR, new re(ie.create(25, 6.25)).rotate(.5 * -Math.PI))), r(se.cooldownTime, i({}, oe.HandR, new re(ie.create(1, 17.75))))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), o(se.damageTime, "animMeleeCollision", {})]
                 },
                 thrust: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.4 * le.damageTime, i({}, ne.HandR, new oe(re.create(5, 12.25)).rotate(.1 * Math.PI))), o(1 * le.damageTime, i({}, ne.HandR, new oe(re.create(25, 6.25)).rotate(0 * -Math.PI))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, i({}, oe.HandR, new re(ie.create(14, 12.25)))), r(.4 * se.damageTime, i({}, oe.HandR, new re(ie.create(5, 12.25)).rotate(.1 * Math.PI))), r(1 * se.damageTime, i({}, oe.HandR, new re(ie.create(25, 6.25)).rotate(0 * -Math.PI))), r(se.cooldownTime, i({}, oe.HandR, new re(ie.create(14, 12.25))))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), o(se.damageTime, "animMeleeCollision", {})]
                 },
                 slash: {
-                    keyframes: [o(0, (x = {}, i(x, ne.HandL, new oe(re.create(18, -8.25))), i(x, ne.HandR, new oe(re.create(6, 20.25))), x)), o(le.damageTime, (f = {}, i(f, ne.HandL, new oe(re.create(6, -22.25))), i(f, ne.HandR, new oe(re.create(6, 20.25)).rotate(.6 * -Math.PI)), f)), o(le.cooldownTime, (b = {}, i(b, ne.HandL, new oe(re.create(18, -8.25))), i(b, ne.HandR, new oe(re.create(6, 20.25)).rotate(0)), b))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, (w = {}, i(w, oe.HandL, new re(ie.create(18, -8.25))), i(w, oe.HandR, new re(ie.create(6, 20.25))), w)), r(se.damageTime, (x = {}, i(x, oe.HandL, new re(ie.create(6, -22.25))), i(x, oe.HandR, new re(ie.create(6, 20.25)).rotate(.6 * -Math.PI)), x)), r(se.cooldownTime, (f = {}, i(f, oe.HandL, new re(ie.create(18, -8.25))), i(f, oe.HandR, new re(ie.create(6, 20.25)).rotate(0)), f))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), o(se.damageTime, "animMeleeCollision", {})]
                 },
                 hook: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.25 * ce.damageTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(.1 * Math.PI))), o(.75 * ce.damageTime, i({}, ne.HandR, new oe(re.create(24, 1.75)))), o(.5 * ce.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(-.3 * Math.PI))), o(.5 * ce.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, i({}, oe.HandR, new re(ie.create(14, 12.25)))), r(.25 * le.damageTime, i({}, oe.HandR, new re(ie.create(14, 12.25)).rotate(.1 * Math.PI))), r(.75 * le.damageTime, i({}, oe.HandR, new re(ie.create(24, 1.75)))), r(.5 * le.cooldownTime, i({}, oe.HandR, new re(ie.create(14, 12.25)).rotate(-.3 * Math.PI))), r(.5 * le.cooldownTime, i({}, oe.HandR, new re(ie.create(14, 12.25))))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(ce.damageTime, "animMeleeCollision", {})]
+                    }), o(le.damageTime, "animMeleeCollision", {})]
                 },
                 pan: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.15, i({}, ne.HandR, new oe(re.create(22, -8.25)).rotate(.2 * -Math.PI))), o(.1, i({}, ne.HandR, new oe(re.create(28, -8.25)).rotate(.5 * Math.PI))), o(.3, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, i({}, oe.HandR, new re(ie.create(14, 12.25)))), r(.15, i({}, oe.HandR, new re(ie.create(22, -8.25)).rotate(.2 * -Math.PI))), r(.1, i({}, oe.HandR, new re(ie.create(28, -8.25)).rotate(.5 * Math.PI))), r(.3, i({}, oe.HandR, new re(ie.create(14, 12.25))))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(te.items.pan.damageTime, "animMeleeCollision", {})]
+                    }), o(ee.items.pan.damageTime, "animMeleeCollision", {})]
                 },
                 axeSwing: {
-                    keyframes: [o(0, (_ = {}, i(_, ne.HandL, new oe(re.create(10.5, -14.25))), i(_, ne.HandR, new oe(re.create(18, 6.25))), _)), o(.4 * me.damageTime, (S = {}, i(S, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * Math.PI)), i(S, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * Math.PI)), S)), o(.6 * me.damageTime, (k = {}, i(k, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * -Math.PI)), i(k, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * -Math.PI)), k)), o(me.cooldownTime, (v = {}, i(v, ne.HandL, new oe(re.create(10.5, -14.25))), i(v, ne.HandR, new oe(re.create(18, 6.25))), v))],
-                    effects: [n(me.damageTime, "animPlaySound", {
+                    keyframes: [r(0, (b = {}, i(b, oe.HandL, new re(ie.create(10.5, -14.25))), i(b, oe.HandR, new re(ie.create(18, 6.25))), b)), r(.4 * ce.damageTime, (_ = {}, i(_, oe.HandL, new re(ie.create(9, -14.25)).rotate(.4 * Math.PI)), i(_, oe.HandR, new re(ie.create(18, 6.25)).rotate(.4 * Math.PI)), _)), r(.6 * ce.damageTime, (S = {}, i(S, oe.HandL, new re(ie.create(9, -14.25)).rotate(.4 * -Math.PI)), i(S, oe.HandR, new re(ie.create(18, 6.25)).rotate(.4 * -Math.PI)), S)), r(ce.cooldownTime, (k = {}, i(k, oe.HandL, new re(ie.create(10.5, -14.25))), i(k, oe.HandR, new re(ie.create(18, 6.25))), k))],
+                    effects: [o(ce.damageTime, "animPlaySound", {
                         sound: "swing"
-                    }), n(me.damageTime, "animMeleeCollision", {})]
+                    }), o(ce.damageTime, "animMeleeCollision", {})]
                 },
                 hammerSwing: {
-                    keyframes: [o(0, (z = {}, i(z, ne.HandL, new oe(re.create(10.5, -14.25))), i(z, ne.HandR, new oe(re.create(18, 6.25))), z)), o(.4 * pe.damageTime, (M = {}, i(M, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * Math.PI)), i(M, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * Math.PI)), M)), o(.6 * pe.damageTime, (T = {}, i(T, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * -Math.PI)), i(T, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * -Math.PI)), T)), o(pe.cooldownTime, (P = {}, i(P, ne.HandL, new oe(re.create(10.5, -14.25))), i(P, ne.HandR, new oe(re.create(18, 6.25))), P))],
-                    effects: [n(pe.damageTime, "animPlaySound", {
+                    keyframes: [r(0, (v = {}, i(v, oe.HandL, new re(ie.create(10.5, -14.25))), i(v, oe.HandR, new re(ie.create(18, 6.25))), v)), r(.4 * me.damageTime, (z = {}, i(z, oe.HandL, new re(ie.create(9, -14.25)).rotate(.4 * Math.PI)), i(z, oe.HandR, new re(ie.create(18, 6.25)).rotate(.4 * Math.PI)), z)), r(.6 * me.damageTime, (M = {}, i(M, oe.HandL, new re(ie.create(9, -14.25)).rotate(.4 * -Math.PI)), i(M, oe.HandR, new re(ie.create(18, 6.25)).rotate(.4 * -Math.PI)), M)), r(me.cooldownTime, (T = {}, i(T, oe.HandL, new re(ie.create(10.5, -14.25))), i(T, oe.HandR, new re(ie.create(18, 6.25))), T))],
+                    effects: [o(me.damageTime, "animPlaySound", {
                         sound: "swing"
-                    }), n(pe.damageTime, "animMeleeCollision", {})]
+                    }), o(me.damageTime, "animMeleeCollision", {})]
                 },
                 katanaSwing: {
-                    keyframes: [o(0, (I = {}, i(I, ne.HandL, new oe(re.create(8.5, 13.25))), i(I, ne.HandR, new oe(re.create(-3, 17.75))), I)), o(.3 * de.damageTime, (C = {}, i(C, ne.HandL, new oe(re.create(8.5, 13.25)).rotate(.2 * Math.PI)), i(C, ne.HandR, new oe(re.create(-3, 17.75)).rotate(.2 * Math.PI)), C)), o(.6 * de.damageTime, (A = {}, i(A, ne.HandL, new oe(re.create(8.5, 13.25)).rotate(1.2 * -Math.PI)), i(A, ne.HandR, new oe(re.create(-3, 17.75)).rotate(1.2 * -Math.PI)), A)), o(de.cooldownTime, (E = {}, i(E, ne.HandL, new oe(re.create(8.5, 13.25))), i(E, ne.HandR, new oe(re.create(-3, 17.75))), E))],
-                    effects: [n(de.damageTime, "animPlaySound", {
+                    keyframes: [r(0, (A = {}, i(A, oe.HandL, new re(ie.create(8.5, 13.25))), i(A, oe.HandR, new re(ie.create(-3, 17.75))), A)), r(.3 * pe.damageTime, (C = {}, i(C, oe.HandL, new re(ie.create(8.5, 13.25)).rotate(.2 * Math.PI)), i(C, oe.HandR, new re(ie.create(-3, 17.75)).rotate(.2 * Math.PI)), C)), r(.6 * pe.damageTime, (I = {}, i(I, oe.HandL, new re(ie.create(8.5, 13.25)).rotate(1.2 * -Math.PI)), i(I, oe.HandR, new re(ie.create(-3, 17.75)).rotate(1.2 * -Math.PI)), I)), r(pe.cooldownTime, (P = {}, i(P, oe.HandL, new re(ie.create(8.5, 13.25))), i(P, oe.HandR, new re(ie.create(-3, 17.75))), P))],
+                    effects: [o(pe.damageTime, "animPlaySound", {
                         sound: "swing"
-                    }), n(de.damageTime, "animMeleeCollision", {})]
+                    }), o(pe.damageTime, "animMeleeCollision", {})]
                 },
                 naginataSwing: {
-                    keyframes: [o(0, (D = {}, i(D, ne.HandL, new oe(re.create(19, -7.25))), i(D, ne.HandR, new oe(re.create(8.5, 24.25))), D)), o(.3 * he.damageTime, (O = {}, i(O, ne.HandL, new oe(re.create(19, -7.25)).rotate(.3 * Math.PI)), i(O, ne.HandR, new oe(re.create(8.5, 24.25)).rotate(.3 * Math.PI)), O)), o(.6 * he.damageTime, (B = {}, i(B, ne.HandL, new oe(re.create(19, -7.25)).rotate(.85 * -Math.PI)), i(B, ne.HandR, new oe(re.create(8.5, 24.25)).rotate(.85 * -Math.PI)), B)), o(he.cooldownTime, (L = {}, i(L, ne.HandL, new oe(re.create(19, -7.25))), i(L, ne.HandR, new oe(re.create(8.5, 24.25))), L))],
-                    effects: [n(me.damageTime, "animPlaySound", {
+                    keyframes: [r(0, (E = {}, i(E, oe.HandL, new re(ie.create(19, -7.25))), i(E, oe.HandR, new re(ie.create(8.5, 24.25))), E)), r(.3 * de.damageTime, (O = {}, i(O, oe.HandL, new re(ie.create(19, -7.25)).rotate(.3 * Math.PI)), i(O, oe.HandR, new re(ie.create(8.5, 24.25)).rotate(.3 * Math.PI)), O)), r(.6 * de.damageTime, (D = {}, i(D, oe.HandL, new re(ie.create(19, -7.25)).rotate(.85 * -Math.PI)), i(D, oe.HandR, new re(ie.create(8.5, 24.25)).rotate(.85 * -Math.PI)), D)), r(de.cooldownTime, (L = {}, i(L, oe.HandL, new re(ie.create(19, -7.25))), i(L, oe.HandR, new re(ie.create(8.5, 24.25))), L))],
+                    effects: [o(ce.damageTime, "animPlaySound", {
                         sound: "swing"
-                    }), n(me.damageTime, "animMeleeCollision", {})]
+                    }), o(ce.damageTime, "animMeleeCollision", {})]
                 },
                 cook: {
-                    keyframes: [o(0, (R = {}, i(R, ne.HandL, new oe(re.create(15.75, -9.625))), i(R, ne.HandR, new oe(re.create(15.75, 9.625))), R)), o(.1, (F = {}, i(F, ne.HandL, new oe(re.create(14, -1.75))), i(F, ne.HandR, new oe(re.create(14, 1.75))), F)), o(.2, (j = {}, i(j, ne.HandL, new oe(re.create(14, -1.75))), i(j, ne.HandR, new oe(re.create(14, 1.75))), j)), o(.1, (q = {}, i(q, ne.HandL, new oe(re.create(22.75, -1.75))), i(q, ne.HandR, new oe(re.create(1.75, 14))), q)), o(99999, (N = {}, i(N, ne.HandL, new oe(re.create(22.75, -1.75))), i(N, ne.HandR, new oe(re.create(1.75, 14))), N))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, (B = {}, i(B, oe.HandL, new re(ie.create(15.75, -9.625))), i(B, oe.HandR, new re(ie.create(15.75, 9.625))), B)), r(.1, (R = {}, i(R, oe.HandL, new re(ie.create(14, -1.75))), i(R, oe.HandR, new re(ie.create(14, 1.75))), R)), r(.2, (F = {}, i(F, oe.HandL, new re(ie.create(14, -1.75))), i(F, oe.HandR, new re(ie.create(14, 1.75))), F)), r(.1, (j = {}, i(j, oe.HandL, new re(ie.create(22.75, -1.75))), i(j, oe.HandR, new re(ie.create(1.75, 14))), j)), r(99999, (N = {}, i(N, oe.HandL, new re(ie.create(22.75, -1.75))), i(N, oe.HandR, new re(ie.create(1.75, 14))), N))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "pullPin"
-                    }), n(.1, "animSetThrowableState", {
+                    }), o(.1, "animSetThrowableState", {
                         state: "cook"
                     })]
                 },
                 throw: {
-                    keyframes: [o(0, (V = {}, i(V, ne.HandL, new oe(re.create(22.75, -1.75))), i(V, ne.HandR, new oe(re.create(1.75, 14.175))), V)), o(.15, (G = {}, i(G, ne.HandL, new oe(re.create(5.25, -15.75))), i(G, ne.HandR, new oe(re.create(29.75, 1.75))), G)), o(te.player.throwTime, (U = {}, i(U, ne.HandL, new oe(re.create(15.75, -9.625))), i(U, ne.HandR, new oe(re.create(15.75, 9.625))), U))],
-                    effects: [n(0, "animPlaySound", {
+                    keyframes: [r(0, (q = {}, i(q, oe.HandL, new re(ie.create(22.75, -1.75))), i(q, oe.HandR, new re(ie.create(1.75, 14.175))), q)), r(.15, (V = {}, i(V, oe.HandL, new re(ie.create(5.25, -15.75))), i(V, oe.HandR, new re(ie.create(29.75, 1.75))), V)), r(ee.player.throwTime, (G = {}, i(G, oe.HandL, new re(ie.create(15.75, -9.625))), i(G, oe.HandR, new re(ie.create(15.75, 9.625))), G))],
+                    effects: [o(0, "animPlaySound", {
                         sound: "throwing"
-                    }), n(0, "animSetThrowableState", {
+                    }), o(0, "animSetThrowableState", {
                         state: "throwing"
-                    }), n(0, "animThrowableParticles", {})]
+                    }), o(0, "animThrowableParticles", {})]
                 },
                 crawl_forward: {
-                    keyframes: [o(te.player.crawlTime / 3, (H = {}, i(H, ne.HandL, new oe(re.create(19.25, -10.5))), i(H, ne.FootL, new oe(re.create(-20.25, -9))), H)), o(te.player.crawlTime / 3, (W = {}, i(W, ne.HandL, new oe(re.create(5.25, -15.75))), i(W, ne.FootL, new oe(re.create(-11.25, -9))), W)), o(te.player.crawlTime / 3, (K = {}, i(K, ne.HandL, new oe(re.create(14, -12.25))), i(K, ne.FootL, new oe(re.create(-15.75, -9))), K))],
+                    keyframes: [r(ee.player.crawlTime / 3, (U = {}, i(U, oe.HandL, new re(ie.create(19.25, -10.5))), i(U, oe.FootL, new re(ie.create(-20.25, -9))), U)), r(ee.player.crawlTime / 3, (H = {}, i(H, oe.HandL, new re(ie.create(5.25, -15.75))), i(H, oe.FootL, new re(ie.create(-11.25, -9))), H)), r(ee.player.crawlTime / 3, (W = {}, i(W, oe.HandL, new re(ie.create(14, -12.25))), i(W, oe.FootL, new re(ie.create(-15.75, -9))), W))],
                     effects: []
                 },
                 crawl_backward: {
-                    keyframes: [o(te.player.crawlTime / 3, (Z = {}, i(Z, ne.HandL, new oe(re.create(5.25, -15.75))), i(Z, ne.FootL, new oe(re.create(-11.25, -9))), Z)), o(te.player.crawlTime / 3, (X = {}, i(X, ne.HandL, new oe(re.create(19.25, -10.5))), i(X, ne.FootL, new oe(re.create(-20.25, -9))), X)), o(te.player.crawlTime / 3, (Y = {}, i(Y, ne.HandL, new oe(re.create(14, -12.25))), i(Y, ne.FootL, new oe(re.create(-15.75, -9))), Y))],
+                    keyframes: [r(ee.player.crawlTime / 3, (K = {}, i(K, oe.HandL, new re(ie.create(5.25, -15.75))), i(K, oe.FootL, new re(ie.create(-11.25, -9))), K)), r(ee.player.crawlTime / 3, (Z = {}, i(Z, oe.HandL, new re(ie.create(19.25, -10.5))), i(Z, oe.FootL, new re(ie.create(-20.25, -9))), Z)), r(ee.player.crawlTime / 3, (X = {}, i(X, oe.HandL, new re(ie.create(14, -12.25))), i(X, oe.FootL, new re(ie.create(-15.75, -9))), X))],
                     effects: []
                 },
                 revive: {
-                    keyframes: [o(0, (J = {}, i(J, ne.HandL, new oe(re.create(14, -12.25))), i(J, ne.HandR, new oe(re.create(14, 12.25))), J)), o(.2, (Q = {}, i(Q, ne.HandL, new oe(re.create(24.5, -8.75))), i(Q, ne.HandR, new oe(re.create(5.25, 21))), Q)), o(te.player.reviveDuration, ($ = {}, i($, ne.HandL, new oe(re.create(24.5, -8.75))), i($, ne.HandR, new oe(re.create(5.25, 21))), $))],
+                    keyframes: [r(0, (Q = {}, i(Q, oe.HandL, new re(ie.create(14, -12.25))), i(Q, oe.HandR, new re(ie.create(14, 12.25))), Q)), r(.2, (Y = {}, i(Y, oe.HandL, new re(ie.create(24.5, -8.75))), i(Y, oe.HandR, new re(ie.create(5.25, 21))), Y)), r(ee.player.reviveDuration, (J = {}, i(J, oe.HandL, new re(ie.create(24.5, -8.75))), i(J, oe.HandR, new re(ie.create(5.25, 21))), J))],
                     effects: []
                 }
             };
         e.exports = {
-            Pose: oe,
-            Bones: ne,
-            IdlePoses: se,
-            Animations: ue
+            Pose: re,
+            Bones: oe,
+            IdlePoses: ne,
+            Animations: he
         }
     },
     "6d494b5c": function(e, t, a) {
         "use strict";
 
-        function i(e, t, a, i, r, n) {
-            var l = e;
-            return !l.active || l.dead || !l.collidable || l.isWindow || l.height < i || !s.sameLayer(l.layer, r) ? null : n && 2 & r && 0 == l.layer ? null : o.intersectSegment(l.collider, t, a)
+        function h(e, t, a, i, r, o) {
+            var n = e;
+            return !n.active || n.dead || !n.collidable || n.isWindow || n.height < i || !s.sameLayer(n.layer, r) ? null : o && 2 & r && 0 == n.layer ? null : A.intersectSegment(n.collider, t, a)
         }
 
-        function r(e, t, a, i, r) {
-            var o = p.intersectSegmentDist(e, t, a, i, 0, r, !1);
-            return l.add(t, l.mul(a, o))
+        function T(e, t, a, i, r) {
+            var o = O.intersectSegmentDist(e, t, a, i, 0, r, !1);
+            return I.add(t, I.mul(a, o))
         }
-        var o = a("6b42806d"),
-            n = a("10899aea"),
+        var A = a("6b42806d"),
+            C = a("10899aea"),
             s = a("1901e2d9"),
-            l = a("c2a798c8"),
-            c = a("ce29f17f"),
-            m = a("af8ba00f"),
-            p = {
-                intersectSegment: function(e, t, a, r, o, n, s) {
-                    for (var c = l.add(t, l.mul(a, r)), m = [], p = 0; p < e.length; p++) {
-                        var d = e[p],
-                            h = i(d, t, c, o, n, s);
-                        if (h) {
-                            var u = l.length(l.sub(h.point, t));
-                            m.push({
-                                id: d.__id,
-                                dist: u
+            I = a("c2a798c8"),
+            P = a("ce29f17f"),
+            E = a("af8ba00f"),
+            O = {
+                intersectSegment: function(e, t, a, i, r, o, n) {
+                    for (var s = I.add(t, I.mul(a, i)), l = [], c = 0; c < e.length; c++) {
+                        var m = e[c],
+                            p = h(m, t, s, r, o, n);
+                        if (p) {
+                            var d = I.length(I.sub(p.point, t));
+                            l.push({
+                                id: m.__id,
+                                dist: d
                             })
                         }
                     }
-                    return m.sort(function(e, t) {
+                    return l.sort(function(e, t) {
                         return e.dist - t.dist
-                    }), m.length > 0 ? m[0] : null
+                    }), 0 < l.length ? l[0] : null
                 },
-                intersectSegmentDist: function(e, t, a, r, o, s, c) {
-                    for (var m = r, p = l.add(t, l.mul(a, r)), d = 0; d < e.length; d++) {
-                        var h = e[d],
-                            u = i(h, t, p, o, s, c);
-                        u && (m = n.min(m, l.length(l.sub(u.point, t))))
+                intersectSegmentDist: function(e, t, a, i, r, o, n) {
+                    for (var s = i, l = I.add(t, I.mul(a, i)), c = 0; c < e.length; c++) {
+                        var m = h(e[c], t, l, r, o, n);
+                        m && (s = C.min(s, I.length(I.sub(m.point, t))))
                     }
-                    return m
+                    return s
                 },
-                scanCollider: function(e, t, a, i, s, d, h, u) {
-                    var g = o.intersectCircle(e, a, h);
-                    if (!g) return null;
-                    if (g.pen >= h) return {
+                scanCollider: function(e, t, a, i, r, o, n, s) {
+                    var l = A.intersectCircle(e, a, n);
+                    if (!l) return null;
+                    if (l.pen >= n) return {
                         dist: 0
                     };
-                    var y = l.perp(g.dir),
-                        w = r(t, a, l.neg(y), .5 * d, i),
-                        x = r(t, a, y, .5 * d, i),
-                        f = l.sub(x, w),
-                        b = l.length(f);
-                    f = b > 1e-4 ? l.div(f, b) : l.create(1, 0);
-                    for (var _ = [], S = 0; S < u; S++) {
-                        var k = S / n.max(u - 1, 1);
-                        _.push(l.add(w, l.mul(f, b * k)))
+                    var c = I.perp(l.dir),
+                        m = T(t, a, I.neg(c), .5 * o, i),
+                        p = T(t, a, c, .5 * o, i),
+                        d = I.sub(p, m),
+                        h = I.length(d);
+                    d = 1e-4 < h ? I.div(d, h) : I.create(1, 0);
+                    for (var u = [], g = 0; g < s; g++) {
+                        var y = g / C.max(s - 1, 1);
+                        u.push(I.add(m, I.mul(d, h * y)))
                     }
-                    for (var v = s, z = 0; z < _.length; z++) {
-                        var M = _[z],
-                            T = o.intersectCircle(e, M, h);
-                        if (T) {
-                            var P = l.neg(T.dir),
-                                I = p.intersectSegmentDist(t, M, P, h, v, i, !0),
-                                C = o.intersectSegment(e, M, l.add(M, l.mul(P, h))),
-                                A = C ? l.length(l.sub(C.point, M)) : 0,
-                                E = C && A <= I;
-                            if (c.debug) {
-                                var D = E ? 65280 : 16711680;
-                                m.addRay(M, P, h, D)
+                    for (var w = r, x = 0; x < u.length; x++) {
+                        var f = u[x],
+                            b = A.intersectCircle(e, f, n);
+                        if (b) {
+                            var _ = I.neg(b.dir),
+                                S = O.intersectSegmentDist(t, f, _, n, w, i, !0),
+                                k = A.intersectSegment(e, f, I.add(f, I.mul(_, n))),
+                                v = k ? I.length(I.sub(k.point, f)) : 0,
+                                z = k && v <= S;
+                            if (P.debug) {
+                                var M = z ? 65280 : 16711680;
+                                E.addRay(f, _, n, M)
                             }
-                            if (E) return {
-                                dist: A
+                            if (z) return {
+                                dist: v
                             }
                         }
                     }
                     return null
                 }
             };
-        e.exports = p
+        e.exports = O
     },
     "6d61bfc0": function(e, t, a) {
         "use strict";
-
-        function i(e) {
-            for (var t = 0, a = 0; a < e.length; a++) {
-                var i = e[a];
-                t = 65535 & (r[255 & (t ^ i)] ^ t >> 8)
-            }
-            return t
-        }
         var r = [0, 49345, 49537, 320, 49921, 960, 640, 49729, 50689, 1728, 1920, 51009, 1280, 50625, 50305, 1088, 52225, 3264, 3456, 52545, 3840, 53185, 52865, 3648, 2560, 51905, 52097, 2880, 51457, 2496, 2176, 51265, 55297, 6336, 6528, 55617, 6912, 56257, 55937, 6720, 7680, 57025, 57217, 8e3, 56577, 7616, 7296, 56385, 5120, 54465, 54657, 5440, 55041, 6080, 5760, 54849, 53761, 4800, 4992, 54081, 4352, 53697, 53377, 4160, 61441, 12480, 12672, 61761, 13056, 62401, 62081, 12864, 13824, 63169, 63361, 14144, 62721, 13760, 13440, 62529, 15360, 64705, 64897, 15680, 65281, 16320, 16e3, 65089, 64001, 15040, 15232, 64321, 14592, 63937, 63617, 14400, 10240, 59585, 59777, 10560, 60161, 11200, 10880, 59969, 60929, 11968, 12160, 61249, 11520, 60865, 60545, 11328, 58369, 9408, 9600, 58689, 9984, 59329, 59009, 9792, 8704, 58049, 58241, 9024, 57601, 8640, 8320, 57409, 40961, 24768, 24960, 41281, 25344, 41921, 41601, 25152, 26112, 42689, 42881, 26432, 42241, 26048, 25728, 42049, 27648, 44225, 44417, 27968, 44801, 28608, 28288, 44609, 43521, 27328, 27520, 43841, 26880, 43457, 43137, 26688, 30720, 47297, 47489, 31040, 47873, 31680, 31360, 47681, 48641, 32448, 32640, 48961, 32e3, 48577, 48257, 31808, 46081, 29888, 30080, 46401, 30464, 47041, 46721, 30272, 29184, 45761, 45953, 29504, 45313, 29120, 28800, 45121, 20480, 37057, 37249, 20800, 37633, 21440, 21120, 37441, 38401, 22208, 22400, 38721, 21760, 38337, 38017, 21568, 39937, 23744, 23936, 40257, 24320, 40897, 40577, 24128, 23040, 39617, 39809, 23360, 39169, 22976, 22656, 38977, 34817, 18624, 18816, 35137, 19200, 35777, 35457, 19008, 19968, 36545, 36737, 20288, 36097, 19904, 19584, 35905, 17408, 33985, 34177, 17728, 34561, 18368, 18048, 34369, 33281, 17088, 17280, 33601, 16640, 33217, 32897, 16448];
         e.exports = {
-            crc16: i
+            crc16: function(e) {
+                for (var t = 0, a = 0; a < e.length; a++) {
+                    var i = e[a];
+                    t = 65535 & (r[255 & (t ^ i)] ^ t >> 8)
+                }
+                return t
+            }
         }
     },
     "6e13f3b7": function(e, t) {
         e.exports = {
             shared: [{
                 meta: {
-                    image: "shared-0-100-1a7c35ac.png",
+                    image: "shared-0-100-06ad4031.png",
                     size: {
                         w: 4096,
                         h: 4096
@@ -13278,7 +13058,7 @@
                             h: 384
                         }
                     },
-                    "map-wall-12.img": {
+                    "map-wall-glass-12.img": {
                         frame: {
                             x: 3742,
                             y: 3598,
@@ -13298,7 +13078,7 @@
                             h: 384
                         }
                     },
-                    "map-wall-12-rounded.img": {
+                    "map-wall-12.img": {
                         frame: {
                             x: 3778,
                             y: 3598,
@@ -13318,7 +13098,7 @@
                             h: 384
                         }
                     },
-                    "map-wall-glass-12.img": {
+                    "map-wall-12-rounded.img": {
                         frame: {
                             x: 3814,
                             y: 3598,
@@ -13458,7 +13238,7 @@
                             h: 340
                         }
                     },
-                    "map-building-shack-floor-02.img": {
+                    "map-bunker-crossing-floor-01.img": {
                         frame: {
                             x: 2886,
                             y: 1224,
@@ -13478,7 +13258,7 @@
                             h: 320
                         }
                     },
-                    "map-bunker-crossing-floor-01.img": {
+                    "map-building-shack-floor-02.img": {
                         frame: {
                             x: 3210,
                             y: 1224,
@@ -13618,7 +13398,7 @@
                             h: 288
                         }
                     },
-                    "map-wall-09.img": {
+                    "map-wall-09-rounded.img": {
                         frame: {
                             x: 3983,
                             y: 294,
@@ -13638,7 +13418,7 @@
                             h: 288
                         }
                     },
-                    "map-wall-09-rounded.img": {
+                    "map-wall-09.img": {
                         frame: {
                             x: 4019,
                             y: 294,
@@ -13722,46 +13502,146 @@
                         frame: {
                             x: 3983,
                             y: 1110,
-                            w: 49,
-                            h: 230
+                            w: 60,
+                            h: 236
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 10,
-                            y: 10,
-                            w: 49,
-                            h: 230
+                            x: 0,
+                            y: 0,
+                            w: 60,
+                            h: 236
                         },
                         sourceSize: {
-                            w: 64,
-                            h: 240
+                            w: 60,
+                            h: 236
                         }
                     },
                     "gun-awc-02.img": {
                         frame: {
                             x: 3983,
-                            y: 1344,
-                            w: 49,
-                            h: 230
+                            y: 1350,
+                            w: 60,
+                            h: 236
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 10,
-                            y: 10,
-                            w: 49,
-                            h: 230
+                            x: 0,
+                            y: 0,
+                            w: 60,
+                            h: 236
                         },
                         sourceSize: {
-                            w: 64,
-                            h: 240
+                            w: 60,
+                            h: 236
+                        }
+                    },
+                    "gun-pkp-top-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 1590,
+                            w: 56,
+                            h: 232
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 56,
+                            h: 232
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 232
+                        }
+                    },
+                    "gun-usas-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 1826,
+                            w: 56,
+                            h: 232
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 56,
+                            h: 232
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 232
+                        }
+                    },
+                    "gun-ots38-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 2062,
+                            w: 56,
+                            h: 232
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 56,
+                            h: 232
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 232
+                        }
+                    },
+                    "gun-m249-top-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 2298,
+                            w: 56,
+                            h: 232
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 56,
+                            h: 232
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 232
+                        }
+                    },
+                    "gun-garand-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 2534,
+                            w: 48,
+                            h: 232
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 48,
+                            h: 232
+                        },
+                        sourceSize: {
+                            w: 48,
+                            h: 232
                         }
                     },
                     "map-door-02.img": {
                         frame: {
                             x: 3983,
-                            y: 1578,
+                            y: 2770,
                             w: 80,
                             h: 224
                         },
@@ -13775,33 +13655,33 @@
                         },
                         sourceSize: {
                             w: 80,
-                            h: 224
-                        }
-                    },
-                    "map-wall-07-rounded.img": {
-                        frame: {
-                            x: 4036,
-                            y: 1110,
-                            w: 32,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 32,
                             h: 224
                         }
                     },
                     "map-wall-07.img": {
                         frame: {
-                            x: 4036,
-                            y: 1344,
+                            x: 4035,
+                            y: 2534,
+                            w: 32,
+                            h: 224
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 224
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 224
+                        }
+                    },
+                    "map-wall-07-rounded.img": {
+                        frame: {
+                            x: 3983,
+                            y: 2998,
                             w: 32,
                             h: 224
                         },
@@ -13838,90 +13718,30 @@
                             h: 222
                         }
                     },
-                    "gun-m249-top-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 1806,
-                            w: 40,
-                            h: 218
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 10,
-                            y: 18,
-                            w: 40,
-                            h: 218
-                        },
-                        sourceSize: {
-                            w: 60,
-                            h: 236
-                        }
-                    },
-                    "gun-garand-01.img": {
-                        frame: {
-                            x: 4027,
-                            y: 1806,
-                            w: 36,
-                            h: 216
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 20,
-                            w: 36,
-                            h: 216
-                        },
-                        sourceSize: {
-                            w: 52,
-                            h: 236
-                        }
-                    },
-                    "gun-usas-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2028,
-                            w: 45,
-                            h: 212
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 24,
-                            w: 45,
-                            h: 212
-                        },
-                        sourceSize: {
-                            w: 60,
-                            h: 236
-                        }
-                    },
                     "gun-scorpion-01.img": {
                         frame: {
-                            x: 3983,
-                            y: 2244,
-                            w: 43,
-                            h: 202
+                            x: 4019,
+                            y: 2998,
+                            w: 48,
+                            h: 208
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 10,
-                            w: 43,
-                            h: 202
+                            x: 0,
+                            y: 0,
+                            w: 48,
+                            h: 208
                         },
                         sourceSize: {
-                            w: 52,
-                            h: 212
+                            w: 48,
+                            h: 208
                         }
                     },
                     "map-wall-outhouse-side.img": {
                         frame: {
-                            x: 4032,
-                            y: 2028,
+                            x: 4047,
+                            y: 1110,
                             w: 24,
                             h: 198
                         },
@@ -13938,30 +13758,30 @@
                             h: 198
                         }
                     },
-                    "gun-pkp-top-01.img": {
+                    "gun-m4a1-01.img": {
                         frame: {
-                            x: 4030,
-                            y: 2244,
-                            w: 38,
+                            x: 3983,
+                            y: 3226,
+                            w: 48,
                             h: 196
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 14,
-                            y: 40,
-                            w: 38,
+                            x: 0,
+                            y: 0,
+                            w: 48,
                             h: 196
                         },
                         sourceSize: {
-                            w: 60,
-                            h: 236
+                            w: 48,
+                            h: 196
                         }
                     },
                     "map-pipes-05.img": {
                         frame: {
                             x: 3983,
-                            y: 2450,
+                            y: 3426,
                             w: 90,
                             h: 192
                         },
@@ -13980,8 +13800,8 @@
                     },
                     "map-wall-06-rounded.img": {
                         frame: {
-                            x: 3983,
-                            y: 2646,
+                            x: 4035,
+                            y: 3226,
                             w: 32,
                             h: 192
                         },
@@ -14000,8 +13820,8 @@
                     },
                     "map-wall-06.img": {
                         frame: {
-                            x: 4019,
-                            y: 2646,
+                            x: 3983,
+                            y: 3622,
                             w: 32,
                             h: 192
                         },
@@ -14018,30 +13838,10 @@
                             h: 192
                         }
                     },
-                    "gun-m4a1-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2842,
-                            w: 46,
-                            h: 191
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 9,
-                            w: 46,
-                            h: 191
-                        },
-                        sourceSize: {
-                            w: 52,
-                            h: 200
-                        }
-                    },
                     "part-shell-02.img": {
                         frame: {
                             x: 3983,
-                            y: 3037,
+                            y: 3818,
                             w: 63,
                             h: 190
                         },
@@ -14060,28 +13860,28 @@
                     },
                     "gun-long-01.img": {
                         frame: {
-                            x: 4033,
-                            y: 2842,
+                            x: 4019,
+                            y: 3622,
                             w: 32,
                             h: 188
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 32,
                             h: 188
                         },
                         sourceSize: {
-                            w: 36,
-                            h: 192
+                            w: 32,
+                            h: 188
                         }
                     },
                     "part-shell-03.img": {
                         frame: {
-                            x: 3983,
-                            y: 3231,
+                            x: 3855,
+                            y: 3246,
                             w: 63,
                             h: 180
                         },
@@ -14098,51 +13898,11 @@
                             h: 180
                         }
                     },
-                    "gun-saiga-01.img": {
+                    "map-wall-05-rounded.img": {
                         frame: {
-                            x: 3983,
-                            y: 3415,
-                            w: 40,
-                            h: 174
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 6,
-                            w: 40,
-                            h: 174
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 196
-                        }
-                    },
-                    "part-shell-04.img": {
-                        frame: {
-                            x: 3983,
-                            y: 3593,
-                            w: 55,
-                            h: 164
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 55,
-                            h: 164
-                        },
-                        sourceSize: {
-                            w: 55,
-                            h: 164
-                        }
-                    },
-                    "map-wall-04-stone.img": {
-                        frame: {
-                            x: 4027,
-                            y: 3415,
-                            w: 40,
+                            x: 3947,
+                            y: 1686,
+                            w: 32,
                             h: 160
                         },
                         rotated: !1,
@@ -14150,138 +13910,38 @@
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 40,
+                            w: 32,
                             h: 160
                         },
                         sourceSize: {
-                            w: 40,
-                            h: 160
-                        }
-                    },
-                    "part-airdrop-02.img": {
-                        frame: {
-                            x: 3983,
-                            y: 3761,
-                            w: 38,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 160
-                        }
-                    },
-                    "part-airdrop-02x.img": {
-                        frame: {
-                            x: 4025,
-                            y: 3761,
-                            w: 38,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 38,
+                            w: 32,
                             h: 160
                         }
                     },
                     "map-wall-05.img": {
                         frame: {
-                            x: 3983,
-                            y: 3925,
-                            w: 32,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 160
-                        }
-                    },
-                    "map-wall-05-rounded.img": {
-                        frame: {
-                            x: 4019,
-                            y: 3925,
-                            w: 32,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 160
-                        }
-                    },
-                    "map-wall-outhouse-bot.img": {
-                        frame: {
-                            x: 3855,
-                            y: 3407,
-                            w: 72,
-                            h: 24
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 24
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 24
-                        }
-                    },
-                    "gun-med-01.img": {
-                        frame: {
                             x: 3947,
-                            y: 1686,
+                            y: 1850,
                             w: 32,
-                            h: 128
+                            h: 160
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 32,
-                            h: 128
+                            h: 160
                         },
                         sourceSize: {
-                            w: 36,
-                            h: 132
+                            w: 32,
+                            h: 160
                         }
                     },
                     "map-wall-04.img": {
                         frame: {
                             x: 3947,
-                            y: 1818,
+                            y: 2014,
                             w: 32,
                             h: 128
                         },
@@ -14301,7 +13961,7 @@
                     "map-wall-04-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 1950,
+                            y: 2146,
                             w: 32,
                             h: 128
                         },
@@ -14315,33 +13975,53 @@
                         },
                         sourceSize: {
                             w: 32,
+                            h: 128
+                        }
+                    },
+                    "map-wall-outhouse-bot.img": {
+                        frame: {
+                            x: 3391,
+                            y: 3550,
+                            w: 72,
+                            h: 24
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 72,
+                            h: 24
+                        },
+                        sourceSize: {
+                            w: 72,
+                            h: 24
+                        }
+                    },
+                    "map-door-05.img": {
+                        frame: {
+                            x: 4047,
+                            y: 1350,
+                            w: 24,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 24,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 24,
                             h: 128
                         }
                     },
                     "map-door-01.img": {
                         frame: {
-                            x: 4042,
-                            y: 3593,
-                            w: 24,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 24,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 24,
-                            h: 128
-                        }
-                    },
-                    "map-door-05.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2082,
+                            x: 4043,
+                            y: 1590,
                             w: 24,
                             h: 128
                         },
@@ -14361,7 +14041,7 @@
                     "map-door-03.img": {
                         frame: {
                             x: 3947,
-                            y: 2214,
+                            y: 2410,
                             w: 32,
                             h: 112
                         },
@@ -14376,52 +14056,12 @@
                         sourceSize: {
                             w: 32,
                             h: 112
-                        }
-                    },
-                    "gun-ots38-01.img": {
-                        frame: {
-                            x: 3891,
-                            y: 3118,
-                            w: 38,
-                            h: 104
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 11,
-                            y: 132,
-                            w: 38,
-                            h: 104
-                        },
-                        sourceSize: {
-                            w: 60,
-                            h: 236
-                        }
-                    },
-                    "map-building-house-window-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2330,
-                            w: 32,
-                            h: 104
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 104
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 104
                         }
                     },
                     "map-building-house-window-res-01.img": {
                         frame: {
                             x: 3947,
-                            y: 2438,
+                            y: 2526,
                             w: 32,
                             h: 104
                         },
@@ -14436,6 +14076,46 @@
                         sourceSize: {
                             w: 32,
                             h: 104
+                        }
+                    },
+                    "map-building-house-window-01.img": {
+                        frame: {
+                            x: 3947,
+                            y: 2634,
+                            w: 32,
+                            h: 104
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 104
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 104
+                        }
+                    },
+                    "ping-map-airstrike.img": {
+                        frame: {
+                            x: 3891,
+                            y: 3118,
+                            w: 44,
+                            h: 103
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 42,
+                            y: 13,
+                            w: 44,
+                            h: 103
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
                         }
                     },
                     "map-crate-06.img": {
@@ -14501,21 +14181,21 @@
                     "gun-short-01.img": {
                         frame: {
                             x: 3947,
-                            y: 2546,
+                            y: 2742,
                             w: 32,
                             h: 100
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 32,
                             h: 100
                         },
                         sourceSize: {
-                            w: 36,
-                            h: 104
+                            w: 32,
+                            h: 100
                         }
                     },
                     "dab-face.img": {
@@ -14578,10 +14258,10 @@
                             h: 128
                         }
                     },
-                    "map-wall-03.img": {
+                    "map-wall-03-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 2650,
+                            y: 2846,
                             w: 32,
                             h: 96
                         },
@@ -14598,10 +14278,10 @@
                             h: 96
                         }
                     },
-                    "map-wall-03-rounded.img": {
+                    "map-wall-03.img": {
                         frame: {
                             x: 3947,
-                            y: 2750,
+                            y: 2946,
                             w: 32,
                             h: 96
                         },
@@ -14800,8 +14480,8 @@
                     },
                     "map-pot-res-01.img": {
                         frame: {
-                            x: 3026,
-                            y: 2570,
+                            x: 3983,
+                            y: 4012,
                             w: 80,
                             h: 80
                         },
@@ -14816,6 +14496,26 @@
                         sourceSize: {
                             w: 144,
                             h: 144
+                        }
+                    },
+                    "gun-dp28-top-01.img": {
+                        frame: {
+                            x: 3026,
+                            y: 2570,
+                            w: 80,
+                            h: 80
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 80,
+                            h: 80
+                        },
+                        sourceSize: {
+                            w: 80,
+                            h: 80
                         }
                     },
                     "loot-weapon-fists.img": {
@@ -14918,47 +14618,27 @@
                             h: 74
                         }
                     },
-                    "gun-dp28-top-01.img": {
+                    "gg.img": {
                         frame: {
                             x: 3806,
                             y: 2570,
-                            w: 74,
-                            h: 74
+                            w: 114,
+                            h: 72
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 5,
-                            y: 5,
-                            w: 74,
-                            h: 74
+                            x: 7,
+                            y: 28,
+                            w: 114,
+                            h: 72
                         },
                         sourceSize: {
-                            w: 84,
-                            h: 84
+                            w: 128,
+                            h: 128
                         }
                     },
-                    "map-potato-res.img": {
-                        frame: {
-                            x: 3884,
-                            y: 2570,
-                            w: 56,
-                            h: 66
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 20,
-                            y: 15,
-                            w: 56,
-                            h: 66
-                        },
-                        sourceSize: {
-                            w: 96,
-                            h: 96
-                        }
-                    },
-                    "lock.img": {
+                    "unlock.img": {
                         frame: {
                             x: 3890,
                             y: 2466,
@@ -14978,10 +14658,10 @@
                             h: 64
                         }
                     },
-                    "map-wall-02-rounded.img": {
+                    "map-wall-02.img": {
                         frame: {
                             x: 3947,
-                            y: 2850,
+                            y: 3046,
                             w: 32,
                             h: 64
                         },
@@ -14998,10 +14678,10 @@
                             h: 64
                         }
                     },
-                    "map-wall-02.img": {
+                    "map-wall-02-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 2918,
+                            y: 3114,
                             w: 32,
                             h: 64
                         },
@@ -15066,21 +14746,41 @@
                             h: 44
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 76,
                             h: 44
                         },
                         sourceSize: {
-                            w: 80,
-                            h: 48
+                            w: 76,
+                            h: 44
+                        }
+                    },
+                    "gun-pkp-bot-01.img": {
+                        frame: {
+                            x: 1853,
+                            y: 3550,
+                            w: 76,
+                            h: 44
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 76,
+                            h: 44
+                        },
+                        sourceSize: {
+                            w: 76,
+                            h: 44
                         }
                     },
                     "ping-part-eighth-highlight.img": {
                         frame: {
-                            x: 1853,
+                            x: 1933,
                             y: 3550,
                             w: 51,
                             h: 43
@@ -15100,7 +14800,7 @@
                     },
                     "ping-part-eighth.img": {
                         frame: {
-                            x: 1908,
+                            x: 1988,
                             y: 3550,
                             w: 51,
                             h: 43
@@ -15120,7 +14820,7 @@
                     },
                     "map-building-bank-window-res-01.img": {
                         frame: {
-                            x: 1963,
+                            x: 2043,
                             y: 3550,
                             w: 44,
                             h: 43
@@ -15140,7 +14840,7 @@
                     },
                     "pumpkin-play.img": {
                         frame: {
-                            x: 2011,
+                            x: 2091,
                             y: 3550,
                             w: 40,
                             h: 43
@@ -15160,7 +14860,7 @@
                     },
                     "part-frag-lever-01.img": {
                         frame: {
-                            x: 2055,
+                            x: 2135,
                             y: 3550,
                             w: 48,
                             h: 40
@@ -15178,49 +14878,9 @@
                             h: 128
                         }
                     },
-                    "player-hands-01.img": {
-                        frame: {
-                            x: 2107,
-                            y: 3550,
-                            w: 40,
-                            h: 40
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 40,
-                            h: 40
-                        },
-                        sourceSize: {
-                            w: 42,
-                            h: 42
-                        }
-                    },
-                    "player-feet-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2986,
-                            w: 28,
-                            h: 40
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 1,
-                            w: 28,
-                            h: 40
-                        },
-                        sourceSize: {
-                            w: 42,
-                            h: 42
-                        }
-                    },
                     "hatchet.img": {
                         frame: {
-                            x: 2151,
+                            x: 2187,
                             y: 3550,
                             w: 44,
                             h: 38
@@ -15238,9 +14898,49 @@
                             h: 48
                         }
                     },
-                    "map-barrel-03.img": {
+                    "player-feet-01.img": {
                         frame: {
-                            x: 2199,
+                            x: 2235,
+                            y: 3550,
+                            w: 38,
+                            h: 38
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 38
+                        },
+                        sourceSize: {
+                            w: 38,
+                            h: 38
+                        }
+                    },
+                    "player-hands-01.img": {
+                        frame: {
+                            x: 2277,
+                            y: 3550,
+                            w: 38,
+                            h: 38
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 38
+                        },
+                        sourceSize: {
+                            w: 38,
+                            h: 38
+                        }
+                    },
+                    "map-barrel-04.img": {
+                        frame: {
+                            x: 2319,
                             y: 3550,
                             w: 89,
                             h: 35
@@ -15258,9 +14958,9 @@
                             h: 35
                         }
                     },
-                    "map-barrel-04.img": {
+                    "map-barrel-03.img": {
                         frame: {
-                            x: 2292,
+                            x: 2412,
                             y: 3550,
                             w: 89,
                             h: 35
@@ -15280,8 +14980,8 @@
                     },
                     "map-switch-01.img": {
                         frame: {
-                            x: 3947,
-                            y: 3030,
+                            x: 4043,
+                            y: 1722,
                             w: 30,
                             h: 34
                         },
@@ -15300,28 +15000,68 @@
                     },
                     "gun-qbb97-bot-01.img": {
                         frame: {
-                            x: 2385,
+                            x: 2505,
                             y: 3550,
                             w: 64,
                             h: 32
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 64,
                             h: 32
                         },
                         sourceSize: {
-                            w: 68,
-                            h: 36
+                            w: 64,
+                            h: 32
+                        }
+                    },
+                    "map-bottle-03.img": {
+                        frame: {
+                            x: 3947,
+                            y: 3182,
+                            w: 32,
+                            h: 32
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 32
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 32
+                        }
+                    },
+                    "map-bottle-01.img": {
+                        frame: {
+                            x: 3947,
+                            y: 3218,
+                            w: 32,
+                            h: 32
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 32
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 32
                         }
                     },
                     "dot.img": {
                         frame: {
                             x: 3947,
-                            y: 3068,
+                            y: 3254,
                             w: 32,
                             h: 32
                         },
@@ -15338,50 +15078,10 @@
                             h: 36
                         }
                     },
-                    "map-bottle-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3104,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "map-bottle-03.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3140,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
                     "map-bottle-02.img": {
                         frame: {
                             x: 3947,
-                            y: 3176,
+                            y: 3290,
                             w: 32,
                             h: 32
                         },
@@ -15401,7 +15101,7 @@
                     "map-wall-01-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 3212,
+                            y: 3326,
                             w: 32,
                             h: 32
                         },
@@ -15420,8 +15120,8 @@
                     },
                     "map-switch-02.img": {
                         frame: {
-                            x: 4042,
-                            y: 3725,
+                            x: 4043,
+                            y: 1760,
                             w: 30,
                             h: 32
                         },
@@ -15440,8 +15140,8 @@
                     },
                     "ping-part-circle-auto-highlight.img": {
                         frame: {
-                            x: 3947,
-                            y: 3248,
+                            x: 4043,
+                            y: 1826,
                             w: 29,
                             h: 29
                         },
@@ -15456,32 +15156,12 @@
                         sourceSize: {
                             w: 29,
                             h: 29
-                        }
-                    },
-                    "ping-part-circle-auto.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3281,
-                            w: 28,
-                            h: 28
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 28,
-                            h: 28
-                        },
-                        sourceSize: {
-                            w: 28,
-                            h: 28
                         }
                     },
                     "ping-part-circle.img": {
                         frame: {
-                            x: 3947,
-                            y: 3313,
+                            x: 4043,
+                            y: 1859,
                             w: 28,
                             h: 28
                         },
@@ -15498,10 +15178,30 @@
                             h: 128
                         }
                     },
+                    "ping-part-circle-auto.img": {
+                        frame: {
+                            x: 4043,
+                            y: 1891,
+                            w: 28,
+                            h: 28
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 28,
+                            h: 28
+                        },
+                        sourceSize: {
+                            w: 28,
+                            h: 28
+                        }
+                    },
                     "ping-part-circle-highlight.img": {
                         frame: {
-                            x: 3947,
-                            y: 3345,
+                            x: 4043,
+                            y: 1923,
                             w: 28,
                             h: 28
                         },
@@ -15520,8 +15220,8 @@
                     },
                     "ping-part-circle-auto-outer.img": {
                         frame: {
-                            x: 3947,
-                            y: 3377,
+                            x: 4043,
+                            y: 1796,
                             w: 28,
                             h: 26
                         },
@@ -15540,7 +15240,7 @@
                     },
                     "map-wall-shack-top.img": {
                         frame: {
-                            x: 2453,
+                            x: 2573,
                             y: 3550,
                             w: 360,
                             h: 24
@@ -15560,7 +15260,7 @@
                     },
                     "map-wall-shack-bot.img": {
                         frame: {
-                            x: 2817,
+                            x: 2937,
                             y: 3550,
                             w: 242,
                             h: 24
@@ -15580,7 +15280,7 @@
                     },
                     "map-wall-outhouse-top.img": {
                         frame: {
-                            x: 3063,
+                            x: 3183,
                             y: 3550,
                             w: 204,
                             h: 24
@@ -15598,30 +15298,30 @@
                             h: 24
                         }
                     },
-                    "proj-bomb-iron-01.img": {
+                    "gun-med-01.img": {
                         frame: {
-                            x: 3855,
-                            y: 3246,
-                            w: 66,
-                            h: 157
+                            x: 3947,
+                            y: 2278,
+                            w: 32,
+                            h: 128
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 47,
-                            y: 2,
-                            w: 66,
-                            h: 157
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 128
                         },
                         sourceSize: {
-                            w: 160,
-                            h: 160
+                            w: 32,
+                            h: 128
                         }
                     }
                 }
             }, {
                 meta: {
-                    image: "shared-1-100-3263e90c.png",
+                    image: "shared-1-100-029c2f67.png",
                     size: {
                         w: 4096,
                         h: 4096
@@ -15629,7 +15329,7 @@
                     scale: 1
                 },
                 frames: {
-                    "map-building-house-floor-01.img": {
+                    "map-building-house-floor-02.img": {
                         frame: {
                             x: 966,
                             y: 2,
@@ -15649,7 +15349,7 @@
                             h: 864
                         }
                     },
-                    "map-building-house-floor-02.img": {
+                    "map-building-house-floor-01.img": {
                         frame: {
                             x: 2,
                             y: 2,
@@ -16109,7 +15809,7 @@
                             h: 408
                         }
                     },
-                    "map-building-panicroom-floor.img": {
+                    "map-building-panicroom-ceiling.img": {
                         frame: {
                             x: 3683,
                             y: 796,
@@ -16129,7 +15829,7 @@
                             h: 384
                         }
                     },
-                    "map-building-panicroom-ceiling.img": {
+                    "map-building-panicroom-floor.img": {
                         frame: {
                             x: 3683,
                             y: 1184,
@@ -16169,9 +15869,29 @@
                             h: 384
                         }
                     },
-                    "map-building-container-ceiling-03.img": {
+                    "map-building-container-open-ceiling-01.img": {
                         frame: {
                             x: 3683,
+                            y: 1956,
+                            w: 180,
+                            h: 380
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 156,
+                            w: 180,
+                            h: 380
+                        },
+                        sourceSize: {
+                            w: 180,
+                            h: 692
+                        }
+                    },
+                    "map-building-container-ceiling-02.img": {
+                        frame: {
+                            x: 3867,
                             y: 1956,
                             w: 180,
                             h: 380
@@ -16189,10 +15909,10 @@
                             h: 536
                         }
                     },
-                    "map-building-container-ceiling-01.img": {
+                    "map-building-container-ceiling-03.img": {
                         frame: {
-                            x: 3867,
-                            y: 1956,
+                            x: 3683,
+                            y: 2340,
                             w: 180,
                             h: 380
                         },
@@ -16211,7 +15931,7 @@
                     },
                     "map-building-container-ceiling-05.img": {
                         frame: {
-                            x: 3683,
+                            x: 3867,
                             y: 2340,
                             w: 180,
                             h: 380
@@ -16229,27 +15949,7 @@
                             h: 536
                         }
                     },
-                    "map-building-container-open-ceiling-01.img": {
-                        frame: {
-                            x: 3867,
-                            y: 2340,
-                            w: 180,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 156,
-                            w: 180,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 692
-                        }
-                    },
-                    "map-building-container-ceiling-02.img": {
+                    "map-building-container-ceiling-01.img": {
                         frame: {
                             x: 3683,
                             y: 2724,
@@ -16449,9 +16149,49 @@
                             h: 256
                         }
                     },
-                    "emote-circle-outer.img": {
+                    "part-smoke-03.img": {
                         frame: {
                             x: 1210,
+                            y: 3800,
+                            w: 256,
+                            h: 256
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 256,
+                            h: 256
+                        },
+                        sourceSize: {
+                            w: 256,
+                            h: 256
+                        }
+                    },
+                    "part-smoke-02.img": {
+                        frame: {
+                            x: 1470,
+                            y: 3800,
+                            w: 256,
+                            h: 256
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 256,
+                            h: 256
+                        },
+                        sourceSize: {
+                            w: 256,
+                            h: 256
+                        }
+                    },
+                    "emote-circle-outer.img": {
+                        frame: {
+                            x: 1730,
                             y: 3800,
                             w: 252,
                             h: 254
@@ -16469,29 +16209,9 @@
                             h: 256
                         }
                     },
-                    "part-smoke-03.img": {
-                        frame: {
-                            x: 1466,
-                            y: 3800,
-                            w: 257,
-                            h: 253
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 2,
-                            w: 257,
-                            h: 253
-                        },
-                        sourceSize: {
-                            w: 260,
-                            h: 260
-                        }
-                    },
                     "map-bunker-crossing-chamber-floor-02.img": {
                         frame: {
-                            x: 1727,
+                            x: 1986,
                             y: 3800,
                             w: 704,
                             h: 252
@@ -16511,7 +16231,7 @@
                     },
                     "map-bunker-conch-floor-01.img": {
                         frame: {
-                            x: 2435,
+                            x: 2694,
                             y: 3800,
                             w: 580,
                             h: 252
@@ -16529,29 +16249,9 @@
                             h: 256
                         }
                     },
-                    "part-smoke-02.img": {
-                        frame: {
-                            x: 3019,
-                            y: 3800,
-                            w: 258,
-                            h: 252
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 4,
-                            w: 258,
-                            h: 252
-                        },
-                        sourceSize: {
-                            w: 260,
-                            h: 260
-                        }
-                    },
                     "map-bunker-crossing-chamber-floor-03.img": {
                         frame: {
-                            x: 3281,
+                            x: 3278,
                             y: 3800,
                             w: 704,
                             h: 248
@@ -16669,6 +16369,106 @@
                             h: 192
                         }
                     },
+                    "gun-saiga-01.img": {
+                        frame: {
+                            x: 3975,
+                            y: 796,
+                            w: 40,
+                            h: 174
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 6,
+                            w: 40,
+                            h: 174
+                        },
+                        sourceSize: {
+                            w: 48,
+                            h: 196
+                        }
+                    },
+                    "part-shell-04.img": {
+                        frame: {
+                            x: 3975,
+                            y: 974,
+                            w: 55,
+                            h: 164
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 55,
+                            h: 164
+                        },
+                        sourceSize: {
+                            w: 55,
+                            h: 164
+                        }
+                    },
+                    "map-wall-04-stone.img": {
+                        frame: {
+                            x: 4019,
+                            y: 796,
+                            w: 40,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 40,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 40,
+                            h: 160
+                        }
+                    },
+                    "part-airdrop-02.img": {
+                        frame: {
+                            x: 3975,
+                            y: 1184,
+                            w: 38,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 38,
+                            h: 160
+                        }
+                    },
+                    "part-airdrop-02x.img": {
+                        frame: {
+                            x: 4017,
+                            y: 1184,
+                            w: 38,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 38,
+                            h: 160
+                        }
+                    },
                     "map-bed-res-02.img": {
                         frame: {
                             x: 3525,
@@ -16709,6 +16509,26 @@
                             h: 192
                         }
                     },
+                    "proj-bomb-iron-01.img": {
+                        frame: {
+                            x: 3975,
+                            y: 1348,
+                            w: 66,
+                            h: 157
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 47,
+                            y: 2,
+                            w: 66,
+                            h: 157
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 160
+                        }
+                    },
                     "proj-smoke-nopin.img": {
                         frame: {
                             x: 3525,
@@ -16729,27 +16549,27 @@
                             h: 160
                         }
                     },
-                    "proj-smoke-pin.img": {
+                    "map-tree-res-01.img": {
                         frame: {
-                            x: 3525,
-                            y: 1289,
-                            w: 152,
-                            h: 155
+                            x: 3628,
+                            y: 1749,
+                            w: 46,
+                            h: 46
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 4,
-                            y: 3,
-                            w: 152,
-                            h: 155
+                            x: 1,
+                            y: 1,
+                            w: 46,
+                            h: 46
                         },
                         sourceSize: {
-                            w: 160,
-                            h: 160
+                            w: 48,
+                            h: 48
                         }
                     },
-                    "player-circle-base-01.img": {
+                    "map-crate-11.img": {
                         frame: {
                             x: 2646,
                             y: 1676,
@@ -16757,16 +16577,16 @@
                             h: 148
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 148,
                             h: 148
                         },
                         sourceSize: {
-                            w: 152,
-                            h: 152
+                            w: 148,
+                            h: 148
                         }
                     },
                     "player-armor-base-01.img": {
@@ -16777,19 +16597,19 @@
                             h: 148
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 148,
                             h: 148
                         },
                         sourceSize: {
-                            w: 152,
-                            h: 152
+                            w: 148,
+                            h: 148
                         }
                     },
-                    "map-crate-11.img": {
+                    "loot-circle-inner-01.img": {
                         frame: {
                             x: 2646,
                             y: 1980,
@@ -16809,7 +16629,7 @@
                             h: 148
                         }
                     },
-                    "map-crate-10.img": {
+                    "player-circle-base-01.img": {
                         frame: {
                             x: 2646,
                             y: 2132,
@@ -16829,24 +16649,44 @@
                             h: 148
                         }
                     },
-                    "map-tree-res-01.img": {
+                    "map-crate-10.img": {
                         frame: {
-                            x: 3628,
-                            y: 1507,
-                            w: 46,
-                            h: 46
+                            x: 1922,
+                            y: 2328,
+                            w: 148,
+                            h: 148
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 148,
+                            h: 148
+                        },
+                        sourceSize: {
+                            w: 148,
+                            h: 148
+                        }
+                    },
+                    "map-sandbags-01.img": {
+                        frame: {
+                            x: 2074,
+                            y: 2328,
+                            w: 256,
+                            h: 146
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 1,
+                            x: 0,
                             y: 1,
-                            w: 46,
-                            h: 46
+                            w: 256,
+                            h: 146
                         },
                         sourceSize: {
-                            w: 48,
-                            h: 48
+                            w: 256,
+                            h: 148
                         }
                     },
                     "map-sandbags-02.img": {
@@ -16871,8 +16711,8 @@
                     },
                     "proj-smoke-nopin-nolever.img": {
                         frame: {
-                            x: 3975,
-                            y: 796,
+                            x: 3984,
+                            y: 2958,
                             w: 76,
                             h: 146
                         },
@@ -16891,7 +16731,7 @@
                     },
                     "map-building-barn-ceiling-02.img": {
                         frame: {
-                            x: 2182,
+                            x: 2334,
                             y: 2328,
                             w: 416,
                             h: 144
@@ -16909,30 +16749,30 @@
                             h: 144
                         }
                     },
-                    "map-crate-01.img": {
+                    "proj-mirv-pin.img": {
                         frame: {
-                            x: 2602,
-                            y: 2328,
-                            w: 144,
+                            x: 3547,
+                            y: 2480,
+                            w: 102,
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
                             x: 0,
-                            y: 0,
-                            w: 144,
+                            y: 2,
+                            w: 102,
                             h: 144
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 128,
+                            h: 148
                         }
                     },
                     "proj-mirv-nopin.img": {
                         frame: {
                             x: 3547,
-                            y: 2480,
+                            y: 2628,
                             w: 102,
                             h: 144
                         },
@@ -16949,30 +16789,10 @@
                             h: 148
                         }
                     },
-                    "proj-mirv-pin.img": {
-                        frame: {
-                            x: 3547,
-                            y: 2628,
-                            w: 102,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 2,
-                            w: 102,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 148
-                        }
-                    },
                     "proj-mirv-nopin-nolever.img": {
                         frame: {
-                            x: 3975,
-                            y: 946,
+                            x: 2709,
+                            y: 807,
                             w: 76,
                             h: 144
                         },
@@ -17051,8 +16871,8 @@
                     },
                     "map-door-slot-02.img": {
                         frame: {
-                            x: 3975,
-                            y: 1184,
+                            x: 4007,
+                            y: 1572,
                             w: 38,
                             h: 136
                         },
@@ -17071,8 +16891,8 @@
                     },
                     "map-door-slot-01.img": {
                         frame: {
-                            x: 4017,
-                            y: 1184,
+                            x: 4007,
+                            y: 1712,
                             w: 38,
                             h: 134
                         },
@@ -17091,8 +16911,8 @@
                     },
                     "part-shell-01.img": {
                         frame: {
-                            x: 3975,
-                            y: 1324,
+                            x: 4003,
+                            y: 3108,
                             w: 56,
                             h: 133
                         },
@@ -17107,26 +16927,6 @@
                         sourceSize: {
                             w: 56,
                             h: 133
-                        }
-                    },
-                    "gun-mp220-01.img": {
-                        frame: {
-                            x: 4007,
-                            y: 1572,
-                            w: 42,
-                            h: 132
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 42,
-                            h: 132
-                        },
-                        sourceSize: {
-                            w: 44,
-                            h: 132
                         }
                     },
                     "map-stone-res-06.img": {
@@ -17149,7 +16949,7 @@
                             h: 128
                         }
                     },
-                    "slovakia.img": {
+                    "spain.img": {
                         frame: {
                             x: 3540,
                             y: 3620,
@@ -17172,7 +16972,7 @@
                     "part-airdrop-04.img": {
                         frame: {
                             x: 4007,
-                            y: 1708,
+                            y: 3472,
                             w: 54,
                             h: 128
                         },
@@ -17191,8 +16991,8 @@
                     },
                     "map-door-04.img": {
                         frame: {
-                            x: 3984,
-                            y: 2958,
+                            x: 4007,
+                            y: 3604,
                             w: 54,
                             h: 128
                         },
@@ -17209,10 +17009,30 @@
                             h: 128
                         }
                     },
+                    "gun-mp220-01.img": {
+                        frame: {
+                            x: 3618,
+                            y: 806,
+                            w: 40,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 40,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 40,
+                            h: 128
+                        }
+                    },
                     "ping-map-danger.img": {
                         frame: {
-                            x: 4003,
-                            y: 3108,
+                            x: 3618,
+                            y: 968,
                             w: 40,
                             h: 128
                         },
@@ -17232,7 +17052,7 @@
                     "bullets.img": {
                         frame: {
                             x: 2709,
-                            y: 807,
+                            y: 955,
                             w: 86,
                             h: 124
                         },
@@ -17252,7 +17072,7 @@
                     "loot-throwable-smoke.img": {
                         frame: {
                             x: 2709,
-                            y: 935,
+                            y: 1083,
                             w: 84,
                             h: 122
                         },
@@ -17272,7 +17092,7 @@
                     "ice-cream.img": {
                         frame: {
                             x: 2709,
-                            y: 1061,
+                            y: 1209,
                             w: 66,
                             h: 122
                         },
@@ -17289,40 +17109,20 @@
                             h: 128
                         }
                     },
-                    "loot-weapon-ots38.img": {
+                    "loot-throwable-mirv.img": {
                         frame: {
                             x: 2709,
-                            y: 1187,
-                            w: 81,
-                            h: 120
+                            y: 1335,
+                            w: 82,
+                            h: 112
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 23,
-                            y: 4,
-                            w: 81,
-                            h: 120
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-chest-02.img": {
-                        frame: {
-                            x: 2709,
-                            y: 1311,
-                            w: 76,
-                            h: 120
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 26,
-                            y: 4,
-                            w: 76,
-                            h: 120
+                            y: 8,
+                            w: 82,
+                            h: 112
                         },
                         sourceSize: {
                             w: 128,
@@ -17351,8 +17151,8 @@
                     },
                     "loot-medical-soda.img": {
                         frame: {
-                            x: 3618,
-                            y: 806,
+                            x: 3986,
+                            y: 3800,
                             w: 60,
                             h: 110
                         },
@@ -17371,8 +17171,8 @@
                     },
                     "ping-map-airdrop.img": {
                         frame: {
-                            x: 3975,
-                            y: 1461,
+                            x: 3986,
+                            y: 3914,
                             w: 74,
                             h: 106
                         },
@@ -17389,90 +17189,10 @@
                             h: 128
                         }
                     },
-                    "map-building-bank-window-01.img": {
-                        frame: {
-                            x: 3618,
-                            y: 968,
-                            w: 56,
-                            h: 104
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 104
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 104
-                        }
-                    },
-                    "ping-map-airstrike.img": {
-                        frame: {
-                            x: 4007,
-                            y: 1840,
-                            w: 44,
-                            h: 103
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 42,
-                            y: 13,
-                            w: 44,
-                            h: 103
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "question.img": {
-                        frame: {
-                            x: 3989,
-                            y: 3800,
-                            w: 68,
-                            h: 102
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 30,
-                            y: 13,
-                            w: 68,
-                            h: 102
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-toilet-04.img": {
-                        frame: {
-                            x: 3989,
-                            y: 3906,
-                            w: 66,
-                            h: 98
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 17,
-                            y: 1,
-                            w: 66,
-                            h: 98
-                        },
-                        sourceSize: {
-                            w: 100,
-                            h: 100
-                        }
-                    },
                     "map-saloon-bar-02.img": {
                         frame: {
                             x: 4007,
-                            y: 3472,
+                            y: 1850,
                             w: 54,
                             h: 92
                         },
@@ -17529,47 +17249,7 @@
                             h: 76
                         }
                     },
-                    "gg.img": {
-                        frame: {
-                            x: 2338,
-                            y: 3108,
-                            w: 114,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 28,
-                            w: 114,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "timer-background.img": {
-                        frame: {
-                            x: 3975,
-                            y: 1094,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "cursor-03.img": {
+                    "cursor-01.img": {
                         frame: {
                             x: 2722,
                             y: 1589,
@@ -17589,29 +17269,9 @@
                             h: 72
                         }
                     },
-                    "map-power-box-01.img": {
-                        frame: {
-                            x: 2456,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
                     "player-map-inner.img": {
                         frame: {
-                            x: 2532,
+                            x: 2338,
                             y: 3108,
                             w: 72,
                             h: 72
@@ -17631,7 +17291,7 @@
                     },
                     "player-map-outer.img": {
                         frame: {
-                            x: 2608,
+                            x: 2414,
                             y: 3108,
                             w: 72,
                             h: 72
@@ -17649,9 +17309,69 @@
                             h: 72
                         }
                     },
-                    "cursor-01.img": {
+                    "timer-background.img": {
                         frame: {
-                            x: 2684,
+                            x: 2490,
+                            y: 3108,
+                            w: 72,
+                            h: 72
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 72,
+                            h: 72
+                        },
+                        sourceSize: {
+                            w: 72,
+                            h: 72
+                        }
+                    },
+                    "part-smoke-01.img": {
+                        frame: {
+                            x: 2566,
+                            y: 3108,
+                            w: 72,
+                            h: 72
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 72,
+                            h: 72
+                        },
+                        sourceSize: {
+                            w: 72,
+                            h: 72
+                        }
+                    },
+                    "cursor-03.img": {
+                        frame: {
+                            x: 2642,
+                            y: 3108,
+                            w: 72,
+                            h: 72
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 72,
+                            h: 72
+                        },
+                        sourceSize: {
+                            w: 72,
+                            h: 72
+                        }
+                    },
+                    "map-power-box-01.img": {
+                        frame: {
+                            x: 2718,
                             y: 3108,
                             w: 72,
                             h: 72
@@ -17671,7 +17391,7 @@
                     },
                     "quit.img": {
                         frame: {
-                            x: 2760,
+                            x: 2794,
                             y: 3108,
                             w: 68,
                             h: 72
@@ -17691,7 +17411,7 @@
                     },
                     "player-patch-red.img": {
                         frame: {
-                            x: 2832,
+                            x: 2866,
                             y: 3108,
                             w: 116,
                             h: 70
@@ -17709,29 +17429,9 @@
                             h: 160
                         }
                     },
-                    "part-smoke-01.img": {
-                        frame: {
-                            x: 2952,
-                            y: 3108,
-                            w: 72,
-                            h: 70
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 3,
-                            w: 72,
-                            h: 70
-                        },
-                        sourceSize: {
-                            w: 76,
-                            h: 76
-                        }
-                    },
                     "part-cloth-01.img": {
                         frame: {
-                            x: 3028,
+                            x: 2986,
                             y: 3108,
                             w: 70,
                             h: 70
@@ -17751,7 +17451,7 @@
                     },
                     "ping-indicator.img": {
                         frame: {
-                            x: 3102,
+                            x: 3060,
                             y: 3108,
                             w: 88,
                             h: 68
@@ -17769,9 +17469,9 @@
                             h: 128
                         }
                     },
-                    "close.img": {
+                    "part-snow-01.img": {
                         frame: {
-                            x: 3194,
+                            x: 3152,
                             y: 3108,
                             w: 68,
                             h: 68
@@ -17789,9 +17489,9 @@
                             h: 72
                         }
                     },
-                    "part-snow-01.img": {
+                    "close.img": {
                         frame: {
-                            x: 3266,
+                            x: 3224,
                             y: 3108,
                             w: 68,
                             h: 68
@@ -17811,7 +17511,7 @@
                     },
                     "submit.img": {
                         frame: {
-                            x: 3338,
+                            x: 3296,
                             y: 3108,
                             w: 66,
                             h: 66
@@ -17831,7 +17531,7 @@
                     },
                     "checked.img": {
                         frame: {
-                            x: 3408,
+                            x: 3366,
                             y: 3108,
                             w: 66,
                             h: 66
@@ -17851,7 +17551,7 @@
                     },
                     "resume.img": {
                         frame: {
-                            x: 3478,
+                            x: 3436,
                             y: 3108,
                             w: 64,
                             h: 66
@@ -17869,9 +17569,29 @@
                             h: 128
                         }
                     },
+                    "map-potato-res.img": {
+                        frame: {
+                            x: 4003,
+                            y: 3245,
+                            w: 56,
+                            h: 66
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 20,
+                            y: 15,
+                            w: 56,
+                            h: 66
+                        },
+                        sourceSize: {
+                            w: 96,
+                            h: 96
+                        }
+                    },
                     "map-fire-ext-01.img": {
                         frame: {
-                            x: 3546,
+                            x: 3504,
                             y: 3108,
                             w: 83,
                             h: 65
@@ -17889,10 +17609,30 @@
                             h: 70
                         }
                     },
-                    "unlock.img": {
+                    "map-column-01.img": {
                         frame: {
-                            x: 4003,
-                            y: 3240,
+                            x: 3591,
+                            y: 3108,
+                            w: 64,
+                            h: 64
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 64,
+                            h: 64
+                        },
+                        sourceSize: {
+                            w: 64,
+                            h: 64
+                        }
+                    },
+                    "lock.img": {
+                        frame: {
+                            x: 3628,
+                            y: 1507,
                             w: 48,
                             h: 64
                         },
@@ -17909,30 +17649,30 @@
                             h: 64
                         }
                     },
-                    "skull-outlined.img": {
+                    "proj-frag-pin-part.img": {
                         frame: {
-                            x: 4007,
-                            y: 3568,
-                            w: 52,
-                            h: 60
+                            x: 3975,
+                            y: 1509,
+                            w: 58,
+                            h: 58
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 6,
-                            y: 2,
-                            w: 52,
-                            h: 60
+                            x: 35,
+                            y: 35,
+                            w: 58,
+                            h: 58
                         },
                         sourceSize: {
-                            w: 64,
-                            h: 64
+                            w: 128,
+                            h: 128
                         }
                     },
                     "skull-team.img": {
                         frame: {
-                            x: 4007,
-                            y: 3632,
+                            x: 3628,
+                            y: 1575,
                             w: 48,
                             h: 56
                         },
@@ -17951,8 +17691,8 @@
                     },
                     "map-fire-ext-res.img": {
                         frame: {
-                            x: 4007,
-                            y: 3692,
+                            x: 3628,
+                            y: 1635,
                             w: 46,
                             h: 56
                         },
@@ -17991,8 +17731,8 @@
                     },
                     "map-candle-01.img": {
                         frame: {
-                            x: 3618,
-                            y: 1076,
+                            x: 3628,
+                            y: 1695,
                             w: 50,
                             h: 50
                         },
@@ -18009,30 +17749,30 @@
                             h: 52
                         }
                     },
-                    "map-sandbags-01.img": {
+                    "proj-smoke-pin.img": {
                         frame: {
-                            x: 1922,
-                            y: 2328,
-                            w: 256,
-                            h: 146
+                            x: 3525,
+                            y: 1289,
+                            w: 152,
+                            h: 155
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 1,
-                            w: 256,
-                            h: 146
+                            x: 4,
+                            y: 3,
+                            w: 152,
+                            h: 155
                         },
                         sourceSize: {
-                            w: 256,
-                            h: 148
+                            w: 160,
+                            h: 160
                         }
                     }
                 }
             }, {
                 meta: {
-                    image: "shared-2-100-fa19cbe1.png",
+                    image: "shared-2-100-010154a5.png",
                     size: {
                         w: 4096,
                         h: 4096
@@ -18460,7 +18200,7 @@
                             h: 228
                         }
                     },
-                    "map-building-saferoom-ceiling.img": {
+                    "map-building-saferoom-floor.img": {
                         frame: {
                             x: 1830,
                             y: 1890,
@@ -18480,7 +18220,7 @@
                             h: 224
                         }
                     },
-                    "map-building-saferoom-floor.img": {
+                    "map-building-saferoom-ceiling.img": {
                         frame: {
                             x: 2186,
                             y: 1890,
@@ -18540,30 +18280,10 @@
                             h: 216
                         }
                     },
-                    "pad.img": {
+                    "map-building-teahouse-res-01.img": {
                         frame: {
                             x: 2998,
                             y: 1890,
-                            w: 212,
-                            h: 212
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 212,
-                            h: 212
-                        },
-                        sourceSize: {
-                            w: 212,
-                            h: 212
-                        }
-                    },
-                    "map-building-teahouse-res-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 2134,
                             w: 282,
                             h: 208
                         },
@@ -18580,9 +18300,29 @@
                             h: 512
                         }
                     },
+                    "pad.img": {
+                        frame: {
+                            x: 2,
+                            y: 2134,
+                            w: 208,
+                            h: 208
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 208,
+                            h: 208
+                        },
+                        sourceSize: {
+                            w: 208,
+                            h: 208
+                        }
+                    },
                     "map-building-shack-ceiling-01.img": {
                         frame: {
-                            x: 288,
+                            x: 214,
                             y: 2134,
                             w: 315,
                             h: 207
@@ -18600,10 +18340,10 @@
                             h: 255
                         }
                     },
-                    "map-stone-res-02.img": {
+                    "map-vat-02.img": {
                         frame: {
-                            x: 3214,
-                            y: 1890,
+                            x: 533,
+                            y: 2134,
                             w: 200,
                             h: 200
                         },
@@ -18620,9 +18360,9 @@
                             h: 200
                         }
                     },
-                    "map-vat-02.img": {
+                    "map-stone-res-02.img": {
                         frame: {
-                            x: 607,
+                            x: 737,
                             y: 2134,
                             w: 200,
                             h: 200
@@ -18682,7 +18422,7 @@
                     },
                     "map-building-mansion-floor-01d.img": {
                         frame: {
-                            x: 811,
+                            x: 941,
                             y: 2134,
                             w: 1089,
                             h: 186
@@ -18702,7 +18442,7 @@
                     },
                     "map-shack-res-01.img": {
                         frame: {
-                            x: 1904,
+                            x: 2034,
                             y: 2134,
                             w: 305,
                             h: 181
@@ -18722,7 +18462,7 @@
                     },
                     "map-bunker-conch-ceiling-01.img": {
                         frame: {
-                            x: 2213,
+                            x: 2343,
                             y: 2134,
                             w: 380,
                             h: 180
@@ -18742,7 +18482,7 @@
                     },
                     "map-bunker-egg-chamber-floor-01b.img": {
                         frame: {
-                            x: 2597,
+                            x: 2727,
                             y: 2134,
                             w: 192,
                             h: 179
@@ -18762,7 +18502,7 @@
                     },
                     "map-bunker-conch-chamber-ceiling-02.img": {
                         frame: {
-                            x: 2793,
+                            x: 2923,
                             y: 2134,
                             w: 488,
                             h: 176
@@ -18780,7 +18520,7 @@
                             h: 176
                         }
                     },
-                    "map-shack-res-02.img": {
+                    "map-shack-res-03.img": {
                         frame: {
                             x: 2,
                             y: 2346,
@@ -18800,7 +18540,7 @@
                             h: 340
                         }
                     },
-                    "map-shack-res-03.img": {
+                    "map-shack-res-02.img": {
                         frame: {
                             x: 226,
                             y: 2346,
@@ -18868,16 +18608,16 @@
                             h: 172
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 2,
+                            x: 0,
+                            y: 0,
                             w: 172,
                             h: 172
                         },
                         sourceSize: {
-                            w: 176,
-                            h: 176
+                            w: 172,
+                            h: 172
                         }
                     },
                     "map-snow-07.img": {
@@ -18960,7 +18700,7 @@
                             h: 160
                         }
                     },
-                    "part-airdrop-03.img": {
+                    "map-airdrop-02.img": {
                         frame: {
                             x: 2208,
                             y: 2346,
@@ -18980,7 +18720,7 @@
                             h: 160
                         }
                     },
-                    "map-table-03.img": {
+                    "map-airdrop-01.img": {
                         frame: {
                             x: 2372,
                             y: 2346,
@@ -19000,29 +18740,9 @@
                             h: 160
                         }
                     },
-                    "map-airdrop-01.img": {
-                        frame: {
-                            x: 2536,
-                            y: 2346,
-                            w: 160,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
                     "map-building-dock-floor-01a.img": {
                         frame: {
-                            x: 2700,
+                            x: 2536,
                             y: 2346,
                             w: 160,
                             h: 160
@@ -19040,7 +18760,27 @@
                             h: 162
                         }
                     },
-                    "map-airdrop-02.img": {
+                    "part-airdrop-03.img": {
+                        frame: {
+                            x: 2700,
+                            y: 2346,
+                            w: 160,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 160,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 160
+                        }
+                    },
+                    "map-table-03.img": {
                         frame: {
                             x: 2864,
                             y: 2346,
@@ -19140,10 +18880,10 @@
                             h: 156
                         }
                     },
-                    "map-crate-09.img": {
+                    "map-crate-01.img": {
                         frame: {
-                            x: 3285,
-                            y: 2134,
+                            x: 3284,
+                            y: 1890,
                             w: 144,
                             h: 144
                         },
@@ -19180,7 +18920,7 @@
                             h: 144
                         }
                     },
-                    "map-crate-07.img": {
+                    "loot-circle-outer-01.img": {
                         frame: {
                             x: 987,
                             y: 2526,
@@ -19188,19 +18928,19 @@
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 1,
+                            y: 1,
                             w: 144,
                             h: 144
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 146,
+                            h: 146
                         }
                     },
-                    "map-crate-03.img": {
+                    "map-stone-04.img": {
                         frame: {
                             x: 1135,
                             y: 2526,
@@ -19220,7 +18960,7 @@
                             h: 144
                         }
                     },
-                    "map-crate-02.img": {
+                    "map-stone-05.img": {
                         frame: {
                             x: 1283,
                             y: 2526,
@@ -19260,7 +19000,7 @@
                             h: 144
                         }
                     },
-                    "player-ripple-01.img": {
+                    "map-crate-09.img": {
                         frame: {
                             x: 1579,
                             y: 2526,
@@ -19268,19 +19008,19 @@
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 1,
-                            y: 1,
+                            x: 0,
+                            y: 0,
                             w: 144,
                             h: 144
                         },
                         sourceSize: {
-                            w: 146,
-                            h: 146
+                            w: 144,
+                            h: 144
                         }
                     },
-                    "map-stone-04.img": {
+                    "map-crate-07.img": {
                         frame: {
                             x: 1727,
                             y: 2526,
@@ -19300,7 +19040,7 @@
                             h: 144
                         }
                     },
-                    "map-stone-05.img": {
+                    "map-crate-02.img": {
                         frame: {
                             x: 1875,
                             y: 2526,
@@ -19320,7 +19060,7 @@
                             h: 144
                         }
                     },
-                    "loot-circle-outer-01.img": {
+                    "map-crate-03.img": {
                         frame: {
                             x: 2023,
                             y: 2526,
@@ -19328,16 +19068,16 @@
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 1,
-                            y: 1,
+                            x: 0,
+                            y: 0,
                             w: 144,
                             h: 144
                         },
                         sourceSize: {
-                            w: 146,
-                            h: 146
+                            w: 144,
+                            h: 144
                         }
                     },
                     "map-bush-07.img": {
@@ -19400,29 +19140,9 @@
                             h: 148
                         }
                     },
-                    "loot-circle-inner-01.img": {
+                    "map-barrel-02.img": {
                         frame: {
                             x: 2614,
-                            y: 2526,
-                            w: 142,
-                            h: 142
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 5,
-                            w: 142,
-                            h: 142
-                        },
-                        sourceSize: {
-                            w: 152,
-                            h: 152
-                        }
-                    },
-                    "map-barrel-01.img": {
-                        frame: {
-                            x: 2760,
                             y: 2526,
                             w: 142,
                             h: 142
@@ -19440,7 +19160,27 @@
                             h: 144
                         }
                     },
-                    "map-barrel-02.img": {
+                    "player-ripple-01.img": {
+                        frame: {
+                            x: 2760,
+                            y: 2526,
+                            w: 142,
+                            h: 142
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 142,
+                            h: 142
+                        },
+                        sourceSize: {
+                            w: 142,
+                            h: 142
+                        }
+                    },
+                    "part-panel-01.img": {
                         frame: {
                             x: 2906,
                             y: 2526,
@@ -19460,7 +19200,7 @@
                             h: 144
                         }
                     },
-                    "part-plank-01.img": {
+                    "map-stone-01.img": {
                         frame: {
                             x: 3052,
                             y: 2526,
@@ -19480,7 +19220,7 @@
                             h: 144
                         }
                     },
-                    "map-stone-01.img": {
+                    "part-plank-01.img": {
                         frame: {
                             x: 3198,
                             y: 2526,
@@ -19500,7 +19240,7 @@
                             h: 144
                         }
                     },
-                    "part-panel-01.img": {
+                    "map-barrel-01.img": {
                         frame: {
                             x: 2,
                             y: 2684,
@@ -19524,25 +19264,25 @@
                         frame: {
                             x: 148,
                             y: 2684,
-                            w: 138,
-                            h: 138
+                            w: 140,
+                            h: 140
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 138,
-                            h: 138
+                            x: 0,
+                            y: 0,
+                            w: 140,
+                            h: 140
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 140,
+                            h: 140
                         }
                     },
                     "map-bunker-vent-03.img": {
                         frame: {
-                            x: 290,
+                            x: 292,
                             y: 2684,
                             w: 132,
                             h: 134
@@ -19562,7 +19302,7 @@
                     },
                     "map-bunker-vent-02.img": {
                         frame: {
-                            x: 426,
+                            x: 428,
                             y: 2684,
                             w: 132,
                             h: 134
@@ -19582,7 +19322,7 @@
                     },
                     "map-outhouse-res.img": {
                         frame: {
-                            x: 562,
+                            x: 564,
                             y: 2684,
                             w: 150,
                             h: 132
@@ -19602,7 +19342,7 @@
                     },
                     "player-king-woods.img": {
                         frame: {
-                            x: 716,
+                            x: 718,
                             y: 2684,
                             w: 140,
                             h: 132
@@ -19622,7 +19362,7 @@
                     },
                     "part-plate-01.img": {
                         frame: {
-                            x: 860,
+                            x: 862,
                             y: 2684,
                             w: 138,
                             h: 132
@@ -19642,7 +19382,7 @@
                     },
                     "map-table-res.img": {
                         frame: {
-                            x: 1002,
+                            x: 1004,
                             y: 2684,
                             w: 131,
                             h: 132
@@ -19660,9 +19400,9 @@
                             h: 144
                         }
                     },
-                    "map-bush-07x.img": {
+                    "map-bush-01.img": {
                         frame: {
-                            x: 1137,
+                            x: 1139,
                             y: 2684,
                             w: 126,
                             h: 130
@@ -19680,9 +19420,9 @@
                             h: 144
                         }
                     },
-                    "map-bush-01.img": {
+                    "map-bush-07x.img": {
                         frame: {
-                            x: 1267,
+                            x: 1269,
                             y: 2684,
                             w: 126,
                             h: 130
@@ -19702,7 +19442,7 @@
                     },
                     "map-bush-01f.img": {
                         frame: {
-                            x: 1397,
+                            x: 1399,
                             y: 2684,
                             w: 126,
                             h: 130
@@ -19722,7 +19462,7 @@
                     },
                     "part-splat-02.img": {
                         frame: {
-                            x: 1527,
+                            x: 1529,
                             y: 2684,
                             w: 123,
                             h: 130
@@ -19742,7 +19482,7 @@
                     },
                     "map-building-mansion-cellar-01c.img": {
                         frame: {
-                            x: 1654,
+                            x: 1656,
                             y: 2684,
                             w: 354,
                             h: 129
@@ -19762,7 +19502,7 @@
                     },
                     "map-crate-res-01.img": {
                         frame: {
-                            x: 2012,
+                            x: 2014,
                             y: 2684,
                             w: 138,
                             h: 129
@@ -19780,29 +19520,9 @@
                             h: 144
                         }
                     },
-                    "map-stairs-broken-01.img": {
-                        frame: {
-                            x: 2154,
-                            y: 2684,
-                            w: 160,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 128
-                        }
-                    },
                     "map-table-01.img": {
                         frame: {
-                            x: 2318,
+                            x: 2156,
                             y: 2684,
                             w: 160,
                             h: 128
@@ -19820,9 +19540,29 @@
                             h: 128
                         }
                     },
-                    "uruguay.img": {
+                    "map-stairs-broken-01.img": {
                         frame: {
-                            x: 2482,
+                            x: 2320,
+                            y: 2684,
+                            w: 160,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 160,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 128
+                        }
+                    },
+                    "south-korea.img": {
+                        frame: {
+                            x: 2484,
                             y: 2684,
                             w: 128,
                             h: 128
@@ -19842,7 +19582,47 @@
                     },
                     "loot-ammo-box.img": {
                         frame: {
-                            x: 2614,
+                            x: 2616,
+                            y: 2684,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "austria.img": {
+                        frame: {
+                            x: 2748,
+                            y: 2684,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "slovakia.img": {
+                        frame: {
+                            x: 2880,
                             y: 2684,
                             w: 128,
                             h: 128
@@ -19862,7 +19642,47 @@
                     },
                     "singapore.img": {
                         frame: {
-                            x: 2746,
+                            x: 3012,
+                            y: 2684,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "uruguay.img": {
+                        frame: {
+                            x: 3144,
+                            y: 2684,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "mexico.img": {
+                        frame: {
+                            x: 3276,
                             y: 2684,
                             w: 128,
                             h: 128
@@ -19882,86 +19702,6 @@
                     },
                     "serbia.img": {
                         frame: {
-                            x: 2878,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "venezuela.img": {
-                        frame: {
-                            x: 3010,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "vietnam.img": {
-                        frame: {
-                            x: 3142,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "thailand.img": {
-                        frame: {
-                            x: 3274,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "hungary.img": {
-                        frame: {
                             x: 2,
                             y: 2830,
                             w: 128,
@@ -19980,9 +19720,269 @@
                             h: 128
                         }
                     },
-                    "hong-kong.img": {
+                    "russia.img": {
                         frame: {
                             x: 134,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "romania.img": {
+                        frame: {
+                            x: 266,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "republic-of-poland.img": {
+                        frame: {
+                            x: 398,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "portugal.img": {
+                        frame: {
+                            x: 530,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "philippines.img": {
+                        frame: {
+                            x: 662,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "peru.img": {
+                        frame: {
+                            x: 794,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "norway.img": {
+                        frame: {
+                            x: 926,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "new-zealand.img": {
+                        frame: {
+                            x: 1058,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "netherlands.img": {
+                        frame: {
+                            x: 1190,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "united-states-of-america.img": {
+                        frame: {
+                            x: 1322,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-00.img": {
+                        frame: {
+                            x: 1454,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-01.img": {
+                        frame: {
+                            x: 1586,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-02.img": {
+                        frame: {
+                            x: 1718,
+                            y: 2830,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-03.img": {
+                        frame: {
+                            x: 1850,
                             y: 2830,
                             w: 128,
                             h: 128
