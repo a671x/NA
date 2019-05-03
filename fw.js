@@ -1,263 +1,3 @@
-                    "honduras.img": {
-                        frame: {
-                            x: 266,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "spain.img": {
-                        frame: {
-                            x: 398,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "russia.img": {
-                        frame: {
-                            x: 530,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "romania.img": {
-                        frame: {
-                            x: 662,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "republic-of-poland.img": {
-                        frame: {
-                            x: 794,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "portugal.img": {
-                        frame: {
-                            x: 926,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "guatemala.img": {
-                        frame: {
-                            x: 1058,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "greece.img": {
-                        frame: {
-                            x: 1190,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "trinidad-and-tobago.img": {
-                        frame: {
-                            x: 1322,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-scope-00.img": {
-                        frame: {
-                            x: 1454,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-scope-01.img": {
-                        frame: {
-                            x: 1586,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-scope-02.img": {
-                        frame: {
-                            x: 1718,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-scope-03.img": {
-                        frame: {
-                            x: 1850,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
                     "loot-scope-04.img": {
                         frame: {
                             x: 1982,
@@ -278,7 +18,7 @@
                             h: 128
                         }
                     },
-                    "germany.img": {
+                    "malaysia.img": {
                         frame: {
                             x: 2114,
                             y: 2830,
@@ -298,7 +38,7 @@
                             h: 128
                         }
                     },
-                    "philippines.img": {
+                    "kazakhstan.img": {
                         frame: {
                             x: 2246,
                             y: 2830,
@@ -318,7 +58,7 @@
                             h: 128
                         }
                     },
-                    "peru.img": {
+                    "japan.img": {
                         frame: {
                             x: 2378,
                             y: 2830,
@@ -338,7 +78,7 @@
                             h: 128
                         }
                     },
-                    "georgia.img": {
+                    "italy.img": {
                         frame: {
                             x: 2510,
                             y: 2830,
@@ -358,7 +98,7 @@
                             h: 128
                         }
                     },
-                    "france.img": {
+                    "israel.img": {
                         frame: {
                             x: 2642,
                             y: 2830,
@@ -378,7 +118,7 @@
                             h: 128
                         }
                     },
-                    "norway.img": {
+                    "indonesia.img": {
                         frame: {
                             x: 2774,
                             y: 2830,
@@ -398,7 +138,7 @@
                             h: 128
                         }
                     },
-                    "new-zealand.img": {
+                    "india.img": {
                         frame: {
                             x: 2906,
                             y: 2830,
@@ -418,7 +158,7 @@
                             h: 128
                         }
                     },
-                    "netherlands.img": {
+                    "united-kingdom.img": {
                         frame: {
                             x: 3038,
                             y: 2830,
@@ -438,7 +178,7 @@
                             h: 128
                         }
                     },
-                    "finland.img": {
+                    "ukraine.img": {
                         frame: {
                             x: 3170,
                             y: 2830,
@@ -458,7 +198,7 @@
                             h: 128
                         }
                     },
-                    "mexico.img": {
+                    "hungary.img": {
                         frame: {
                             x: 2,
                             y: 2962,
@@ -478,7 +218,7 @@
                             h: 128
                         }
                     },
-                    "malaysia.img": {
+                    "hong-kong.img": {
                         frame: {
                             x: 134,
                             y: 2962,
@@ -498,7 +238,7 @@
                             h: 128
                         }
                     },
-                    "taiwan.img": {
+                    "honduras.img": {
                         frame: {
                             x: 266,
                             y: 2962,
@@ -518,7 +258,7 @@
                             h: 128
                         }
                     },
-                    "kazakhstan.img": {
+                    "belarus.img": {
                         frame: {
                             x: 398,
                             y: 2962,
@@ -538,7 +278,7 @@
                             h: 128
                         }
                     },
-                    "ecuador.img": {
+                    "turkey.img": {
                         frame: {
                             x: 530,
                             y: 2962,
@@ -578,7 +318,7 @@
                             h: 128
                         }
                     },
-                    "switzerland.img": {
+                    "guatemala.img": {
                         frame: {
                             x: 794,
                             y: 2962,
@@ -598,7 +338,7 @@
                             h: 128
                         }
                     },
-                    "united-kingdom.img": {
+                    "greece.img": {
                         frame: {
                             x: 926,
                             y: 2962,
@@ -618,7 +358,7 @@
                             h: 128
                         }
                     },
-                    "japan.img": {
+                    "belgium.img": {
                         frame: {
                             x: 1058,
                             y: 2962,
@@ -638,7 +378,7 @@
                             h: 128
                         }
                     },
-                    "denmark.img": {
+                    "germany.img": {
                         frame: {
                             x: 1190,
                             y: 2962,
@@ -658,7 +398,7 @@
                             h: 128
                         }
                     },
-                    "argentina.img": {
+                    "bolivia.img": {
                         frame: {
                             x: 1322,
                             y: 2962,
@@ -678,7 +418,7 @@
                             h: 128
                         }
                     },
-                    "italy.img": {
+                    "georgia.img": {
                         frame: {
                             x: 1454,
                             y: 2962,
@@ -698,7 +438,7 @@
                             h: 128
                         }
                     },
-                    "ukraine.img": {
+                    "france.img": {
                         frame: {
                             x: 1586,
                             y: 2962,
@@ -718,7 +458,7 @@
                             h: 128
                         }
                     },
-                    "czech-republic.img": {
+                    "trinidad-and-tobago.img": {
                         frame: {
                             x: 1718,
                             y: 2962,
@@ -738,7 +478,7 @@
                             h: 128
                         }
                     },
-                    "united-states-of-america.img": {
+                    "vietnam.img": {
                         frame: {
                             x: 1850,
                             y: 2962,
@@ -758,7 +498,7 @@
                             h: 128
                         }
                     },
-                    "croatia.img": {
+                    "part-boost-01.img": {
                         frame: {
                             x: 1982,
                             y: 2962,
@@ -778,7 +518,7 @@
                             h: 128
                         }
                     },
-                    "australia.img": {
+                    "bosnia-and-herzegovina.img": {
                         frame: {
                             x: 2114,
                             y: 2962,
@@ -798,7 +538,7 @@
                             h: 128
                         }
                     },
-                    "sweden.img": {
+                    "part-heal-01.img": {
                         frame: {
                             x: 2246,
                             y: 2962,
@@ -818,7 +558,7 @@
                             h: 128
                         }
                     },
-                    "colombia.img": {
+                    "finland.img": {
                         frame: {
                             x: 2378,
                             y: 2962,
@@ -838,7 +578,7 @@
                             h: 128
                         }
                     },
-                    "china.img": {
+                    "argentina.img": {
                         frame: {
                             x: 2510,
                             y: 2962,
@@ -858,7 +598,7 @@
                             h: 128
                         }
                     },
-                    "chile.img": {
+                    "australia.img": {
                         frame: {
                             x: 2642,
                             y: 2962,
@@ -878,7 +618,7 @@
                             h: 128
                         }
                     },
-                    "israel.img": {
+                    "thailand.img": {
                         frame: {
                             x: 2774,
                             y: 2962,
@@ -898,7 +638,7 @@
                             h: 128
                         }
                     },
-                    "indonesia.img": {
+                    "ecuador.img": {
                         frame: {
                             x: 2906,
                             y: 2962,
@@ -918,7 +658,7 @@
                             h: 128
                         }
                     },
-                    "austria.img": {
+                    "brazil.img": {
                         frame: {
                             x: 3038,
                             y: 2962,
@@ -938,7 +678,7 @@
                             h: 128
                         }
                     },
-                    "canada.img": {
+                    "map-vat-01.img": {
                         frame: {
                             x: 3170,
                             y: 2962,
@@ -946,19 +686,19 @@
                             h: 128
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 8,
+                            y: 8,
                             w: 128,
                             h: 128
                         },
                         sourceSize: {
-                            w: 128,
-                            h: 128
+                            w: 144,
+                            h: 144
                         }
                     },
-                    "south-korea.img": {
+                    "taiwan.img": {
                         frame: {
                             x: 2,
                             y: 3094,
@@ -998,7 +738,7 @@
                             h: 128
                         }
                     },
-                    "india.img": {
+                    "switzerland.img": {
                         frame: {
                             x: 266,
                             y: 3094,
@@ -1018,7 +758,7 @@
                             h: 128
                         }
                     },
-                    "turkey.img": {
+                    "denmark.img": {
                         frame: {
                             x: 398,
                             y: 3094,
@@ -1038,7 +778,7 @@
                             h: 128
                         }
                     },
-                    "map-vat-01.img": {
+                    "czech-republic.img": {
                         frame: {
                             x: 530,
                             y: 3094,
@@ -1046,19 +786,19 @@
                             h: 128
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 8,
-                            y: 8,
+                            x: 0,
+                            y: 0,
                             w: 128,
                             h: 128
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 128,
+                            h: 128
                         }
                     },
-                    "brazil.img": {
+                    "croatia.img": {
                         frame: {
                             x: 662,
                             y: 3094,
@@ -1078,7 +818,7 @@
                             h: 128
                         }
                     },
-                    "bosnia-and-herzegovina.img": {
+                    "colombia.img": {
                         frame: {
                             x: 794,
                             y: 3094,
@@ -1098,7 +838,7 @@
                             h: 128
                         }
                     },
-                    "bolivia.img": {
+                    "china.img": {
                         frame: {
                             x: 926,
                             y: 3094,
@@ -1118,7 +858,7 @@
                             h: 128
                         }
                     },
-                    "belgium.img": {
+                    "chile.img": {
                         frame: {
                             x: 1058,
                             y: 3094,
@@ -1138,9 +878,49 @@
                             h: 128
                         }
                     },
-                    "belarus.img": {
+                    "canada.img": {
                         frame: {
                             x: 1190,
+                            y: 3094,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "sweden.img": {
+                        frame: {
+                            x: 1322,
+                            y: 3094,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "venezuela.img": {
+                        frame: {
+                            x: 1454,
                             y: 3094,
                             w: 128,
                             h: 128
@@ -1220,7 +1000,7 @@
                     },
                     "indicator.img": {
                         frame: {
-                            x: 1322,
+                            x: 1586,
                             y: 3094,
                             w: 90,
                             h: 128
@@ -1240,7 +1020,7 @@
                     },
                     "map-barrel-res-02.img": {
                         frame: {
-                            x: 1416,
+                            x: 1680,
                             y: 3094,
                             w: 130,
                             h: 127
@@ -1258,49 +1038,9 @@
                             h: 144
                         }
                     },
-                    "part-heal-01.img": {
+                    "ping-team-danger.img": {
                         frame: {
-                            x: 1550,
-                            y: 3094,
-                            w: 126,
-                            h: 126
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 126,
-                            h: 126
-                        },
-                        sourceSize: {
-                            w: 132,
-                            h: 132
-                        }
-                    },
-                    "ping-team-airstrike.img": {
-                        frame: {
-                            x: 1680,
-                            y: 3094,
-                            w: 126,
-                            h: 126
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 126,
-                            h: 126
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ping-team-coming.img": {
-                        frame: {
-                            x: 1810,
+                            x: 1814,
                             y: 3094,
                             w: 126,
                             h: 126
@@ -1320,7 +1060,27 @@
                     },
                     "ping-team-airdrop.img": {
                         frame: {
-                            x: 1940,
+                            x: 1944,
+                            y: 3094,
+                            w: 126,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 126,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-team-airstrike.img": {
+                        frame: {
+                            x: 2074,
                             y: 3094,
                             w: 126,
                             h: 126
@@ -1340,7 +1100,7 @@
                     },
                     "ping-team-help.img": {
                         frame: {
-                            x: 2070,
+                            x: 2204,
                             y: 3094,
                             w: 126,
                             h: 126
@@ -1358,9 +1118,9 @@
                             h: 128
                         }
                     },
-                    "ping-team-danger.img": {
+                    "ping-team-coming.img": {
                         frame: {
-                            x: 2200,
+                            x: 2334,
                             y: 3094,
                             w: 126,
                             h: 126
@@ -1380,7 +1140,7 @@
                     },
                     "thinking-face.img": {
                         frame: {
-                            x: 2330,
+                            x: 2464,
                             y: 3094,
                             w: 124,
                             h: 126
@@ -1400,7 +1160,7 @@
                     },
                     "loot-weapon-ot38-dual.img": {
                         frame: {
-                            x: 2458,
+                            x: 2592,
                             y: 3094,
                             w: 121,
                             h: 126
@@ -1420,7 +1180,7 @@
                     },
                     "loot-weapon-colt45-dual.img": {
                         frame: {
-                            x: 2583,
+                            x: 2717,
                             y: 3094,
                             w: 120,
                             h: 126
@@ -1440,7 +1200,7 @@
                     },
                     "loot-weapon-m4a1.img": {
                         frame: {
-                            x: 2707,
+                            x: 2841,
                             y: 3094,
                             w: 116,
                             h: 126
@@ -1460,7 +1220,7 @@
                     },
                     "loot-weapon-m1014.img": {
                         frame: {
-                            x: 2827,
+                            x: 2961,
                             y: 3094,
                             w: 110,
                             h: 126
@@ -1480,7 +1240,7 @@
                     },
                     "loot-weapon-ots38-dual.img": {
                         frame: {
-                            x: 2941,
+                            x: 3075,
                             y: 3094,
                             w: 105,
                             h: 126
@@ -1500,7 +1260,7 @@
                     },
                     "player-helmet-lieutenant.img": {
                         frame: {
-                            x: 3050,
+                            x: 3184,
                             y: 3094,
                             w: 95,
                             h: 126
@@ -1520,8 +1280,8 @@
                     },
                     "proj-strobe-unarmed.img": {
                         frame: {
-                            x: 3149,
-                            y: 3094,
+                            x: 2,
+                            y: 3226,
                             w: 147,
                             h: 125
                         },
@@ -1538,10 +1298,10 @@
                             h: 160
                         }
                     },
-                    "star-blue.img": {
+                    "star-red.img": {
                         frame: {
-                            x: 2,
-                            y: 3226,
+                            x: 3283,
+                            y: 3094,
                             w: 132,
                             h: 125
                         },
@@ -1558,9 +1318,9 @@
                             h: 148
                         }
                     },
-                    "star-red.img": {
+                    "star-blue.img": {
                         frame: {
-                            x: 138,
+                            x: 153,
                             y: 3226,
                             w: 132,
                             h: 125
@@ -1580,8 +1340,8 @@
                     },
                     "alien-face.img": {
                         frame: {
-                            x: 3300,
-                            y: 3094,
+                            x: 289,
+                            y: 3226,
                             w: 124,
                             h: 125
                         },
@@ -1600,7 +1360,7 @@
                     },
                     "snowflake.img": {
                         frame: {
-                            x: 274,
+                            x: 417,
                             y: 3226,
                             w: 114,
                             h: 125
@@ -1620,7 +1380,7 @@
                     },
                     "loot-weapon-dp28.img": {
                         frame: {
-                            x: 392,
+                            x: 535,
                             y: 3226,
                             w: 114,
                             h: 125
@@ -1640,7 +1400,7 @@
                     },
                     "imp-face.img": {
                         frame: {
-                            x: 510,
+                            x: 653,
                             y: 3226,
                             w: 126,
                             h: 124
@@ -1658,209 +1418,9 @@
                             h: 128
                         }
                     },
-                    "angry-face.img": {
-                        frame: {
-                            x: 640,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "monocle-face.img": {
-                        frame: {
-                            x: 768,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "sunglass-face.img": {
-                        frame: {
-                            x: 896,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "happy-face.img": {
-                        frame: {
-                            x: 1024,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-crate-05.img": {
-                        frame: {
-                            x: 1152,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 124,
-                            h: 124
-                        }
-                    },
-                    "heart-face.img": {
-                        frame: {
-                            x: 1280,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "part-log-01.img": {
-                        frame: {
-                            x: 1408,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "disappoint-face.img": {
-                        frame: {
-                            x: 1536,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
                     "sob-face.img": {
                         frame: {
-                            x: 1664,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "joy-face.img": {
-                        frame: {
-                            x: 1792,
-                            y: 3226,
-                            w: 124,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 124,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "sad-face.img": {
-                        frame: {
-                            x: 1920,
+                            x: 783,
                             y: 3226,
                             w: 124,
                             h: 124
@@ -1880,7 +1440,207 @@
                     },
                     "upsidedown-face.img": {
                         frame: {
-                            x: 2048,
+                            x: 911,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "happy-face.img": {
+                        frame: {
+                            x: 1039,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "sunglass-face.img": {
+                        frame: {
+                            x: 1167,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "heart-face.img": {
+                        frame: {
+                            x: 1295,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-log-01.img": {
+                        frame: {
+                            x: 1423,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "monocle-face.img": {
+                        frame: {
+                            x: 1551,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "map-crate-05.img": {
+                        frame: {
+                            x: 1679,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 124,
+                            h: 124
+                        }
+                    },
+                    "sad-face.img": {
+                        frame: {
+                            x: 1807,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "disappoint-face.img": {
+                        frame: {
+                            x: 1935,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "joy-face.img": {
+                        frame: {
+                            x: 2063,
+                            y: 3226,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "angry-face.img": {
+                        frame: {
+                            x: 2191,
                             y: 3226,
                             w: 124,
                             h: 124
@@ -1900,7 +1660,7 @@
                     },
                     "campfire.img": {
                         frame: {
-                            x: 2176,
+                            x: 2319,
                             y: 3226,
                             w: 116,
                             h: 124
@@ -1918,9 +1678,9 @@
                             h: 128
                         }
                     },
-                    "loot-weapon-pkp.img": {
+                    "loot-weapon-an94.img": {
                         frame: {
-                            x: 2296,
+                            x: 2439,
                             y: 3226,
                             w: 114,
                             h: 124
@@ -1938,9 +1698,9 @@
                             h: 128
                         }
                     },
-                    "loot-weapon-an94.img": {
+                    "loot-weapon-pkp.img": {
                         frame: {
-                            x: 2414,
+                            x: 2557,
                             y: 3226,
                             w: 114,
                             h: 124
@@ -1960,7 +1720,7 @@
                     },
                     "loot-weapon-scorpion.img": {
                         frame: {
-                            x: 2532,
+                            x: 2675,
                             y: 3226,
                             w: 113,
                             h: 124
@@ -1980,7 +1740,7 @@
                     },
                     "loot-weapon-m1a1.img": {
                         frame: {
-                            x: 2649,
+                            x: 2792,
                             y: 3226,
                             w: 112,
                             h: 124
@@ -2000,7 +1760,7 @@
                     },
                     "trash.img": {
                         frame: {
-                            x: 2765,
+                            x: 2908,
                             y: 3226,
                             w: 108,
                             h: 124
@@ -2020,7 +1780,7 @@
                     },
                     "thumbs-up.img": {
                         frame: {
-                            x: 2877,
+                            x: 3020,
                             y: 3226,
                             w: 104,
                             h: 124
@@ -2038,9 +1798,9 @@
                             h: 128
                         }
                     },
-                    "map-toilet-01.img": {
+                    "map-toilet-02.img": {
                         frame: {
-                            x: 2985,
+                            x: 3128,
                             y: 3226,
                             w: 96,
                             h: 124
@@ -2058,9 +1818,9 @@
                             h: 128
                         }
                     },
-                    "map-toilet-02.img": {
+                    "map-toilet-01.img": {
                         frame: {
-                            x: 3085,
+                            x: 3228,
                             y: 3226,
                             w: 96,
                             h: 124
@@ -2080,8 +1840,8 @@
                     },
                     "part-splat-01.img": {
                         frame: {
-                            x: 3185,
-                            y: 3226,
+                            x: 3433,
+                            y: 2,
                             w: 126,
                             h: 123
                         },
@@ -2100,8 +1860,8 @@
                     },
                     "loot-weapon-saiga.img": {
                         frame: {
-                            x: 3315,
-                            y: 3226,
+                            x: 3433,
+                            y: 129,
                             w: 112,
                             h: 123
                         },
@@ -2121,7 +1881,7 @@
                     "tombstone.img": {
                         frame: {
                             x: 3433,
-                            y: 2,
+                            y: 256,
                             w: 112,
                             h: 123
                         },
@@ -2141,7 +1901,7 @@
                     "loot-weapon-m39.img": {
                         frame: {
                             x: 3433,
-                            y: 129,
+                            y: 383,
                             w: 108,
                             h: 123
                         },
@@ -2161,7 +1921,7 @@
                     "police.img": {
                         frame: {
                             x: 3433,
-                            y: 256,
+                            y: 510,
                             w: 100,
                             h: 123
                         },
@@ -2200,8 +1960,8 @@
                     },
                     "loot-weapon-bar.img": {
                         frame: {
-                            x: 134,
-                            y: 3355,
+                            x: 3433,
+                            y: 637,
                             w: 126,
                             h: 122
                         },
@@ -2220,8 +1980,8 @@
                     },
                     "perk-2.img": {
                         frame: {
-                            x: 264,
-                            y: 3355,
+                            x: 3433,
+                            y: 763,
                             w: 126,
                             h: 122
                         },
@@ -2240,8 +2000,8 @@
                     },
                     "heart.img": {
                         frame: {
-                            x: 394,
-                            y: 3355,
+                            x: 3433,
+                            y: 889,
                             w: 124,
                             h: 122
                         },
@@ -2258,10 +2018,10 @@
                             h: 128
                         }
                     },
-                    "emote.img": {
+                    "surviv.img": {
                         frame: {
-                            x: 522,
-                            y: 3355,
+                            x: 3433,
+                            y: 1015,
                             w: 122,
                             h: 122
                         },
@@ -2280,8 +2040,8 @@
                     },
                     "crown.img": {
                         frame: {
-                            x: 3895,
-                            y: 1494,
+                            x: 3563,
+                            y: 3431,
                             w: 54,
                             h: 46
                         },
@@ -2298,30 +2058,10 @@
                             h: 64
                         }
                     },
-                    "part-boost-01.img": {
-                        frame: {
-                            x: 774,
-                            y: 3355,
-                            w: 121,
-                            h: 122
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 5,
-                            w: 121,
-                            h: 122
-                        },
-                        sourceSize: {
-                            w: 132,
-                            h: 132
-                        }
-                    },
                     "loot-weapon-mk12.img": {
                         frame: {
-                            x: 899,
-                            y: 3355,
+                            x: 3433,
+                            y: 1267,
                             w: 114,
                             h: 122
                         },
@@ -2341,7 +2081,7 @@
                     "cupcake.img": {
                         frame: {
                             x: 3433,
-                            y: 383,
+                            y: 1393,
                             w: 108,
                             h: 122
                         },
@@ -2361,7 +2101,7 @@
                     "candy-corn.img": {
                         frame: {
                             x: 3433,
-                            y: 509,
+                            y: 1519,
                             w: 104,
                             h: 122
                         },
@@ -2381,7 +2121,7 @@
                     "snowman.img": {
                         frame: {
                             x: 3433,
-                            y: 635,
+                            y: 1645,
                             w: 96,
                             h: 122
                         },
@@ -2401,7 +2141,7 @@
                     "perk-5.img": {
                         frame: {
                             x: 3433,
-                            y: 761,
+                            y: 1771,
                             w: 90,
                             h: 122
                         },
@@ -2420,7 +2160,7 @@
                     },
                     "perk-1.img": {
                         frame: {
-                            x: 1017,
+                            x: 134,
                             y: 3355,
                             w: 128,
                             h: 121
@@ -2440,8 +2180,8 @@
                     },
                     "loot-weapon-awc.img": {
                         frame: {
-                            x: 1149,
-                            y: 3355,
+                            x: 3433,
+                            y: 1897,
                             w: 122,
                             h: 121
                         },
@@ -2460,8 +2200,8 @@
                     },
                     "loot-weapon-m249.img": {
                         frame: {
-                            x: 1275,
-                            y: 3355,
+                            x: 3433,
+                            y: 2022,
                             w: 116,
                             h: 121
                         },
@@ -2481,7 +2221,7 @@
                     "proj-frag-pin-01.img": {
                         frame: {
                             x: 3433,
-                            y: 887,
+                            y: 2147,
                             w: 110,
                             h: 121
                         },
@@ -2501,7 +2241,7 @@
                     "proj-frag-nopin-01.img": {
                         frame: {
                             x: 3433,
-                            y: 1012,
+                            y: 2272,
                             w: 109,
                             h: 121
                         },
@@ -2521,7 +2261,7 @@
                     "map-vat-res.img": {
                         frame: {
                             x: 3433,
-                            y: 1137,
+                            y: 2397,
                             w: 108,
                             h: 121
                         },
@@ -2541,7 +2281,7 @@
                     "proj-frag-nopin-nolever-01.img": {
                         frame: {
                             x: 3433,
-                            y: 1262,
+                            y: 2522,
                             w: 90,
                             h: 121
                         },
@@ -2560,7 +2300,7 @@
                     },
                     "map-case-chrys-01.img": {
                         frame: {
-                            x: 1395,
+                            x: 266,
                             y: 3355,
                             w: 156,
                             h: 120
@@ -2580,7 +2320,7 @@
                     },
                     "chicken-dinner.img": {
                         frame: {
-                            x: 1555,
+                            x: 426,
                             y: 3355,
                             w: 128,
                             h: 120
@@ -2600,8 +2340,8 @@
                     },
                     "part-splat-03.img": {
                         frame: {
-                            x: 1687,
-                            y: 3355,
+                            x: 3433,
+                            y: 2647,
                             w: 123,
                             h: 120
                         },
@@ -2620,8 +2360,8 @@
                     },
                     "loot-weapon-usas.img": {
                         frame: {
-                            x: 1814,
-                            y: 3355,
+                            x: 3433,
+                            y: 2771,
                             w: 122,
                             h: 120
                         },
@@ -2640,8 +2380,8 @@
                     },
                     "map-decal-initiative.img": {
                         frame: {
-                            x: 1940,
-                            y: 3355,
+                            x: 3433,
+                            y: 2895,
                             w: 120,
                             h: 120
                         },
@@ -2660,8 +2400,8 @@
                     },
                     "loot-weapon-pumpshotgun.img": {
                         frame: {
-                            x: 2064,
-                            y: 3355,
+                            x: 3433,
+                            y: 3019,
                             w: 118,
                             h: 120
                         },
@@ -2680,8 +2420,8 @@
                     },
                     "loot-weapon-qbb97.img": {
                         frame: {
-                            x: 2186,
-                            y: 3355,
+                            x: 3433,
+                            y: 3143,
                             w: 118,
                             h: 120
                         },
@@ -2700,8 +2440,8 @@
                     },
                     "egg.img": {
                         frame: {
-                            x: 3433,
-                            y: 1387,
+                            x: 3328,
+                            y: 3226,
                             w: 98,
                             h: 120
                         },
@@ -2720,8 +2460,8 @@
                     },
                     "loot-weapon-colt45.img": {
                         frame: {
-                            x: 3433,
-                            y: 1511,
+                            x: 558,
+                            y: 3355,
                             w: 96,
                             h: 120
                         },
@@ -2738,9 +2478,49 @@
                             h: 128
                         }
                     },
+                    "loot-weapon-ots38.img": {
+                        frame: {
+                            x: 3347,
+                            y: 1072,
+                            w: 81,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 23,
+                            y: 4,
+                            w: 81,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-chest-02.img": {
+                        frame: {
+                            x: 3347,
+                            y: 1196,
+                            w: 76,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 26,
+                            y: 4,
+                            w: 76,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
                     "loot-weapon-m1911-dual.img": {
                         frame: {
-                            x: 2308,
+                            x: 658,
                             y: 3355,
                             w: 128,
                             h: 119
@@ -2760,7 +2540,7 @@
                     },
                     "loot-weapon-m1100.img": {
                         frame: {
-                            x: 2440,
+                            x: 790,
                             y: 3355,
                             w: 119,
                             h: 119
@@ -2780,8 +2560,8 @@
                     },
                     "loot-weapon-m1911.img": {
                         frame: {
-                            x: 3433,
-                            y: 1635,
+                            x: 913,
+                            y: 3355,
                             w: 107,
                             h: 119
                         },
@@ -2800,8 +2580,8 @@
                     },
                     "loot-weapon-hk416.img": {
                         frame: {
-                            x: 3433,
-                            y: 1758,
+                            x: 1024,
+                            y: 3355,
                             w: 105,
                             h: 119
                         },
@@ -2820,8 +2600,8 @@
                     },
                     "perk-4.img": {
                         frame: {
-                            x: 3433,
-                            y: 1881,
+                            x: 3344,
+                            y: 2346,
                             w: 84,
                             h: 119
                         },
@@ -2840,7 +2620,7 @@
                     },
                     "loot-weapon-m9-dual.img": {
                         frame: {
-                            x: 2563,
+                            x: 1133,
                             y: 3355,
                             w: 128,
                             h: 118
@@ -2860,7 +2640,7 @@
                     },
                     "salt.img": {
                         frame: {
-                            x: 2695,
+                            x: 1265,
                             y: 3355,
                             w: 124,
                             h: 118
@@ -2880,7 +2660,7 @@
                     },
                     "loot-weapon-sv98.img": {
                         frame: {
-                            x: 2823,
+                            x: 1393,
                             y: 3355,
                             w: 121,
                             h: 118
@@ -2900,7 +2680,7 @@
                     },
                     "map-chimney-01.img": {
                         frame: {
-                            x: 2948,
+                            x: 1518,
                             y: 3355,
                             w: 120,
                             h: 118
@@ -2918,29 +2698,9 @@
                             h: 120
                         }
                     },
-                    "skull.img": {
-                        frame: {
-                            x: 3072,
-                            y: 3355,
-                            w: 120,
-                            h: 118
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 5,
-                            w: 120,
-                            h: 118
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
                     "donut.img": {
                         frame: {
-                            x: 3196,
+                            x: 1642,
                             y: 3355,
                             w: 120,
                             h: 118
@@ -2958,9 +2718,49 @@
                             h: 128
                         }
                     },
-                    "part-feather-01.img": {
+                    "skull.img": {
                         frame: {
-                            x: 3320,
+                            x: 1766,
+                            y: 3355,
+                            w: 120,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 5,
+                            w: 120,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "mag-glass.img": {
+                        frame: {
+                            x: 1890,
+                            y: 3355,
+                            w: 118,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 5,
+                            w: 118,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-chest-01.img": {
+                        frame: {
+                            x: 2012,
                             y: 3355,
                             w: 118,
                             h: 118
@@ -2980,8 +2780,8 @@
                     },
                     "map-stone-res-01.img": {
                         frame: {
-                            x: 3549,
-                            y: 2,
+                            x: 2134,
+                            y: 3355,
                             w: 118,
                             h: 118
                         },
@@ -2998,10 +2798,10 @@
                             h: 120
                         }
                     },
-                    "loot-chest-01.img": {
+                    "part-feather-01.img": {
                         frame: {
-                            x: 3549,
-                            y: 124,
+                            x: 2256,
+                            y: 3355,
                             w: 118,
                             h: 118
                         },
@@ -3020,28 +2820,8 @@
                     },
                     "part-feather-02.img": {
                         frame: {
-                            x: 3549,
-                            y: 246,
-                            w: 118,
-                            h: 118
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 5,
-                            w: 118,
-                            h: 118
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "mag-glass.img": {
-                        frame: {
-                            x: 3549,
-                            y: 368,
+                            x: 2378,
+                            y: 3355,
                             w: 118,
                             h: 118
                         },
@@ -3060,8 +2840,8 @@
                     },
                     "loot-weapon-ump9.img": {
                         frame: {
-                            x: 3549,
-                            y: 490,
+                            x: 2500,
+                            y: 3355,
                             w: 114,
                             h: 118
                         },
@@ -3080,8 +2860,8 @@
                     },
                     "loot-weapon-famas.img": {
                         frame: {
-                            x: 3549,
-                            y: 612,
+                            x: 2618,
+                            y: 3355,
                             w: 112,
                             h: 118
                         },
@@ -3100,8 +2880,8 @@
                     },
                     "loot-weapon-vector45.img": {
                         frame: {
-                            x: 3549,
-                            y: 734,
+                            x: 2734,
+                            y: 3355,
                             w: 104,
                             h: 118
                         },
@@ -3120,8 +2900,8 @@
                     },
                     "loot-weapon-m9.img": {
                         frame: {
-                            x: 3549,
-                            y: 856,
+                            x: 2842,
+                            y: 3355,
                             w: 96,
                             h: 118
                         },
@@ -3140,8 +2920,8 @@
                     },
                     "loot-chest-03.img": {
                         frame: {
-                            x: 3549,
-                            y: 978,
+                            x: 2942,
+                            y: 3355,
                             w: 96,
                             h: 118
                         },
@@ -3160,8 +2940,8 @@
                     },
                     "loot-pack-00.img": {
                         frame: {
-                            x: 3549,
-                            y: 1100,
+                            x: 3042,
+                            y: 3355,
                             w: 90,
                             h: 118
                         },
@@ -3180,8 +2960,8 @@
                     },
                     "loot-pack-02.img": {
                         frame: {
-                            x: 3549,
-                            y: 1222,
+                            x: 3136,
+                            y: 3355,
                             w: 88,
                             h: 118
                         },
@@ -3200,8 +2980,8 @@
                     },
                     "proj-strobe-arming.img": {
                         frame: {
-                            x: 2,
-                            y: 3481,
+                            x: 3228,
+                            y: 3355,
                             w: 134,
                             h: 117
                         },
@@ -3220,8 +3000,8 @@
                     },
                     "proj-strobe-armed.img": {
                         frame: {
-                            x: 140,
-                            y: 3481,
+                            x: 3366,
+                            y: 3355,
                             w: 134,
                             h: 117
                         },
@@ -3240,8 +3020,8 @@
                     },
                     "loot-weapon-mosin.img": {
                         frame: {
-                            x: 3549,
-                            y: 1344,
+                            x: 3563,
+                            y: 2,
                             w: 118,
                             h: 116
                         },
@@ -3258,30 +3038,10 @@
                             h: 128
                         }
                     },
-                    "target.img": {
-                        frame: {
-                            x: 3549,
-                            y: 1464,
-                            w: 116,
-                            h: 116
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 6,
-                            w: 116,
-                            h: 116
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
                     "gas.img": {
                         frame: {
-                            x: 3549,
-                            y: 1584,
+                            x: 3563,
+                            y: 122,
                             w: 116,
                             h: 116
                         },
@@ -3296,52 +3056,72 @@
                         sourceSize: {
                             w: 128,
                             h: 128
-                        }
-                    },
-                    "part-spark-01.img": {
-                        frame: {
-                            x: 3549,
-                            y: 1704,
-                            w: 116,
-                            h: 116
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 116,
-                            h: 116
-                        },
-                        sourceSize: {
-                            w: 120,
-                            h: 120
-                        }
-                    },
-                    "part-spark-02.img": {
-                        frame: {
-                            x: 3549,
-                            y: 1824,
-                            w: 116,
-                            h: 116
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 116,
-                            h: 116
-                        },
-                        sourceSize: {
-                            w: 120,
-                            h: 120
                         }
                     },
                     "map-stone-res-04.img": {
                         frame: {
-                            x: 3549,
-                            y: 1944,
+                            x: 3563,
+                            y: 242,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 120,
+                            h: 120
+                        }
+                    },
+                    "target.img": {
+                        frame: {
+                            x: 3563,
+                            y: 362,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 6,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-spark-02.img": {
+                        frame: {
+                            x: 3563,
+                            y: 482,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 120,
+                            h: 120
+                        }
+                    },
+                    "part-spark-01.img": {
+                        frame: {
+                            x: 3563,
+                            y: 602,
                             w: 116,
                             h: 116
                         },
@@ -3360,8 +3140,8 @@
                     },
                     "flex.img": {
                         frame: {
-                            x: 3549,
-                            y: 2064,
+                            x: 3563,
+                            y: 722,
                             w: 109,
                             h: 116
                         },
@@ -3380,8 +3160,8 @@
                     },
                     "loot-medical-bandage.img": {
                         frame: {
-                            x: 3549,
-                            y: 2184,
+                            x: 3563,
+                            y: 842,
                             w: 106,
                             h: 116
                         },
@@ -3398,10 +3178,10 @@
                             h: 128
                         }
                     },
-                    "acorn.img": {
+                    "loot-weapon-scar.img": {
                         frame: {
-                            x: 3549,
-                            y: 2304,
+                            x: 3563,
+                            y: 962,
                             w: 104,
                             h: 116
                         },
@@ -3418,10 +3198,10 @@
                             h: 128
                         }
                     },
-                    "loot-weapon-scar.img": {
+                    "acorn.img": {
                         frame: {
-                            x: 3549,
-                            y: 2424,
+                            x: 3563,
+                            y: 1082,
                             w: 104,
                             h: 116
                         },
@@ -3440,8 +3220,8 @@
                     },
                     "loot-pack-01.img": {
                         frame: {
-                            x: 3549,
-                            y: 2544,
+                            x: 3563,
+                            y: 1202,
                             w: 94,
                             h: 116
                         },
@@ -3460,8 +3240,8 @@
                     },
                     "loot-weapon-flare-gun.img": {
                         frame: {
-                            x: 3549,
-                            y: 2664,
+                            x: 3563,
+                            y: 1322,
                             w: 82,
                             h: 116
                         },
@@ -3480,7 +3260,7 @@
                     },
                     "map-case-hatchet-res-01.img": {
                         frame: {
-                            x: 278,
+                            x: 2,
                             y: 3481,
                             w: 128,
                             h: 115
@@ -3500,7 +3280,7 @@
                     },
                     "map-case-flare-res-01.img": {
                         frame: {
-                            x: 410,
+                            x: 134,
                             y: 3481,
                             w: 128,
                             h: 115
@@ -3520,7 +3300,7 @@
                     },
                     "sleepy.img": {
                         frame: {
-                            x: 542,
+                            x: 266,
                             y: 3481,
                             w: 124,
                             h: 114
@@ -3540,8 +3320,8 @@
                     },
                     "loot-weapon-garand.img": {
                         frame: {
-                            x: 3549,
-                            y: 2784,
+                            x: 3563,
+                            y: 1442,
                             w: 112,
                             h: 114
                         },
@@ -3560,8 +3340,8 @@
                     },
                     "pumpkin.img": {
                         frame: {
-                            x: 3549,
-                            y: 2902,
+                            x: 3563,
+                            y: 1560,
                             w: 106,
                             h: 114
                         },
@@ -3580,8 +3360,8 @@
                     },
                     "loot-pack-03.img": {
                         frame: {
-                            x: 3549,
-                            y: 3020,
+                            x: 3563,
+                            y: 1678,
                             w: 104,
                             h: 114
                         },
@@ -3600,8 +3380,8 @@
                     },
                     "loot-weapon-deagle.img": {
                         frame: {
-                            x: 3549,
-                            y: 3138,
+                            x: 3563,
+                            y: 1796,
                             w: 104,
                             h: 114
                         },
@@ -3618,30 +3398,10 @@
                             h: 128
                         }
                     },
-                    "tap.img": {
-                        frame: {
-                            x: 3549,
-                            y: 3256,
-                            w: 96,
-                            h: 114
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 16,
-                            y: 7,
-                            w: 96,
-                            h: 114
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
                     "loot-weapon-mp5.img": {
                         frame: {
-                            x: 3433,
-                            y: 2004,
+                            x: 3563,
+                            y: 1914,
                             w: 96,
                             h: 114
                         },
@@ -3660,8 +3420,28 @@
                     },
                     "loot-weapon-spas12.img": {
                         frame: {
-                            x: 3433,
-                            y: 2122,
+                            x: 3563,
+                            y: 2032,
+                            w: 96,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 7,
+                            w: 96,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "tap.img": {
+                        frame: {
+                            x: 3563,
+                            y: 2150,
                             w: 96,
                             h: 114
                         },
@@ -3680,8 +3460,8 @@
                     },
                     "loot-weapon-ot38.img": {
                         frame: {
-                            x: 3433,
-                            y: 2240,
+                            x: 3563,
+                            y: 2268,
                             w: 90,
                             h: 114
                         },
@@ -3700,8 +3480,8 @@
                     },
                     "part-blossom-04.img": {
                         frame: {
-                            x: 670,
-                            y: 3481,
+                            x: 3563,
+                            y: 2386,
                             w: 115,
                             h: 113
                         },
@@ -3720,8 +3500,8 @@
                     },
                     "cattle.img": {
                         frame: {
-                            x: 789,
-                            y: 3481,
+                            x: 3563,
+                            y: 2503,
                             w: 118,
                             h: 112
                         },
@@ -3740,8 +3520,8 @@
                     },
                     "loot-shirt-03.img": {
                         frame: {
-                            x: 911,
-                            y: 3481,
+                            x: 3563,
+                            y: 2619,
                             w: 116,
                             h: 112
                         },
@@ -3760,8 +3540,8 @@
                     },
                     "loot-shirt-01.img": {
                         frame: {
-                            x: 1031,
-                            y: 3481,
+                            x: 3563,
+                            y: 2735,
                             w: 116,
                             h: 112
                         },
@@ -3780,8 +3560,8 @@
                     },
                     "part-blossom-03.img": {
                         frame: {
-                            x: 1151,
-                            y: 3481,
+                            x: 3563,
+                            y: 2851,
                             w: 115,
                             h: 112
                         },
@@ -3798,150 +3578,10 @@
                             h: 128
                         }
                     },
-                    "ammo-9mm.img": {
-                        frame: {
-                            x: 3433,
-                            y: 2358,
-                            w: 112,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 112,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ammo-12gauge.img": {
-                        frame: {
-                            x: 3433,
-                            y: 2474,
-                            w: 112,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 112,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ammo-556mm.img": {
-                        frame: {
-                            x: 3433,
-                            y: 2590,
-                            w: 112,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 112,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
                     "ammo-45acp.img": {
                         frame: {
-                            x: 3433,
-                            y: 2706,
-                            w: 112,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 112,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-tree-04.img": {
-                        frame: {
-                            x: 3433,
-                            y: 2822,
-                            w: 112,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 112,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 112,
-                            h: 112
-                        }
-                    },
-                    "ammo-flare.img": {
-                        frame: {
-                            x: 3433,
-                            y: 2938,
-                            w: 112,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 112,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ammo-762mm.img": {
-                        frame: {
-                            x: 3433,
-                            y: 3054,
-                            w: 112,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 112,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ammo-box.img": {
-                        frame: {
-                            x: 3433,
-                            y: 3170,
+                            x: 3563,
+                            y: 2967,
                             w: 112,
                             h: 112
                         },
@@ -3960,8 +3600,8 @@
                     },
                     "ammo-50AE.img": {
                         frame: {
-                            x: 1270,
-                            y: 3481,
+                            x: 3563,
+                            y: 3083,
                             w: 112,
                             h: 112
                         },
@@ -3980,7 +3620,87 @@
                     },
                     "map-tree-09.img": {
                         frame: {
-                            x: 1386,
+                            x: 3563,
+                            y: 3199,
+                            w: 112,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 112,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 112,
+                            h: 112
+                        }
+                    },
+                    "ammo-12gauge.img": {
+                        frame: {
+                            x: 3563,
+                            y: 3315,
+                            w: 112,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 8,
+                            w: 112,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-762mm.img": {
+                        frame: {
+                            x: 394,
+                            y: 3481,
+                            w: 112,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 8,
+                            w: 112,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-556mm.img": {
+                        frame: {
+                            x: 510,
+                            y: 3481,
+                            w: 112,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 8,
+                            w: 112,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "map-tree-04.img": {
+                        frame: {
+                            x: 626,
                             y: 3481,
                             w: 112,
                             h: 112
@@ -4000,7 +3720,67 @@
                     },
                     "ammo-308sub.img": {
                         frame: {
-                            x: 1502,
+                            x: 742,
+                            y: 3481,
+                            w: 112,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 8,
+                            w: 112,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-flare.img": {
+                        frame: {
+                            x: 858,
+                            y: 3481,
+                            w: 112,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 8,
+                            w: 112,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-box.img": {
+                        frame: {
+                            x: 974,
+                            y: 3481,
+                            w: 112,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 8,
+                            w: 112,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-9mm.img": {
+                        frame: {
+                            x: 1090,
                             y: 3481,
                             w: 112,
                             h: 112
@@ -4020,7 +3800,7 @@
                     },
                     "loot-weapon-vector.img": {
                         frame: {
-                            x: 1618,
+                            x: 1206,
                             y: 3481,
                             w: 108,
                             h: 112
@@ -4040,8 +3820,8 @@
                     },
                     "chick.img": {
                         frame: {
-                            x: 3442,
-                            y: 3355,
+                            x: 1318,
+                            y: 3481,
                             w: 102,
                             h: 112
                         },
@@ -4058,29 +3838,9 @@
                             h: 128
                         }
                     },
-                    "loot-throwable-mirv.img": {
-                        frame: {
-                            x: 3347,
-                            y: 1072,
-                            w: 82,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 23,
-                            y: 8,
-                            w: 82,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
                     "loot-weapon-ak.img": {
                         frame: {
-                            x: 1730,
+                            x: 1424,
                             y: 3481,
                             w: 98,
                             h: 111
@@ -4098,29 +3858,9 @@
                             h: 128
                         }
                     },
-                    "map-control-panel-05.img": {
+                    "map-control-panel-02.img": {
                         frame: {
-                            x: 1832,
-                            y: 3481,
-                            w: 144,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 110
-                        }
-                    },
-                    "map-control-panel-04.img": {
-                        frame: {
-                            x: 1980,
+                            x: 1526,
                             y: 3481,
                             w: 144,
                             h: 110
@@ -4140,7 +3880,7 @@
                     },
                     "map-control-panel-01.img": {
                         frame: {
-                            x: 2128,
+                            x: 1674,
                             y: 3481,
                             w: 144,
                             h: 110
@@ -4158,9 +3898,9 @@
                             h: 110
                         }
                     },
-                    "map-control-panel-02.img": {
+                    "map-control-panel-04.img": {
                         frame: {
-                            x: 2276,
+                            x: 1822,
                             y: 3481,
                             w: 144,
                             h: 110
@@ -4178,29 +3918,29 @@
                             h: 110
                         }
                     },
-                    "logo-crossing.img": {
+                    "map-control-panel-05.img": {
                         frame: {
-                            x: 2424,
+                            x: 1970,
                             y: 3481,
-                            w: 128,
+                            w: 144,
                             h: 110
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
-                            y: 9,
-                            w: 128,
+                            y: 0,
+                            w: 144,
                             h: 110
                         },
                         sourceSize: {
-                            w: 128,
-                            h: 128
+                            w: 144,
+                            h: 110
                         }
                     },
-                    "logo-meteor.img": {
+                    "logo-caduceus.img": {
                         frame: {
-                            x: 2556,
+                            x: 2118,
                             y: 3481,
                             w: 128,
                             h: 110
@@ -4220,107 +3960,7 @@
                     },
                     "logo-storm.img": {
                         frame: {
-                            x: 2688,
-                            y: 3481,
-                            w: 128,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 9,
-                            w: 128,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "logo-caduceus.img": {
-                        frame: {
-                            x: 2820,
-                            y: 3481,
-                            w: 128,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 9,
-                            w: 128,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "logo-hydra.img": {
-                        frame: {
-                            x: 2952,
-                            y: 3481,
-                            w: 128,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 9,
-                            w: 128,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "logo-hatchet.img": {
-                        frame: {
-                            x: 3084,
-                            y: 3481,
-                            w: 128,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 9,
-                            w: 128,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "link.img": {
-                        frame: {
-                            x: 3216,
-                            y: 3481,
-                            w: 128,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 9,
-                            w: 128,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "logo-chrysanthemum.img": {
-                        frame: {
-                            x: 3348,
+                            x: 2250,
                             y: 3481,
                             w: 128,
                             h: 110
@@ -4340,7 +3980,47 @@
                     },
                     "logo-conch.img": {
                         frame: {
-                            x: 3480,
+                            x: 2382,
+                            y: 3481,
+                            w: 128,
+                            h: 110
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 9,
+                            w: 128,
+                            h: 110
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "logo-crossing.img": {
+                        frame: {
+                            x: 2514,
+                            y: 3481,
+                            w: 128,
+                            h: 110
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 9,
+                            w: 128,
+                            h: 110
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "logo-egg.img": {
+                        frame: {
+                            x: 2646,
                             y: 3481,
                             w: 128,
                             h: 110
@@ -4360,28 +4040,8 @@
                     },
                     "logo-swine.img": {
                         frame: {
-                            x: 3671,
-                            y: 2,
-                            w: 128,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 9,
-                            w: 128,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "logo-egg.img": {
-                        frame: {
-                            x: 3671,
-                            y: 116,
+                            x: 2778,
+                            y: 3481,
                             w: 128,
                             h: 110
                         },
@@ -4400,8 +4060,108 @@
                     },
                     "logo-surviv.img": {
                         frame: {
-                            x: 3671,
-                            y: 230,
+                            x: 2910,
+                            y: 3481,
+                            w: 128,
+                            h: 110
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 9,
+                            w: 128,
+                            h: 110
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "logo-hatchet.img": {
+                        frame: {
+                            x: 3042,
+                            y: 3481,
+                            w: 128,
+                            h: 110
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 9,
+                            w: 128,
+                            h: 110
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "logo-chrysanthemum.img": {
+                        frame: {
+                            x: 3174,
+                            y: 3481,
+                            w: 128,
+                            h: 110
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 9,
+                            w: 128,
+                            h: 110
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "logo-hydra.img": {
+                        frame: {
+                            x: 3306,
+                            y: 3481,
+                            w: 128,
+                            h: 110
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 9,
+                            w: 128,
+                            h: 110
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "logo-meteor.img": {
+                        frame: {
+                            x: 3438,
+                            y: 3481,
+                            w: 128,
+                            h: 110
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 9,
+                            w: 128,
+                            h: 110
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "link.img": {
+                        frame: {
+                            x: 3685,
+                            y: 2,
                             w: 128,
                             h: 110
                         },
@@ -4420,8 +4180,8 @@
                     },
                     "loot-weapon-glock-dual.img": {
                         frame: {
-                            x: 3671,
-                            y: 344,
+                            x: 3685,
+                            y: 116,
                             w: 122,
                             h: 110
                         },
@@ -4438,10 +4198,10 @@
                             h: 128
                         }
                     },
-                    "player-emote.img": {
+                    "player-gui.img": {
                         frame: {
-                            x: 3671,
-                            y: 458,
+                            x: 3685,
+                            y: 230,
                             w: 112,
                             h: 110
                         },
@@ -4458,10 +4218,10 @@
                             h: 128
                         }
                     },
-                    "player-gui.img": {
+                    "player-emote.img": {
                         frame: {
-                            x: 3671,
-                            y: 572,
+                            x: 3685,
+                            y: 344,
                             w: 112,
                             h: 110
                         },
@@ -4480,8 +4240,8 @@
                     },
                     "loot-weapon-glock.img": {
                         frame: {
-                            x: 3671,
-                            y: 686,
+                            x: 3685,
+                            y: 458,
                             w: 90,
                             h: 110
                         },
@@ -4500,8 +4260,8 @@
                     },
                     "santa-hat.img": {
                         frame: {
-                            x: 3671,
-                            y: 800,
+                            x: 3685,
+                            y: 572,
                             w: 113,
                             h: 109
                         },
@@ -4518,30 +4278,10 @@
                             h: 128
                         }
                     },
-                    "map-case-deagle-02.img": {
-                        frame: {
-                            x: 2,
-                            y: 3602,
-                            w: 144,
-                            h: 108
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 108
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 108
-                        }
-                    },
                     "map-case-deagle-01.img": {
                         frame: {
-                            x: 150,
-                            y: 3602,
+                            x: 2,
+                            y: 3600,
                             w: 144,
                             h: 108
                         },
@@ -4558,10 +4298,30 @@
                             h: 108
                         }
                     },
-                    "loot-weapon-model94.img": {
+                    "map-case-deagle-02.img": {
                         frame: {
-                            x: 3671,
-                            y: 913,
+                            x: 150,
+                            y: 3600,
+                            w: 144,
+                            h: 108
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 144,
+                            h: 108
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 108
+                        }
+                    },
+                    "danger.img": {
+                        frame: {
+                            x: 3685,
+                            y: 685,
                             w: 118,
                             h: 108
                         },
@@ -4578,10 +4338,10 @@
                             h: 128
                         }
                     },
-                    "danger.img": {
+                    "loot-weapon-model94.img": {
                         frame: {
-                            x: 3671,
-                            y: 1025,
+                            x: 3685,
+                            y: 797,
                             w: 118,
                             h: 108
                         },
@@ -4600,8 +4360,8 @@
                     },
                     "map-bollard-01.img": {
                         frame: {
-                            x: 3671,
-                            y: 1137,
+                            x: 3685,
+                            y: 909,
                             w: 112,
                             h: 108
                         },
@@ -4620,8 +4380,8 @@
                     },
                     "part-leaf-02.img": {
                         frame: {
-                            x: 3671,
-                            y: 1249,
+                            x: 3685,
+                            y: 1021,
                             w: 108,
                             h: 108
                         },
@@ -4640,8 +4400,8 @@
                     },
                     "map-crate-20.img": {
                         frame: {
-                            x: 3671,
-                            y: 1361,
+                            x: 3685,
+                            y: 1133,
                             w: 108,
                             h: 108
                         },
@@ -4660,8 +4420,8 @@
                     },
                     "part-blossom-02.img": {
                         frame: {
-                            x: 3671,
-                            y: 1473,
+                            x: 3685,
+                            y: 1245,
                             w: 105,
                             h: 108
                         },
@@ -4680,8 +4440,8 @@
                     },
                     "part-blossom-01.img": {
                         frame: {
-                            x: 3671,
-                            y: 1585,
+                            x: 3685,
+                            y: 1357,
                             w: 105,
                             h: 108
                         },
@@ -4700,8 +4460,8 @@
                     },
                     "map-toilet-res-01.img": {
                         frame: {
-                            x: 3671,
-                            y: 1697,
+                            x: 3685,
+                            y: 1469,
                             w: 98,
                             h: 107
                         },
@@ -4720,8 +4480,8 @@
                     },
                     "hide.img": {
                         frame: {
-                            x: 3671,
-                            y: 1808,
+                            x: 3685,
+                            y: 1580,
                             w: 126,
                             h: 106
                         },
@@ -4740,8 +4500,8 @@
                     },
                     "part-leaf-01.img": {
                         frame: {
-                            x: 3671,
-                            y: 1918,
+                            x: 3685,
+                            y: 1690,
                             w: 121,
                             h: 106
                         },
@@ -4760,8 +4520,8 @@
                     },
                     "loot-weapon-mp220.img": {
                         frame: {
-                            x: 3671,
-                            y: 2028,
+                            x: 3685,
+                            y: 1800,
                             w: 114,
                             h: 106
                         },
@@ -4780,8 +4540,8 @@
                     },
                     "leek.img": {
                         frame: {
-                            x: 3671,
-                            y: 2138,
+                            x: 3685,
+                            y: 1910,
                             w: 106,
                             h: 106
                         },
@@ -4800,8 +4560,8 @@
                     },
                     "map-stove-02.img": {
                         frame: {
-                            x: 3671,
-                            y: 2248,
+                            x: 3685,
+                            y: 2020,
                             w: 98,
                             h: 105
                         },
@@ -4820,8 +4580,8 @@
                     },
                     "hamburger.img": {
                         frame: {
-                            x: 3671,
-                            y: 2357,
+                            x: 3685,
+                            y: 2129,
                             w: 128,
                             h: 104
                         },
@@ -4838,10 +4598,10 @@
                             h: 128
                         }
                     },
-                    "loot-medical-healthkit.img": {
+                    "emote-medical-healthkit.img": {
                         frame: {
-                            x: 3671,
-                            y: 2465,
+                            x: 3685,
+                            y: 2237,
                             w: 118,
                             h: 104
                         },
@@ -4858,10 +4618,10 @@
                             h: 128
                         }
                     },
-                    "emote-medical-healthkit.img": {
+                    "loot-medical-healthkit.img": {
                         frame: {
-                            x: 3671,
-                            y: 2573,
+                            x: 3685,
+                            y: 2345,
                             w: 118,
                             h: 104
                         },
@@ -4880,8 +4640,8 @@
                     },
                     "loot-weapon-mac10.img": {
                         frame: {
-                            x: 3671,
-                            y: 2681,
+                            x: 3685,
+                            y: 2453,
                             w: 102,
                             h: 104
                         },
@@ -4900,8 +4660,8 @@
                     },
                     "ribbon-red.img": {
                         frame: {
-                            x: 3671,
-                            y: 2789,
+                            x: 3685,
+                            y: 2561,
                             w: 98,
                             h: 104
                         },
@@ -4920,8 +4680,8 @@
                     },
                     "ribbon-blue.img": {
                         frame: {
-                            x: 3671,
-                            y: 2897,
+                            x: 3685,
+                            y: 2669,
                             w: 98,
                             h: 104
                         },
@@ -4938,10 +4698,30 @@
                             h: 148
                         }
                     },
+                    "map-building-bank-window-01.img": {
+                        frame: {
+                            x: 3685,
+                            y: 2777,
+                            w: 56,
+                            h: 104
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 56,
+                            h: 104
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 104
+                        }
+                    },
                     "turkey-animal.img": {
                         frame: {
-                            x: 3671,
-                            y: 3005,
+                            x: 3685,
+                            y: 2885,
                             w: 120,
                             h: 103
                         },
@@ -4960,8 +4740,8 @@
                     },
                     "movement.img": {
                         frame: {
-                            x: 3671,
-                            y: 3112,
+                            x: 3685,
+                            y: 2992,
                             w: 104,
                             h: 103
                         },
@@ -4978,10 +4758,10 @@
                             h: 128
                         }
                     },
-                    "map-chest-03.img": {
+                    "map-case-hatchet-01.img": {
                         frame: {
                             x: 298,
-                            y: 3602,
+                            y: 3600,
                             w: 140,
                             h: 102
                         },
@@ -5001,47 +4781,7 @@
                     "map-chest-02.img": {
                         frame: {
                             x: 442,
-                            y: 3602,
-                            w: 140,
-                            h: 102
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 140,
-                            h: 102
-                        },
-                        sourceSize: {
-                            w: 140,
-                            h: 102
-                        }
-                    },
-                    "map-chest-01.img": {
-                        frame: {
-                            x: 586,
-                            y: 3602,
-                            w: 140,
-                            h: 102
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 140,
-                            h: 102
-                        },
-                        sourceSize: {
-                            w: 140,
-                            h: 102
-                        }
-                    },
-                    "map-case-hatchet-01.img": {
-                        frame: {
-                            x: 730,
-                            y: 3602,
+                            y: 3600,
                             w: 140,
                             h: 102
                         },
@@ -5060,8 +4800,48 @@
                     },
                     "map-case-flare-01.img": {
                         frame: {
+                            x: 586,
+                            y: 3600,
+                            w: 140,
+                            h: 102
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 140,
+                            h: 102
+                        },
+                        sourceSize: {
+                            w: 140,
+                            h: 102
+                        }
+                    },
+                    "map-chest-03.img": {
+                        frame: {
+                            x: 730,
+                            y: 3600,
+                            w: 140,
+                            h: 102
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 140,
+                            h: 102
+                        },
+                        sourceSize: {
+                            w: 140,
+                            h: 102
+                        }
+                    },
+                    "map-chest-01.img": {
+                        frame: {
                             x: 874,
-                            y: 3602,
+                            y: 3600,
                             w: 140,
                             h: 102
                         },
@@ -5080,8 +4860,8 @@
                     },
                     "return-arrow.img": {
                         frame: {
-                            x: 3671,
-                            y: 3219,
+                            x: 3685,
+                            y: 3099,
                             w: 128,
                             h: 102
                         },
@@ -5100,8 +4880,8 @@
                     },
                     "map-grill-01.img": {
                         frame: {
-                            x: 3671,
-                            y: 3325,
+                            x: 3685,
+                            y: 3205,
                             w: 120,
                             h: 102
                         },
@@ -5120,8 +4900,8 @@
                     },
                     "loot-helmet-01.img": {
                         frame: {
-                            x: 3671,
-                            y: 3431,
+                            x: 3685,
+                            y: 3311,
                             w: 112,
                             h: 102
                         },
@@ -5140,8 +4920,8 @@
                     },
                     "eggplant.img": {
                         frame: {
-                            x: 3549,
-                            y: 3374,
+                            x: 3685,
+                            y: 3417,
                             w: 106,
                             h: 102
                         },
@@ -5158,10 +4938,10 @@
                             h: 128
                         }
                     },
-                    "loot-throwable-frag.img": {
+                    "ping-map-help.img": {
                         frame: {
-                            x: 1018,
-                            y: 3602,
+                            x: 3570,
+                            y: 3481,
                             w: 100,
                             h: 102
                         },
@@ -5178,10 +4958,10 @@
                             h: 128
                         }
                     },
-                    "ping-map-help.img": {
+                    "loot-throwable-frag.img": {
                         frame: {
-                            x: 1122,
-                            y: 3602,
+                            x: 1018,
+                            y: 3600,
                             w: 100,
                             h: 102
                         },
@@ -5200,8 +4980,8 @@
                     },
                     "loot-throwable-potato.img": {
                         frame: {
-                            x: 1226,
-                            y: 3602,
+                            x: 1122,
+                            y: 3600,
                             w: 92,
                             h: 102
                         },
@@ -5218,7 +4998,27 @@
                             h: 128
                         }
                     },
-                    "map-toilet-03.img": {
+                    "question.img": {
+                        frame: {
+                            x: 3745,
+                            y: 2777,
+                            w: 68,
+                            h: 102
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 30,
+                            y: 13,
+                            w: 68,
+                            h: 102
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "map-toilet-04.img": {
                         frame: {
                             x: 3360,
                             y: 558,
@@ -5238,10 +5038,30 @@
                             h: 100
                         }
                     },
+                    "map-toilet-03.img": {
+                        frame: {
+                            x: 3360,
+                            y: 660,
+                            w: 66,
+                            h: 98
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 17,
+                            y: 1,
+                            w: 66,
+                            h: 98
+                        },
+                        sourceSize: {
+                            w: 100,
+                            h: 100
+                        }
+                    },
                     "map-couch-01.img": {
                         frame: {
-                            x: 1322,
-                            y: 3602,
+                            x: 1218,
+                            y: 3600,
                             w: 288,
                             h: 96
                         },
@@ -5260,8 +5080,8 @@
                     },
                     "potato.img": {
                         frame: {
-                            x: 1614,
-                            y: 3602,
+                            x: 1510,
+                            y: 3600,
                             w: 100,
                             h: 96
                         },
@@ -5280,8 +5100,8 @@
                     },
                     "part-airdrop-01.img": {
                         frame: {
-                            x: 1718,
-                            y: 3602,
+                            x: 1614,
+                            y: 3600,
                             w: 96,
                             h: 96
                         },
@@ -5300,8 +5120,8 @@
                     },
                     "map-woodpile-01.img": {
                         frame: {
-                            x: 1818,
-                            y: 3602,
+                            x: 1714,
+                            y: 3600,
                             w: 96,
                             h: 96
                         },
@@ -5320,8 +5140,8 @@
                     },
                     "copy.img": {
                         frame: {
-                            x: 1918,
-                            y: 3602,
+                            x: 1814,
+                            y: 3600,
                             w: 88,
                             h: 96
                         },
@@ -5338,10 +5158,10 @@
                             h: 128
                         }
                     },
-                    "map-recorder-01.img": {
+                    "map-recorder-02.img": {
                         frame: {
-                            x: 3360,
-                            y: 660,
+                            x: 3351,
+                            y: 1508,
                             w: 64,
                             h: 96
                         },
@@ -5358,10 +5178,10 @@
                             h: 96
                         }
                     },
-                    "map-recorder-02.img": {
+                    "map-recorder-01.img": {
                         frame: {
-                            x: 3347,
-                            y: 1188,
+                            x: 3351,
+                            y: 1608,
                             w: 64,
                             h: 96
                         },
@@ -5380,8 +5200,8 @@
                     },
                     "minimize.img": {
                         frame: {
-                            x: 2010,
-                            y: 3602,
+                            x: 1906,
+                            y: 3600,
                             w: 95,
                             h: 95
                         },
@@ -5400,8 +5220,8 @@
                     },
                     "skull-leader.img": {
                         frame: {
-                            x: 2109,
-                            y: 3602,
+                            x: 2005,
+                            y: 3600,
                             w: 90,
                             h: 95
                         },
@@ -5420,8 +5240,8 @@
                     },
                     "map-control-panel-06.img": {
                         frame: {
-                            x: 2203,
-                            y: 3602,
+                            x: 2099,
+                            y: 3600,
                             w: 192,
                             h: 94
                         },
@@ -5440,8 +5260,8 @@
                     },
                     "whale.img": {
                         frame: {
-                            x: 2399,
-                            y: 3602,
+                            x: 2295,
+                            y: 3600,
                             w: 118,
                             h: 94
                         },
@@ -5460,8 +5280,8 @@
                     },
                     "map-vending-soda-01.img": {
                         frame: {
-                            x: 2521,
-                            y: 3602,
+                            x: 2417,
+                            y: 3600,
                             w: 108,
                             h: 94
                         },
@@ -5480,8 +5300,8 @@
                     },
                     "map-refrigerator-01.img": {
                         frame: {
-                            x: 2633,
-                            y: 3602,
+                            x: 2529,
+                            y: 3600,
                             w: 108,
                             h: 94
                         },
@@ -5500,8 +5320,8 @@
                     },
                     "map-control-panel-03.img": {
                         frame: {
-                            x: 2745,
-                            y: 3602,
+                            x: 2641,
+                            y: 3600,
                             w: 96,
                             h: 94
                         },
@@ -5520,8 +5340,8 @@
                     },
                     "map-tree-res-02.img": {
                         frame: {
-                            x: 2845,
-                            y: 3602,
+                            x: 2741,
+                            y: 3600,
                             w: 96,
                             h: 94
                         },
@@ -5538,30 +5358,10 @@
                             h: 96
                         }
                     },
-                    "map-bush-res-04.img": {
-                        frame: {
-                            x: 2945,
-                            y: 3602,
-                            w: 94,
-                            h: 94
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 25,
-                            y: 25,
-                            w: 94,
-                            h: 94
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
                     "map-pot-02.img": {
                         frame: {
-                            x: 3043,
-                            y: 3602,
+                            x: 2841,
+                            y: 3600,
                             w: 94,
                             h: 94
                         },
@@ -5580,8 +5380,8 @@
                     },
                     "map-pot-01.img": {
                         frame: {
-                            x: 3141,
-                            y: 3602,
+                            x: 2939,
+                            y: 3600,
                             w: 94,
                             h: 94
                         },
@@ -5598,10 +5398,30 @@
                             h: 96
                         }
                     },
+                    "map-bush-res-04.img": {
+                        frame: {
+                            x: 3037,
+                            y: 3600,
+                            w: 94,
+                            h: 94
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 25,
+                            y: 25,
+                            w: 94,
+                            h: 94
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 144
+                        }
+                    },
                     "map-pot-03.img": {
                         frame: {
-                            x: 3239,
-                            y: 3602,
+                            x: 3135,
+                            y: 3600,
                             w: 94,
                             h: 94
                         },
@@ -5620,8 +5440,8 @@
                     },
                     "map-toilet-res-02.img": {
                         frame: {
-                            x: 3347,
-                            y: 1288,
+                            x: 3344,
+                            y: 2526,
                             w: 80,
                             h: 94
                         },
@@ -5640,8 +5460,8 @@
                     },
                     "map-oven-01.img": {
                         frame: {
-                            x: 3337,
-                            y: 3602,
+                            x: 3233,
+                            y: 3600,
                             w: 108,
                             h: 93
                         },
@@ -5660,8 +5480,8 @@
                     },
                     "fish.img": {
                         frame: {
-                            x: 3449,
-                            y: 3602,
+                            x: 3345,
+                            y: 3600,
                             w: 128,
                             h: 92
                         },
@@ -5680,8 +5500,8 @@
                     },
                     "teabag.img": {
                         frame: {
-                            x: 3581,
-                            y: 3602,
+                            x: 3477,
+                            y: 3600,
                             w: 107,
                             h: 91
                         },
@@ -5700,8 +5520,8 @@
                     },
                     "map-drawers-02.img": {
                         frame: {
-                            x: 3803,
-                            y: 2,
+                            x: 3588,
+                            y: 3600,
                             w: 160,
                             h: 90
                         },
@@ -5720,8 +5540,8 @@
                     },
                     "map-drawers-01.img": {
                         frame: {
-                            x: 3803,
-                            y: 96,
+                            x: 2,
+                            y: 3712,
                             w: 160,
                             h: 90
                         },
@@ -5740,8 +5560,8 @@
                     },
                     "loot-medical-pill.img": {
                         frame: {
-                            x: 3803,
-                            y: 190,
+                            x: 166,
+                            y: 3712,
                             w: 118,
                             h: 90
                         },
@@ -5760,8 +5580,8 @@
                     },
                     "coconut.img": {
                         frame: {
-                            x: 3803,
-                            y: 284,
+                            x: 288,
+                            y: 3712,
                             w: 110,
                             h: 90
                         },
@@ -5780,8 +5600,8 @@
                     },
                     "map-stand-01.img": {
                         frame: {
-                            x: 3803,
-                            y: 378,
+                            x: 402,
+                            y: 3712,
                             w: 80,
                             h: 90
                         },
@@ -5796,32 +5616,32 @@
                         sourceSize: {
                             w: 80,
                             h: 90
-                        }
-                    },
-                    "map-crate-14.img": {
-                        frame: {
-                            x: 2,
-                            y: 3714,
-                            w: 172,
-                            h: 89
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 172,
-                            h: 89
-                        },
-                        sourceSize: {
-                            w: 172,
-                            h: 89
                         }
                     },
                     "map-crate-17.img": {
                         frame: {
-                            x: 178,
-                            y: 3714,
+                            x: 486,
+                            y: 3712,
+                            w: 172,
+                            h: 89
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 172,
+                            h: 89
+                        },
+                        sourceSize: {
+                            w: 172,
+                            h: 89
+                        }
+                    },
+                    "map-crate-14.img": {
+                        frame: {
+                            x: 662,
+                            y: 3712,
                             w: 172,
                             h: 89
                         },
@@ -5840,8 +5660,8 @@
                     },
                     "loot-throwable-strobe.img": {
                         frame: {
-                            x: 3803,
-                            y: 472,
+                            x: 838,
+                            y: 3712,
                             w: 103,
                             h: 89
                         },
@@ -5860,8 +5680,8 @@
                     },
                     "map-building-teahouse-floor-02.img": {
                         frame: {
-                            x: 3803,
-                            y: 565,
+                            x: 945,
+                            y: 3712,
                             w: 128,
                             h: 88
                         },
@@ -5880,8 +5700,8 @@
                     },
                     "headshot-face.img": {
                         frame: {
-                            x: 3803,
-                            y: 657,
+                            x: 1077,
+                            y: 3712,
                             w: 127,
                             h: 88
                         },
@@ -5900,8 +5720,8 @@
                     },
                     "pilgrim-hat.img": {
                         frame: {
-                            x: 3803,
-                            y: 749,
+                            x: 1208,
+                            y: 3712,
                             w: 118,
                             h: 88
                         },
@@ -5920,8 +5740,8 @@
                     },
                     "map-couch-res-01.img": {
                         frame: {
-                            x: 354,
-                            y: 3714,
+                            x: 1330,
+                            y: 3712,
                             w: 170,
                             h: 86
                         },
@@ -5940,8 +5760,8 @@
                     },
                     "loot-helmet-03.img": {
                         frame: {
-                            x: 3803,
-                            y: 841,
+                            x: 1504,
+                            y: 3712,
                             w: 112,
                             h: 86
                         },
@@ -6000,8 +5820,8 @@
                     },
                     "map-building-porch-01.img": {
                         frame: {
-                            x: 3803,
-                            y: 931,
+                            x: 3685,
+                            y: 3523,
                             w: 128,
                             h: 64
                         },
@@ -6015,33 +5835,13 @@
                         },
                         sourceSize: {
                             w: 128,
-                            h: 64
-                        }
-                    },
-                    "map-column-01.img": {
-                        frame: {
-                            x: 3887,
-                            y: 378,
-                            w: 64,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 64,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 64,
                             h: 64
                         }
                     },
                     "keyboard.img": {
                         frame: {
-                            x: 3803,
-                            y: 999,
+                            x: 3433,
+                            y: 3267,
                             w: 104,
                             h: 62
                         },
@@ -6060,8 +5860,8 @@
                     },
                     "player-map-downed.img": {
                         frame: {
-                            x: 3803,
-                            y: 1065,
+                            x: 2504,
+                            y: 994,
                             w: 72,
                             h: 62
                         },
@@ -6080,8 +5880,8 @@
                     },
                     "globe.img": {
                         frame: {
-                            x: 3879,
-                            y: 1065,
+                            x: 2580,
+                            y: 994,
                             w: 62,
                             h: 62
                         },
@@ -6100,8 +5900,8 @@
                     },
                     "player-patch-blue.img": {
                         frame: {
-                            x: 3803,
-                            y: 1131,
+                            x: 2646,
+                            y: 994,
                             w: 116,
                             h: 60
                         },
@@ -6120,8 +5920,8 @@
                     },
                     "map-bush-res-02.img": {
                         frame: {
-                            x: 3803,
-                            y: 1195,
+                            x: 3324,
+                            y: 930,
                             w: 59,
                             h: 60
                         },
@@ -6138,10 +5938,30 @@
                             h: 144
                         }
                     },
+                    "skull-outlined.img": {
+                        frame: {
+                            x: 2766,
+                            y: 994,
+                            w: 52,
+                            h: 60
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 2,
+                            w: 52,
+                            h: 60
+                        },
+                        sourceSize: {
+                            w: 64,
+                            h: 64
+                        }
+                    },
                     "map-screen-res-01.img": {
                         frame: {
-                            x: 3803,
-                            y: 1259,
+                            x: 2822,
+                            y: 994,
                             w: 116,
                             h: 58
                         },
@@ -6160,28 +5980,8 @@
                     },
                     "part-frag-pin-01.img": {
                         frame: {
-                            x: 3866,
-                            y: 1195,
-                            w: 58,
-                            h: 58
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 35,
-                            y: 35,
-                            w: 58,
-                            h: 58
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "proj-frag-pin-part.img": {
-                        frame: {
-                            x: 3803,
-                            y: 1321,
+                            x: 2942,
+                            y: 994,
                             w: 58,
                             h: 58
                         },
@@ -6200,8 +6000,8 @@
                     },
                     "map-drawers-res.img": {
                         frame: {
-                            x: 3865,
-                            y: 1321,
+                            x: 3004,
+                            y: 994,
                             w: 92,
                             h: 57
                         },
@@ -6220,8 +6020,8 @@
                     },
                     "map-barrel-res-03.img": {
                         frame: {
-                            x: 3803,
-                            y: 1383,
+                            x: 3100,
+                            y: 994,
                             w: 76,
                             h: 52
                         },
@@ -6240,8 +6040,8 @@
                     },
                     "map-woodpile-res-01.img": {
                         frame: {
-                            x: 3883,
-                            y: 1383,
+                            x: 3180,
+                            y: 994,
                             w: 72,
                             h: 52
                         },
@@ -6258,10 +6058,10 @@
                             h: 96
                         }
                     },
-                    "dc.img": {
+                    "down.img": {
                         frame: {
-                            x: 3910,
-                            y: 472,
+                            x: 3256,
+                            y: 994,
                             w: 52,
                             h: 52
                         },
@@ -6278,10 +6078,10 @@
                             h: 64
                         }
                     },
-                    "down.img": {
+                    "dc.img": {
                         frame: {
-                            x: 3911,
-                            y: 999,
+                            x: 3312,
+                            y: 994,
                             w: 52,
                             h: 52
                         },
@@ -6300,8 +6100,8 @@
                     },
                     "ping-part-quarter.img": {
                         frame: {
-                            x: 3803,
-                            y: 1439,
+                            x: 2541,
+                            y: 1393,
                             w: 88,
                             h: 51
                         },
@@ -6320,8 +6120,8 @@
                     },
                     "ping-part-quarter-highlight.img": {
                         frame: {
-                            x: 3803,
-                            y: 1494,
+                            x: 2633,
+                            y: 1393,
                             w: 88,
                             h: 51
                         },
@@ -6338,10 +6138,30 @@
                             h: 128
                         }
                     },
+                    "map-locker-03.img": {
+                        frame: {
+                            x: 2725,
+                            y: 1393,
+                            w: 96,
+                            h: 49
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 96,
+                            h: 49
+                        },
+                        sourceSize: {
+                            w: 96,
+                            h: 50
+                        }
+                    },
                     "map-locker-01.img": {
                         frame: {
-                            x: 3803,
-                            y: 1549,
+                            x: 2825,
+                            y: 1393,
                             w: 96,
                             h: 49
                         },
@@ -6360,28 +6180,8 @@
                     },
                     "map-locker-02.img": {
                         frame: {
-                            x: 3803,
-                            y: 1602,
-                            w: 96,
-                            h: 49
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 96,
-                            h: 49
-                        },
-                        sourceSize: {
-                            w: 96,
-                            h: 50
-                        }
-                    },
-                    "map-locker-03.img": {
-                        frame: {
-                            x: 3803,
-                            y: 1655,
+                            x: 2925,
+                            y: 1393,
                             w: 96,
                             h: 49
                         },
@@ -6400,8 +6200,8 @@
                     },
                     "map-screen-01.img": {
                         frame: {
-                            x: 2504,
-                            y: 994,
+                            x: 3025,
+                            y: 1393,
                             w: 256,
                             h: 48
                         },
@@ -6420,8 +6220,8 @@
                     },
                     "map-gun-mount-01.img": {
                         frame: {
-                            x: 3803,
-                            y: 1708,
+                            x: 3285,
+                            y: 1393,
                             w: 144,
                             h: 48
                         },
@@ -6440,8 +6240,8 @@
                     },
                     "map-gun-mount-05.img": {
                         frame: {
-                            x: 3803,
-                            y: 1760,
+                            x: 2893,
+                            y: 1742,
                             w: 144,
                             h: 48
                         },
@@ -6458,30 +6258,10 @@
                             h: 56
                         }
                     },
-                    "gun-pkp-bot-01.img": {
-                        frame: {
-                            x: 3803,
-                            y: 1812,
-                            w: 80,
-                            h: 48
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 80,
-                            h: 48
-                        },
-                        sourceSize: {
-                            w: 80,
-                            h: 48
-                        }
-                    },
                     "map-bush-res-01.img": {
                         frame: {
-                            x: 3895,
-                            y: 1439,
+                            x: 3368,
+                            y: 994,
                             w: 52,
                             h: 48
                         },
@@ -6498,10 +6278,10 @@
                             h: 144
                         }
                     },
-                    "surviv.img": {
+                    "emote.img": {
                         frame: {
-                            x: 648,
-                            y: 3355,
+                            x: 3433,
+                            y: 1141,
                             w: 122,
                             h: 122
                         },
@@ -6522,7 +6302,7 @@
             }],
             gradient: [{
                 meta: {
-                    image: "gradient-0-100-b614bca8.png",
+                    image: "gradient-0-100-b43bbd57.png",
                     size: {
                         w: 1024,
                         h: 1024
@@ -6590,29 +6370,49 @@
                             h: 256
                         }
                     },
-                    "player-helmet-forest.img": {
+                    "player-helmet-moon.img": {
                         frame: {
                             x: 2,
                             y: 435,
-                            w: 152,
-                            h: 180
+                            w: 176,
+                            h: 176
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 152,
-                            h: 180
+                            w: 176,
+                            h: 176
                         },
                         sourceSize: {
-                            w: 180,
-                            h: 180
+                            w: 176,
+                            h: 176
+                        }
+                    },
+                    "player-helmet-forest.img": {
+                        frame: {
+                            x: 182,
+                            y: 435,
+                            w: 176,
+                            h: 176
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 176,
+                            h: 176
+                        },
+                        sourceSize: {
+                            w: 176,
+                            h: 176
                         }
                     },
                     "map-plane-02.img": {
                         frame: {
-                            x: 158,
+                            x: 362,
                             y: 435,
                             w: 82,
                             h: 168
@@ -6632,7 +6432,7 @@
                     },
                     "loot-melee-machete-taiga.img": {
                         frame: {
-                            x: 244,
+                            x: 448,
                             y: 435,
                             w: 44,
                             h: 164
@@ -6652,7 +6452,7 @@
                     },
                     "loot-melee-kukri-trad.img": {
                         frame: {
-                            x: 292,
+                            x: 496,
                             y: 435,
                             w: 40,
                             h: 154
@@ -6672,7 +6472,7 @@
                     },
                     "map-bush-03.img": {
                         frame: {
-                            x: 336,
+                            x: 540,
                             y: 435,
                             w: 148,
                             h: 152
@@ -6692,48 +6492,28 @@
                     },
                     "player-circle-base-02.img": {
                         frame: {
-                            x: 488,
-                            y: 435,
-                            w: 148,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 148,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 152,
-                            h: 152
-                        }
-                    },
-                    "player-helmet-moon.img": {
-                        frame: {
                             x: 711,
                             y: 2,
-                            w: 122,
+                            w: 148,
                             h: 148
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 9,
-                            y: 16,
-                            w: 122,
+                            x: 0,
+                            y: 0,
+                            w: 148,
                             h: 148
                         },
                         sourceSize: {
-                            w: 180,
-                            h: 180
+                            w: 148,
+                            h: 148
                         }
                     },
                     "loot-circle-outer-02.img": {
                         frame: {
-                            x: 2,
-                            y: 619,
+                            x: 711,
+                            y: 154,
                             w: 144,
                             h: 144
                         },
@@ -6750,90 +6530,90 @@
                             h: 146
                         }
                     },
-                    "map-light-01.img": {
-                        frame: {
-                            x: 150,
-                            y: 619,
-                            w: 138,
-                            h: 138
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 138,
-                            h: 138
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
                     "player-base-02.img": {
                         frame: {
-                            x: 292,
-                            y: 619,
-                            w: 138,
-                            h: 138
+                            x: 711,
+                            y: 302,
+                            w: 140,
+                            h: 140
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 138,
-                            h: 138
+                            x: 0,
+                            y: 0,
+                            w: 140,
+                            h: 140
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 140,
+                            h: 140
                         }
                     },
                     "player-base-05.img": {
                         frame: {
-                            x: 434,
-                            y: 619,
-                            w: 138,
-                            h: 138
+                            x: 711,
+                            y: 446,
+                            w: 140,
+                            h: 140
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 138,
-                            h: 138
+                            x: 0,
+                            y: 0,
+                            w: 140,
+                            h: 140
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 140,
+                            h: 140
                         }
                     },
                     "player-base-04.img": {
                         frame: {
-                            x: 576,
-                            y: 619,
-                            w: 138,
-                            h: 138
+                            x: 2,
+                            y: 615,
+                            w: 140,
+                            h: 140
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 138,
-                            h: 138
+                            x: 0,
+                            y: 0,
+                            w: 140,
+                            h: 140
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 140,
+                            h: 140
                         }
                     },
                     "player-base-03.img": {
                         frame: {
-                            x: 837,
-                            y: 2,
+                            x: 146,
+                            y: 615,
+                            w: 140,
+                            h: 140
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 140,
+                            h: 140
+                        },
+                        sourceSize: {
+                            w: 140,
+                            h: 140
+                        }
+                    },
+                    "map-light-01.img": {
+                        frame: {
+                            x: 290,
+                            y: 615,
                             w: 138,
                             h: 138
                         },
@@ -6852,8 +6632,8 @@
                     },
                     "loot-melee-bayonet-woodland.img": {
                         frame: {
-                            x: 837,
-                            y: 144,
+                            x: 432,
+                            y: 615,
                             w: 36,
                             h: 118
                         },
@@ -6872,8 +6652,8 @@
                     },
                     "loot-melee-bayonet-rugged.img": {
                         frame: {
-                            x: 877,
-                            y: 144,
+                            x: 472,
+                            y: 615,
                             w: 36,
                             h: 118
                         },
@@ -6892,8 +6672,8 @@
                     },
                     "loot-melee-bowie-vintage.img": {
                         frame: {
-                            x: 917,
-                            y: 144,
+                            x: 512,
+                            y: 615,
                             w: 42,
                             h: 116
                         },
@@ -6912,8 +6692,8 @@
                     },
                     "loot-melee-bowie-frontier.img": {
                         frame: {
-                            x: 837,
-                            y: 266,
+                            x: 558,
+                            y: 615,
                             w: 42,
                             h: 116
                         },
@@ -6932,8 +6712,8 @@
                     },
                     "loot-melee-huntsman-rugged.img": {
                         frame: {
-                            x: 883,
-                            y: 266,
+                            x: 672,
+                            y: 215,
                             w: 24,
                             h: 115
                         },
@@ -6952,8 +6732,8 @@
                     },
                     "loot-melee-huntsman-burnished.img": {
                         frame: {
-                            x: 911,
-                            y: 266,
+                            x: 604,
+                            y: 615,
                             w: 24,
                             h: 115
                         },
@@ -6972,8 +6752,8 @@
                     },
                     "loot-melee-pan-black-side.img": {
                         frame: {
-                            x: 939,
-                            y: 266,
+                            x: 632,
+                            y: 615,
                             w: 19,
                             h: 113
                         },
@@ -6992,8 +6772,8 @@
                     },
                     "loot-shirt-02.img": {
                         frame: {
-                            x: 837,
-                            y: 386,
+                            x: 655,
+                            y: 615,
                             w: 116,
                             h: 112
                         },
@@ -7010,30 +6790,30 @@
                             h: 128
                         }
                     },
-                    "loot-melee-naginata.img": {
+                    "player-bullet-trail-02.img": {
                         frame: {
-                            x: 2,
-                            y: 892,
-                            w: 345,
-                            h: 37
+                            x: 933,
+                            y: 650,
+                            w: 36,
+                            h: 36
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
-                            y: 14,
-                            w: 345,
-                            h: 37
+                            x: 0,
+                            y: 0,
+                            w: 36,
+                            h: 36
                         },
                         sourceSize: {
-                            w: 350,
-                            h: 54
+                            w: 36,
+                            h: 36
                         }
                     },
                     "proj-snowball-02.img": {
                         frame: {
-                            x: 837,
-                            y: 618,
+                            x: 863,
+                            y: 118,
                             w: 106,
                             h: 106
                         },
@@ -7052,8 +6832,8 @@
                     },
                     "proj-snowball-01.img": {
                         frame: {
-                            x: 711,
-                            y: 154,
+                            x: 863,
+                            y: 228,
                             w: 106,
                             h: 106
                         },
@@ -7072,8 +6852,8 @@
                     },
                     "loot-melee-pan-black.img": {
                         frame: {
-                            x: 711,
-                            y: 264,
+                            x: 2,
+                            y: 759,
                             w: 118,
                             h: 86
                         },
@@ -7092,8 +6872,8 @@
                     },
                     "part-flare-01.img": {
                         frame: {
-                            x: 711,
-                            y: 354,
+                            x: 863,
+                            y: 338,
                             w: 86,
                             h: 86
                         },
@@ -7110,30 +6890,10 @@
                             h: 100
                         }
                     },
-                    "loot-melee-fireaxe.img": {
-                        frame: {
-                            x: 2,
-                            y: 767,
-                            w: 154,
-                            h: 79
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 154,
-                            h: 79
-                        },
-                        sourceSize: {
-                            w: 156,
-                            h: 80
-                        }
-                    },
                     "loot-melee-hook-silver.img": {
                         frame: {
-                            x: 711,
-                            y: 444,
+                            x: 863,
+                            y: 428,
                             w: 42,
                             h: 78
                         },
@@ -7150,10 +6910,30 @@
                             h: 128
                         }
                     },
+                    "loot-melee-fireaxe.img": {
+                        frame: {
+                            x: 124,
+                            y: 759,
+                            w: 152,
+                            h: 76
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 152,
+                            h: 76
+                        },
+                        sourceSize: {
+                            w: 152,
+                            h: 76
+                        }
+                    },
                     "part-pulse-01.img": {
                         frame: {
-                            x: 757,
-                            y: 444,
+                            x: 909,
+                            y: 428,
                             w: 66,
                             h: 66
                         },
@@ -7172,8 +6952,8 @@
                     },
                     "part-strobe-01.img": {
                         frame: {
-                            x: 711,
-                            y: 526,
+                            x: 863,
+                            y: 510,
                             w: 66,
                             h: 66
                         },
@@ -7192,8 +6972,8 @@
                     },
                     "part-frag-burst-01.img": {
                         frame: {
-                            x: 640,
-                            y: 435,
+                            x: 863,
+                            y: 580,
                             w: 66,
                             h: 66
                         },
@@ -7212,8 +6992,8 @@
                     },
                     "part-frag-burst-02.img": {
                         frame: {
-                            x: 640,
-                            y: 505,
+                            x: 863,
+                            y: 650,
                             w: 66,
                             h: 66
                         },
@@ -7232,8 +7012,8 @@
                     },
                     "part-potato-01.img": {
                         frame: {
-                            x: 718,
-                            y: 619,
+                            x: 775,
+                            y: 615,
                             w: 66,
                             h: 66
                         },
@@ -7252,68 +7032,68 @@
                     },
                     "loot-melee-stonehammer.img": {
                         frame: {
-                            x: 160,
-                            y: 767,
-                            w: 152,
+                            x: 280,
+                            y: 759,
+                            w: 148,
                             h: 60
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
-                            y: 4,
-                            w: 152,
+                            y: 0,
+                            w: 148,
                             h: 60
                         },
                         sourceSize: {
-                            w: 152,
-                            h: 64
+                            w: 148,
+                            h: 60
                         }
                     },
                     "loot-melee-woodaxe.img": {
                         frame: {
-                            x: 316,
-                            y: 767,
-                            w: 152,
-                            h: 58
+                            x: 432,
+                            y: 759,
+                            w: 148,
+                            h: 54
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 152,
-                            h: 58
+                            w: 148,
+                            h: 54
                         },
                         sourceSize: {
-                            w: 152,
-                            h: 58
+                            w: 148,
+                            h: 54
                         }
                     },
                     "loot-melee-woodaxe-bloody.img": {
                         frame: {
-                            x: 472,
-                            y: 767,
-                            w: 152,
-                            h: 58
+                            x: 584,
+                            y: 759,
+                            w: 148,
+                            h: 54
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 152,
-                            h: 58
+                            w: 148,
+                            h: 54
                         },
                         sourceSize: {
-                            w: 152,
-                            h: 58
+                            w: 148,
+                            h: 54
                         }
                     },
                     "loot-melee-karambit-rugged.img": {
                         frame: {
-                            x: 718,
-                            y: 689,
+                            x: 736,
+                            y: 759,
                             w: 100,
                             h: 42
                         },
@@ -7332,8 +7112,8 @@
                     },
                     "loot-melee-karambit-prismatic.img": {
                         frame: {
-                            x: 628,
-                            y: 767,
+                            x: 840,
+                            y: 759,
                             w: 100,
                             h: 42
                         },
@@ -7352,8 +7132,8 @@
                     },
                     "loot-melee-karambit-drowned.img": {
                         frame: {
-                            x: 732,
-                            y: 767,
+                            x: 2,
+                            y: 849,
                             w: 100,
                             h: 42
                         },
@@ -7370,70 +7150,10 @@
                             h: 128
                         }
                     },
-                    "player-hands-02.img": {
+                    "loot-melee-katana-orchid.img": {
                         frame: {
-                            x: 781,
-                            y: 526,
-                            w: 40,
-                            h: 40
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 40,
-                            h: 40
-                        },
-                        sourceSize: {
-                            w: 42,
-                            h: 42
-                        }
-                    },
-                    "player-bullet-trail-02.img": {
-                        frame: {
-                            x: 788,
-                            y: 619,
-                            w: 39,
-                            h: 40
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 39,
-                            h: 40
-                        },
-                        sourceSize: {
-                            w: 40,
-                            h: 40
-                        }
-                    },
-                    "player-feet-02.img": {
-                        frame: {
-                            x: 947,
-                            y: 618,
-                            w: 28,
-                            h: 40
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 1,
-                            w: 28,
-                            h: 40
-                        },
-                        sourceSize: {
-                            w: 42,
-                            h: 42
-                        }
-                    },
-                    "loot-melee-katana.img": {
-                        frame: {
-                            x: 2,
-                            y: 850,
+                            x: 106,
+                            y: 849,
                             w: 226,
                             h: 38
                         },
@@ -7450,10 +7170,10 @@
                             h: 40
                         }
                     },
-                    "loot-melee-katana-orchid.img": {
+                    "loot-melee-katana.img": {
                         frame: {
-                            x: 232,
-                            y: 850,
+                            x: 336,
+                            y: 849,
                             w: 226,
                             h: 38
                         },
@@ -7472,8 +7192,8 @@
                     },
                     "loot-melee-katana-rusted.img": {
                         frame: {
-                            x: 462,
-                            y: 850,
+                            x: 566,
+                            y: 849,
                             w: 226,
                             h: 38
                         },
@@ -7490,10 +7210,70 @@
                             h: 40
                         }
                     },
+                    "player-hands-02.img": {
+                        frame: {
+                            x: 933,
+                            y: 510,
+                            w: 38,
+                            h: 38
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 38
+                        },
+                        sourceSize: {
+                            w: 38,
+                            h: 38
+                        }
+                    },
+                    "player-feet-02.img": {
+                        frame: {
+                            x: 933,
+                            y: 580,
+                            w: 38,
+                            h: 38
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 38
+                        },
+                        sourceSize: {
+                            w: 38,
+                            h: 38
+                        }
+                    },
+                    "loot-melee-naginata.img": {
+                        frame: {
+                            x: 2,
+                            y: 895,
+                            w: 345,
+                            h: 37
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 14,
+                            w: 345,
+                            h: 37
+                        },
+                        sourceSize: {
+                            w: 350,
+                            h: 54
+                        }
+                    },
                     "loot-shirt-04.img": {
                         frame: {
-                            x: 837,
-                            y: 502,
+                            x: 863,
+                            y: 2,
                             w: 116,
                             h: 112
                         },
@@ -14401,90 +14181,85 @@
     "6e43d1d7": function(e, t, a) {
         "use strict";
 
-        function i(e, t, a, i, r, s, l, c) {
-            var m = o.items[e],
-                p = n.rotate(r, t),
-                d = n.mul(p, 9.5 * a);
-            d = n.rotate(d, (Math.random() - .5) * Math.PI / 3);
-            var h = n.add(i, n.mul(r, o.player.radius + m.particle.shellOffset));
-            m.particle.shellReverse && (d = n.mul(d, -1)), c.addParticle(m.ammo, s, h, d, m.particle.shellScale, -Math.atan2(p.y, p.x), null, l)
+        function u(e, t, a, i, r, o, n, s) {
+            var l = g.items[e],
+                c = d.rotate(r, t),
+                m = d.mul(c, 9.5 * a);
+            m = d.rotate(m, (Math.random() - .5) * Math.PI / 3);
+            var p = d.add(i, d.mul(r, g.player.radius + l.particle.shellOffset));
+            l.particle.shellReverse && (m = d.mul(m, -1)), s.addParticle(l.ammo, o, p, m, l.particle.shellScale, -Math.atan2(c.y, c.x), null, n)
         }
 
-        function r() {
+        function i() {
             this.shots = []
         }
-        var o = (a("8b1dfb45"), a("989ad62a")),
-            n = (a("10899aea"), a("c2a798c8"));
-        a("1901e2d9"), r.prototype = {
-            addShot: function(e, t, a, i, r, s) {
-                for (var l = null, c = 0; c < this.shots.length; c++)
-                    if (!this.shots[c].active) {
-                        l = this.shots[c];
+        var g = (a("8b1dfb45"), a("989ad62a")),
+            d = (a("10899aea"), a("c2a798c8"));
+        a("1901e2d9"), i.prototype = {
+            addShot: function(e, t, a, i, r, o) {
+                for (var n = null, s = 0; s < this.shots.length; s++)
+                    if (!this.shots[s].active) {
+                        n = this.shots[s];
                         break
                     }
-                l || (l = {}, this.shots.push(l));
-                var m = o.items[i];
-                l.active = !0, l.pos = n.copy(e), l.layer = t, l.playerId = a, l.weaponType = i, l.offhand = r, l.lastShot = s, l.ticker = 0, l.pullDelay = void 0 !== m.pullDelay ? .45 * m.pullDelay : 0
+                n || (n = {}, this.shots.push(n));
+                var l = g.items[i];
+                n.active = !0, n.pos = d.copy(e), n.layer = t, n.playerId = a, n.weaponType = i, n.offhand = r, n.lastShot = o, n.ticker = 0, n.pullDelay = void 0 !== l.pullDelay ? .45 * l.pullDelay : 0
             },
-            c: function(e, t, a, r, n) {
-                for (var s = 0; s < this.shots.length; s++) {
-                    var l = this.shots[s];
-                    if (l.active) {
-                        var c = o.items[l.weaponType];
-                        if (0 == l.ticker) {
-                            var m = a.ve(l.playerId),
-                                p = c.sound.shoot;
-                            if (l.lastShot && c.sound.shootLast && (p = c.sound.shootLast), n.playSound(p, {
-                                    channel: l.playerId == t ? "activePlayer" : "otherPlayers",
-                                    soundPos: l.pos,
-                                    layer: m ? m.layer : l.layer,
+            c: function(e, t, a, i, r) {
+                for (var o = 0; o < this.shots.length; o++) {
+                    var n = this.shots[o];
+                    if (n.active) {
+                        var s = g.items[n.weaponType];
+                        if (0 == n.ticker) {
+                            var l = a.ve(n.playerId),
+                                c = s.sound.shoot;
+                            if (n.lastShot && s.sound.shootLast && (c = s.sound.shootLast), r.playSound(c, {
+                                    channel: n.playerId == t ? "activePlayer" : "otherPlayers",
+                                    soundPos: n.pos,
+                                    layer: l ? l.layer : n.layer,
                                     muffled: !0,
-                                    fallOff: c.sound.fallOff ? c.sound.fallOff : 0
-                                }), m) {
-                                if (m.__id == t && "single" == c.fireMode && c.pullDelay) {
-                                    var d = m.re.weapons[m.re.curWeapIdx].ammo,
-                                        h = d > 0 ? c.sound.cycle : c.sound.pull;
-                                    n.stopSound(m.cycleSoundInstance), m.cycleSoundInstance = n.playSound(h)
+                                    fallOff: s.sound.fallOff ? s.sound.fallOff : 0
+                                }), l) {
+                                if (l.__id == t && "single" == s.fireMode && s.pullDelay) {
+                                    var m = 0 < l.re.weapons[l.re.curWeapIdx].ammo ? s.sound.cycle : s.sound.pull;
+                                    r.stopSound(l.cycleSoundInstance), l.cycleSoundInstance = r.playSound(m)
                                 }
-                                var u = l.offhand || !c.isDual,
-                                    g = !l.offhand || !c.isDual;
-                                m.addRecoil(c.worldImg.recoil, u, g), m.fireDelay = c.fireDelay
+                                var p = n.offhand || !s.isDual,
+                                    d = !n.offhand || !s.isDual;
+                                l.addRecoil(s.worldImg.recoil, p, d), l.fireDelay = s.fireDelay
                             }
                         }
-                        if (l.ticker += e, l.ticker >= l.pullDelay) {
-                            var y = a.ve(l.playerId);
-                            y && !y.ie.dead && y.ie.curWeapType == l.weaponType && "shoot" == c.caseTiming && i(l.weaponType, Math.PI / 2 * -1, 1, y.ie.pos, y.ie.dir, y.renderLayer, y.renderZOrd + 1, r), l.active = !1
+                        if (n.ticker += e, n.ticker >= n.pullDelay) {
+                            var h = a.ve(n.playerId);
+                            h && !h.ie.dead && h.ie.curWeapType == n.weaponType && "shoot" == s.caseTiming && u(n.weaponType, Math.PI / 2 * -1, 1, h.ie.pos, h.ie.dir, h.renderLayer, h.renderZOrd + 1, i), n.active = !1
                         }
                     }
                 }
             }
         }, e.exports = {
-            createCasingParticle: i,
-            ze: r
+            createCasingParticle: u,
+            ze: i
         }
     },
     "6ffe8b70": function(e, t, a) {
         "use strict";
-
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-        var r = function() {
-                function e(e, t) {
+        var i = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
             o = a("1901e2d9"),
             n = a("ce29f17f"),
-            s = a("26be8056"),
-            l = a("f4d48896"),
-            c = {
+            r = a("26be8056"),
+            s = a("f4d48896"),
+            l = {
                 muteAudio: !1,
                 masterVolume: 1,
                 soundVolume: 1,
@@ -14500,7 +14275,7 @@
                 region: "na",
                 gameModeIdx: 2,
                 teamAutoFill: !0,
-                language: s.detectLanguage() || "en",
+                language: r.detectLanguage() || "en",
                 emoteTop: 6,
                 emoteRight: 4,
                 emoteBottom: 7,
@@ -14517,39 +14292,41 @@
                 cookiesConsented: !0,
                 regionSelected: !1
             },
-            m = function() {
+            c = function() {
                 function e() {
-                    i(this, e), this.loaded = !1, this.localStorageAvailable = !0, this.config = {}, this.onModifiedListeners = []
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, e), this.loaded = !1, this.localStorageAvailable = !0, this.config = {}, this.onModifiedListeners = []
                 }
-                return r(e, [{
+                return i(e, [{
                     key: "load",
-                    value: function(e) {
-                        var t = this,
-                            a = function(a) {
-                                var i = {};
+                    value: function(a) {
+                        var i = this,
+                            r = function(e) {
+                                var t = {};
                                 try {
-                                    i = JSON.parse(a)
+                                    t = JSON.parse(e)
                                 } catch (e) {}
-                                t.config = o.mergeDeep({}, c, i), t.onModified(), t.loaded = !0, e()
+                                i.config = o.mergeDeep({}, l, t), i.onModified(), i.loaded = !0, a()
                             };
-                        if (n.webview && n.version > "1.0.0") l.storageGetItem("surviv_config", function(e, t) {
-                            e ? (console.log("Failed loading config"), a({})) : a(t)
+                        if (n.webview && "1.0.0" < n.version) s.storageGetItem("surviv_config", function(e, t) {
+                            e ? (console.log("Failed loading config"), r({})) : r(t)
                         });
                         else {
-                            var i = {};
+                            var e = {};
                             try {
-                                i = localStorage.getItem("surviv_config")
-                            } catch (e) {
+                                e = localStorage.getItem("surviv_config")
+                            } catch (a) {
                                 this.localStorageAvailable = !1
                             }
-                            a(i)
+                            r(e)
                         }
                     }
                 }, {
                     key: "store",
                     value: function() {
                         var e = JSON.stringify(this.config);
-                        if (n.webview && n.version > "1.0.0") l.storageSetItem("surviv_config", e, function(e, t) {
+                        if (n.webview && "1.0.0" < n.version) s.storageSetItem("surviv_config", e, function(e, t) {
                             e && console.log("Failed storing config")
                         });
                         else if (this.localStorageAvailable) try {
@@ -14560,7 +14337,7 @@
                     key: "set",
                     value: function(e, t) {
                         if (e) {
-                            for (var a = e.split("."), i = this.config; a.length > 1;) i = i[a.shift()];
+                            for (var a = e.split("."), i = this.config; 1 < a.length;) i = i[a.shift()];
                             i[a.shift()] = t, this.store(), this.onModified(e)
                         }
                     }
@@ -14584,71 +14361,66 @@
                     }
                 }]), e
             }();
-        e.exports = m
+        e.exports = c
     },
     "72409abe": function(e, t, a) {
         "use strict";
 
         function i() {
-            var e = {
-                    fontFamily: "Arial",
-                    fontWeight: "bold",
-                    fontSize: m.pixelRatio > 1 ? 30 : 24,
-                    align: "center",
-                    fill: 16777215,
-                    stroke: 0,
-                    strokeThickness: 0,
-                    dropShadow: !0,
-                    dropShadowColor: "#000000",
-                    dropShadowBlur: 1,
-                    dropShadowAngle: Math.PI / 3,
-                    dropShadowDistance: 1
-                },
-                t = new n.Text("", e);
-            return t.anchor.set(.5, .5), t.scale.set(.5, .5), t
+            var e, t;
+            this.active = !1, this.pos = s.create(0, 0), this.container = new o.Container, this.sprite = o.Sprite.fromImage("skull.img"), this.sprite.anchor.set(.5, .5), this.sprite.scale.set(.4, .4), this.sprite.tint = 5921370, this.container.addChild(this.sprite), this.nameText = (e = {
+                fontFamily: "Arial",
+                fontWeight: "bold",
+                fontSize: 1 < l.pixelRatio ? 30 : 24,
+                align: "center",
+                fill: 16777215,
+                stroke: 0,
+                strokeThickness: 0,
+                dropShadow: !0,
+                dropShadowColor: "#000000",
+                dropShadowBlur: 1,
+                dropShadowAngle: Math.PI / 3,
+                dropShadowDistance: 1
+            }, (t = new o.Text("", e)).anchor.set(.5, .5), t.scale.set(.5, .5), t), this.nameText.anchor.set(.5, -1), this.nameText.tint = n.rgb2hex(n.hsv2rgb(0, 0, .5)), this.container.addChild(this.nameText), this.container.visible = this.sprite
         }
 
         function r() {
-            this.active = !1, this.pos = c.create(0, 0), this.container = new n.Container, this.sprite = n.Sprite.fromImage("skull.img"), this.sprite.anchor.set(.5, .5), this.sprite.scale.set(.4, .4), this.sprite.tint = 5921370, this.container.addChild(this.sprite), this.nameText = i(), this.nameText.anchor.set(.5, -1), this.nameText.tint = l.rgb2hex(l.hsv2rgb(0, 0, .5)), this.container.addChild(this.nameText), this.container.visible = this.sprite
+            this.Me = new c.Pool(i)
         }
-
-        function o() {
-            this.Me = new p.Pool(r)
-        }
-        var n = (a("0e566746"), a("8b1dfb45")),
-            s = a("6b42806d"),
-            l = (a("989ad62a"), a("10899aea"), a("1901e2d9")),
-            c = a("c2a798c8"),
-            m = a("ce29f17f"),
-            p = (a("af8ba00f"), a("753d6e4b"));
-        r.prototype = {
+        var o = (a("0e566746"), a("8b1dfb45")),
+            _ = a("6b42806d"),
+            n = (a("989ad62a"), a("10899aea"), a("1901e2d9")),
+            s = a("c2a798c8"),
+            l = a("ce29f17f"),
+            c = (a("af8ba00f"), a("753d6e4b"));
+        i.prototype = {
             o: function() {},
             n: function() {
                 this.container.visible = !1
             },
             l: function(e, t, a, i) {
-                this.pos = c.copy(e.pos), t && (this.layer = e.layer, this.playerId = e.playerId), a && (this.nameTextSet = !1, this.container.visible = !0)
+                this.pos = s.copy(e.pos), t && (this.layer = e.layer, this.playerId = e.playerId), a && (this.nameTextSet = !1, this.container.visible = !0)
             }
-        }, o.prototype = {
-            c: function(e, t, a, i, r, o, n, l) {
-                for (var c = this.Me.m(), m = 0; m < c.length; m++) {
-                    var p = c[m];
-                    if (p.active) {
-                        if (!p.nameTextSet) {
-                            var d = t.ne(p.playerId),
-                                h = d.groupId,
-                                u = t.ne(r).groupId,
-                                g = i && h != u ? d.anonName : d.name;
-                            p.nameText.text = g, p.nameTextSet = !0
+        }, r.prototype = {
+            c: function(e, t, a, i, r, o, n, s) {
+                for (var l = this.Me.m(), c = 0; c < l.length; c++) {
+                    var m = l[c];
+                    if (m.active) {
+                        if (!m.nameTextSet) {
+                            var p = t.ne(m.playerId),
+                                d = p.groupId,
+                                h = t.ne(r).groupId,
+                                u = i && d != h ? p.anonName : p.name;
+                            m.nameText.text = u, m.nameTextSet = !0
                         }
-                        var y = s.createCircle(p.pos, 1),
-                            w = o.insideStructureStairs(y),
-                            x = p.layer,
-                            f = 12;
-                        0 == p.layer && 0 == a.layer && w && (x |= 2, f += 100), l.addPIXIObj(p.container, x, f, p.__id);
-                        var b = n.pointToScreen(p.pos),
-                            _ = n.pixels(1);
-                        p.container.position.set(b.x, b.y), p.container.scale.set(_, _)
+                        var g = _.createCircle(m.pos, 1),
+                            y = o.insideStructureStairs(g),
+                            w = m.layer,
+                            x = 12;
+                        0 == m.layer && 0 == a.layer && y && (w |= 2, x += 100), s.addPIXIObj(m.container, w, x, m.__id);
+                        var f = n.pointToScreen(m.pos),
+                            b = n.pixels(1);
+                        m.container.position.set(f.x, f.y), m.container.scale.set(b, b)
                     }
                 }
             },
@@ -14660,36 +14432,36 @@
                 return null
             }
         }, e.exports = {
-            Te: o
+            Te: r
         }
     },
     "7510cc08": function(e, t, a) {
         "use strict";
-        var i = (a("34e32c48"), a("6b42806d")),
-            r = a("ceee80d9"),
-            o = a("c2a798c8"),
-            n = {
+        var c = (a("34e32c48"), a("6b42806d")),
+            m = a("ceee80d9"),
+            p = a("c2a798c8"),
+            d = {
                 getBridgeDims: function(e) {
-                    var t = r.getBoundingCollider(e),
-                        a = i.toAabb(t),
-                        n = o.mul(o.sub(a.max, a.min), .5),
-                        s = (o.add(a.min, n), n.x > n.y),
-                        l = o.create(s ? 1 : 0, s ? 0 : 1);
+                    var t = m.getBoundingCollider(e),
+                        a = c.toAabb(t),
+                        i = p.mul(p.sub(a.max, a.min), .5),
+                        r = (p.add(a.min, i), i.x > i.y),
+                        o = p.create(r ? 1 : 0, r ? 0 : 1);
                     return {
-                        length: 2 * o.dot(l, n),
-                        width: 2 * o.dot(o.perp(l), n)
+                        length: 2 * p.dot(o, i),
+                        width: 2 * p.dot(p.perp(o), i)
                     }
                 },
-                getBridgeOverlapCollider: function(e, t, a, s) {
-                    var l = r.Defs[e],
-                        c = n.getBridgeDims(e),
-                        m = o.create(1, 0),
-                        p = o.add(o.mul(m, 1.5 * c.length), o.mul(o.perp(m), c.width * l.terrain.bridge.nearbyWidthMult)),
-                        d = i.createAabbExtents(o.create(0, 0), o.mul(p, .5));
-                    return i.transform(d, t, a, s)
+                getBridgeOverlapCollider: function(e, t, a, i) {
+                    var r = m.Defs[e],
+                        o = d.getBridgeDims(e),
+                        n = p.create(1, 0),
+                        s = p.add(p.mul(n, 1.5 * o.length), p.mul(p.perp(n), o.width * r.terrain.bridge.nearbyWidthMult)),
+                        l = c.createAabbExtents(p.create(0, 0), p.mul(s, .5));
+                    return c.transform(l, t, a, i)
                 }
             };
-        e.exports = n
+        e.exports = d
     },
     "753d6e4b": function(e, t, a) {
         "use strict";
@@ -14715,7 +14487,7 @@
                 return e || (e = new this.creator.type, this.Pe.push(e)), e.active = !0, e.o(), this.activeCount++, e
             },
             free: function(e) {
-                if (e.n(), e.active = !1, this.activeCount--, this.Pe.length > 128 && this.activeCount < this.Pe.length / 2) {
+                if (e.n(), e.active = !1, this.activeCount--, 128 < this.Pe.length && this.activeCount < this.Pe.length / 2) {
                     for (var t = [], a = 0; a < this.Pe.length; a++) this.Pe[a].active && t.push(this.Pe[a]);
                     this.Pe = t
                 }
@@ -14732,21 +14504,19 @@
             },
             getTypeById: function(e, t) {
                 var a = this.getObjById(e);
-                if (!a) {
-                    var i = {
-                        instId: n.instanceId,
-                        id: e,
-                        ids: Object.keys(this.idToObj),
-                        stream: t._view._view
-                    };
-                    return n.logError("getTypeById" + JSON.stringify(i)), n.storeGeneric("objectPoolErr", "getTypeById"), 0
-                }
-                return a.__type
+                if (a) return a.__type;
+                var i = {
+                    instId: n.instanceId,
+                    id: e,
+                    ids: Object.keys(this.idToObj),
+                    stream: t._view._view
+                };
+                return n.logError("getTypeById" + JSON.stringify(i)), n.storeGeneric("objectPoolErr", "getTypeById"), 0
             },
             updateObjFull: function(e, t, a, i) {
                 var r = this.getObjById(t),
                     o = !1;
-                return void 0 === r && (r = this.types[e].alloc(), r.__id = t, r.__type = e, this.idToObj[t] = r, this.seenCount++, o = !0), r.l(a, !0, o, i), r
+                return void 0 === r && ((r = this.types[e].alloc()).__id = t, r.__type = e, this.idToObj[t] = r, this.seenCount++, o = !0), r.l(a, !0, o, i), r
             },
             updateObjPart: function(e, t, a) {
                 var i = this.getObjById(e);
@@ -14763,7 +14533,7 @@
     },
     "7aa4bfa8": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-03-02",
                 locale: "tr"
@@ -15022,24 +14792,19 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "7b5bbf6e": function(e, t, a) {
         "use strict";
 
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-
-        function r(e, t, a) {
+        function s(e, t, a) {
             var i = t.length,
                 r = void 0,
                 o = void 0,
                 n = void 0,
                 s = void 0,
                 l = void 0;
-            return a ? (e = c.fmod(e, 1), r = ~~(e * (i - 1)), n = r, s = (n + 1) % (i - 1), o = n > 0 ? n - 1 : i - 2, l = (s + 1) % (i - 1)) : (e = c.clamp(e, 0, 1), r = ~~(e * (i - 1)), n = r == i - 1 ? r - 1 : r, s = n + 1, o = n > 0 ? n - 1 : n, l = s < i - 1 ? s + 1 : s), {
+            return l = a ? (o = 0 < (n = r = ~~((e = v.fmod(e, 1)) * (i - 1))) ? n - 1 : i - 2, ((s = (n + 1) % (i - 1)) + 1) % (i - 1)) : (o = 0 < (n = (r = ~~((e = v.clamp(e, 0, 1)) * (i - 1))) == i - 1 ? r - 1 : r) ? n - 1 : n, (s = n + 1) < i - 1 ? s + 1 : s), {
                 pt: e * (i - 1) - n,
                 p0: t[o],
                 p1: t[n],
@@ -15048,136 +14813,137 @@
             }
         }
 
-        function o(e, t, a, i, r) {
+        function l(e, t, a, i, r) {
             return .5 * (2 * a + e * (-t + i) + e * e * (2 * t - 5 * a + 4 * i - r) + e * e * e * (3 * a - t - 3 * i + r))
         }
 
-        function n(e, t, a, i, r) {
+        function m(e, t, a, i, r) {
             return .5 * (-t + i + 2 * e * (2 * t - 5 * a + 4 * i - r) + 3 * e * e * (3 * a - t - 3 * i + r))
         }
-        var s = function() {
-                function e(e, t) {
+        var i = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            l = a("0e566746"),
-            c = a("10899aea"),
-            m = a("c2a798c8"),
-            p = function() {
-                function e(t, a) {
-                    i(this, e), l(t.length > 1), this.points = [], this.arcLens = [], this.totalArcLen = 0, this.looped = a;
-                    for (var r = 0; r < t.length; r++) this.points.push(m.copy(t[r]));
-                    for (var o = 4 * t.length, n = this.points[0], s = 0; s <= o; s++) {
-                        var c = s / o,
-                            p = this.getPos(c),
-                            d = 0 == s ? 0 : this.arcLens[s - 1];
-                        this.arcLens[s] = d + m.length(m.sub(p, n)), n = m.copy(p)
+            p = a("0e566746"),
+            v = a("10899aea"),
+            z = a("c2a798c8"),
+            r = function() {
+                function c(e, t) {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, c), p(1 < e.length), this.points = [], this.arcLens = [], this.totalArcLen = 0, this.looped = t;
+                    for (var a = 0; a < e.length; a++) this.points.push(z.copy(e[a]));
+                    for (var i = 4 * e.length, r = this.points[0], o = 0; o <= i; o++) {
+                        var n = o / i,
+                            s = this.getPos(n),
+                            l = 0 == o ? 0 : this.arcLens[o - 1];
+                        this.arcLens[o] = l + z.length(z.sub(s, r)), r = z.copy(s)
                     }
                     this.totalArcLen = this.arcLens[this.arcLens.length - 1]
                 }
-                return s(e, [{
+                return i(c, [{
                     key: "getPos",
                     value: function(e) {
-                        var t = r(e, this.points, this.looped),
+                        var t = s(e, this.points, this.looped),
                             a = t.pt,
                             i = t.p0,
-                            n = t.p1,
-                            s = t.p2,
-                            l = t.p3;
-                        return m.create(o(a, i.x, n.x, s.x, l.x), o(a, i.y, n.y, s.y, l.y))
+                            r = t.p1,
+                            o = t.p2,
+                            n = t.p3;
+                        return z.create(l(a, i.x, r.x, o.x, n.x), l(a, i.y, r.y, o.y, n.y))
                     }
                 }, {
                     key: "getTangent",
                     value: function(e) {
-                        var t = r(e, this.points, this.looped),
+                        var t = s(e, this.points, this.looped),
                             a = t.pt,
                             i = t.p0,
-                            o = t.p1,
-                            s = t.p2,
-                            l = t.p3;
-                        return m.create(n(a, i.x, o.x, s.x, l.x), n(a, i.y, o.y, s.y, l.y))
+                            r = t.p1,
+                            o = t.p2,
+                            n = t.p3;
+                        return z.create(m(a, i.x, r.x, o.x, n.x), m(a, i.y, r.y, o.y, n.y))
                     }
                 }, {
                     key: "getNormal",
                     value: function(e) {
                         var t = this.getTangent(e);
-                        return m.perp(m.normalizeSafe(t, m.create(1, 0)))
+                        return z.perp(z.normalizeSafe(t, z.create(1, 0)))
                     }
                 }, {
                     key: "getClosestTtoPoint",
                     value: function(e) {
                         for (var t = Number.MAX_VALUE, a = 0, i = 0; i < this.points.length - 1; i++) {
-                            var r = c.distToSegmentSq(e, this.points[i], this.points[i + 1]);
+                            var r = v.distToSegmentSq(e, this.points[i], this.points[i + 1]);
                             r < t && (t = r, a = i)
                         }
-                        for (var o = a, n = o + 1, s = this.points[o], l = this.points[n], p = m.sub(l, s), d = c.clamp(m.dot(m.sub(e, s), p) / m.dot(p, p), 0, 1), h = this.points.length - 1, u = c.clamp((o + d - .1) / h, 0, 1), g = c.clamp((o + d + .1) / h, 0, 1), y = (o + d) / h, w = Number.MAX_VALUE, x = 0; x <= 8; x++) {
-                            var f = c.lerp(x / 8, u, g),
-                                b = this.getPos(f),
-                                _ = m.lengthSqr(m.sub(b, e));
-                            _ < w && (y = f, w = _)
+                        for (var o = a, n = o + 1, s = this.points[o], l = this.points[n], c = z.sub(l, s), m = v.clamp(z.dot(z.sub(e, s), c) / z.dot(c, c), 0, 1), p = this.points.length - 1, d = v.clamp((o + m - .1) / p, 0, 1), h = v.clamp((o + m + .1) / p, 0, 1), u = (o + m) / p, g = Number.MAX_VALUE, y = 0; y <= 8; y++) {
+                            var w = v.lerp(y / 8, d, h),
+                                x = this.getPos(w),
+                                f = z.lengthSqr(z.sub(x, e));
+                            f < g && (u = w, g = f)
                         }
-                        var S = this.getTangent(y),
-                            k = m.length(S);
-                        if (k > 0) {
-                            var v = this.getPos(y),
-                                z = m.dot(S, m.sub(e, v)) / k,
-                                M = y + z / (k * h);
-                            m.lengthSqr(m.sub(e, this.getPos(M))) < m.lengthSqr(m.sub(e, v)) && (y = M)
+                        var b = this.getTangent(u),
+                            _ = z.length(b);
+                        if (0 < _) {
+                            var S = this.getPos(u),
+                                k = u + z.dot(b, z.sub(e, S)) / _ / (_ * p);
+                            z.lengthSqr(z.sub(e, this.getPos(k))) < z.lengthSqr(z.sub(e, S)) && (u = k)
                         }
-                        return y
+                        return u
                     }
                 }, {
                     key: "getTfromArcLen",
                     value: function(e) {
-                        e = c.clamp(e, 0, this.totalArcLen);
+                        e = v.clamp(e, 0, this.totalArcLen);
                         for (var t = 0; e > this.arcLens[t];) t++;
                         if (0 == t) return 0;
-                        var a = c.delerp(e, this.arcLens[t - 1], this.arcLens[t]),
+                        var a = v.delerp(e, this.arcLens[t - 1], this.arcLens[t]),
                             i = this.arcLens.length - 1,
                             r = (t - 1) / i,
                             o = t / i;
-                        return c.lerp(a, r, o)
+                        return v.lerp(a, r, o)
                     }
                 }, {
                     key: "getArcLen",
                     value: function(e) {
-                        e = c.clamp(e, 0, 1);
+                        e = v.clamp(e, 0, 1);
                         var t = this.arcLens.length - 1,
                             a = Math.floor(e * t),
                             i = a < t - 1 ? a + 1 : a,
-                            r = c.fmod(e, 1 / t) / (1 / t);
-                        return c.lerp(r, this.arcLens[a], this.arcLens[i])
+                            r = v.fmod(e, 1 / t) / (1 / t);
+                        return v.lerp(r, this.arcLens[a], this.arcLens[i])
                     }
-                }]), e
+                }]), c
             }();
-        e.exports = p
+        e.exports = r
     },
-    "7d64d541": function(e, t, a) {
+    "7d64d541": function(e, t, i) {
         "use strict";
 
-        function i() {
+        function a() {
             this.acceptedLocales = ["da", "de", "en", "es", "fr", "it", "jp", "ko", "nl", "pl", "pt", "ru", "sv", "th", "tr", "vn", "zh-cn", "zh-tw"], this.translations = {};
             for (var e = 0; e < this.acceptedLocales.length; e++) {
                 var t = this.acceptedLocales[e],
-                    i = {};
+                    a = {};
                 try {
-                    i = a("fac69c0a")("./" + t + ".js")
+                    a = i("fac69c0a")("./" + t + ".js")
                 } catch (e) {
                     console.log("localization not found", t)
                 }
-                this.translations[t] = i
+                this.translations[t] = a
             }
             this.locale = "en"
         }
-        var r = a("8ee62bea"),
-            o = a("ce29f17f");
-        i.prototype = {
+        var n = i("8ee62bea"),
+            s = i("ce29f17f");
+        a.prototype = {
             setLocale: function(e) {
                 this.locale = -1 != this.acceptedLocales.indexOf(e) ? e : "en"
             },
@@ -15188,30 +14954,29 @@
                 return this.translations[this.locale][e] || this.translations.en[e] || ""
             },
             localizeIndex: function() {
-                var e = this;
-                r("*[data-l10n]").each(function(t, a) {
-                    var i = r(a),
-                        n = i.attr("data-l10n");
-                    i.hasClass("help-control") && o.touch && (n += "-touch");
-                    var s = e.translate(n);
-                    if (s) {
-                        if (i.attr("label")) return i.attr("label", s), !0;
-                        i.html(s), i.attr("data-label") && i.attr("data-label", s)
+                var o = this;
+                n("*[data-l10n]").each(function(e, t) {
+                    var a = n(t),
+                        i = a.attr("data-l10n");
+                    a.hasClass("help-control") && s.touch && (i += "-touch");
+                    var r = o.translate(i);
+                    if (r) {
+                        if (a.attr("label")) return a.attr("label", r), !0;
+                        a.html(r), a.attr("data-label") && a.attr("data-label", r)
                     }
                 })
             }
-        }, e.exports = i
+        }, e.exports = a
     },
     "81a1fce4": function(e, t) {
-        ! function(e) {
-            if (!e.hasInitialised) {
-                var t = {
+        ! function(p) {
+            if (!p.hasInitialised) {
+                var d = {
                     escapeRegExp: function(e) {
                         return e.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")
                     },
                     hasClass: function(e, t) {
-                        var a = " ";
-                        return 1 === e.nodeType && (a + e.className + a).replace(/[\n\t]/g, a).indexOf(a + t + a) >= 0
+                        return 1 === e.nodeType && 0 <= (" " + e.className + " ").replace(/[\n\t]/g, " ").indexOf(" " + t + " ")
                     },
                     addClass: function(e, t) {
                         e.className += " " + t
@@ -15221,15 +14986,13 @@
                         e.className = e.className.replace(a, "")
                     },
                     interpolateString: function(e, t) {
-                        var a = /{{([a-z][a-z0-9\-_]*)}}/gi;
-                        return e.replace(a, function(e) {
+                        return e.replace(/{{([a-z][a-z0-9\-_]*)}}/gi, function(e) {
                             return t(arguments[1]) || ""
                         })
                     },
                     getCookie: function(e) {
-                        var t = "; " + document.cookie,
-                            a = t.split("; " + e + "=");
-                        return 2 != a.length ? void 0 : a.pop().split(";").shift()
+                        var t = ("; " + document.cookie).split("; " + e + "=");
+                        return 2 != t.length ? void 0 : t.pop().split(";").shift()
                     },
                     setCookie: function(e, t, a, i, r) {
                         var o = new Date;
@@ -15250,16 +15013,16 @@
                         }
                     },
                     hash: function(e) {
-                        var t, a, i, r = 0;
-                        if (0 === e.length) return r;
-                        for (t = 0, i = e.length; t < i; ++t) a = e.charCodeAt(t), r = (r << 5) - r + a, r |= 0;
-                        return r
+                        var t, a, i = 0;
+                        if (0 === e.length) return i;
+                        for (t = 0, a = e.length; t < a; ++t) i = (i << 5) - i + e.charCodeAt(t), i |= 0;
+                        return i
                     },
                     normaliseHex: function(e) {
                         return "#" == e[0] && (e = e.substr(1)), 3 == e.length && (e = e[0] + e[0] + e[1] + e[1] + e[2] + e[2]), e
                     },
                     getContrast: function(e) {
-                        return e = this.normaliseHex(e), (299 * parseInt(e.substr(0, 2), 16) + 587 * parseInt(e.substr(2, 2), 16) + 114 * parseInt(e.substr(4, 2), 16)) / 1e3 >= 128 ? "#000" : "#fff"
+                        return e = this.normaliseHex(e), 128 <= (299 * parseInt(e.substr(0, 2), 16) + 587 * parseInt(e.substr(2, 2), 16) + 114 * parseInt(e.substr(4, 2), 16)) / 1e3 ? "#000" : "#fff"
                     },
                     getLuminance: function(e) {
                         var t = parseInt(this.normaliseHex(e), 16),
@@ -15275,11 +15038,11 @@
                         return "object" == typeof e && null !== e && e.constructor == Object
                     }
                 };
-                e.status = {
+                p.status = {
                     deny: "deny",
                     allow: "allow",
                     dismiss: "dismiss"
-                }, e.transitionEnd = function() {
+                }, p.transitionEnd = function() {
                     var e = document.createElement("div"),
                         t = {
                             t: "transitionend",
@@ -15291,146 +15054,81 @@
                     for (var a in t)
                         if (t.hasOwnProperty(a) && void 0 !== e.style[a + "ransition"]) return t[a];
                     return ""
-                }(), e.hasTransition = !!e.transitionEnd;
-                var a = Object.keys(e.status).map(t.escapeRegExp);
-                e.customStyles = {}, e.Popup = function() {
-                    function i() {
+                }(), p.hasTransition = !!p.transitionEnd;
+                var l = Object.keys(p.status).map(d.escapeRegExp);
+                p.customStyles = {}, p.Popup = function() {
+                    function e() {
                         this.initialise.apply(this, arguments)
                     }
 
-                    function r(e) {
-                        this.openingTimeout = null, t.removeClass(e, "cc-invisible")
+                    function a(e) {
+                        this.openingTimeout = null, d.removeClass(e, "cc-invisible")
                     }
 
-                    function o(t) {
-                        t.style.display = "none", t.removeEventListener(e.transitionEnd, this.afterTransition), this.afterTransition = null
+                    function i(e) {
+                        e.style.display = "none", e.removeEventListener(p.transitionEnd, this.afterTransition), this.afterTransition = null
                     }
 
-                    function n() {
-                        var t = this.options.onInitialise.bind(this);
-                        if (!window.navigator.cookieEnabled) return t(e.status.deny), !0;
-                        if (window.CookiesOK || window.navigator.CookiesOK) return t(e.status.allow), !0;
-                        var a = Object.keys(e.status),
-                            i = this.getStatus(),
-                            r = a.indexOf(i) >= 0;
-                        return r && t(i), r
-                    }
-
-                    function s() {
-                        var e = this.options.position.split("-"),
-                            t = [];
-                        return e.forEach(function(e) {
-                            t.push("cc-" + e)
-                        }), t
-                    }
-
-                    function l() {
+                    function r() {
                         var e = this.options,
-                            a = "top" == e.position || "bottom" == e.position ? "banner" : "floating";
-                        t.isMobile() && (a = "floating");
-                        var i = ["cc-" + a, "cc-type-" + e.type, "cc-theme-" + e.theme];
-                        return e.static && i.push("cc-static"), i.push.apply(i, s.call(this)), d.call(this, this.options.palette), this.customStyleSelector && i.push(this.customStyleSelector), i
+                            t = "top" == e.position || "bottom" == e.position ? "banner" : "floating";
+                        d.isMobile() && (t = "floating");
+                        var a = ["cc-" + t, "cc-type-" + e.type, "cc-theme-" + e.theme];
+                        return e.static && a.push("cc-static"), a.push.apply(a, function() {
+                                var e = this.options.position.split("-"),
+                                    t = [];
+                                return e.forEach(function(e) {
+                                    t.push("cc-" + e)
+                                }), t
+                            }.call(this)),
+                            function(e) {
+                                var t = d.hash(JSON.stringify(e)),
+                                    a = "cc-color-override-" + t,
+                                    i = d.isPlainObject(e);
+                                return this.customStyleSelector = i ? a : null, i && function(e, t, a) {
+                                    if (p.customStyles[e]) return ++p.customStyles[e].references;
+                                    var i = {},
+                                        r = t.popup,
+                                        o = t.button,
+                                        n = t.highlight;
+                                    r && (r.text = r.text ? r.text : d.getContrast(r.background), r.link = r.link ? r.link : r.text, i[a + ".cc-window"] = ["color: " + r.text, "background-color: " + r.background], i[a + ".cc-revoke"] = ["color: " + r.text, "background-color: " + r.background], i[a + " .cc-link," + a + " .cc-link:active," + a + " .cc-link:visited"] = ["color: " + r.link], o && (o.text = o.text ? o.text : d.getContrast(o.background), o.border = o.border ? o.border : "transparent", i[a + " .cc-btn"] = ["color: " + o.text, "border-color: " + o.border, "background-color: " + o.background], "transparent" != o.background && (i[a + " .cc-btn:hover, " + a + " .cc-btn:focus"] = ["background-color: " + (s = o.background, "000000" == (s = d.normaliseHex(s)) ? "#222" : d.getLuminance(s))]), i[a + " .cc-highlight .cc-btn:first-child"] = n ? (n.text = n.text ? n.text : d.getContrast(n.background), n.border = n.border ? n.border : "transparent", ["color: " + n.text, "border-color: " + n.border, "background-color: " + n.background]) : ["color: " + r.text]));
+                                    var s;
+                                    var l = document.createElement("style");
+                                    document.head.appendChild(l), p.customStyles[e] = {
+                                        references: 1,
+                                        element: l.sheet
+                                    };
+                                    var c = -1;
+                                    for (var m in i) i.hasOwnProperty(m) && l.sheet.insertRule(m + "{" + i[m].join(";") + "}", ++c)
+                                }(t, e, "." + a), i
+                            }.call(this, this.options.palette), this.customStyleSelector && a.push(this.customStyleSelector), a
                     }
 
-                    function c() {
-                        var e = {},
-                            a = this.options;
-                        a.showLink || (a.elements.link = "", a.elements.messagelink = a.elements.message), Object.keys(a.elements).forEach(function(i) {
-                            e[i] = t.interpolateString(a.elements[i], function(e) {
-                                var t = a.content[e];
-                                return e && "string" == typeof t && t.length ? t : ""
-                            })
-                        });
-                        var i = a.compliance[a.type];
-                        i || (i = a.compliance.info), e.compliance = t.interpolateString(i, function(t) {
-                            return e[t]
-                        });
-                        var r = a.layouts[a.layout];
-                        return r || (r = a.layouts.basic), t.interpolateString(r, function(t) {
-                            return e[t]
-                        })
-                    }
-
-                    function m(a) {
-                        var i = this.options,
-                            r = document.createElement("div"),
-                            o = i.container && 1 === i.container.nodeType ? i.container : document.body;
-                        r.innerHTML = a;
-                        var n = r.children[0];
-                        return n.style.display = "none", t.hasClass(n, "cc-window") && e.hasTransition && t.addClass(n, "cc-invisible"), this.onButtonClick = p.bind(this), n.addEventListener("click", this.onButtonClick), i.autoAttach && (o.firstChild ? o.insertBefore(n, o.firstChild) : o.appendChild(n)), n
-                    }
-
-                    function p(i) {
-                        var r = i.target;
-                        if (t.hasClass(r, "cc-btn")) {
-                            var o = r.className.match(new RegExp("\\bcc-(" + a.join("|") + ")\\b")),
-                                n = o && o[1] || !1;
-                            n && (this.setStatus(n), this.close(!0))
-                        }
-                        t.hasClass(r, "cc-close") && (this.setStatus(e.status.dismiss), this.close(!0)), t.hasClass(r, "cc-revoke") && this.revokeChoice()
-                    }
-
-                    function d(e) {
-                        var a = t.hash(JSON.stringify(e)),
-                            i = "cc-color-override-" + a,
-                            r = t.isPlainObject(e);
-                        return this.customStyleSelector = r ? i : null, r && h(a, e, "." + i), r
-                    }
-
-                    function h(a, i, r) {
-                        if (e.customStyles[a]) return void++e.customStyles[a].references;
-                        var o = {},
-                            n = i.popup,
-                            s = i.button,
-                            l = i.highlight;
-                        n && (n.text = n.text ? n.text : t.getContrast(n.background), n.link = n.link ? n.link : n.text, o[r + ".cc-window"] = ["color: " + n.text, "background-color: " + n.background], o[r + ".cc-revoke"] = ["color: " + n.text, "background-color: " + n.background], o[r + " .cc-link," + r + " .cc-link:active," + r + " .cc-link:visited"] = ["color: " + n.link], s && (s.text = s.text ? s.text : t.getContrast(s.background), s.border = s.border ? s.border : "transparent", o[r + " .cc-btn"] = ["color: " + s.text, "border-color: " + s.border, "background-color: " + s.background], "transparent" != s.background && (o[r + " .cc-btn:hover, " + r + " .cc-btn:focus"] = ["background-color: " + u(s.background)]), l ? (l.text = l.text ? l.text : t.getContrast(l.background), l.border = l.border ? l.border : "transparent", o[r + " .cc-highlight .cc-btn:first-child"] = ["color: " + l.text, "border-color: " + l.border, "background-color: " + l.background]) : o[r + " .cc-highlight .cc-btn:first-child"] = ["color: " + n.text]));
-                        var c = document.createElement("style");
-                        document.head.appendChild(c), e.customStyles[a] = {
-                            references: 1,
-                            element: c.sheet
-                        };
-                        var m = -1;
-                        for (var p in o) o.hasOwnProperty(p) && c.sheet.insertRule(p + "{" + o[p].join(";") + "}", ++m)
-                    }
-
-                    function u(e) {
-                        return e = t.normaliseHex(e), "000000" == e ? "#222" : t.getLuminance(e)
-                    }
-
-                    function g(a) {
-                        if (t.isPlainObject(a)) {
-                            var i = t.hash(JSON.stringify(a)),
-                                r = e.customStyles[i];
-                            if (r && !--r.references) {
-                                var o = r.element.ownerNode;
-                                o && o.parentNode && o.parentNode.removeChild(o), e.customStyles[i] = null
+                    function o(e) {
+                        var t = this.options,
+                            a = document.createElement("div"),
+                            i = t.container && 1 === t.container.nodeType ? t.container : document.body;
+                        a.innerHTML = e;
+                        var r = a.children[0];
+                        return r.style.display = "none", d.hasClass(r, "cc-window") && p.hasTransition && d.addClass(r, "cc-invisible"), this.onButtonClick = function(e) {
+                            var t = e.target;
+                            if (d.hasClass(t, "cc-btn")) {
+                                var a = t.className.match(new RegExp("\\bcc-(" + l.join("|") + ")\\b")),
+                                    i = a && a[1] || !1;
+                                i && (this.setStatus(i), this.close(!0))
                             }
-                        }
+                            d.hasClass(t, "cc-close") && (this.setStatus(p.status.dismiss), this.close(!0)), d.hasClass(t, "cc-revoke") && this.revokeChoice()
+                        }.bind(this), r.addEventListener("click", this.onButtonClick), t.autoAttach && (i.firstChild ? i.insertBefore(r, i.firstChild) : i.appendChild(r)), r
                     }
 
-                    function y(e, t) {
+                    function n(e, t) {
                         for (var a = 0, i = e.length; a < i; ++a) {
                             var r = e[a];
                             if (r instanceof RegExp && r.test(t) || "string" == typeof r && r.length && r === t) return !0
                         }
                         return !1
                     }
-
-                    function w() {
-                        var t = this.setStatus.bind(this),
-                            a = this.options.dismissOnTimeout;
-                        "number" == typeof a && a >= 0 && (this.dismissTimeout = window.setTimeout(function() {
-                            t(e.status.dismiss)
-                        }, Math.floor(a)));
-                        var i = this.options.dismissOnScroll;
-                        if ("number" == typeof i && i >= 0) {
-                            var r = function(a) {
-                                window.pageYOffset > Math.floor(i) && (t(e.status.dismiss), window.removeEventListener("scroll", r), this.onWindowScroll = null)
-                            };
-                            this.onWindowScroll = r, window.addEventListener("scroll", r)
-                        }
-                    }
-                    var x = {
+                    var s = {
                         enabled: !0,
                         container: null,
                         cookie: {
@@ -15493,88 +15191,115 @@
                         blacklistPage: [],
                         overrideHTML: null
                     };
-                    return i.prototype.initialise = function(e) {
-                        this.options && this.destroy(), t.deepExtend(this.options = {}, x), t.isPlainObject(e) && t.deepExtend(this.options, e), n.call(this) && (this.options.enabled = !1), y(this.options.blacklistPage, location.pathname) && (this.options.enabled = !1), y(this.options.whitelistPage, location.pathname) && (this.options.enabled = !0);
-                        var a = this.options.window.replace("{{classes}}", l.call(this).join(" ")).replace("{{children}}", c.call(this)),
-                            i = this.options.overrideHTML;
-                        if ("string" == typeof i && i.length && (a = i), this.options.static) {
-                            var r = m.call(this, '<div class="cc-grower">' + a + "</div>");
-                            r.style.display = "", this.element = r.firstChild, this.element.style.display = "none", t.addClass(this.element, "cc-invisible")
-                        } else this.element = m.call(this, a);
-                        w.call(this), this.options.autoOpen && this.autoOpen()
-                    }, i.prototype.destroy = function() {
-                        this.onButtonClick && this.element && (this.element.removeEventListener("click", this.onButtonClick), this.onButtonClick = null), this.dismissTimeout && (clearTimeout(this.dismissTimeout), this.dismissTimeout = null), this.onWindowScroll && (window.removeEventListener("scroll", this.onWindowScroll), this.onWindowScroll = null), this.onMouseMove && (window.removeEventListener("mousemove", this.onMouseMove), this.onMouseMove = null), this.element && this.element.parentNode && this.element.parentNode.removeChild(this.element), this.element = null, this.revokeBtn && this.revokeBtn.parentNode && this.revokeBtn.parentNode.removeChild(this.revokeBtn), this.revokeBtn = null, g(this.options.palette), this.options = null
-                    }, i.prototype.open = function(t) {
-                        if (this.element) return this.isOpen() || (e.hasTransition ? this.fadeIn() : this.element.style.display = "", this.options.revokable && this.toggleRevokeButton(), this.options.onPopupOpen.call(this)), this
-                    }, i.prototype.close = function(t) {
-                        if (this.element) return this.isOpen() && (e.hasTransition ? this.fadeOut() : this.element.style.display = "none", t && this.options.revokable && this.toggleRevokeButton(!0), this.options.onPopupClose.call(this)), this
-                    }, i.prototype.fadeIn = function() {
-                        var a = this.element;
-                        if (e.hasTransition && a && (this.afterTransition && o.call(this, a), t.hasClass(a, "cc-invisible"))) {
-                            if (a.style.display = "", this.options.static) {
-                                var i = this.element.clientHeight;
-                                this.element.parentNode.style.maxHeight = i + "px"
+                    return e.prototype.initialise = function(e) {
+                        this.options && this.destroy(), d.deepExtend(this.options = {}, s), d.isPlainObject(e) && d.deepExtend(this.options, e),
+                            function() {
+                                var e = this.options.onInitialise.bind(this);
+                                if (!window.navigator.cookieEnabled) return e(p.status.deny), !0;
+                                if (window.CookiesOK || window.navigator.CookiesOK) return e(p.status.allow), !0;
+                                var t = Object.keys(p.status),
+                                    a = this.getStatus(),
+                                    i = 0 <= t.indexOf(a);
+                                return i && e(a), i
+                            }.call(this) && (this.options.enabled = !1), n(this.options.blacklistPage, location.pathname) && (this.options.enabled = !1), n(this.options.whitelistPage, location.pathname) && (this.options.enabled = !0);
+                        var t = this.options.window.replace("{{classes}}", r.call(this).join(" ")).replace("{{children}}", function() {
+                                var t = {},
+                                    a = this.options;
+                                a.showLink || (a.elements.link = "", a.elements.messagelink = a.elements.message), Object.keys(a.elements).forEach(function(e) {
+                                    t[e] = d.interpolateString(a.elements[e], function(e) {
+                                        var t = a.content[e];
+                                        return e && "string" == typeof t && t.length ? t : ""
+                                    })
+                                });
+                                var e = a.compliance[a.type];
+                                e || (e = a.compliance.info), t.compliance = d.interpolateString(e, function(e) {
+                                    return t[e]
+                                });
+                                var i = a.layouts[a.layout];
+                                return i || (i = a.layouts.basic), d.interpolateString(i, function(e) {
+                                    return t[e]
+                                })
+                            }.call(this)),
+                            a = this.options.overrideHTML;
+                        if ("string" == typeof a && a.length && (t = a), this.options.static) {
+                            var i = o.call(this, '<div class="cc-grower">' + t + "</div>");
+                            i.style.display = "", this.element = i.firstChild, this.element.style.display = "none", d.addClass(this.element, "cc-invisible")
+                        } else this.element = o.call(this, t);
+                        (function() {
+                            var t = this.setStatus.bind(this),
+                                e = this.options.dismissOnTimeout;
+                            "number" == typeof e && 0 <= e && (this.dismissTimeout = window.setTimeout(function() {
+                                t(p.status.dismiss)
+                            }, Math.floor(e)));
+                            var a = this.options.dismissOnScroll;
+                            if ("number" == typeof a && 0 <= a) {
+                                var i = function(e) {
+                                    window.pageYOffset > Math.floor(a) && (t(p.status.dismiss), window.removeEventListener("scroll", i), this.onWindowScroll = null)
+                                };
+                                this.onWindowScroll = i, window.addEventListener("scroll", i)
                             }
-                            this.openingTimeout = setTimeout(r.bind(this, a), 20)
+                        }).call(this), this.options.autoOpen && this.autoOpen()
+                    }, e.prototype.destroy = function() {
+                        this.onButtonClick && this.element && (this.element.removeEventListener("click", this.onButtonClick), this.onButtonClick = null), this.dismissTimeout && (clearTimeout(this.dismissTimeout), this.dismissTimeout = null), this.onWindowScroll && (window.removeEventListener("scroll", this.onWindowScroll), this.onWindowScroll = null), this.onMouseMove && (window.removeEventListener("mousemove", this.onMouseMove), this.onMouseMove = null), this.element && this.element.parentNode && this.element.parentNode.removeChild(this.element), this.element = null, this.revokeBtn && this.revokeBtn.parentNode && this.revokeBtn.parentNode.removeChild(this.revokeBtn), this.revokeBtn = null,
+                            function(e) {
+                                if (d.isPlainObject(e)) {
+                                    var t = d.hash(JSON.stringify(e)),
+                                        a = p.customStyles[t];
+                                    if (a && !--a.references) {
+                                        var i = a.element.ownerNode;
+                                        i && i.parentNode && i.parentNode.removeChild(i), p.customStyles[t] = null
+                                    }
+                                }
+                            }(this.options.palette), this.options = null
+                    }, e.prototype.open = function(e) {
+                        if (this.element) return this.isOpen() || (p.hasTransition ? this.fadeIn() : this.element.style.display = "", this.options.revokable && this.toggleRevokeButton(), this.options.onPopupOpen.call(this)), this
+                    }, e.prototype.close = function(e) {
+                        if (this.element) return this.isOpen() && (p.hasTransition ? this.fadeOut() : this.element.style.display = "none", e && this.options.revokable && this.toggleRevokeButton(!0), this.options.onPopupClose.call(this)), this
+                    }, e.prototype.fadeIn = function() {
+                        var e = this.element;
+                        if (p.hasTransition && e && (this.afterTransition && i.call(this, e), d.hasClass(e, "cc-invisible"))) {
+                            if (e.style.display = "", this.options.static) {
+                                var t = this.element.clientHeight;
+                                this.element.parentNode.style.maxHeight = t + "px"
+                            }
+                            this.openingTimeout = setTimeout(a.bind(this, e), 20)
                         }
-                    }, i.prototype.fadeOut = function() {
-                        var a = this.element;
-                        e.hasTransition && a && (this.openingTimeout && (clearTimeout(this.openingTimeout), r.bind(this, a)), t.hasClass(a, "cc-invisible") || (this.options.static && (this.element.parentNode.style.maxHeight = ""), this.afterTransition = o.bind(this, a), a.addEventListener(e.transitionEnd, this.afterTransition), t.addClass(a, "cc-invisible")))
-                    }, i.prototype.isOpen = function() {
-                        return this.element && "" == this.element.style.display && (!e.hasTransition || !t.hasClass(this.element, "cc-invisible"))
-                    }, i.prototype.toggleRevokeButton = function(e) {
+                    }, e.prototype.fadeOut = function() {
+                        var e = this.element;
+                        p.hasTransition && e && (this.openingTimeout && (clearTimeout(this.openingTimeout), a.bind(this, e)), d.hasClass(e, "cc-invisible") || (this.options.static && (this.element.parentNode.style.maxHeight = ""), this.afterTransition = i.bind(this, e), e.addEventListener(p.transitionEnd, this.afterTransition), d.addClass(e, "cc-invisible")))
+                    }, e.prototype.isOpen = function() {
+                        return this.element && "" == this.element.style.display && (!p.hasTransition || !d.hasClass(this.element, "cc-invisible"))
+                    }, e.prototype.toggleRevokeButton = function(e) {
                         this.revokeBtn && (this.revokeBtn.style.display = e ? "" : "none")
-                    }, i.prototype.revokeChoice = function(e) {
+                    }, e.prototype.revokeChoice = function(e) {
                         this.options.enabled = !0, this.clearStatus(), this.options.onRevokeChoice.call(this), e || this.autoOpen()
-                    }, i.prototype.hasAnswered = function(t) {
-                        return Object.keys(e.status).indexOf(this.getStatus()) >= 0
-                    }, i.prototype.hasConsented = function(t) {
-                        var a = this.getStatus();
-                        return a == e.status.allow || a == e.status.dismiss
-                    }, i.prototype.autoOpen = function(e) {
+                    }, e.prototype.hasAnswered = function(e) {
+                        return 0 <= Object.keys(p.status).indexOf(this.getStatus())
+                    }, e.prototype.hasConsented = function(e) {
+                        var t = this.getStatus();
+                        return t == p.status.allow || t == p.status.dismiss
+                    }, e.prototype.autoOpen = function(e) {
                         !this.hasAnswered() && this.options.enabled && this.open()
-                    }, i.prototype.setStatus = function(a) {
-                        var i = this.options.cookie,
-                            r = t.getCookie(i.name),
-                            o = Object.keys(e.status).indexOf(r) >= 0;
-                        Object.keys(e.status).indexOf(a) >= 0 ? (t.setCookie(i.name, a, i.expiryDays, i.domain, i.path), this.options.onStatusChange.call(this, a, o)) : this.clearStatus()
-                    }, i.prototype.getStatus = function() {
-                        return t.getCookie(this.options.cookie.name)
-                    }, i.prototype.clearStatus = function() {
+                    }, e.prototype.setStatus = function(e) {
+                        var t = this.options.cookie,
+                            a = d.getCookie(t.name),
+                            i = 0 <= Object.keys(p.status).indexOf(a);
+                        0 <= Object.keys(p.status).indexOf(e) ? (d.setCookie(t.name, e, t.expiryDays, t.domain, t.path), this.options.onStatusChange.call(this, e, i)) : this.clearStatus()
+                    }, e.prototype.getStatus = function() {
+                        return d.getCookie(this.options.cookie.name)
+                    }, e.prototype.clearStatus = function() {
                         var e = this.options.cookie;
-                        t.setCookie(e.name, "", -1, e.domain, e.path)
-                    }, i
-                }(), e.Location = function() {
+                        d.setCookie(e.name, "", -1, e.domain, e.path)
+                    }, e
+                }(), p.Location = function() {
                     function e(e) {
-                        t.deepExtend(this.options = {}, o), t.isPlainObject(e) && t.deepExtend(this.options, e), this.currentServiceIndex = -1
+                        d.deepExtend(this.options = {}, t), d.isPlainObject(e) && d.deepExtend(this.options, e), this.currentServiceIndex = -1
                     }
 
-                    function a(e, t, a) {
-                        var i, r = document.createElement("script");
-                        r.type = "text/" + (e.type || "javascript"), r.src = e.src || e, r.async = !1, r.onreadystatechange = r.onload = function() {
-                            var e = r.readyState;
-                            clearTimeout(i), t.done || e && !/loaded|complete/.test(e) || (t.done = !0, t(), r.onreadystatechange = r.onload = null)
-                        }, document.body.appendChild(r), i = setTimeout(function() {
-                            t.done = !0, t(), r.onreadystatechange = r.onload = null
-                        }, a)
-                    }
-
-                    function i(e, t, a, i, r) {
-                        var o = new(window.XMLHttpRequest || window.ActiveXObject)("MSXML2.XMLHTTP.3.0");
-                        if (o.open(i ? "POST" : "GET", e, 1), o.setRequestHeader("X-Requested-With", "XMLHttpRequest"), o.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), Array.isArray(r))
-                            for (var n = 0, s = r.length; n < s; ++n) {
-                                var l = r[n].split(":", 2);
-                                o.setRequestHeader(l[0].replace(/^\s+|\s+$/g, ""), l[1].replace(/^\s+|\s+$/g, ""))
-                            }
-                        "function" == typeof t && (o.onreadystatechange = function() {
-                            o.readyState > 3 && t(o)
-                        }), o.send(i)
-                    }
-
-                    function r(e) {
+                    function i(e) {
                         return new Error("Error [" + (e.code || "UNKNOWN") + "]: " + e.error)
                     }
-                    var o = {
+                    var t = {
                         timeout: 5e3,
                         services: ["freegeoip", "ipinfo", "maxmind"],
                         serviceDefinitions: {
@@ -15585,11 +15310,11 @@
                                     callback: function(e, t) {
                                         try {
                                             var a = JSON.parse(t);
-                                            return a.error ? r(a) : {
+                                            return a.error ? i(a) : {
                                                 code: a.country_code
                                             }
                                         } catch (e) {
-                                            return r({
+                                            return i({
                                                 error: "Invalid response (" + e + ")"
                                             })
                                         }
@@ -15603,11 +15328,11 @@
                                     callback: function(e, t) {
                                         try {
                                             var a = JSON.parse(t);
-                                            return a.error ? r(a) : {
+                                            return a.error ? i(a) : {
                                                 code: a.country
                                             }
                                         } catch (e) {
-                                            return r({
+                                            return i({
                                                 error: "Invalid response (" + e + ")"
                                             })
                                         }
@@ -15621,13 +15346,13 @@
                                     callback: function(e, t) {
                                         try {
                                             var a = JSON.parse(t);
-                                            return "ERROR" == a.statusCode ? r({
+                                            return "ERROR" == a.statusCode ? i({
                                                 error: a.statusMessage
                                             }) : {
                                                 code: a.countryCode
                                             }
                                         } catch (e) {
-                                            return r({
+                                            return i({
                                                 error: "Invalid response (" + e + ")"
                                             })
                                         }
@@ -15638,65 +15363,75 @@
                                 return {
                                     url: "//js.maxmind.com/js/apis/geoip2/v2.1/geoip2.js",
                                     isScript: !0,
-                                    callback: function(e) {
-                                        if (!window.geoip2) return void e(new Error("Unexpected response format. The downloaded script should have exported `geoip2` to the global scope"));
-                                        geoip2.country(function(t) {
+                                    callback: function(t) {
+                                        window.geoip2 ? geoip2.country(function(e) {
                                             try {
-                                                e({
-                                                    code: t.country.iso_code
+                                                t({
+                                                    code: e.country.iso_code
                                                 })
-                                            } catch (t) {
-                                                e(r(t))
+                                            } catch (e) {
+                                                t(i(e))
                                             }
-                                        }, function(t) {
-                                            e(r(t))
-                                        })
+                                        }, function(e) {
+                                            t(i(e))
+                                        }) : t(new Error("Unexpected response format. The downloaded script should have exported `geoip2` to the global scope"))
                                     }
                                 }
                             }
                         }
                     };
                     return e.prototype.getNextService = function() {
-                        var e;
-                        do {
-                            e = this.getServiceByIdx(++this.currentServiceIndex)
-                        } while (this.currentServiceIndex < this.options.services.length && !e);
+                        for (var e; e = this.getServiceByIdx(++this.currentServiceIndex), this.currentServiceIndex < this.options.services.length && !e;);
                         return e
                     }, e.prototype.getServiceByIdx = function(e) {
-                        var a = this.options.services[e];
-                        if ("function" == typeof a) {
-                            var i = a();
-                            return i.name && t.deepExtend(i, this.options.serviceDefinitions[i.name](i)), i
-                        }
-                        return "string" == typeof a ? this.options.serviceDefinitions[a]() : t.isPlainObject(a) ? this.options.serviceDefinitions[a.name](a) : null
+                        var t = this.options.services[e];
+                        if ("function" != typeof t) return "string" == typeof t ? this.options.serviceDefinitions[t]() : d.isPlainObject(t) ? this.options.serviceDefinitions[t.name](t) : null;
+                        var a = t();
+                        return a.name && d.deepExtend(a, this.options.serviceDefinitions[a.name](a)), a
                     }, e.prototype.locate = function(e, t) {
                         var a = this.getNextService();
-                        if (!a) return void t(new Error("No services to run"));
-                        this.callbackComplete = e, this.callbackError = t, this.runService(a, this.runNextServiceOnError.bind(this))
-                    }, e.prototype.setupUrl = function(e) {
-                        var t = this.getCurrentServiceOpts();
-                        return e.url.replace(/\{(.*?)\}/g, function(a, i) {
-                            if ("callback" === i) {
-                                var r = "callback" + Date.now();
-                                return window[r] = function(t) {
-                                    e.__JSONP_DATA = JSON.stringify(t)
-                                }, r
+                        a ? (this.callbackComplete = e, this.callbackError = t, this.runService(a, this.runNextServiceOnError.bind(this))) : t(new Error("No services to run"))
+                    }, e.prototype.setupUrl = function(i) {
+                        var r = this.getCurrentServiceOpts();
+                        return i.url.replace(/\{(.*?)\}/g, function(e, t) {
+                            if ("callback" === t) {
+                                var a = "callback" + Date.now();
+                                return window[a] = function(e) {
+                                    i.__JSONP_DATA = JSON.stringify(e)
+                                }, a
                             }
-                            if (i in t.interpolateUrl) return t.interpolateUrl[i]
+                            if (t in r.interpolateUrl) return r.interpolateUrl[t]
                         })
-                    }, e.prototype.runService = function(e, t) {
+                    }, e.prototype.runService = function(a, i) {
                         var r = this;
-                        e && e.url && e.callback && (e.isScript ? a : i)(this.setupUrl(e), function(a) {
-                            var i = a ? a.responseText : "";
-                            e.__JSONP_DATA && (i = e.__JSONP_DATA, delete e.__JSONP_DATA), r.runServiceCallback.call(r, t, e, i)
-                        }, this.options.timeout, e.data, e.headers)
-                    }, e.prototype.runServiceCallback = function(e, t, a) {
+                        a && a.url && a.callback && (a.isScript ? function(e, t, a) {
+                            var i, r = document.createElement("script");
+                            r.type = "text/" + (e.type || "javascript"), r.src = e.src || e, r.async = !1, r.onreadystatechange = r.onload = function() {
+                                var e = r.readyState;
+                                clearTimeout(i), t.done || e && !/loaded|complete/.test(e) || (t.done = !0, t(), r.onreadystatechange = r.onload = null)
+                            }, document.body.appendChild(r), i = setTimeout(function() {
+                                t.done = !0, t(), r.onreadystatechange = r.onload = null
+                            }, a)
+                        } : function(e, t, a, i, r) {
+                            var o = new(window.XMLHttpRequest || window.ActiveXObject)("MSXML2.XMLHTTP.3.0");
+                            if (o.open(i ? "POST" : "GET", e, 1), o.setRequestHeader("X-Requested-With", "XMLHttpRequest"), o.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), Array.isArray(r))
+                                for (var n = 0, s = r.length; n < s; ++n) {
+                                    var l = r[n].split(":", 2);
+                                    o.setRequestHeader(l[0].replace(/^\s+|\s+$/g, ""), l[1].replace(/^\s+|\s+$/g, ""))
+                                }
+                            "function" == typeof t && (o.onreadystatechange = function() {
+                                3 < o.readyState && t(o)
+                            }), o.send(i)
+                        })(this.setupUrl(a), function(e) {
+                            var t = e ? e.responseText : "";
+                            a.__JSONP_DATA && (t = a.__JSONP_DATA, delete a.__JSONP_DATA), r.runServiceCallback.call(r, i, a, t)
+                        }, this.options.timeout, a.data, a.headers)
+                    }, e.prototype.runServiceCallback = function(t, e, a) {
                         var i = this,
-                            r = function(t) {
-                                o || i.onServiceResult.call(i, e, t)
-                            },
-                            o = t.callback(r, a);
-                        o && this.onServiceResult.call(this, e, o)
+                            r = e.callback(function(e) {
+                                r || i.onServiceResult.call(i, t, e)
+                            }, a);
+                        r && this.onServiceResult.call(this, t, r)
                     }, e.prototype.onServiceResult = function(e, t) {
                         t instanceof Error || t && t.error ? e.call(this, t, null) : e.call(this, null, t)
                     }, e.prototype.runNextServiceOnError = function(e, t) {
@@ -15709,7 +15444,7 @@
                         var e = this.options.services[this.currentServiceIndex];
                         return "string" == typeof e ? {
                             name: e
-                        } : "function" == typeof e ? e() : t.isPlainObject(e) ? e : {}
+                        } : "function" == typeof e ? e() : d.isPlainObject(e) ? e : {}
                     }, e.prototype.completeService = function(e, t) {
                         this.currentServiceIndex = -1, e && e(t)
                     }, e.prototype.logError = function(e) {
@@ -15717,93 +15452,77 @@
                             a = this.getServiceByIdx(t);
                         console.error("The service[" + t + "] (" + a.url + ") responded with the following error", e)
                     }, e
-                }(), e.Law = function() {
+                }(), p.Law = function() {
                     function e(e) {
                         this.initialise.apply(this, arguments)
                     }
-                    var a = {
+                    var t = {
                         regionalLaw: !0,
                         hasLaw: ["AT", "BE", "BG", "HR", "CZ", "CY", "DK", "EE", "FI", "FR", "DE", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "SK", "SI", "ES", "SE", "GB", "UK"],
                         revokable: ["HR", "CY", "DK", "EE", "FR", "DE", "LV", "LT", "NL", "PT", "ES"],
                         explicitAction: ["HR", "IT", "ES"]
                     };
                     return e.prototype.initialise = function(e) {
-                        t.deepExtend(this.options = {}, a), t.isPlainObject(e) && t.deepExtend(this.options, e)
+                        d.deepExtend(this.options = {}, t), d.isPlainObject(e) && d.deepExtend(this.options, e)
                     }, e.prototype.get = function(e) {
                         var t = this.options;
                         return {
-                            hasLaw: t.hasLaw.indexOf(e) >= 0,
-                            revokable: t.revokable.indexOf(e) >= 0,
-                            explicitAction: t.explicitAction.indexOf(e) >= 0
+                            hasLaw: 0 <= t.hasLaw.indexOf(e),
+                            revokable: 0 <= t.revokable.indexOf(e),
+                            explicitAction: 0 <= t.explicitAction.indexOf(e)
                         }
                     }, e.prototype.applyLaw = function(e, t) {
                         var a = this.get(t);
                         return a.hasLaw || (e.enabled = !1), this.options.regionalLaw && (a.revokable && (e.revokable = !0), a.explicitAction && (e.dismissOnScroll = !1, e.dismissOnTimeout = !1)), e
                     }, e
-                }(), e.initialise = function(t, a, i) {
-                    var r = new e.Law(t.law);
-                    a || (a = function() {}), i || (i = function() {}), e.getCountryCode(t, function(i) {
-                        delete t.law, delete t.location, i.code && (t = r.applyLaw(t, i.code)), a(new e.Popup(t))
-                    }, function(a) {
-                        delete t.law, delete t.location, i(a, new e.Popup(t))
+                }(), p.initialise = function(t, a, i) {
+                    var r = new p.Law(t.law);
+                    a || (a = function() {}), i || (i = function() {}), p.getCountryCode(t, function(e) {
+                        delete t.law, delete t.location, e.code && (t = r.applyLaw(t, e.code)), a(new p.Popup(t))
+                    }, function(e) {
+                        delete t.law, delete t.location, i(e, new p.Popup(t))
                     })
-                }, e.getCountryCode = function(t, a, i) {
-                    return t.law && t.law.countryCode ? void a({
-                        code: t.law.countryCode
-                    }) : t.location ? void new e.Location(t.location).locate(function(e) {
-                        a(e || {})
-                    }, i) : void a({})
-                }, e.utils = t, e.hasInitialised = !0, window.cookieconsent = e
+                }, p.getCountryCode = function(e, t, a) {
+                    return e.law && e.law.countryCode ? void t({
+                        code: e.law.countryCode
+                    }) : e.location ? void new p.Location(e.location).locate(function(e) {
+                        t(e || {})
+                    }, a) : void t({})
+                }, p.utils = d, p.hasInitialised = !0, window.cookieconsent = p
             }
         }(window.cookieconsent || {})
     },
     "8649e148": function(e, t, a) {
         "use strict";
-
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-        var r = function() {
-                function e(e, t) {
+        var i = function() {
+                function i(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
                         i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
                     }
                 }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
+                return function(e, t, a) {
+                    return t && i(e.prototype, t), a && i(e, a), e
                 }
             }(),
-            o = a("0e566746"),
-            n = {
-                Invalid: 0,
-                Player: 1,
-                Obstacle: 2,
-                Loot: 3,
-                LootSpawner: 4,
-                DeadBody: 5,
-                Building: 6,
-                Structure: 7,
-                Decal: 8,
-                Projectile: 9,
-                Smoke: 10,
-                Airdrop: 11
-            },
-            s = 65535,
-            l = function() {
-                function e() {
-                    i(this, e), this.objects = [], this.idToObj = [];
-                    for (var t = 0; t < s; t++) this.idToObj[t] = null;
-                    this.idToType = new Uint8Array(s), this.dirtyPart = new Uint8Array(s), this.dirtyFull = new Uint8Array(s), this.idNext = 1, this.freeLists = {}
+            r = a("0e566746"),
+            o = 65535,
+            n = function() {
+                function t() {
+                    (function(e, t) {
+                        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                    })(this, t), this.objects = [], this.idToObj = [];
+                    for (var e = 0; e < o; e++) this.idToObj[e] = null;
+                    this.idToType = new Uint8Array(o), this.dirtyPart = new Uint8Array(o), this.dirtyFull = new Uint8Array(o), this.idNext = 1, this.freeLists = {}
                 }
-                return r(e, [{
+                return i(t, [{
                     key: "allocId",
                     value: function(e) {
                         var t = 1;
-                        if (this.idNext < s) t = this.idNext++;
+                        if (this.idNext < o) t = this.idNext++;
                         else {
                             var a = this.freeLists[e] || [];
-                            a.length > 0 ? t = a.shift() : o(!1)
+                            0 < a.length ? t = a.shift() : r(!1)
                         }
                         return t
                     }
@@ -15821,21 +15540,34 @@
                 }, {
                     key: "unregister",
                     value: function(e) {
-                        o(e.__id > 0);
+                        r(0 < e.__id);
                         var t = this.objects.pop();
-                        e !== t && (this.objects[e.__arrayIdx] = t, t.__arrayIdx = e.__arrayIdx), this.idToObj[e.__id] = null, this.freeId(e.__type, e.__id), this.idToType[e.__id] = 0, this.dirtyPart[e.__id] = 0, this.dirtyFull[e.__id] = 0, e.__id = 0, e.__type = 0
+                        e !== t && ((this.objects[e.__arrayIdx] = t).__arrayIdx = e.__arrayIdx), this.idToObj[e.__id] = null, this.freeId(e.__type, e.__id), this.idToType[e.__id] = 0, this.dirtyPart[e.__id] = 0, this.dirtyFull[e.__id] = 0, e.__id = 0, e.__type = 0
                     }
-                }]), e
+                }]), t
             }();
         e.exports = {
-            MAX_ID: s,
-            Type: n,
-            Registrar: l
+            MAX_ID: o,
+            Type: {
+                Invalid: 0,
+                Player: 1,
+                Obstacle: 2,
+                Loot: 3,
+                LootSpawner: 4,
+                DeadBody: 5,
+                Building: 6,
+                Structure: 7,
+                Decal: 8,
+                Projectile: 9,
+                Smoke: 10,
+                Airdrop: 11
+            },
+            Registrar: n
         }
     },
     "8f9fd353": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-03-17",
                 locale: "da"
@@ -16094,56 +15826,54 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "903f46c9": function(e, t, a) {
         "use strict";
         var i = (a("989ad62a"), a("1901e2d9")),
-            r = (a("c2a798c8"), a("d5ec3c16")),
-            o = {
-                desc: {
-                    name: "Faction",
-                    icon: "img/loot/loot-weapon-flare-gun.svg"
-                },
-                assets: {
-                    audio: [{
-                        name: "leader_dead_01",
-                        channel: "ui"
-                    }, {
-                        name: "leader_assigned_01",
-                        channel: "ui"
-                    }, {
-                        name: "ping_leader_01",
-                        channel: "ui"
-                    }, {
-                        name: "lt_assigned_01",
-                        channel: "ui"
-                    }],
-                    atlases: ["gradient", "shared", "faction"]
-                },
-                biome: {
-                    colors: {
-                        background: 333348,
-                        water: 465718,
-                        beach: 9328178,
-                        riverbank: 6632211,
-                        grass: 5136680,
-                        underground: 1772803,
-                        playerSubmerge: 1192009
-                    }
-                },
-                gameMode: {
-                    maxPlayers: 100,
-                    factionMode: !0,
-                    factions: 2
+            r = (a("c2a798c8"), a("d5ec3c16"));
+        e.exports = i.mergeDeep({}, r, {
+            desc: {
+                name: "Faction",
+                icon: "img/loot/loot-weapon-flare-gun.svg"
+            },
+            assets: {
+                audio: [{
+                    name: "leader_dead_01",
+                    channel: "ui"
+                }, {
+                    name: "leader_assigned_01",
+                    channel: "ui"
+                }, {
+                    name: "ping_leader_01",
+                    channel: "ui"
+                }, {
+                    name: "lt_assigned_01",
+                    channel: "ui"
+                }],
+                atlases: ["gradient", "shared", "faction"]
+            },
+            biome: {
+                colors: {
+                    background: 333348,
+                    water: 465718,
+                    beach: 9328178,
+                    riverbank: 6632211,
+                    grass: 5136680,
+                    underground: 1772803,
+                    playerSubmerge: 1192009
                 }
-            };
-        e.exports = i.mergeDeep({}, r, o)
+            },
+            gameMode: {
+                maxPlayers: 100,
+                factionMode: !0,
+                factions: 2
+            }
+        })
     },
     "9085f81b": function(e, t, a) {
         "use strict";
-        var i = {
+        e.exports = {
             "@metadata": {
                 "last-updated": "2018-02-06",
                 locale: "zh-tw"
@@ -16378,8 +16108,7 @@
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
             "game-youve-been-promoted-to": "You've been promoted to"
-        };
-        e.exports = i
+        }
     },
     "927ff3fc": function(e, t) {},
     "966d985b": function(e, t, a) {
@@ -16388,11 +16117,11 @@
         function i(e) {
             this.Ie = e, this.Ce = [], this.Ae = {}
         }
-        var r = a("8b1dfb45"),
-            o = a("989ad62a"),
-            n = a("c2a798c8"),
-            s = a("ce29f17f"),
-            l = a("10899aea");
+        var s = a("8b1dfb45"),
+            l = a("989ad62a"),
+            c = a("c2a798c8"),
+            m = a("ce29f17f"),
+            r = a("10899aea");
         i.prototype = {
             ce: function(e) {
                 for (var t = 0; t < e.length; t++) {
@@ -16404,7 +16133,7 @@
                 var t = {
                     id: e.id,
                     type: e.type,
-                    pos: n.copy(e.pos),
+                    pos: c.copy(e.pos),
                     equipped: e.equipped,
                     mapSprite: this.Ie.addSprite(),
                     pulseSprite: this.Ie.addSprite(),
@@ -16415,7 +16144,7 @@
                     pulseDir: 1,
                     pulseSpeed: .3
                 };
-                return this.Ce.push(t), this.Ae[e.id] = t, t
+                return this.Ce.push(t), this.Ae[e.id] = t
             },
             Ee: function(e) {
                 for (var t = 0; t < this.Ce.length; t++) {
@@ -16428,20 +16157,20 @@
             },
             De: function(e) {
                 var t = this.Ae[e.id];
-                t || (t = this.Oe(e)), t.pos = n.copy(e.pos), t.equipped = e.equipped;
-                var a = o.items[t.type],
-                    i = s.uiLayout == s.UiLayout.Sm ? .15 : .2,
-                    l = t.equipped ? 655350 : 1,
-                    c = t.mapSprite;
-                if (c.pos = n.copy(t.pos), c.scale = 1.25 * i, c.alpha = 1, c.zOrder = l, c.visible = !0, c.sprite.texture = r.Texture.fromImage(a.mapIndicator.sprite), c.sprite.tint = a.mapIndicator.tint, a.mapIndicator.pulse) {
-                    var m = t.pulseSprite;
-                    m.pos = n.copy(t.pos), m.scale = 1, m.zOrder = l - 1, m.visible = !0, m.sprite.texture = r.Texture.fromImage("part-pulse-01.img"), m.sprite.tint = a.mapIndicator.pulseTint
+                t || (t = this.Oe(e)), t.pos = c.copy(e.pos), t.equipped = e.equipped;
+                var a = l.items[t.type],
+                    i = m.uiLayout == m.UiLayout.Sm ? .15 : .2,
+                    r = t.equipped ? 655350 : 1,
+                    o = t.mapSprite;
+                if (o.pos = c.copy(t.pos), o.scale = 1.25 * i, o.alpha = 1, o.zOrder = r, o.visible = !0, o.sprite.texture = s.Texture.fromImage(a.mapIndicator.sprite), o.sprite.tint = a.mapIndicator.tint, a.mapIndicator.pulse) {
+                    var n = t.pulseSprite;
+                    n.pos = c.copy(t.pos), n.scale = 1, n.zOrder = r - 1, n.visible = !0, n.sprite.texture = s.Texture.fromImage("part-pulse-01.img"), n.sprite.tint = a.mapIndicator.pulseTint
                 }
             },
             oe: function(e) {
                 for (var t = 0; t < this.Ce.length; t++) {
                     var a = this.Ce[t];
-                    a.pulseTicker = l.clamp(a.pulseTicker + e * a.pulseDir * a.pulseSpeed, a.pulseScaleMin, 1), a.pulseScale = a.pulseTicker * a.pulseScaleMax, (a.pulseScale >= a.pulseScaleMax || a.pulseTicker <= a.pulseScaleMin) && (a.pulseDir *= -1), a.pulseSprite.scale = a.pulseScale, a.pulseSprite.visible = a.equipped
+                    a.pulseTicker = r.clamp(a.pulseTicker + e * a.pulseDir * a.pulseSpeed, a.pulseScaleMin, 1), a.pulseScale = a.pulseTicker * a.pulseScaleMax, (a.pulseScale >= a.pulseScaleMax || a.pulseTicker <= a.pulseScaleMin) && (a.pulseDir *= -1), a.pulseSprite.scale = a.pulseScale, a.pulseSprite.visible = a.equipped
                 }
             }
         }, e.exports = {
@@ -19994,3 +19723,251 @@
                         tint: 65280,
                         border: "loot-circle-outer-01.img",
                         borderTint: 0,
+                        scale: .3
+                    },
+                    worldImg: {
+                        sprite: "gun-med-01.img",
+                        scale: {
+                            x: .5,
+                            y: .49
+                        },
+                        tint: 1184274,
+                        leftHandOffset: 0,
+                        recoil: 1
+                    },
+                    particle: {
+                        shellScale: 1,
+                        shellOffset: .375
+                    },
+                    sound: {
+                        shoot: "mp5_01",
+                        reload: "mp5_reload_01",
+                        pickup: "gun_pickup_01",
+                        empty: "empty_fire_01",
+                        deploy: "mp5_switch_01"
+                    }
+                },
+                mac10: {
+                    name: "MAC-10",
+                    type: "gun",
+                    quality: 0,
+                    fireMode: "auto",
+                    reloadMode: "mag",
+                    caseTiming: "shoot",
+                    ammo: "9mm",
+                    ammoSpawnCount: 96,
+                    maxClip: 32,
+                    maxReload: 32,
+                    extendedClip: 50,
+                    extendedReload: 50,
+                    reloadTime: 1.8,
+                    fireDelay: .045,
+                    switchDelay: .75,
+                    barrelLength: 2.45,
+                    recoilTime: 1e10,
+                    moveSpread: 11,
+                    shotSpread: 10,
+                    bulletCount: 1,
+                    bulletType: "bullet_mac10",
+                    headshotMult: 2,
+                    speed: {
+                        equip: 0,
+                        attack: 0
+                    },
+                    lootImg: {
+                        sprite: "loot-weapon-mac10.img",
+                        tint: 65280,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .3
+                    },
+                    worldImg: {
+                        sprite: "gun-med-01.img",
+                        scale: {
+                            x: .5,
+                            y: .44
+                        },
+                        tint: 3684408,
+                        leftHandOffset: 1.4,
+                        recoil: 1
+                    },
+                    particle: {
+                        shellScale: 1,
+                        shellOffset: .35
+                    },
+                    sound: {
+                        shoot: "mac10_01",
+                        reload: "mac10_reload_01",
+                        pickup: "gun_pickup_01",
+                        empty: "empty_fire_01",
+                        deploy: "mac10_switch_01"
+                    }
+                },
+                ump9: {
+                    name: "UMP9",
+                    type: "gun",
+                    quality: 0,
+                    fireMode: "burst",
+                    reloadMode: "mag",
+                    caseTiming: "shoot",
+                    ammo: "9mm",
+                    ammoSpawnCount: 90,
+                    maxClip: 30,
+                    maxReload: 30,
+                    extendedClip: 40,
+                    extendedReload: 40,
+                    reloadTime: 1.9,
+                    fireDelay: .35,
+                    burstDelay: .07,
+                    switchDelay: .75,
+                    barrelLength: 2.7,
+                    recoilTime: 1e10,
+                    moveSpread: 3,
+                    shotSpread: 1.5,
+                    bulletCount: 1,
+                    burstCount: 3,
+                    bulletType: "bullet_ump9",
+                    headshotMult: 2,
+                    speed: {
+                        equip: 0,
+                        attack: 0
+                    },
+                    lootImg: {
+                        sprite: "loot-weapon-ump9.img",
+                        tint: 65280,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .3
+                    },
+                    worldImg: {
+                        sprite: "gun-med-01.img",
+                        scale: {
+                            x: .5,
+                            y: .515
+                        },
+                        tint: 1184274,
+                        leftHandOffset: 5.6,
+                        recoil: 1
+                    },
+                    particle: {
+                        shellScale: 1,
+                        shellOffset: .4
+                    },
+                    sound: {
+                        shoot: "ump9_01",
+                        reload: "ump9_reload_01",
+                        pickup: "gun_pickup_01",
+                        empty: "empty_fire_01",
+                        deploy: "ump9_switch_01"
+                    }
+                },
+                vector: {
+                    name: "Vector",
+                    type: "gun",
+                    quality: 1,
+                    fireMode: "auto",
+                    reloadMode: "mag",
+                    caseTiming: "shoot",
+                    ammo: "9mm",
+                    ammoSpawnCount: 99,
+                    maxClip: 33,
+                    maxReload: 33,
+                    extendedClip: 40,
+                    extendedReload: 40,
+                    reloadTime: 1.6,
+                    fireDelay: .038,
+                    switchDelay: .75,
+                    barrelLength: 2.5,
+                    recoilTime: 1e10,
+                    moveSpread: 4.5,
+                    shotSpread: 2.5,
+                    bulletCount: 1,
+                    bulletType: "bullet_vector",
+                    headshotMult: 2,
+                    speed: {
+                        equip: 0,
+                        attack: 0
+                    },
+                    lootImg: {
+                        sprite: "loot-weapon-vector.img",
+                        tint: 65280,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .3
+                    },
+                    worldImg: {
+                        sprite: "gun-med-01.img",
+                        scale: {
+                            x: .5,
+                            y: .5
+                        },
+                        tint: 9009504,
+                        leftHandOffset: 7,
+                        recoil: .89
+                    },
+                    particle: {
+                        shellScale: 1,
+                        shellOffset: .4
+                    },
+                    sound: {
+                        shoot: "vector_01",
+                        reload: "vector_reload_01",
+                        pickup: "gun_pickup_01",
+                        empty: "empty_fire_01",
+                        deploy: "vector_switch_01"
+                    }
+                },
+                vector45: {
+                    name: "Vector",
+                    type: "gun",
+                    quality: 1,
+                    fireMode: "auto",
+                    reloadMode: "mag",
+                    caseTiming: "shoot",
+                    ammo: "45acp",
+                    ammoSpawnCount: 75,
+                    maxClip: 25,
+                    maxReload: 25,
+                    extendedClip: 32,
+                    extendedReload: 32,
+                    reloadTime: 1.6,
+                    fireDelay: .044,
+                    switchDelay: .75,
+                    barrelLength: 2.5,
+                    recoilTime: 1e10,
+                    moveSpread: 6.5,
+                    shotSpread: 4.5,
+                    bulletCount: 1,
+                    bulletType: "bullet_vector45",
+                    headshotMult: 2,
+                    speed: {
+                        equip: 0,
+                        attack: 0
+                    },
+                    lootImg: {
+                        sprite: "loot-weapon-vector45.img",
+                        tint: 65280,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .3
+                    },
+                    worldImg: {
+                        sprite: "gun-med-01.img",
+                        scale: {
+                            x: .5,
+                            y: .5
+                        },
+                        tint: 9009504,
+                        leftHandOffset: 7,
+                        recoil: .89
+                    },
+                    particle: {
+                        shellScale: 1.2,
+                        shellOffset: .4
+                    },
+                    sound: {
+                        shoot: "vector_02",
+                        reload: "vector_reload_01",
+                        pickup: "gun_pickup_01",
+                        empty: "empty_fire_01",
+                        deploy: "vector_switch_01"
