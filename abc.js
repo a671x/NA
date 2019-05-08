@@ -1331,7 +1331,7 @@
         }
 
         function r() {
-            this.Mt = new h.Pool(i)
+            this.Pt = new h.Pool(i)
         }
         var o = a("8b1dfb45"),
             n = a("989ad62a"),
@@ -1372,7 +1372,7 @@
             }
         }, r.prototype = {
             c: function(e, t, a, i, r, o, h) {
-                for (var g = this.Mt.m(), y = 0; y < g.length; y++) {
+                for (var g = this.Pt.m(), y = 0; y < g.length; y++) {
                     var w = g[y];
                     if (w.active) {
                         var x = (n.items[w.type], w.rotDrag);
@@ -1438,7 +1438,7 @@
                 }
             }
         }, e.exports = {
-            ot: r
+            st: r
         }
     },
     bdd2570b: function(e, t, a) {
@@ -2387,7 +2387,7 @@
                 if (this.canvasMode) {
                     if (a.clear(), this.layerMaskActive) {
                         a.beginFill(16777215, 1), a.drawRect(0, 0, e.screenWidth, e.screenHeight);
-                        for (var i = t.zt.m(), r = 0; r < i.length; r++) {
+                        for (var i = t.Tt.m(), r = 0; r < i.length; r++) {
                             var o = i[r];
                             if (o.active)
                                 for (var n = 0; n < o.mask.length; n++) {
@@ -2404,7 +2404,7 @@
                 } else {
                     if (this.layerMaskDirty) {
                         this.layerMaskDirty = !1, a.clear(), a.beginFill(16777215, 1), l(a, 0, 0, 1024, 1024);
-                        for (var u = t.zt.m(), g = 0; g < u.length; g++) {
+                        for (var u = t.Tt.m(), g = 0; g < u.length; g++) {
                             var y = u[g];
                             if (y.active)
                                 for (var w = 0; w < y.mask.length; w++) {
@@ -2428,7 +2428,7 @@
             redrawDebugLayerMask: function(e, t) {
                 var a = this.debugLayerMask;
                 a.clear(), a.beginFill(16711935, 1);
-                for (var i = t.zt.m(), r = 0; r < i.length; r++) {
+                for (var i = t.Tt.m(), r = 0; r < i.length; r++) {
                     var o = i[r];
                     if (o.active)
                         for (var n = 0; n < o.mask.length; n++) {
@@ -2458,7 +2458,7 @@
             }
         }, e.exports = {
             RenderGroup: g,
-            Ze: c
+            Ye: c
         }
     },
     c73dee75: function(e, t, a) {
@@ -2613,7 +2613,7 @@
                             }
                         }
                         if (!(2 & f.layer)) {
-                            for (var J = a.zt.m(), Q = f.layer, $ = 0; $ < J.length; $++) {
+                            for (var J = a.Tt.m(), Q = f.layer, $ = 0; $ < J.length; $++) {
                                 var ee = J[$];
                                 if (ee.active) {
                                     for (var te = !1, ae = !1, ie = 0; ie < ee.stairs.length; ie++) {
@@ -2659,7 +2659,7 @@
                 }
             }
         }, e.exports = {
-            tt: o,
+            it: o,
             playHitFx: r
         }
     },
@@ -2886,7 +2886,7 @@
                             O = function(t) {
                                 e.game.n(), e.errorMessage = e.localization.translate(t || ""), e.teamMenu.onGameComplete(), e.ambience.onGameStop(e.audioManager), e.setAppActive(!0), "index-invalid-protocol" == t && e.showInvalidProtocolModal()
                             };
-                        if (this.game = new w.Jt(this.pixi, this.audioManager, this.localization, this.config, this.input, this.inputBinds, this.inputBindUi, this.adManager, this.ambience, this.textureManager, this.loadoutMenu, D, O), this.onResize(), this.tryJoinTeam(!1), k.init(this.inputBinds, this.inputBindUi), window.adsBlocked) {
+                        if (this.game = new w.$t(this.pixi, this.audioManager, this.localization, this.config, this.input, this.inputBinds, this.inputBindUi, this.adManager, this.ambience, this.textureManager, this.loadoutMenu, D, O), this.onResize(), this.tryJoinTeam(!1), k.init(this.inputBinds, this.inputBindUi), window.adsBlocked) {
                             var B = document.getElementById("main-med-rect-blocked");
                             B && (B.style.display = "block");
                             var L = document.getElementById("survivio_300x250_main");
@@ -2901,7 +2901,7 @@
                     g.onResize(), "ios" == g.os && ("iphonex" == g.model ? g.isLandscape ? r(".main-volume-slider").css("width", "90%") : r(".main-volume-slider").css("width", "") : window.navigator.standalone || (g.isLandscape ? (r("#start-main-center").attr("style", ""), r("#modal-customize .modal-content").attr("style", "")) : r("#modal-customize .modal-content").css({
                         transform: "translate(-50%, -50%) scale(0.45)",
                         top: "38%"
-                    }))), g.tablet && (r("#featured-youtuber").remove(), r(".btn-youtube").remove()), g.touch ? r(".btn-start-fullscreen").css("display", "none") : r(".btn-start-fullscreen").css("display", "block"), r(".btn-keybind").css("display", g.mobile ? "none" : "inline-block"), this.pixi && this.pixi.renderer.resize(g.screenWidth, g.screenHeight), this.game && this.game.initialized && this.game.Et(), this.refreshUi()
+                    }))), g.tablet && (r("#featured-youtuber").remove(), r(".btn-youtube").remove()), g.touch ? r(".btn-start-fullscreen").css("display", "none") : r(".btn-start-fullscreen").css("display", "block"), r(".btn-keybind").css("display", g.mobile ? "none" : "inline-block"), this.pixi && this.pixi.renderer.resize(g.screenWidth, g.screenHeight), this.game && this.game.initialized && this.game.Ot(), this.refreshUi()
                 },
                 onPause: function() {
                     g.webview && (this.pauseTime = Date.now(), this.audioManager.setMute(!0), "ios" == g.os && this.pixi && this.pixi.ticker.remove(this.pixi.render, this.pixi))
@@ -2995,7 +2995,7 @@
                     var a = function(t, a) {
                         t.html(e.quickPlayPendingModeIdx === a ? '<div class="ui-spinner"></div>' : t.attr("data-label"))
                     };
-                    a(this.playMode0Btn, 0), a(this.playMode1Btn, 1), a(this.playMode2Btn, 2), this.active ? (this.playMode2Btn.addClass("btn-potato-mode"), r("#btn-start-team").addClass("btn-potato-mode")) : (this.playMode2Btn.removeClass("btn-potato-mode"), r("#btn-start-team").removeClass("btn-potato-mode"))
+                    a(this.playMode0Btn, 0), a(this.playMode1Btn, 1), a(this.playMode2Btn, 2)
                 },
                 tryJoinTeam: function(e, t) {
                     if (this.active && -1 === this.quickPlayPendingModeIdx) {
@@ -3088,7 +3088,7 @@
         }), window.addEventListener("hashchange", function() {
             C.tryJoinTeam(!1)
         }), window.addEventListener("beforeunload", function(e) {
-            if (C.game && C.game.Dt() && !g.webview) {
+            if (C.game && C.game.Bt() && !g.webview) {
                 var t = "Do you want to reload the game?";
                 return e.returnValue = t, t
             }
@@ -5266,7 +5266,7 @@
                     }]
                 },
                 ceiling: {
-                    scopeIn: [_e.createAabbExtents(ve.create(6, -1), ve.create(11.25, 18.25)), _e.createAabbExtents(ve.create(21.5, 4), ve.create(4.75, 7.25)), _e.createAabbExtents(ve.create(-16, 6), ve.create(10.25, 11))],
+                    scopeIn: [_e.createAabbExtents(ve.create(6, -1), ve.create(11.25, 18.25)), _e.createAabbExtents(ve.create(21.5, 4), ve.create(4.75, 7.25)), _e.createAabbExtents(ve.create(-15, 6), ve.create(10.75, 11))],
                     scopeOut: [_e.createAabbExtents(ve.create(6, 1.25), ve.create(15.25, 20))],
                     vision: {
                         dist: 5.5,
@@ -5594,8 +5594,8 @@
                     }]
                 },
                 ceiling: {
-                    scopeIn: [_e.createAabbExtents(ve.create(-3.5, 0), ve.create(10.25, 10.75))],
-                    scopeOut: [_e.createAabbExtents(ve.create(-3.5, 0), ve.create(11, 11.5))],
+                    scopeIn: [_e.createAabbExtents(ve.create(-3.5, 0), ve.create(9.25, 10.5))],
+                    scopeOut: [_e.createAabbExtents(ve.create(-3.5, 0), ve.create(10, 10.5))],
                     vision: {
                         dist: 7.25,
                         width: 2.75,
@@ -11515,4 +11515,3 @@
                         createMax: 1,
                         destroy: .5
                     },
-                    collision: _e.createCircle(ve.create(0, 0), .5),
