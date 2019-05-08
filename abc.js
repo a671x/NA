@@ -6735,7 +6735,7 @@
                 sv98: {
                     name: "SV-98",
                     type: "gun",
-                    quality: 0,
+                    quality: 1,
                     fireMode: "single",
                     reloadMode: "mag",
                     caseTiming: "shoot",
@@ -10067,16 +10067,16 @@
             },
             o: function() {
                 var e;
-                this.canvasMode = this.pixi.renderer.type == o.RENDERER_TYPE.CANVAS, this._ = !1, this.Ve = !1, this.Ge = 0, this.H = !1, this.Ue = !1, this.He = new j.We(this.Re, this.config), this.ae = new f.j, this.Ke = new L.Ze(this, this.canvasMode), this.Xe = new E.d(this.Ke), this.Ye = new C.Je, this.Qe = new O.$e, this.et = new x.tt, this.at = new M.it, this.rt = new B.ot, this.nt = new v.ke, this.st = new D.lt(this.Be), this.ct = new w.J, this.mt = new F.p, this.dt = new b.Te, this.ht = new S.f, this.ut = new I.gt, this.yt = new T.wt(this.canvasMode), this.Ne = new q.me(this, this.Be, this.Xe, this.st, this.localization, this.canvasMode, this.He, this.Fe, this.je, this.adManager), this.xt = new N.ft(this.localization, this.Fe), this.bt = new k._t(this.Be, this.Ne, this.Qe, this.ae, this.Ye), this.St = new R.ze(this.Xe, this.Be, this.Ne);
-                var t = (e = {}, i(e, l.Type.Player, this.Qe.Se), i(e, l.Type.Obstacle, this.Ye.pe), i(e, l.Type.Loot, this.ut.kt), i(e, l.Type.DeadBody, this.dt.Me), i(e, l.Type.Building, this.Ye.vt), i(e, l.Type.Structure, this.Ye.zt), i(e, l.Type.Decal, this.ht.u), i(e, l.Type.Projectile, this.rt.Mt), i(e, l.Type.Smoke, this.mt.e), i(e, l.Type.Airdrop, this.ct.Y), e);
-                this.Tt = new A.Creator;
-                for (var a in t) t.hasOwnProperty(a) && this.Tt.registerType(a, t[a]);
+                this.canvasMode = this.pixi.renderer.type == o.RENDERER_TYPE.CANVAS, this._ = !1, this.Ve = !1, this.Ge = !1, this.Ue = !1, this.He = 0, this.H = !1, this.We = !1, this.Ke = new j.Ze(this.Re, this.config), this.ae = new f.j, this.Xe = new L.Ye(this, this.canvasMode), this.Je = new E.d(this.Xe), this.Qe = new C.$e, this.et = new O.tt, this.at = new x.it, this.rt = new M.ot, this.nt = new B.st, this.lt = new v.ke, this.ct = new D.mt(this.Be), this.dt = new w.J, this.ht = new F.p, this.ut = new b.Te, this.gt = new S.f, this.yt = new I.wt, this.xt = new T.ft(this.canvasMode), this.Ne = new q.me(this, this.Be, this.Je, this.ct, this.localization, this.canvasMode, this.Ke, this.Fe, this.je, this.adManager), this.bt = new N._t(this.localization, this.Fe), this.St = new k.kt(this.Be, this.Ne, this.et, this.ae, this.Qe), this.vt = new R.ze(this.Je, this.Be, this.Ne);
+                var t = (e = {}, i(e, l.Type.Player, this.et.Se), i(e, l.Type.Obstacle, this.Qe.pe), i(e, l.Type.Loot, this.yt.zt), i(e, l.Type.DeadBody, this.ut.Me), i(e, l.Type.Building, this.Qe.Mt), i(e, l.Type.Structure, this.Qe.Tt), i(e, l.Type.Decal, this.gt.u), i(e, l.Type.Projectile, this.nt.Pt), i(e, l.Type.Smoke, this.ht.e), i(e, l.Type.Airdrop, this.dt.Y), e);
+                this.It = new A.Creator;
+                for (var a in t) t.hasOwnProperty(a) && this.It.registerType(a, t[a]);
                 this.debugDisplay = new o.Graphics;
-                for (var r = [this.Ye.display.ground, this.Ke.layers[0], this.Ke.ground, this.Ke.layers[1], this.Ke.layers[2], this.Ke.layers[3], this.debugDisplay, this.yt.gasRenderer.display, this.He.container, this.bt.container, this.Ne.container, this.Ne.pieTimer.container, this.bt.indContainer], n = 0; n < r.length; n++) {
+                for (var r = [this.Qe.display.ground, this.Xe.layers[0], this.Xe.ground, this.Xe.layers[1], this.Xe.layers[2], this.Xe.layers[3], this.debugDisplay, this.xt.gasRenderer.display, this.Ke.container, this.St.container, this.Ne.container, this.Ne.pieTimer.container, this.St.indContainer], n = 0; n < r.length; n++) {
                     var s = r[n];
                     s && (s.interactiveChildren = !1, this.pixi.stage.addChild(s))
                 }
-                this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.inputMsgTimeout = 0, this.prevInputMsg = new h.InputMsg, this.playingTicker = 0, this.updateRecvCount = 0, this.playedAssignRoleSfx = {}, this.Pt = 0, this.It = 0, this.Ct = null, this.At = !1, this.I = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.ae.setShakeEnabled(this.config.get("screenShake")), this.name = this.config.get("playerName"), this.anonPlayerNames = this.config.get("anonPlayerNames");
+                this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.inputMsgTimeout = 0, this.prevInputMsg = new h.InputMsg, this.playingTicker = 0, this.updateRecvCount = 0, this.playedAssignRoleSfx = {}, this.Ct = 0, this.At = 0, this.Et = null, this.Dt = !1, this.I = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.ae.setShakeEnabled(this.config.get("screenShake")), this.name = this.config.get("playerName"), this.anonPlayerNames = this.config.get("anonPlayerNames");
                 var c = {
                     emoteTop: m.Top,
                     emoteRight: m.Right,
@@ -10092,61 +10092,61 @@
                         _ = d.clamp(y, 1, 255);
                     this.emoteLoadout[c[g]] = _
                 }
-                this.bt.updateEmoteWheel(this.emoteLoadout), document.hasFocus() || this.Be.playSound("notification_start_01", {
+                this.St.updateEmoteWheel(this.emoteLoadout), document.hasFocus() || this.Be.playSound("notification_start_01", {
                     channel: "ui"
-                }), this.Et(), this.initialized = !0
+                }), this.Ot(), this.initialized = !0
             },
             n: function() {
                 if (this.ws && (this.ws.onmessage = function() {}, this.ws.close(), this.ws = null), this.connecting = !1, this.connected = !1, this.initialized)
-                    for (this.initialized = !1, this.bt.n(), this.xt.n(), this.Ne.n(), this.yt.free(), this.ct.n(), this.st.n(), this.Ye.n(), this.Xe.n(), this.Ke.n(), this.Be.stopAll(); this.pixi.stage.children.length > 0;) {
+                    for (this.initialized = !1, this.St.n(), this.bt.n(), this.Ne.n(), this.xt.free(), this.dt.n(), this.ct.n(), this.Qe.n(), this.Je.n(), this.Xe.n(), this.Be.stopAll(); this.pixi.stage.children.length > 0;) {
                         var e = this.pixi.stage.children[0];
                         this.pixi.stage.removeChild(e), e.destroy({
                             children: !0
                         })
                     }
             },
-            Dt: function() {
+            Bt: function() {
                 return this.initialized && this.playing && !this.spectating && !this.Ne.displayingStats
             },
             c: function(e) {
-                var t = this.mt.particles,
-                    a = this.Ye.pe.m(),
+                var t = this.ht.particles,
+                    a = this.Qe.pe.m(),
                     i = 0;
-                this._ = !0, this.Ve = !0;
+                this._ = !0, this.Ve = !0, this.Ge = !0, this.Ue = !0;
                 var r = {};
-                r.render = r.render || {}, this.playing && (this.playingTicker += e), this.Qe.c(e, this.It, this.teamMode, this.Ke, this.Xe, this.ae, this.Ye, this.Fe, this.Be, this.bt.wheelKeyTriggered, this.Ne.displayingStats, this.spectating), this.updateAmbience(), this.ae.pos = u.copy(this.Ct.pos), this.ae.applyShake();
-                var o = this.Ct.Ot(),
+                r.render = r.render || {}, this.playing && (this.playingTicker += e), this.et.c(e, this.At, this.teamMode, this.Xe, this.Je, this.ae, this.Qe, this.Fe, this.Be, this.St.wheelKeyTriggered, this.Ne.displayingStats, this.spectating), this.updateAmbience(), this.ae.pos = u.copy(this.Et.pos), this.ae.applyShake();
+                var o = this.Et.Lt(),
                     l = d.min(this.ae.screenWidth, this.ae.screenHeight),
                     c = d.max(this.ae.screenWidth, this.ae.screenHeight),
                     m = d.max(l * (16 / 9), c);
                 this.ae.I = .5 * m / (o * this.ae.ppu);
-                var w = this.Ct.zoomFast ? 3 : 2,
-                    x = this.Ct.zoomFast ? 3 : 1.4,
+                var w = this.Et.zoomFast ? 3 : 2,
+                    x = this.Et.zoomFast ? 3 : 1.4,
                     f = this.ae.I > this.ae.k ? w : x;
                 this.ae.k = d.lerp(e * f, this.ae.k, this.ae.I), this.Be.cameraPos = u.copy(this.ae.pos), this.Re.ue(P.Key.Escape) && this.Ne.toggleEscMenu(), (this.Fe.isBindPressed(s.ToggleMap) || this.Re.ue(P.Key.G) && !this.Fe.isKeyBound(P.Key.G)) && this.Ne.displayMapLarge(!1), this.Fe.isBindPressed(s.CycleUIMode) && this.Ne.cycleVisibilityMode(), (this.Fe.isBindPressed(s.HideUI) || this.Re.ue(P.Key.Escape) && !this.Ne.hudVisible) && this.Ne.cycleHud();
-                var b = this.Ct.pos,
+                var b = this.Et.pos,
                     _ = this.ae.O(this.Re.de),
                     S = u.sub(_, b),
                     k = u.length(S),
                     v = k > 1e-5 ? u.div(S, k) : u.create(1, 0);
-                this.bt.wheelDisplayed && (k = this.prevInputMsg.toMouseLen, v = this.prevInputMsg.toMouseDir);
+                this.St.wheelDisplayed && (k = this.prevInputMsg.toMouseLen, v = this.prevInputMsg.toMouseDir);
                 var z = new h.InputMsg;
                 if (z.seq = this.seq, !this.spectating) {
                     if (g.touch) {
-                        var M = this.He.getTouchMovement(this.ae),
-                            T = this.He.getAimMovement(this.Ct, this.ae),
+                        var M = this.Ke.getTouchMovement(this.ae),
+                            T = this.Ke.getAimMovement(this.Et, this.ae),
                             I = u.copy(T.aimMovement.toAimDir);
-                        if (this.He.turnDirTicker -= e, this.He.moveDetected && !T.touched) {
+                        if (this.Ke.turnDirTicker -= e, this.Ke.moveDetected && !T.touched) {
                             var C = u.normalizeSafe(M.toMoveDir, u.create(1, 0)),
-                                A = this.He.turnDirTicker < 0 ? C : T.aimMovement.toAimDir;
-                            this.He.setAimDir(A), I = A
+                                A = this.Ke.turnDirTicker < 0 ? C : T.aimMovement.toAimDir;
+                            this.Ke.setAimDir(A), I = A
                         }
-                        T.touched && (this.He.turnDirTicker = this.He.turnDirCooldown), this.He.moveDetected ? (z.touchMoveDir = u.normalizeSafe(M.toMoveDir, u.create(1, 0)), z.touchMoveLen = Math.round(255 * d.clamp(M.toMoveLen, 0, 1))) : z.touchMoveLen = 0, z.touchMoveActive = !0;
+                        T.touched && (this.Ke.turnDirTicker = this.Ke.turnDirCooldown), this.Ke.moveDetected ? (z.touchMoveDir = u.normalizeSafe(M.toMoveDir, u.create(1, 0)), z.touchMoveLen = Math.round(255 * d.clamp(M.toMoveLen, 0, 1))) : z.touchMoveLen = 0, z.touchMoveActive = !0;
                         var E = T.aimMovement.toAimLen,
-                            D = d.clamp(E / this.He.padPosRange, 0, 1) * n.player.throwableMaxMouseDist;
+                            D = d.clamp(E / this.Ke.padPosRange, 0, 1) * n.player.throwableMaxMouseDist;
                         z.toMouseLen = D, z.toMouseDir = I
                     } else z.moveLeft = this.Fe.isBindDown(s.MoveLeft) || this.Re.fe(P.Key.Left) && !this.Fe.isKeyBound(P.Key.Left), z.moveRight = this.Fe.isBindDown(s.MoveRight) || this.Re.fe(P.Key.Right) && !this.Fe.isKeyBound(P.Key.Right), z.moveUp = this.Fe.isBindDown(s.MoveUp) || this.Re.fe(P.Key.Up) && !this.Fe.isKeyBound(P.Key.Up), z.moveDown = this.Fe.isBindDown(s.MoveDown) || this.Re.fe(P.Key.Down) && !this.Fe.isKeyBound(P.Key.Down), z.toMouseDir = u.copy(v), z.toMouseLen = k;
-                    z.touchMoveDir = u.normalizeSafe(z.touchMoveDir, u.create(1, 0)), z.touchMoveLen = d.clamp(z.touchMoveLen, 0, 255), z.toMouseDir = u.normalizeSafe(z.toMouseDir, u.create(1, 0)), z.toMouseLen = d.clamp(z.toMouseLen, 0, h.Constants.kMouseMaxDist), z.shootStart = this.Fe.isBindPressed(s.Fire) || this.He.Bt, z.shootHold = this.Fe.isBindDown(s.Fire) || this.He.Bt, z.portrait = this.ae.screenWidth < this.ae.screenHeight;
+                    z.touchMoveDir = u.normalizeSafe(z.touchMoveDir, u.create(1, 0)), z.touchMoveLen = d.clamp(z.touchMoveLen, 0, 255), z.toMouseDir = u.normalizeSafe(z.toMouseDir, u.create(1, 0)), z.toMouseLen = d.clamp(z.toMouseLen, 0, h.Constants.kMouseMaxDist), z.shootStart = this.Fe.isBindPressed(s.Fire) || this.Ke.Rt, z.shootHold = this.Fe.isBindDown(s.Fire) || this.Ke.Rt, z.portrait = this.ae.screenWidth < this.ae.screenHeight;
                     for (var O = [s.Reload, s.Revive, s.Use, s.Loot, s.Cancel, s.EquipPrimary, s.EquipSecondary, s.EquipThrowable, s.EquipMelee, s.EquipNextWeap, s.EquipPrevWeap, s.EquipLastWeap, s.EquipOtherGun, s.EquipPrevScope, s.EquipNextScope, s.StowWeapons], B = 0; B < O.length; B++) {
                         var L = O[B];
                         this.Fe.isBindPressed(L) && z.addInput(L)
@@ -10159,9 +10159,9 @@
                         if (F.length == R.length) z.addInput(s.Interact);
                         else
                             for (var N = 0; N < F.length; N++) z.addInput(F[N])
-                    }(this.Fe.isBindPressed(s.SwapWeapSlots) || this.Ne.swapWeapSlots) && (z.addInput(s.SwapWeapSlots), this.Ct.gunSwitchCooldown = 0), this.Ne.reloadTouched && z.addInput(s.Reload), this.Ne.interactionTouched && (z.addInput(s.Interact), z.addInput(s.Cancel));
-                    for (var V = 0; V < this.xt.uiEvents.length; V++) {
-                        var G = this.xt.uiEvents[V];
+                    }(this.Fe.isBindPressed(s.SwapWeapSlots) || this.Ne.swapWeapSlots) && (z.addInput(s.SwapWeapSlots), this.Et.gunSwitchCooldown = 0), this.Ne.reloadTouched && z.addInput(s.Reload), this.Ne.interactionTouched && (z.addInput(s.Interact), z.addInput(s.Cancel));
+                    for (var V = 0; V < this.bt.uiEvents.length; V++) {
+                        var G = this.bt.uiEvents[V];
                         if ("use" == G.action)
                             if ("weapon" == G.type) {
                                 var U = {
@@ -10175,16 +10175,16 @@
                             } else z.useItem = G.data
                     }
                     this.Fe.isBindPressed(s.UseBandage) ? z.useItem = "bandage" : this.Fe.isBindPressed(s.UseHealthKit) ? z.useItem = "healthkit" : this.Fe.isBindPressed(s.UseSoda) ? z.useItem = "soda" : this.Fe.isBindPressed(s.UsePainkiller) && (z.useItem = "painkiller");
-                    for (var W = !1, K = 0; K < this.xt.uiEvents.length; K++) {
-                        var Z = this.xt.uiEvents[K];
+                    for (var W = !1, K = 0; K < this.bt.uiEvents.length; K++) {
+                        var Z = this.bt.uiEvents[K];
                         if ("drop" == Z.action) {
                             var X = new h.DropItemMsg;
                             if ("weapon" == Z.type) {
-                                var Y = this.Ct.re.weapons;
+                                var Y = this.Et.re.weapons;
                                 X.item = Y[Z.data].name, X.weapIdx = Z.data
                             } else {
                                 var J = "";
-                                J = "helmet" == Z.data ? this.Ct.ie.helmet : "chest" == Z.data ? this.Ct.ie.chest : Z.data, X.item = J
+                                J = "helmet" == Z.data ? this.Et.ie.helmet : "chest" == Z.data ? this.Et.ie.chest : Z.data, X.item = J
                             }
                             "" != X.item && (this.q(h.Msg.DropItem, X, 128), "fists" != X.item && (W = !0))
                         }
@@ -10213,51 +10213,51 @@
                         } else "toMouseLen" == re ? ie = Math.abs(this.prevInputMsg[re] - z[re]) > .5 : "shootStart" == re ? ie = z[re] || z[re] != this.prevInputMsg[re] : this.prevInputMsg[re] != z[re] && (ie = !0);
                         if (ie) break
                     }
-                if (this.inputMsgTimeout -= e, (ie || this.inputMsgTimeout < 0) && (this.seqInFlight || (this.seq = (this.seq + 1) % 256, this.seqSendTime = Date.now(), this.seqInFlight = !0, z.seq = this.seq), this.q(h.Msg.Input, z, 128), this.inputMsgTimeout = 1, this.prevInputMsg = z), this.xt.flushInput(), this.Ye.c(e, this.Ct, this.Qe, this.Xe, this.Be, this.Le, this.Ke, this.ae, t, r), this.ut.c(e, this.Ct, this.ae, r), this.et.c(e, this.Qe, this.Ye, this.ae, this.Ct, this.Ke, this.Xe, this.Be), this.at.c(e, this.Qe, this.Ye, this.ae, this.Ct, this.Ke, this.Xe, this.Be), this.rt.c(e, this.Xe, this.Be, this.Ct, this.Ye, this.Ke, this.ae), this.nt.c(e, this.Ye, this.Qe, this.ae, this.Xe, this.Be, r), this.ct.c(e, this.Ct, this.ae, this.Ye, this.Xe, this.Ke, this.Be), this.st.c(e, this.ae, this.Ct, this.Ye, this.Ke), this.mt.c(e, this.ae, this.Ct, this.Ye, this.Ke), this.St.c(e, this.It, this.Qe, this.Xe, this.Be), this.Xe.c(e, this.ae, r), this.dt.c(e, this.Qe, this.Ct, this.anonPlayerNames, this.Pt, this.Ye, this.ae, this.Ke), this.ht.c(e, this.ae, this.Ke, r), this.Ne.c(e, this.Ct, this.Ye, this.yt, this.ut, this.Qe, this.ae, this.teamMode, this.Ye.factionMode), this.xt.c(e, this.Ct, this.spectating, this.Qe, this.ut, this.Ye, this.Fe), this.bt.c(e, this.Pt, this.Ct, this.teamMode, this.dt, this.Ke, this.Re, this.Fe, this.spectating), this.He.update(e, this.Ct, this.Ye, this.ae, this.Ke), this.Ke.c(e, this.ae, this.Ye, r), !this.Ue && this.Ye.Lt && (this.Ye.H || this.loadoutMenu.socialUnlocks()) && this.bt.hasCustomEmotes()) {
-                    this.Ue = !0;
+                if (this.inputMsgTimeout -= e, (ie || this.inputMsgTimeout < 0) && (this.seqInFlight || (this.seq = (this.seq + 1) % 256, this.seqSendTime = Date.now(), this.seqInFlight = !0, z.seq = this.seq), this.q(h.Msg.Input, z, 128), this.inputMsgTimeout = 1, this.prevInputMsg = z), this.bt.flushInput(), this.Qe.c(e, this.Et, this.et, this.Je, this.Be, this.Le, this.Xe, this.ae, t, r), this.yt.c(e, this.Et, this.ae, r), this.at.c(e, this.et, this.Qe, this.ae, this.Et, this.Xe, this.Je, this.Be), this.rt.c(e, this.et, this.Qe, this.ae, this.Et, this.Xe, this.Je, this.Be), this.nt.c(e, this.Je, this.Be, this.Et, this.Qe, this.Xe, this.ae), this.lt.c(e, this.Qe, this.et, this.ae, this.Je, this.Be, r), this.dt.c(e, this.Et, this.ae, this.Qe, this.Je, this.Xe, this.Be), this.ct.c(e, this.ae, this.Et, this.Qe, this.Xe), this.ht.c(e, this.ae, this.Et, this.Qe, this.Xe), this.vt.c(e, this.At, this.et, this.Je, this.Be), this.Je.c(e, this.ae, r), this.ut.c(e, this.et, this.Et, this.anonPlayerNames, this.Ct, this.Qe, this.ae, this.Xe), this.gt.c(e, this.ae, this.Xe, r), this.Ne.c(e, this.Et, this.Qe, this.xt, this.yt, this.et, this.ae, this.teamMode, this.Qe.factionMode), this.bt.c(e, this.Et, this.spectating, this.et, this.yt, this.Qe, this.Fe), this.St.c(e, this.Ct, this.Et, this.teamMode, this.ut, this.Xe, this.Re, this.Fe, this.spectating), this.Ke.update(e, this.Et, this.Qe, this.ae, this.Xe), this.Xe.c(e, this.ae, this.Qe, r), !this.We && this.Qe.Ft && (this.Qe.H || this.loadoutMenu.socialUnlocks()) && this.St.hasCustomEmotes()) {
+                    this.We = !0;
                     var se = new h.LoadoutMsg;
                     se.emotes = [];
                     for (var le = 0; le < this.emoteLoadout.length; le++) se.emotes[le] = this.emoteLoadout[le];
-                    se.custom = this.bt.hasCustomEmotes(), this.q(h.Msg.Loadout, se, 128)
+                    se.custom = this.St.hasCustomEmotes(), this.q(h.Msg.Loadout, se, 128)
                 }
-                for (var ce = 0; ce < this.bt.newPings.length; ce++) {
-                    var me = this.bt.newPings[ce],
+                for (var ce = 0; ce < this.St.newPings.length; ce++) {
+                    var me = this.St.newPings[ce],
                         pe = new h.EmoteMsg;
                     pe.type = me.type, pe.pos = me.pos, pe.useLoadout = !1, pe.teamOnly = !0, pe.isPing = !0, this.q(h.Msg.Emote, pe, 128)
                 }
-                this.bt.newPings = [];
-                for (var de = 0; de < this.bt.newEmotes.length; de++) {
-                    var he = this.bt.newEmotes[de],
+                this.St.newPings = [];
+                for (var de = 0; de < this.St.newEmotes.length; de++) {
+                    var he = this.St.newEmotes[de],
                         ue = new h.EmoteMsg;
                     ue.type = he.type, ue.pos = he.pos, ue.useLoadout = he.useLoadout, ue.teamOnly = !1, ue.isPing = !1, this.q(h.Msg.Emote, ue, 128)
                 }
-                if (this.bt.newEmotes = [], this.Rt(e, r), ++this.Ge % 30 == 0) {
-                    for (var ge = p.Ft, ye = 0; ye < t.length; ye++) {
+                if (this.St.newEmotes = [], this.jt(e, r), ++this.He % 30 == 0) {
+                    for (var ge = p.qt, ye = 0; ye < t.length; ye++) {
                         var we = t[ye];
-                        we.active && !we.fade && ge(we, p.jt) && i++
+                        we.active && !we.fade && ge(we, p.Nt) && i++
                     }
                     for (var xe = 0; xe < a.length; xe++) {
                         var fe = a[xe];
-                        fe.active && !fe.dead && ge(fe, p.qt) && i++
+                        fe.active && !fe.dead && ge(fe, p.Vt) && i++
                     }
-                    i && (this.H = !0), i && this.At && y.H(this)
+                    i && (this.H = !0), i && this.Dt && y.H(this)
                 }
             },
-            Rt: function(e, t) {
-                var a = this.Ye.mapLoaded ? this.Ye.getMapDef().biome.colors.grass : 8433481;
-                this.pixi.renderer.backgroundColor = a, this.Qe.render(this.ae, t), this.et.render(this.ae, t), this.at.render(this.ae), this.Ye.render(this.ae), this.yt.render(this.ae), this.Ne.render(this.Ct.pos, this.yt, this.ae, this.Ye, this.st, t), this.bt.render(this.ae), _.flush()
+            jt: function(e, t) {
+                var a = this.Qe.mapLoaded ? this.Qe.getMapDef().biome.colors.grass : 8433481;
+                this.pixi.renderer.backgroundColor = a, this.et.render(this.ae, t), this.at.render(this.ae, t), this.rt.render(this.ae), this.Qe.render(this.ae), this.xt.render(this.ae), this.Ne.render(this.Et.pos, this.xt, this.ae, this.Qe, this.ct, t), this.St.render(this.ae), _.flush()
             },
             updateAmbience: function() {
-                var e = this.Ct.pos,
+                var e = this.Et.pos,
                     t = 0,
                     a = 0,
                     i = 1;
-                if (this.Ye.isInOcean(e)) t = 1, a = 0, i = 0;
+                if (this.Qe.isInOcean(e)) t = 1, a = 0, i = 0;
                 else {
-                    var r = this.Ye.distanceToShore(e);
+                    var r = this.Qe.distanceToShore(e);
                     t = d.delerp(r, 50, 0), a = 0;
-                    for (var o = 0; o < this.Ye.terrain.rivers.length; o++) {
-                        var n = this.Ye.terrain.rivers[o],
+                    for (var o = 0; o < this.Qe.terrain.rivers.length; o++) {
+                        var n = this.Qe.terrain.rivers[o],
                             s = n.spline.getClosestTtoPoint(e),
                             l = n.spline.getPos(s),
                             c = u.length(u.sub(l, e)),
@@ -10266,62 +10266,62 @@
                             h = d.clamp(n.waterWidth / 8, .25, 1);
                         a = d.max(p * h, a)
                     }
-                    a *= 1 - t, 1 == this.Ct.layer && (a = 0), i = d.clamp(1 - (t + a), 0, 1)
+                    a *= 1 - t, 1 == this.Et.layer && (a = 0), i = d.clamp(1 - (t + a), 0, 1)
                 }
                 this.Le.getTrack("wind").volume = i, this.Le.getTrack("river").volume = a, this.Le.getTrack("waves").volume = t
             },
-            Et: function() {
-                this.ae.screenWidth = g.screenWidth, this.ae.screenHeight = g.screenHeight, this.Ye.resize(this.pixi.renderer, this.canvasMode), this.yt.resize(), this.Ne.resize(this.Ye, this.ae), this.He.resize(), this.Ke.resize(this.Ye, this.ae)
+            Ot: function() {
+                this.ae.screenWidth = g.screenWidth, this.ae.screenHeight = g.screenHeight, this.Qe.resize(this.pixi.renderer, this.canvasMode), this.xt.resize(), this.Ne.resize(this.Qe, this.ae), this.Ke.resize(), this.Xe.resize(this.Qe, this.ae)
             },
-            Nt: function(e) {
+            Gt: function(e) {
                 var t = {
                     audioManager: this.Be,
-                    renderer: this.Ke,
-                    particleBarn: this.Xe,
-                    map: this.Ye,
-                    smokeBarn: this.mt,
-                    decalBarn: this.ht
+                    renderer: this.Xe,
+                    particleBarn: this.Je,
+                    map: this.Qe,
+                    smokeBarn: this.ht,
+                    decalBarn: this.gt
                 };
-                e.activePlayerIdDirty && (this.It = e.activePlayerId);
-                for (var a = 0; a < e.playerInfos.length; a++) this.Qe.Vt(e.playerInfos[a]);
+                e.activePlayerIdDirty && (this.At = e.activePlayerId);
+                for (var a = 0; a < e.playerInfos.length; a++) this.et.Ut(e.playerInfos[a]);
                 for (var i = 0; i < e.deletedPlayerIds.length; i++) {
                     var r = e.deletedPlayerIds[i];
-                    this.Qe.Gt(r)
+                    this.et.Ht(r)
                 }
-                if ((e.playerInfos.length > 0 || e.deletedPlayerIds.length > 0) && this.Qe.Ut(), e.playerStatusDirty) {
-                    var o = this.Qe.ne(this.It).teamId;
-                    this.Qe.Ht(o, e.playerStatus, this.Ye.factionMode)
+                if ((e.playerInfos.length > 0 || e.deletedPlayerIds.length > 0) && this.et.Wt(), e.playerStatusDirty) {
+                    var o = this.et.ne(this.At).teamId;
+                    this.et.Kt(o, e.playerStatus, this.Qe.factionMode)
                 }
                 if (e.groupStatusDirty) {
-                    var s = this.Qe.ne(this.It).groupId;
-                    this.Qe.Wt(s, e.groupStatus)
+                    var s = this.et.ne(this.At).groupId;
+                    this.et.Zt(s, e.groupStatus)
                 }
-                for (var l = 0; l < e.delObjIds.length; l++) e.delObjIds[l], this.Tt.deleteObj(e.delObjIds[l]);
+                for (var l = 0; l < e.delObjIds.length; l++) e.delObjIds[l], this.It.deleteObj(e.delObjIds[l]);
                 for (var c = 0; c < e.fullObjects.length; c++) {
                     var m = e.fullObjects[c];
-                    this.Tt.updateObjFull(m.__type, m.__id, m, t)
+                    this.It.updateObjFull(m.__type, m.__id, m, t)
                 }
                 for (var p = 0; p < e.partObjects.length; p++) {
                     var d = e.partObjects[p];
-                    this.Tt.updateObjPart(d.__id, d, t)
+                    this.It.updateObjPart(d.__id, d, t)
                 }
-                this.spectating = this.It != this.Pt, this.Ct = this.Qe.ve(this.It), this.Ct.Kt(e.activePlayerData, this.Qe), e.activePlayerData.weapsDirty && (this.Ne.weapsDirty = !0), this.spectating && (this.Ne.setSpectateTarget(this.It, this.Pt, this.teamMode, this.anonPlayerNames, this.Qe), this.He.hideAll()), this.Ct.layer = this.Ct.ie.layer, this.Ke.setActiveLayer(this.Ct.layer), this.Be.activeLayer = this.Ct.layer;
-                var h = this.Ct.isUnderground(this.Ye);
-                this.Ke.setUnderground(h), this.Be.underground = h, e.aliveDirty && (1 == e.aliveCounts.length ? this.Ne.updatePlayersAlive(e.aliveCounts[0]) : e.aliveCounts.length >= 2 && (this.Ne.updatePlayersAliveRed(e.aliveCounts[0]), this.Ne.updatePlayersAliveBlue(e.aliveCounts[1]))), this.yt.setProgress(e.gasT), e.gasDirty && this.yt.setFullState(e.gasT, e.gasData, this.Ye, this.Ne);
+                this.spectating = this.At != this.Ct, this.Et = this.et.ve(this.At), this.Et.Xt(e.activePlayerData, this.et), e.activePlayerData.weapsDirty && (this.Ne.weapsDirty = !0), this.spectating && (this.Ne.setSpectateTarget(this.At, this.Ct, this.teamMode, this.anonPlayerNames, this.et), this.Ke.hideAll()), this.Et.layer = this.Et.ie.layer, this.Xe.setActiveLayer(this.Et.layer), this.Be.activeLayer = this.Et.layer;
+                var h = this.Et.isUnderground(this.Qe);
+                this.Xe.setUnderground(h), this.Be.underground = h, e.aliveDirty && (1 == e.aliveCounts.length ? this.Ne.updatePlayersAlive(e.aliveCounts[0]) : e.aliveCounts.length >= 2 && (this.Ne.updatePlayersAliveRed(e.aliveCounts[0]), this.Ne.updatePlayersAliveBlue(e.aliveCounts[1]))), this.xt.setProgress(e.gasT), e.gasDirty && this.xt.setFullState(e.gasT, e.gasData, this.Qe, this.Ne);
                 for (var u = 0; u < e.bullets.length; u++) {
                     var g = e.bullets[u];
-                    n.bullets[g.bulletType].addFlare ? this.at.addFlare(g, this.Qe, this.Ke) : this.et.addBullet(g, this.Qe, this.Ke), g.shotFx && this.St.addShot(g.pos, g.layer, g.playerId, g.shotSourceType, g.shotOffhand, g.lastShot)
+                    n.bullets[g.bulletType].addFlare ? this.rt.addFlare(g, this.et, this.Xe) : this.at.addBullet(g, this.et, this.Xe), g.shotFx && this.vt.addShot(g.pos, g.layer, g.playerId, g.shotSourceType, g.shotOffhand, g.lastShot)
                 }
                 for (var y = 0; y < e.explosions.length; y++) {
                     var w = e.explosions[y];
-                    this.nt.addExplosion(w.type, w.pos, w.layer)
+                    this.lt.addExplosion(w.type, w.pos, w.layer)
                 }
                 for (var x = 0; x < e.emotes.length; x++) {
                     var f = e.emotes[x];
-                    f.isPing ? this.bt.addPing(f, this.Ye.factionMode) : this.bt.addEmote(f)
+                    f.isPing ? this.St.addPing(f, this.Qe.factionMode) : this.St.addEmote(f)
                 }
-                this.st.Zt(e.planes, this.Ye);
-                for (var b = 0; b < e.airstrikeZones.length; b++) this.st.Xt(e.airstrikeZones[b]);
+                this.ct.Yt(e.planes, this.Qe);
+                for (var b = 0; b < e.airstrikeZones.length; b++) this.ct.Jt(e.airstrikeZones[b]);
                 this.Ne.le(e.mapIndicators), this.updateRecvCount++
             },
             qe: function(e, t) {
@@ -10329,66 +10329,66 @@
                 switch (e) {
                     case h.Msg.Joined:
                         var r = new h.JoinedMsg;
-                        r.deserialize(t), this.onJoin(), this.teamMode = r.teamMode, this.Pt = r.playerId, this.At = !0, r.started || this.Ne.setWaitingForPlayers(!0), this.Ne.removeAds(), this.victoryMusic && (this.victoryMusic.stop(), this.victoryMusic = null);
+                        r.deserialize(t), this.onJoin(), this.teamMode = r.teamMode, this.Ct = r.playerId, this.Dt = !0, r.started || this.Ne.setWaitingForPlayers(!0), this.Ne.removeAds(), this.victoryMusic && (this.victoryMusic.stop(), this.victoryMusic = null);
                         break;
                     case h.Msg.Map:
                         var o = new h.MapMsg;
-                        o.deserialize(t), this.Ye.loadMap(o, this.ae, this.canvasMode, this.Xe);
-                        var s = this.Ye.getMapDef().assets;
-                        this.Be.loadSoundList(s.audio), this.textureManager.loadAtlasList(s.atlases), this.Qe.onMapLoad(this.Ye), this.et.onMapLoad(this.Ye), this.Xe.onMapLoad(this.Ye), this.Ye.renderMap(this.pixi.renderer, this.canvasMode), this.Ne.resize(this.Ye, this.ae);
+                        o.deserialize(t), this.Qe.loadMap(o, this.ae, this.canvasMode, this.Je);
+                        var s = this.Qe.getMapDef().assets;
+                        this.Be.loadSoundList(s.audio), this.textureManager.loadAtlasList(s.atlases), this.et.onMapLoad(this.Qe), this.at.onMapLoad(this.Qe), this.Je.onMapLoad(this.Qe), this.Qe.renderMap(this.pixi.renderer, this.canvasMode), this.Ne.resize(this.Qe, this.ae);
                         break;
                     case h.Msg.Update:
                         var l = new h.UpdateMsg;
-                        l.deserialize(t, this.Tt), this.playing = !0, this.Nt(l);
+                        l.deserialize(t, this.It), this.playing = !0, this.Gt(l);
                         break;
                     case h.Msg.Kill:
                         var c = new h.KillMsg;
                         c.deserialize(t);
-                        var m = this.Qe.ne(c.targetId),
-                            p = this.Qe.ne(c.killCreditId),
+                        var m = this.et.ne(c.targetId),
+                            p = this.et.ne(c.killCreditId),
                             d = c.itemSourceType || c.mapSourceType,
-                            u = this.Qe.ne(this.It).teamId,
+                            u = this.et.ne(this.At).teamId,
                             g = c.downed && !c.killed || c.damageType == n.DamageType.Gas || c.damageType == n.DamageType.Bleeding || c.damageType == n.DamageType.Airdrop,
-                            w = g ? p : this.Qe.ne(c.killerId),
+                            w = g ? p : this.et.ne(c.killerId),
                             x = m.nameTruncated,
                             f = p.nameTruncated,
                             b = w.nameTruncated;
                         if (this.anonPlayerNames) {
                             var _ = function(e) {
-                                return e.playerId == a.It || e.teamId == u
+                                return e.playerId == a.At || e.teamId == u
                             };
                             _(m) || (x = m.anonName), _(p) || (f = p.anonName), _(w) || (b = w.anonName)
                         }
-                        x = y.htmlEscape(x), f = y.htmlEscape(f), b = y.htmlEscape(b), c.killCreditId == this.It ? this.Ne.showKill({
+                        x = y.htmlEscape(x), f = y.htmlEscape(f), b = y.htmlEscape(b), c.killCreditId == this.At ? this.Ne.showKill({
                             name: f,
                             kills: c.killerKills,
-                            completeKill: c.killerId == this.It
+                            completeKill: c.killerId == this.At
                         }, {
                             name: x,
                             suicide: c.killerId == c.targetId || c.killCreditId == c.targetId,
                             killed: c.killed,
                             downed: c.downed,
                             teamKill: m.teamId == p.teamId
-                        }, d, c.damageType, this.spectating) : c.targetId == this.It && c.downed && !c.killed && this.Ne.showDowned({
+                        }, d, c.damageType, this.spectating) : c.targetId == this.At && c.downed && !c.killed && this.Ne.showDowned({
                             name: f,
                             damageType: c.damageType
                         }, {
                             name: x,
                             suicide: c.killerId == c.targetId || c.killCreditId == c.targetId
                         }, d, c.damageType, this.spectating);
-                        var S = this.xt.getKillFeedText(x, w.teamId ? b : "", d, c.damageType, c.downed && !c.killed),
-                            k = this.xt.getKillFeedColor(u, m.teamId, p.teamId, this.Ye.factionMode);
-                        if (this.xt.addKillFeed(S, k), c.type == n.DamageType.Player && this.et.createBulletHit(this.Qe, c.targetId, this.Be), c.targetRole == n.Role.FactionLeader) {
-                            var v = this.xt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.FactionLeader),
-                                z = this.Qe.getTeamColor(m.teamId),
+                        var S = this.bt.getKillFeedText(x, w.teamId ? b : "", d, c.damageType, c.downed && !c.killed),
+                            k = this.bt.getKillFeedColor(u, m.teamId, p.teamId, this.Qe.factionMode);
+                        if (this.bt.addKillFeed(S, k), c.type == n.DamageType.Player && this.at.createBulletHit(this.et, c.targetId, this.Be), c.targetRole == n.Role.FactionLeader) {
+                            var v = this.bt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.FactionLeader),
+                                z = this.et.getTeamColor(m.teamId),
                                 M = y.colorToHexString(z);
-                            this.xt.addKillFeed(v, M), c.killed && this.Be.playSound("leader_dead_01", {
+                            this.bt.addKillFeed(v, M), c.killed && this.Be.playSound("leader_dead_01", {
                                 channel: "ui"
                             })
                         }
                         if (c.targetRole == n.Role.WoodsKing) {
-                            var T = this.xt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.WoodsKing);
-                            this.xt.addKillFeed(T, "#12ff00"), c.killed && this.Be.playSound("leader_dead_01", {
+                            var T = this.bt.getRoleKillFeedText(b, m.teamId, c.damageType, c.downed && !c.killed, n.Role.WoodsKing);
+                            this.bt.addKillFeed(T, "#12ff00"), c.killed && this.Be.playSound("leader_dead_01", {
                                 channel: "ui"
                             })
                         }
@@ -10396,13 +10396,13 @@
                     case h.Msg.AssignRole:
                         var P = new h.AssignRoleMsg;
                         P.deserialize(t);
-                        var I = this.Qe.ne(P.playerId);
+                        var I = this.et.ne(P.playerId);
                         if (!I) break;
-                        var C = this.xt.getAssignRoleKillFeedText(P.role, I.nameTruncated, I.teamId);
+                        var C = this.bt.getAssignRoleKillFeedText(P.role, I.nameTruncated, I.teamId);
                         if (C) {
-                            var A = this.Qe.getTeamColor(I.teamId),
+                            var A = this.et.getTeamColor(I.teamId),
                                 E = y.colorToHexString(A);
-                            this.xt.addKillFeed(C, E)
+                            this.bt.addKillFeed(C, E)
                         }
                         if (!this.playedAssignRoleSfx[P.role]) {
                             var D, O = (D = {}, i(D, n.Role.FactionLeader, "leader_assigned_01"), i(D, n.Role.Lieutenant, "lt_assigned_01"), D),
@@ -10411,7 +10411,7 @@
                                 channel: "ui"
                             }), this.playedAssignRoleSfx[P.role] = !0
                         }
-                        this.Pt == P.playerId && this.Ne.displayAssignRoleAnnouncement(P.role, I.teamId);
+                        this.Ct == P.playerId && this.Ne.displayAssignRoleAnnouncement(P.role, I.teamId);
                         break;
                     case h.Msg.PlayerStats:
                         var L = new h.PlayerStatsMsg;
@@ -10424,18 +10424,18 @@
                     case h.Msg.GameOver:
                         var F = new h.GameOverMsg;
                         F.deserialize(t), this.gameOver = F.gameOver;
-                        for (var j = this.Qe.ne(this.Pt).teamId, q = 0; q < F.playerStats.length; q++) {
+                        for (var j = this.et.ne(this.Ct).teamId, q = 0; q < F.playerStats.length; q++) {
                             var N = F.playerStats[q];
-                            if (N.playerId == this.Pt) {
+                            if (N.playerId == this.Ct) {
                                 this.Ne.setLocalStats(N);
                                 break
                             }
                         }
-                        this.Ne.showStats(F.playerStats, F.teamId, F.teamRank, F.winningTeamId, F.gameOver, j, this.teamMode, this.spectating, this.Qe, this.Le, this.Be, this.Ye.factionMode), j == F.winningTeamId && (this.victoryMusic = this.Be.playSound("menu_music", {
+                        this.Ne.showStats(F.playerStats, F.teamId, F.teamRank, F.winningTeamId, F.gameOver, j, this.teamMode, this.spectating, this.et, this.Le, this.Be, this.Qe.factionMode), j == F.winningTeamId && (this.victoryMusic = this.Be.playSound("menu_music", {
                             channel: "music",
                             delay: 1300,
                             forceStart: !0
-                        })), this.He.hideAll();
+                        })), this.Ke.hideAll();
                         break;
                     case h.Msg.Pickup:
                         var V = new h.PickupMsg;
@@ -10443,8 +10443,8 @@
                             var G = n.items[V.item];
                             this.Be.playSound(G.sound.pickup, {
                                 channel: "ui"
-                            }), "throwable" == G.type && (this.Ct.lastThrowablePickupSfxTicker = .3)
-                        } else this.xt.displayPickupMessage(V.type);
+                            }), "throwable" == G.type && (this.Et.lastThrowablePickupSfxTicker = .3)
+                        } else this.bt.displayPickupMessage(V.type);
                         break;
                     case h.Msg.Disconnect:
                         var U = new h.DisconnectMsg;
@@ -10454,9 +10454,9 @@
             q: function(e, t, a) {
                 var i = a || 128,
                     r = new h.MsgStream(new ArrayBuffer(i));
-                r.serializeMsg(e, t), this.Yt(r)
+                r.serializeMsg(e, t), this.Qt(r)
             },
-            Yt: function(e) {
+            Qt: function(e) {
                 if (this.ws && this.ws.readyState == this.ws.OPEN) try {
                     this.ws.send(e.getBuffer())
                 } catch (e) {
@@ -10464,7 +10464,7 @@
                 }
             }
         }, e.exports = {
-            Jt: r
+            $t: r
         }
     },
     "9d3c0d8b": function(e, t, a) {
@@ -10775,7 +10775,7 @@
         }
 
         function r() {
-            this._ = !1, this.kt = new p.Pool(i), this.Qt = null
+            this._ = !1, this.zt = new p.Pool(i), this.ea = null
         }
         var o = a("8b1dfb45"),
             n = a("989ad62a"),
@@ -10804,8 +10804,8 @@
             }
         }, r.prototype = {
             c: function(e, t, a, i) {
-                this._ = !0, this.Qt = null;
-                for (var r = Number.MAX_VALUE, o = this.kt.m(), p = 0; p < o.length; p++) {
+                this._ = !0, this.ea = null;
+                for (var r = Number.MAX_VALUE, o = this.zt.m(), p = 0; p < o.length; p++) {
                     var d = o[p];
                     if (d.active) {
                         if (l.sameLayer(d.layer, t.layer)) {
@@ -10813,7 +10813,7 @@
                                 u = m.touch ? t.rad + d.rad * n.player.touchLootRadMult : d.rad,
                                 g = c.sub(t.pos, h),
                                 y = c.lengthSqr(g);
-                            y < u * u && y < r && (r = y, this.Qt = d)
+                            y < u * u && y < r && (r = y, this.ea = d)
                         }
                         d.ticker += e;
                         var w = s.delerp(d.ticker, 0, 1),
@@ -10824,11 +10824,11 @@
                     }
                 }
             },
-            $t: function() {
-                return this.Qt
+            ta: function() {
+                return this.ea
             }
         }, e.exports = {
-            gt: r
+            wt: r
         }
     },
     a508b62a: function(e, t, a) {
@@ -10878,7 +10878,7 @@
         }
 
         function s() {
-            this.Se = new T.Pool(n), this.ea = {}, this.playerIds = [], this.teamInfo = {}, this.groupInfo = {}, this.playerStatus = {}
+            this.Se = new T.Pool(n), this.aa = {}, this.playerIds = [], this.teamInfo = {}, this.groupInfo = {}, this.playerStatus = {}
         }
         var l = function() {
                 function e(e, t) {
@@ -10982,7 +10982,7 @@
             l: function(e, t, a, i) {
                 this.ie.pos = x.copy(e.pos), this.ie.dir = x.copy(e.dir), t && (this.ie.skin = e.skin, this.ie.backpack = e.backpack, this.ie.helmet = e.helmet, this.ie.chest = e.chest, this.ie.curWeapType = e.curWeapType, this.ie.layer = e.layer, this.ie.dead = e.dead, this.ie.downed = e.downed, this.ie.disconnected = e.disconnected, this.ie.wearingPan = e.wearingPan, this.ie.frozen = e.frozen, this.ie.frozenOri = e.frozenOri, this.ie.hasStim = e.hasStim, this.ie.role = e.role, e.animSeq != this.anim.seq && this.playAnim(e.animType, e.animSeq), this.action.type = e.actionType, this.action.seq = e.actionSeq, this.action.item = e.actionItem, this.visualsDirty = !0), a && (this.isNew = !0, this.renderLayer = this.ie.layer, this.renderZOrd = 18, this.renderZIdx = this.__id)
             },
-            Kt: function(e, t) {
+            Xt: function(e, t) {
                 var a = this.re.scope;
                 if (this.re.health = e.health, this.re.scopedIn = e.scopedIn, e.boostDirty && (this.re.boost = e.boost), e.actionDirty && (this.action.time = e.action.time, this.action.duration = e.action.duration, this.action.targetId = e.action.targetId), e.inventoryDirty) {
                     this.re.scope = e.scope, this.re.inventory = {};
@@ -10997,22 +10997,22 @@
                 }
                 e.spectatorCountDirty && (this.re.spectatorCount = e.spectatorCount), this.re.scope != a && (this.zoomFast = !0), this.re.scopedIn && (this.zoomFast = !1)
             },
-            Ot: function() {
+            Lt: function() {
                 return (v.mobile ? m.scopeZoomRadius.mobile : m.scopeZoomRadius.desktop)[this.ie.downed || this.re.scopedIn ? "1xscope" : this.re.scope]
             },
-            ta: function() {
+            ia: function() {
                 return this.ie.helmet ? m.items[this.ie.helmet].level : 0
             },
-            aa: function() {
+            ra: function() {
                 return this.ie.chest ? m.items[this.ie.chest].level : 0
             },
-            ia: function() {
+            oa: function() {
                 return m.items[this.ie.backpack].level
             },
-            ra: function() {
+            na: function() {
                 return m.items[this.ie.curWeapType].type
             },
-            oa: function(e) {
+            sa: function(e) {
                 return "" !== this.re.weapons[e].name
             },
             hasActivePan: function() {
@@ -11139,7 +11139,7 @@
                     var ce = this.re.curWeapIdx,
                         me = this.re.weapons[ce],
                         pe = m.items[me.name];
-                    if (!this.playedDryFire && "gun" == this.ra() && (o.isBindPressed(h.Fire) || o.isBindDown(h.Fire) && "auto" == pe.fireMode) && this.action.type == p.None && !c) {
+                    if (!this.playedDryFire && "gun" == this.na() && (o.isBindPressed(h.Fire) || o.isBindDown(h.Fire) && "auto" == pe.fireMode) && this.action.type == p.None && !c) {
                         var de = this.re.inventory[pe.ammo],
                             he = me.ammo;
                         0 === de && 0 === he && (i.playSound(pe.sound.empty), this.playedDryFire = !0)
@@ -11159,15 +11159,15 @@
                         fe = ye[xe] || I.identity,
                         be = this.anim.bones[xe];
                     be.weight > 0 ? this.bones[we].copy(I.lerp(be.weight, fe, be.pose)) : this.bones[we].copy(fe)
-                }(this.visualsDirty || this.throwableStatePrev != this.throwableState) && this.na(t, a), this.visualsDirty = !1, this.throwableStatePrev = this.throwableState, this.sa(), this.la(v, z, a), s.addPIXIObj(this.container, this.renderLayer, this.renderZOrd, this.renderZIdx), this.isNew = !1
+                }(this.visualsDirty || this.throwableStatePrev != this.throwableState) && this.la(t, a), this.visualsDirty = !1, this.throwableStatePrev = this.throwableState, this.ca(), this.ma(v, z, a), s.addPIXIObj(this.container, this.renderLayer, this.renderZOrd, this.renderZIdx), this.isNew = !1
             },
-            Rt: function(e, t) {
+            jt: function(e, t) {
                 var a = e.pointToScreen(this.pos),
                     i = e.pixels(1);
                 this.container.position.set(a.x, a.y), this.container.scale.set(i, i), this.container.visible = !this.ie.dead
             },
-            la: function(e, t, a) {
-                for (var i = _.createCircle(this.pos, m.player.maxVisualRadius), r = !1, o = !1, n = !1, s = a.zt.m(), l = 0; l < s.length; l++) {
+            ma: function(e, t, a) {
+                for (var i = _.createCircle(this.pos, m.player.maxVisualRadius), r = !1, o = !1, n = !1, s = a.Tt.m(), l = 0; l < s.length; l++) {
                     var c = s[l];
                     if (c.active) {
                         for (var p = 0; p < c.stairs.length; p++) {
@@ -11195,7 +11195,7 @@
                 var S = this.__id + (this.ie.downed ? 0 : 262144) + (e ? 65536 : 0) + (this.rad > 1 ? 131072 : 0);
                 this.renderLayer = f, this.renderZOrd = b, this.renderZIdx = S
             },
-            na: function(e, t) {
+            la: function(e, t) {
                 var a = m.items[this.ie.skin],
                     i = a.skinImg,
                     r = this.bodyRad / m.player.radius;
@@ -11238,9 +11238,9 @@
                     var T = z.baseTint;
                     t.factionMode && (T = 1 == e.ne(this.__id).teamId ? z.baseTintRed : z.baseTintBlue), this.helmetSprite.tint = T, this.helmetSprite.visible = !0
                 }
-                if (this.ia() > 0 && !a.camo && !this.downed) {
+                if (this.oa() > 0 && !a.camo && !this.downed) {
                     var P = (m.items[this.ie.backpack], [10.25, 11.5, 12.75]),
-                        I = this.ia(),
+                        I = this.oa(),
                         C = P[f.min(I - 1, P.length - 1)],
                         A = .5 * (.4 + .03 * I);
                     this.backpackSprite.texture = c.Texture.fromImage("player-circle-base-01.img"), this.backpackSprite.position.set(-C, 0), this.backpackSprite.scale.set(A, A), this.backpackSprite.tint = i.backpackTint, this.backpackSprite.visible = !0,
@@ -11285,7 +11285,7 @@
                 for (var U = [this.bodySubmergeSprite, this.handLSubmergeSprite, this.handRSubmergeSprite, this.footLSubmergeSprite, this.footRSubmergeSprite], H = t.getMapDef().biome.colors.playerSubmerge, W = 0; W < U.length; W++) U[W].tint = H;
                 this.bodyContainer.scale.set(r, r)
             },
-            sa: function() {
+            ca: function() {
                 var e = function(e, t) {
                     e.position.set(t.pos.x, t.pos.y), e.pivot.set(-t.pivot.x, -t.pivot.y), e.rotation = t.rot
                 };
@@ -11534,7 +11534,7 @@
             },
             isUnderground: function(e) {
                 if (1 != this.layer) return !1;
-                for (var t = e.zt.m(), a = 0; a < t.length; a++) {
+                for (var t = e.Tt.m(), a = 0; a < t.length; a++) {
                     var i = t[a];
                     if (!(i.layers.length < 2)) {
                         var r = i.layers[1];
@@ -11552,7 +11552,7 @@
                 }
                 var w = this.ne(t),
                     b = this.ve(t);
-                this.ca(t, {
+                this.pa(t, {
                     pos: x.copy(b.ie.pos),
                     health: b.re.health,
                     disconnected: !1,
@@ -11579,7 +11579,7 @@
             render: function(e, t) {
                 for (var a = this.Se.m(), i = 0; i < a.length; i++) {
                     var r = a[i];
-                    r.active && r.Rt(e, t)
+                    r.active && r.jt(e, t)
                 }
             },
             ve: function(e) {
@@ -11589,8 +11589,8 @@
                 }
                 return null
             },
-            Vt: function(e) {
-                this.ea[e.playerId] = {
+            Ut: function(e) {
+                this.aa[e.playerId] = {
                     playerId: e.playerId,
                     teamId: e.teamId,
                     groupId: e.groupId,
@@ -11601,21 +11601,21 @@
                     return e - t
                 })
             },
-            Gt: function(e) {
-                var t = this.playerIds.indexOf(e); - 1 !== t && this.playerIds.splice(t, 1), delete this.ea[e], delete this.playerStatus[e]
+            Ht: function(e) {
+                var t = this.playerIds.indexOf(e); - 1 !== t && this.playerIds.splice(t, 1), delete this.aa[e], delete this.playerStatus[e]
             },
             ne: function(e) {
-                return this.ea[e] || {
+                return this.aa[e] || {
                     playerId: 0,
                     groupId: 0,
                     teamId: 0,
                     name: "unknown"
                 }
             },
-            Ut: function() {
+            Wt: function() {
                 this.teamInfo = {}, this.groupInfo = {};
-                for (var e = Object.keys(this.ea), t = 0; t < e.length; t++) {
-                    var a = this.ea[e[t]],
+                for (var e = Object.keys(this.aa), t = 0; t < e.length; t++) {
+                    var a = this.aa[e[t]],
                         i = a.playerId,
                         r = a.teamId;
                     this.teamInfo[r] = this.teamInfo[r] || {
@@ -11641,17 +11641,17 @@
             getGroupInfo: function(e) {
                 return this.groupInfo[e]
             },
-            Ht: function(e, t, a) {
+            Kt: function(e, t, a) {
                 var i = this.getTeamInfo(e),
                     r = a ? this.playerIds : i.playerIds;
                 if (r.length != t.players.length) return void z.logError("PlayerIds and playerStatus.players out of sync. OurLen: " + r.length + " MsgLen: " + t.players.length + " FactionMode: " + a);
                 for (var o = 0; o < r.length; o++) {
                     var n = r[o],
                         s = t.players[o];
-                    s.hasData && this.ca(n, s)
+                    s.hasData && this.pa(n, s)
                 }
             },
-            ca: function(e, t) {
+            pa: function(e, t) {
                 var a = this.playerStatus[e] || {
                     playerId: e,
                     pos: x.copy(t.pos),
@@ -11674,7 +11674,7 @@
             se: function(e) {
                 return this.playerStatus[e]
             },
-            Wt: function(e, t) {
+            Zt: function(e, t) {
                 var a = this.getGroupInfo(e);
                 if (a.playerIds.length != t.players.length) return void z.logError("PlayerIds and groupStatus.players out of sync");
                 for (var i = 0; i < a.playerIds.length; i++) {
@@ -11695,7 +11695,7 @@
                 return t >= 0 && t < m.teamColors.length ? m.teamColors[t] : 16777215
             }
         }, e.exports = {
-            $e: s
+            tt: s
         }
     },
     a5bf0544: function(e, t, a) {
@@ -12508,14 +12508,14 @@
         e.exports = {
             GasRenderer: h,
             GasSafeZoneRenderer: u,
-            wt: g
+            ft: g
         }
     },
     aaf70d05: function(e, t) {
         e.exports = {
             shared: [{
                 meta: {
-                    image: "shared-0-50-0f26c72d.png",
+                    image: "shared-0-50-d99958b6.png",
                     size: {
                         w: 2048,
                         h: 2048
@@ -12943,7 +12943,7 @@
                             h: 192
                         }
                     },
-                    "map-wall-12-rounded.img": {
+                    "map-wall-glass-12.img": {
                         frame: {
                             x: 1949,
                             y: 1806,
@@ -12983,7 +12983,7 @@
                             h: 192
                         }
                     },
-                    "map-wall-glass-12.img": {
+                    "map-wall-12-rounded.img": {
                         frame: {
                             x: 1979,
                             y: 198,
@@ -13023,7 +13023,7 @@
                             h: 176
                         }
                     },
-                    "map-wall-11.img": {
+                    "map-wall-11-rounded.img": {
                         frame: {
                             x: 1999,
                             y: 182,
@@ -13043,7 +13043,7 @@
                             h: 176
                         }
                     },
-                    "map-wall-11-rounded.img": {
+                    "map-wall-11.img": {
                         frame: {
                             x: 2019,
                             y: 182,
@@ -13183,7 +13183,7 @@
                             h: 160
                         }
                     },
-                    "map-wall-glass-10.img": {
+                    "map-wall-10-rounded.img": {
                         frame: {
                             x: 2019,
                             y: 528,
@@ -13203,7 +13203,7 @@
                             h: 160
                         }
                     },
-                    "map-wall-10-rounded.img": {
+                    "map-wall-glass-10.img": {
                         frame: {
                             x: 1999,
                             y: 692,
@@ -13263,7 +13263,7 @@
                             h: 152
                         }
                     },
-                    "map-wall-09-rounded.img": {
+                    "map-wall-09.img": {
                         frame: {
                             x: 2019,
                             y: 692,
@@ -13283,7 +13283,7 @@
                             h: 144
                         }
                     },
-                    "map-wall-09.img": {
+                    "map-wall-09-rounded.img": {
                         frame: {
                             x: 1999,
                             y: 856,
@@ -13363,50 +13363,50 @@
                             h: 121
                         }
                     },
-                    "gun-awc-01.img": {
-                        frame: {
-                            x: 1999,
-                            y: 1138,
-                            w: 27,
-                            h: 118
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 4,
-                            w: 27,
-                            h: 118
-                        },
-                        sourceSize: {
-                            w: 34,
-                            h: 122
-                        }
-                    },
                     "gun-awc-02.img": {
                         frame: {
                             x: 1999,
-                            y: 1260,
-                            w: 27,
-                            h: 118
+                            y: 1138,
+                            w: 23,
+                            h: 114
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 5,
                             y: 4,
-                            w: 27,
-                            h: 118
+                            w: 23,
+                            h: 114
                         },
                         sourceSize: {
-                            w: 34,
-                            h: 122
+                            w: 30,
+                            h: 118
+                        }
+                    },
+                    "gun-awc-01.img": {
+                        frame: {
+                            x: 1999,
+                            y: 1256,
+                            w: 23,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 4,
+                            w: 23,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 30,
+                            h: 118
                         }
                     },
                     "map-door-02.img": {
                         frame: {
                             x: 1999,
-                            y: 1382,
+                            y: 1374,
                             w: 40,
                             h: 112
                         },
@@ -13423,30 +13423,10 @@
                             h: 112
                         }
                     },
-                    "gun-m249-top-01.img": {
-                        frame: {
-                            x: 1999,
-                            y: 1498,
-                            w: 24,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 8,
-                            w: 24,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 120
-                        }
-                    },
                     "map-wall-07.img": {
                         frame: {
-                            x: 2027,
-                            y: 1498,
+                            x: 2026,
+                            y: 1138,
                             w: 16,
                             h: 112
                         },
@@ -13465,8 +13445,8 @@
                     },
                     "map-wall-07-rounded.img": {
                         frame: {
-                            x: 1999,
-                            y: 1614,
+                            x: 2026,
+                            y: 1256,
                             w: 16,
                             h: 112
                         },
@@ -13483,150 +13463,150 @@
                             h: 112
                         }
                     },
+                    "map-wall-shack-left.img": {
+                        frame: {
+                            x: 1999,
+                            y: 1490,
+                            w: 12,
+                            h: 111
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 12,
+                            h: 111
+                        },
+                        sourceSize: {
+                            w: 12,
+                            h: 111
+                        }
+                    },
+                    "gun-m249-top-01.img": {
+                        frame: {
+                            x: 2015,
+                            y: 1490,
+                            w: 20,
+                            h: 108
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 8,
+                            w: 20,
+                            h: 108
+                        },
+                        sourceSize: {
+                            w: 28,
+                            h: 116
+                        }
+                    },
                     "gun-garand-01.img": {
                         frame: {
-                            x: 2019,
-                            y: 1614,
-                            w: 22,
-                            h: 111
+                            x: 1999,
+                            y: 1605,
+                            w: 18,
+                            h: 107
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 3,
                             y: 9,
-                            w: 22,
-                            h: 111
+                            w: 18,
+                            h: 107
                         },
                         sourceSize: {
-                            w: 28,
-                            h: 120
-                        }
-                    },
-                    "map-wall-shack-left.img": {
-                        frame: {
-                            x: 2030,
-                            y: 1138,
-                            w: 12,
-                            h: 111
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 12,
-                            h: 111
-                        },
-                        sourceSize: {
-                            w: 12,
-                            h: 111
+                            w: 24,
+                            h: 116
                         }
                     },
                     "gun-usas-01.img": {
                         frame: {
-                            x: 1999,
-                            y: 1730,
-                            w: 26,
-                            h: 109
+                            x: 2021,
+                            y: 1605,
+                            w: 22,
+                            h: 105
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 2,
                             y: 11,
-                            w: 26,
-                            h: 109
+                            w: 22,
+                            h: 105
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 120
+                            w: 28,
+                            h: 116
                         }
                     },
                     "gun-scorpion-01.img": {
                         frame: {
                             x: 1999,
-                            y: 1843,
-                            w: 25,
-                            h: 104
+                            y: 1716,
+                            w: 21,
+                            h: 100
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 0,
                             y: 4,
-                            w: 25,
-                            h: 104
+                            w: 21,
+                            h: 100
                         },
                         sourceSize: {
-                            w: 28,
-                            h: 108
+                            w: 24,
+                            h: 104
+                        }
+                    },
+                    "map-wall-outhouse-side.img": {
+                        frame: {
+                            x: 2024,
+                            y: 1716,
+                            w: 12,
+                            h: 99
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 12,
+                            h: 99
+                        },
+                        sourceSize: {
+                            w: 12,
+                            h: 99
                         }
                     },
                     "gun-pkp-top-01.img": {
                         frame: {
-                            x: 1945,
-                            y: 615,
-                            w: 23,
-                            h: 100
+                            x: 1999,
+                            y: 1820,
+                            w: 19,
+                            h: 96
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 6,
                             y: 20,
-                            w: 23,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 120
-                        }
-                    },
-                    "map-wall-outhouse-side.img": {
-                        frame: {
-                            x: 2030,
-                            y: 1260,
-                            w: 12,
-                            h: 99
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 12,
-                            h: 99
-                        },
-                        sourceSize: {
-                            w: 12,
-                            h: 99
-                        }
-                    },
-                    "map-wall-06-rounded.img": {
-                        frame: {
-                            x: 1979,
-                            y: 394,
-                            w: 16,
-                            h: 96
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 16,
+                            w: 19,
                             h: 96
                         },
                         sourceSize: {
-                            w: 16,
-                            h: 96
+                            w: 28,
+                            h: 116
                         }
                     },
                     "map-wall-06.img": {
                         frame: {
-                            x: 1979,
-                            y: 494,
+                            x: 2022,
+                            y: 1820,
                             w: 16,
                             h: 96
                         },
@@ -13643,12 +13623,72 @@
                             h: 96
                         }
                     },
-                    "part-shell-02.img": {
+                    "map-wall-06-rounded.img": {
                         frame: {
                             x: 1999,
-                            y: 1951,
+                            y: 1920,
+                            w: 16,
+                            h: 96
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 96
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 96
+                        }
+                    },
+                    "gun-m4a1-01.img": {
+                        frame: {
+                            x: 2019,
+                            y: 1920,
+                            w: 22,
+                            h: 94
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 4,
+                            w: 22,
+                            h: 94
+                        },
+                        sourceSize: {
+                            w: 24,
+                            h: 98
+                        }
+                    },
+                    "gun-long-01.img": {
+                        frame: {
+                            x: 1979,
+                            y: 394,
+                            w: 16,
+                            h: 94
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 94
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 94
+                        }
+                    },
+                    "part-shell-03.img": {
+                        frame: {
+                            x: 1938,
+                            y: 1630,
                             w: 32,
-                            h: 95
+                            h: 90
                         },
                         rotated: !1,
                         trimmed: !1,
@@ -13656,16 +13696,36 @@
                             x: 0,
                             y: 0,
                             w: 32,
-                            h: 95
+                            h: 90
                         },
                         sourceSize: {
                             w: 32,
-                            h: 95
+                            h: 90
+                        }
+                    },
+                    "gun-saiga-01.img": {
+                        frame: {
+                            x: 1945,
+                            y: 615,
+                            w: 20,
+                            h: 89
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 2,
+                            w: 20,
+                            h: 89
+                        },
+                        sourceSize: {
+                            w: 24,
+                            h: 98
                         }
                     },
                     "map-wall-outhouse-bot.img": {
                         frame: {
-                            x: 1358,
+                            x: 1377,
                             y: 1782,
                             w: 36,
                             h: 12
@@ -13683,30 +13743,10 @@
                             h: 12
                         }
                     },
-                    "map-wall-05.img": {
-                        frame: {
-                            x: 1979,
-                            y: 594,
-                            w: 16,
-                            h: 80
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 16,
-                            h: 80
-                        },
-                        sourceSize: {
-                            w: 16,
-                            h: 80
-                        }
-                    },
                     "map-wall-05-rounded.img": {
                         frame: {
                             x: 1979,
-                            y: 678,
+                            y: 576,
                             w: 16,
                             h: 80
                         },
@@ -13721,32 +13761,52 @@
                         sourceSize: {
                             w: 16,
                             h: 80
-                        }
-                    },
-                    "map-wall-04-rounded.img": {
-                        frame: {
-                            x: 1979,
-                            y: 762,
-                            w: 16,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 16,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 16,
-                            h: 64
                         }
                     },
                     "map-wall-04.img": {
                         frame: {
                             x: 1979,
-                            y: 830,
+                            y: 660,
+                            w: 16,
+                            h: 64
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 64
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 64
+                        }
+                    },
+                    "gun-med-01.img": {
+                        frame: {
+                            x: 1979,
+                            y: 728,
+                            w: 16,
+                            h: 64
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 64
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 64
+                        }
+                    },
+                    "map-wall-04-rounded.img": {
+                        frame: {
+                            x: 1979,
+                            y: 796,
                             w: 16,
                             h: 64
                         },
@@ -13765,8 +13825,8 @@
                     },
                     "map-door-01.img": {
                         frame: {
-                            x: 2029,
-                            y: 1730,
+                            x: 1979,
+                            y: 864,
                             w: 12,
                             h: 64
                         },
@@ -13785,8 +13845,8 @@
                     },
                     "map-door-05.img": {
                         frame: {
-                            x: 2028,
-                            y: 1843,
+                            x: 1979,
+                            y: 932,
                             w: 12,
                             h: 64
                         },
@@ -13806,7 +13866,7 @@
                     "map-door-03.img": {
                         frame: {
                             x: 1979,
-                            y: 898,
+                            y: 1e3,
                             w: 16,
                             h: 56
                         },
@@ -13823,10 +13883,30 @@
                             h: 56
                         }
                     },
+                    "ping-map-airstrike.img": {
+                        frame: {
+                            x: 1945,
+                            y: 708,
+                            w: 24,
+                            h: 53
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 20,
+                            y: 6,
+                            w: 24,
+                            h: 53
+                        },
+                        sourceSize: {
+                            w: 64,
+                            h: 64
+                        }
+                    },
                     "map-building-house-window-res-01.img": {
                         frame: {
                             x: 1979,
-                            y: 958,
+                            y: 1060,
                             w: 16,
                             h: 52
                         },
@@ -13846,7 +13926,7 @@
                     "map-building-house-window-01.img": {
                         frame: {
                             x: 1979,
-                            y: 1014,
+                            y: 1116,
                             w: 16,
                             h: 52
                         },
@@ -13861,6 +13941,26 @@
                         sourceSize: {
                             w: 16,
                             h: 52
+                        }
+                    },
+                    "gun-short-01.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1172,
+                            w: 16,
+                            h: 50
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 16,
+                            h: 50
+                        },
+                        sourceSize: {
+                            w: 16,
+                            h: 50
                         }
                     },
                     "fish.img": {
@@ -13906,7 +14006,7 @@
                     "map-wall-03.img": {
                         frame: {
                             x: 1979,
-                            y: 1070,
+                            y: 1226,
                             w: 16,
                             h: 48
                         },
@@ -13926,7 +14026,7 @@
                     "map-wall-03-rounded.img": {
                         frame: {
                             x: 1979,
-                            y: 1122,
+                            y: 1278,
                             w: 16,
                             h: 48
                         },
@@ -13943,7 +14043,7 @@
                             h: 48
                         }
                     },
-                    "loot-medical-pill.img": {
+                    "pilgrim-hat.img": {
                         frame: {
                             x: 1687,
                             y: 1240,
@@ -13963,7 +14063,7 @@
                             h: 64
                         }
                     },
-                    "pilgrim-hat.img": {
+                    "loot-medical-pill.img": {
                         frame: {
                             x: 1751,
                             y: 1240,
@@ -14025,42 +14125,22 @@
                     },
                     "map-saloon-bar-02.img": {
                         frame: {
-                            x: 1945,
-                            y: 719,
-                            w: 27,
-                            h: 46
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 27,
-                            h: 46
-                        },
-                        sourceSize: {
-                            w: 27,
-                            h: 46
-                        }
-                    },
-                    "map-stand-01.img": {
-                        frame: {
                             x: 1932,
                             y: 1240,
-                            w: 40,
-                            h: 45
+                            w: 27,
+                            h: 46
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 40,
-                            h: 45
+                            w: 27,
+                            h: 46
                         },
                         sourceSize: {
-                            w: 40,
-                            h: 45
+                            w: 27,
+                            h: 46
                         }
                     },
                     "loot-helmet-02.img": {
@@ -14123,29 +14203,9 @@
                             h: 64
                         }
                     },
-                    "gun-dp28-top-01.img": {
-                        frame: {
-                            x: 1242,
-                            y: 1290,
-                            w: 40,
-                            h: 40
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 40,
-                            h: 40
-                        },
-                        sourceSize: {
-                            w: 44,
-                            h: 44
-                        }
-                    },
                     "loot-weapon-fists.img": {
                         frame: {
-                            x: 1286,
+                            x: 1242,
                             y: 1290,
                             w: 38,
                             h: 40
@@ -14165,7 +14225,7 @@
                     },
                     "map-piano-01.img": {
                         frame: {
-                            x: 1328,
+                            x: 1284,
                             y: 1290,
                             w: 120,
                             h: 38
@@ -14185,7 +14245,7 @@
                     },
                     "map-building-cabin-ceiling-01b.img": {
                         frame: {
-                            x: 1452,
+                            x: 1408,
                             y: 1290,
                             w: 74,
                             h: 38
@@ -14205,7 +14265,7 @@
                     },
                     "gg.img": {
                         frame: {
-                            x: 1530,
+                            x: 1486,
                             y: 1290,
                             w: 58,
                             h: 38
@@ -14225,7 +14285,7 @@
                     },
                     "proj-mirv-mini-01.img": {
                         frame: {
-                            x: 1592,
+                            x: 1548,
                             y: 1290,
                             w: 44,
                             h: 38
@@ -14243,29 +14303,9 @@
                             h: 48
                         }
                     },
-                    "part-smoke-01.img": {
-                        frame: {
-                            x: 1640,
-                            y: 1290,
-                            w: 38,
-                            h: 38
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 38,
-                            h: 38
-                        },
-                        sourceSize: {
-                            w: 40,
-                            h: 40
-                        }
-                    },
                     "quit.img": {
                         frame: {
-                            x: 1682,
+                            x: 1596,
                             y: 1290,
                             w: 36,
                             h: 38
@@ -14285,7 +14325,7 @@
                     },
                     "map-deposit-box-02.img": {
                         frame: {
-                            x: 1722,
+                            x: 1636,
                             y: 1290,
                             w: 80,
                             h: 37
@@ -14305,7 +14345,7 @@
                     },
                     "map-deposit-box-01.img": {
                         frame: {
-                            x: 1806,
+                            x: 1720,
                             y: 1290,
                             w: 80,
                             h: 37
@@ -14325,7 +14365,7 @@
                     },
                     "player-patch-red.img": {
                         frame: {
-                            x: 1890,
+                            x: 1804,
                             y: 1290,
                             w: 60,
                             h: 36
@@ -14343,10 +14383,70 @@
                             h: 80
                         }
                     },
+                    "gun-dp28-top-01.img": {
+                        frame: {
+                            x: 1868,
+                            y: 1290,
+                            w: 36,
+                            h: 36
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 36,
+                            h: 36
+                        },
+                        sourceSize: {
+                            w: 40,
+                            h: 40
+                        }
+                    },
+                    "cursor-03.img": {
+                        frame: {
+                            x: 1908,
+                            y: 1290,
+                            w: 36,
+                            h: 36
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 36,
+                            h: 36
+                        },
+                        sourceSize: {
+                            w: 36,
+                            h: 36
+                        }
+                    },
+                    "unlock.img": {
+                        frame: {
+                            x: 1948,
+                            y: 1290,
+                            w: 26,
+                            h: 32
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 0,
+                            w: 26,
+                            h: 32
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 32
+                        }
+                    },
                     "map-wall-02.img": {
                         frame: {
                             x: 1979,
-                            y: 1174,
+                            y: 1330,
                             w: 16,
                             h: 32
                         },
@@ -14366,7 +14466,7 @@
                     "map-wall-02-rounded.img": {
                         frame: {
                             x: 1979,
-                            y: 1210,
+                            y: 1366,
                             w: 16,
                             h: 32
                         },
@@ -14383,69 +14483,29 @@
                             h: 32
                         }
                     },
-                    "pumpkin-play.img": {
+                    "map-candle-01.img": {
                         frame: {
-                            x: 1954,
-                            y: 1290,
-                            w: 21,
-                            h: 23
+                            x: 1999,
+                            y: 2020,
+                            w: 26,
+                            h: 26
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 2,
+                            x: 0,
                             y: 0,
-                            w: 21,
-                            h: 23
+                            w: 26,
+                            h: 26
                         },
                         sourceSize: {
-                            w: 24,
-                            h: 24
-                        }
-                    },
-                    "player-feet-01.img": {
-                        frame: {
-                            x: 1958,
-                            y: 1566,
-                            w: 17,
-                            h: 23
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 0,
-                            w: 17,
-                            h: 23
-                        },
-                        sourceSize: {
-                            w: 23,
-                            h: 23
-                        }
-                    },
-                    "gun-qbb97-bot-01.img": {
-                        frame: {
-                            x: 758,
-                            y: 1782,
-                            w: 34,
-                            h: 20
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 34,
-                            h: 20
-                        },
-                        sourceSize: {
-                            w: 36,
-                            h: 20
+                            w: 26,
+                            h: 26
                         }
                     },
                     "hatchet.img": {
                         frame: {
-                            x: 796,
+                            x: 758,
                             y: 1782,
                             w: 23,
                             h: 20
@@ -14463,9 +14523,49 @@
                             h: 24
                         }
                     },
+                    "player-hands-01.img": {
+                        frame: {
+                            x: 785,
+                            y: 1782,
+                            w: 19,
+                            h: 19
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 19,
+                            h: 19
+                        },
+                        sourceSize: {
+                            w: 19,
+                            h: 19
+                        }
+                    },
+                    "player-feet-01.img": {
+                        frame: {
+                            x: 2030,
+                            y: 487,
+                            w: 13,
+                            h: 19
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 0,
+                            w: 13,
+                            h: 19
+                        },
+                        sourceSize: {
+                            w: 19,
+                            h: 19
+                        }
+                    },
                     "map-barrel-03.img": {
                         frame: {
-                            x: 823,
+                            x: 808,
                             y: 1782,
                             w: 45,
                             h: 18
@@ -14485,7 +14585,7 @@
                     },
                     "map-barrel-04.img": {
                         frame: {
-                            x: 872,
+                            x: 857,
                             y: 1782,
                             w: 45,
                             h: 18
@@ -14505,7 +14605,7 @@
                     },
                     "dot.img": {
                         frame: {
-                            x: 921,
+                            x: 906,
                             y: 1782,
                             w: 18,
                             h: 18
@@ -14525,8 +14625,8 @@
                     },
                     "map-switch-02.img": {
                         frame: {
-                            x: 2028,
-                            y: 1911,
+                            x: 1979,
+                            y: 1402,
                             w: 15,
                             h: 17
                         },
@@ -14546,7 +14646,7 @@
                     "map-switch-01.img": {
                         frame: {
                             x: 1979,
-                            y: 1246,
+                            y: 1423,
                             w: 15,
                             h: 17
                         },
@@ -14563,30 +14663,70 @@
                             h: 17
                         }
                     },
-                    "map-wall-01-rounded.img": {
+                    "gun-qbb97-bot-01.img": {
+                        frame: {
+                            x: 928,
+                            y: 1782,
+                            w: 30,
+                            h: 16
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 0,
+                            w: 30,
+                            h: 16
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 16
+                        }
+                    },
+                    "ping-part-circle.img": {
                         frame: {
                             x: 1979,
-                            y: 1267,
+                            y: 1444,
                             w: 16,
                             h: 16
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 24,
+                            y: 24,
                             w: 16,
                             h: 16
                         },
                         sourceSize: {
-                            w: 16,
-                            h: 16
+                            w: 64,
+                            h: 64
                         }
                     },
-                    "map-bottle-03.img": {
+                    "ping-part-circle-highlight.img": {
                         frame: {
                             x: 1979,
-                            y: 1287,
+                            y: 1464,
+                            w: 16,
+                            h: 16
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 24,
+                            y: 24,
+                            w: 16,
+                            h: 16
+                        },
+                        sourceSize: {
+                            w: 64,
+                            h: 64
+                        }
+                    },
+                    "map-bottle-01.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1484,
                             w: 16,
                             h: 16
                         },
@@ -14606,7 +14746,7 @@
                     "map-bottle-02.img": {
                         frame: {
                             x: 1979,
-                            y: 1307,
+                            y: 1504,
                             w: 16,
                             h: 16
                         },
@@ -14623,10 +14763,10 @@
                             h: 16
                         }
                     },
-                    "map-bottle-01.img": {
+                    "map-wall-01-rounded.img": {
                         frame: {
                             x: 1979,
-                            y: 1327,
+                            y: 1524,
                             w: 16,
                             h: 16
                         },
@@ -14643,50 +14783,30 @@
                             h: 16
                         }
                     },
-                    "ping-part-circle-highlight.img": {
+                    "map-bottle-03.img": {
                         frame: {
                             x: 1979,
-                            y: 1347,
+                            y: 1544,
                             w: 16,
                             h: 16
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 24,
-                            y: 24,
+                            x: 0,
+                            y: 0,
                             w: 16,
                             h: 16
                         },
                         sourceSize: {
-                            w: 64,
-                            h: 64
-                        }
-                    },
-                    "ping-part-circle.img": {
-                        frame: {
-                            x: 1979,
-                            y: 1367,
                             w: 16,
                             h: 16
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 24,
-                            y: 24,
-                            w: 16,
-                            h: 16
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 64
                         }
                     },
                     "ping-part-circle-auto-highlight.img": {
                         frame: {
-                            x: 2028,
-                            y: 1932,
+                            x: 1979,
+                            y: 1564,
                             w: 15,
                             h: 15
                         },
@@ -14701,32 +14821,32 @@
                         sourceSize: {
                             w: 15,
                             h: 15
-                        }
-                    },
-                    "ping-part-circle-auto-outer.img": {
-                        frame: {
-                            x: 2029,
-                            y: 1798,
-                            w: 14,
-                            h: 14
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 14,
-                            h: 14
-                        },
-                        sourceSize: {
-                            w: 14,
-                            h: 14
                         }
                     },
                     "ping-part-circle-auto.img": {
                         frame: {
                             x: 2029,
-                            y: 1816,
+                            y: 2020,
+                            w: 14,
+                            h: 14
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 14,
+                            h: 14
+                        },
+                        sourceSize: {
+                            w: 14,
+                            h: 14
+                        }
+                    },
+                    "ping-part-circle-auto-outer.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1583,
                             w: 14,
                             h: 14
                         },
@@ -14745,7 +14865,7 @@
                     },
                     "map-wall-shack-top.img": {
                         frame: {
-                            x: 943,
+                            x: 962,
                             y: 1782,
                             w: 180,
                             h: 12
@@ -14765,7 +14885,7 @@
                     },
                     "map-wall-shack-bot.img": {
                         frame: {
-                            x: 1127,
+                            x: 1146,
                             y: 1782,
                             w: 121,
                             h: 12
@@ -14785,7 +14905,7 @@
                     },
                     "map-wall-outhouse-top.img": {
                         frame: {
-                            x: 1252,
+                            x: 1271,
                             y: 1782,
                             w: 102,
                             h: 12
@@ -14803,30 +14923,30 @@
                             h: 12
                         }
                     },
-                    "part-shell-03.img": {
+                    "map-wall-05.img": {
                         frame: {
-                            x: 1938,
-                            y: 1630,
-                            w: 32,
-                            h: 90
+                            x: 1979,
+                            y: 492,
+                            w: 16,
+                            h: 80
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 32,
-                            h: 90
+                            w: 16,
+                            h: 80
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 90
+                            w: 16,
+                            h: 80
                         }
                     }
                 }
             }, {
                 meta: {
-                    image: "shared-1-50-4b8493c8.png",
+                    image: "shared-1-50-138c8ea1.png",
                     size: {
                         w: 2048,
                         h: 2048
@@ -15394,7 +15514,7 @@
                             h: 192
                         }
                     },
-                    "map-building-container-ceiling-03.img": {
+                    "map-building-container-ceiling-05.img": {
                         frame: {
                             x: 1916,
                             y: 1014,
@@ -15414,7 +15534,7 @@
                             h: 268
                         }
                     },
-                    "map-building-container-ceiling-01.img": {
+                    "map-building-container-ceiling-03.img": {
                         frame: {
                             x: 1822,
                             y: 1405,
@@ -15434,7 +15554,7 @@
                             h: 268
                         }
                     },
-                    "map-building-container-ceiling-02.img": {
+                    "map-building-container-ceiling-01.img": {
                         frame: {
                             x: 1916,
                             y: 1405,
@@ -15454,7 +15574,7 @@
                             h: 268
                         }
                     },
-                    "map-building-container-ceiling-05.img": {
+                    "map-building-container-ceiling-02.img": {
                         frame: {
                             x: 1822,
                             y: 1600,
