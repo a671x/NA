@@ -11155,7 +11155,7 @@ webpackJsonp([1], {
             "game-perk-title-4": "Windwalk",
             "game-perk-desc-4": "When taking fire, gain a short burst of speed.",
             "game-perk-title-5": "Rare Potato",
-            "game-perk-desc-5": "Always rotate to a high quality weapon.",
+            "game-perk-desc-5": "Always rotate to higher quality weapons.",
             "index-online": "online",
             "index-news-korea": "We've officially broken out our <span class='highlight'>Korean servers</span> into their own region. To play in this region, select <span class='highlight'>South Korea</span> from the region selector."
         };
@@ -11746,7 +11746,7 @@ webpackJsonp([1], {
                                     y = this.roomData.roomUrl.substring(1);
                                 m.webview ? n("#team-url").html(y) : (n("#team-url").html(g), n("#team-code").html(y)), window.history && window.history.replaceState("", "", this.roomData.roomUrl)
                             }
-                            this.playBtn.html(this.roomData.findingGame || this.joiningGame ? '<div class="ui-spinner"></div>' : this.playBtn.attr("data-label"));
+                            this.playBtn.html(this.roomData.findingGame || this.joiningGame ? '<div class="ui-spinner"></div>' : this.playBtn.attr("data-label")), 2 == this.roomData.gameModeIdx ? this.playBtn.addClass("btn-potato-mode") : this.playBtn.removeClass("btn-potato-mode");
                             for (var w = !1, x = 0; x < this.players.length; x++) w |= this.players[x].inGame;
                             var f = n("#msg-wait-reason"),
                                 b = n("#btn-start-team");
@@ -12851,7 +12851,7 @@ webpackJsonp([1], {
         e.exports = {
             shared: [{
                 meta: {
-                    image: "shared-0-100-06ad4031.png",
+                    image: "shared-0-100-1a7c35ac.png",
                     size: {
                         w: 4096,
                         h: 4096
@@ -13279,7 +13279,7 @@ webpackJsonp([1], {
                             h: 384
                         }
                     },
-                    "map-wall-glass-12.img": {
+                    "map-wall-12.img": {
                         frame: {
                             x: 3742,
                             y: 3598,
@@ -13299,7 +13299,7 @@ webpackJsonp([1], {
                             h: 384
                         }
                     },
-                    "map-wall-12.img": {
+                    "map-wall-12-rounded.img": {
                         frame: {
                             x: 3778,
                             y: 3598,
@@ -13319,7 +13319,7 @@ webpackJsonp([1], {
                             h: 384
                         }
                     },
-                    "map-wall-12-rounded.img": {
+                    "map-wall-glass-12.img": {
                         frame: {
                             x: 3814,
                             y: 3598,
@@ -13459,7 +13459,7 @@ webpackJsonp([1], {
                             h: 340
                         }
                     },
-                    "map-bunker-crossing-floor-01.img": {
+                    "map-building-shack-floor-02.img": {
                         frame: {
                             x: 2886,
                             y: 1224,
@@ -13479,7 +13479,7 @@ webpackJsonp([1], {
                             h: 320
                         }
                     },
-                    "map-building-shack-floor-02.img": {
+                    "map-bunker-crossing-floor-01.img": {
                         frame: {
                             x: 3210,
                             y: 1224,
@@ -13619,7 +13619,7 @@ webpackJsonp([1], {
                             h: 288
                         }
                     },
-                    "map-wall-09-rounded.img": {
+                    "map-wall-09.img": {
                         frame: {
                             x: 3983,
                             y: 294,
@@ -13639,7 +13639,7 @@ webpackJsonp([1], {
                             h: 288
                         }
                     },
-                    "map-wall-09.img": {
+                    "map-wall-09-rounded.img": {
                         frame: {
                             x: 4019,
                             y: 294,
@@ -13723,146 +13723,46 @@ webpackJsonp([1], {
                         frame: {
                             x: 3983,
                             y: 1110,
-                            w: 60,
-                            h: 236
+                            w: 49,
+                            h: 230
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 60,
-                            h: 236
+                            x: 10,
+                            y: 10,
+                            w: 49,
+                            h: 230
                         },
                         sourceSize: {
-                            w: 60,
-                            h: 236
+                            w: 64,
+                            h: 240
                         }
                     },
                     "gun-awc-02.img": {
                         frame: {
                             x: 3983,
-                            y: 1350,
-                            w: 60,
-                            h: 236
+                            y: 1344,
+                            w: 49,
+                            h: 230
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 60,
-                            h: 236
+                            x: 10,
+                            y: 10,
+                            w: 49,
+                            h: 230
                         },
                         sourceSize: {
-                            w: 60,
-                            h: 236
-                        }
-                    },
-                    "gun-pkp-top-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 1590,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-usas-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 1826,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-ots38-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2062,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-m249-top-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2298,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-garand-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2534,
-                            w: 48,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 48,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 232
+                            w: 64,
+                            h: 240
                         }
                     },
                     "map-door-02.img": {
                         frame: {
                             x: 3983,
-                            y: 2770,
+                            y: 1578,
                             w: 80,
                             h: 224
                         },
@@ -13876,33 +13776,33 @@ webpackJsonp([1], {
                         },
                         sourceSize: {
                             w: 80,
-                            h: 224
-                        }
-                    },
-                    "map-wall-07.img": {
-                        frame: {
-                            x: 4035,
-                            y: 2534,
-                            w: 32,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 32,
                             h: 224
                         }
                     },
                     "map-wall-07-rounded.img": {
                         frame: {
-                            x: 3983,
-                            y: 2998,
+                            x: 4036,
+                            y: 1110,
+                            w: 32,
+                            h: 224
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 224
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 224
+                        }
+                    },
+                    "map-wall-07.img": {
+                        frame: {
+                            x: 4036,
+                            y: 1344,
                             w: 32,
                             h: 224
                         },
@@ -13939,30 +13839,90 @@ webpackJsonp([1], {
                             h: 222
                         }
                     },
-                    "gun-scorpion-01.img": {
+                    "gun-m249-top-01.img": {
                         frame: {
-                            x: 4019,
-                            y: 2998,
-                            w: 48,
-                            h: 208
+                            x: 3983,
+                            y: 1806,
+                            w: 40,
+                            h: 218
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 48,
-                            h: 208
+                            x: 10,
+                            y: 18,
+                            w: 40,
+                            h: 218
                         },
                         sourceSize: {
-                            w: 48,
-                            h: 208
+                            w: 60,
+                            h: 236
+                        }
+                    },
+                    "gun-garand-01.img": {
+                        frame: {
+                            x: 4027,
+                            y: 1806,
+                            w: 36,
+                            h: 216
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 20,
+                            w: 36,
+                            h: 216
+                        },
+                        sourceSize: {
+                            w: 52,
+                            h: 236
+                        }
+                    },
+                    "gun-usas-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 2028,
+                            w: 45,
+                            h: 212
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 24,
+                            w: 45,
+                            h: 212
+                        },
+                        sourceSize: {
+                            w: 60,
+                            h: 236
+                        }
+                    },
+                    "gun-scorpion-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 2244,
+                            w: 43,
+                            h: 202
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 10,
+                            w: 43,
+                            h: 202
+                        },
+                        sourceSize: {
+                            w: 52,
+                            h: 212
                         }
                     },
                     "map-wall-outhouse-side.img": {
                         frame: {
-                            x: 4047,
-                            y: 1110,
+                            x: 4032,
+                            y: 2028,
                             w: 24,
                             h: 198
                         },
@@ -13979,30 +13939,30 @@ webpackJsonp([1], {
                             h: 198
                         }
                     },
-                    "gun-m4a1-01.img": {
+                    "gun-pkp-top-01.img": {
                         frame: {
-                            x: 3983,
-                            y: 3226,
-                            w: 48,
+                            x: 4030,
+                            y: 2244,
+                            w: 38,
                             h: 196
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 48,
+                            x: 14,
+                            y: 40,
+                            w: 38,
                             h: 196
                         },
                         sourceSize: {
-                            w: 48,
-                            h: 196
+                            w: 60,
+                            h: 236
                         }
                     },
                     "map-pipes-05.img": {
                         frame: {
                             x: 3983,
-                            y: 3426,
+                            y: 2450,
                             w: 90,
                             h: 192
                         },
@@ -14021,8 +13981,8 @@ webpackJsonp([1], {
                     },
                     "map-wall-06-rounded.img": {
                         frame: {
-                            x: 4035,
-                            y: 3226,
+                            x: 3983,
+                            y: 2646,
                             w: 32,
                             h: 192
                         },
@@ -14041,8 +14001,8 @@ webpackJsonp([1], {
                     },
                     "map-wall-06.img": {
                         frame: {
-                            x: 3983,
-                            y: 3622,
+                            x: 4019,
+                            y: 2646,
                             w: 32,
                             h: 192
                         },
@@ -14059,10 +14019,30 @@ webpackJsonp([1], {
                             h: 192
                         }
                     },
+                    "gun-m4a1-01.img": {
+                        frame: {
+                            x: 3983,
+                            y: 2842,
+                            w: 46,
+                            h: 191
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 9,
+                            w: 46,
+                            h: 191
+                        },
+                        sourceSize: {
+                            w: 52,
+                            h: 200
+                        }
+                    },
                     "part-shell-02.img": {
                         frame: {
                             x: 3983,
-                            y: 3818,
+                            y: 3037,
                             w: 63,
                             h: 190
                         },
@@ -14081,28 +14061,28 @@ webpackJsonp([1], {
                     },
                     "gun-long-01.img": {
                         frame: {
-                            x: 4019,
-                            y: 3622,
+                            x: 4033,
+                            y: 2842,
                             w: 32,
                             h: 188
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 2,
+                            y: 2,
                             w: 32,
                             h: 188
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 188
+                            w: 36,
+                            h: 192
                         }
                     },
                     "part-shell-03.img": {
                         frame: {
-                            x: 3855,
-                            y: 3246,
+                            x: 3983,
+                            y: 3231,
                             w: 63,
                             h: 180
                         },
@@ -14119,11 +14099,51 @@ webpackJsonp([1], {
                             h: 180
                         }
                     },
-                    "map-wall-05-rounded.img": {
+                    "gun-saiga-01.img": {
                         frame: {
-                            x: 3947,
-                            y: 1686,
-                            w: 32,
+                            x: 3983,
+                            y: 3415,
+                            w: 40,
+                            h: 174
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 6,
+                            w: 40,
+                            h: 174
+                        },
+                        sourceSize: {
+                            w: 48,
+                            h: 196
+                        }
+                    },
+                    "part-shell-04.img": {
+                        frame: {
+                            x: 3983,
+                            y: 3593,
+                            w: 55,
+                            h: 164
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 55,
+                            h: 164
+                        },
+                        sourceSize: {
+                            w: 55,
+                            h: 164
+                        }
+                    },
+                    "map-wall-04-stone.img": {
+                        frame: {
+                            x: 4027,
+                            y: 3415,
+                            w: 40,
                             h: 160
                         },
                         rotated: !1,
@@ -14131,18 +14151,58 @@ webpackJsonp([1], {
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 32,
+                            w: 40,
                             h: 160
                         },
                         sourceSize: {
-                            w: 32,
+                            w: 40,
+                            h: 160
+                        }
+                    },
+                    "part-airdrop-02.img": {
+                        frame: {
+                            x: 3983,
+                            y: 3761,
+                            w: 38,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 38,
+                            h: 160
+                        }
+                    },
+                    "part-airdrop-02x.img": {
+                        frame: {
+                            x: 4025,
+                            y: 3761,
+                            w: 38,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 38,
                             h: 160
                         }
                     },
                     "map-wall-05.img": {
                         frame: {
-                            x: 3947,
-                            y: 1850,
+                            x: 3983,
+                            y: 3925,
                             w: 32,
                             h: 160
                         },
@@ -14159,10 +14219,70 @@ webpackJsonp([1], {
                             h: 160
                         }
                     },
+                    "map-wall-05-rounded.img": {
+                        frame: {
+                            x: 4019,
+                            y: 3925,
+                            w: 32,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 160
+                        }
+                    },
+                    "map-wall-outhouse-bot.img": {
+                        frame: {
+                            x: 3855,
+                            y: 3407,
+                            w: 72,
+                            h: 24
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 72,
+                            h: 24
+                        },
+                        sourceSize: {
+                            w: 72,
+                            h: 24
+                        }
+                    },
+                    "gun-med-01.img": {
+                        frame: {
+                            x: 3947,
+                            y: 1686,
+                            w: 32,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 32,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 36,
+                            h: 132
+                        }
+                    },
                     "map-wall-04.img": {
                         frame: {
                             x: 3947,
-                            y: 2014,
+                            y: 1818,
                             w: 32,
                             h: 128
                         },
@@ -14182,7 +14302,7 @@ webpackJsonp([1], {
                     "map-wall-04-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 2146,
+                            y: 1950,
                             w: 32,
                             h: 128
                         },
@@ -14196,53 +14316,33 @@ webpackJsonp([1], {
                         },
                         sourceSize: {
                             w: 32,
-                            h: 128
-                        }
-                    },
-                    "map-wall-outhouse-bot.img": {
-                        frame: {
-                            x: 3391,
-                            y: 3550,
-                            w: 72,
-                            h: 24
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 24
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 24
-                        }
-                    },
-                    "map-door-05.img": {
-                        frame: {
-                            x: 4047,
-                            y: 1350,
-                            w: 24,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 24,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 24,
                             h: 128
                         }
                     },
                     "map-door-01.img": {
                         frame: {
-                            x: 4043,
-                            y: 1590,
+                            x: 4042,
+                            y: 3593,
+                            w: 24,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 24,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 24,
+                            h: 128
+                        }
+                    },
+                    "map-door-05.img": {
+                        frame: {
+                            x: 3947,
+                            y: 2082,
                             w: 24,
                             h: 128
                         },
@@ -14262,7 +14362,7 @@ webpackJsonp([1], {
                     "map-door-03.img": {
                         frame: {
                             x: 3947,
-                            y: 2410,
+                            y: 2214,
                             w: 32,
                             h: 112
                         },
@@ -14279,30 +14379,30 @@ webpackJsonp([1], {
                             h: 112
                         }
                     },
-                    "map-building-house-window-res-01.img": {
+                    "gun-ots38-01.img": {
                         frame: {
-                            x: 3947,
-                            y: 2526,
-                            w: 32,
+                            x: 3891,
+                            y: 3118,
+                            w: 38,
                             h: 104
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
+                            x: 11,
+                            y: 132,
+                            w: 38,
                             h: 104
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 104
+                            w: 60,
+                            h: 236
                         }
                     },
                     "map-building-house-window-01.img": {
                         frame: {
                             x: 3947,
-                            y: 2634,
+                            y: 2330,
                             w: 32,
                             h: 104
                         },
@@ -14319,24 +14419,24 @@ webpackJsonp([1], {
                             h: 104
                         }
                     },
-                    "ping-map-airstrike.img": {
+                    "map-building-house-window-res-01.img": {
                         frame: {
-                            x: 3891,
-                            y: 3118,
-                            w: 44,
-                            h: 103
+                            x: 3947,
+                            y: 2438,
+                            w: 32,
+                            h: 104
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 42,
-                            y: 13,
-                            w: 44,
-                            h: 103
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 104
                         },
                         sourceSize: {
-                            w: 128,
-                            h: 128
+                            w: 32,
+                            h: 104
                         }
                     },
                     "map-crate-06.img": {
@@ -14402,21 +14502,21 @@ webpackJsonp([1], {
                     "gun-short-01.img": {
                         frame: {
                             x: 3947,
-                            y: 2742,
+                            y: 2546,
                             w: 32,
                             h: 100
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 2,
+                            y: 2,
                             w: 32,
                             h: 100
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 100
+                            w: 36,
+                            h: 104
                         }
                     },
                     "dab-face.img": {
@@ -14479,10 +14579,10 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "map-wall-03-rounded.img": {
+                    "map-wall-03.img": {
                         frame: {
                             x: 3947,
-                            y: 2846,
+                            y: 2650,
                             w: 32,
                             h: 96
                         },
@@ -14499,10 +14599,10 @@ webpackJsonp([1], {
                             h: 96
                         }
                     },
-                    "map-wall-03.img": {
+                    "map-wall-03-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 2946,
+                            y: 2750,
                             w: 32,
                             h: 96
                         },
@@ -14701,8 +14801,8 @@ webpackJsonp([1], {
                     },
                     "map-pot-res-01.img": {
                         frame: {
-                            x: 3983,
-                            y: 4012,
+                            x: 3026,
+                            y: 2570,
                             w: 80,
                             h: 80
                         },
@@ -14717,26 +14817,6 @@ webpackJsonp([1], {
                         sourceSize: {
                             w: 144,
                             h: 144
-                        }
-                    },
-                    "gun-dp28-top-01.img": {
-                        frame: {
-                            x: 3026,
-                            y: 2570,
-                            w: 80,
-                            h: 80
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 80,
-                            h: 80
-                        },
-                        sourceSize: {
-                            w: 80,
-                            h: 80
                         }
                     },
                     "loot-weapon-fists.img": {
@@ -14839,27 +14919,47 @@ webpackJsonp([1], {
                             h: 74
                         }
                     },
-                    "gg.img": {
+                    "gun-dp28-top-01.img": {
                         frame: {
                             x: 3806,
                             y: 2570,
-                            w: 114,
-                            h: 72
+                            w: 74,
+                            h: 74
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 7,
-                            y: 28,
-                            w: 114,
-                            h: 72
+                            x: 5,
+                            y: 5,
+                            w: 74,
+                            h: 74
                         },
                         sourceSize: {
-                            w: 128,
-                            h: 128
+                            w: 84,
+                            h: 84
                         }
                     },
-                    "unlock.img": {
+                    "map-potato-res.img": {
+                        frame: {
+                            x: 3884,
+                            y: 2570,
+                            w: 56,
+                            h: 66
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 20,
+                            y: 15,
+                            w: 56,
+                            h: 66
+                        },
+                        sourceSize: {
+                            w: 96,
+                            h: 96
+                        }
+                    },
+                    "lock.img": {
                         frame: {
                             x: 3890,
                             y: 2466,
@@ -14879,10 +14979,10 @@ webpackJsonp([1], {
                             h: 64
                         }
                     },
-                    "map-wall-02.img": {
+                    "map-wall-02-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 3046,
+                            y: 2850,
                             w: 32,
                             h: 64
                         },
@@ -14899,10 +14999,10 @@ webpackJsonp([1], {
                             h: 64
                         }
                     },
-                    "map-wall-02-rounded.img": {
+                    "map-wall-02.img": {
                         frame: {
                             x: 3947,
-                            y: 3114,
+                            y: 2918,
                             w: 32,
                             h: 64
                         },
@@ -14967,41 +15067,21 @@ webpackJsonp([1], {
                             h: 44
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 2,
+                            y: 2,
                             w: 76,
                             h: 44
                         },
                         sourceSize: {
-                            w: 76,
-                            h: 44
-                        }
-                    },
-                    "gun-pkp-bot-01.img": {
-                        frame: {
-                            x: 1853,
-                            y: 3550,
-                            w: 76,
-                            h: 44
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 76,
-                            h: 44
-                        },
-                        sourceSize: {
-                            w: 76,
-                            h: 44
+                            w: 80,
+                            h: 48
                         }
                     },
                     "ping-part-eighth-highlight.img": {
                         frame: {
-                            x: 1933,
+                            x: 1853,
                             y: 3550,
                             w: 51,
                             h: 43
@@ -15021,7 +15101,7 @@ webpackJsonp([1], {
                     },
                     "ping-part-eighth.img": {
                         frame: {
-                            x: 1988,
+                            x: 1908,
                             y: 3550,
                             w: 51,
                             h: 43
@@ -15041,7 +15121,7 @@ webpackJsonp([1], {
                     },
                     "map-building-bank-window-res-01.img": {
                         frame: {
-                            x: 2043,
+                            x: 1963,
                             y: 3550,
                             w: 44,
                             h: 43
@@ -15061,7 +15141,7 @@ webpackJsonp([1], {
                     },
                     "pumpkin-play.img": {
                         frame: {
-                            x: 2091,
+                            x: 2011,
                             y: 3550,
                             w: 40,
                             h: 43
@@ -15081,7 +15161,7 @@ webpackJsonp([1], {
                     },
                     "part-frag-lever-01.img": {
                         frame: {
-                            x: 2135,
+                            x: 2055,
                             y: 3550,
                             w: 48,
                             h: 40
@@ -15099,9 +15179,49 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
+                    "player-hands-01.img": {
+                        frame: {
+                            x: 2107,
+                            y: 3550,
+                            w: 40,
+                            h: 40
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 40,
+                            h: 40
+                        },
+                        sourceSize: {
+                            w: 42,
+                            h: 42
+                        }
+                    },
+                    "player-feet-01.img": {
+                        frame: {
+                            x: 3947,
+                            y: 2986,
+                            w: 28,
+                            h: 40
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 1,
+                            w: 28,
+                            h: 40
+                        },
+                        sourceSize: {
+                            w: 42,
+                            h: 42
+                        }
+                    },
                     "hatchet.img": {
                         frame: {
-                            x: 2187,
+                            x: 2151,
                             y: 3550,
                             w: 44,
                             h: 38
@@ -15119,69 +15239,29 @@ webpackJsonp([1], {
                             h: 48
                         }
                     },
-                    "player-feet-01.img": {
+                    "map-barrel-03.img": {
                         frame: {
-                            x: 2235,
+                            x: 2199,
                             y: 3550,
-                            w: 38,
-                            h: 38
+                            w: 89,
+                            h: 35
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 38,
-                            h: 38
+                            w: 89,
+                            h: 35
                         },
                         sourceSize: {
-                            w: 38,
-                            h: 38
-                        }
-                    },
-                    "player-hands-01.img": {
-                        frame: {
-                            x: 2277,
-                            y: 3550,
-                            w: 38,
-                            h: 38
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 38
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 38
+                            w: 89,
+                            h: 35
                         }
                     },
                     "map-barrel-04.img": {
                         frame: {
-                            x: 2319,
-                            y: 3550,
-                            w: 89,
-                            h: 35
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 89,
-                            h: 35
-                        },
-                        sourceSize: {
-                            w: 89,
-                            h: 35
-                        }
-                    },
-                    "map-barrel-03.img": {
-                        frame: {
-                            x: 2412,
+                            x: 2292,
                             y: 3550,
                             w: 89,
                             h: 35
@@ -15201,8 +15281,8 @@ webpackJsonp([1], {
                     },
                     "map-switch-01.img": {
                         frame: {
-                            x: 4043,
-                            y: 1722,
+                            x: 3947,
+                            y: 3030,
                             w: 30,
                             h: 34
                         },
@@ -15221,68 +15301,28 @@ webpackJsonp([1], {
                     },
                     "gun-qbb97-bot-01.img": {
                         frame: {
-                            x: 2505,
+                            x: 2385,
                             y: 3550,
                             w: 64,
                             h: 32
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 2,
+                            y: 2,
                             w: 64,
                             h: 32
                         },
                         sourceSize: {
-                            w: 64,
-                            h: 32
-                        }
-                    },
-                    "map-bottle-03.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3182,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "map-bottle-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3218,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
+                            w: 68,
+                            h: 36
                         }
                     },
                     "dot.img": {
                         frame: {
                             x: 3947,
-                            y: 3254,
+                            y: 3068,
                             w: 32,
                             h: 32
                         },
@@ -15299,10 +15339,50 @@ webpackJsonp([1], {
                             h: 36
                         }
                     },
+                    "map-bottle-01.img": {
+                        frame: {
+                            x: 3947,
+                            y: 3104,
+                            w: 32,
+                            h: 32
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 32
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 32
+                        }
+                    },
+                    "map-bottle-03.img": {
+                        frame: {
+                            x: 3947,
+                            y: 3140,
+                            w: 32,
+                            h: 32
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 32,
+                            h: 32
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 32
+                        }
+                    },
                     "map-bottle-02.img": {
                         frame: {
                             x: 3947,
-                            y: 3290,
+                            y: 3176,
                             w: 32,
                             h: 32
                         },
@@ -15322,7 +15402,7 @@ webpackJsonp([1], {
                     "map-wall-01-rounded.img": {
                         frame: {
                             x: 3947,
-                            y: 3326,
+                            y: 3212,
                             w: 32,
                             h: 32
                         },
@@ -15341,8 +15421,8 @@ webpackJsonp([1], {
                     },
                     "map-switch-02.img": {
                         frame: {
-                            x: 4043,
-                            y: 1760,
+                            x: 4042,
+                            y: 3725,
                             w: 30,
                             h: 32
                         },
@@ -15361,8 +15441,8 @@ webpackJsonp([1], {
                     },
                     "ping-part-circle-auto-highlight.img": {
                         frame: {
-                            x: 4043,
-                            y: 1826,
+                            x: 3947,
+                            y: 3248,
                             w: 29,
                             h: 29
                         },
@@ -15379,10 +15459,30 @@ webpackJsonp([1], {
                             h: 29
                         }
                     },
+                    "ping-part-circle-auto.img": {
+                        frame: {
+                            x: 3947,
+                            y: 3281,
+                            w: 28,
+                            h: 28
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 28,
+                            h: 28
+                        },
+                        sourceSize: {
+                            w: 28,
+                            h: 28
+                        }
+                    },
                     "ping-part-circle.img": {
                         frame: {
-                            x: 4043,
-                            y: 1859,
+                            x: 3947,
+                            y: 3313,
                             w: 28,
                             h: 28
                         },
@@ -15399,30 +15499,10 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "ping-part-circle-auto.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1891,
-                            w: 28,
-                            h: 28
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 28,
-                            h: 28
-                        },
-                        sourceSize: {
-                            w: 28,
-                            h: 28
-                        }
-                    },
                     "ping-part-circle-highlight.img": {
                         frame: {
-                            x: 4043,
-                            y: 1923,
+                            x: 3947,
+                            y: 3345,
                             w: 28,
                             h: 28
                         },
@@ -15441,8 +15521,8 @@ webpackJsonp([1], {
                     },
                     "ping-part-circle-auto-outer.img": {
                         frame: {
-                            x: 4043,
-                            y: 1796,
+                            x: 3947,
+                            y: 3377,
                             w: 28,
                             h: 26
                         },
@@ -15461,7 +15541,7 @@ webpackJsonp([1], {
                     },
                     "map-wall-shack-top.img": {
                         frame: {
-                            x: 2573,
+                            x: 2453,
                             y: 3550,
                             w: 360,
                             h: 24
@@ -15481,7 +15561,7 @@ webpackJsonp([1], {
                     },
                     "map-wall-shack-bot.img": {
                         frame: {
-                            x: 2937,
+                            x: 2817,
                             y: 3550,
                             w: 242,
                             h: 24
@@ -15501,7 +15581,7 @@ webpackJsonp([1], {
                     },
                     "map-wall-outhouse-top.img": {
                         frame: {
-                            x: 3183,
+                            x: 3063,
                             y: 3550,
                             w: 204,
                             h: 24
@@ -15519,30 +15599,30 @@ webpackJsonp([1], {
                             h: 24
                         }
                     },
-                    "gun-med-01.img": {
+                    "proj-bomb-iron-01.img": {
                         frame: {
-                            x: 3947,
-                            y: 2278,
-                            w: 32,
-                            h: 128
+                            x: 3855,
+                            y: 3246,
+                            w: 66,
+                            h: 157
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 128
+                            x: 47,
+                            y: 2,
+                            w: 66,
+                            h: 157
                         },
                         sourceSize: {
-                            w: 32,
-                            h: 128
+                            w: 160,
+                            h: 160
                         }
                     }
                 }
             }, {
                 meta: {
-                    image: "shared-1-100-029c2f67.png",
+                    image: "shared-1-100-3263e90c.png",
                     size: {
                         w: 4096,
                         h: 4096
@@ -15550,7 +15630,7 @@ webpackJsonp([1], {
                     scale: 1
                 },
                 frames: {
-                    "map-building-house-floor-02.img": {
+                    "map-building-house-floor-01.img": {
                         frame: {
                             x: 966,
                             y: 2,
@@ -15570,7 +15650,7 @@ webpackJsonp([1], {
                             h: 864
                         }
                     },
-                    "map-building-house-floor-01.img": {
+                    "map-building-house-floor-02.img": {
                         frame: {
                             x: 2,
                             y: 2,
@@ -16030,7 +16110,7 @@ webpackJsonp([1], {
                             h: 408
                         }
                     },
-                    "map-building-panicroom-ceiling.img": {
+                    "map-building-panicroom-floor.img": {
                         frame: {
                             x: 3683,
                             y: 796,
@@ -16050,7 +16130,7 @@ webpackJsonp([1], {
                             h: 384
                         }
                     },
-                    "map-building-panicroom-floor.img": {
+                    "map-building-panicroom-ceiling.img": {
                         frame: {
                             x: 3683,
                             y: 1184,
@@ -16090,29 +16170,9 @@ webpackJsonp([1], {
                             h: 384
                         }
                     },
-                    "map-building-container-open-ceiling-01.img": {
+                    "map-building-container-ceiling-03.img": {
                         frame: {
                             x: 3683,
-                            y: 1956,
-                            w: 180,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 156,
-                            w: 180,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 692
-                        }
-                    },
-                    "map-building-container-ceiling-02.img": {
-                        frame: {
-                            x: 3867,
                             y: 1956,
                             w: 180,
                             h: 380
@@ -16130,10 +16190,10 @@ webpackJsonp([1], {
                             h: 536
                         }
                     },
-                    "map-building-container-ceiling-03.img": {
+                    "map-building-container-ceiling-01.img": {
                         frame: {
-                            x: 3683,
-                            y: 2340,
+                            x: 3867,
+                            y: 1956,
                             w: 180,
                             h: 380
                         },
@@ -16152,7 +16212,7 @@ webpackJsonp([1], {
                     },
                     "map-building-container-ceiling-05.img": {
                         frame: {
-                            x: 3867,
+                            x: 3683,
                             y: 2340,
                             w: 180,
                             h: 380
@@ -16170,7 +16230,27 @@ webpackJsonp([1], {
                             h: 536
                         }
                     },
-                    "map-building-container-ceiling-01.img": {
+                    "map-building-container-open-ceiling-01.img": {
+                        frame: {
+                            x: 3867,
+                            y: 2340,
+                            w: 180,
+                            h: 380
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 156,
+                            w: 180,
+                            h: 380
+                        },
+                        sourceSize: {
+                            w: 180,
+                            h: 692
+                        }
+                    },
+                    "map-building-container-ceiling-02.img": {
                         frame: {
                             x: 3683,
                             y: 2724,
@@ -16370,49 +16450,9 @@ webpackJsonp([1], {
                             h: 256
                         }
                     },
-                    "part-smoke-03.img": {
-                        frame: {
-                            x: 1210,
-                            y: 3800,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "part-smoke-02.img": {
-                        frame: {
-                            x: 1470,
-                            y: 3800,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
                     "emote-circle-outer.img": {
                         frame: {
-                            x: 1730,
+                            x: 1210,
                             y: 3800,
                             w: 252,
                             h: 254
@@ -16430,9 +16470,29 @@ webpackJsonp([1], {
                             h: 256
                         }
                     },
+                    "part-smoke-03.img": {
+                        frame: {
+                            x: 1466,
+                            y: 3800,
+                            w: 257,
+                            h: 253
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 2,
+                            w: 257,
+                            h: 253
+                        },
+                        sourceSize: {
+                            w: 260,
+                            h: 260
+                        }
+                    },
                     "map-bunker-crossing-chamber-floor-02.img": {
                         frame: {
-                            x: 1986,
+                            x: 1727,
                             y: 3800,
                             w: 704,
                             h: 252
@@ -16452,7 +16512,7 @@ webpackJsonp([1], {
                     },
                     "map-bunker-conch-floor-01.img": {
                         frame: {
-                            x: 2694,
+                            x: 2435,
                             y: 3800,
                             w: 580,
                             h: 252
@@ -16470,9 +16530,29 @@ webpackJsonp([1], {
                             h: 256
                         }
                     },
+                    "part-smoke-02.img": {
+                        frame: {
+                            x: 3019,
+                            y: 3800,
+                            w: 258,
+                            h: 252
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 4,
+                            w: 258,
+                            h: 252
+                        },
+                        sourceSize: {
+                            w: 260,
+                            h: 260
+                        }
+                    },
                     "map-bunker-crossing-chamber-floor-03.img": {
                         frame: {
-                            x: 3278,
+                            x: 3281,
                             y: 3800,
                             w: 704,
                             h: 248
@@ -16590,106 +16670,6 @@ webpackJsonp([1], {
                             h: 192
                         }
                     },
-                    "gun-saiga-01.img": {
-                        frame: {
-                            x: 3975,
-                            y: 796,
-                            w: 40,
-                            h: 174
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 6,
-                            w: 40,
-                            h: 174
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 196
-                        }
-                    },
-                    "part-shell-04.img": {
-                        frame: {
-                            x: 3975,
-                            y: 974,
-                            w: 55,
-                            h: 164
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 55,
-                            h: 164
-                        },
-                        sourceSize: {
-                            w: 55,
-                            h: 164
-                        }
-                    },
-                    "map-wall-04-stone.img": {
-                        frame: {
-                            x: 4019,
-                            y: 796,
-                            w: 40,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 40,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 40,
-                            h: 160
-                        }
-                    },
-                    "part-airdrop-02.img": {
-                        frame: {
-                            x: 3975,
-                            y: 1184,
-                            w: 38,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 160
-                        }
-                    },
-                    "part-airdrop-02x.img": {
-                        frame: {
-                            x: 4017,
-                            y: 1184,
-                            w: 38,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 160
-                        }
-                    },
                     "map-bed-res-02.img": {
                         frame: {
                             x: 3525,
@@ -16730,26 +16710,6 @@ webpackJsonp([1], {
                             h: 192
                         }
                     },
-                    "proj-bomb-iron-01.img": {
-                        frame: {
-                            x: 3975,
-                            y: 1348,
-                            w: 66,
-                            h: 157
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 47,
-                            y: 2,
-                            w: 66,
-                            h: 157
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
                     "proj-smoke-nopin.img": {
                         frame: {
                             x: 3525,
@@ -16770,27 +16730,27 @@ webpackJsonp([1], {
                             h: 160
                         }
                     },
-                    "map-tree-res-01.img": {
+                    "proj-smoke-pin.img": {
                         frame: {
-                            x: 3628,
-                            y: 1749,
-                            w: 46,
-                            h: 46
+                            x: 3525,
+                            y: 1289,
+                            w: 152,
+                            h: 155
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 46,
-                            h: 46
+                            x: 4,
+                            y: 3,
+                            w: 152,
+                            h: 155
                         },
                         sourceSize: {
-                            w: 48,
-                            h: 48
+                            w: 160,
+                            h: 160
                         }
                     },
-                    "map-crate-11.img": {
+                    "player-circle-base-01.img": {
                         frame: {
                             x: 2646,
                             y: 1676,
@@ -16798,16 +16758,16 @@ webpackJsonp([1], {
                             h: 148
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 2,
+                            y: 2,
                             w: 148,
                             h: 148
                         },
                         sourceSize: {
-                            w: 148,
-                            h: 148
+                            w: 152,
+                            h: 152
                         }
                     },
                     "player-armor-base-01.img": {
@@ -16818,19 +16778,19 @@ webpackJsonp([1], {
                             h: 148
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 2,
+                            y: 2,
                             w: 148,
                             h: 148
                         },
                         sourceSize: {
-                            w: 148,
-                            h: 148
+                            w: 152,
+                            h: 152
                         }
                     },
-                    "loot-circle-inner-01.img": {
+                    "map-crate-11.img": {
                         frame: {
                             x: 2646,
                             y: 1980,
@@ -16850,7 +16810,7 @@ webpackJsonp([1], {
                             h: 148
                         }
                     },
-                    "player-circle-base-01.img": {
+                    "map-crate-10.img": {
                         frame: {
                             x: 2646,
                             y: 2132,
@@ -16870,44 +16830,24 @@ webpackJsonp([1], {
                             h: 148
                         }
                     },
-                    "map-crate-10.img": {
+                    "map-tree-res-01.img": {
                         frame: {
-                            x: 1922,
-                            y: 2328,
-                            w: 148,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 148,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 148,
-                            h: 148
-                        }
-                    },
-                    "map-sandbags-01.img": {
-                        frame: {
-                            x: 2074,
-                            y: 2328,
-                            w: 256,
-                            h: 146
+                            x: 3628,
+                            y: 1507,
+                            w: 46,
+                            h: 46
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
+                            x: 1,
                             y: 1,
-                            w: 256,
-                            h: 146
+                            w: 46,
+                            h: 46
                         },
                         sourceSize: {
-                            w: 256,
-                            h: 148
+                            w: 48,
+                            h: 48
                         }
                     },
                     "map-sandbags-02.img": {
@@ -16932,8 +16872,8 @@ webpackJsonp([1], {
                     },
                     "proj-smoke-nopin-nolever.img": {
                         frame: {
-                            x: 3984,
-                            y: 2958,
+                            x: 3975,
+                            y: 796,
                             w: 76,
                             h: 146
                         },
@@ -16952,7 +16892,7 @@ webpackJsonp([1], {
                     },
                     "map-building-barn-ceiling-02.img": {
                         frame: {
-                            x: 2334,
+                            x: 2182,
                             y: 2328,
                             w: 416,
                             h: 144
@@ -16970,30 +16910,30 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "proj-mirv-pin.img": {
+                    "map-crate-01.img": {
                         frame: {
-                            x: 3547,
-                            y: 2480,
-                            w: 102,
+                            x: 2602,
+                            y: 2328,
+                            w: 144,
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
-                            y: 2,
-                            w: 102,
+                            y: 0,
+                            w: 144,
                             h: 144
                         },
                         sourceSize: {
-                            w: 128,
-                            h: 148
+                            w: 144,
+                            h: 144
                         }
                     },
                     "proj-mirv-nopin.img": {
                         frame: {
                             x: 3547,
-                            y: 2628,
+                            y: 2480,
                             w: 102,
                             h: 144
                         },
@@ -17010,10 +16950,30 @@ webpackJsonp([1], {
                             h: 148
                         }
                     },
+                    "proj-mirv-pin.img": {
+                        frame: {
+                            x: 3547,
+                            y: 2628,
+                            w: 102,
+                            h: 144
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 2,
+                            w: 102,
+                            h: 144
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 148
+                        }
+                    },
                     "proj-mirv-nopin-nolever.img": {
                         frame: {
-                            x: 2709,
-                            y: 807,
+                            x: 3975,
+                            y: 946,
                             w: 76,
                             h: 144
                         },
@@ -17092,8 +17052,8 @@ webpackJsonp([1], {
                     },
                     "map-door-slot-02.img": {
                         frame: {
-                            x: 4007,
-                            y: 1572,
+                            x: 3975,
+                            y: 1184,
                             w: 38,
                             h: 136
                         },
@@ -17112,8 +17072,8 @@ webpackJsonp([1], {
                     },
                     "map-door-slot-01.img": {
                         frame: {
-                            x: 4007,
-                            y: 1712,
+                            x: 4017,
+                            y: 1184,
                             w: 38,
                             h: 134
                         },
@@ -17132,8 +17092,8 @@ webpackJsonp([1], {
                     },
                     "part-shell-01.img": {
                         frame: {
-                            x: 4003,
-                            y: 3108,
+                            x: 3975,
+                            y: 1324,
                             w: 56,
                             h: 133
                         },
@@ -17148,6 +17108,26 @@ webpackJsonp([1], {
                         sourceSize: {
                             w: 56,
                             h: 133
+                        }
+                    },
+                    "gun-mp220-01.img": {
+                        frame: {
+                            x: 4007,
+                            y: 1572,
+                            w: 42,
+                            h: 132
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 0,
+                            w: 42,
+                            h: 132
+                        },
+                        sourceSize: {
+                            w: 44,
+                            h: 132
                         }
                     },
                     "map-stone-res-06.img": {
@@ -17170,7 +17150,7 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "spain.img": {
+                    "slovakia.img": {
                         frame: {
                             x: 3540,
                             y: 3620,
@@ -17193,7 +17173,7 @@ webpackJsonp([1], {
                     "part-airdrop-04.img": {
                         frame: {
                             x: 4007,
-                            y: 3472,
+                            y: 1708,
                             w: 54,
                             h: 128
                         },
@@ -17212,8 +17192,8 @@ webpackJsonp([1], {
                     },
                     "map-door-04.img": {
                         frame: {
-                            x: 4007,
-                            y: 3604,
+                            x: 3984,
+                            y: 2958,
                             w: 54,
                             h: 128
                         },
@@ -17227,33 +17207,13 @@ webpackJsonp([1], {
                         },
                         sourceSize: {
                             w: 54,
-                            h: 128
-                        }
-                    },
-                    "gun-mp220-01.img": {
-                        frame: {
-                            x: 3618,
-                            y: 806,
-                            w: 40,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 40,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 40,
                             h: 128
                         }
                     },
                     "ping-map-danger.img": {
                         frame: {
-                            x: 3618,
-                            y: 968,
+                            x: 4003,
+                            y: 3108,
                             w: 40,
                             h: 128
                         },
@@ -17273,7 +17233,7 @@ webpackJsonp([1], {
                     "bullets.img": {
                         frame: {
                             x: 2709,
-                            y: 955,
+                            y: 807,
                             w: 86,
                             h: 124
                         },
@@ -17293,7 +17253,7 @@ webpackJsonp([1], {
                     "loot-throwable-smoke.img": {
                         frame: {
                             x: 2709,
-                            y: 1083,
+                            y: 935,
                             w: 84,
                             h: 122
                         },
@@ -17313,7 +17273,7 @@ webpackJsonp([1], {
                     "ice-cream.img": {
                         frame: {
                             x: 2709,
-                            y: 1209,
+                            y: 1061,
                             w: 66,
                             h: 122
                         },
@@ -17330,20 +17290,40 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "loot-throwable-mirv.img": {
+                    "loot-weapon-ots38.img": {
                         frame: {
                             x: 2709,
-                            y: 1335,
-                            w: 82,
-                            h: 112
+                            y: 1187,
+                            w: 81,
+                            h: 120
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 23,
-                            y: 8,
-                            w: 82,
-                            h: 112
+                            y: 4,
+                            w: 81,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-chest-02.img": {
+                        frame: {
+                            x: 2709,
+                            y: 1311,
+                            w: 76,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 26,
+                            y: 4,
+                            w: 76,
+                            h: 120
                         },
                         sourceSize: {
                             w: 128,
@@ -17372,8 +17352,8 @@ webpackJsonp([1], {
                     },
                     "loot-medical-soda.img": {
                         frame: {
-                            x: 3986,
-                            y: 3800,
+                            x: 3618,
+                            y: 806,
                             w: 60,
                             h: 110
                         },
@@ -17392,8 +17372,8 @@ webpackJsonp([1], {
                     },
                     "ping-map-airdrop.img": {
                         frame: {
-                            x: 3986,
-                            y: 3914,
+                            x: 3975,
+                            y: 1461,
                             w: 74,
                             h: 106
                         },
@@ -17410,10 +17390,90 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
+                    "map-building-bank-window-01.img": {
+                        frame: {
+                            x: 3618,
+                            y: 968,
+                            w: 56,
+                            h: 104
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 56,
+                            h: 104
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 104
+                        }
+                    },
+                    "ping-map-airstrike.img": {
+                        frame: {
+                            x: 4007,
+                            y: 1840,
+                            w: 44,
+                            h: 103
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 42,
+                            y: 13,
+                            w: 44,
+                            h: 103
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "question.img": {
+                        frame: {
+                            x: 3989,
+                            y: 3800,
+                            w: 68,
+                            h: 102
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 30,
+                            y: 13,
+                            w: 68,
+                            h: 102
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "map-toilet-04.img": {
+                        frame: {
+                            x: 3989,
+                            y: 3906,
+                            w: 66,
+                            h: 98
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 17,
+                            y: 1,
+                            w: 66,
+                            h: 98
+                        },
+                        sourceSize: {
+                            w: 100,
+                            h: 100
+                        }
+                    },
                     "map-saloon-bar-02.img": {
                         frame: {
                             x: 4007,
-                            y: 1850,
+                            y: 3472,
                             w: 54,
                             h: 92
                         },
@@ -17470,7 +17530,47 @@ webpackJsonp([1], {
                             h: 76
                         }
                     },
-                    "cursor-01.img": {
+                    "gg.img": {
+                        frame: {
+                            x: 2338,
+                            y: 3108,
+                            w: 114,
+                            h: 72
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 28,
+                            w: 114,
+                            h: 72
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "timer-background.img": {
+                        frame: {
+                            x: 3975,
+                            y: 1094,
+                            w: 72,
+                            h: 72
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 72,
+                            h: 72
+                        },
+                        sourceSize: {
+                            w: 72,
+                            h: 72
+                        }
+                    },
+                    "cursor-03.img": {
                         frame: {
                             x: 2722,
                             y: 1589,
@@ -17490,9 +17590,29 @@ webpackJsonp([1], {
                             h: 72
                         }
                     },
+                    "map-power-box-01.img": {
+                        frame: {
+                            x: 2456,
+                            y: 3108,
+                            w: 72,
+                            h: 72
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 72,
+                            h: 72
+                        },
+                        sourceSize: {
+                            w: 72,
+                            h: 72
+                        }
+                    },
                     "player-map-inner.img": {
                         frame: {
-                            x: 2338,
+                            x: 2532,
                             y: 3108,
                             w: 72,
                             h: 72
@@ -17512,7 +17632,7 @@ webpackJsonp([1], {
                     },
                     "player-map-outer.img": {
                         frame: {
-                            x: 2414,
+                            x: 2608,
                             y: 3108,
                             w: 72,
                             h: 72
@@ -17530,69 +17650,9 @@ webpackJsonp([1], {
                             h: 72
                         }
                     },
-                    "timer-background.img": {
+                    "cursor-01.img": {
                         frame: {
-                            x: 2490,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "part-smoke-01.img": {
-                        frame: {
-                            x: 2566,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "cursor-03.img": {
-                        frame: {
-                            x: 2642,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "map-power-box-01.img": {
-                        frame: {
-                            x: 2718,
+                            x: 2684,
                             y: 3108,
                             w: 72,
                             h: 72
@@ -17612,7 +17672,7 @@ webpackJsonp([1], {
                     },
                     "quit.img": {
                         frame: {
-                            x: 2794,
+                            x: 2760,
                             y: 3108,
                             w: 68,
                             h: 72
@@ -17632,7 +17692,7 @@ webpackJsonp([1], {
                     },
                     "player-patch-red.img": {
                         frame: {
-                            x: 2866,
+                            x: 2832,
                             y: 3108,
                             w: 116,
                             h: 70
@@ -17650,9 +17710,29 @@ webpackJsonp([1], {
                             h: 160
                         }
                     },
+                    "part-smoke-01.img": {
+                        frame: {
+                            x: 2952,
+                            y: 3108,
+                            w: 72,
+                            h: 70
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 3,
+                            w: 72,
+                            h: 70
+                        },
+                        sourceSize: {
+                            w: 76,
+                            h: 76
+                        }
+                    },
                     "part-cloth-01.img": {
                         frame: {
-                            x: 2986,
+                            x: 3028,
                             y: 3108,
                             w: 70,
                             h: 70
@@ -17672,7 +17752,7 @@ webpackJsonp([1], {
                     },
                     "ping-indicator.img": {
                         frame: {
-                            x: 3060,
+                            x: 3102,
                             y: 3108,
                             w: 88,
                             h: 68
@@ -17690,9 +17770,9 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "part-snow-01.img": {
+                    "close.img": {
                         frame: {
-                            x: 3152,
+                            x: 3194,
                             y: 3108,
                             w: 68,
                             h: 68
@@ -17710,9 +17790,9 @@ webpackJsonp([1], {
                             h: 72
                         }
                     },
-                    "close.img": {
+                    "part-snow-01.img": {
                         frame: {
-                            x: 3224,
+                            x: 3266,
                             y: 3108,
                             w: 68,
                             h: 68
@@ -17732,7 +17812,7 @@ webpackJsonp([1], {
                     },
                     "submit.img": {
                         frame: {
-                            x: 3296,
+                            x: 3338,
                             y: 3108,
                             w: 66,
                             h: 66
@@ -17752,7 +17832,7 @@ webpackJsonp([1], {
                     },
                     "checked.img": {
                         frame: {
-                            x: 3366,
+                            x: 3408,
                             y: 3108,
                             w: 66,
                             h: 66
@@ -17772,7 +17852,7 @@ webpackJsonp([1], {
                     },
                     "resume.img": {
                         frame: {
-                            x: 3436,
+                            x: 3478,
                             y: 3108,
                             w: 64,
                             h: 66
@@ -17790,29 +17870,9 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "map-potato-res.img": {
-                        frame: {
-                            x: 4003,
-                            y: 3245,
-                            w: 56,
-                            h: 66
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 20,
-                            y: 15,
-                            w: 56,
-                            h: 66
-                        },
-                        sourceSize: {
-                            w: 96,
-                            h: 96
-                        }
-                    },
                     "map-fire-ext-01.img": {
                         frame: {
-                            x: 3504,
+                            x: 3546,
                             y: 3108,
                             w: 83,
                             h: 65
@@ -17830,30 +17890,10 @@ webpackJsonp([1], {
                             h: 70
                         }
                     },
-                    "map-column-01.img": {
+                    "unlock.img": {
                         frame: {
-                            x: 3591,
-                            y: 3108,
-                            w: 64,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 64,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 64
-                        }
-                    },
-                    "lock.img": {
-                        frame: {
-                            x: 3628,
-                            y: 1507,
+                            x: 4003,
+                            y: 3240,
                             w: 48,
                             h: 64
                         },
@@ -17870,30 +17910,30 @@ webpackJsonp([1], {
                             h: 64
                         }
                     },
-                    "proj-frag-pin-part.img": {
+                    "skull-outlined.img": {
                         frame: {
-                            x: 3975,
-                            y: 1509,
-                            w: 58,
-                            h: 58
+                            x: 4007,
+                            y: 3568,
+                            w: 52,
+                            h: 60
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 35,
-                            y: 35,
-                            w: 58,
-                            h: 58
+                            x: 6,
+                            y: 2,
+                            w: 52,
+                            h: 60
                         },
                         sourceSize: {
-                            w: 128,
-                            h: 128
+                            w: 64,
+                            h: 64
                         }
                     },
                     "skull-team.img": {
                         frame: {
-                            x: 3628,
-                            y: 1575,
+                            x: 4007,
+                            y: 3632,
                             w: 48,
                             h: 56
                         },
@@ -17912,8 +17952,8 @@ webpackJsonp([1], {
                     },
                     "map-fire-ext-res.img": {
                         frame: {
-                            x: 3628,
-                            y: 1635,
+                            x: 4007,
+                            y: 3692,
                             w: 46,
                             h: 56
                         },
@@ -17952,8 +17992,8 @@ webpackJsonp([1], {
                     },
                     "map-candle-01.img": {
                         frame: {
-                            x: 3628,
-                            y: 1695,
+                            x: 3618,
+                            y: 1076,
                             w: 50,
                             h: 50
                         },
@@ -17970,30 +18010,30 @@ webpackJsonp([1], {
                             h: 52
                         }
                     },
-                    "proj-smoke-pin.img": {
+                    "map-sandbags-01.img": {
                         frame: {
-                            x: 3525,
-                            y: 1289,
-                            w: 152,
-                            h: 155
+                            x: 1922,
+                            y: 2328,
+                            w: 256,
+                            h: 146
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 4,
-                            y: 3,
-                            w: 152,
-                            h: 155
+                            x: 0,
+                            y: 1,
+                            w: 256,
+                            h: 146
                         },
                         sourceSize: {
-                            w: 160,
-                            h: 160
+                            w: 256,
+                            h: 148
                         }
                     }
                 }
             }, {
                 meta: {
-                    image: "shared-2-100-010154a5.png",
+                    image: "shared-2-100-fa19cbe1.png",
                     size: {
                         w: 4096,
                         h: 4096
@@ -18421,7 +18461,7 @@ webpackJsonp([1], {
                             h: 228
                         }
                     },
-                    "map-building-saferoom-floor.img": {
+                    "map-building-saferoom-ceiling.img": {
                         frame: {
                             x: 1830,
                             y: 1890,
@@ -18441,7 +18481,7 @@ webpackJsonp([1], {
                             h: 224
                         }
                     },
-                    "map-building-saferoom-ceiling.img": {
+                    "map-building-saferoom-floor.img": {
                         frame: {
                             x: 2186,
                             y: 1890,
@@ -18501,10 +18541,30 @@ webpackJsonp([1], {
                             h: 216
                         }
                     },
-                    "map-building-teahouse-res-01.img": {
+                    "pad.img": {
                         frame: {
                             x: 2998,
                             y: 1890,
+                            w: 212,
+                            h: 212
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 212,
+                            h: 212
+                        },
+                        sourceSize: {
+                            w: 212,
+                            h: 212
+                        }
+                    },
+                    "map-building-teahouse-res-01.img": {
+                        frame: {
+                            x: 2,
+                            y: 2134,
                             w: 282,
                             h: 208
                         },
@@ -18521,29 +18581,9 @@ webpackJsonp([1], {
                             h: 512
                         }
                     },
-                    "pad.img": {
-                        frame: {
-                            x: 2,
-                            y: 2134,
-                            w: 208,
-                            h: 208
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 208,
-                            h: 208
-                        },
-                        sourceSize: {
-                            w: 208,
-                            h: 208
-                        }
-                    },
                     "map-building-shack-ceiling-01.img": {
                         frame: {
-                            x: 214,
+                            x: 288,
                             y: 2134,
                             w: 315,
                             h: 207
@@ -18561,10 +18601,10 @@ webpackJsonp([1], {
                             h: 255
                         }
                     },
-                    "map-vat-02.img": {
+                    "map-stone-res-02.img": {
                         frame: {
-                            x: 533,
-                            y: 2134,
+                            x: 3214,
+                            y: 1890,
                             w: 200,
                             h: 200
                         },
@@ -18581,9 +18621,9 @@ webpackJsonp([1], {
                             h: 200
                         }
                     },
-                    "map-stone-res-02.img": {
+                    "map-vat-02.img": {
                         frame: {
-                            x: 737,
+                            x: 607,
                             y: 2134,
                             w: 200,
                             h: 200
@@ -18643,7 +18683,7 @@ webpackJsonp([1], {
                     },
                     "map-building-mansion-floor-01d.img": {
                         frame: {
-                            x: 941,
+                            x: 811,
                             y: 2134,
                             w: 1089,
                             h: 186
@@ -18663,7 +18703,7 @@ webpackJsonp([1], {
                     },
                     "map-shack-res-01.img": {
                         frame: {
-                            x: 2034,
+                            x: 1904,
                             y: 2134,
                             w: 305,
                             h: 181
@@ -18683,7 +18723,7 @@ webpackJsonp([1], {
                     },
                     "map-bunker-conch-ceiling-01.img": {
                         frame: {
-                            x: 2343,
+                            x: 2213,
                             y: 2134,
                             w: 380,
                             h: 180
@@ -18703,7 +18743,7 @@ webpackJsonp([1], {
                     },
                     "map-bunker-egg-chamber-floor-01b.img": {
                         frame: {
-                            x: 2727,
+                            x: 2597,
                             y: 2134,
                             w: 192,
                             h: 179
@@ -18723,7 +18763,7 @@ webpackJsonp([1], {
                     },
                     "map-bunker-conch-chamber-ceiling-02.img": {
                         frame: {
-                            x: 2923,
+                            x: 2793,
                             y: 2134,
                             w: 488,
                             h: 176
@@ -18741,7 +18781,7 @@ webpackJsonp([1], {
                             h: 176
                         }
                     },
-                    "map-shack-res-03.img": {
+                    "map-shack-res-02.img": {
                         frame: {
                             x: 2,
                             y: 2346,
@@ -18761,7 +18801,7 @@ webpackJsonp([1], {
                             h: 340
                         }
                     },
-                    "map-shack-res-02.img": {
+                    "map-shack-res-03.img": {
                         frame: {
                             x: 226,
                             y: 2346,
@@ -18829,16 +18869,16 @@ webpackJsonp([1], {
                             h: 172
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 2,
+                            y: 2,
                             w: 172,
                             h: 172
                         },
                         sourceSize: {
-                            w: 172,
-                            h: 172
+                            w: 176,
+                            h: 176
                         }
                     },
                     "map-snow-07.img": {
@@ -18921,7 +18961,7 @@ webpackJsonp([1], {
                             h: 160
                         }
                     },
-                    "map-airdrop-02.img": {
+                    "part-airdrop-03.img": {
                         frame: {
                             x: 2208,
                             y: 2346,
@@ -18941,7 +18981,7 @@ webpackJsonp([1], {
                             h: 160
                         }
                     },
-                    "map-airdrop-01.img": {
+                    "map-table-03.img": {
                         frame: {
                             x: 2372,
                             y: 2346,
@@ -18961,29 +19001,9 @@ webpackJsonp([1], {
                             h: 160
                         }
                     },
-                    "map-building-dock-floor-01a.img": {
+                    "map-airdrop-01.img": {
                         frame: {
                             x: 2536,
-                            y: 2346,
-                            w: 160,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 2,
-                            w: 160,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 162
-                        }
-                    },
-                    "part-airdrop-03.img": {
-                        frame: {
-                            x: 2700,
                             y: 2346,
                             w: 160,
                             h: 160
@@ -19001,7 +19021,27 @@ webpackJsonp([1], {
                             h: 160
                         }
                     },
-                    "map-table-03.img": {
+                    "map-building-dock-floor-01a.img": {
+                        frame: {
+                            x: 2700,
+                            y: 2346,
+                            w: 160,
+                            h: 160
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 2,
+                            w: 160,
+                            h: 160
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 162
+                        }
+                    },
+                    "map-airdrop-02.img": {
                         frame: {
                             x: 2864,
                             y: 2346,
@@ -19101,10 +19141,10 @@ webpackJsonp([1], {
                             h: 156
                         }
                     },
-                    "map-crate-01.img": {
+                    "map-crate-09.img": {
                         frame: {
-                            x: 3284,
-                            y: 1890,
+                            x: 3285,
+                            y: 2134,
                             w: 144,
                             h: 144
                         },
@@ -19141,7 +19181,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "loot-circle-outer-01.img": {
+                    "map-crate-07.img": {
                         frame: {
                             x: 987,
                             y: 2526,
@@ -19149,19 +19189,19 @@ webpackJsonp([1], {
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 1,
-                            y: 1,
+                            x: 0,
+                            y: 0,
                             w: 144,
                             h: 144
                         },
                         sourceSize: {
-                            w: 146,
-                            h: 146
+                            w: 144,
+                            h: 144
                         }
                     },
-                    "map-stone-04.img": {
+                    "map-crate-03.img": {
                         frame: {
                             x: 1135,
                             y: 2526,
@@ -19181,7 +19221,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-stone-05.img": {
+                    "map-crate-02.img": {
                         frame: {
                             x: 1283,
                             y: 2526,
@@ -19221,7 +19261,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-crate-09.img": {
+                    "player-ripple-01.img": {
                         frame: {
                             x: 1579,
                             y: 2526,
@@ -19229,19 +19269,19 @@ webpackJsonp([1], {
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 1,
+                            y: 1,
                             w: 144,
                             h: 144
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 146,
+                            h: 146
                         }
                     },
-                    "map-crate-07.img": {
+                    "map-stone-04.img": {
                         frame: {
                             x: 1727,
                             y: 2526,
@@ -19261,7 +19301,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-crate-02.img": {
+                    "map-stone-05.img": {
                         frame: {
                             x: 1875,
                             y: 2526,
@@ -19281,7 +19321,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-crate-03.img": {
+                    "loot-circle-outer-01.img": {
                         frame: {
                             x: 2023,
                             y: 2526,
@@ -19289,16 +19329,16 @@ webpackJsonp([1], {
                             h: 144
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
+                            x: 1,
+                            y: 1,
                             w: 144,
                             h: 144
                         },
                         sourceSize: {
-                            w: 144,
-                            h: 144
+                            w: 146,
+                            h: 146
                         }
                     },
                     "map-bush-07.img": {
@@ -19361,9 +19401,29 @@ webpackJsonp([1], {
                             h: 148
                         }
                     },
-                    "map-barrel-02.img": {
+                    "loot-circle-inner-01.img": {
                         frame: {
                             x: 2614,
+                            y: 2526,
+                            w: 142,
+                            h: 142
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 5,
+                            w: 142,
+                            h: 142
+                        },
+                        sourceSize: {
+                            w: 152,
+                            h: 152
+                        }
+                    },
+                    "map-barrel-01.img": {
+                        frame: {
+                            x: 2760,
                             y: 2526,
                             w: 142,
                             h: 142
@@ -19381,27 +19441,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "player-ripple-01.img": {
-                        frame: {
-                            x: 2760,
-                            y: 2526,
-                            w: 142,
-                            h: 142
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 142,
-                            h: 142
-                        },
-                        sourceSize: {
-                            w: 142,
-                            h: 142
-                        }
-                    },
-                    "part-panel-01.img": {
+                    "map-barrel-02.img": {
                         frame: {
                             x: 2906,
                             y: 2526,
@@ -19421,7 +19461,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-stone-01.img": {
+                    "part-plank-01.img": {
                         frame: {
                             x: 3052,
                             y: 2526,
@@ -19441,7 +19481,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "part-plank-01.img": {
+                    "map-stone-01.img": {
                         frame: {
                             x: 3198,
                             y: 2526,
@@ -19461,7 +19501,7 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-barrel-01.img": {
+                    "part-panel-01.img": {
                         frame: {
                             x: 2,
                             y: 2684,
@@ -19485,25 +19525,25 @@ webpackJsonp([1], {
                         frame: {
                             x: 148,
                             y: 2684,
-                            w: 140,
-                            h: 140
+                            w: 138,
+                            h: 138
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 140,
-                            h: 140
+                            x: 3,
+                            y: 3,
+                            w: 138,
+                            h: 138
                         },
                         sourceSize: {
-                            w: 140,
-                            h: 140
+                            w: 144,
+                            h: 144
                         }
                     },
                     "map-bunker-vent-03.img": {
                         frame: {
-                            x: 292,
+                            x: 290,
                             y: 2684,
                             w: 132,
                             h: 134
@@ -19523,7 +19563,7 @@ webpackJsonp([1], {
                     },
                     "map-bunker-vent-02.img": {
                         frame: {
-                            x: 428,
+                            x: 426,
                             y: 2684,
                             w: 132,
                             h: 134
@@ -19543,7 +19583,7 @@ webpackJsonp([1], {
                     },
                     "map-outhouse-res.img": {
                         frame: {
-                            x: 564,
+                            x: 562,
                             y: 2684,
                             w: 150,
                             h: 132
@@ -19563,7 +19603,7 @@ webpackJsonp([1], {
                     },
                     "player-king-woods.img": {
                         frame: {
-                            x: 718,
+                            x: 716,
                             y: 2684,
                             w: 140,
                             h: 132
@@ -19583,7 +19623,7 @@ webpackJsonp([1], {
                     },
                     "part-plate-01.img": {
                         frame: {
-                            x: 862,
+                            x: 860,
                             y: 2684,
                             w: 138,
                             h: 132
@@ -19603,7 +19643,7 @@ webpackJsonp([1], {
                     },
                     "map-table-res.img": {
                         frame: {
-                            x: 1004,
+                            x: 1002,
                             y: 2684,
                             w: 131,
                             h: 132
@@ -19621,9 +19661,9 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-bush-01.img": {
+                    "map-bush-07x.img": {
                         frame: {
-                            x: 1139,
+                            x: 1137,
                             y: 2684,
                             w: 126,
                             h: 130
@@ -19641,9 +19681,9 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-bush-07x.img": {
+                    "map-bush-01.img": {
                         frame: {
-                            x: 1269,
+                            x: 1267,
                             y: 2684,
                             w: 126,
                             h: 130
@@ -19663,7 +19703,7 @@ webpackJsonp([1], {
                     },
                     "map-bush-01f.img": {
                         frame: {
-                            x: 1399,
+                            x: 1397,
                             y: 2684,
                             w: 126,
                             h: 130
@@ -19683,7 +19723,7 @@ webpackJsonp([1], {
                     },
                     "part-splat-02.img": {
                         frame: {
-                            x: 1529,
+                            x: 1527,
                             y: 2684,
                             w: 123,
                             h: 130
@@ -19703,7 +19743,7 @@ webpackJsonp([1], {
                     },
                     "map-building-mansion-cellar-01c.img": {
                         frame: {
-                            x: 1656,
+                            x: 1654,
                             y: 2684,
                             w: 354,
                             h: 129
@@ -19723,7 +19763,7 @@ webpackJsonp([1], {
                     },
                     "map-crate-res-01.img": {
                         frame: {
-                            x: 2014,
+                            x: 2012,
                             y: 2684,
                             w: 138,
                             h: 129
@@ -19741,29 +19781,9 @@ webpackJsonp([1], {
                             h: 144
                         }
                     },
-                    "map-table-01.img": {
-                        frame: {
-                            x: 2156,
-                            y: 2684,
-                            w: 160,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 128
-                        }
-                    },
                     "map-stairs-broken-01.img": {
                         frame: {
-                            x: 2320,
+                            x: 2154,
                             y: 2684,
                             w: 160,
                             h: 128
@@ -19781,9 +19801,29 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "south-korea.img": {
+                    "map-table-01.img": {
                         frame: {
-                            x: 2484,
+                            x: 2318,
+                            y: 2684,
+                            w: 160,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 160,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 128
+                        }
+                    },
+                    "uruguay.img": {
+                        frame: {
+                            x: 2482,
                             y: 2684,
                             w: 128,
                             h: 128
@@ -19803,47 +19843,7 @@ webpackJsonp([1], {
                     },
                     "loot-ammo-box.img": {
                         frame: {
-                            x: 2616,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "austria.img": {
-                        frame: {
-                            x: 2748,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "slovakia.img": {
-                        frame: {
-                            x: 2880,
+                            x: 2614,
                             y: 2684,
                             w: 128,
                             h: 128
@@ -19863,47 +19863,7 @@ webpackJsonp([1], {
                     },
                     "singapore.img": {
                         frame: {
-                            x: 3012,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "uruguay.img": {
-                        frame: {
-                            x: 3144,
-                            y: 2684,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "mexico.img": {
-                        frame: {
-                            x: 3276,
+                            x: 2746,
                             y: 2684,
                             w: 128,
                             h: 128
@@ -19923,8 +19883,8 @@ webpackJsonp([1], {
                     },
                     "serbia.img": {
                         frame: {
-                            x: 2,
-                            y: 2830,
+                            x: 2878,
+                            y: 2684,
                             w: 128,
                             h: 128
                         },
@@ -19941,10 +19901,10 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "russia.img": {
+                    "venezuela.img": {
                         frame: {
-                            x: 134,
-                            y: 2830,
+                            x: 3010,
+                            y: 2684,
                             w: 128,
                             h: 128
                         },
@@ -19961,10 +19921,10 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "romania.img": {
+                    "vietnam.img": {
                         frame: {
-                            x: 266,
-                            y: 2830,
+                            x: 3142,
+                            y: 2684,
                             w: 128,
                             h: 128
                         },
@@ -19981,19 +19941,4 @@ webpackJsonp([1], {
                             h: 128
                         }
                     },
-                    "republic-of-poland.img": {
-                        frame: {
-                            x: 398,
-                            y: 2830,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
+                    "thailand.img": {
