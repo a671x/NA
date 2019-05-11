@@ -1,40 +1,41 @@
     "6e43d1d7": function(e, t, a) {
         "use strict";
 
-        function i(e, t, a, i, r, s, l, c) {
-            var m = o.items[e],
-                p = n.rotate(r, t),
-                d = n.mul(p, 9.5 * a);
-            d = n.rotate(d, (Math.random() - .5) * Math.PI / 3);
-            var h = n.add(i, n.mul(r, o.player.radius + m.particle.shellOffset));
-            m.particle.shellReverse && (d = n.mul(d, -1)), c.addParticle(m.ammo, s, h, d, m.particle.shellScale, -Math.atan2(p.y, p.x), null, l)
+        function i(e, t, a, i, r, l, c, m) {
+            var p = s[e],
+                d = n.rotate(r, t),
+                h = n.mul(d, 9.5 * a);
+            h = n.rotate(h, (Math.random() - .5) * Math.PI / 3);
+            var u = n.add(i, n.mul(r, o.player.radius + p.particle.shellOffset));
+            p.particle.shellReverse && (h = n.mul(h, -1)), m.addParticle(p.ammo, l, u, h, p.particle.shellScale, -Math.atan2(d.y, d.x), null, c)
         }
 
         function r() {
             this.shots = []
         }
         var o = (a("8b1dfb45"), a("989ad62a")),
-            n = (a("10899aea"), a("c2a798c8"));
-        a("1901e2d9"), r.prototype = {
-            addShot: function(e, t, a, i, r, s) {
+            n = (a("10899aea"), a("c2a798c8")),
+            s = (a("1901e2d9"), a("e3e76f15"));
+        r.prototype = {
+            addShot: function(e, t, a, i, r, o) {
                 for (var l = null, c = 0; c < this.shots.length; c++)
                     if (!this.shots[c].active) {
                         l = this.shots[c];
                         break
                     }
                 l || (l = {}, this.shots.push(l));
-                var m = o.items[i];
-                l.active = !0, l.pos = n.copy(e), l.layer = t, l.playerId = a, l.weaponType = i, l.offhand = r, l.lastShot = s, l.ticker = 0, l.pullDelay = void 0 !== m.pullDelay ? .45 * m.pullDelay : 0
+                var m = s[i];
+                l.active = !0, l.pos = n.copy(e), l.layer = t, l.playerId = a, l.weaponType = i, l.offhand = r, l.lastShot = o, l.ticker = 0, l.pullDelay = void 0 !== m.pullDelay ? .45 * m.pullDelay : 0
             },
-            c: function(e, t, a, r, n) {
-                for (var s = 0; s < this.shots.length; s++) {
-                    var l = this.shots[s];
+            c: function(e, t, a, r, o) {
+                for (var n = 0; n < this.shots.length; n++) {
+                    var l = this.shots[n];
                     if (l.active) {
-                        var c = o.items[l.weaponType];
+                        var c = s[l.weaponType];
                         if (0 == l.ticker) {
-                            var m = a.ve(l.playerId),
+                            var m = a.Se(l.playerId),
                                 p = c.sound.shoot;
-                            if (l.lastShot && c.sound.shootLast && (p = c.sound.shootLast), n.playSound(p, {
+                            if (l.lastShot && c.sound.shootLast && (p = c.sound.shootLast), o.playSound(p, {
                                     channel: l.playerId == t ? "activePlayer" : "otherPlayers",
                                     soundPos: l.pos,
                                     layer: m ? m.layer : l.layer,
@@ -42,9 +43,9 @@
                                     fallOff: c.sound.fallOff ? c.sound.fallOff : 0
                                 }), m) {
                                 if (m.__id == t && "single" == c.fireMode && c.pullDelay) {
-                                    var d = m.re.weapons[m.re.curWeapIdx].ammo,
+                                    var d = m.ie.weapons[m.ie.curWeapIdx].ammo,
                                         h = d > 0 ? c.sound.cycle : c.sound.pull;
-                                    n.stopSound(m.cycleSoundInstance), m.cycleSoundInstance = n.playSound(h)
+                                    o.stopSound(m.cycleSoundInstance), m.cycleSoundInstance = o.playSound(h)
                                 }
                                 var u = l.offhand || !c.isDual,
                                     g = !l.offhand || !c.isDual;
@@ -52,15 +53,15 @@
                             }
                         }
                         if (l.ticker += e, l.ticker >= l.pullDelay) {
-                            var y = a.ve(l.playerId);
-                            y && !y.ie.dead && y.ie.curWeapType == l.weaponType && "shoot" == c.caseTiming && i(l.weaponType, Math.PI / 2 * -1, 1, y.ie.pos, y.ie.dir, y.renderLayer, y.renderZOrd + 1, r), l.active = !1
+                            var y = a.Se(l.playerId);
+                            y && !y.ae.dead && y.ae.curWeapType == l.weaponType && "shoot" == c.caseTiming && i(l.weaponType, Math.PI / 2 * -1, 1, y.ae.pos, y.ae.dir, y.renderLayer, y.renderZOrd + 1, r), l.active = !1
                         }
                     }
                 }
             }
         }, e.exports = {
             createCasingParticle: i,
-            ze: r
+            ve: r
         }
     },
     "6ffe8b70": function(e, t, a) {
@@ -80,11 +81,13 @@
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            o = a("1901e2d9"),
-            n = a("ce29f17f"),
-            s = a("26be8056"),
-            l = a("f4d48896"),
-            c = {
+            o = a("989ad62a"),
+            n = a("1901e2d9"),
+            s = a("ce29f17f"),
+            l = a("26be8056"),
+            c = a("f4d48896"),
+            m = a("931adedd"),
+            p = (a("cbb1f984"), {
                 muteAudio: !1,
                 masterVolume: 1,
                 soundVolume: 1,
@@ -100,24 +103,21 @@
                 region: "na",
                 gameModeIdx: 2,
                 teamAutoFill: !0,
-                language: s.detectLanguage() || "en",
-                emoteTop: 6,
-                emoteRight: 4,
-                emoteBottom: 7,
-                emoteLeft: 5,
-                emoteWin: 1,
-                emoteDeath: 1,
+                language: l.detectLanguage() || "en",
                 twitterFollow: !1,
                 youtubeSubscribe: !1,
                 facebookLike: !1,
                 instagramFollow: !1,
+                emotes: [],
                 prerollGamesPlayed: 0,
                 totalGamesPlayed: 0,
                 promptAppRate: !0,
                 cookiesConsented: !0,
-                regionSelected: !1
-            },
-            m = function() {
+                regionSelected: !1,
+                loadId: "",
+                unloadId: ""
+            }),
+            d = function() {
                 function e() {
                     i(this, e), this.loaded = !1, this.localStorageAvailable = !0, this.config = {}, this.onModifiedListeners = []
                 }
@@ -130,9 +130,9 @@
                                 try {
                                     i = JSON.parse(a)
                                 } catch (e) {}
-                                t.config = o.mergeDeep({}, c, i), t.onModified(), t.loaded = !0, e()
+                                t.config = n.mergeDeep({}, p, i), t.checkUpgradeConfig(), t.onModified(), t.loaded = !0, e()
                             };
-                        if (n.webview && n.version > "1.0.0") l.storageGetItem("surviv_config", function(e, t) {
+                        if (s.webview && s.version > "1.0.0") c.storageGetItem("surviv_config", function(e, t) {
                             e ? (console.log("Failed loading config"), a({})) : a(t)
                         });
                         else {
@@ -149,7 +149,7 @@
                     key: "store",
                     value: function() {
                         var e = JSON.stringify(this.config);
-                        if (n.webview && n.version > "1.0.0") l.storageSetItem("surviv_config", e, function(e, t) {
+                        if (s.webview && s.version > "1.0.0") c.storageSetItem("surviv_config", e, function(e, t) {
                             e && console.log("Failed storing config")
                         });
                         else if (this.localStorageAvailable) try {
@@ -182,9 +182,25 @@
                     value: function(e) {
                         for (var t = 0; t < this.onModifiedListeners.length; t++) this.onModifiedListeners[t](e)
                     }
+                }, {
+                    key: "checkUpgradeConfig",
+                    value: function() {
+                        var e = this.get("version");
+                        if (!e || e < 1) {
+                            console.log("Upgrade config emotes");
+                            for (var t = [this.get("emoteTop"), this.get("emoteRight"), this.get("emoteBottom"), this.get("emoteLeft"), this.get("emoteWin"), this.get("emoteDeath")], a = [], i = 0; i < o.EmoteSlot.Count; i++) {
+                                var r = parseInt(t[i]),
+                                    n = 2e4 + r,
+                                    s = m.dbIdToEmoteType(n);
+                                s || (s = o.defaultEmoteLoadout[i]), a.push(s)
+                            }
+                            this.set("emotes", a)
+                        }
+                        this.set("version", 1)
+                    }
                 }]), e
             }();
-        e.exports = m
+        e.exports = d
     },
     "72409abe": function(e, t, a) {
         "use strict";
@@ -209,11 +225,11 @@
         }
 
         function r() {
-            this.active = !1, this.pos = c.create(0, 0), this.container = new n.Container, this.sprite = n.Sprite.fromImage("skull.img"), this.sprite.anchor.set(.5, .5), this.sprite.scale.set(.4, .4), this.sprite.tint = 5921370, this.container.addChild(this.sprite), this.nameText = i(), this.nameText.anchor.set(.5, -1), this.nameText.tint = l.rgb2hex(l.hsv2rgb(0, 0, .5)), this.container.addChild(this.nameText), this.container.visible = this.sprite
+            this.active = !1, this.pos = c.create(0, 0), this.container = new n.Container, this.sprite = n.Sprite.fromImage("skull.img"), this.sprite.anchor.set(.5, .5), this.sprite.scale.set(.4, .4), this.sprite.tint = 5921370, this.container.addChild(this.sprite), this.nameText = i(), this.nameText.anchor.set(.5, -1), this.nameText.tint = l.rgbToInt(l.hsvToRgb(0, 0, .5)), this.container.addChild(this.nameText), this.container.visible = this.sprite
         }
 
         function o() {
-            this.Me = new p.Pool(r)
+            this.ke = new p.Pool(r)
         }
         var n = (a("0e566746"), a("8b1dfb45")),
             s = a("6b42806d"),
@@ -231,13 +247,13 @@
             }
         }, o.prototype = {
             c: function(e, t, a, i, r, o, n, l) {
-                for (var c = this.Me.m(), m = 0; m < c.length; m++) {
+                for (var c = this.ke.m(), m = 0; m < c.length; m++) {
                     var p = c[m];
                     if (p.active) {
                         if (!p.nameTextSet) {
-                            var d = t.ne(p.playerId),
+                            var d = t.oe(p.playerId),
                                 h = d.groupId,
-                                u = t.ne(r).groupId,
+                                u = t.oe(r).groupId,
                                 g = i && h != u ? d.anonName : d.name;
                             p.nameText.text = g, p.nameTextSet = !0
                         }
@@ -253,43 +269,89 @@
                 }
             },
             getDeadBodyById: function(e) {
-                for (var t = this.Me.m(), a = 0; a < t.length; a++) {
+                for (var t = this.ke.m(), a = 0; a < t.length; a++) {
                     var i = t[a];
                     if (i.active && i.playerId == e) return i
                 }
                 return null
             }
         }, e.exports = {
-            Te: o
+            ze: o
         }
     },
     "7510cc08": function(e, t, a) {
         "use strict";
-        var i = (a("34e32c48"), a("6b42806d")),
-            r = a("ceee80d9"),
-            o = a("c2a798c8"),
-            n = {
+
+        function i(e) {
+            var t = c[e];
+            if ("structure" == t.type) {
+                for (var a = [], i = 0; i < t.layers.length; i++) {
+                    var m = t.layers[i],
+                        d = s.oriToRad(m.ori),
+                        h = n.transform(p.getBoundingCollider(m.type), m.pos, d, 1);
+                    a.push(n.toAabb(h))
+                }
+                for (var u = 0; u < t.stairs.length; u++) a.push(t.stairs[u].collision);
+                var g = o.boundingAabb(a),
+                    y = l.create(1, 1);
+                return g.min = l.sub(g.min, y), g.max = l.add(g.max, y), n.createAabb(g.min, g.max)
+            }
+            if ("building" == t.type) {
+                for (var w = [], x = 0; x < t.floor.surfaces.length; x++) w = w.concat(t.floor.surfaces[x].collision);
+                w = w.concat(t.ceiling.scopeIn), w = w.concat(t.ceiling.scopeOut);
+                for (var f = 0; f < t.mapObjects.length; f++) {
+                    var b = t.mapObjects[f],
+                        _ = b.type;
+                    if ("function" == typeof _ && (_ = _()), "" != _) {
+                        var S = s.oriToRad(b.ori),
+                            v = n.transform(p.getBoundingCollider(_), b.pos, S, b.scale);
+                        w.push(n.toAabb(v))
+                    }
+                }
+                var k = o.boundingAabb(w);
+                return n.createAabb(k.min, k.max)
+            }
+            return "decal" == t.type ? n.toAabb(t.collision) : (r(t.collision), t.collision)
+        }
+        var r = a("0e566746"),
+            o = a("34e32c48"),
+            n = a("6b42806d"),
+            s = a("10899aea"),
+            l = a("c2a798c8"),
+            c = a("aca73f78"),
+            m = {},
+            p = {
+                getBoundingCollider: function(e) {
+                    if (m[e]) return m[e];
+                    var t = i(e);
+                    return m[e] = t, t
+                },
                 getBridgeDims: function(e) {
-                    var t = r.getBoundingCollider(e),
-                        a = i.toAabb(t),
-                        n = o.mul(o.sub(a.max, a.min), .5),
-                        s = (o.add(a.min, n), n.x > n.y),
-                        l = o.create(s ? 1 : 0, s ? 0 : 1);
+                    var t = p.getBoundingCollider(e),
+                        a = n.toAabb(t),
+                        i = l.mul(l.sub(a.max, a.min), .5),
+                        r = (l.add(a.min, i), i.x > i.y),
+                        o = l.create(r ? 1 : 0, r ? 0 : 1);
                     return {
-                        length: 2 * o.dot(l, n),
-                        width: 2 * o.dot(o.perp(l), n)
+                        length: 2 * l.dot(o, i),
+                        width: 2 * l.dot(l.perp(o), i)
                     }
                 },
-                getBridgeOverlapCollider: function(e, t, a, s) {
-                    var l = r.Defs[e],
-                        c = n.getBridgeDims(e),
-                        m = o.create(1, 0),
-                        p = o.add(o.mul(m, 1.5 * c.length), o.mul(o.perp(m), c.width * l.terrain.bridge.nearbyWidthMult)),
-                        d = i.createAabbExtents(o.create(0, 0), o.mul(p, .5));
-                    return i.transform(d, t, a, s)
+                getBridgeOverlapCollider: function(e, t, a, i) {
+                    var r = c[e],
+                        o = p.getBridgeDims(e),
+                        s = l.create(1, 0),
+                        m = l.add(l.mul(s, 1.5 * o.length), l.mul(l.perp(s), o.width * r.terrain.bridge.nearbyWidthMult)),
+                        d = n.createAabbExtents(l.create(0, 0), l.mul(m, .5));
+                    return n.transform(d, t, a, i)
+                },
+                Me: .8,
+                Te: .9,
+                Ie: function(e, t) {
+                    return e.sprite && e.sprite.visible && e.sprite.alpha < t
                 }
             };
-        e.exports = n
+        e.exports = p
     },
     "753d6e4b": function(e, t, a) {
         "use strict";
@@ -723,12 +785,12 @@
                             _ < w && (y = f, w = _)
                         }
                         var S = this.getTangent(y),
-                            k = m.length(S);
-                        if (k > 0) {
-                            var v = this.getPos(y),
-                                z = m.dot(S, m.sub(e, v)) / k,
-                                M = y + z / (k * h);
-                            m.lengthSqr(m.sub(e, this.getPos(M))) < m.lengthSqr(m.sub(e, v)) && (y = M)
+                            v = m.length(S);
+                        if (v > 0) {
+                            var k = this.getPos(y),
+                                z = m.dot(S, m.sub(e, k)) / v,
+                                M = y + z / (v * h);
+                            m.lengthSqr(m.sub(e, this.getPos(M))) < m.lengthSqr(m.sub(e, k)) && (y = M)
                         }
                         return y
                     }
@@ -1357,6 +1419,835 @@
             }
         }(window.cookieconsent || {})
     },
+    "850480b2": function(e, t, a) {
+        "use strict";
+
+        function i(e, t) {
+            return r.mergeDeep({}, o[e], {
+                baseType: e
+            }, t)
+        }
+        var r = a("1901e2d9"),
+            o = {
+                outfitBase: {
+                    name: "Basic Outfit",
+                    type: "outfit",
+                    skinImg: {
+                        baseTint: 16303476,
+                        baseSprite: "player-base-01.img",
+                        handTint: 16303476,
+                        handSprite: "player-hands-01.img",
+                        footTint: 16303476,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 8480055,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitBase.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "clothes_pickup_01"
+                    }
+                }
+            },
+            n = {
+                outfitBase: i("outfitBase", {
+                    name: "Basic Outfit",
+                    rarity: 0,
+                    lore: "Pure and simple."
+                }),
+                outfitRedLeaderAged: i("outfitBase", {
+                    name: "Weathered Red",
+                    skinImg: {
+                        baseTint: 10098712,
+                        baseSprite: "player-base-02.img",
+                        handTint: 16711680,
+                        handSprite: "player-hands-02.img",
+                        footTint: 16711680,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 5442572,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 10098712
+                    }
+                }),
+                outfitBlueLeaderAged: i("outfitBase", {
+                    name: "Stifled Blue",
+                    skinImg: {
+                        baseTint: 1523353,
+                        baseSprite: "player-base-02.img",
+                        handTint: 20223,
+                        handSprite: "player-hands-02.img",
+                        footTint: 20223,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 794700,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 1523353
+                    }
+                }),
+                outfitRedLeader: i("outfitBase", {
+                    name: "Red Leader",
+                    noDrop: !0,
+                    skinImg: {
+                        baseTint: 10158080,
+                        baseSprite: "player-base-02.img",
+                        handTint: 16711680,
+                        handSprite: "player-hands-02.img",
+                        footTint: 16711680,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 5439488,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 8650752
+                    }
+                }),
+                outfitBlueLeader: i("outfitBase", {
+                    name: "Blue Leader",
+                    noDrop: !0,
+                    skinImg: {
+                        baseTint: 12187,
+                        baseSprite: "player-base-02.img",
+                        handTint: 20223,
+                        handSprite: "player-hands-02.img",
+                        footTint: 20223,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 5964,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 13223
+                    }
+                }),
+                outfitSpetsnaz: i("outfitBase", {
+                    name: "Siberian Assault",
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseSprite: "player-base-05.img",
+                        handTint: 15000804,
+                        handSprite: "player-hands-01.img",
+                        footTint: 15000804,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 13816530,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-04.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitWoodsCloak: i("outfitBase", {
+                    name: "GreenCloak",
+                    skinImg: {
+                        baseTint: 2817792,
+                        baseSprite: "player-base-02.img",
+                        handTint: 16711594,
+                        handSprite: "player-hands-02.img",
+                        footTint: 16711594,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 15635271,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 2817792
+                    }
+                }),
+                outfitElf: i("outfitBase", {
+                    name: "Tallow's Little Helper",
+                    skinImg: {
+                        baseTint: 12845056,
+                        baseSprite: "player-base-01.img",
+                        handTint: 1489152,
+                        handSprite: "player-hands-01.img",
+                        footTint: 1489152,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 365312,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 1489152
+                    }
+                }),
+                outfitImperial: i("outfitBase", {
+                    name: "Imperial Seal",
+                    skinImg: {
+                        baseTint: 12320813,
+                        baseSprite: "player-base-01.img",
+                        handTint: 16777215,
+                        handSprite: "player-hands-01.img",
+                        footTint: 16777215,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 12625727,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 12320813
+                    }
+                }),
+                outfitLumber: i("outfitBase", {
+                    name: "Woodcutter's Wrap",
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseSprite: "player-base-04.img",
+                        handTint: 8258312,
+                        handSprite: "player-hands-02.img",
+                        footTint: 8258312,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 4854547,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-03.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitVerde: i("outfitBase", {
+                    name: "Poncho Verde",
+                    skinImg: {
+                        baseTint: 1785868,
+                        baseSprite: "player-base-02.img",
+                        handTint: 11912587,
+                        handSprite: "player-hands-02.img",
+                        footTint: 11912587,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 11238441,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 1785868
+                    }
+                }),
+                outfitPineapple: i("outfitBase", {
+                    name: "Valiant Pineapple",
+                    skinImg: {
+                        baseTint: 10027008,
+                        baseSprite: "player-base-02.img",
+                        handTint: 4985105,
+                        handSprite: "player-hands-02.img",
+                        footTint: 4985105,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 16763904,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 10027008
+                    }
+                }),
+                outfitTarkhany: i("outfitBase", {
+                    name: "Tarkhany Regal",
+                    skinImg: {
+                        baseTint: 4927107,
+                        baseSprite: "player-base-02.img",
+                        handTint: 16757760,
+                        handSprite: "player-hands-02.img",
+                        footTint: 16757760,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 4661344,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 4927107
+                    }
+                }),
+                outfitWaterElem: i("outfitBase", {
+                    name: "Water Elemental",
+                    skinImg: {
+                        baseTint: 7143401,
+                        baseSprite: "player-base-02.img",
+                        handTint: 15990876,
+                        handSprite: "player-hands-02.img",
+                        footTint: 15990876,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 32644,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 7143401
+                    }
+                }),
+                outfitHeaven: i("outfitBase", {
+                    name: "Celestial Garb",
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseSprite: "player-base-03.img",
+                        handTint: 13762639,
+                        handSprite: "player-hands-02.img",
+                        footTint: 13762639,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 36503,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-02.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitMeteor: i("outfitBase", {
+                    name: "Falling Star",
+                    skinImg: {
+                        baseTint: 9764864,
+                        baseSprite: "player-base-02.img",
+                        handTint: 16742400,
+                        handSprite: "player-hands-02.img",
+                        footTint: 16742400,
+                        footSprite: "player-feet-02.img",
+                        backpackTint: 4727582,
+                        backpackSprite: "player-circle-base-02.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 9764864
+                    }
+                }),
+                outfitIslander: i("outfitBase", {
+                    name: "Island Time",
+                    skinImg: {
+                        baseTint: 16762368,
+                        baseSprite: "player-base-01.img",
+                        handTint: 148992,
+                        handSprite: "player-hands-01.img",
+                        footTint: 148992,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 4495104,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 16762368
+                    }
+                }),
+                outfitAqua: i("outfitBase", {
+                    name: "Aquatic Avenger",
+                    skinImg: {
+                        baseTint: 47778,
+                        baseSprite: "player-base-01.img",
+                        handTint: 65502,
+                        handSprite: "player-hands-01.img",
+                        footTint: 65502,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 536620,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 47778
+                    }
+                }),
+                outfitCoral: i("outfitBase", {
+                    name: "Coral Guise",
+                    skinImg: {
+                        baseTint: 16736103,
+                        baseSprite: "player-base-01.img",
+                        handTint: 16746895,
+                        handSprite: "player-hands-01.img",
+                        footTint: 16746895,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 16772298,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 16736103
+                    }
+                }),
+                outfitKhaki: i("outfitBase", {
+                    name: "The Initiative",
+                    rarity: 1,
+                    lore: "",
+                    skinImg: {
+                        baseTint: 12824197,
+                        baseSprite: "player-base-01.img",
+                        handTint: 9404516,
+                        handSprite: "player-hands-01.img",
+                        footTint: 9404516,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 4208940,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 12824197
+                    }
+                }),
+                outfitCasanova: i("outfitBase", {
+                    name: "Casanova Silks",
+                    skinImg: {
+                        baseTint: 4327436,
+                        baseSprite: "player-base-01.img",
+                        handTint: 7602183,
+                        handSprite: "player-hands-01.img",
+                        footTint: 7602183,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 1052688,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 4327436
+                    }
+                }),
+                outfitPrisoner: i("outfitBase", {
+                    name: "The New Black",
+                    skinImg: {
+                        baseTint: 16735266,
+                        baseSprite: "player-base-01.img",
+                        handTint: 16545059,
+                        handSprite: "player-hands-01.img",
+                        footTint: 16545059,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 16756224,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 16735266
+                    }
+                }),
+                outfitJester: i("outfitBase", {
+                    name: "Jester's Folly",
+                    skinImg: {
+                        baseTint: 7798904,
+                        baseSprite: "player-base-01.img",
+                        handTint: 4915276,
+                        handSprite: "player-hands-01.img",
+                        footTint: 4915276,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 936960,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 7798904
+                    }
+                }),
+                outfitWoodland: i("outfitBase", {
+                    name: "Woodland Combat",
+                    rarity: 1,
+                    lore: "Common component of PARMA survival caches.",
+                    skinImg: {
+                        baseTint: 2831146,
+                        baseSprite: "player-base-01.img",
+                        handTint: 5925970,
+                        handSprite: "player-hands-01.img",
+                        footTint: 5925970,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 5056e3,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitWoodland.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitRoyalFortune: i("outfitBase", {
+                    name: "Royal Fortune",
+                    rarity: 3,
+                    lore: "",
+                    skinImg: {
+                        baseTint: 8333091,
+                        baseSprite: "player-base-01.img",
+                        handTint: 15254058,
+                        handSprite: "player-hands-01.img",
+                        footTint: 15254058,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 9981696,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitRoyalFortune.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitKeyLime: i("outfitBase", {
+                    name: "Key Lime",
+                    rarity: 1,
+                    lore: "Not for eating.",
+                    skinImg: {
+                        baseTint: 13107007,
+                        baseSprite: "player-base-01.img",
+                        handTint: 15662941,
+                        handSprite: "player-hands-01.img",
+                        footTint: 15662941,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 12355383,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitKeyLime.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitCobaltShell: i("outfitBase", {
+                    name: "Cobalt Shell",
+                    rarity: 1,
+                    lore: "It means bluish.",
+                    skinImg: {
+                        baseTint: 11095,
+                        baseSprite: "player-base-01.img",
+                        handTint: 2711164,
+                        handSprite: "player-hands-01.img",
+                        footTint: 2711164,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 19093,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitCobaltShell.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitCarbonFiber: i("outfitBase", {
+                    name: "Carbon Fiber",
+                    rarity: 1,
+                    lore: "Military-grade, fine spun filament.",
+                    skinImg: {
+                        baseTint: 2171169,
+                        baseSprite: "player-base-01.img",
+                        handTint: 1842204,
+                        handSprite: "player-hands-01.img",
+                        footTint: 1842204,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 3552822,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitCarbonFiber.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitDarkGloves: i("outfitBase", {
+                    name: "The Professional",
+                    rarity: 1,
+                    lore: "True survivrs wear the dark gloves.",
+                    skinImg: {
+                        baseTint: 16303476,
+                        baseSprite: "player-base-01.img",
+                        handTint: 12482560,
+                        handSprite: "player-hands-01.img",
+                        footTint: 12482560,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 10708736,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitDarkGloves.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitDarkGhillie: i("outfitBase", {
+                    name: "Incursion Ghillie",
+                    camo: !0,
+                    skinImg: {
+                        baseTint: 5005348,
+                        baseSprite: "player-base-01.img",
+                        handTint: 5005348,
+                        handSprite: "player-hands-01.img",
+                        footTint: 5005348,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 6697728,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 5005348
+                    }
+                }),
+                outfitDesertGhillie: i("outfitBase", {
+                    name: "Desert Ghillie",
+                    camo: !0,
+                    skinImg: {
+                        baseTint: 14657377,
+                        baseSprite: "player-base-01.img",
+                        handTint: 14657377,
+                        handSprite: "player-hands-01.img",
+                        footTint: 14657377,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 6697728,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 14657377
+                    }
+                }),
+                outfitSpringGhillie: i("outfitBase", {
+                    name: "Ghillie Suit",
+                    camo: !0,
+                    skinImg: {
+                        baseTint: 4285194,
+                        baseSprite: "player-base-01.img",
+                        handTint: 4285194,
+                        handSprite: "player-hands-01.img",
+                        footTint: 4285194,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 6697728,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 4285194
+                    }
+                }),
+                outfitGhillie: i("outfitBase", {
+                    name: "Ghillie Suit",
+                    camo: !0,
+                    skinImg: {
+                        baseTint: 8630096,
+                        baseSprite: "player-base-01.img",
+                        handTint: 8630096,
+                        handSprite: "player-hands-01.img",
+                        footTint: 8630096,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 6697728,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-01.img",
+                        tint: 8630096
+                    }
+                }),
+                outfitDesertCamo: i("outfitBase", {
+                    name: "Desert Camo",
+                    rarity: 1,
+                    lore: "",
+                    skinImg: {
+                        baseTint: 13736782,
+                        baseSprite: "player-base-01.img",
+                        handTint: 11169046,
+                        handSprite: "player-hands-01.img",
+                        footTint: 11169046,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 16763778,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitDesertCamo.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitCamo: i("outfitBase", {
+                    name: "Forest Camo",
+                    rarity: 1,
+                    lore: "Be one with the trees.",
+                    skinImg: {
+                        baseTint: 10066278,
+                        baseSprite: "player-base-01.img",
+                        handTint: 8684631,
+                        handSprite: "player-hands-01.img",
+                        footTint: 8684631,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 6710835,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitCamo.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitRed: i("outfitBase", {
+                    name: "Target Practice",
+                    rarity: 1,
+                    lore: "On the plus side, they won't see you bleed.",
+                    skinImg: {
+                        baseTint: 16711680,
+                        baseSprite: "player-base-01.img",
+                        handTint: 13893632,
+                        handSprite: "player-hands-01.img",
+                        footTint: 13893632,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 11993088,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitRed.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitWhite: i("outfitBase", {
+                    name: "Arctic Avenger",
+                    rarity: 1,
+                    lore: "No business like snow business.",
+                    skinImg: {
+                        baseTint: 14935011,
+                        baseSprite: "player-base-01.img",
+                        handTint: 15658734,
+                        handSprite: "player-hands-01.img",
+                        footTint: 15658734,
+                        footSprite: "player-feet-01.img",
+                        backpackTint: 14474460,
+                        backpackSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-shirt-outfitWhite.img",
+                        tint: 16777215
+                    }
+                }),
+                outfitBarrel: i("outfitBase", {
+                    name: "Fish in a Barrel",
+                    obstacleType: "barrel_01",
+                    baseScale: .8,
+                    lootImg: {
+                        tint: 3750201
+                    }
+                }),
+                outfitWoodBarrel: i("outfitBase", {
+                    name: "Fish in a Wood Barrel",
+                    obstacleType: "barrel_02",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 11235106
+                    }
+                }),
+                outfitStone: i("outfitBase", {
+                    name: "Stoneskin",
+                    obstacleType: "stone_01",
+                    baseScale: .9,
+                    lootImg: {
+                        tint: 7434609
+                    }
+                }),
+                outfitTree: i("outfitBase", {
+                    name: "Barkskin",
+                    obstacleType: "tree_07",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 4599058
+                    }
+                }),
+                outfitTreeSpooky: i("outfitBase", {
+                    name: "Spooky Barkskin",
+                    obstacleType: "tree_05",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 1775895
+                    }
+                }),
+                outfitStump: i("outfitBase", {
+                    name: "Stump Costume",
+                    obstacleType: "tree_09",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 8602624
+                    }
+                }),
+                outfitBush: i("outfitBase", {
+                    name: "Bush Wookie",
+                    obstacleType: "bush_01b",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 3889951
+                    }
+                }),
+                outfitLeafPile: i("outfitBase", {
+                    name: "Leaf Pile Wookie",
+                    obstacleType: "bush_06b",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 16731392
+                    }
+                }),
+                outfitCrate: i("outfitBase", {
+                    name: "Guy in a Box",
+                    obstacleType: "crate_01",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 6697728
+                    }
+                }),
+                outfitTable: i("outfitBase", {
+                    name: "Yard Sale",
+                    obstacleType: "table_01",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 6697728
+                    }
+                }),
+                outfitSoviet: i("outfitBase", {
+                    name: "Comrade in a Box",
+                    obstacleType: "crate_02",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 6697728
+                    }
+                }),
+                outfitAirdrop: i("outfitBase", {
+                    name: "Air Drop Costume",
+                    obstacleType: "crate_10",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 6579300
+                    }
+                }),
+                outfitOven: i("outfitBase", {
+                    name: "Oven Costume",
+                    obstacleType: "oven_01",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 14935011
+                    }
+                }),
+                outfitRefrigerator: i("outfitBase", {
+                    name: "Fridge Costume",
+                    obstacleType: "refrigerator_01b",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 7733259
+                    }
+                }),
+                outfitVending: i("outfitBase", {
+                    name: "Vending Costume",
+                    obstacleType: "vending_01",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 10925
+                    }
+                }),
+                outfitPumpkin: i("outfitBase", {
+                    name: "Pumpkin Costume",
+                    obstacleType: "pumpkin_01",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 15889667
+                    }
+                }),
+                outfitWoodpile: i("outfitBase", {
+                    name: "Woodpile Costume",
+                    obstacleType: "woodpile_01",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 9455616
+                    }
+                }),
+                outfitToilet: i("outfitBase", {
+                    name: "Toilet Costume",
+                    obstacleType: "toilet_02",
+                    baseScale: 1,
+                    lootImg: {
+                        tint: 16777215
+                    }
+                })
+            },
+            s = r.mergeDeep({}, o, n);
+        e.exports = s
+    },
     "8649e148": function(e, t, a) {
         "use strict";
 
@@ -1445,8 +2336,8 @@
             "index-set-account-name": "Vælg profil navn",
             "index-enter-name": "Indtast navn",
             "index-finish": "Færdig",
-            "index-delete-account": "Slet Profil",
-            "index-delete-account-desc": 'Indtast "DELETE" for at slette din profil:',
+            "index-reset-stats": "Nulstil statistik",
+            "index-reset-stats-desc": 'Indtast "RESET STATS" for at nulstille din statistik:',
             "index-confirm": "Bekræft",
             "index-customize-avatar": "Tilpas Avatar",
             "index-done": "Færdig",
@@ -1714,13 +2605,16 @@
                         name: "leader_assigned_01",
                         channel: "ui"
                     }, {
-                        name: "ping_leader_01",
-                        channel: "ui"
-                    }, {
                         name: "lt_assigned_01",
                         channel: "ui"
+                    }, {
+                        name: "medic_assigned_01",
+                        channel: "ui"
+                    }, {
+                        name: "ping_leader_01",
+                        channel: "ui"
                     }],
-                    atlases: ["gradient", "shared", "faction"]
+                    atlases: ["gradient", "loadout", "shared", "faction"]
                 },
                 biome: {
                     colors: {
@@ -1981,33 +2875,230 @@
         };
         e.exports = i
     },
+    91649371: function(e, t, a) {
+        "use strict";
+        var i = {
+            explosion_frag: {
+                type: "explosion",
+                damage: 125,
+                obstacleDamage: 1.1,
+                rad: {
+                    min: 5,
+                    max: 12
+                },
+                shrapnelCount: 12,
+                shrapnelType: "shrapnel_frag",
+                explosionEffectType: "frag",
+                decalType: "decal_frag_explosion"
+            },
+            explosion_smoke: {
+                type: "explosion",
+                damage: 0,
+                obstacleDamage: 1,
+                rad: {
+                    min: 5,
+                    max: 12
+                },
+                shrapnelCount: 0,
+                shrapnelType: "shrapnel_frag",
+                explosionEffectType: "smoke",
+                decalType: "decal_smoke_explosion"
+            },
+            explosion_strobe: {
+                type: "explosion",
+                damage: 1,
+                obstacleDamage: 5,
+                rad: {
+                    min: 1.5,
+                    max: 2.5
+                },
+                shrapnelCount: 3,
+                shrapnelType: "shrapnel_strobe",
+                explosionEffectType: "strobe",
+                decalType: "decal_smoke_explosion"
+            },
+            explosion_barrel: {
+                type: "explosion",
+                damage: 125,
+                obstacleDamage: 1,
+                rad: {
+                    min: 5,
+                    max: 12
+                },
+                shrapnelCount: 12,
+                shrapnelType: "shrapnel_barrel",
+                explosionEffectType: "barrel",
+                decalType: "decal_barrel_explosion"
+            },
+            explosion_stove: {
+                type: "explosion",
+                damage: 125,
+                obstacleDamage: 2,
+                rad: {
+                    min: 5,
+                    max: 12
+                },
+                shrapnelCount: 16,
+                shrapnelType: "shrapnel_stove",
+                explosionEffectType: "barrel",
+                decalType: "decal_barrel_explosion"
+            },
+            explosion_usas: {
+                type: "explosion",
+                damage: 42,
+                obstacleDamage: 4,
+                rad: {
+                    min: 3.5,
+                    max: 6.5
+                },
+                shrapnelCount: 9,
+                shrapnelType: "shrapnel_usas",
+                explosionEffectType: "usas",
+                decalType: "decal_frag_small_explosion"
+            },
+            explosion_mirv: {
+                type: "explosion",
+                damage: 125,
+                obstacleDamage: 1.1,
+                rad: {
+                    min: 5,
+                    max: 12
+                },
+                shrapnelCount: 12,
+                shrapnelType: "shrapnel_frag",
+                explosionEffectType: "mirv",
+                decalType: "decal_frag_explosion"
+            },
+            explosion_mirv_mini: {
+                type: "explosion",
+                damage: 75,
+                obstacleDamage: 1.1,
+                rad: {
+                    min: 4,
+                    max: 8
+                },
+                shrapnelCount: 7,
+                shrapnelType: "shrapnel_mirv_mini",
+                explosionEffectType: "mirv_mini",
+                decalType: "decal_frag_small_explosion"
+            },
+            explosion_snowball: {
+                type: "explosion",
+                damage: 2,
+                obstacleDamage: 1,
+                rad: {
+                    min: 1.24,
+                    max: 1.25
+                },
+                shrapnelCount: 0,
+                shrapnelType: "",
+                explosionEffectType: "snowball",
+                decalType: "decal_snowball_explosion"
+            },
+            explosion_snowball_heavy: {
+                type: "explosion",
+                damage: 5,
+                obstacleDamage: 1,
+                rad: {
+                    min: 1.24,
+                    max: 1.25
+                },
+                shrapnelCount: 0,
+                shrapnelType: "",
+                explosionEffectType: "snowball_heavy",
+                decalType: "decal_snowball_explosion"
+            },
+            explosion_potato: {
+                type: "explosion",
+                damage: 2,
+                obstacleDamage: 1,
+                teamDamage: !1,
+                rad: {
+                    min: 1.24,
+                    max: 1.25
+                },
+                shrapnelCount: 0,
+                shrapnelType: "",
+                explosionEffectType: "potato",
+                decalType: "decal_potato_explosion"
+            },
+            explosion_potato_heavy: {
+                type: "explosion",
+                damage: 5,
+                obstacleDamage: 1,
+                teamDamage: !1,
+                rad: {
+                    min: 1.24,
+                    max: 1.25
+                },
+                shrapnelCount: 0,
+                shrapnelType: "",
+                explosionEffectType: "potato_heavy",
+                decalType: "decal_potato_explosion"
+            },
+            explosion_bomb_iron: {
+                type: "explosion",
+                damage: 40,
+                obstacleDamage: 2,
+                rad: {
+                    min: 5,
+                    max: 14
+                },
+                shrapnelCount: 2,
+                shrapnelType: "shrapnel_bomb_iron",
+                explosionEffectType: "bomb_iron",
+                decalType: "decal_bomb_iron_explosion"
+            }
+        };
+        e.exports = i
+    },
     "927ff3fc": function(e, t) {},
+    "931adedd": function(e, t, a) {
+        "use strict";
+        for (var i = a("cbb1f984"), r = {}, o = Object.keys(i), n = 0; n < o.length; n++) {
+            var s = o[n],
+                l = i[s],
+                c = l.dbId;
+            if (!c) throw new Error("Emote " + s + " has no dbId defined");
+            if (r[c]) throw new Error("DbId " + c + " is already assigned to type " + r[c]);
+            r[c] = s
+        }
+        e.exports = {
+            dbIdToEmoteType: function(e) {
+                return e < 2e4 && (e += 2e4), r[e] || ""
+            },
+            emoteTypeToDbId: function(e) {
+                var t = i[e];
+                return t ? t.dbId : 0
+            }
+        }
+    },
     "966d985b": function(e, t, a) {
         "use strict";
 
         function i(e) {
-            this.Ie = e, this.Ce = [], this.Ae = {}
+            this.Ce = e, this.Ae = [], this.Ee = {}
         }
         var r = a("8b1dfb45"),
-            o = a("989ad62a"),
-            n = a("c2a798c8"),
-            s = a("ce29f17f"),
-            l = a("10899aea");
+            o = (a("989ad62a"), a("c2a798c8")),
+            n = a("ce29f17f"),
+            s = a("10899aea"),
+            l = a("e3e76f15");
         i.prototype = {
-            ce: function(e) {
+            le: function(e) {
                 for (var t = 0; t < e.length; t++) {
                     var a = e[t];
-                    a.dead ? this.Ee(a.id) : this.De(a)
+                    a.dead ? this.De(a.id) : this.Oe(a)
                 }
             },
-            Oe: function(e) {
+            Be: function(e) {
                 var t = {
                     id: e.id,
                     type: e.type,
-                    pos: n.copy(e.pos),
+                    pos: o.copy(e.pos),
                     equipped: e.equipped,
-                    mapSprite: this.Ie.addSprite(),
-                    pulseSprite: this.Ie.addSprite(),
+                    mapSprite: this.Ce.addSprite(),
+                    pulseSprite: this.Ce.addSprite(),
                     pulseScale: .5,
                     pulseScaleMin: .5,
                     pulseScaleMax: 1,
@@ -2015,43 +3106,43 @@
                     pulseDir: 1,
                     pulseSpeed: .3
                 };
-                return this.Ce.push(t), this.Ae[e.id] = t, t
+                return this.Ae.push(t), this.Ee[e.id] = t, t
             },
-            Ee: function(e) {
-                for (var t = 0; t < this.Ce.length; t++) {
-                    var a = this.Ce[t];
+            De: function(e) {
+                for (var t = 0; t < this.Ae.length; t++) {
+                    var a = this.Ae[t];
                     if (a.id == e) {
-                        a.mapSprite.free(), a.pulseSprite.free(), this.Ce.splice(t, 1), delete this.Ae[e];
+                        a.mapSprite.free(), a.pulseSprite.free(), this.Ae.splice(t, 1), delete this.Ee[e];
                         break
                     }
                 }
             },
-            De: function(e) {
-                var t = this.Ae[e.id];
-                t || (t = this.Oe(e)), t.pos = n.copy(e.pos), t.equipped = e.equipped;
-                var a = o.items[t.type],
-                    i = s.uiLayout == s.UiLayout.Sm ? .15 : .2,
-                    l = t.equipped ? 655350 : 1,
+            Oe: function(e) {
+                var t = this.Ee[e.id];
+                t || (t = this.Be(e)), t.pos = o.copy(e.pos), t.equipped = e.equipped;
+                var a = l[t.type],
+                    i = n.uiLayout == n.UiLayout.Sm ? .15 : .2,
+                    s = t.equipped ? 655350 : 1,
                     c = t.mapSprite;
-                if (c.pos = n.copy(t.pos), c.scale = 1.25 * i, c.alpha = 1, c.zOrder = l, c.visible = !0, c.sprite.texture = r.Texture.fromImage(a.mapIndicator.sprite), c.sprite.tint = a.mapIndicator.tint, a.mapIndicator.pulse) {
+                if (c.pos = o.copy(t.pos), c.scale = 1.25 * i, c.alpha = 1, c.zOrder = s, c.visible = !0, c.sprite.texture = r.Texture.fromImage(a.mapIndicator.sprite), c.sprite.tint = a.mapIndicator.tint, a.mapIndicator.pulse) {
                     var m = t.pulseSprite;
-                    m.pos = n.copy(t.pos), m.scale = 1, m.zOrder = l - 1, m.visible = !0, m.sprite.texture = r.Texture.fromImage("part-pulse-01.img"), m.sprite.tint = a.mapIndicator.pulseTint
+                    m.pos = o.copy(t.pos), m.scale = 1, m.zOrder = s - 1, m.visible = !0, m.sprite.texture = r.Texture.fromImage("part-pulse-01.img"), m.sprite.tint = a.mapIndicator.pulseTint
                 }
             },
-            oe: function(e) {
-                for (var t = 0; t < this.Ce.length; t++) {
-                    var a = this.Ce[t];
-                    a.pulseTicker = l.clamp(a.pulseTicker + e * a.pulseDir * a.pulseSpeed, a.pulseScaleMin, 1), a.pulseScale = a.pulseTicker * a.pulseScaleMax, (a.pulseScale >= a.pulseScaleMax || a.pulseTicker <= a.pulseScaleMin) && (a.pulseDir *= -1), a.pulseSprite.scale = a.pulseScale, a.pulseSprite.visible = a.equipped
+            re: function(e) {
+                for (var t = 0; t < this.Ae.length; t++) {
+                    var a = this.Ae[t];
+                    a.pulseTicker = s.clamp(a.pulseTicker + e * a.pulseDir * a.pulseSpeed, a.pulseScaleMin, 1), a.pulseScale = a.pulseTicker * a.pulseScaleMax, (a.pulseScale >= a.pulseScaleMax || a.pulseTicker <= a.pulseScaleMin) && (a.pulseDir *= -1), a.pulseSprite.scale = a.pulseScale, a.pulseSprite.visible = a.equipped
                 }
             }
         }, e.exports = {
-            te: i
+            ee: i
         }
     },
     "989ad62a": function(e, t, a) {
         "use strict";
         e.exports = {
-            protocolVersion: 55,
+            protocolVersion: 56,
             Input: {
                 MoveLeft: 0,
                 MoveRight: 1,
@@ -2091,6 +3182,15 @@
                 TeamPingSingle: 35,
                 Count: 36
             },
+            EmoteSlot: {
+                Top: 0,
+                Right: 1,
+                Bottom: 2,
+                Left: 3,
+                Win: 4,
+                Death: 5,
+                Count: 6
+            },
             WeaponSlot: {
                 Primary: 0,
                 Secondary: 1,
@@ -2127,12 +3227,17 @@
                 FactionLeader: 1,
                 Lieutenant: 2,
                 WoodsKing: 3,
-                RarePotato: 5
+                RarePotato: 5,
+                Medic: 6
             },
             GasMode: {
                 Inactive: 0,
                 Waiting: 1,
                 Moving: 2
+            },
+            Plane: {
+                Airdrop: 0,
+                Airstrike: 1
             },
             map: {
                 gridSize: 16,
@@ -2159,12 +3264,11 @@
                 cookTime: .1,
                 throwTime: .3,
                 meleeHeight: .25,
-                touchLootRadMult: 1.4
+                touchLootRadMult: 1.4,
+                medicHealRange: 8,
+                medicReviveRange: 6
             },
-            Plane: {
-                Airdrop: 0,
-                Airstrike: 1
-            },
+            defaultEmoteLoadout: ["emote_happyface", "emote_thumbsup", "emote_surviv", "emote_sadface", "", ""],
             airdrop: {
                 actionOffset: 0,
                 fallTime: 8,
@@ -2209,739 +3313,6 @@
                         effect: "ability_stim_01"
                     },
                     emitter: "stim_01"
-                }
-            },
-            explosions: {
-                explosion_frag: {
-                    damage: 125,
-                    obstacleDamage: 1.1,
-                    teamDamage: !0,
-                    rad: {
-                        min: 5,
-                        max: 12
-                    },
-                    shrapnelCount: 12,
-                    shrapnelType: "shrapnel_frag",
-                    explosionEffectType: "frag",
-                    decalType: "decal_frag_explosion"
-                },
-                explosion_smoke: {
-                    damage: 0,
-                    obstacleDamage: 1,
-                    teamDamage: !0,
-                    rad: {
-                        min: 5,
-                        max: 12
-                    },
-                    shrapnelCount: 0,
-                    shrapnelType: "shrapnel_frag",
-                    explosionEffectType: "smoke",
-                    decalType: "decal_smoke_explosion"
-                },
-                explosion_strobe: {
-                    damage: 1,
-                    obstacleDamage: 5,
-                    teamDamage: !0,
-                    rad: {
-                        min: 1.5,
-                        max: 2.5
-                    },
-                    shrapnelCount: 3,
-                    shrapnelType: "shrapnel_strobe",
-                    explosionEffectType: "strobe",
-                    decalType: "decal_smoke_explosion"
-                },
-                explosion_barrel: {
-                    damage: 125,
-                    obstacleDamage: 1,
-                    teamDamage: !0,
-                    rad: {
-                        min: 5,
-                        max: 12
-                    },
-                    shrapnelCount: 12,
-                    shrapnelType: "shrapnel_barrel",
-                    explosionEffectType: "barrel",
-                    decalType: "decal_barrel_explosion"
-                },
-                explosion_stove: {
-                    damage: 125,
-                    obstacleDamage: 2,
-                    teamDamage: !0,
-                    rad: {
-                        min: 5,
-                        max: 12
-                    },
-                    shrapnelCount: 16,
-                    shrapnelType: "shrapnel_stove",
-                    explosionEffectType: "barrel",
-                    decalType: "decal_barrel_explosion"
-                },
-                explosion_usas: {
-                    damage: 42,
-                    obstacleDamage: 4,
-                    teamDamage: !0,
-                    rad: {
-                        min: 3.5,
-                        max: 6.5
-                    },
-                    shrapnelCount: 9,
-                    shrapnelType: "shrapnel_usas",
-                    explosionEffectType: "usas",
-                    decalType: "decal_frag_small_explosion"
-                },
-                explosion_mirv: {
-                    damage: 125,
-                    obstacleDamage: 1.1,
-                    teamDamage: !0,
-                    rad: {
-                        min: 5,
-                        max: 12
-                    },
-                    shrapnelCount: 12,
-                    shrapnelType: "shrapnel_frag",
-                    explosionEffectType: "mirv",
-                    decalType: "decal_frag_explosion"
-                },
-                explosion_mirv_mini: {
-                    damage: 75,
-                    obstacleDamage: 1.1,
-                    teamDamage: !0,
-                    rad: {
-                        min: 4,
-                        max: 8
-                    },
-                    shrapnelCount: 7,
-                    shrapnelType: "shrapnel_mirv_mini",
-                    explosionEffectType: "mirv_mini",
-                    decalType: "decal_frag_small_explosion"
-                },
-                explosion_snowball: {
-                    damage: 2,
-                    obstacleDamage: 1,
-                    teamDamage: !1,
-                    rad: {
-                        min: 1.24,
-                        max: 1.25
-                    },
-                    shrapnelCount: 0,
-                    shrapnelType: "",
-                    explosionEffectType: "snowball",
-                    decalType: "decal_snowball_explosion"
-                },
-                explosion_snowball_heavy: {
-                    damage: 5,
-                    obstacleDamage: 1,
-                    teamDamage: !1,
-                    rad: {
-                        min: 1.24,
-                        max: 1.25
-                    },
-                    shrapnelCount: 0,
-                    shrapnelType: "",
-                    explosionEffectType: "snowball_heavy",
-                    decalType: "decal_snowball_explosion"
-                },
-                explosion_potato: {
-                    damage: 2,
-                    obstacleDamage: 1,
-                    teamDamage: !1,
-                    rad: {
-                        min: 1.24,
-                        max: 1.25
-                    },
-                    shrapnelCount: 0,
-                    shrapnelType: "",
-                    explosionEffectType: "potato",
-                    decalType: "decal_potato_explosion"
-                },
-                explosion_potato_heavy: {
-                    damage: 5,
-                    obstacleDamage: 1,
-                    teamDamage: !1,
-                    rad: {
-                        min: 1.24,
-                        max: 1.25
-                    },
-                    shrapnelCount: 0,
-                    shrapnelType: "",
-                    explosionEffectType: "potato_heavy",
-                    decalType: "decal_potato_explosion"
-                },
-                explosion_bomb_iron: {
-                    damage: 40,
-                    obstacleDamage: 2,
-                    teamDamage: !0,
-                    rad: {
-                        min: 5,
-                        max: 14
-                    },
-                    shrapnelCount: 2,
-                    shrapnelType: "shrapnel_bomb_iron",
-                    explosionEffectType: "bomb_iron",
-                    decalType: "decal_bomb_iron_explosion"
-                }
-            },
-            bullets: {
-                bullet_mp5: {
-                    damage: 11,
-                    obstacleDamage: 1,
-                    falloff: .8,
-                    distance: 100,
-                    speed: 85,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_ak47: {
-                    damage: 13.5,
-                    obstacleDamage: 1,
-                    falloff: .9,
-                    distance: 200,
-                    speed: 100,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_scar: {
-                    damage: 15,
-                    obstacleDamage: 1,
-                    falloff: .85,
-                    distance: 175,
-                    speed: 108,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_an94: {
-                    damage: 17.5,
-                    obstacleDamage: 1,
-                    falloff: .94,
-                    distance: 300,
-                    speed: 110,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_model94: {
-                    damage: 44,
-                    obstacleDamage: 1,
-                    falloff: .75,
-                    distance: 175,
-                    speed: 156,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "45acp",
-                    tracerWidth: .12,
-                    tracerLength: 1
-                },
-                bullet_mosin: {
-                    damage: 72,
-                    obstacleDamage: 1.5,
-                    falloff: .95,
-                    distance: 500,
-                    speed: 178,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .16,
-                    tracerLength: 1
-                },
-                bullet_sv98: {
-                    damage: 80,
-                    obstacleDamage: 1.5,
-                    falloff: .96,
-                    distance: 520,
-                    speed: 182,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .2,
-                    tracerLength: 1
-                },
-                bullet_awc: {
-                    damage: 180,
-                    obstacleDamage: 1.5,
-                    falloff: .94,
-                    distance: 300,
-                    speed: 136,
-                    variance: 0,
-                    shrapnel: !1,
-                    suppressed: !0,
-                    tracerColor: "308sub",
-                    tracerWidth: .2,
-                    tracerLength: 1
-                },
-                bullet_m39: {
-                    damage: 24.5,
-                    obstacleDamage: 1,
-                    falloff: .9,
-                    distance: 400,
-                    speed: 125,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_garand: {
-                    damage: 32,
-                    obstacleDamage: 1,
-                    falloff: .9,
-                    distance: 400,
-                    speed: 130,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .12,
-                    tracerLength: .9
-                },
-                bullet_buckshot: {
-                    damage: 12.5,
-                    obstacleDamage: 1,
-                    falloff: .3,
-                    speed: 66,
-                    distance: 27,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "12gauge",
-                    tracerWidth: .1,
-                    tracerLength: .8
-                },
-                bullet_flechette: {
-                    damage: 8.75,
-                    obstacleDamage: 1,
-                    falloff: .85,
-                    speed: 88,
-                    distance: 45,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "12gauge",
-                    tracerWidth: .075,
-                    tracerLength: .5
-                },
-                bullet_frag: {
-                    damage: 12,
-                    obstacleDamage: 1,
-                    falloff: .3,
-                    speed: 72,
-                    distance: 24,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "frag",
-                    tracerWidth: .1,
-                    tracerLength: .5,
-                    onHit: "explosion_usas"
-                },
-                bullet_slug: {
-                    damage: 77,
-                    obstacleDamage: 1,
-                    falloff: .85,
-                    speed: 118,
-                    distance: 60,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "12gauge",
-                    tracerWidth: .2,
-                    tracerLength: .4
-                },
-                bullet_birdshot: {
-                    damage: 4,
-                    obstacleDamage: 1,
-                    falloff: .25,
-                    speed: 66,
-                    distance: 25,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "12gauge",
-                    tracerWidth: .1,
-                    tracerLength: .1
-                },
-                bullet_m9: {
-                    damage: 12,
-                    obstacleDamage: 1,
-                    falloff: .7,
-                    speed: 85,
-                    distance: 100,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_m93r: {
-                    damage: 12,
-                    obstacleDamage: 1,
-                    falloff: .7,
-                    speed: 85,
-                    distance: 100,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_ot38: {
-                    damage: 26,
-                    obstacleDamage: 1,
-                    falloff: .75,
-                    speed: 112,
-                    distance: 125,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .09,
-                    tracerLength: .8
-                },
-                bullet_ots38: {
-                    damage: 32,
-                    obstacleDamage: 1,
-                    falloff: .77,
-                    speed: 115,
-                    distance: 135,
-                    variance: 0,
-                    shrapnel: !1,
-                    suppressed: !0,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .8
-                },
-                bullet_colt45: {
-                    damage: 29,
-                    obstacleDamage: 1,
-                    falloff: .7,
-                    speed: 106,
-                    distance: 110,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "45acp",
-                    tracerWidth: .09,
-                    tracerLength: .8
-                },
-                bullet_m1911: {
-                    damage: 14,
-                    obstacleDamage: 1,
-                    falloff: .7,
-                    speed: 80,
-                    distance: 88,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "45acp",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_m1a1: {
-                    damage: 13,
-                    obstacleDamage: 1,
-                    falloff: .8,
-                    distance: 88,
-                    speed: 80,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "45acp",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_deagle: {
-                    damage: 35,
-                    obstacleDamage: 1,
-                    falloff: .75,
-                    speed: 115,
-                    distance: 120,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "50AE",
-                    tracerWidth: .12,
-                    tracerLength: .8
-                },
-                bullet_mac10: {
-                    damage: 9.25,
-                    obstacleDamage: 1,
-                    falloff: .6,
-                    distance: 50,
-                    speed: 75,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_ump9: {
-                    damage: 15,
-                    obstacleDamage: 1,
-                    falloff: .75,
-                    distance: 100,
-                    speed: 100,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_vector: {
-                    damage: 7.5,
-                    obstacleDamage: 1,
-                    falloff: .6,
-                    distance: 46,
-                    speed: 88,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_vector45: {
-                    damage: 9.5,
-                    obstacleDamage: 1,
-                    falloff: .6,
-                    distance: 45,
-                    speed: 82,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "45acp",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_scorpion: {
-                    damage: 10.75,
-                    obstacleDamage: 1,
-                    falloff: .77,
-                    distance: 120,
-                    speed: 90,
-                    variance: 0,
-                    shrapnel: !1,
-                    suppressed: !0,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_dp28: {
-                    damage: 14,
-                    obstacleDamage: 1.5,
-                    falloff: .9,
-                    distance: 225,
-                    speed: 110,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_bar: {
-                    damage: 17.5,
-                    obstacleDamage: 1.75,
-                    falloff: .9,
-                    distance: 275,
-                    speed: 114,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_pkp: {
-                    damage: 18,
-                    obstacleDamage: 2,
-                    falloff: .9,
-                    distance: 200,
-                    speed: 120,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "762mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_glock: {
-                    damage: 9,
-                    obstacleDamage: 1,
-                    falloff: .5,
-                    speed: 70,
-                    distance: 44,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "9mm",
-                    tracerWidth: .1,
-                    tracerLength: .7
-                },
-                bullet_famas: {
-                    damage: 17,
-                    obstacleDamage: 1,
-                    falloff: .8,
-                    distance: 150,
-                    speed: 110,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "556mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_hk416: {
-                    damage: 11,
-                    obstacleDamage: 1,
-                    falloff: .85,
-                    distance: 175,
-                    speed: 105,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "556mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_m4a1: {
-                    damage: 14,
-                    obstacleDamage: 1,
-                    falloff: .82,
-                    distance: 165,
-                    speed: 98,
-                    variance: 0,
-                    shrapnel: !1,
-                    suppressed: !0,
-                    tracerColor: "556mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_mk12: {
-                    damage: 19.5,
-                    obstacleDamage: 1,
-                    falloff: .9,
-                    distance: 400,
-                    speed: 132,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "556mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_m249: {
-                    damage: 14,
-                    obstacleDamage: 1.75,
-                    falloff: .9,
-                    distance: 220,
-                    speed: 125,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "556mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_qbb97: {
-                    damage: 14,
-                    obstacleDamage: 1.5,
-                    falloff: .9,
-                    distance: 200,
-                    speed: 118,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "556mm",
-                    tracerWidth: .1,
-                    tracerLength: .9
-                },
-                bullet_flare: {
-                    damage: 0,
-                    obstacleDamage: 1,
-                    falloff: 10,
-                    distance: 16,
-                    speed: 4,
-                    variance: 0,
-                    shrapnel: !1,
-                    tracerColor: "flare",
-                    tracerWidth: .3,
-                    tracerLength: 1.2,
-                    flareColor: 16733184,
-                    addFlare: !0,
-                    maxFlareScale: 2
-                },
-                shrapnel_barrel: {
-                    damage: 2,
-                    obstacleDamage: 1,
-                    falloff: 1,
-                    speed: 20,
-                    distance: 8,
-                    variance: 1.5,
-                    shrapnel: !0,
-                    tracerColor: "shrapnel",
-                    tracerWidth: .125,
-                    tracerLength: .6
-                },
-                shrapnel_stove: {
-                    damage: 5,
-                    obstacleDamage: 2.5,
-                    falloff: 1,
-                    speed: 30,
-                    distance: 24,
-                    variance: 1.5,
-                    shrapnel: !0,
-                    tracerColor: "shrapnel",
-                    tracerWidth: .125,
-                    tracerLength: .6
-                },
-                shrapnel_frag: {
-                    damage: 20,
-                    obstacleDamage: 1,
-                    falloff: 1,
-                    speed: 20,
-                    distance: 8,
-                    variance: 1.5,
-                    shrapnel: !0,
-                    tracerColor: "shrapnel",
-                    tracerWidth: .125,
-                    tracerLength: .6
-                },
-                shrapnel_strobe: {
-                    damage: 3,
-                    obstacleDamage: 1,
-                    falloff: 1,
-                    speed: 20,
-                    distance: 3,
-                    variance: 1.5,
-                    shrapnel: !0,
-                    tracerColor: "shrapnel",
-                    tracerWidth: .1,
-                    tracerLength: .3
-                },
-                shrapnel_usas: {
-                    damage: 5,
-                    obstacleDamage: 1,
-                    falloff: 1,
-                    speed: 20,
-                    distance: 5,
-                    variance: 1.2,
-                    shrapnel: !0,
-                    tracerColor: "shrapnel",
-                    tracerWidth: .1,
-                    tracerLength: .5
-                },
-                shrapnel_mirv_mini: {
-                    damage: 6,
-                    obstacleDamage: 1,
-                    falloff: 1,
-                    speed: 20,
-                    distance: 5,
-                    variance: 1.3,
-                    shrapnel: !0,
-                    tracerColor: "shrapnel",
-                    tracerWidth: .1,
-                    tracerLength: .5
-                },
-                shrapnel_bomb_iron: {
-                    damage: 40,
-                    obstacleDamage: 1,
-                    falloff: 1,
-                    speed: 24,
-                    distance: 12,
-                    variance: 1.5,
-                    shrapnel: !0,
-                    tracerColor: "shrapnel",
-                    tracerWidth: .125,
-                    tracerLength: .6
                 }
             },
             tracerColors: {
@@ -2994,2603 +3365,59 @@
                     saturated: 13303808
                 }
             },
-            items: {
-                outfitBase: {
-                    name: "Basic Outfit",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        footTint: 16303476,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 8480055,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 16303476,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitBarrel: {
-                    name: "Fish in a Barrel",
-                    type: "skin",
-                    obstacleType: "barrel_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: .8,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 3750201,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitWoodBarrel: {
-                    name: "Fish in a Wood Barrel",
-                    type: "skin",
-                    obstacleType: "barrel_02",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 11235106,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitStone: {
-                    name: "Stoneskin",
-                    type: "skin",
-                    obstacleType: "stone_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: .9,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 7434609,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitTree: {
-                    name: "Barkskin",
-                    type: "skin",
-                    obstacleType: "tree_07",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 4599058,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitTreeSpooky: {
-                    name: "Spooky Barkskin",
-                    type: "skin",
-                    obstacleType: "tree_05",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 1775895,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitStump: {
-                    name: "Stump Costume",
-                    type: "skin",
-                    obstacleType: "tree_09",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 8602624,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitBush: {
-                    name: "Bush Wookie",
-                    type: "skin",
-                    obstacleType: "bush_01b",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 3889951,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitLeafPile: {
-                    name: "Leaf Pile Wookie",
-                    type: "skin",
-                    obstacleType: "bush_06b",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 16731392,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitCrate: {
-                    name: "Guy in a Box",
-                    type: "skin",
-                    obstacleType: "crate_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 6697728,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitTable: {
-                    name: "Yard Sale",
-                    type: "skin",
-                    obstacleType: "table_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 6697728,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitSoviet: {
-                    name: "Comrade in a Box",
-                    type: "skin",
-                    obstacleType: "crate_02",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 6697728,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitAirdrop: {
-                    name: "Air Drop Costume",
-                    type: "skin",
-                    obstacleType: "crate_10",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 6579300,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitOven: {
-                    name: "Oven Costume",
-                    type: "skin",
-                    obstacleType: "oven_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 14935011,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitRefrigerator: {
-                    name: "Fridge Costume",
-                    type: "skin",
-                    obstacleType: "refrigerator_01b",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 7733259,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitVending: {
-                    name: "Vending Costume",
-                    type: "skin",
-                    obstacleType: "vending_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16566389,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 10925,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitPumpkin: {
-                    name: "Pumpkin Costume",
-                    type: "skin",
-                    obstacleType: "pumpkin_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 15889667,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitWoodpile: {
-                    name: "Woodpile Costume",
-                    type: "skin",
-                    obstacleType: "woodpile_01",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 9455616,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitToilet: {
-                    name: "Toilet Costume",
-                    type: "skin",
-                    obstacleType: "toilet_02",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16303476,
-                        handSprite: "player-hands-01.img",
-                        backpackTint: 8480055
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitWoodsCloak: {
-                    name: "Greencloak",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 2817792,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 16711594,
-                        handSprite: "player-hands-02.img",
-                        footTint: 16711594,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 15635271,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 2817792,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitRedLeaderAged: {
-                    name: "Weathered Red",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 10098712,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 16711680,
-                        handSprite: "player-hands-02.img",
-                        footTint: 16711680,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 5442572,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 10098712,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitBlueLeaderAged: {
-                    name: "Stifled Blue",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 1523353,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 20223,
-                        handSprite: "player-hands-02.img",
-                        footTint: 20223,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 794700,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 1523353,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitRedLeader: {
-                    name: "Red Leader",
-                    type: "skin",
-                    noDrop: !0,
-                    skinImg: {
-                        baseTint: 10158080,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 16711680,
-                        handSprite: "player-hands-02.img",
-                        footTint: 16711680,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 5439488,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 8650752,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitBlueLeader: {
-                    name: "Blue Leader",
-                    type: "skin",
-                    noDrop: !0,
-                    skinImg: {
-                        baseTint: 12187,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 20223,
-                        handSprite: "player-hands-02.img",
-                        footTint: 20223,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 5964,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 13223,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitSpetsnaz: {
-                    name: "Siberian Assault",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseSprite: "player-base-05.img",
-                        handTint: 15000804,
-                        handSprite: "player-hands-01.img",
-                        footTint: 15000804,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 13816530,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-04.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitElf: {
-                    name: "Tallow's Little Helper",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 12845056,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 1489152,
-                        handSprite: "player-hands-01.img",
-                        footTint: 1489152,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 365312,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 1489152,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "bells_01"
-                    }
-                },
-                outfitImperial: {
-                    name: "Imperial Seal",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 12320813,
-                        baseSprite: "player-base-01.img",
-                        baseScale: 1,
-                        handTint: 16777215,
-                        handSprite: "player-hands-01.img",
-                        footTint: 16777215,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 12625727,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 12320813,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitLumber: {
-                    name: "Woodcutter's Wrap",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseSprite: "player-base-04.img",
-                        baseScale: 1,
-                        handTint: 8258312,
-                        handSprite: "player-hands-02.img",
-                        footTint: 8258312,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 4854547,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-03.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitVerde: {
-                    name: "Poncho Verde",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 1785868,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 11912587,
-                        handSprite: "player-hands-02.img",
-                        footTint: 11912587,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 11238441,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 1785868,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitPineapple: {
-                    name: "Valiant Pineapple",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 10027008,
-                        baseSprite: "player-base-02.img",
-                        handTint: 4985105,
-                        handSprite: "player-hands-02.img",
-                        footTint: 4985105,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 16763904,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 10027008,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitTarkhany: {
-                    name: "Tarkhany Regal",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 4927107,
-                        baseSprite: "player-base-02.img",
-                        handTint: 16757760,
-                        handSprite: "player-hands-02.img",
-                        footTint: 16757760,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 4661344,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 4927107,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitWaterElem: {
-                    name: "Water Elemental",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 7143401,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 15990876,
-                        handSprite: "player-hands-02.img",
-                        footTint: 15990876,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 32644,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 7143401,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitHeaven: {
-                    name: "Celestial Garb",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseSprite: "player-base-03.img",
-                        baseScale: 1,
-                        handTint: 13762639,
-                        handSprite: "player-hands-02.img",
-                        footTint: 13762639,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 36503,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-02.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitMeteor: {
-                    name: "Falling Star",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 9764864,
-                        baseSprite: "player-base-02.img",
-                        baseScale: 1,
-                        handTint: 16742400,
-                        handSprite: "player-hands-02.img",
-                        footTint: 16742400,
-                        footSprite: "player-feet-02.img",
-                        backpackTint: 4727582,
-                        backpackSprite: "player-circle-base-02.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 9764864,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2,
-                        rad: 16
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitIslander: {
-                    name: "Island Time",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16762368,
-                        baseSprite: "player-base-01.img",
-                        handTint: 148992,
-                        handSprite: "player-hands-01.img",
-                        footTint: 148992,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 4495104,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 16762368,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitAqua: {
-                    name: "Aquatic Avenger",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 47778,
-                        baseSprite: "player-base-01.img",
-                        handTint: 65502,
-                        handSprite: "player-hands-01.img",
-                        footTint: 65502,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 536620,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 47778,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitCoral: {
-                    name: "Coral Guise",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16736103,
-                        baseSprite: "player-base-01.img",
-                        handTint: 16746895,
-                        handSprite: "player-hands-01.img",
-                        footTint: 16746895,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 16772298,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 16736103,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitKhaki: {
-                    name: "The Initiative",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 12824197,
-                        baseSprite: "player-base-01.img",
-                        handTint: 9404516,
-                        handSprite: "player-hands-01.img",
-                        footTint: 9404516,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 4208940,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 12824197,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitCasanova: {
-                    name: "Casanova Silks",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 4327436,
-                        baseSprite: "player-base-01.img",
-                        handTint: 7602183,
-                        handSprite: "player-hands-01.img",
-                        footTint: 7602183,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 1052688,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 4327436,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitPrisoner: {
-                    name: "The New Black",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16735266,
-                        baseSprite: "player-base-01.img",
-                        handTint: 16545059,
-                        handSprite: "player-hands-01.img",
-                        footTint: 16545059,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 16756224,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 16735266,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitJester: {
-                    name: "Jester's Folly",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 7798904,
-                        baseSprite: "player-base-01.img",
-                        handTint: 4915276,
-                        handSprite: "player-hands-01.img",
-                        footTint: 4915276,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 936960,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 7798904,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitWoodland: {
-                    name: "Woodland Combat",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 2831146,
-                        baseSprite: "player-base-01.img",
-                        handTint: 5925970,
-                        handSprite: "player-hands-01.img",
-                        footTint: 5925970,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 5056e3,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 2831146,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitRoyalFortune: {
-                    name: "Royal Fortune",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 8333091,
-                        baseSprite: "player-base-01.img",
-                        handTint: 15254058,
-                        handSprite: "player-hands-01.img",
-                        footTint: 15254058,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 9981696,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 8333091,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitKeyLime: {
-                    name: "Key Lime",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 13107007,
-                        baseSprite: "player-base-01.img",
-                        handTint: 15662941,
-                        handSprite: "player-hands-01.img",
-                        footTint: 15662941,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 12355383,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 13107007,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitCobaltShell: {
-                    name: "Cobalt Shell",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 11095,
-                        baseSprite: "player-base-01.img",
-                        handTint: 2711164,
-                        handSprite: "player-hands-01.img",
-                        footTint: 2711164,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 19093,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 11095,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitCarbonFiber: {
-                    name: "Carbon Fiber",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 2171169,
-                        baseSprite: "player-base-01.img",
-                        handTint: 1842204,
-                        handSprite: "player-hands-01.img",
-                        footTint: 1842204,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 3552822,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 2171169,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitDarkGloves: {
-                    name: "The Professional",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16303476,
-                        baseSprite: "player-base-01.img",
-                        handTint: 12482560,
-                        handSprite: "player-hands-01.img",
-                        footTint: 12482560,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 10708736,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 12482560,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitDarkGhillie: {
-                    name: "Incursion Ghillie",
-                    type: "skin",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 5005348,
-                        baseSprite: "player-base-01.img",
-                        handTint: 5005348,
-                        handSprite: "player-hands-01.img",
-                        footTint: 5005348,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 6697728,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 5005348,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitDesertGhillie: {
-                    name: "Desert Ghillie",
-                    type: "skin",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 14657377,
-                        baseSprite: "player-base-01.img",
-                        handTint: 14657377,
-                        handSprite: "player-hands-01.img",
-                        footTint: 14657377,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 6697728,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 14657377,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitGhillie: {
-                    name: "Ghillie Suit",
-                    type: "skin",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 8630096,
-                        baseSprite: "player-base-01.img",
-                        handTint: 8630096,
-                        handSprite: "player-hands-01.img",
-                        footTint: 8630096,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 6697728,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 8630096,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitSpringGhillie: {
-                    name: "Ghillie Suit",
-                    type: "skin",
-                    camo: !0,
-                    skinImg: {
-                        baseTint: 4285194,
-                        baseSprite: "player-base-01.img",
-                        handTint: 4285194,
-                        handSprite: "player-hands-01.img",
-                        footTint: 4285194,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 6697728,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 4285194,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitDesertCamo: {
-                    name: "Desert Camo",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 13736782,
-                        baseSprite: "player-base-01.img",
-                        handTint: 11169046,
-                        handSprite: "player-hands-01.img",
-                        footTint: 11169046,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 16763778,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 13736782,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitCamo: {
-                    name: "Forest Camo",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 10066278,
-                        baseSprite: "player-base-01.img",
-                        handTint: 8684631,
-                        handSprite: "player-hands-01.img",
-                        footTint: 8684631,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 6710835,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 10066278,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitRed: {
-                    name: "Target Practice",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 16711680,
-                        baseSprite: "player-base-01.img",
-                        handTint: 13893632,
-                        handSprite: "player-hands-01.img",
-                        footTint: 13893632,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 11993088,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 16711680,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                outfitWhite: {
-                    name: "Arctic Avenger",
-                    type: "skin",
-                    skinImg: {
-                        baseTint: 14935011,
-                        baseSprite: "player-base-01.img",
-                        handTint: 15658734,
-                        handSprite: "player-hands-01.img",
-                        footTint: 15658734,
-                        footSprite: "player-feet-01.img",
-                        backpackTint: 14474460,
-                        backpackSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-shirt-01.img",
-                        tint: 14935011,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "clothes_pickup_01"
-                    }
-                },
-                fists: {
-                    name: "Fists",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["fists"]
-                    },
-                    sound: {
-                        swing: "punch_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "punch_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-weapon-fists.img",
-                        scale: .3,
-                        rad: 25,
-                        tint: 65280
-                    }
-                },
-                karambit_rugged: {
-                    name: "Karambit Rugged",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "slash",
-                        attackAnims: ["slash", "fists"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-karambit-rugged.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-karambit-rugged.img",
-                        pos: {
-                            x: 15.5,
-                            y: -5
-                        },
-                        rot: .5 * Math.PI,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                karambit_prismatic: {
-                    name: "Karambit Prismatic",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "slash",
-                        attackAnims: ["slash", "fists"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-karambit-prismatic.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-karambit-prismatic.img",
-                        pos: {
-                            x: 15.5,
-                            y: -5
-                        },
-                        rot: .5 * Math.PI,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                karambit_drowned: {
-                    name: "Karambit Drowned",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "slash",
-                        attackAnims: ["slash", "fists"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-karambit-drowned.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-karambit-drowned.img",
-                        pos: {
-                            x: 15.5,
-                            y: -5
-                        },
-                        rot: .5 * Math.PI,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                bayonet_rugged: {
-                    name: "Bayonet Rugged",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["cut", "thrust"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-bayonet-rugged.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-bayonet-rugged.img",
-                        pos: {
-                            x: -.5,
-                            y: -32.5
-                        },
-                        rot: .785,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                bayonet_woodland: {
-                    name: "Bayonet Woodland",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["cut", "thrust"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-bayonet-woodland.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-bayonet-woodland.img",
-                        pos: {
-                            x: -.5,
-                            y: -32.5
-                        },
-                        rot: .785,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                huntsman_rugged: {
-                    name: "Huntsman Rugged",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["cut", "thrust"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-huntsman-rugged.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-huntsman-rugged.img",
-                        pos: {
-                            x: 2.5,
-                            y: -35.5
-                        },
-                        rot: .82,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                huntsman_burnished: {
-                    name: "Huntsman Burnished",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["cut", "thrust"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-huntsman-burnished.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-huntsman-burnished.img",
-                        pos: {
-                            x: 2.5,
-                            y: -35.5
-                        },
-                        rot: .82,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                bowie_vintage: {
-                    name: "Bowie Vintage",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["cut", "thrust"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-bowie-vintage.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-bowie-vintage.img",
-                        pos: {
-                            x: -.5,
-                            y: -32.5
-                        },
-                        rot: .785,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                bowie_frontier: {
-                    name: "Bowie Frontier",
-                    type: "melee",
-                    quality: 0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: .9,
-                    damageTime: .1,
-                    cooldownTime: .15,
-                    damage: 24,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["cut", "thrust"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-bowie-frontier.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-bowie-frontier.img",
-                        pos: {
-                            x: -.5,
-                            y: -32.5
-                        },
-                        rot: .785,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                machete_taiga: {
-                    name: "UVSR Taiga",
-                    type: "melee",
-                    quality: 1,
-                    cleave: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.5,
-                        y: 0
-                    },
-                    attackRad: 1.75,
-                    damageTime: .12,
-                    cooldownTime: .18,
-                    damage: 33,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "machete",
-                        attackAnims: ["cutReverse"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-machete-taiga.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-machete-taiga.img",
-                        pos: {
-                            x: -2.5,
-                            y: -48.5
-                        },
-                        rot: 1.885,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                kukri_trad: {
-                    name: "Tallow's Kukri",
-                    type: "melee",
-                    quality: 1,
-                    cleave: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.5,
-                        y: 0
-                    },
-                    attackRad: 1.75,
-                    damageTime: .12,
-                    cooldownTime: .18,
-                    damage: 33,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "machete",
-                        attackAnims: ["cutReverse"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "knife_deploy_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-kukri-trad.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-kukri-trad.img",
-                        pos: {
-                            x: -.5,
-                            y: -46.5
-                        },
-                        rot: 1.885,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    }
-                },
-                woodaxe: {
-                    name: "Wood Axe",
-                    type: "melee",
-                    quality: 0,
-                    armorPiercing: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: 1,
-                    damageTime: .18,
-                    cooldownTime: .18,
-                    damage: 36,
-                    obstacleDamage: 1.92,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeTwoHanded",
-                        attackAnims: ["axeSwing"]
-                    },
-                    sound: {
-                        pickup: "heavy_pickup_01",
-                        swing: "heavy_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "axe_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-woodaxe.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-woodaxe.img",
-                        pos: {
-                            x: -12.5,
-                            y: -16
-                        },
-                        rot: 1.2,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                woodaxe_bloody: {
-                    name: "Axe Bloodstained",
-                    type: "melee",
-                    quality: 0,
-                    armorPiercing: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: 1,
-                    damageTime: .18,
-                    cooldownTime: .18,
-                    damage: 36,
-                    obstacleDamage: 1.92,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeTwoHanded",
-                        attackAnims: ["axeSwing"]
-                    },
-                    sound: {
-                        pickup: "heavy_pickup_01",
-                        swing: "heavy_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "axe_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-woodaxe-bloody.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-woodaxe-bloody.img",
-                        pos: {
-                            x: -12.5,
-                            y: -16
-                        },
-                        rot: 1.2,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                fireaxe: {
-                    name: "Fire Axe",
-                    type: "melee",
-                    quality: 1,
-                    armorPiercing: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: 1,
-                    damageTime: .21,
-                    cooldownTime: .21,
-                    damage: 44,
-                    obstacleDamage: 2.4,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeTwoHanded",
-                        attackAnims: ["axeSwing"]
-                    },
-                    sound: {
-                        pickup: "heavy_pickup_01",
-                        swing: "heavy_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "axe_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-fireaxe.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-fireaxe.img",
-                        pos: {
-                            x: -12.5,
-                            y: -4
-                        },
-                        rot: 1.2,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                katana: {
-                    name: "Katana",
-                    type: "melee",
-                    quality: 0,
-                    armorPiercing: !0,
-                    cleave: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.75,
-                        y: 0
-                    },
-                    attackRad: 2,
-                    damageTime: .2,
-                    cooldownTime: .2,
-                    damage: 40,
-                    obstacleDamage: 1.5,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeKatana",
-                        attackAnims: ["katanaSwing"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "medium_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-katana.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-katana.img",
-                        pos: {
-                            x: 52.5,
-                            y: -2
-                        },
-                        rot: 3,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                katana_rusted: {
-                    name: "Katana Rusted",
-                    type: "melee",
-                    quality: 0,
-                    armorPiercing: !0,
-                    cleave: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.75,
-                        y: 0
-                    },
-                    attackRad: 2,
-                    damageTime: .2,
-                    cooldownTime: .2,
-                    damage: 40,
-                    obstacleDamage: 1.5,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeKatana",
-                        attackAnims: ["katanaSwing"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "medium_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-katana-rusted.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-katana-rusted.img",
-                        pos: {
-                            x: 52.5,
-                            y: -2
-                        },
-                        rot: 3,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                katana_orchid: {
-                    name: "Katana Orchid",
-                    type: "melee",
-                    quality: 1,
-                    armorPiercing: !0,
-                    cleave: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.75,
-                        y: 0
-                    },
-                    attackRad: 2,
-                    damageTime: .2,
-                    cooldownTime: .2,
-                    damage: 40,
-                    obstacleDamage: 1.5,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeKatana",
-                        attackAnims: ["katanaSwing"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "medium_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "knife_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-katana-orchid.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-katana-orchid.img",
-                        pos: {
-                            x: 52.5,
-                            y: -2
-                        },
-                        rot: 3,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                naginata: {
-                    name: "Naginata",
-                    type: "melee",
-                    quality: 1,
-                    armorPiercing: !0,
-                    cleave: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 3.5,
-                        y: 0
-                    },
-                    attackRad: 2,
-                    damageTime: .27,
-                    cooldownTime: .27,
-                    damage: 56,
-                    obstacleDamage: 1.92,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeNaginata",
-                        attackAnims: ["naginataSwing"]
-                    },
-                    sound: {
-                        pickup: "heavy_pickup_01",
-                        swing: "heavy_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "axe_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-naginata.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-naginata.img",
-                        pos: {
-                            x: 42.5,
-                            y: -3
-                        },
-                        rot: 1.9,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                stonehammer: {
-                    name: "Stone Hammer",
-                    type: "melee",
-                    quality: 1,
-                    armorPiercing: !0,
-                    stonePiercing: !0,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.35,
-                        y: 0
-                    },
-                    attackRad: 1,
-                    damageTime: .25,
-                    cooldownTime: .25,
-                    damage: 60,
-                    obstacleDamage: 1.92,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "meleeTwoHanded",
-                        attackAnims: ["hammerSwing"]
-                    },
-                    sound: {
-                        pickup: "heavy_pickup_01",
-                        swing: "heavy_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "axe_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-stonehammer.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        mirror: !0,
-                        rot: 2.35619
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-stonehammer.img",
-                        pos: {
-                            x: -12.5,
-                            y: -4
-                        },
-                        rot: 1.2,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        leftHandOntop: !0
-                    }
-                },
-                hook: {
-                    name: "Hook",
-                    type: "melee",
-                    quality: 1,
-                    autoAttack: !0,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 1.5,
-                        y: 0
-                    },
-                    attackRad: 1,
-                    damageTime: .075,
-                    cooldownTime: .1,
-                    damage: 18,
-                    obstacleDamage: 1,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["hook"]
-                    },
-                    sound: {
-                        pickup: "frag_pickup_01",
-                        swing: "knife_swing_01",
-                        deploy: "stow_weapon_01",
-                        playerHit: "hook_hit_01"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-hook-silver.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: .785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-hook-silver.img",
-                        pos: {
-                            x: 0,
-                            y: -27
-                        },
-                        rot: .5 * Math.PI,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215,
-                        renderOnHand: !0
-                    }
-                },
-                pan: {
-                    name: "Pan",
-                    type: "melee",
-                    quality: 1,
-                    autoAttack: !1,
-                    switchDelay: .25,
-                    attackOffset: {
-                        x: 2,
-                        y: 0
-                    },
-                    attackRad: 1.5,
-                    damageTime: .15,
-                    cooldownTime: .35,
-                    damage: 60,
-                    obstacleDamage: .8,
-                    headshotMult: 1,
-                    speed: {
-                        equip: 1,
-                        attack: 0
-                    },
-                    anim: {
-                        idlePose: "fists",
-                        attackAnims: ["pan"]
-                    },
-                    sound: {
-                        pickup: "pan_pickup_01",
-                        swing: "heavy_swing_01",
-                        deploy: "pan_pickup_01",
-                        playerHit: "pan_hit_01",
-                        bullet: "pan_bullet"
-                    },
-                    lootImg: {
-                        sprite: "loot-melee-pan-black.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-02.img",
-                        borderTint: 16777215,
-                        scale: .3,
-                        rot: -.785
-                    },
-                    worldImg: {
-                        sprite: "loot-melee-pan-black-side.img",
-                        pos: {
-                            x: 0,
-                            y: -40
-                        },
-                        rot: 1.125,
-                        scale: {
-                            x: .35,
-                            y: .35
-                        },
-                        tint: 16777215
-                    },
-                    hipImg: {
-                        sprite: "loot-melee-pan-black-side.img",
-                        pos: {
-                            x: -17.25,
-                            y: 7.5
-                        },
-                        rot: .78 * Math.PI,
-                        scale: {
-                            x: .3,
-                            y: .3
-                        },
-                        tint: 16777215
-                    },
-                    reflectSurface: {
-                        equipped: {
-                            p0: {
-                                x: 2.65,
-                                y: -.125
-                            },
-                            p1: {
-                                x: 1.35,
-                                y: -.74
-                            }
-                        },
-                        unequipped: {
-                            p0: {
-                                x: -.625,
-                                y: -1.2
-                            },
-                            p1: {
-                                x: -1.4,
-                                y: -.25
-                            }
-                        }
-                    }
-                },
-                mp5: {
-                    name: "MP5",
-                    type: "gun",
-                    quality: 0,
-                    fireMode: "auto",
-                    reloadMode: "mag",
-                    caseTiming: "shoot",
-                    ammo: "9mm",
-                    ammoSpawnCount: 90,
-                    maxClip: 30,
-                    maxReload: 30,
-                    extendedClip: 40,
-                    extendedReload: 40,
-                    reloadTime: 2,
-                    fireDelay: .09,
-                    switchDelay: .75,
-                    barrelLength: 2.625,
-                    recoilTime: 1e10,
-                    moveSpread: 4,
-                    shotSpread: 3,
-                    bulletCount: 1,
-                    bulletType: "bullet_mp5",
-                    headshotMult: 2,
-                    speed: {
-                        equip: 0,
-                        attack: 0
-                    },
-                    lootImg: {
-                        sprite: "loot-weapon-mp5.img",
-                        tint: 65280,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
+            scopeZoomRadius: {
+                desktop: {
+                    "1xscope": 28,
+                    "2xscope": 36,
+                    "4xscope": 48,
+                    "8xscope": 68,
+                    "15xscope": 104
+                },
+                mobile: {
+                    "1xscope": 32,
+                    "2xscope": 40,
+                    "4xscope": 48,
+                    "8xscope": 64,
+                    "15xscope": 88
+                }
+            },
+            bagSizes: {
+                "9mm": [120, 240, 330, 420],
+                "762mm": [90, 180, 240, 300],
+                "556mm": [90, 180, 240, 300],
+                "12gauge": [15, 30, 60, 90],
+                "50AE": [49, 98, 147, 196],
+                "308sub": [10, 20, 30, 40],
+                flare: [2, 4, 6, 8],
+                "45acp": [90, 180, 240, 300],
+                frag: [3, 6, 9, 12],
+                smoke: [3, 6, 9, 12],
+                strobe: [2, 3, 4, 5],
+                mirv: [2, 4, 6, 8],
+                snowball: [10, 20, 30, 40],
+                potato: [10, 20, 30, 40],
+                bandage: [5, 10, 15, 30],
+                healthkit: [1, 2, 3, 4],
+                soda: [2, 5, 10, 15],
+                painkiller: [1, 2, 3, 4],
+                "1xscope": [1, 1, 1, 1],
+                "2xscope": [1, 1, 1, 1],
+                "4xscope": [1, 1, 1, 1],
+                "8xscope": [1, 1, 1, 1],
+                "15xscope": [1, 1, 1, 1]
+            },
+            lootRadius: {
+                outfit: 1,
+                melee: 1.25,
+                gun: 1.25,
+                throwable: 1,
+                ammo: 1.2,
+                heal: 1,
+                boost: 1,
+                backpack: 1,
+                helmet: 1,
+                chest: 1,
+                scope: 1
+            }
+        }
+    },
