@@ -1,17 +1,4 @@
-webpackJsonp([1], {
-    "0354ead9": function(e, t, a) {
-        "use strict";
-        var i = (a("989ad62a"), a("1901e2d9")),
-            r = (a("c2a798c8"), a("45f86a38")),
-            o = {
-                desc: {
-                    name: "Woods Snow",
-                    icon: "img/loot/loot-throwable-snowball.svg"
-                },
-                assets: {
-                    audio: [{
-                        name: "vault_change_02",
-                        channel: "sfx"
+         channel: "sfx"
                     }, {
                         name: "footstep_08",
                         channel: "sfx"
@@ -28,7 +15,7 @@ webpackJsonp([1], {
                         name: "snowball_pickup_01",
                         channel: "ui"
                     }],
-                    atlases: ["gradient", "shared", "woods", "snow"]
+                    atlases: ["gradient", "loadout", "shared", "woods", "snow"]
                 },
                 biome: {
                     colors: {
@@ -376,10 +363,15 @@ webpackJsonp([1], {
 
         function r(e, t) {
             var a = s.Texture.fromImage(t, void 0, void 0, 1),
-                i = a.baseTexture;
-            return i.hasLoaded || i.on("loaded", function(a) {
+                i = a.baseTexture,
+                r = 0;
+            return i.hasLoaded || (i.on("loaded", function(a) {
                 console.log("Loaded texture", t), e.plugins.prepare.upload(a)
-            }), i
+            }), i.on("error", function(e) {
+                console.log("BaseTex load error, retrying", t), r++ <= 3 && setTimeout(function() {
+                    e.source && (e.updateSourceImage(""), e.updateSourceImage(t.substring(5, t.length)))
+                }, 500 * (r - 1))
+            })), i
         }
 
         function o(e, t) {
@@ -399,15 +391,30 @@ webpackJsonp([1], {
                 }
             }(),
             s = (a("0e566746"), a("8b1dfb45")),
-            l = {
+            l = a("ce29f17f"),
+            c = {
                 low: a("aaf70d05"),
                 high: a("6e13f3b7")
             },
-            c = function() {
+            m = function() {
                 function e(t, a) {
-                    i(this, e), this.renderer = t, this.atlasDefs = l[a] || l.low, this.atlases = {}, t.plugins.prepare.limiter.maxItemsPerFrame = 1
+                    i(this, e), this.renderer = t, this.textureRes = this.selectTextureRes(t, a), this.atlases = {}, t.plugins.prepare.limiter.maxItemsPerFrame = 1
                 }
                 return n(e, [{
+                    key: "selectTextureRes",
+                    value: function(e, t) {
+                        var a = Math.min(window.screen.width, window.screen.height),
+                            i = Math.max(window.screen.width, window.screen.height);
+                        a *= window.devicePixelRatio, i *= window.devicePixelRatio;
+                        var r = i < 1366 && a < 768,
+                            o = t.get("highResTex") ? "high" : "low";
+                        if ((r || l.mobile && !l.tablet || e.type == s.RENDERER_TYPE.CANVAS) && (o = "low"), e.type == s.RENDERER_TYPE.WEBGL) {
+                            var n = e.gl;
+                            n.getParameter(n.MAX_TEXTURE_SIZE) < 4096 && (o = "low")
+                        }
+                        return console.log("TextureRes", o, "screenDims", window.screen.width, window.screen.height), o
+                    }
+                }, {
                     key: "isAtlasLoaded",
                     value: function(e) {
                         return this.atlases[e] && this.atlases[e].loaded
@@ -420,9 +427,9 @@ webpackJsonp([1], {
                                 loaded: !1,
                                 spritesheets: []
                             };
-                            for (var t = this.atlasDefs[e], a = 0; a < t.length; a++) {
-                                var i = o(this.renderer, t[a]);
-                                this.atlases[e].spritesheets.push(i)
+                            for (var t = c[this.textureRes] || c.low, a = t[e], i = 0; i < a.length; i++) {
+                                var r = o(this.renderer, a[i]);
+                                this.atlases[e].spritesheets.push(r)
                             }
                             this.atlases[e].loaded = !0
                         }
@@ -458,7 +465,7 @@ webpackJsonp([1], {
                 }]), e
             }();
         e.exports = {
-            TextureManager: c
+            TextureManager: m
         }
     },
     "0955a76e": function(e, t, a) {
@@ -479,7 +486,7 @@ webpackJsonp([1], {
             l = a("10899aea"),
             c = a("1901e2d9"),
             m = a("c2a798c8"),
-            p = (a("ce29f17f"), a("af8ba00f"), a("753d6e4b"));
+            p = (a("af8ba00f"), a("753d6e4b"));
         i.prototype = {
             o: function() {},
             n: function() {
@@ -490,7 +497,7 @@ webpackJsonp([1], {
             }
         }, r.prototype = {
             o: function(e, t, a, i) {
-                this.pos = m.copy(e), this.posTarget = m.copy(this.pos), this.rad = t, this.radTarget = this.rad, this.rot = c.random(0, 2 * Math.PI), this.rotVel = Math.PI * c.random(.25, .5) * (Math.random() < .5 ? -1 : 1), this.fade = !1, this.fadeTicker = 0, this.fadeDuration = c.random(.5, .75), this.tint = c.rgb2hex(c.hsv2rgb(0, 0, c.random(.9, .95))), this.layer = a, this.interior = i
+                this.pos = m.copy(e), this.posTarget = m.copy(this.pos), this.rad = t, this.radTarget = this.rad, this.rot = c.random(0, 2 * Math.PI), this.rotVel = Math.PI * c.random(.25, .5) * (Math.random() < .5 ? -1 : 1), this.fade = !1, this.fadeTicker = 0, this.fadeDuration = c.random(.5, .75), this.tint = c.rgbToInt(c.hsvToRgb(0, 0, c.random(.9, .95))), this.layer = a, this.interior = i
             },
             fadeOut: function() {
                 this.fade = !0
@@ -524,6 +531,808 @@ webpackJsonp([1], {
         }, e.exports = {
             p: o
         }
+    },
+    "0ae5a1da": function(e, t, a) {
+        "use strict";
+        var i = {
+            frag: {
+                name: "Frag Grenade",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_frag",
+                inventoryOrder: 1,
+                cookable: !0,
+                explodeOnImpact: !1,
+                playerCollision: !1,
+                fuseTime: 4,
+                aimDistance: 0,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: .6,
+                    velZ: 5,
+                    speed: 20,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-frag.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-frag-nopin-nolever-01.img",
+                    scale: .12,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-frag-pin-01.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-frag-nopin-01.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "proj-frag-pin-part.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .14
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !0,
+                sound: {
+                    pullPin: "frag_pin_01",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            mirv: {
+                name: "MIRV Grenade",
+                type: "throwable",
+                quality: 1,
+                explosionType: "explosion_mirv",
+                inventoryOrder: 2,
+                cookable: !0,
+                explodeOnImpact: !1,
+                playerCollision: !1,
+                fuseTime: 4,
+                aimDistance: 0,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: .6,
+                    velZ: 5,
+                    speed: 20,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1
+                },
+                numSplit: 6,
+                splitType: "mirv_mini",
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-mirv.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-mirv-nopin-nolever.img",
+                    scale: .13,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-mirv-pin.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .15
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-mirv-nopin.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .15
+                        },
+                        left: {
+                            sprite: "proj-frag-pin-part.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .15
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !0,
+                sound: {
+                    pullPin: "frag_pin_01",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            mirv_mini: {
+                name: "MIRV Grenade",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_mirv_mini",
+                inventoryOrder: 99,
+                cookable: !0,
+                explodeOnImpact: !1,
+                playerCollision: !1,
+                fuseTime: 1.8,
+                fuseVariance: .3,
+                aimDistance: 0,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: .6,
+                    velZ: 5,
+                    speed: 20,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-frag.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-mirv-mini-01.img",
+                    scale: .12,
+                    tint: 16777215
+                },
+                useThrowParticles: !0,
+                sound: {
+                    pullPin: "frag_pin_01",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            smoke: {
+                name: "Smoke Grenade",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_smoke",
+                inventoryOrder: 3,
+                cookable: !1,
+                explodeOnImpact: !1,
+                playerCollision: !1,
+                fuseTime: 2.5,
+                aimDistance: 0,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: .6,
+                    velZ: 5,
+                    speed: 15,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-smoke.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-smoke-nopin-nolever.img",
+                    scale: .12,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-smoke-pin.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-smoke-nopin.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "proj-frag-pin-part.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !0,
+                sound: {
+                    pullPin: "frag_pin_01",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            strobe: {
+                name: "IR Strobe",
+                type: "throwable",
+                quality: 1,
+                explosionType: "explosion_strobe",
+                inventoryOrder: 3,
+                cookable: !1,
+                explodeOnImpact: !1,
+                playerCollision: !1,
+                fuseTime: 13.5,
+                strikeDelay: 2.5,
+                aimDistance: 0,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: .6,
+                    velZ: 5,
+                    speed: 25,
+                    spinVel: 6 * Math.PI,
+                    spinDrag: 1
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-strobe.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-strobe-armed.img",
+                    scale: .12,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-strobe-unarmed.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-strobe-arming.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !1,
+                sound: {
+                    pullPin: "strobe_click_01",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            snowball: {
+                name: "Snowball",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_snowball",
+                inventoryOrder: 0,
+                cookable: !0,
+                forceMaxThrowDistance: !0,
+                explodeOnImpact: !0,
+                playerCollision: !0,
+                fuseTime: 9999,
+                aimDistance: 32,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: 0,
+                    velZ: 3.35,
+                    speed: 40,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1,
+                    fixedCollisionHeight: .25
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-snowball.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-snowball-01.img",
+                    scale: .12,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-snowball-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-snowball-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !1,
+                sound: {
+                    pullPin: "",
+                    throwing: "frag_throw_01",
+                    pickup: "snowball_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            snowball_heavy: {
+                name: "Snowball",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_snowball_heavy",
+                inventoryOrder: 0,
+                cookable: !0,
+                forceMaxThrowDistance: !0,
+                explodeOnImpact: !0,
+                playerCollision: !0,
+                fuseTime: 5,
+                aimDistance: 32,
+                rad: 1.25,
+                throwPhysics: {
+                    playerVelMult: 0,
+                    velZ: 3.35,
+                    speed: 45,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1,
+                    fixedCollisionHeight: .25
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-snowball.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-snowball-02.img",
+                    scale: .2,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-snowball-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-snowball-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !1,
+                sound: {
+                    pullPin: "",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            potato: {
+                name: "Potato",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_potato",
+                freezeOnImpact: !0,
+                heavyType: "potato_heavy",
+                inventoryOrder: 0,
+                cookable: !0,
+                forceMaxThrowDistance: !0,
+                explodeOnImpact: !0,
+                playerCollision: !0,
+                fuseTime: 9999,
+                aimDistance: 32,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: 0,
+                    velZ: 3.35,
+                    speed: 40,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1,
+                    fixedCollisionHeight: .25
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-potato.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-potato-01.img",
+                    scale: .12,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-potato-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-potato-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !1,
+                sound: {
+                    pullPin: "",
+                    throwing: "frag_throw_01",
+                    pickup: "potato_pickup_01",
+                    deploy: "frag_deploy_01"
+                },
+                emoteId: 210
+            },
+            potato_heavy: {
+                name: "Potato",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_potato_heavy",
+                inventoryOrder: 0,
+                excludeFromInventory: !0,
+                cookable: !0,
+                forceMaxThrowDistance: !0,
+                explodeOnImpact: !0,
+                playerCollision: !0,
+                fuseTime: 5,
+                aimDistance: 32,
+                rad: 1.25,
+                throwPhysics: {
+                    playerVelMult: 0,
+                    velZ: 3.35,
+                    speed: 45,
+                    spinVel: 10 * Math.PI,
+                    spinDrag: 1,
+                    fixedCollisionHeight: .25
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-potato.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-potato-02.img",
+                    scale: .2,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-potato-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-potato-01.img",
+                            pos: {
+                                x: 3,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !1,
+                sound: {
+                    pullPin: "",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            },
+            bomb_iron: {
+                name: "Iron Bomb",
+                type: "throwable",
+                quality: 0,
+                explosionType: "explosion_bomb_iron",
+                inventoryOrder: 1,
+                cookable: !0,
+                explodeOnImpact: !0,
+                playerCollision: !1,
+                fuseTime: 4,
+                aimDistance: 0,
+                rad: 1,
+                throwPhysics: {
+                    playerVelMult: .6,
+                    velZ: 0,
+                    speed: 20,
+                    spinVel: 1 * Math.PI,
+                    spinDrag: 1,
+                    randomizeSpinDir: !0
+                },
+                speed: {
+                    equip: 0,
+                    attack: 0
+                },
+                lootImg: {
+                    sprite: "loot-throwable-frag.img",
+                    tint: 65280,
+                    border: "loot-circle-outer-01.img",
+                    borderTint: 0,
+                    scale: .2
+                },
+                worldImg: {
+                    sprite: "proj-bomb-iron-01.img",
+                    scale: .12,
+                    tint: 16777215
+                },
+                handImg: {
+                    equip: {
+                        right: {
+                            sprite: "proj-frag-pin-01.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    },
+                    cook: {
+                        right: {
+                            sprite: "proj-frag-nopin-01.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .14
+                        },
+                        left: {
+                            sprite: "proj-frag-pin-part.img",
+                            pos: {
+                                x: 4.2,
+                                y: 4.2
+                            },
+                            scale: .14
+                        }
+                    },
+                    throwing: {
+                        right: {
+                            sprite: "none"
+                        },
+                        left: {
+                            sprite: "none"
+                        }
+                    }
+                },
+                useThrowParticles: !0,
+                sound: {
+                    pullPin: "frag_pin_01",
+                    throwing: "frag_throw_01",
+                    pickup: "frag_pickup_01",
+                    deploy: "frag_deploy_01"
+                }
+            }
+        };
+        e.exports = i
     },
     "0b12821e": function(e, t, a) {
         "use strict";
@@ -577,7 +1386,7 @@ webpackJsonp([1], {
                         this.getTrack("wind").volume = 1, this.ambienceVolume = 1, this.interiorVolume = 0, this.soundUpdateThrottle = 0
                     }
                 }, {
-                    key: "onGameStop",
+                    key: "onGameComplete",
                     value: function(e) {
                         if (this.startedTracks) {
                             var t = this.getTrack("wind"),
@@ -667,11 +1476,11 @@ webpackJsonp([1], {
         }
         var r = a("8b1dfb45"),
             o = (a("34e32c48"), a("6b42806d")),
-            n = a("ceee80d9"),
-            s = a("10899aea"),
-            l = a("1901e2d9"),
-            c = a("c2a798c8");
-        a("af8ba00f"), i.prototype = {
+            n = a("10899aea"),
+            s = a("1901e2d9"),
+            l = a("c2a798c8"),
+            c = (a("af8ba00f"), a("aca73f78"));
+        i.prototype = {
             o: function() {
                 this.isNew = !1, this.smokeEmitter = null, this.sprite.visible = !1, this.img = ""
             },
@@ -680,16 +1489,16 @@ webpackJsonp([1], {
             },
             l: function(e, t, a, i) {
                 t && (this.type = e.type, this.layer = e.layer, this.healthT = e.healthT, this.dead = e.dead);
-                var s = n.Defs[this.type];
-                if (this.pos = c.copy(e.pos), this.rot = n.oriToRad(e.ori), this.scale = e.scale, this.imgScale = s.img.scale, this.collider = o.transform(s.collision, this.pos, this.rot, this.scale), a) {
-                    if (this.isNew = !0, this.exploded = -1 != i.map.deadObstacleIds.indexOf(this.__id), this.explodeParticle = s.explodeParticle, this.collidable = s.collidable, this.destructible = s.destructible, this.height = s.height, this.isWall = !!s.isWall, this.isWindow = !!s.isWindow, this.isBush = !!s.isBush, this.isDoor = void 0 !== s.door, this.isDoor) {
+                var m = c[this.type];
+                if (this.pos = l.copy(e.pos), this.rot = n.oriToRad(e.ori), this.scale = e.scale, this.imgScale = m.img.scale, this.collider = o.transform(m.collision, this.pos, this.rot, this.scale), a) {
+                    if (this.isNew = !0, this.exploded = -1 != i.map.deadObstacleIds.indexOf(this.__id), this.explodeParticle = m.explodeParticle, this.collidable = m.collidable, this.destructible = m.destructible, this.height = m.height, this.isWall = !!m.isWall, this.isWindow = !!m.isWindow, this.isBush = !!m.isBush, this.isDoor = void 0 !== m.door, this.isDoor) {
                         this.door = {
-                            playErrorFx: s.door.slideToOpen && s.door.openOneWay,
-                            closedPos: c.copy(e.pos),
-                            autoOpen: s.door.autoOpen,
-                            interactionRad: s.door.interactionRad,
-                            interpSpeed: s.door.openSpeed,
-                            interpPos: c.copy(e.pos),
+                            playErrorFx: m.door.slideToOpen && m.door.openOneWay,
+                            closedPos: l.copy(e.pos),
+                            autoOpen: m.door.autoOpen,
+                            interactionRad: m.door.interactionRad,
+                            interpSpeed: m.door.openSpeed,
+                            interpPos: l.copy(e.pos),
                             interpRot: n.oriToRad(e.ori),
                             seq: e.door.seq,
                             seqOld: e.door.seq,
@@ -697,40 +1506,44 @@ webpackJsonp([1], {
                             wasOpen: e.door.open,
                             casingSprite: null
                         };
-                        var m = s.door.casingImg;
-                        if (void 0 !== m) {
-                            var p = m.pos || c.create(0, 0);
-                            p = c.rotate(p, this.rot + .5 * Math.PI);
-                            var d = new r.Sprite;
-                            d.texture = r.Texture.fromImage(m.sprite), d.anchor.set(.5, .5), d.posOffset = p, d.imgScale = m.scale, d.tint = m.tint, d.zOrd = m.zIdx, d.zIdx = this.__id, d.alpha = m.alpha, d.visible = !0, this.door.casingSprite = d
+                        var p = m.door.casingImg;
+                        if (void 0 !== p) {
+                            var d = p.pos || l.create(0, 0);
+                            d = l.rotate(d, this.rot + .5 * Math.PI);
+                            var h = new r.Sprite;
+                            h.texture = r.Texture.fromImage(p.sprite), h.anchor.set(.5, .5), h.posOffset = d, h.imgScale = p.scale, h.tint = p.tint, h.zOrd = p.zIdx, h.zIdx = this.__id, h.alpha = p.alpha, h.visible = !0, this.door.casingSprite = h
                         }
                     }
-                    this.isButton = void 0 !== s.button, this.isButton && (this.button = {
-                        interactionRad: s.button.interactionRad,
-                        interactionText: s.button.interactionText || "game-use",
+                    this.isButton = void 0 !== m.button, this.isButton && (this.button = {
+                        interactionRad: m.button.interactionRad,
+                        interactionText: m.button.interactionText || "game-use",
                         seq: e.button.seq,
                         seqOld: e.button.seq
                     }), this.isPuzzlePiece = e.isPuzzlePiece, this.parentBuildingId = this.isPuzzlePiece ? e.parentBuildingId : 0
                 }
                 if (this.isDoor && t) {
                     this.door.canUse = e.door.canUse, this.door.open = e.door.open, this.door.seq = e.door.seq;
-                    var h = c.rotate(c.create(s.door.slideOffset, 0), this.rot + .5 * Math.PI);
-                    this.door.closedPos = e.door.open ? c.add(e.pos, h) : c.copy(e.pos)
+                    var u = l.rotate(l.create(m.door.slideOffset, 0), this.rot + .5 * Math.PI);
+                    this.door.closedPos = e.door.open ? l.add(e.pos, u) : l.copy(e.pos)
                 }
-                if (this.isButton && t && (this.button.onOff = e.button.onOff, this.button.canUse = e.button.canUse, this.button.seq = e.button.seq), void 0 !== s.explosion && !this.smokeEmitter && e.healthT < .5 && !e.dead) {
-                    var u = c.normalize(c.create(1, 1));
-                    this.smokeEmitter = i.particleBarn.addEmitter("smoke_barrel", this.pos, u, 1, this.layer, Number.MAX_VALUE)
+                if (this.isButton && t && (this.button.onOff = e.button.onOff, this.button.canUse = e.button.canUse, this.button.seq = e.button.seq), void 0 !== m.explosion && !this.smokeEmitter && e.healthT < .5 && !e.dead) {
+                    var g = l.normalize(l.create(1, 1));
+                    this.smokeEmitter = i.particleBarn.addEmitter("smoke_barrel", {
+                        pos: this.pos,
+                        dir: g,
+                        layer: this.layer
+                    })
                 }
-                var g = !1,
-                    y = this.dead ? s.img.residue : s.img.sprite;
-                if (this.isButton && this.button.onOff && !this.dead && s.button.useImg && (y = s.button.useImg), y != this.img) {
-                    var w = c.create(.5, .5);
-                    this.isDoor && (w = s.door.spriteAnchor);
-                    var x = void 0 !== y;
-                    !x && this.sprite.parent && this.sprite.parent.removeChild(this.sprite), x && (this.sprite.texture = "none" == y ? r.Texture.EMPTY : r.Texture.fromImage(y), this.sprite.anchor.set(w.x, w.y), this.sprite.tint = s.img.tint, this.sprite.imgAlpha = this.dead ? .75 : s.img.alpha, this.sprite.zOrd = s.img.zIdx, this.sprite.zIdx = 65535 * Math.floor(1e3 * this.scale) + this.__id, this.sprite.alpha = this.sprite.imgAlpha, g = !0), this.sprite.visible = x, this.img = y
+                var y = !1,
+                    w = this.dead ? m.img.residue : m.img.sprite;
+                if (this.isButton && this.button.onOff && !this.dead && m.button.useImg && (w = m.button.useImg), w != this.img) {
+                    var x = l.create(.5, .5);
+                    this.isDoor && (x = m.door.spriteAnchor);
+                    var f = void 0 !== w;
+                    !f && this.sprite.parent && this.sprite.parent.removeChild(this.sprite), f && (this.sprite.texture = "none" == w ? r.Texture.EMPTY : r.Texture.fromImage(w), this.sprite.anchor.set(x.x, x.y), this.sprite.tint = m.img.tint, this.sprite.imgAlpha = this.dead ? .75 : m.img.alpha, this.sprite.zOrd = m.img.zIdx, this.sprite.zIdx = 65535 * Math.floor(1e3 * this.scale) + this.__id, this.sprite.alpha = this.sprite.imgAlpha, y = !0), this.sprite.visible = f, this.img = w
                 }
-                var f = i.map.getMapDef().biome.valueAdjust;
-                g && f < 1 && (this.sprite.tint = l.adjustValue(this.sprite.tint, f))
+                var b = i.map.getMapDef().biome.valueAdjust;
+                y && b < 1 && (this.sprite.tint = s.adjustValue(this.sprite.tint, b))
             },
             getInteraction: function() {
                 return this.isButton && this.button.canUse ? {
@@ -747,12 +1560,12 @@ webpackJsonp([1], {
                 if (this.isButton) {
                     var d = this.button;
                     if (d.seq != d.seqOld) {
-                        var h = n.Defs[this.type];
+                        var h = c[this.type];
                         if (h.button.useParticle) {
                             var u = o.toAabb(this.collider),
-                                g = c.mul(c.sub(u.max, u.min), .5),
-                                y = c.add(u.min, g),
-                                w = c.mul(c.randomUnit(), l.random(5, 15));
+                                g = l.mul(l.sub(u.max, u.min), .5),
+                                y = l.add(u.min, g),
+                                w = l.mul(l.randomUnit(), s.random(5, 15));
                             i.addParticle(h.button.useParticle, this.layer, y, w)
                         }
                         var x = this.button.onOff ? h.button.sound.on : h.button.sound.off;
@@ -768,19 +1581,19 @@ webpackJsonp([1], {
                 if (this.isDoor) {
                     var f = this.door,
                         b = f.interpSpeed,
-                        _ = c.sub(this.pos, f.interpPos),
-                        S = c.length(_),
-                        k = b * e;
-                    S < k && (k = S);
-                    var v = S > 1e-4 ? c.div(_, S) : c.create(1, 0);
-                    f.interpPos = c.add(f.interpPos, c.mul(v, k));
+                        _ = l.sub(this.pos, f.interpPos),
+                        S = l.length(_),
+                        v = b * e;
+                    S < v && (v = S);
+                    var k = S > 1e-4 ? l.div(_, S) : l.create(1, 0);
+                    f.interpPos = l.add(f.interpPos, l.mul(k, v));
                     var z = Math.PI * f.interpSpeed,
-                        M = s.angleDiff(f.interpRot, this.rot),
-                        T = s.sign(M) * z * e;
+                        M = n.angleDiff(f.interpRot, this.rot),
+                        T = n.sign(M) * z * e;
                     if (Math.abs(M) < Math.abs(T) && (T = M), f.interpRot += T, f.seq != f.seqOld) {
-                        var P = n.Defs[this.type],
-                            I = P.door.sound.change || "";
-                        "" != I && r.playSound(I, {
+                        var I = c[this.type],
+                            P = I.door.sound.change || "";
+                        "" != P && r.playSound(P, {
                             channel: "sfx",
                             soundPos: this.pos,
                             layer: this.layer,
@@ -788,7 +1601,7 @@ webpackJsonp([1], {
                         }), f.seqOld = f.seq
                     }
                     if (f.open != f.wasOpen) {
-                        var C = n.Defs[this.type],
+                        var C = c[this.type],
                             A = f.open ? C.door.sound.open : C.door.sound.close;
                         r.playSound(A, {
                             channel: "sfx",
@@ -799,8 +1612,8 @@ webpackJsonp([1], {
                     }
                 }
                 if (this.dead && !this.exploded && (t.deadObstacleIds.push(this.__id), this.exploded = !0, this.smokeEmitter && (this.smokeEmitter.stop(), this.smokeEmitter = null), !this.isNew)) {
-                    for (var E = n.Defs[this.type], D = o.toAabb(this.collider), O = c.mul(c.sub(D.max, D.min), .5), B = c.add(D.min, O), L = Math.floor(l.random(5, 11)), R = 0; R < L; R++) {
-                        var F = c.mul(c.randomUnit(), l.random(5, 15)),
+                    for (var E = c[this.type], D = o.toAabb(this.collider), O = l.mul(l.sub(D.max, D.min), .5), B = l.add(D.min, O), R = Math.floor(s.random(5, 11)), L = 0; L < R; L++) {
+                        var F = l.mul(l.randomUnit(), s.random(5, 15)),
                             j = Array.isArray(this.explodeParticle) ? this.explodeParticle[Math.floor(Math.random() * this.explodeParticle.length)] : this.explodeParticle;
                         i.addParticle(j, this.layer, B, F)
                     }
@@ -811,7 +1624,7 @@ webpackJsonp([1], {
                         muffled: !0
                     })
                 }
-                if (this.smokeEmitter && (this.smokeEmitter.pos = c.copy(this.pos), this.smokeEmitter.enabled = !this.dead && this.healthT < .5), this.sprite.visible && this.img) {
+                if (this.smokeEmitter && (this.smokeEmitter.pos = l.copy(this.pos), this.smokeEmitter.enabled = !this.dead && this.healthT < .5), this.sprite.visible && this.img) {
                     var q = this.dead ? 5 : this.sprite.zOrd,
                         N = this.sprite.zIdx,
                         V = this.layer;
@@ -826,9 +1639,9 @@ webpackJsonp([1], {
                     o = e.pointToScreen(a),
                     n = e.pixels(r * this.imgScale);
                 if (this.sprite.position.set(o.x, o.y), this.sprite.scale.set(n, n), this.sprite.rotation = -i, this.sprite.alpha = this.sprite.imgAlpha, this.isDoor && this.door.casingSprite) {
-                    var s = e.pointToScreen(c.add(this.door.closedPos, this.door.casingSprite.posOffset)),
-                        l = e.pixels(r * this.door.casingSprite.imgScale);
-                    this.door.casingSprite.position.set(s.x, s.y), this.door.casingSprite.scale.set(l, l), this.door.casingSprite.rotation = -i, this.door.casingSprite.visible = !this.dead
+                    var s = e.pointToScreen(l.add(this.door.closedPos, this.door.casingSprite.posOffset)),
+                        c = e.pixels(r * this.door.casingSprite.imgScale);
+                    this.door.casingSprite.position.set(s.x, s.y), this.door.casingSprite.scale.set(c, c), this.door.casingSprite.rotation = -i, this.door.casingSprite.visible = !this.dead
                 }
             }
         }, e.exports = i
@@ -1806,6 +2619,10 @@ webpackJsonp([1], {
                         path: "audio/hits/hook_hit_01.mp3",
                         volume: 1
                     },
+                    saw_hit_01: {
+                        path: "audio/hits/saw_hit_01.mp3",
+                        volume: 2.5
+                    },
                     metal_punch_hit_01: {
                         path: "audio/hits/metal_punch_hit_01.mp3",
                         volume: 1
@@ -2502,6 +3319,11 @@ webpackJsonp([1], {
                         volume: 1,
                         preload: !1
                     },
+                    medic_assigned_01: {
+                        path: "audio/ui/medic_assigned_01.mp3",
+                        volume: 2,
+                        preload: !1
+                    },
                     helmet03_forest_pickup_01: {
                         path: "audio/ui/helmet03_forest_pickup_01.mp3",
                         volume: 1,
@@ -2813,6 +3635,12 @@ webpackJsonp([1], {
                     var a = n.fmod(t - e + Math.PI, 2 * Math.PI) - Math.PI;
                     return a < -Math.PI ? a + 2 * Math.PI : a
                 },
+                oriToRad: function(e) {
+                    return e % 4 * .5 * Math.PI
+                },
+                radToOri: function(e) {
+                    return Math.floor(n.fmod(e + .25 * Math.PI, 2 * Math.PI) / (.5 * Math.PI))
+                },
                 quantize: function(e, t, a, r) {
                     i(e >= t && e <= a);
                     var o = (1 << r) - 1,
@@ -2952,7 +3780,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.06, .84, p.random(.46, .48)))
+                        return p.rgbToInt(p.hsvToRgb(.06, .84, p.random(.46, .48)))
                     }
                 },
                 bloodSplat: {
@@ -2971,7 +3799,7 @@ webpackJsonp([1], {
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(16711680, 1, p.random(.45, .8)))
+                        return p.rgbToInt(p.hsvToRgb(16711680, 1, p.random(.45, .8)))
                     }
                 },
                 barrelPlank: {
@@ -2990,7 +3818,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.09, .8, p.random(.66, .68)))
+                        return p.rgbToInt(p.hsvToRgb(.09, .8, p.random(.66, .68)))
                     }
                 },
                 barrelChip: {
@@ -3009,7 +3837,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.01, .02, p.random(.38, .41)))
+                        return p.rgbToInt(p.hsvToRgb(.01, .02, p.random(.38, .41)))
                     }
                 },
                 barrelBreak: {
@@ -3028,7 +3856,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.01, .02, p.random(.38, .41)))
+                        return p.rgbToInt(p.hsvToRgb(.01, .02, p.random(.38, .41)))
                     }
                 },
                 blackChip: {
@@ -3047,7 +3875,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, .08, p.random(.16, .18)))
+                        return p.rgbToInt(p.hsvToRgb(0, .08, p.random(.16, .18)))
                     }
                 },
                 blueChip: {
@@ -3066,7 +3894,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.64, 1, p.random(.83, .85)))
+                        return p.rgbToInt(p.hsvToRgb(.64, 1, p.random(.83, .85)))
                     }
                 },
                 book: {
@@ -3085,7 +3913,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .42, p.random(.72, .74)))
+                        return p.rgbToInt(p.hsvToRgb(.08, .42, p.random(.72, .74)))
                     }
                 },
                 bottleBrownChip: {
@@ -3172,7 +4000,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, .71, p.random(.32, .34)))
+                        return p.rgbToInt(p.hsvToRgb(0, .71, p.random(.32, .34)))
                     }
                 },
                 clothBreak: {
@@ -3191,7 +4019,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.95, 1)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.95, 1)))
                     }
                 },
                 clothHit: {
@@ -3210,7 +4038,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.95, 1)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.95, 1)))
                     }
                 },
                 depositBoxGreyBreak: {
@@ -3229,7 +4057,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.36, .38)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.36, .38)))
                     }
                 },
                 depositBoxGoldBreak: {
@@ -3248,7 +4076,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.11, .84, p.random(.64, .66)))
+                        return p.rgbToInt(p.hsvToRgb(.11, .84, p.random(.64, .66)))
                     }
                 },
                 glassChip: {
@@ -3301,7 +4129,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.11, .84, p.random(.88, .9)))
+                        return p.rgbToInt(p.hsvToRgb(.11, .84, p.random(.88, .9)))
                     }
                 },
                 greenChip: {
@@ -3320,7 +4148,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.4, .18, p.random(.5, .62)))
+                        return p.rgbToInt(p.hsvToRgb(.4, .18, p.random(.5, .62)))
                     }
                 },
                 greenPlank: {
@@ -3373,7 +4201,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .81, p.random(.78, .82)))
+                        return p.rgbToInt(p.hsvToRgb(.1, .81, p.random(.78, .82)))
                     }
                 },
                 leaf: {
@@ -3392,7 +4220,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.5, .75)))
                     }
                 },
                 leafRiver: {
@@ -3411,7 +4239,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.5, .75)))
                     }
                 },
                 lockerBreak: {
@@ -3430,7 +4258,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .23, p.random(.51, .53)))
+                        return p.rgbToInt(p.hsvToRgb(.1, .23, p.random(.51, .53)))
                     }
                 },
                 ltgreenChip: {
@@ -3449,7 +4277,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.2, .42, p.random(.38, .42)))
+                        return p.rgbToInt(p.hsvToRgb(.2, .42, p.random(.38, .42)))
                     }
                 },
                 outhouseChip: {
@@ -3468,7 +4296,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .57, p.random(.4, .46)))
+                        return p.rgbToInt(p.hsvToRgb(.08, .57, p.random(.4, .46)))
                     }
                 },
                 outhouseBreak: {
@@ -3487,7 +4315,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .79, p.random(.52, .54)))
+                        return p.rgbToInt(p.hsvToRgb(.08, .79, p.random(.52, .54)))
                     }
                 },
                 outhousePlank: {
@@ -3506,7 +4334,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, .57, p.random(.4, .46)))
+                        return p.rgbToInt(p.hsvToRgb(.08, .57, p.random(.4, .46)))
                     }
                 },
                 potChip: {
@@ -3525,7 +4353,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.06, .84, p.random(.73, .77)))
+                        return p.rgbToInt(p.hsvToRgb(.06, .84, p.random(.73, .77)))
                     }
                 },
                 potBreak: {
@@ -3544,7 +4372,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.06, .84, p.random(.73, .77)))
+                        return p.rgbToInt(p.hsvToRgb(.06, .84, p.random(.73, .77)))
                     }
                 },
                 potatoChip: {
@@ -3563,7 +4391,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.075, .43, p.random(.48, .5)))
+                        return p.rgbToInt(p.hsvToRgb(.075, .43, p.random(.48, .5)))
                     }
                 },
                 potatoBreak: {
@@ -3582,7 +4410,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.075, .43, p.random(.48, .5)))
+                        return p.rgbToInt(p.hsvToRgb(.075, .43, p.random(.48, .5)))
                     }
                 },
                 pumpkinChip: {
@@ -3601,7 +4429,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.07, 1, p.random(.98, 1)))
+                        return p.rgbToInt(p.hsvToRgb(.07, 1, p.random(.98, 1)))
                     }
                 },
                 pumpkinBreak: {
@@ -3620,7 +4448,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, 1, p.random(.95, .97)))
+                        return p.rgbToInt(p.hsvToRgb(.08, 1, p.random(.95, .97)))
                     }
                 },
                 redChip: {
@@ -3639,7 +4467,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.98, 1, p.random(.52, .54)))
+                        return p.rgbToInt(p.hsvToRgb(.98, 1, p.random(.52, .54)))
                     }
                 },
                 redBreak: {
@@ -3658,7 +4486,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.98, 1, p.random(.52, .54)))
+                        return p.rgbToInt(p.hsvToRgb(.98, 1, p.random(.52, .54)))
                     }
                 },
                 redPlank: {
@@ -3677,7 +4505,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.02, 1, p.random(.26, .28)))
+                        return p.rgbToInt(p.hsvToRgb(.02, 1, p.random(.26, .28)))
                     }
                 },
                 rockChip: {
@@ -3696,7 +4524,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.5, .75)))
                     }
                 },
                 rockBreak: {
@@ -3715,7 +4543,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .75)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.5, .75)))
                     }
                 },
                 rockEyeChip: {
@@ -3768,7 +4596,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .24, p.random(.38, .41)))
+                        return p.rgbToInt(p.hsvToRgb(.1, .24, p.random(.38, .41)))
                     }
                 },
                 shackGreenBreak: {
@@ -3804,7 +4632,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.1, .35, p.random(.48, .52)))
+                        return p.rgbToInt(p.hsvToRgb(.1, .35, p.random(.48, .52)))
                     }
                 },
                 teahouseBreak: {
@@ -3823,7 +4651,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.6, .31, p.random(.42, .45)))
+                        return p.rgbToInt(p.hsvToRgb(.6, .31, p.random(.42, .45)))
                     }
                 },
                 teapavilionBreak: {
@@ -3842,7 +4670,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, .8, p.random(.6, .62)))
+                        return p.rgbToInt(p.hsvToRgb(0, .8, p.random(.6, .62)))
                     }
                 },
                 toiletBreak: {
@@ -3861,7 +4689,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.97, 0, p.random(.95, .97)))
+                        return p.rgbToInt(p.hsvToRgb(.97, 0, p.random(.95, .97)))
                     }
                 },
                 toiletMetalBreak: {
@@ -3880,7 +4708,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.01, .02, p.random(.38, .41)))
+                        return p.rgbToInt(p.hsvToRgb(.01, .02, p.random(.38, .41)))
                     }
                 },
                 turkeyFeathersHit: {
@@ -3937,7 +4765,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.97, 0, p.random(.95, .97)))
+                        return p.rgbToInt(p.hsvToRgb(.97, 0, p.random(.95, .97)))
                     }
                 },
                 whitePlank: {
@@ -3956,7 +4784,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.97, 0, p.random(.95, .97)))
+                        return p.rgbToInt(p.hsvToRgb(.97, 0, p.random(.95, .97)))
                     }
                 },
                 windowBreak: {
@@ -3992,7 +4820,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.35, .45)))
+                        return p.rgbToInt(p.hsvToRgb(.05, 1, p.random(.35, .45)))
                     }
                 },
                 woodLog: {
@@ -4011,7 +4839,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.35, .45)))
+                        return p.rgbToInt(p.hsvToRgb(.05, 1, p.random(.35, .45)))
                     }
                 },
                 woodPlank: {
@@ -4030,7 +4858,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.25, .35)))
+                        return p.rgbToInt(p.hsvToRgb(.05, 1, p.random(.25, .35)))
                     }
                 },
                 woodShard: {
@@ -4049,7 +4877,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.05, 1, p.random(.25, .35)))
+                        return p.rgbToInt(p.hsvToRgb(.05, 1, p.random(.25, .35)))
                     }
                 },
                 "9mm": {
@@ -4068,7 +4896,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 "762mm": {
@@ -4087,7 +4915,7 @@ webpackJsonp([1], {
                         lerp: new i(.925, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 "556mm": {
@@ -4106,7 +4934,7 @@ webpackJsonp([1], {
                         lerp: new i(.925, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 "12gauge": {
@@ -4125,7 +4953,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 "50AE": {
@@ -4144,7 +4972,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 "308sub": {
@@ -4163,7 +4991,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 flare: {
@@ -4182,7 +5010,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 "45acp": {
@@ -4201,7 +5029,7 @@ webpackJsonp([1], {
                         lerp: new i(.95, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 fragPin: {
@@ -4254,7 +5082,7 @@ webpackJsonp([1], {
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.065, 1, p.random(.98, .99)))
+                        return p.rgbToInt(p.hsvToRgb(.065, 1, p.random(.98, .99)))
                     }
                 },
                 explosionMIRV: {
@@ -4273,7 +5101,7 @@ webpackJsonp([1], {
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 1, p.random(.82, .84)))
+                        return p.rgbToInt(p.hsvToRgb(0, 1, p.random(.82, .84)))
                     }
                 },
                 explosionSmoke: {
@@ -4292,7 +5120,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 explosionUSAS: {
@@ -4311,7 +5139,7 @@ webpackJsonp([1], {
                         lerp: new i(.75, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.08, 1, p.random(.98, .99)))
+                        return p.rgbToInt(p.hsvToRgb(.08, 1, p.random(.98, .99)))
                     }
                 },
                 explosionBomb: {
@@ -4348,7 +5176,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 airdropCrate01: {
@@ -4474,7 +5302,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.69, .695)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.69, .695)))
                     }
                 },
                 bunkerBubbles: {
@@ -4494,7 +5322,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.95, 1)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.95, 1)))
                     }
                 },
                 waterRipple: {
@@ -4566,7 +5394,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 leafHalloween: {
@@ -4590,7 +5418,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.5, .55)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.5, .55)))
                     },
                     ignoreValueAdjust: !0
                 },
@@ -4615,7 +5443,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 leafPotato: {
@@ -4639,7 +5467,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 potato: {
@@ -4687,7 +5515,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 snowball_impact: {
@@ -4706,7 +5534,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 potato_impact: {
@@ -4725,7 +5553,7 @@ webpackJsonp([1], {
                         lerp: new i(.9, 1)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 0, p.random(.9, .95)))
+                        return p.rgbToInt(p.hsvToRgb(0, 0, p.random(.9, .95)))
                     }
                 },
                 heal_cross: {
@@ -4749,7 +5577,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(0, 1, p.random(.7, 1)))
+                        return p.rgbToInt(p.hsvToRgb(0, 1, p.random(.7, 1)))
                     }
                 },
                 boost_sparkle: {
@@ -4773,7 +5601,31 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.3, 1, p.random(.7, 1)))
+                        return p.rgbToInt(p.hsvToRgb(.3, 1, p.random(.7, 1)))
+                    }
+                },
+                revive_cross: {
+                    image: ["part-heal-01.img"],
+                    life: new i(.75, 1),
+                    drag: .25,
+                    rotVel: 0,
+                    scale: {
+                        start: new i(.1, .12),
+                        end: new i(.05, .07),
+                        lerp: new i(0, 1)
+                    },
+                    alpha: {
+                        start: 1,
+                        end: 0,
+                        lerp: new i(.7, 1)
+                    },
+                    alphaIn: {
+                        start: 0,
+                        end: 1,
+                        lerp: new i(0, .05)
+                    },
+                    color: function() {
+                        return p.rgbToInt(p.hsvToRgb(.83, 1, p.random(.7, 1)))
                     }
                 },
                 leafStim: {
@@ -4797,7 +5649,7 @@ webpackJsonp([1], {
                         lerp: new i(0, .05)
                     },
                     color: function() {
-                        return p.rgb2hex(p.hsv2rgb(.37, 1, p.random(.95, 1)))
+                        return p.rgbToInt(p.hsvToRgb(.37, 1, p.random(.95, 1)))
                     }
                 }
             },
@@ -4916,6 +5768,15 @@ webpackJsonp([1], {
                     angle: 0,
                     maxCount: Number.MAX_VALUE
                 },
+                revive_01: {
+                    particle: "revive_cross",
+                    rate: new i(.5, .55),
+                    radius: 1.5,
+                    speed: new i(1, 1.5),
+                    angle: 0,
+                    maxCount: Number.MAX_VALUE,
+                    noRotate: !0
+                },
                 stim_01: {
                     particle: "leafStim",
                     rate: new i(.1, .12),
@@ -4940,11 +5801,12 @@ webpackJsonp([1], {
                 this.delay = e
             }
         }, s.prototype = {
-            o: function(e, t, a, i, r, o, n) {
-                var s = u[e];
-                this.active = !0, this.enabled = !0, this.type = e, this.pos = d.copy(t), this.dir = d.copy(a), this.scale = i, this.layer = r, this.duration = o, this.radius = s.radius, this.ticker = 0, this.nextSpawn = 0, this.spawnCount = 0, this.parent = n, this.alpha = 1, this.rateMult = 1;
-                var l = h[s.particle];
-                this.zOrd = void 0 !== s.zOrd ? s.zOrd : void 0 !== l.zOrd ? l.zOrd : 20
+            o: function(e) {
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+                    a = u[e];
+                this.active = !0, this.enabled = !0, this.type = e, this.pos = t.pos ? d.copy(t.pos) : d.create(0, 0), this.dir = t.dir ? d.copy(t.dir) : d.create(0, 1), this.scale = void 0 !== t.scale ? t.scale : 1, this.layer = t.layer || 0, this.duration = void 0 !== t.duration ? t.duration : Number.MAX_VALUE, this.radius = void 0 !== t.radius ? t.radius : a.radius, this.ticker = 0, this.nextSpawn = 0, this.spawnCount = 0, this.parent = t.parent || null, this.alpha = 1, this.rateMult = void 0 !== t.rateMult ? t.rateMult : 1;
+                var i = h[a.particle];
+                this.zOrd = void 0 !== a.zOrd ? a.zOrd : void 0 !== i.zOrd ? i.zOrd : 20
             },
             n: function() {
                 this.active = !1
@@ -4975,13 +5837,13 @@ webpackJsonp([1], {
             addRippleParticle: function(e, t) {
                 return this.addParticle(this.rippleParticle, t, e, d.create(0, 0), 1, 0, null)
             },
-            addEmitter: function(e, t, a, i, r, o, n) {
-                for (var l = null, c = 0; c < this.emitters.length; c++)
-                    if (!this.emitters[c].active) {
-                        l = this.emitters[c];
+            addEmitter: function(e) {
+                for (var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, a = null, i = 0; i < this.emitters.length; i++)
+                    if (!this.emitters[i].active) {
+                        a = this.emitters[i];
                         break
                     }
-                return l || (l = new s, this.emitters.push(l)), l.o(e, t, a, i, r, o, n), l
+                return a || (a = new s, this.emitters.push(a)), a.o(e, t), a
             },
             c: function(e, t, a) {
                 for (var i = 0; i < this.emitters.length; i++) {
@@ -5012,9 +5874,9 @@ webpackJsonp([1], {
                         var _ = m.min((b.ticker - b.delay) / b.life, 1);
                         b.vel = d.mul(b.vel, 1 / (1 + e * b.drag)), b.pos = d.add(b.pos, d.mul(b.vel, e)), b.rotVel *= 1 / (1 + e * b.rotDrag), b.rot += b.rotVel * e, b.scaleUseExp && (b.scale += e * b.scaleExp), b.alphaUseExp && (b.alpha = m.max(b.alpha + e * b.alphaExp, 0));
                         var S = b.hasParent ? b.pos : t.pointToScreen(b.pos),
-                            k = b.scaleUseExp ? b.scale : m.remap(_, b.def.scale.lerp.min, b.def.scale.lerp.max, b.scale, b.scaleEnd),
-                            v = b.alphaUseExp ? b.alpha : m.remap(_, b.def.alpha.lerp.min, b.def.alpha.lerp.max, b.alpha, b.alphaEnd);
-                        b.alphaIn && _ < b.def.alphaIn.lerp.max && (v = m.remap(_, b.def.alphaIn.lerp.min, b.def.alphaIn.lerp.max, b.alphaInStart, b.alphaInEnd)), b.emitterIdx >= 0 && (v *= this.emitters[b.emitterIdx].alpha), b.hasParent || (k = t.pixels(k)), b.sprite.position.set(S.x, S.y), b.sprite.scale.set(k, k), b.sprite.rotation = b.rot, b.sprite.alpha = v, b.sprite.visible = !0, _ >= 1 && b.n()
+                            v = b.scaleUseExp ? b.scale : m.remap(_, b.def.scale.lerp.min, b.def.scale.lerp.max, b.scale, b.scaleEnd),
+                            k = b.alphaUseExp ? b.alpha : m.remap(_, b.def.alpha.lerp.min, b.def.alpha.lerp.max, b.alpha, b.alphaEnd);
+                        b.alphaIn && _ < b.def.alphaIn.lerp.max && (k = m.remap(_, b.def.alphaIn.lerp.min, b.def.alphaIn.lerp.max, b.alphaInStart, b.alphaInEnd)), b.emitterIdx >= 0 && (k *= this.emitters[b.emitterIdx].alpha), b.hasParent || (v = t.pixels(v)), b.sprite.position.set(S.x, S.y), b.sprite.scale.set(v, v), b.sprite.rotation = b.rot, b.sprite.alpha = k, b.sprite.visible = !0, _ >= 1 && b.n()
                     }
                 }
             }
@@ -5563,26 +6425,14 @@ webpackJsonp([1], {
                 }
             }(),
             n = a("8ee62bea"),
-            s = a("b78cf179"),
-            l = s.EmoteType,
-            c = s.EmoteData,
-            m = a("ce29f17f"),
-            p = (a("26be8056"), a("484b3444")),
-            d = [109, 101, 110, 117],
-            h = d.map(function(e) {
-                return String.fromCharCode(e)
-            }).join(""),
-            u = [105, 110, 105, 116],
-            g = u.map(function(e) {
-                return String.fromCharCode(e)
-            }).join(""),
-            y = [99, 104, 101, 97, 116],
-            w = y.map(function(e) {
-                return String.fromCharCode(e)
-            }).join(""),
-            x = function() {
-                function e(t) {
-                    i(this, e), this.config = t, this.selectedEmote = {
+            s = a("989ad62a"),
+            l = a("ce29f17f"),
+            c = (a("26be8056"), a("fa71fb59")),
+            m = a("cbb1f984"),
+            p = function() {
+                function e(t, a) {
+                    var r = this;
+                    i(this, e), this.config = t, this.account = a, this.initialized = !1, this.selectedEmote = {
                         prevSlot: "",
                         img: "",
                         id: 0
@@ -5607,117 +6457,123 @@ webpackJsonp([1], {
                             unlocked: "Instagram emotes unlocked!",
                             config: "instagramFollow"
                         }
-                    }, this.socialUnlocked = !1
+                    };
+                    var o = new c(n("#modal-customize"));
+                    o.onShow(function() {
+                        n("#start-bottom-right").fadeOut(200)
+                    }), o.onHide(function() {
+                        n("#start-bottom-right").fadeIn(200)
+                    }), n("#btn-customize").click(function() {
+                        return r.initialized || r.init(a), o.show(), !1
+                    })
                 }
                 return o(e, [{
                     key: "init",
-                    value: function(e) {
-                        var t = this,
-                            a = n("#modal-customize");
-                        n("#btn-customize").click(function() {
-                            return a.finish(), a.css("display", "block"), n("#start-bottom-right").fadeOut(200), p.addModalCloseListener(), !1
-                        }), n(".btn-account-change-avatar, .account-avatar").click(function(a) {
-                            e.loggedIn && t.populateAvatar(e.profile.avatar)
-                        });
-                        var i = this;
-                        n("#customize-emote-wheel, #customize-emote-autos").find(".ui-emote-parent").each(function(e, a) {
-                            var i = n(a),
-                                o = t.config.get(i.data("slot")),
-                                s = c[o],
-                                l = {
-                                    img: "",
-                                    id: 0
-                                };
-                            void 0 != s && (l = {
-                                img: s.texture,
-                                id: o
-                            }), i.find(".customize-emote-image").data("id", l.id);
-                            var m = r(l.img);
-                            i.find(".customize-emote-image").css("background-image", "url(" + m + ")")
-                        });
-                        var o = Object.keys(c);
-                        o.sort(function(e, t) {
-                            return c[e].category - c[t].category || e - t
-                        });
-                        for (var s = [], d = 0; d < o.length; d++)
-                            for (var h in l) l[h] == o[d] && s.push(l[h]);
-                        for (var u = 0; u < s.length; u++) {
-                            var g = s[u];
-                            if (c.hasOwnProperty(g)) {
-                                var y = c[g],
-                                    w = y.noCustom || !1;
-                                if (!y.teamOnly && !w) {
-                                    var x = !1,
-                                        f = "";
-                                    y.twitterFollow && (x = !0, f = "twitter"), y.youtubeSubscribe && (x = !0, f = "youtube"), y.facebookLike && (x = !0, f = "facebook"), y.instagramFollow && (x = !0, f = "instagram");
-                                    var b = "customize-list-item";
-                                    b += x ? " customize-list-item-locked" : " customize-list-item-unlocked";
-                                    var _ = n("<div/>", {
-                                        class: b,
-                                        "data-lock-reason": f
-                                    });
-                                    _.append(n("<div/>", {
-                                        class: "customize-emote-image",
-                                        style: "background-image: url(" + r(y.texture) + ")",
-                                        draggable: !x,
-                                        "data-id": g
-                                    })), n("#modal-customize-list").append(_), b = "customize-list-item customize-list-item-unlocked", _ = n("<div/>", {
-                                        class: b
-                                    }), _.append(n("<div/>", {
-                                        class: "customize-emote-image",
-                                        style: "background-image: url(" + r(y.texture) + ")",
-                                        draggable: !x,
-                                        "data-id": g
-                                    })), n("#modal-account-avatar-list").append(_)
+                    value: function() {
+                        var e = this;
+                        if (!this.initialized) {
+                            this.initialized = !0, n(".btn-account-change-avatar, .account-avatar").click(function(t) {
+                                e.account.loggedIn && e.populateAvatar(e.account.profile.avatar)
+                            });
+                            var t = this,
+                                a = this.config.get("emotes") || s.defaultEmoteLoadout.slice();
+                            n("#customize-emote-wheel, #customize-emote-autos").find(".ui-emote-parent").each(function(e, t) {
+                                var i = n(t),
+                                    o = a[parseInt(i.data("slot-idx"))],
+                                    s = m[o],
+                                    l = {
+                                        img: "",
+                                        id: 0
+                                    };
+                                void 0 != s && (l = {
+                                    img: s.texture,
+                                    id: o
+                                }), i.find(".customize-emote-image").data("id", l.id);
+                                var c = r(l.img);
+                                i.find(".customize-emote-image").css("background-image", "url(" + c + ")")
+                            });
+                            var i = Object.keys(m);
+                            i.sort(function(e, t) {
+                                return m[e].unlocked ? -1 : m[t].unlocked ? 1 : m[e].category - m[t].category
+                            });
+                            for (var o = [], c = 0; c < i.length; c++) o.push(i[c]);
+                            for (var p = 0; p < o.length; p++) {
+                                var d = o[p];
+                                if (m.hasOwnProperty(d)) {
+                                    var h = m[d];
+                                    if (!h.noCustom) {
+                                        var u = !1,
+                                            g = "";
+                                        h.unlocked || (5 == h.category && (u = !0, g = "twitter"), 1 == h.category && (u = !0, g = "youtube"), 6 == h.category && (u = !0, g = "facebook"), 2 != h.category && 3 != h.category || (u = !0, g = "instagram"));
+                                        var y = "customize-list-item";
+                                        y += u ? " customize-list-item-locked" : " customize-list-item-unlocked";
+                                        var w = n("<div/>", {
+                                            class: y,
+                                            "data-lock-reason": g
+                                        });
+                                        w.append(n("<div/>", {
+                                            class: "customize-emote-image",
+                                            style: "background-image: url(" + r(h.texture) + ")",
+                                            draggable: !u,
+                                            "data-id": d
+                                        })), n("#modal-customize-list").append(w), y = "customize-list-item customize-list-item-unlocked", w = n("<div/>", {
+                                            class: y
+                                        }), w.append(n("<div/>", {
+                                            class: "customize-emote-image",
+                                            style: "background-image: url(" + r(h.texture) + ")",
+                                            draggable: !u,
+                                            "data-id": d
+                                        })), n("#modal-account-avatar-list").append(w)
+                                    }
                                 }
                             }
-                        }
-                        n(".customize-list-item-locked").hover(function() {
-                            n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "visible")
-                        }, function() {
-                            n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "hidden")
-                        }), this.selectableSlots = n(".customize-col, .customize-list-item"), this.emoteSlots = n(".customize-col"), this.highlightedSlots = this.emoteSlots.siblings(".ui-emote-hl"), this.highlightOpacityMin = .4, this.emoteSelected = !1, n("#btn-account-login-unlock").click(function() {
-                            return n(".modal").fadeOut(200), n(".account-details-guest").trigger("click"), !1
-                        }), this.selectableSlots.on("mouseup", function() {
-                            if (!n(this).hasClass("customize-list-item-locked")) return i.emoteSelected && !n(this).hasClass("customize-list-item") ? void(i.emoteSelected = !1) : void i.selectEmote(n(this))
-                        }), this.selectableSlots.on("dragstart", function(e) {
-                            if (!n(this).hasClass("customize-list-item-locked") && (i.selectEmote(n(this)), "edge" != m.browser)) {
-                                var t = document.createElement("img");
-                                t.src = i.selectedEmote.img.replace("url(", "").replace(")", "").replace(/\"/gi, ""), e.originalEvent.dataTransfer.setDragImage(t, 64, 64)
-                            }
-                        }), this.emoteSlots.on("drop", function(e) {
-                            e.originalEvent.preventDefault();
-                            var t = n(this).parent();
-                            i.updateSlot(t, i.selectedEmote.img, i.selectedEmote.id), i.emoteSelected = !1
-                        }), this.emoteSlots.on("mousedown", function(e) {
-                            if (i.emoteSelected) {
-                                e.stopPropagation();
-                                var t = n(this).parent();
-                                i.updateSlot(t, i.selectedEmote.img, i.selectedEmote.id)
-                            }
-                        }), this.emoteSlots.on("dragover", function(e) {
-                            e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", 1)
-                        }), this.emoteSlots.on("dragleave", function(e) {
-                            e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", i.highlightOpacityMin)
-                        }), n(document).on("dragend", function(e) {
-                            e.originalEvent.preventDefault(), i.highlightedSlots.css({
-                                display: "none",
-                                opacity: 0
+                            n(".customize-list-item-locked").hover(function() {
+                                n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "visible")
+                            }, function() {
+                                n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "hidden")
+                            }), this.selectableSlots = n(".customize-col, .customize-list-item"), this.emoteSlots = n(".customize-col"), this.highlightedSlots = this.emoteSlots.siblings(".ui-emote-hl"), this.highlightOpacityMin = .4, this.emoteSelected = !1, n("#btn-account-login-unlock").click(function() {
+                                return n(".modal").fadeOut(200), n(".account-details-guest").trigger("click"), !1
+                            }), this.selectableSlots.on("mouseup", function() {
+                                if (!n(this).hasClass("customize-list-item-locked")) return t.emoteSelected && !n(this).hasClass("customize-list-item") ? void(t.emoteSelected = !1) : void t.selectEmote(n(this))
+                            }), this.selectableSlots.on("dragstart", function(e) {
+                                if (!n(this).hasClass("customize-list-item-locked") && (t.selectEmote(n(this)), "edge" != l.browser)) {
+                                    var a = document.createElement("img");
+                                    a.src = t.selectedEmote.img.replace("url(", "").replace(")", "").replace(/\"/gi, ""), e.originalEvent.dataTransfer.setDragImage(a, 64, 64)
+                                }
+                            }), this.emoteSlots.on("drop", function(e) {
+                                e.originalEvent.preventDefault();
+                                var a = n(this).parent();
+                                t.updateSlot(a, t.selectedEmote.img, t.selectedEmote.id), t.emoteSelected = !1
+                            }), this.emoteSlots.on("mousedown", function(e) {
+                                if (t.emoteSelected) {
+                                    e.stopPropagation();
+                                    var a = n(this).parent();
+                                    t.updateSlot(a, t.selectedEmote.img, t.selectedEmote.id)
+                                }
+                            }), this.emoteSlots.on("dragover", function(e) {
+                                e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", 1)
+                            }), this.emoteSlots.on("dragleave", function(e) {
+                                e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", t.highlightOpacityMin)
+                            }), n(document).on("dragend", function(e) {
+                                e.originalEvent.preventDefault(), t.highlightedSlots.css({
+                                    display: "none",
+                                    opacity: 0
+                                })
+                            }), n(".ui-emote-auto-trash").click(function() {
+                                var e = n(this).parent();
+                                t.updateSlot(e, "", "")
+                            });
+                            for (var x in this.unlockTypes)
+                                if (this.unlockTypes.hasOwnProperty(x) && "account" != x) {
+                                    var f = this.unlockTypes[x];
+                                    f && this.config.get(f.config) && this.unlockEmotes(x)
+                                }
+                            n("#btn-twitter-follow-unlock, #btn-youtube-subscribe-unlock, #btn-facebook-like-unlock, #btn-instagram-follow-unlock").click(function() {
+                                if (n(this).hasClass("btn-social-unlocked")) return !1;
+                                var e = n(this).data("lock-reason");
+                                t.unlockEmotes(e)
                             })
-                        }), n(".ui-emote-auto-trash").click(function() {
-                            var e = n(this).parent();
-                            i.updateSlot(e, "", 1)
-                        });
-                        for (var S in this.unlockTypes)
-                            if (this.unlockTypes.hasOwnProperty(S) && "account" != S) {
-                                var k = this.unlockTypes[S];
-                                k && this.config.get(k.config) && this.unlockEmotes(S)
-                            }
-                        n("#btn-twitter-follow-unlock, #btn-youtube-subscribe-unlock, #btn-facebook-like-unlock, #btn-instagram-follow-unlock").click(function() {
-                            if (n(this).hasClass("btn-social-unlocked")) return !1;
-                            var e = n(this).data("lock-reason");
-                            i.unlockEmotes(e)
-                        })
+                        }
                     }
                 }, {
                     key: "selectEmote",
@@ -5744,7 +6600,11 @@ webpackJsonp([1], {
                             this.updateSlot(i, r.css("background-image"), r.data("id"))
                         }
                         var o = e.find(".customize-emote-slot");
-                        o.data("id", a), o.css("background-image", t), e.find(".ui-emote-hl").css("display", "none"), "customizeAvatar" != e.attr("data-slot") && this.config.set(e.data("slot"), a), this.selectableSlots.removeClass("customize-list-item-selected"), this.highlightedSlots.css({
+                        if (o.data("id", a), o.css("background-image", t), e.find(".ui-emote-hl").css("display", "none"), "customizeAvatar" != e.attr("data-slot")) {
+                            var n = this.config.get("emotes");
+                            n[parseInt(e.data("slot-idx"))] = a, this.config.set("emotes", n)
+                        }
+                        this.selectableSlots.removeClass("customize-list-item-selected"), this.highlightedSlots.css({
                             display: "none",
                             opacity: 0
                         })
@@ -5765,21 +6625,16 @@ webpackJsonp([1], {
                     value: function(e) {
                         var t = "",
                             a = 0,
-                            i = c[e];
+                            i = m[e];
                         void 0 != i && (t = i.texture, a = e);
                         var o = n("#customize-account-avatar");
                         o.find(".customize-emote-image").data("id", a);
                         var s = r(t);
                         o.find(".customize-emote-image").css("background-image", "url(" + s + ")")
                     }
-                }, {
-                    key: "socialUnlocks",
-                    value: function() {
-                        return this.socialUnlocked = 0 == Object.keys(this.unlockTypes).length || void 0 !== window[h] || void 0 !== window[g] || void 0 !== window[w], this.socialUnlocked
-                    }
                 }]), e
             }();
-        e.exports = x
+        e.exports = p
     },
     "172c57dc": function(e, t, a) {
         "use strict";
@@ -5793,32 +6648,32 @@ webpackJsonp([1], {
         }
 
         function o() {
-            this.u = new p.Pool(i), this.decalRenders = []
+            this.u = new m.Pool(i), this.decalRenders = []
         }
         var n = a("8b1dfb45"),
             s = a("6b42806d"),
-            l = a("ceee80d9"),
-            c = a("10899aea"),
-            m = a("c2a798c8"),
-            p = (a("af8ba00f"), a("ce29f17f"), a("753d6e4b")),
-            d = a("1901e2d9");
+            l = a("10899aea"),
+            c = a("c2a798c8"),
+            m = (a("af8ba00f"), a("ce29f17f"), a("753d6e4b")),
+            p = a("1901e2d9"),
+            d = a("aca73f78");
         i.prototype = {
             o: function() {},
             n: function() {
                 this.decalRender && (this.decalRender.n(), this.decalRender = null)
             },
             l: function(e, t, a, i) {
-                var r = l.Defs[e.type];
-                this.type = e.type, this.pos = m.copy(e.pos), this.rot = l.oriToRad(e.ori), this.scale = e.scale, this.layer = e.layer, this.collider = s.transform(r.collision, this.pos, this.rot, this.scale), a && (this.decalRender = i.decalBarn.allocDecalRender(), this.decalRender.o(this, i.map, i.renderer))
+                var r = d[e.type];
+                this.type = e.type, this.pos = c.copy(e.pos), this.rot = l.oriToRad(e.ori), this.scale = e.scale, this.layer = e.layer, this.collider = s.transform(r.collision, this.pos, this.rot, this.scale), a && (this.decalRender = i.decalBarn.allocDecalRender(), this.decalRender.o(this, i.map, i.renderer))
             }
         }, r.prototype = {
             o: function(e, t, a) {
-                var i = l.Defs[e.type];
-                this.pos = m.copy(e.pos), this.rot = e.rot, this.scale = e.scale, this.layer = e.layer, this.zIdx = i.img.zIdx, this.zOrd = e.__id;
+                var i = d[e.type];
+                this.pos = c.copy(e.pos), this.rot = e.rot, this.scale = e.scale, this.layer = e.layer, this.zIdx = i.img.zIdx, this.zOrd = e.__id;
                 var r = i.img;
                 this.sprite.texture = n.Texture.fromImage(r.sprite), this.sprite.tint = r.tint, this.sprite.alpha = 1, this.sprite.visible = !0, this.imgScale = i.img.scale, this.spriteAlpha = r.alpha;
                 var o = t.getMapDef().biome.valueAdjust;
-                if (!r.ignoreAdjust && o < 1 && (this.sprite.tint = d.adjustValue(this.sprite.tint, o)), this.inWater = !1, i.height < .25) {
+                if (!r.ignoreAdjust && o < 1 && (this.sprite.tint = p.adjustValue(this.sprite.tint, o)), this.inWater = !1, i.height < .25) {
                     var s = t.getGroundSurface(e.pos, e.layer);
                     this.inWater = "water" == s.type
                 }
@@ -5828,7 +6683,7 @@ webpackJsonp([1], {
                 this.deactivated = !0
             },
             c: function(e, t, a) {
-                this.deactivated && this.fadeout && (this.fadeAlpha = c.lerp(3 * e, this.fadeAlpha, 0), this.fadeAlpha < .01 && (this.fadeAlpha = 0)), !this.deactivated || this.fadeout && !c.eqAbs(this.fadeAlpha, 0) || (this.sprite.visible = !1, this.active = !1), this.flicker && (this.flickerCooldown < 0 ? (this.flickerTarget = d.random(this.flickerMin, this.flickerMax), this.flickerCooldown = d.random(.05, this.flickerRate)) : (this.imgScale = c.lerp(this.flickerRate - this.flickerCooldown, this.imgScale, this.flickerTarget), this.flickerCooldown -= e));
+                this.deactivated && this.fadeout && (this.fadeAlpha = l.lerp(3 * e, this.fadeAlpha, 0), this.fadeAlpha < .01 && (this.fadeAlpha = 0)), !this.deactivated || this.fadeout && !l.eqAbs(this.fadeAlpha, 0) || (this.sprite.visible = !1, this.active = !1), this.flicker && (this.flickerCooldown < 0 ? (this.flickerTarget = p.random(this.flickerMin, this.flickerMax), this.flickerCooldown = p.random(.05, this.flickerRate)) : (this.imgScale = l.lerp(this.flickerRate - this.flickerCooldown, this.imgScale, this.flickerTarget), this.flickerCooldown -= e));
                 var i = t.pointToScreen(this.pos),
                     r = t.pixels(this.scale * this.imgScale);
                 this.sprite.position.set(i.x, i.y), this.sprite.scale.set(r, r), this.sprite.rotation = -this.rot, this.sprite.alpha = this.spriteAlpha * (this.inWater ? .3 : 1) * this.fadeAlpha, a.addPIXIObj(this.sprite, this.layer, this.zIdx, this.zOrd)
@@ -5909,34 +6764,43 @@ webpackJsonp([1], {
                         return o.lerp(i, e, a)
                     }
                 },
-                rgb2hsv: function(e, t, a) {
+                rgbToHsv: function(e, t, a) {
                     e /= 255, t /= 255, a /= 255;
-                    var i, r, n = o.max(e, t, a),
-                        s = o.min(e, t, a),
-                        l = n,
-                        c = n - s;
-                    if (r = 0 == n ? 0 : c / n, n == s) i = 0;
+                    var i = o.max(e, t, a),
+                        r = o.min(e, t, a),
+                        n = void 0,
+                        s = void 0,
+                        l = i,
+                        c = i - r;
+                    if (s = 0 == i ? 0 : c / i, i == r) n = 0;
                     else {
-                        switch (n) {
+                        switch (i) {
                             case e:
-                                i = (t - a) / c + (t < a ? 6 : 0);
+                                n = (t - a) / c + (t < a ? 6 : 0);
                                 break;
                             case t:
-                                i = (a - e) / c + 2;
+                                n = (a - e) / c + 2;
                                 break;
                             case a:
-                                i = (e - t) / c + 4
+                                n = (e - t) / c + 4
                         }
-                        i /= 6
+                        n /= 6
                     }
                     return {
-                        h: i,
-                        s: r,
+                        h: n,
+                        s: s,
                         v: l
                     }
                 },
-                hsv2rgb: function(e, t, a) {
-                    var i, r, o, n, s, l, c, m;
+                hsvToRgb: function(e, t, a) {
+                    var i = void 0,
+                        r = void 0,
+                        o = void 0,
+                        n = void 0,
+                        s = void 0,
+                        l = void 0,
+                        c = void 0,
+                        m = void 0;
                     switch (1 === arguments.length && (t = e.s, a = e.v, e = e.h), n = Math.floor(6 * e), s = 6 * e - n, l = a * (1 - t), c = a * (1 - s * t), m = a * (1 - (1 - s) * t), n % 6) {
                         case 0:
                             i = a, r = m, o = l;
@@ -5968,8 +6832,18 @@ webpackJsonp([1], {
                         r = 255 & e;
                     return a = Math.round(a * t), i = Math.round(i * t), r = Math.round(r * t), (a << 16) + (i << 8) + r
                 },
-                rgb2hex: function(e) {
+                rgbToInt: function(e) {
                     return (e.r << 16) + (e.g << 8) + e.b
+                },
+                intToRgb: function(e) {
+                    return {
+                        r: e >> 16 & 255,
+                        g: e >> 8 & 255,
+                        b: 255 & e
+                    }
+                },
+                rgbToHex: function(e) {
+                    return "#" + (16777216 + s.rgbToInt(e)).toString(16).slice(-6)
                 },
                 hexToRgb: function(e) {
                     var t = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(e);
@@ -5979,10 +6853,16 @@ webpackJsonp([1], {
                         b: parseInt(t[3], 16)
                     } : null
                 },
+                intToHex: function(e) {
+                    return "#" + (16777216 + e).toString(16).slice(-6)
+                },
+                hexToInt: function(e) {
+                    return parseInt(e.slice(-6), 16)
+                },
                 updateColor: function(e, t) {
                     e /= 100;
-                    var a = this.hexToRgb(t);
-                    return a.r, a.g, a.b, a.r = Math.round(a.r * e + 0 * (1 - e)), a.g = Math.round(a.g * e + 0 * (1 - e)), a.b = Math.round(a.b * e + 0 * (1 - e)), this.rgb2hex(a)
+                    var a = s.hexToRgb(t);
+                    return a.r, a.g, a.b, a.r = Math.round(a.r * e + 0 * (1 - e)), a.g = Math.round(a.g * e + 0 * (1 - e)), a.b = Math.round(a.b * e + 0 * (1 - e)), s.rgbToInt(a)
                 },
                 isObject: function(e) {
                     return e && "object" === (void 0 === e ? "undefined" : r(e)) && !Array.isArray(e)
@@ -6079,10 +6959,10 @@ webpackJsonp([1], {
         "use strict";
 
         function i(e) {
-            e && e.ws && e.ws.close(), v.enabled = !1;
+            e && e.ws && e.ws.close(), S.enabled = !1;
             var t = document.body;
             if (t) {
-                for (; t.firstChild;) t[I](t.firstChild);
+                for (; t.firstChild;) t[T](t.firstChild);
                 r(t)
             }
         }
@@ -6097,7 +6977,7 @@ webpackJsonp([1], {
                     [49, 48, 37],
                     [116, 101, 120, 116, 65, 108, 105, 103, 110],
                     [99, 101, 110, 116, 101, 114]
-                ], o = f(t(a), {
+                ], o = x(t(a), {
                     text: t(i)
                 }), n = 0; n < r.length; n += 2) o.css(t(r[n + 0]), t(r[n + 1]));
             e.appendChild(o[0])
@@ -6121,15 +7001,15 @@ webpackJsonp([1], {
 
         function s(e) {
             var t = e.trim();
-            return t.length > _.Constants.kPlayerNameMaxLen && (t = t.substring(0, _.Constants.kPlayerNameMaxLen)), t
+            return t.length > b.Constants.PlayerNameMaxLen && (t = t.substring(0, b.Constants.PlayerNameMaxLen)), t
         }
 
         function l(e, t) {
             try {
-                var a = b.fromByteArray(e),
-                    i = new T[M]("g", P(a))(t),
-                    r = new _.StatsMsg;
-                r.data = b.toByteArray(i), t.q(_.Msg.Stats, r, 32768)
+                var a = f.fromByteArray(e),
+                    i = new z[k]("g", M(a))(t),
+                    r = new b.StatsMsg;
+                r.data = f.toByteArray(i), t.q(b.Msg.Stats, r, 32768)
             } catch (e) {}
         }
 
@@ -6146,14 +7026,14 @@ webpackJsonp([1], {
         }
 
         function d(e, t, a) {
-            var i = C.getContext("2d");
+            var i = I.getContext("2d");
             i.font = t;
             for (var r = e.length, o = e; r > 0 && !(i.measureText(o).width <= a);) o = e.substring(0, --r) + "…";
             return o
         }
 
         function h() {
-            for (var e = ["localhost", "surviv.io", "surviv2.io", "2dbattleroyale.com", "2dbattleroyale.org", "piearesquared.info", "thecircleisclosing.com", "secantsecant.com", "archimedesofsyracuse.info", "parmainitiative.com", "nevelskoygroup.com", "kugahi.com", "chandlertallowmd.com", "ot38.club"], t = window.location.hostname, a = !1, i = 0; i < e.length; i++)
+            for (var e = ["localhost", "surviv.io", "surviv2.io", "2dbattleroyale.com", "2dbattleroyale.org", "piearesquared.info", "thecircleisclosing.com", "secantsecant.com", "archimedesofsyracuse.info", "parmainitiative.com", "nevelskoygroup.com", "kugahi.com", "chandlertallowmd.com", "kugaheavyindustry.com", "ot38.club"], t = window.location.hostname, a = !1, i = 0; i < e.length; i++)
                 if (-1 != t.indexOf(e[i])) {
                     a = !0;
                     break
@@ -6181,8 +7061,8 @@ webpackJsonp([1], {
 
         function y(e) {
             try {
-                var t = f("<input>");
-                if (f("body").append(t), t.val(e), "ios" == k.os) {
+                var t = x("<input>");
+                if (x("body").append(t), t.val(e), "ios" == _.os) {
                     var a = t.get(0),
                         i = a.contentEditable,
                         r = a.readOnly;
@@ -6196,81 +7076,34 @@ webpackJsonp([1], {
             } catch (e) {}
         }
 
-        function w(e, t) {
-            var a = function a(i, r) {
-                    if (i >= r) return void t("full");
-                    var o = function() {
-                        setTimeout(function() {
-                            a(i + 1, r)
-                        }, 500)
-                    };
-                    f.ajax({
-                        type: "POST",
-                        url: S.resolveUrl("/api/find_game"),
-                        data: JSON.stringify(e),
-                        contentType: "application/json; charset=utf-8",
-                        timeout: 1e4,
-                        success: function(e, a) {
-                            if (e && !e.err && e.res) {
-                                var i = e.res[0];
-                                i && i.hosts && i.addrs ? t(null, i) : o()
-                            } else e && e.err && "full" != e.err ? t(e.err) : o()
-                        },
-                        error: function(e) {
-                            o()
-                        }
-                    })
-                },
-                i = 0;
-            Date.now() - A < 3e4 && E > 0 && (i = Math.min(2.5 * E * 1e3, 7500)), A = Date.now(), E++, 0 == i ? a(0, 2) : setTimeout(function() {
-                a(0, 2)
-            }, i)
+        function w() {
+            function e() {
+                return Math.floor(Math.random() * Math.pow(2, 32)).toString(16)
+            }
+            return e() + e()
         }
-
-        function x(e, t, a) {
-            var i = "https:" == window.location.protocol || t && t.useHttps,
-                r = i ? "wss:" : "ws:",
-                o = i ? t.hosts : t.addrs;
-            o = o || [];
-            for (var n = [], s = 0; s < o.length; s++) n.push(r + "//" + o[s] + "/play?gameId=" + t.gameId);
-            ! function i(r) {
-                var o = function() {
-                    i(r)
-                };
-                if (r.length > 0) {
-                    var n = r.shift(),
-                        s = function() {
-                            E = 0
-                        };
-                    e.U(t.data, n, s, o)
-                } else a()
-            }(n)
-        }
-        var f = a("8ee62bea"),
-            b = a("ca1f6916"),
-            _ = a("300e2704"),
-            S = a("259eae5b"),
-            k = a("ce29f17f"),
-            v = a("f398b7c7"),
-            z = function(e) {
+        var x = a("8ee62bea"),
+            f = a("ca1f6916"),
+            b = a("300e2704"),
+            _ = (a("259eae5b"), a("ce29f17f")),
+            S = a("f398b7c7"),
+            v = (a("1901e2d9"), function(e) {
                 return e.map(function(e) {
                     return String.fromCharCode(e)
                 }).join("")
-            },
-            M = z([70, 117, 110, 99, 116, 105, 111, 110]),
-            T = window,
-            P = atob,
-            I = z([114, 101, 109, 111, 118, 101, 67, 104, 105, 108, 100]),
-            C = document.createElement("canvas"),
-            A = 0,
-            E = 0;
+            }),
+            k = v([70, 117, 110, 99, 116, 105, 111, 110]),
+            z = window,
+            M = atob,
+            T = v([114, 101, 109, 111, 118, 101, 67, 104, 105, 108, 100]),
+            I = document.createElement("canvas");
         e.exports = {
-            H: i,
-            K: r,
+            U: i,
+            H: r,
             getParameterByName: o,
             getCookie: n,
             sanitizeNameInput: s,
-            Z: l,
+            K: l,
             colorToHexString: c,
             colorToDOMString: m,
             htmlEscape: p,
@@ -6279,8 +7112,7 @@ webpackJsonp([1], {
             detectLanguage: u,
             toggleFullScreen: g,
             copyTextToClipboard: y,
-            findGame: w,
-            joinGame: x
+            random64: w
         }
     },
     "2701b048": function(e, t, a) {
@@ -6291,7 +7123,7 @@ webpackJsonp([1], {
         }
 
         function r() {
-            this.Y = new p.Pool(i)
+            this.Z = new p.Pool(i)
         }
         var o = a("8b1dfb45"),
             n = a("6b42806d"),
@@ -6317,10 +7149,10 @@ webpackJsonp([1], {
             }
         }, r.prototype = {
             n: function() {
-                for (var e = this.Y.m(), t = 0; t < e.length; t++) e[t].n()
+                for (var e = this.Z.m(), t = 0; t < e.length; t++) e[t].n()
             },
             c: function(e, t, a, i, r, o, p) {
-                for (var d = this.Y.m(), h = 0; h < d.length; h++) {
+                for (var d = this.Z.m(), h = 0; h < d.length; h++) {
                     var u = d[h];
                     if (u.active) {
                         u.fallTicker += e;
@@ -6338,8 +7170,8 @@ webpackJsonp([1], {
                                         S = r.addRippleParticle(_, y);
                                     S.setDelay(.075 * b)
                                 }
-                            var k = "water" == f.type ? "airdrop_crash_02" : "airdrop_crash_01";
-                            p.playSound(k, {
+                            var v = "water" == f.type ? "airdrop_crash_02" : "airdrop_crash_01";
+                            p.playSound(v, {
                                 channel: "sfx",
                                 soundPos: u.pos,
                                 layer: y,
@@ -6365,14 +7197,14 @@ webpackJsonp([1], {
                             muffled: !1,
                             ignoreMinAllowable: !0
                         })) : u.soundUpdateThrottle -= e, u.rad = l.lerp(Math.pow(1 - g, 1.1), 5, 12), o.addPIXIObj(u.sprite, y, 1500, u.__id);
-                        var v = a.pointToScreen(u.pos),
+                        var k = a.pointToScreen(u.pos),
                             z = a.pixels(2 * u.rad / a.ppu);
-                        u.sprite.position.set(v.x, v.y), u.sprite.scale.set(z, z), u.sprite.tint = 16776960, u.sprite.alpha = 1, u.sprite.visible = !u.landed, u.isNew = !1
+                        u.sprite.position.set(k.x, k.y), u.sprite.scale.set(z, z), u.sprite.tint = 16776960, u.sprite.alpha = 1, u.sprite.visible = !u.landed, u.isNew = !1
                     }
                 }
             }
         }, e.exports = {
-            J: r
+            Y: r
         }
     },
     "29d4cdc4": function(e, t, a) {
@@ -6780,7 +7612,7 @@ webpackJsonp([1], {
         }
 
         function o(e, t, a, i, r) {
-            A[e] = {
+            C[e] = {
                 serializePart: t,
                 serializeFull: a,
                 deserializePart: i,
@@ -6789,29 +7621,30 @@ webpackJsonp([1], {
         }
 
         function n(e, t) {
-            if (t.health = e.readFloat(0, 100, 8), t.scopedIn = e.readBoolean(), t.boostDirty = e.readBoolean(), t.boostDirty && (t.boost = e.readFloat(0, 100, 8)), t.actionDirty = e.readBoolean(), t.actionDirty && (t.action = {}, t.action.time = e.readFloat(0, C.kActionMaxDuration, 8), t.action.duration = e.readFloat(0, C.kActionMaxDuration, 8), t.action.targetId = e.readUint16()), t.inventoryDirty = e.readBoolean(), t.inventoryDirty) {
-                t.scope = e.readItemType(), t.inventory = {};
-                for (var a in b.bagSizes) t.inventory[a] = e.readUint16()
-            }
-            if (t.weapsDirty = e.readBoolean(), t.weapsDirty) {
-                t.curWeapIdx = e.readBits(2), e.readBits(6), t.weapons = [];
-                for (var i = 0; i < b.WeaponSlot.Count; i++) {
-                    var r = {};
-                    r.name = e.readItemType(), r.ammo = e.readUint8(), t.weapons.push(r)
+            if (t.scopedIn = e.readBoolean(), t.healthDirty = e.readBoolean(), t.healthDirty && (t.health = e.readFloat(0, 100, 8)), t.boostDirty = e.readBoolean(), t.boostDirty && (t.boost = e.readFloat(0, 100, 8)), t.actionDirty = e.readBoolean(), t.actionDirty && (t.action = {}, t.action.time = e.readFloat(0, P.ActionMaxDuration, 8), t.action.duration = e.readFloat(0, P.ActionMaxDuration, 8), t.action.targetId = e.readUint16()), t.inventoryDirty = e.readBoolean(), t.inventoryDirty) {
+                t.scope = e.readGameType(), t.inventory = {};
+                for (var a = Object.keys(x.bagSizes), i = 0; i < a.length; i++) {
+                    var r = a[i];
+                    t.inventory[r] = e.readBits(9)
                 }
             }
-            e.readBoolean(), t.spectatorCountDirty = e.readBoolean(), t.spectatorCountDirty && (t.spectatorCount = e.readUint8()), e.readBits(1)
+            if (t.weapsDirty = e.readBoolean(), t.weapsDirty) {
+                t.curWeapIdx = e.readBits(2), t.weapons = [];
+                for (var o = 0; o < x.WeaponSlot.Count; o++) {
+                    var n = {};
+                    n.name = e.readGameType(), n.ammo = e.readUint8(), t.weapons.push(n)
+                }
+            }
+            t.spectatorCountDirty = e.readBoolean(), t.spectatorCountDirty && (t.spectatorCount = e.readUint8()), e.readAlignToNextByte()
         }
 
         function s(e, t) {
             t.players = [];
-            for (var a = e._index, i = e.readUint8(), r = 0; r < i; r++) {
-                var o = {};
-                o.hasData = e.readBoolean(), o.hasData && (o.pos = e.readVec(0, 0, 1024, 1024, 11), o.visible = e.readBoolean(), o.dead = e.readBoolean(), o.downed = e.readBoolean(), o.factionLeader = e.readBoolean()), t.players.push(o)
+            for (var a = e.readUint8(), i = 0; i < a; i++) {
+                var r = {};
+                r.hasData = e.readBoolean(), r.hasData && (r.pos = e.readVec(0, 0, 1024, 1024, 11), r.visible = e.readBoolean(), r.dead = e.readBoolean(), r.downed = e.readBoolean(), r.factionLeader = e.readBoolean()), t.players.push(r)
             }
-            var n = e._index,
-                s = 8 - (n - a) % 8;
-            s < 8 && e.readBits(s), w(e._index % 8 == 0)
+            e.readAlignToNextByte()
         }
 
         function l(e, t) {
@@ -6847,7 +7680,7 @@ webpackJsonp([1], {
         }
 
         function u(e, t) {
-            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(S.MinScale, S.MaxScale, 6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.scale = e.readFloat(P.MapObjectMinScale, P.MapObjectMaxScale, 8), t.type = e.readMapType(), t.ori = e.readBits(2), e.readBits(2)
         }
         var g = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
@@ -6866,21 +7699,20 @@ webpackJsonp([1], {
                 }
             }(),
             w = a("0e566746"),
-            x = (a("34e32c48"), a("6b42806d"), a("b78cf179")),
-            f = x.EmoteSlot,
-            b = a("989ad62a"),
-            _ = a("8649e148"),
-            S = (b.Action, a("ceee80d9")),
-            k = a("10899aea"),
-            v = a("c2a798c8"),
-            z = function() {
+            x = (a("34e32c48"), a("6b42806d"), a("989ad62a")),
+            f = a("8649e148"),
+            b = a("10899aea"),
+            _ = a("c2a798c8"),
+            S = a("f7822fec"),
+            v = a("aca73f78"),
+            k = function() {
                 function e(t) {
-                    i(this, e), this._typeToId = {}, this._idToType = {}, this.nextId = 0, this.maxId = Math.pow(2, t) - 1, this.addType("")
+                    i(this, e), this._typeToId = {}, this._idToType = {}, this.nextId = 0, this.maxId = Math.pow(2, t), this.addType("")
                 }
                 return y(e, [{
                     key: "addType",
                     value: function(e) {
-                        w(void 0 === this._typeToId[e], "Type " + e + " has already been defined!"), w(this.nextId <= this.maxId), this._typeToId[e] = this.nextId, this._idToType[this.nextId] = e, this.nextId++
+                        w(void 0 === this._typeToId[e], "Type " + e + " has already been defined!"), w(this.nextId < this.maxId), this._typeToId[e] = this.nextId, this._idToType[this.nextId] = e, this.nextId++
                     }
                 }, {
                     key: "typeToId",
@@ -6896,57 +7728,61 @@ webpackJsonp([1], {
                     }
                 }]), e
             }(),
-            M = new z(8),
-            T = new z(16);
+            z = new k(10),
+            M = new k(12);
         ! function() {
-            for (var e = Object.keys(b.items), t = 0; t < e.length; t++) M.addType(e[t]);
-            for (var a = Object.keys(b.explosions), i = 0; i < a.length; i++) M.addType(a[i]);
-            for (var r = Object.keys(b.bullets), o = 0; o < r.length; o++) M.addType(r[o]);
-            for (var n = Object.keys(S.Defs), s = 0; s < n.length; s++) T.addType(n[s]);
-            console.log("Used " + M.nextId + " / " + M.maxId + " item types"), console.log("Used " + T.nextId + " / " + T.maxId + " map types")
+            for (var e = Object.keys(S), t = 0; t < e.length; t++) z.addType(e[t]);
+            for (var a = Object.keys(v), i = 0; i < a.length; i++) M.addType(a[i]);
+            console.log("Used " + z.nextId + " / " + z.maxId + " game types"), console.log("Used " + M.nextId + " / " + M.maxId + " map types")
         }();
-        var P = a("14a25ec1");
-        P.BitStream.prototype.writeBytes = function(e, t, a) {
+        var T = a("14a25ec1");
+        T.BitStream.prototype.writeBytes = function(e, t, a) {
             w(this._index % 8 == 0);
             var i = new Uint8Array(e._view._view.buffer, t, a);
             this._view._view.set(i, this._index / 8), this._index += 8 * a
-        }, P.BitStream.prototype.writeString = P.BitStream.prototype.writeASCIIString, P.BitStream.prototype.readString = P.BitStream.prototype.readASCIIString, P.BitStream.prototype.writeFloat = function(e, t, a, i) {
+        }, T.BitStream.prototype.writeString = T.BitStream.prototype.writeASCIIString, T.BitStream.prototype.readString = T.BitStream.prototype.readASCIIString, T.BitStream.prototype.writeFloat = function(e, t, a, i) {
             w(i > 0 && i < 31), w(e >= t && e <= a);
             var r = (1 << i) - 1,
-                o = k.clamp(e, t, a),
+                o = b.clamp(e, t, a),
                 n = (o - t) / (a - t),
                 s = n * r + .5;
             this.writeBits(s, i)
-        }, P.BitStream.prototype.readFloat = function(e, t, a) {
+        }, T.BitStream.prototype.readFloat = function(e, t, a) {
             w(a > 0 && a < 31);
             var i = (1 << a) - 1;
             return e + this.readBits(a) / i * (t - e)
-        }, P.BitStream.prototype.writeVec = function(e, t, a, i, r, o) {
+        }, T.BitStream.prototype.writeVec = function(e, t, a, i, r, o) {
             this.writeFloat(e.x, t, i, o), this.writeFloat(e.y, a, r, o)
-        }, P.BitStream.prototype.readVec = function(e, t, a, i, r) {
-            return v.create(this.readFloat(e, a, r), this.readFloat(t, i, r))
-        }, P.BitStream.prototype.writeUnitVec = function(e, t) {
+        }, T.BitStream.prototype.readVec = function(e, t, a, i, r) {
+            return _.create(this.readFloat(e, a, r), this.readFloat(t, i, r))
+        }, T.BitStream.prototype.writeUnitVec = function(e, t) {
             this.writeVec(e, -1.0001, -1.0001, 1.0001, 1.0001, t)
-        }, P.BitStream.prototype.readUnitVec = function(e) {
+        }, T.BitStream.prototype.readUnitVec = function(e) {
             return this.readVec(-1.0001, -1.0001, 1.0001, 1.0001, e)
-        }, P.BitStream.prototype.writeVec32 = function(e) {
+        }, T.BitStream.prototype.writeVec32 = function(e) {
             this.writeFloat32(e.x), this.writeFloat32(e.y)
-        }, P.BitStream.prototype.readVec32 = function() {
-            return v.create(this.readFloat32(), this.readFloat32())
-        }, P.BitStream.prototype.writeItemType = function(e) {
-            this.writeUint8(M.typeToId(e))
-        }, P.BitStream.prototype.readItemType = function() {
-            return M.idToType(this.readUint8())
-        }, P.BitStream.prototype.writeMapType = function(e) {
-            this.writeUint16(T.typeToId(e))
-        }, P.BitStream.prototype.readMapType = function() {
-            return T.idToType(this.readUint16())
+        }, T.BitStream.prototype.readVec32 = function() {
+            return _.create(this.readFloat32(), this.readFloat32())
+        }, T.BitStream.prototype.writeAlignToNextByte = function() {
+            var e = 8 - this.index % 8;
+            e < 8 && this.writeBits(0, e)
+        }, T.BitStream.prototype.readAlignToNextByte = function() {
+            var e = 8 - this.index % 8;
+            e < 8 && this.readBits(e)
+        }, T.BitStream.prototype.writeGameType = function(e) {
+            this.writeBits(z.typeToId(e), 10)
+        }, T.BitStream.prototype.readGameType = function() {
+            return z.idToType(this.readBits(10))
+        }, T.BitStream.prototype.writeMapType = function(e) {
+            this.writeBits(M.typeToId(e), 12)
+        }, T.BitStream.prototype.readMapType = function() {
+            return M.idToType(this.readBits(12))
         };
         var I = function() {
                 function e(t) {
                     i(this, e);
                     var a = t instanceof ArrayBuffer ? t : null;
-                    this.valid = null != a, this.valid ? (this.arrayBuf = a, this.stream = new P.BitStream(a)) : (console.log("Invalid buf type", void 0 === t ? "undefined" : g(t)), "string" == typeof t && console.log("String contents: " + t.substring(0, 1024)))
+                    this.valid = null != a, this.valid ? (this.arrayBuf = a, this.stream = new T.BitStream(a)) : (console.log("Invalid buf type", void 0 === t ? "undefined" : g(t)), "string" == typeof t && console.log("String contents: " + t.substring(0, 1024)))
                 }
                 return y(e, [{
                     key: "getBuffer",
@@ -6961,7 +7797,7 @@ webpackJsonp([1], {
                 }, {
                     key: "serializeMsg",
                     value: function(e, t) {
-                        w(this.stream.index % 8 == 0), this.stream.writeUint8(e), t.serialize(this.stream)
+                        w(this.stream.index % 8 == 0), this.stream.writeUint8(e), t.serialize(this.stream), w(this.stream.index % 8 == 0)
                     }
                 }, {
                     key: "serializeMsgStream",
@@ -6971,54 +7807,55 @@ webpackJsonp([1], {
                 }, {
                     key: "deserializeMsgType",
                     value: function() {
-                        return this.stream.length - 8 * this.stream.byteIndex >= 1 ? this.stream.readUint8() : E.None
+                        return this.stream.length - 8 * this.stream.byteIndex >= 1 ? this.stream.readUint8() : A.None
                     }
                 }]), e
             }(),
-            C = {
-                kMapNameMaxLen: 24,
-                kPlayerNameMaxLen: 16,
-                kMouseMaxDist: 64,
-                kSmokeMaxRad: 10,
-                kActionMaxDuration: 8.5,
-                kAbilityMaxCooldown: 60,
-                kAirstrikeZoneMaxRad: 256,
-                kAirstrikeZoneMaxDuration: 60
+            P = {
+                MapNameMaxLen: 24,
+                PlayerNameMaxLen: 16,
+                MouseMaxDist: 64,
+                SmokeMaxRad: 10,
+                ActionMaxDuration: 8.5,
+                AirstrikeZoneMaxRad: 256,
+                AirstrikeZoneMaxDuration: 60,
+                MapObjectMinScale: .125,
+                MapObjectMaxScale: 2.5
             },
-            A = {};
-        o(_.Type.Player, function(e, t) {
+            C = {};
+        o(f.Type.Player, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeUnitVec(t.dir, 8)
         }, function(e, t) {}, function(e, t) {
             t.pos = e.readVec(0, 0, 1024, 1024, 16), t.dir = e.readUnitVec(8)
         }, function(e, t) {
-            t.skin = e.readItemType(), t.backpack = e.readItemType(), t.helmet = e.readItemType(), t.chest = e.readItemType(), t.curWeapType = e.readItemType(), t.actionItem = e.readItemType(), t.layer = e.readBits(2), t.dead = e.readBoolean(), t.downed = e.readBoolean(), t.animType = e.readBits(3), t.animSeq = e.readBits(3), t.actionType = e.readBits(3), t.actionSeq = e.readBits(3), t.wearingPan = e.readBoolean(), t.frozen = e.readBoolean(), t.frozenOri = e.readBits(2), t.hasStim = e.readBoolean(), t.role = e.readBits(3)
-        }), o(_.Type.Obstacle, function(e, t) {
-            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeFloat(t.scale, S.MinScale, S.MaxScale, 8), e.writeBits(0, 6)
+            t.outfit = e.readGameType(), t.backpack = e.readGameType(), t.helmet = e.readGameType(), t.chest = e.readGameType(), t.curWeapType = e.readGameType(), t.actionItem = e.readGameType(), t.layer = e.readBits(2), t.dead = e.readBoolean(), t.downed = e.readBoolean(), t.animType = e.readBits(3), t.animSeq = e.readBits(3), t.actionType = e.readBits(3), t.actionSeq = e.readBits(3), t.wearingPan = e.readBoolean(), t.frozen = e.readBoolean(), t.frozenOri = e.readBits(2), t.hasStim = e.readBoolean(), t.role = e.readBits(3), e.readBits(4)
+        }), o(f.Type.Obstacle, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeFloat(t.scale, P.MapObjectMinScale, P.MapObjectMaxScale, 8), e.writeBits(0, 6)
         }, function(e, t) {}, function(e, t) {
-            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(S.MinScale, S.MaxScale, 8), e.readBits(6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(P.MapObjectMinScale, P.MapObjectMaxScale, 8), e.readBits(6)
         }, function(e, t) {
-            t.type = e.readMapType(), t.healthT = e.readFloat(0, 1, 8), t.layer = e.readBits(2), t.dead = e.readBoolean(), t.isDoor = e.readBoolean(), t.isDoor && (t.door = {}, t.door.open = e.readBoolean(), t.door.canUse = e.readBoolean(), t.door.seq = e.readBits(6)), t.isButton = e.readBoolean(), t.isButton && (t.button = {}, t.button.onOff = e.readBoolean(), t.button.canUse = e.readBoolean(), t.button.seq = e.readBits(6)), t.isPuzzlePiece = e.readBoolean(), t.isPuzzlePiece && (t.parentBuildingId = e.readUint16()), e.readBits(2)
-        }), o(_.Type.Building, function(e, t) {}, function(e, t) {}, function(e, t) {
+            t.healthT = e.readFloat(0, 1, 8), t.type = e.readMapType(), t.layer = e.readBits(2), t.dead = e.readBoolean(), t.isDoor = e.readBoolean(), t.isDoor && (t.door = {}, t.door.open = e.readBoolean(), t.door.canUse = e.readBoolean(), t.door.seq = e.readBits(6)), t.isButton = e.readBoolean(), t.isButton && (t.button = {}, t.button.onOff = e.readBoolean(), t.button.canUse = e.readBoolean(), t.button.seq = e.readBits(6)), t.isPuzzlePiece = e.readBoolean(), t.isPuzzlePiece && (t.parentBuildingId = e.readUint16()), e.readBits(6)
+        }), o(f.Type.Building, function(e, t) {}, function(e, t) {}, function(e, t) {
             t.ceilingDead = e.readBoolean(), t.occupied = e.readBoolean(), t.ceilingDamaged = e.readBoolean(), t.hasPuzzle = e.readBoolean(), t.hasPuzzle && (t.puzzleSolved = e.readBoolean(), t.puzzleErrSeq = e.readBits(7)), e.readBits(4)
         }, function(e, t) {
-            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.layer = e.readBits(2), e.readBits(4)
-        }), o(_.Type.Structure, function(e, t) {
-            e.writeMapType(t.type), e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeBits(0, 6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.type = e.readMapType(), t.ori = e.readBits(2), t.layer = e.readBits(2)
+        }), o(f.Type.Structure, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeMapType(t.type), e.writeBits(t.ori, 2), e.writeBits(0, 2)
         }, function(e, t) {}, function(e, t) {
-            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), e.readBits(6)
-        }, function(e, t) {}), o(_.Type.LootSpawner, function(e, t) {
-            e.writeMapType(t.type), e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.layer, 2), e.writeBits(0, 6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.type = e.readMapType(), t.ori = e.readBits(2), e.readBits(2)
+        }, function(e, t) {}), o(f.Type.LootSpawner, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeMapType(t.type), e.writeBits(t.layer, 2), e.writeBits(0, 2)
         }, function(e, t) {}, function(e, t) {
-            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.layer = e.readBits(2), e.readBits(6)
-        }, function(e, t) {}), o(_.Type.Loot, function(e, t) {
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.type = e.readMapType(), t.layer = e.readBits(2), e.readBits(2)
+        }, function(e, t) {}), o(f.Type.Loot, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16)
         }, function(e, t) {
-            e.writeItemType(t.name), e.writeUint8(t.count), e.writeBits(t.layer, 2), e.writeBits(t.isOld, 6)
+            e.writeGameType(t.name), e.writeBits(t.layer, 2), e.writeBits(t.isOld, 4), e.writeUint8(t.count)
         }, function(e, t) {
             t.pos = e.readVec(0, 0, 1024, 1024, 16)
         }, function(e, t) {
-            t.name = e.readItemType(), t.count = e.readUint8(), t.layer = e.readBits(2), t.isOld = e.readBits(6)
-        }), o(_.Type.DeadBody, function(e, t) {
+            t.name = e.readGameType(), t.layer = e.readBits(2), t.isOld = e.readBits(4), t.count = e.readUint8()
+        }), o(f.Type.DeadBody, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16)
         }, function(e, t) {
             e.writeUint8(t.layer), e.writeUint16(t.playerId)
@@ -7026,27 +7863,27 @@ webpackJsonp([1], {
             t.pos = e.readVec(0, 0, 1024, 1024, 16)
         }, function(e, t) {
             t.layer = e.readUint8(), t.playerId = e.readUint16()
-        }), o(_.Type.Decal, function(e, t) {
-            e.writeMapType(t.type), e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeBits(t.ori, 2), e.writeFloat(t.scale, S.MinScale, S.MaxScale, 8), e.writeBits(t.layer, 2), e.writeBits(0, 4)
+        }), o(f.Type.Decal, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.scale, P.MapObjectMinScale, P.MapObjectMaxScale, 8), e.writeMapType(t.type), e.writeBits(t.ori, 2), e.writeBits(t.layer, 2)
         }, function(e, t) {}, function(e, t) {
-            t.type = e.readMapType(), t.pos = e.readVec(0, 0, 1024, 1024, 16), t.ori = e.readBits(2), t.scale = e.readFloat(S.MinScale, S.MaxScale, 8), t.layer = e.readBits(2), e.readBits(4)
-        }, function(e, t) {}), o(_.Type.Projectile, function(e, t) {
-            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.posZ, 0, b.projectile.maxHeight, 10), e.writeBits(0, 6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.scale = e.readFloat(P.MapObjectMinScale, P.MapObjectMaxScale, 8), t.type = e.readMapType(), t.ori = e.readBits(2), t.layer = e.readBits(2)
+        }, function(e, t) {}), o(f.Type.Projectile, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.posZ, 0, x.projectile.maxHeight, 10), e.writeBits(0, 6)
         }, function(e, t) {
-            e.writeItemType(t.type), e.writeUint8(t.layer)
+            e.writeGameType(t.type), e.writeBits(t.layer, 2), e.writeBits(0, 4)
         }, function(e, t) {
-            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.posZ = e.readFloat(0, b.projectile.maxHeight, 10), e.readBits(6)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.posZ = e.readFloat(0, x.projectile.maxHeight, 10), e.readBits(6)
         }, function(e, t) {
-            t.type = e.readItemType(), t.layer = e.readUint8()
-        }), o(_.Type.Smoke, function(e, t) {
-            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.rad, 0, C.kSmokeMaxRad, 8)
+            t.type = e.readGameType(), t.layer = e.readBits(2), e.readBits(4)
+        }), o(f.Type.Smoke, function(e, t) {
+            e.writeVec(t.pos, 0, 0, 1024, 1024, 16), e.writeFloat(t.rad, 0, P.SmokeMaxRad, 8)
         }, function(e, t) {
             e.writeBits(t.layer, 2), e.writeBits(t.interior, 6)
         }, function(e, t) {
-            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.rad = e.readFloat(0, C.kSmokeMaxRad, 8)
+            t.pos = e.readVec(0, 0, 1024, 1024, 16), t.rad = e.readFloat(0, P.SmokeMaxRad, 8)
         }, function(e, t) {
             t.layer = e.readBits(2), t.interior = e.readBits(6)
-        }), o(_.Type.Airdrop, function(e, t) {
+        }), o(f.Type.Airdrop, function(e, t) {
             e.writeFloat(t.fallT, 0, 1, 7), e.writeBoolean(t.landed)
         }, function(e, t) {
             e.writeVec(t.pos, 0, 0, 1024, 1024, 16)
@@ -7055,42 +7892,41 @@ webpackJsonp([1], {
         }, function(e, t) {
             t.pos = e.readVec(0, 0, 1024, 1024, 16)
         });
-        var E = {
+        var A = {
                 None: 0,
                 Join: 1,
                 Disconnect: 2,
                 Input: 3,
                 Edit: 4,
                 Joined: 5,
-                PlayerInfo: 6,
-                Update: 7,
-                Kill: 8,
-                GameOver: 9,
-                Pickup: 10,
-                Map: 11,
-                Spectate: 12,
-                DropItem: 13,
-                Emote: 14,
-                PlayerStats: 15,
-                AdStatus: 16,
-                Loadout: 17,
-                AssignRole: 18,
-                Stats: 19
+                Update: 6,
+                Kill: 7,
+                GameOver: 8,
+                Pickup: 9,
+                Map: 10,
+                Spectate: 11,
+                DropItem: 12,
+                Emote: 13,
+                PlayerStats: 14,
+                AdStatus: 15,
+                Loadout: 16,
+                AssignRole: 17,
+                Stats: 18
             },
-            D = function() {
+            E = function() {
                 function e() {
                     i(this, e), this.protocol = 0, this.privData = "", this.name = "", this.emotes = [], this.useTouch = !1, this.isMobile = !1, this.bot = !1
                 }
                 return y(e, [{
                     key: "serialize",
                     value: function(e) {
-                        e.writeUint32(this.protocol), e.writeString(this.privData), e.writeString(this.name, C.kPlayerNameMaxLen);
-                        for (var t = 0; t < f.Count; t++) e.writeUint8(this.emotes[t]);
-                        e.writeBoolean(this.useTouch), e.writeBoolean(this.isMobile), e.writeBoolean(this.bot), e.writeBits(0, 5)
+                        e.writeUint32(this.protocol), e.writeString(this.privData), e.writeString(this.name, P.kPlayerNameMaxLen);
+                        for (var t = 0; t < x.EmoteSlot.Count; t++) e.writeGameType(this.emotes[t]);
+                        e.writeBoolean(this.useTouch), e.writeBoolean(this.isMobile), e.writeBoolean(this.bot), e.writeAlignToNextByte()
                     }
                 }]), e
             }(),
-            O = function() {
+            D = function() {
                 function e() {
                     i(this, e), this.reason = ""
                 }
@@ -7101,9 +7937,9 @@ webpackJsonp([1], {
                     }
                 }]), e
             }(),
-            B = function() {
+            O = function() {
                 function e() {
-                    i(this, e), this.seq = 0, this.moveLeft = !1, this.moveRight = !1, this.moveUp = !1, this.moveDown = !1, this.shootStart = !1, this.shootHold = !1, this.portrait = !1, this.touchMoveActive = !1, this.touchMoveDir = v.create(1, 0), this.touchMoveLen = 255, this.toMouseDir = v.create(1, 0), this.toMouseLen = 0, this.inputs = [], this.useItem = ""
+                    i(this, e), this.seq = 0, this.moveLeft = !1, this.moveRight = !1, this.moveUp = !1, this.moveDown = !1, this.shootStart = !1, this.shootHold = !1, this.portrait = !1, this.touchMoveActive = !1, this.touchMoveDir = _.create(1, 0), this.touchMoveLen = 255, this.toMouseDir = _.create(1, 0), this.toMouseLen = 0, this.inputs = [], this.useItem = ""
                 }
                 return y(e, [{
                     key: "addInput",
@@ -7113,13 +7949,13 @@ webpackJsonp([1], {
                 }, {
                     key: "serialize",
                     value: function(e) {
-                        e.writeUint8(this.seq), e.writeBoolean(this.moveLeft), e.writeBoolean(this.moveRight), e.writeBoolean(this.moveUp), e.writeBoolean(this.moveDown), e.writeBoolean(this.shootStart), e.writeBoolean(this.shootHold), e.writeBoolean(this.portrait), e.writeBoolean(this.touchMoveActive), this.touchMoveActive && (e.writeUnitVec(this.touchMoveDir, 8), e.writeUint8(this.touchMoveLen)), e.writeUnitVec(this.toMouseDir, 10), e.writeFloat(this.toMouseLen, 0, C.kMouseMaxDist, 8), e.writeBits(this.inputs.length, 4);
+                        e.writeUint8(this.seq), e.writeBoolean(this.moveLeft), e.writeBoolean(this.moveRight), e.writeBoolean(this.moveUp), e.writeBoolean(this.moveDown), e.writeBoolean(this.shootStart), e.writeBoolean(this.shootHold), e.writeBoolean(this.portrait), e.writeBoolean(this.touchMoveActive), this.touchMoveActive && (e.writeUnitVec(this.touchMoveDir, 8), e.writeUint8(this.touchMoveLen)), e.writeUnitVec(this.toMouseDir, 10), e.writeFloat(this.toMouseLen, 0, P.MouseMaxDist, 8), e.writeBits(this.inputs.length, 4);
                         for (var t = 0; t < this.inputs.length; t++) e.writeUint8(this.inputs[t]);
-                        e.writeItemType(this.useItem)
+                        e.writeGameType(this.useItem), e.writeBits(0, 6)
                     }
                 }]), e
             }(),
-            L = function e() {
+            B = function e() {
                 i(this, e)
             },
             R = function() {
@@ -7129,40 +7965,45 @@ webpackJsonp([1], {
                 return y(e, [{
                     key: "serialize",
                     value: function(e) {
-                        e.writeItemType(this.item), e.writeUint8(this.weapIdx)
+                        e.writeGameType(this.item), e.writeUint8(this.weapIdx), e.writeBits(0, 6)
+                    }
+                }]), e
+            }(),
+            L = function() {
+                function e() {
+                    i(this, e), this.pos = _.create(0, 0), this.type = "", this.isPing = !1
+                }
+                return y(e, [{
+                    key: "serialize",
+                    value: function(e) {
+                        e.writeVec(this.pos, 0, 0, 1024, 1024, 16), e.writeGameType(this.type), e.writeBoolean(this.isPing), e.writeBits(0, 5)
                     }
                 }]), e
             }(),
             F = function() {
                 function e() {
-                    i(this, e), this.type = 0, this.pos = v.create(0, 0), this.useLoadout = !1, this.isPing = !1
-                }
-                return y(e, [{
-                    key: "serialize",
-                    value: function(e) {
-                        e.writeUint8(this.type), e.writeVec(this.pos, 0, 0, 1024, 1024, 16), e.writeBoolean(this.useLoadout), e.writeBoolean(this.isPing), e.writeBits(0, 6)
-                    }
-                }]), e
-            }(),
-            j = function() {
-                function e() {
-                    i(this, e), this.teamMode = 0, this.playerId = 0, this.started = !1, this.gameOpts = 0
+                    i(this, e), this.teamMode = 0, this.playerId = 0, this.started = !1, this.emotes = []
                 }
                 return y(e, [{
                     key: "deserialize",
                     value: function(e) {
-                        this.teamMode = e.readUint8(), this.playerId = e.readUint16(), this.started = e.readUint8(), this.gameOpts = e.readUint8()
+                        this.teamMode = e.readUint8(), this.playerId = e.readUint16(), this.started = e.readBoolean();
+                        for (var t = e.readUint8(), a = 0; a < t; a++) {
+                            var i = e.readGameType();
+                            this.emotes.push(i)
+                        }
+                        e.readAlignToNextByte()
                     }
                 }]), e
             }(),
-            q = function() {
+            j = function() {
                 function e() {
                     i(this, e), this.mapName = "", this.seed = 0, this.width = 0, this.height = 0, this.shoreInset = 0, this.grassInset = 0, this.rivers = [], this.places = [], this.objects = [], this.groundPatches = []
                 }
                 return y(e, [{
                     key: "deserialize",
                     value: function(e) {
-                        this.mapName = e.readString(C.kMapNameMaxLen), this.seed = e.readUint32(), this.width = e.readUint16(), this.height = e.readUint16(), this.shoreInset = e.readUint16(), this.grassInset = e.readUint16();
+                        this.mapName = e.readString(P.MapNameMaxLen), this.seed = e.readUint32(), this.width = e.readUint16(), this.height = e.readUint16(), this.shoreInset = e.readUint16(), this.grassInset = e.readUint16();
                         for (var t = e.readUint8(), a = 0; a < t; a++) {
                             var i = {};
                             p(e, i), this.rivers.push(i)
@@ -7182,7 +8023,7 @@ webpackJsonp([1], {
                     }
                 }]), e
             }(),
-            N = {
+            q = {
                 DeletedObjects: 1,
                 FullObjects: 2,
                 ActivePlayerId: 4,
@@ -7199,7 +8040,7 @@ webpackJsonp([1], {
                 AirstrikeZones: 8192,
                 MapIndicators: 16384
             },
-            V = function() {
+            N = function() {
                 function e() {
                     i(this, e), this.serializedObjectCache = null, this.objectReg = null, this.clientPlayer = null, this.activePlayer = null, this.grid = null, this.time = 0, this.playerBarn = null, this.bulletBarn = null, this.gas = null, this.map = null, this.delObjIds = [], this.fullObjects = [], this.partObjects = [], this.activePlayerId = 0, this.activePlayerIdDirty = !1, this.activePlayerData = {}, this.aliveCounts = [], this.aliveDirty = !1, this.gasT = 0, this.gasData = {}, this.gasDirty = !1, this.playerInfos = [], this.deletedPlayerIds = [], this.playerStatus = {}, this.playerStatusDirty = !1, this.groupStatus = {}, this.groupStatusDirty = !1, this.bullets = [], this.explosions = [], this.emotes = [], this.planes = [], this.airstrikeZones = [], this.mapIndicators = [], this.ack = 0
                 }
@@ -7208,105 +8049,105 @@ webpackJsonp([1], {
                     value: function(e, t) {
                         var a = e.readUint16(),
                             i = 0;
-                        if (0 != (a & N.DeletedObjects)) {
+                        if (0 != (a & q.DeletedObjects)) {
                             i = e.readUint16();
                             for (var r = 0; r < i; r++) this.delObjIds.push(e.readUint16())
                         }
                         var o = 0;
-                        if (0 != (a & N.FullObjects)) {
+                        if (0 != (a & q.FullObjects)) {
                             o = e.readUint16();
                             for (var p = 0; p < o; p++) {
                                 var d = {};
-                                d.__type = e.readUint8(), d.__id = e.readUint16(), A[d.__type].deserializePart(e, d), A[d.__type].deserializeFull(e, d), this.fullObjects.push(d)
+                                d.__type = e.readUint8(), d.__id = e.readUint16(), C[d.__type].deserializePart(e, d), C[d.__type].deserializeFull(e, d), this.fullObjects.push(d)
                             }
                         }
                         for (var h = e.readUint16(), u = 0; u < h; u++) {
                             var g = {};
                             g.__id = e.readUint16();
                             var y = t.getTypeById(g.__id, e);
-                            A[y].deserializePart(e, g), this.partObjects.push(g)
+                            C[y].deserializePart(e, g), this.partObjects.push(g)
                         }
-                        0 != (a & N.ActivePlayerId) && (this.activePlayerId = e.readUint16(), this.activePlayerIdDirty = !0);
+                        0 != (a & q.ActivePlayerId) && (this.activePlayerId = e.readUint16(), this.activePlayerIdDirty = !0);
                         var w = {};
-                        if (n(e, w), this.activePlayerData = w, 0 != (a & N.AliveCount)) {
+                        if (n(e, w), this.activePlayerData = w, 0 != (a & q.AliveCount)) {
                             for (var x = e.readUint8(), f = 0; f < x; f++) {
                                 var b = e.readUint8();
                                 this.aliveCounts.push(b)
                             }
                             this.aliveDirty = !0
                         }
-                        if (this.gasT = e.readFloat(0, 1, 16), 0 != (a & N.Gas)) {
-                            var _ = {};
-                            m(e, _), this.gasData = _, this.gasDirty = !0
+                        if (this.gasT = e.readFloat(0, 1, 16), 0 != (a & q.Gas)) {
+                            var S = {};
+                            m(e, S), this.gasData = S, this.gasDirty = !0
                         }
-                        if (0 != (a & N.PlayerInfos))
-                            for (var S = e.readUint8(), k = 0; k < S; k++) {
+                        if (0 != (a & q.PlayerInfos))
+                            for (var v = e.readUint8(), k = 0; k < v; k++) {
                                 var z = {};
                                 c(e, z), this.playerInfos.push(z)
                             }
-                        if (0 != (a & N.DeletePlayerIds))
+                        if (0 != (a & q.DeletePlayerIds))
                             for (var M = e.readUint8(), T = 0; T < M; T++) {
-                                var P = e.readUint16();
-                                this.deletedPlayerIds.push(P)
+                                var I = e.readUint16();
+                                this.deletedPlayerIds.push(I)
                             }
-                        if (0 != (a & N.PlayerStatus)) {
-                            var I = {};
-                            s(e, I), this.playerStatus = I, this.playerStatusDirty = !0
+                        if (0 != (a & q.PlayerStatus)) {
+                            var A = {};
+                            s(e, A), this.playerStatus = A, this.playerStatusDirty = !0
                         }
-                        if (0 != (a & N.GroupStatus)) {
+                        if (0 != (a & q.GroupStatus)) {
                             var E = {};
                             l(e, E), this.groupStatus = E, this.groupStatusDirty = !0
                         }
-                        if (0 != (a & N.Bullets))
+                        if (0 != (a & q.Bullets))
                             for (var D = e.readUint8(), O = 0; O < D; O++) {
                                 var B = {};
-                                B.playerId = e.readUint16(), B.bulletType = e.readItemType(), B.pos = e.readVec(0, 0, 1024, 1024, 16), B.dir = e.readUnitVec(8), B.layer = e.readBits(2), B.varianceT = e.readFloat(0, 1, 5), B.distAdjIdx = e.readBits(4), B.clipDistance = e.readBoolean(), B.clipDistance && (B.distance = e.readFloat(0, 128, 8)), B.shotFx = e.readBoolean(), B.shotFx && (B.shotSourceType = e.readItemType(), B.shotOffhand = e.readBits(7), B.lastShot = e.readBoolean()), B.reflectCount = e.readBits(2), B.reflectObjId = 0;
-                                var L = e.readBoolean();
-                                L && (B.reflectObjId = e.readUint16()), this.bullets.push(B)
+                                B.playerId = e.readUint16(), B.pos = e.readVec(0, 0, 1024, 1024, 16), B.dir = e.readUnitVec(8), B.bulletType = e.readGameType(), B.layer = e.readBits(2), B.varianceT = e.readFloat(0, 1, 5), B.distAdjIdx = e.readBits(4), B.clipDistance = e.readBoolean(), B.clipDistance && (B.distance = e.readFloat(0, 128, 8)), B.shotFx = e.readBoolean(), B.shotFx && (B.shotSourceType = e.readGameType(), B.shotOffhand = e.readBoolean(), B.lastShot = e.readBoolean()), B.reflectCount = 0, B.reflectObjId = 0;
+                                var R = e.readBoolean();
+                                R && (B.reflectCount = e.readBits(2), B.reflectObjId = e.readUint16()), e.readAlignToNextByte(), this.bullets.push(B)
                             }
-                        if (0 != (a & N.Explosions))
-                            for (var R = e.readUint8(), F = 0; F < R; F++) {
+                        if (0 != (a & q.Explosions))
+                            for (var L = e.readUint8(), F = 0; F < L; F++) {
                                 var j = {};
-                                j.pos = e.readVec(0, 0, 1024, 1024, 16), j.type = e.readItemType(), j.layer = e.readUint8(), this.explosions.push(j)
+                                j.pos = e.readVec(0, 0, 1024, 1024, 16), j.type = e.readGameType(), j.layer = e.readBits(2), e.readBits(4), this.explosions.push(j)
                             }
-                        if (0 != (a & N.Emotes))
-                            for (var q = e.readUint8(), V = 0; V < q; V++) {
+                        if (0 != (a & q.Emotes))
+                            for (var N = e.readUint8(), V = 0; V < N; V++) {
                                 var G = {};
-                                G.type = e.readUint8(), G.playerId = e.readUint16(), G.itemType = e.readItemType(), G.isPing = e.readBoolean(), G.isPing && (G.pos = e.readVec(0, 0, 1024, 1024, 16)), e.readBits(7), this.emotes.push(G)
+                                G.playerId = e.readUint16(), G.type = e.readGameType(), G.itemType = e.readGameType(), G.isPing = e.readBoolean(), G.isPing && (G.pos = e.readVec(0, 0, 1024, 1024, 16)), e.readBits(3), this.emotes.push(G)
                             }
-                        if (0 != (a & N.Planes))
+                        if (0 != (a & q.Planes))
                             for (var U = e.readUint8(), H = 0; H < U; H++) {
                                 var W = {};
                                 W.id = e.readUint8();
                                 var K = e.readVec(0, 0, 2048, 2048, 10);
-                                W.pos = v.create(K.x - 512, K.y - 512), W.planeDir = e.readUnitVec(8), W.actionComplete = e.readBoolean(), W.action = e.readBits(3), this.planes.push(W)
+                                W.pos = _.create(K.x - 512, K.y - 512), W.planeDir = e.readUnitVec(8), W.actionComplete = e.readBoolean(), W.action = e.readBits(3), this.planes.push(W)
                             }
-                        if (0 != (a & N.AirstrikeZones))
+                        if (0 != (a & q.AirstrikeZones))
                             for (var Z = e.readUint8(), X = 0; X < Z; X++) {
                                 var Y = {};
-                                Y.pos = e.readVec(0, 0, 1024, 1024, 12), Y.rad = e.readFloat(0, C.kAirstrikeZoneMaxRad, 8), Y.duration = e.readFloat(0, C.kAirstrikeZoneMaxDuration, 8), this.airstrikeZones.push(Y)
+                                Y.pos = e.readVec(0, 0, 1024, 1024, 12), Y.rad = e.readFloat(0, P.AirstrikeZoneMaxRad, 8), Y.duration = e.readFloat(0, P.AirstrikeZoneMaxDuration, 8), this.airstrikeZones.push(Y)
                             }
-                        if (0 != (a & N.MapIndicators))
+                        if (0 != (a & q.MapIndicators))
                             for (var J = e.readUint8(), Q = 0; Q < J; Q++) {
                                 var $ = {};
-                                $.id = e.readBits(6), $.dead = e.readBoolean(), $.equipped = e.readBoolean(), $.type = e.readItemType(), $.pos = e.readVec(0, 0, 1024, 1024, 16), this.mapIndicators.push($)
+                                $.id = e.readBits(6), $.dead = e.readBoolean(), $.equipped = e.readBoolean(), $.type = e.readGameType(), $.pos = e.readVec(0, 0, 1024, 1024, 16), e.readAlignToNextByte(), this.mapIndicators.push($)
                             }
                         this.ack = e.readUint8()
                     }
                 }]), e
             }(),
-            G = function() {
+            V = function() {
                 function e() {
                     i(this, e), this.itemSourceType = "", this.mapSourceType = "", this.damageType = 0, this.targetId = 0, this.killerId = 0, this.killCreditId = 0, this.killerKills = 0, this.downed = !1, this.killed = !1, this.targetRole = 0
                 }
                 return y(e, [{
                     key: "deserialize",
                     value: function(e) {
-                        this.damageType = e.readUint8(), this.itemSourceType = e.readItemType(), this.mapSourceType = e.readMapType(), this.targetId = e.readUint16(), this.killerId = e.readUint16(), this.killCreditId = e.readUint16(), this.killerKills = e.readUint8(), this.downed = e.readBoolean(), this.killed = e.readBoolean(), this.targetRole = e.readBits(3), e.readBits(3)
+                        this.damageType = e.readUint8(), this.itemSourceType = e.readGameType(), this.mapSourceType = e.readMapType(), this.targetId = e.readUint16(), this.killerId = e.readUint16(), this.killCreditId = e.readUint16(), this.killerKills = e.readUint8(), this.downed = e.readBoolean(), this.killed = e.readBoolean(), this.targetRole = e.readBits(3), e.readBits(5)
                     }
                 }]), e
             }(),
-            U = function() {
+            G = function() {
                 function e() {
                     i(this, e), this.playerId = 0, this.playerStats = {}
                 }
@@ -7318,7 +8159,7 @@ webpackJsonp([1], {
                     }
                 }]), e
             }(),
-            H = function() {
+            U = function() {
                 function e() {
                     i(this, e), this.teamId = 0, this.teamRank = 0, this.gameOver = !1, this.winningTeamId = 0, this.playerStats = []
                 }
@@ -7327,13 +8168,13 @@ webpackJsonp([1], {
                     value: function(e) {
                         this.teamId = e.readUint8(), this.teamRank = e.readUint8(), this.gameOver = e.readUint8(), this.winningTeamId = e.readUint8();
                         for (var t = e.readUint8(), a = 0; a < t; a++) {
-                            var i = new U;
+                            var i = new G;
                             i.deserialize(e), this.playerStats.push(i.playerStats)
                         }
                     }
                 }]), e
             }(),
-            W = {
+            H = {
                 Full: 0,
                 AlreadyOwned: 1,
                 AlreadyEquipped: 2,
@@ -7341,18 +8182,18 @@ webpackJsonp([1], {
                 Success: 4,
                 GunCannotFire: 5
             },
-            K = function() {
+            W = function() {
                 function e() {
                     i(this, e), this.type = 0, this.item = "", this.count = 0
                 }
                 return y(e, [{
                     key: "deserialize",
                     value: function(e) {
-                        this.type = e.readUint8(), this.item = e.readItemType(), this.count = e.readUint8()
+                        this.type = e.readUint8(), this.item = e.readGameType(), this.count = e.readUint8(), e.readBits(6)
                     }
                 }]), e
             }(),
-            Z = function() {
+            K = function() {
                 function e() {
                     i(this, e), this.specBegin = !1, this.specNext = !1, this.specPrev = !1, this.specForce = !1
                 }
@@ -7360,6 +8201,17 @@ webpackJsonp([1], {
                     key: "serialize",
                     value: function(e) {
                         e.writeBoolean(this.specBegin), e.writeBoolean(this.specNext), e.writeBoolean(this.specPrev), e.writeBoolean(this.specForce), e.writeBits(0, 4)
+                    }
+                }]), e
+            }(),
+            Z = function() {
+                function e() {
+                    i(this, e), this.playerId = 0, this.role = 0
+                }
+                return y(e, [{
+                    key: "deserialize",
+                    value: function(e) {
+                        this.playerId = e.readUint16(), this.role = e.readUint8()
                     }
                 }]), e
             }(),
@@ -7381,23 +8233,12 @@ webpackJsonp([1], {
                 return y(e, [{
                     key: "serialize",
                     value: function(e) {
-                        for (var t = 0; t < f.Count; t++) e.writeUint8(this.emotes[t]);
-                        e.writeUint8(this.custom)
+                        for (var t = 0; t < x.EmoteSlot.Count; t++) e.writeGameType(this.emotes[t]);
+                        e.writeUint8(this.custom), e.writeAlignToNextByte()
                     }
                 }]), e
             }(),
             J = function() {
-                function e() {
-                    i(this, e), this.playerId = 0, this.role = 0
-                }
-                return y(e, [{
-                    key: "deserialize",
-                    value: function(e) {
-                        this.playerId = e.readUint16(), this.role = e.readUint8()
-                    }
-                }]), e
-            }(),
-            Q = function() {
                 function e() {
                     i(this, e), this.data = []
                 }
@@ -7418,30 +8259,30 @@ webpackJsonp([1], {
                 }]), e
             }();
         e.exports = {
-            BitStream: P.BitStream,
-            Constants: C,
+            BitStream: T.BitStream,
+            Constants: P,
             getPlayerStatusUpdateRate: r,
             MsgStream: I,
-            Msg: E,
-            JoinMsg: D,
-            DisconnectMsg: O,
-            InputMsg: B,
-            EditMsg: L,
+            Msg: A,
+            JoinMsg: E,
+            DisconnectMsg: D,
+            InputMsg: O,
+            EditMsg: B,
             DropItemMsg: R,
-            JoinedMsg: j,
-            UpdateMsg: V,
-            MapMsg: q,
-            KillMsg: G,
-            PlayerStatsMsg: U,
-            GameOverMsg: H,
-            PickupMsgType: W,
-            PickupMsg: K,
-            SpectateMsg: Z,
-            EmoteMsg: F,
+            JoinedMsg: F,
+            UpdateMsg: N,
+            MapMsg: j,
+            KillMsg: V,
+            PlayerStatsMsg: G,
+            GameOverMsg: U,
+            PickupMsgType: H,
+            PickupMsg: W,
+            SpectateMsg: K,
+            EmoteMsg: L,
+            AssignRoleMsg: Z,
             AdStatusMsg: X,
             LoadoutMsg: Y,
-            AssignRoleMsg: J,
-            StatsMsg: Q
+            StatsMsg: J
         }
     },
     "3160ea28": function(e, t, a) {
@@ -7457,10 +8298,10 @@ webpackJsonp([1], {
 
         function r(e, t, a, i, r, o, c, m, d, h) {
             var u = this;
-            this.game = e, this.particleBarn = a, this.localization = r, this.touch = c, this.inputBinds = m, this.inputBindUi = d, this.adManager = h, this.pieTimer = new T.$, this.gameElem = s("#ui-game"), this.statsMain = s("#ui-stats"), this.statsElem = s("#ui-stats-bg"), this.statsContentsContainer = s("#ui-stats-contents"), this.statsContents = s("#ui-stats-contents-inner"), this.statsHeader = s("#ui-stats-header"), this.statsInfoBox = s("#ui-stats-info-box"), this.statsOptions = s("#ui-stats-options"), this.statsAds = s(".ui-stats-ad-container"), this.statsLogo = s("#ui-stats-logo"), this.killElem = s("#ui-kills"), this.killText = s("#ui-kill-text"), this.killCount = s("#ui-kill-count"), this.killTimeout = null, this.escMenuElem = s("#ui-game-menu"), this.escMenuDisplayed = !1, this.topLeft = s("#ui-top-left"), this.topCenter = s("#ui-top-center-scopes"), this.waitingForPlayers = !0, this.waitingText = s("#ui-waiting-text"), this.spectating = !1, this.prevSpectatorCount = 0, this.spectatorCount = 0, this.spectatorCounterDisplayed = !1, this.spectatorCounterContainer = s("#ui-spec-counter"), this.spectatorCounter = s("#ui-spec-counter-number"), this.spectateMode = s(".ui-spectate-mode"), this.spectatedPlayerText = s("#ui-spectate-text"), this.spectatedPlayerName = "", this.spectatedPlayerId = 0, this.spectateModeStats = s("#ui-spectate-stats"), this.spectateModeStatsData = s("#ui-spectate-stats-data"), this.spectateOptionsWrapper = s("#ui-spectate-options-wrapper"), this.rightCenter = s("#ui-right-center"), this.leaderboardAlive = s("#ui-leaderboard-alive"), this.playersAlive = s(".js-ui-players-alive"), this.leaderboardAliveFaction = s("#ui-leaderboard-alive-faction"), this.playersAliveRed = s(".js-ui-players-alive-red"), this.playersAliveBlue = s(".js-ui-players-alive-blue"), this.playersAliveRedCounter = 0, this.playersAliveBlueCounter = 0, this.playerKills = s(".js-ui-player-kills"), this.kills = 0, this.announcement = s("#ui-announcement"), this.mapContainer = s("#ui-map-container"), this.mapContainerBottom = 52, this.mapInfo = s("#ui-map-info"), this.mapInfoBottom = 218, this.gasState = {}, this.gasIcon = s("#ui-gas-icon"), this.gasTimer = s("#ui-gas-timer"), this.mapMinimizeButton = s("#ui-map-minimize"), this.menuDisplayButton = s("#ui-menu-display"), this.bottomCenterRight = s("#ui-bottom-center-right"), s("#ui-map-wrapper").css("display", "block"), s("#ui-team").css("display", "block"), this.actionSeq = -1, this.displayMapDirty = !1, this.displayMapClear = !1, s(".ui-map-expand").on("mousedown", function(e) {
+            this.game = e, this.particleBarn = a, this.localization = r, this.touch = c, this.inputBinds = m, this.inputBindUi = d, this.adManager = h, this.pieTimer = new M.J, this.gameElem = s("#ui-game"), this.statsMain = s("#ui-stats"), this.statsElem = s("#ui-stats-bg"), this.statsContentsContainer = s("#ui-stats-contents"), this.statsContents = s("#ui-stats-contents-inner"), this.statsHeader = s("#ui-stats-header"), this.statsInfoBox = s("#ui-stats-info-box"), this.statsOptions = s("#ui-stats-options"), this.statsAds = s(".ui-stats-ad-container"), this.statsLogo = s("#ui-stats-logo"), this.killElem = s("#ui-kills"), this.killText = s("#ui-kill-text"), this.killCount = s("#ui-kill-count"), this.killTimeout = null, this.escMenuElem = s("#ui-game-menu"), this.escMenuDisplayed = !1, this.topLeft = s("#ui-top-left"), this.topCenter = s("#ui-top-center-scopes"), this.waitingForPlayers = !0, this.waitingText = s("#ui-waiting-text"), this.spectating = !1, this.prevSpectatorCount = 0, this.spectatorCount = 0, this.spectatorCounterDisplayed = !1, this.spectatorCounterContainer = s("#ui-spec-counter"), this.spectatorCounter = s("#ui-spec-counter-number"), this.spectateMode = s(".ui-spectate-mode"), this.spectatedPlayerText = s("#ui-spectate-text"), this.spectatedPlayerName = "", this.spectatedPlayerId = 0, this.spectateModeStats = s("#ui-spectate-stats"), this.spectateModeStatsData = s("#ui-spectate-stats-data"), this.spectateOptionsWrapper = s("#ui-spectate-options-wrapper"), this.rightCenter = s("#ui-right-center"), this.leaderboardAlive = s("#ui-leaderboard-alive"), this.playersAlive = s(".js-ui-players-alive"), this.leaderboardAliveFaction = s("#ui-leaderboard-alive-faction"), this.playersAliveRed = s(".js-ui-players-alive-red"), this.playersAliveBlue = s(".js-ui-players-alive-blue"), this.playersAliveRedCounter = 0, this.playersAliveBlueCounter = 0, this.playerKills = s(".js-ui-player-kills"), this.kills = 0, this.announcement = s("#ui-announcement"), this.mapContainer = s("#ui-map-container"), this.mapContainerBottom = 52, this.mapInfo = s("#ui-map-info"), this.mapInfoBottom = 218, this.gasState = {}, this.gasIcon = s("#ui-gas-icon"), this.gasTimer = s("#ui-gas-timer"), this.mapMinimizeButton = s("#ui-map-minimize"), this.menuDisplayButton = s("#ui-menu-display"), this.bottomCenterRight = s("#ui-bottom-center-right"), s("#ui-map-wrapper").css("display", "block"), s("#ui-team").css("display", "block"), this.actionSeq = -1, this.displayMapDirty = !1, this.displayMapClear = !1, s(".ui-map-expand").on("mousedown", function(e) {
                 e.stopPropagation()
             }), s(".ui-map-expand").on("click", function(e) {
-                f.touch ? u.bigmapDisplayed || u.displayMapLarge() : f.uiLayout == f.UiLayout.Lg && u.displayMapLarge(u.bigmapDisplayed)
+                x.touch ? u.bigmapDisplayed || u.displayMapLarge() : x.uiLayout == x.UiLayout.Lg && u.displayMapLarge(u.bigmapDisplayed)
             }), s("#ui-map-minimize").on("mousedown", function(e) {
                 e.stopPropagation()
             }), s("#ui-map-minimize").on("click", function(e) {
@@ -7492,12 +8333,12 @@ webpackJsonp([1], {
             }), this.fullScreenButton.on("click", function() {
                 v.toggleFullScreen(), u.toggleEscMenu()
             });
-            var g = "ios" == f.os ? "none" : "block";
-            (f.webview || f.touch) && (g = "none"), s("#btn-game-fullscreen").css("display", g), this.resumeButton = s("#btn-game-resume"), this.resumeButton.on("mousedown", function(e) {
+            var y = "ios" == x.os ? "none" : "block";
+            (x.webview || x.touch) && (y = "none"), s("#btn-game-fullscreen").css("display", y), this.resumeButton = s("#btn-game-resume"), this.resumeButton.on("mousedown", function(e) {
                 e.stopPropagation()
             }), this.resumeButton.on("click", function() {
                 u.toggleEscMenu()
-            }), f.touch && this.resumeButton.css("display", "none"), s("#btn-spectate-quit").on("click", function() {
+            }), x.touch && this.resumeButton.css("display", "none"), s("#btn-spectate-quit").on("click", function() {
                 u.quitGame()
             }), s("#btn-game-quit").on("mousedown", function(e) {
                 e.stopPropagation()
@@ -7513,30 +8354,30 @@ webpackJsonp([1], {
                 e.stopPropagation(), u.interactionTouched = !0
             }), this.reloadElems = s("#ui-current-clip, #ui-remaining-ammo, #ui-reload-button-container"), this.reloadTouched = !1, this.reloadElems.css("pointer-events", "auto"), this.reloadElems.on("touchstart", function(e) {
                 e.stopPropagation(), u.reloadTouched = !0
-            }), this.flairElems = s(".ui-health-flair"), this.flairId = 0, this.healthRed = new n(255, 0, 0), this.healthDarkpink = new n(255, 45, 45), this.healthLightpink = new n(255, 112, 112), this.healthWhite = new n(255, 255, 255), this.healthGrey = new n(179, 179, 179), this.minimapDisplayed = !0, this.visibilityMode = 0, this.hudVisible = !0, this.gasRenderer = new S(o, 0), this.gasSafeZoneRenderer = new k, this.sentAdStatus = !1, this.frame = 0;
-            var y = this;
+            }), this.flairElems = s(".ui-health-flair"), this.flairId = 0, this.healthRed = new n(255, 0, 0), this.healthDarkpink = new n(255, 45, 45), this.healthLightpink = new n(255, 112, 112), this.healthWhite = new n(255, 255, 255), this.healthGrey = new n(179, 179, 179), this.minimapDisplayed = !0, this.visibilityMode = 0, this.hudVisible = !0, this.gasRenderer = new _(o, 0), this.gasSafeZoneRenderer = new S, this.sentAdStatus = !1, this.frame = 0;
+            var w = this;
             this.weapsDirty = !1, this.weapSwitches = s("#ui-weapon-id-1, #ui-weapon-id-2"), this.weapNoSwitches = s("#ui-weapon-id-3, #ui-weapon-id-4"), this.weapDraggedId = 0, this.swapWeapSlots = !1, this.weapDraggedDiv = null, this.weapDragging = !1, this.weapDropped = !1, this.resetWeapSlotStyling = function() {
-                y.weapDraggedDiv && (y.weapSwitches.css({
+                w.weapDraggedDiv && (w.weapSwitches.css({
                     left: "",
                     top: ""
                 }), s("#ui-game").css({
                     "pointer-events": ""
-                })), y.weapDraggedDiv = null, y.weapDragging = !1, y.weapDropped = !1, y.weapSwitches.hasClass("ui-weapon-dragged") && y.weapSwitches.removeClass("ui-weapon-dragged"), y.weapNoSwitches.hasClass("ui-outline-hover") || y.weapNoSwitches.addClass("ui-outline-hover")
-            }, f.touch || (this.weapSwitches.on("mousedown", function(e) {
-                0 == e.button && (y.weapDraggedDiv = s(this), y.weapDraggedId = s(this).data("slot"))
+                })), w.weapDraggedDiv = null, w.weapDragging = !1, w.weapDropped = !1, w.weapSwitches.hasClass("ui-weapon-dragged") && w.weapSwitches.removeClass("ui-weapon-dragged"), w.weapNoSwitches.hasClass("ui-outline-hover") || w.weapNoSwitches.addClass("ui-outline-hover")
+            }, x.touch || (this.weapSwitches.on("mousedown", function(e) {
+                0 == e.button && (w.weapDraggedDiv = s(this), w.weapDraggedId = s(this).data("slot"))
             }), s("#ui-game").on("mousemove", function(e) {
-                y.weapDraggedDiv && !y.weapDropped && (y.weapDragging ? (y.weapDraggedDiv.css({
+                w.weapDraggedDiv && !w.weapDropped && (w.weapDragging ? (w.weapDraggedDiv.css({
                     left: e.pageX - 80,
                     top: e.pageY - 30
-                }), y.weapDraggedDiv.addClass("ui-weapon-dragged")) : (s("#ui-game").css({
+                }), w.weapDraggedDiv.addClass("ui-weapon-dragged")) : (s("#ui-game").css({
                     "pointer-events": "initial"
-                }), y.weapNoSwitches.removeClass("ui-outline-hover"), y.weapDragging = !0))
+                }), w.weapNoSwitches.removeClass("ui-outline-hover"), w.weapDragging = !0))
             }), s("#ui-game, #ui-weapon-id-1, #ui-weapon-id-2").on("mouseup", function(e) {
-                0 == e.button && null != y.weapDraggedDiv && (y.weapSwitches.each(function() {
+                0 == e.button && null != w.weapDraggedDiv && (w.weapSwitches.each(function() {
                     var e = s(this).data("slot");
-                    s(this).is(":hover") && y.weapDraggedId != e && (y.swapWeapSlots = !0, y.weapDropped = !0)
-                }), y.swapWeapSlots || y.resetWeapSlotStyling())
-            })), this.mapSpriteBarn = new M.MapSpriteBarn, this.ee = new z.te(this.mapSpriteBarn), this.playerMapSprites = [], this.playerPingSprites = {}, this.container = new l.Container, this.container.mask = new l.Graphics, this.display = {
+                    s(this).is(":hover") && w.weapDraggedId != e && (w.swapWeapSlots = !0, w.weapDropped = !0)
+                }), w.swapWeapSlots || w.resetWeapSlotStyling())
+            })), this.mapSpriteBarn = new z.MapSpriteBarn, this.$ = new k.ee(this.mapSpriteBarn), this.playerMapSprites = [], this.playerPingSprites = {}, this.container = new l.Container, this.container.mask = new l.Graphics, this.display = {
                 gas: this.gasRenderer.display,
                 gasSafeZone: this.gasSafeZoneRenderer.display,
                 airstrikeZones: i.airstrikeZoneContainer,
@@ -7545,28 +8386,28 @@ webpackJsonp([1], {
                 player: new l.Container,
                 border: new l.Graphics
             }, this.mapSprite = new l.Sprite(l.Texture.EMPTY), this.mapSprite.anchor = new l.Point(.5, .5), this.container.addChild(this.mapSprite), this.container.addChild(this.display.gas), this.container.addChild(this.display.gasSafeZone), this.container.addChild(this.display.airstrikeZones), this.container.addChild(this.display.mapSprites), this.container.addChild(this.display.teammates), this.container.addChild(this.display.player), this.container.addChild(this.display.border), this.bigmapDisplayed = !1, this.screenScaleFactor = 1;
-            var x = this.getMinimapMargin(),
+            var f = this.getMinimapMargin(),
                 b = this.getMinimapSize();
-            this.minimapPos = w.create(x + b / 2, e.ae.screenHeight - b / 2 - x), this.dead = !1, this.audioManager = t, this.muteButton = s("#ui-mute-ingame"), this.muteButtonImage = this.muteButton.find("img"), this.muteOffImg = "audio-off.img", this.muteOnImg = "audio-on.img";
-            var _ = this.audioManager.mute;
-            this.muteButtonImage.attr("src", _ ? this.muteOffImg : this.muteOnImg), this.muteButton.on("mousedown", function(e) {
+            this.minimapPos = g.create(f + b / 2, e.te.screenHeight - b / 2 - f), this.dead = !1, this.audioManager = t, this.muteButton = s("#ui-mute-ingame"), this.muteButtonImage = this.muteButton.find("img"), this.muteOffImg = "audio-off.img", this.muteOnImg = "audio-on.img";
+            var T = this.audioManager.mute;
+            this.muteButtonImage.attr("src", T ? this.muteOffImg : this.muteOnImg), this.muteButton.on("mousedown", function(e) {
                 e.stopPropagation()
             }), this.muteButton.on("click", function(e) {
                 var t = u.audioManager.muteToggle();
                 u.muteButtonImage.attr("src", t ? u.muteOffImg : u.muteOnImg), t = null
             }), this.displayingStats = !1, this.teamMemberHealthBarWidth = parseInt(s(".ui-team-member-health").find(".ui-bar-inner").css("width")), this.teamMemberHeight = 48, this.groupPlayerCount = 0, this.teamSelectors = [];
-            for (var P = 0; P < 4; P++) {
-                var I = this.topLeft,
-                    C = P;
+            for (var I = 0; I < 4; I++) {
+                var P = this.topLeft,
+                    C = I;
                 this.teamSelectors.push({
                     teamNameHtml: "",
-                    groupId: s(I).find("[data-id=" + C + "]"),
+                    groupId: s(P).find("[data-id=" + C + "]"),
                     groupIdDisplayed: !1,
-                    teamName: s(I).find("[data-id=" + C + "]").find(".ui-team-member-name"),
-                    teamIcon: s(I).find("[data-id=" + C + "]").find(".ui-team-member-icon"),
-                    teamStatus: s(I).find("[data-id=" + C + "]").find(".ui-team-member-status"),
-                    teamHealthInner: s(I).find("[data-id=" + C + "]").find(".ui-health-actual"),
-                    teamColor: s(I).find("[data-id=" + C + "]").find(".ui-team-member-color"),
+                    teamName: s(P).find("[data-id=" + C + "]").find(".ui-team-member-name"),
+                    teamIcon: s(P).find("[data-id=" + C + "]").find(".ui-team-member-icon"),
+                    teamStatus: s(P).find("[data-id=" + C + "]").find(".ui-team-member-status"),
+                    teamHealthInner: s(P).find("[data-id=" + C + "]").find(".ui-health-actual"),
+                    teamColor: s(P).find("[data-id=" + C + "]").find(".ui-team-member-color"),
                     playerId: 0,
                     prevHealth: 0,
                     prevStatus: {
@@ -7610,23 +8451,23 @@ webpackJsonp([1], {
             c = a("34e32c48"),
             m = (a("6b42806d"), a("989ad62a")),
             p = m.Input,
-            d = a("b198b546"),
-            h = (d.PingType, d.PingData),
-            u = m.Action,
-            g = m.GasMode,
-            y = a("300e2704"),
-            w = a("c2a798c8"),
-            x = a("10899aea"),
-            f = (a("1901e2d9"), a("ce29f17f")),
-            b = a("f398b7c7"),
-            _ = a("a7f094a3"),
-            S = _.GasRenderer,
-            k = _.GasSafeZoneRenderer,
+            d = m.Action,
+            h = m.GasMode,
+            u = a("300e2704"),
+            g = a("c2a798c8"),
+            y = a("10899aea"),
+            w = (a("1901e2d9"), a("e3e76f15")),
+            x = a("ce29f17f"),
+            f = a("f398b7c7"),
+            b = a("a7f094a3"),
+            _ = b.GasRenderer,
+            S = b.GasSafeZoneRenderer,
             v = a("26be8056"),
-            z = (a("d306eab6"), a("966d985b")),
-            M = a("edfa1d55"),
-            T = (a("119e8c4c"), a("feb8fc30"));
-        a("6e43d1d7"), r.prototype = {
+            k = (a("d306eab6"), a("966d985b")),
+            z = a("edfa1d55"),
+            M = (a("119e8c4c"), a("feb8fc30")),
+            T = (a("6e43d1d7"), a("d017e1e2"));
+        r.prototype = {
             n: function() {
                 this.gasRenderer.free(), this.clearUI(), s(document).off("keyup"), s(".ui-map-expand").off("mousedown"), s(".ui-map-expand").off("click"), s("#ui-map-minimize").off("mousedown"), s("#ui-map-minimize").off("click"), s("#ui-menu-display").off("click"), this.muteButton.off("mousedown"), this.muteButton.off("click"), this.fullScreenButton.off("mousedown"), this.fullScreenButton.off("click"), this.resumeButton.off("mousedown"), this.resumeButton.off("click"), s("#btn-spectate-quit").off("click"), s("#btn-game-quit").off("mousedown"), s("#btn-game-quit").off("click"), this.specStatsButton.off("click"), this.specPrevButton.off("click"), this.specNextButton.off("click"), this.bigmapClose.off("mousedown"), this.bigmapClose.off("click"), this.weapSwitches.off("mousedown"), s("#ui-game").off("mousemove"), s("#ui-game").off("mouseup"), s("#ui-weapon-id-1").off("mouseup"), s("#ui-weapon-id-2").off("mouseup"), this.moveStyleButton.off("touchstart"), this.aimStyleButton.off("touchstart"), this.aimLineButton.off("touchstart"), this.interactionElems.off("touchstart"), this.reloadElems.off("touchstart"), this.bigmapClose.off("touchend"), s(document).off("touchstart", this.onTouchScreen), s(".ui-team-member-health").find(".ui-bar-inner").css("width", this.teamMemberHealthBarWidth), s("#ui-center").off("mouseenter mouseleave"), this.inputBinds.menuHovered = !1, this.hudVisible || this.cycleHud(), this.pieTimer.destroy(), this.clearStatsElems(), this.o()
             },
@@ -7645,206 +8486,207 @@ webpackJsonp([1], {
                 this.adManager.onGameComplete(t)
             },
             c: function(e, t, a, i, r, o, n, s, l) {
-                var p = t.ie,
-                    d = t.re,
-                    h = t;
-                this.weapsDirty && this.resetWeapSlotStyling(), this.weapsDirty = !1, this.ee.oe(e);
-                var y = x.max(Math.floor(i.duration * (1 - i.circleT)), 0),
-                    _ = {
+                var p = t.ae,
+                    u = t.ie,
+                    b = t;
+                this.weapsDirty && this.resetWeapSlotStyling(), this.weapsDirty = !1, this.$.re(e);
+                var _ = y.max(Math.floor(i.duration * (1 - i.circleT)), 0),
+                    S = {
                         mode: i.mode,
-                        time: y
+                        time: _
                     };
-                if (this.gasState.mode != _.mode || this.gasState.time != _.time) {
-                    this.gasState = _;
-                    var S = this.gasState.mode == g.Moving;
-                    this.mapInfo.removeClass("icon-pulse"), this.gasIcon.removeClass("gas-icon"), this.gasIcon.removeClass("danger-icon"), S && this.mapInfo.addClass("icon-pulse"), this.gasIcon.addClass(S ? "danger-icon" : "gas-icon");
-                    var k = Math.floor(this.gasState.time / 60),
-                        z = this.gasState.time % 60,
-                        M = ("0" + z).slice(-2);
-                    this.gasTimer.html(k + ":" + M)
+                if (this.gasState.mode != S.mode || this.gasState.time != S.time) {
+                    this.gasState = S;
+                    var k = this.gasState.mode == h.Moving;
+                    this.mapInfo.removeClass("icon-pulse"), this.gasIcon.removeClass("gas-icon"), this.gasIcon.removeClass("danger-icon"), k && this.mapInfo.addClass("icon-pulse"), this.gasIcon.addClass(k ? "danger-icon" : "gas-icon");
+                    var z = Math.floor(this.gasState.time / 60),
+                        M = this.gasState.time % 60,
+                        T = ("0" + M).slice(-2);
+                    this.gasTimer.html(z + ":" + T)
                 }
-                if (this.spectatorCount = d.spectatorCount, this.updateSpectatorCountDisplay(!1), p.dead && !this.dead && (this.dead = !0, this.pieTimer.stop()), (h.downed || this.dead) && this.resetWeapSlotStyling(), this.actionSeq != t.action.seq && (this.actionSeq = t.action.seq, this.pieTimer.stop(), t.action.type != u.None && !this.displayingStats)) {
-                    var T = "",
+                if (this.spectatorCount = u.spectatorCount, this.updateSpectatorCountDisplay(!1), p.dead && !this.dead && (this.dead = !0, this.pieTimer.stop()), (b.downed || this.dead) && this.resetWeapSlotStyling(), this.actionSeq != t.action.seq && (this.actionSeq = t.action.seq, this.pieTimer.stop(), t.action.type != d.None && !this.displayingStats)) {
+                    var I = "",
                         P = "",
-                        I = "";
+                        C = "";
                     switch (t.action.type) {
-                        case u.Reload:
-                        case u.ReloadAlt:
-                            m.items[t.action.item] && (P = this.localization.translate("game-reloading"));
+                        case d.Reload:
+                        case d.ReloadAlt:
+                            w[t.action.item] && (P = this.localization.translate("game-reloading"));
                             break;
-                        case u.UseItem:
-                            m.items[t.action.item] && (P = this.localization.translate("game-using"), I = this.localization.translate("game-" + t.action.item));
+                        case d.UseItem:
+                            w[t.action.item] && (P = this.localization.translate("game-using"), C = this.localization.translate("game-" + t.action.item));
                             break;
-                        case u.Revive:
-                            var C = o.ne(t.action.targetId).name;
-                            P = this.localization.translate("game-reviving"), I = h.downed ? "" : C
+                        case d.Revive:
+                            var A = o.oe(t.action.targetId).name;
+                            P = this.localization.translate("game-reviving"), C = b.downed ? "" : A
                     }
-                    "" == P && "" == I || ("svo" == this.localization.translate("word-order") ? (T += P || "", T += I ? " " + I : "") : "sov" == this.localization.translate("word-order") && (T += I ? I + " " : "", T += P ? " " + P : ""), this.pieTimer.start(T, t.action.time, t.action.duration))
+                    "" == P && "" == C || ("svo" == this.localization.translate("word-order") ? (I += P || "", I += C ? " " + C : "") : "sov" == this.localization.translate("word-order") && (I += C ? C + " " : "", I += P ? " " + P : ""), this.pieTimer.start(I, t.action.time, t.action.duration))
                 }
                 this.bigmapDisplayed || (this.mapSprite.x = this.minimapPos.x + this.mapSprite.width / 2 - t.pos.x / a.width * this.mapSprite.width, this.mapSprite.y = this.minimapPos.y - this.mapSprite.height / 2 + t.pos.y / a.height * this.mapSprite.height);
-                var A = w.create(.5 * n.screenWidth / n.z(), .5 * n.screenHeight / n.z()),
-                    E = {
-                        min: w.sub(n.pos, A),
-                        max: w.add(n.pos, A)
+                var E = g.create(.5 * n.screenWidth / n.z(), .5 * n.screenHeight / n.z()),
+                    D = {
+                        min: g.sub(n.pos, E),
+                        max: g.add(n.pos, E)
                     },
-                    D = o.ne(t.__id).groupId,
-                    O = o.getGroupInfo(D);
-                if (!O) {
-                    var B = {
+                    O = o.oe(t.__id).groupId,
+                    B = o.getGroupInfo(O);
+                if (!B) {
+                    var R = {
                         playerId: t.__id,
-                        groupId: D,
+                        groupId: O,
                         spectating: this.spectating,
                         playing: this.game.playingTicker,
                         groupInfo: o.groupInfo
                     };
-                    b.logError("badTeamInfo_1: " + JSON.stringify(B))
+                    f.logError("badTeamInfo_1: " + JSON.stringify(R))
                 }
-                for (var L = f.uiLayout == f.UiLayout.Sm, R = O.playerIds.length, F = 0; F < R; F++) {
-                    var j = this.teamSelectors[F],
-                        q = O.playerIds[F],
-                        N = o.ne(q),
-                        V = q == h.__id,
-                        G = o.se(q);
-                    if (G && s > 1) {
-                        j.groupIdDisplayed || (j.groupId.css("display", "block"), j.groupIdDisplayed = !0), this.updateTeam(F, v.htmlEscape(N.name), G.health, {
-                            disconnected: G.disconnected,
-                            dead: G.dead,
-                            downed: G.downed,
-                            factionLeader: G.factionLeader
-                        }, N.playerId, N.teamId, o);
-                        for (var U in j.indicators)
-                            if (j.indicators.hasOwnProperty(U)) {
-                                var H = j.indicators[U],
-                                    W = H.elem,
-                                    K = !0;
-                                if ((!V || H.displayAll) && !l) {
-                                    var Z = G.pos,
-                                        X = w.normalizeSafe(w.sub(Z, n.pos), w.create(1, 0)),
-                                        Y = c.intersectRayAabb(n.pos, X, E.min, E.max),
-                                        J = Math.atan2(X.y, -X.x) + .5 * Math.PI,
-                                        Q = n.pointToScreen(Y),
-                                        $ = c.testCircleAabb(Z, m.player.radius, E.min, E.max);
-                                    if (!G.dead && !$) {
-                                        var ee = 32,
-                                            te = "translate(-50%, -50%) rotate(" + J + "rad)";
-                                        L && (ee = 16, te += " scale(0.5)"), K = !1;
-                                        var ae = "iphonex" == f.model && f.webview ? 20 : 0;
-                                        W.css({
-                                            left: x.clamp(Q.x, ee, n.screenWidth - ee),
-                                            top: x.clamp(Q.y, ee, n.screenHeight - ee - ae),
-                                            transform: te
-                                        }), H.displayed || (W.css("display", "block"), H.displayed = !0)
+                for (var L = x.uiLayout == x.UiLayout.Sm, F = B.playerIds.length, j = 0; j < F; j++) {
+                    var q = this.teamSelectors[j],
+                        N = B.playerIds[j],
+                        V = o.oe(N),
+                        G = N == b.__id,
+                        U = o.ne(N);
+                    if (U && s > 1) {
+                        q.groupIdDisplayed || (q.groupId.css("display", "block"), q.groupIdDisplayed = !0), this.updateTeam(j, v.htmlEscape(V.name), U.health, {
+                            disconnected: U.disconnected,
+                            dead: U.dead,
+                            downed: U.downed,
+                            factionLeader: U.factionLeader
+                        }, V.playerId, V.teamId, o);
+                        for (var H in q.indicators)
+                            if (q.indicators.hasOwnProperty(H)) {
+                                var W = q.indicators[H],
+                                    K = W.elem,
+                                    Z = !0;
+                                if ((!G || W.displayAll) && !l) {
+                                    var X = U.pos,
+                                        Y = g.normalizeSafe(g.sub(X, n.pos), g.create(1, 0)),
+                                        J = c.intersectRayAabb(n.pos, Y, D.min, D.max),
+                                        Q = Math.atan2(Y.y, -Y.x) + .5 * Math.PI,
+                                        $ = n.pointToScreen(J),
+                                        ee = c.testCircleAabb(X, m.player.radius, D.min, D.max);
+                                    if (!U.dead && !ee) {
+                                        var te = 32,
+                                            ae = "translate(-50%, -50%) rotate(" + Q + "rad)";
+                                        L && (te = 16, ae += " scale(0.5)"), Z = !1;
+                                        var ie = "iphonex" == x.model && x.webview ? 20 : 0;
+                                        K.css({
+                                            left: y.clamp($.x, te, n.screenWidth - te),
+                                            top: y.clamp($.y, te, n.screenHeight - te - ie),
+                                            transform: ae
+                                        }), W.displayed || (K.css("display", "block"), W.displayed = !0)
                                     }
                                 }
-                                K && H.displayed && (W.css("display", "none"), H.displayed = !1)
+                                Z && W.displayed && (K.css("display", "none"), W.displayed = !1)
                             }
                     }
                 }
-                for (var ie = R; ie < this.teamSelectors.length; ie++) {
-                    var re = this.teamSelectors[ie];
-                    for (var oe in re.indicators)
-                        if (re.indicators.hasOwnProperty(oe)) {
-                            var ne = re.indicators[oe];
-                            ne.displayed && (ne.elem.css("display", "none"), ne.displayed = !1)
+                for (var re = F; re < this.teamSelectors.length; re++) {
+                    var oe = this.teamSelectors[re];
+                    for (var ne in oe.indicators)
+                        if (oe.indicators.hasOwnProperty(ne)) {
+                            var se = oe.indicators[ne];
+                            se.displayed && (se.elem.css("display", "none"), se.displayed = !1)
                         }
-                    re.groupIdDisplayed && (re.groupId.css("display", "none"), re.groupIdDisplayed = !1)
+                    oe.groupIdDisplayed && (oe.groupId.css("display", "none"), oe.groupIdDisplayed = !1)
                 }
                 if (a.factionMode) {
-                    var se = o.ne(h.__id);
-                    if (this.flairId != se.teamId) {
-                        this.flairId = se.teamId;
-                        var le = 1 == this.flairId ? "red" : "blue";
+                    var le = o.oe(b.__id);
+                    if (this.flairId != le.teamId) {
+                        this.flairId = le.teamId;
+                        var ce = 1 == this.flairId ? "red" : "blue";
                         this.flairElems.css({
                             display: "block",
-                            "background-image": "url(../img/gui/player-patch-" + le + ".svg)"
+                            "background-image": "url(../img/gui/player-patch-" + ce + ".svg)"
                         })
                     }
                 }
-                s > 1 && this.groupPlayerCount != R && f.uiLayout == f.UiLayout.Lg && (this.groupPlayerCount = R, this.spectateOptionsWrapper.css({
+                s > 1 && this.groupPlayerCount != F && x.uiLayout == x.UiLayout.Lg && (this.groupPlayerCount = F, this.spectateOptionsWrapper.css({
                     top: this.groupPlayerCount * this.teamMemberHeight + 12
                 })), this.updatePlayerMapSprites(e, t, o, a), this.mapSpriteBarn.update(e, this, a), this.pieTimer.update(e, n), this.trySendAdStatus()
             },
             updatePlayerMapSprites: function(e, t, a, i) {
-                for (var r = this, o = a.ne(t.__id), n = (a.getGroupInfo(o.groupId), a.getTeamInfo(o.teamId), 0), s = function(e, t, a, i, o, s, c) {
+                for (var r = this, o = a.oe(t.__id), n = (a.getGroupInfo(o.groupId), a.getTeamInfo(o.teamId), 0), s = function(e, t, a, i, o, s, c) {
                         if (n >= r.playerMapSprites.length) {
                             var m = r.mapSpriteBarn.addSprite();
                             r.playerMapSprites.push(m)
                         }
                         var p = r.playerMapSprites[n++];
-                        p.pos = w.copy(e), p.scale = t, p.alpha = a, p.visible = i, p.zOrder = o, p.sprite.texture = l.Texture.fromImage(s), p.sprite.tint = c
+                        p.pos = g.copy(e), p.scale = t, p.alpha = a, p.visible = i, p.zOrder = o, p.sprite.texture = l.Texture.fromImage(s), p.sprite.tint = c
                     }, c = Object.keys(a.playerStatus), m = 0; m < c.length; m++) {
                     var p = a.playerStatus[c[m]],
                         d = p.playerId,
-                        h = a.ne(d),
+                        h = a.oe(d),
                         u = h.groupId == o.groupId,
-                        g = 65535 + 2 * d;
-                    d == o.playerId && (g += 131070), p.factionLeader && (g += 65535);
-                    var y = "player-map-inner.img";
-                    p.dead ? y = p.factionLeader ? "skull-leader.img" : "skull-outlined.img" : p.factionLeader ? y = "player-star.img" : p.downed && (y = u ? "player-map-inner.img" : "player-map-downed.img");
-                    var x = u ? a.getGroupColor(d) : a.getTeamColor(h.teamId),
-                        b = f.uiLayout == f.UiLayout.Sm ? .15 : .2,
+                        y = 65535 + 2 * d;
+                    d == o.playerId && (y += 131070), p.factionLeader && (y += 65535);
+                    var w = "player-map-inner.img";
+                    p.dead ? w = p.factionLeader ? "skull-leader.img" : "skull-outlined.img" : p.factionLeader ? w = "player-star.img" : p.downed && (w = u ? "player-map-inner.img" : "player-map-downed.img");
+                    var f = u ? a.getGroupColor(d) : a.getTeamColor(h.teamId);
+                    p.factionLeader && (f = a.getTeamColor(h.teamId));
+                    var b = x.uiLayout == x.UiLayout.Sm ? .15 : .2,
                         _ = b;
-                    if (_ = u ? p.dead ? 1.5 * b : p.factionLeader ? 1.25 * b : 1 * b : p.dead || p.downed || p.factionLeader ? 1.25 * b : .75 * b, s(p.pos, _, p.minimapAlpha, p.minimapVisible, g, y, x), u) {
-                        var S = f.uiLayout == f.UiLayout.Sm ? .25 : .3,
-                            k = p.minimapVisible && !p.factionLeader;
-                        s(p.pos, S, p.minimapAlpha, k, g - 1, "player-map-outer.img", 16777215)
+                    if (_ = u ? p.dead ? 1.5 * b : p.factionLeader ? 1.25 * b : 1 * b : p.dead || p.downed || p.factionLeader ? 1.25 * b : .75 * b, s(p.pos, _, p.minimapAlpha, p.minimapVisible, y, w, f), u) {
+                        var S = x.uiLayout == x.UiLayout.Sm ? .25 : .3,
+                            v = p.minimapVisible && !p.factionLeader;
+                        s(p.pos, S, p.minimapAlpha, v, y - 1, "player-map-outer.img", 16777215)
                     }
                 }
-                for (var v = this.playerMapSprites.length - 1; v >= n; v--) this.playerMapSprites[v].visible = !1
+                for (var k = this.playerMapSprites.length - 1; k >= n; k--) this.playerMapSprites[k].visible = !1
             },
             getMinimapMargin: function() {
-                return f.uiLayout == f.UiLayout.Sm ? 4 : 16
+                return x.uiLayout == x.UiLayout.Sm ? 4 : 16
             },
             getMinimapSize: function() {
-                return f.uiLayout == f.UiLayout.Sm ? 192 : 256
+                return x.uiLayout == x.UiLayout.Sm ? 192 : 256
             },
             getMinimapBorderWidth: function() {
-                return f.uiLayout == f.UiLayout.Sm ? 1 : 4
+                return x.uiLayout == x.UiLayout.Sm ? 1 : 4
             },
             createPing: function(e, t, a, i, r, o) {
                 var n = this,
-                    s = h[e];
+                    s = T[e];
                 if (s) {
                     var c = function(e, a) {
                             var i = n.mapSpriteBarn.addSprite();
-                            return i.pos = w.copy(t), i.scale = e, i.lifetime = s.mapLife, i.pulse = !1, i.zOrder = 100, i.sprite.texture = l.Texture.fromImage(s.mapTexture), i.sprite.tint = a, i
+                            return i.pos = g.copy(t), i.scale = e, i.lifetime = s.mapLife, i.pulse = !1, i.zOrder = 100, i.sprite.texture = l.Texture.fromImage(s.mapTexture), i.sprite.tint = a, i
                         },
                         m = function(e) {
                             var a = n.mapSpriteBarn.addSprite();
-                            return a.pos = w.copy(t), a.scale = 0, a.lifetime = s.pingLife, a.pulse = !0, a.zOrder = 99, a.sprite.texture = l.Texture.fromImage("ping-map-pulse.img"), a.sprite.tint = e, a
+                            return a.pos = g.copy(t), a.scale = 0, a.lifetime = s.pingLife, a.pulse = !0, a.zOrder = 99, a.sprite.texture = l.Texture.fromImage("ping-map-pulse.img"), a.sprite.tint = e, a
                         };
-                    if (s.mapEvent) c(1.5 * (f.uiLayout == f.UiLayout.Sm ? .15 : .2), s.tint).release(), m(s.tint).release();
+                    if (s.mapEvent) c(1.5 * (x.uiLayout == x.UiLayout.Sm ? .15 : .2), s.tint).release(), m(s.tint).release();
                     else {
                         var p = 16777215,
-                            d = r.ne(i),
-                            u = r.ne(a),
-                            g = r.se(a);
-                        d && u && g && (p = g.factionLeader ? 65280 : d.groupId == u.groupId ? r.getGroupColor(a) : r.getTeamColor(u.teamId)), this.playerPingSprites[a] || (this.playerPingSprites[a] = []);
-                        for (var y = this.playerPingSprites[a], x = 0; x < y.length; x++) y[x].free();
-                        var b = f.uiLayout == f.UiLayout.Sm ? .15 : .2,
-                            _ = c(b, p),
-                            S = m(p);
-                        y.push(_), y.push(S)
+                            d = r.oe(i),
+                            h = r.oe(a),
+                            u = r.ne(a);
+                        d && h && u && (p = u.factionLeader ? 65280 : d.groupId == h.groupId ? r.getGroupColor(a) : r.getTeamColor(h.teamId)), this.playerPingSprites[a] || (this.playerPingSprites[a] = []);
+                        for (var y = this.playerPingSprites[a], w = 0; w < y.length; w++) y[w].free();
+                        var f = x.uiLayout == x.UiLayout.Sm ? .15 : .2,
+                            b = c(f, p),
+                            _ = m(p);
+                        y.push(b), y.push(_)
                     }
                 }
             },
             updateMapSprite: function(e, t, a, i) {
-                e.displayed && (void 0 != e.life && (e.life -= i, e.displayed = e.life > 0, e.maxLife - e.life < .1 ? t.alpha = (e.maxLife - e.life) / .1 : e.life < .5 ? t.alpha = x.max(e.life / .5, 0) : t.alpha = 1), e.pulse && e.displayed && (e.scale = e.scale + i / 2.5, t.scale.set(e.scale, e.scale)), t.visible = a && t.alpha > 0)
+                e.displayed && (void 0 != e.life && (e.life -= i, e.displayed = e.life > 0, e.maxLife - e.life < .1 ? t.alpha = (e.maxLife - e.life) / .1 : e.life < .5 ? t.alpha = y.max(e.life / .5, 0) : t.alpha = 1), e.pulse && e.displayed && (e.scale = e.scale + i / 2.5, t.scale.set(e.scale, e.scale)), t.visible = a && t.alpha > 0)
             },
-            le: function(e) {
-                this.ee.ce(e)
+            se: function(e) {
+                this.$.le(e)
             },
             getMapPosFromWorldPos: function(e, t) {
                 var a = this.mapSprite.x - this.mapSprite.width / 2 + e.x / t.width * this.mapSprite.width,
                     i = this.mapSprite.y + this.mapSprite.height / 2 - e.y / t.height * this.mapSprite.height;
-                return w.create(a, i)
+                return g.create(a, i)
             },
             getWorldPosFromMapPos: function(e, t, a) {
                 var i = !1;
-                if (f.screenWidth, this.bigmapDisplayed) {
+                if (x.screenWidth, this.bigmapDisplayed) {
                     var r = (a.screenWidth - this.mapSprite.width) / 2,
                         o = (a.screenHeight - this.mapSprite.height) / 2;
-                    f.uiLayout != f.UiLayout.Sm || f.isLandscape || (o = 0), i = e.x > r && e.x < a.screenWidth - r && e.y > o && e.y < a.screenHeight - o
+                    x.uiLayout != x.UiLayout.Sm || x.isLandscape || (o = 0), i = e.x > r && e.x < a.screenWidth - r && e.y > o && e.y < a.screenHeight - o
                 } else if (this.minimapDisplayed) {
                     var n = this.getMinimapSize(),
                         s = this.getMinimapMargin(),
@@ -7853,10 +8695,10 @@ webpackJsonp([1], {
                     i = e.x > this.minimapPos.x - c && e.x < this.minimapPos.x + c && e.y > this.minimapPos.y - c && e.y < this.minimapPos.y + c
                 }
                 if (i) {
-                    var m = w.create(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y + this.mapSprite.height / 2),
+                    var m = g.create(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y + this.mapSprite.height / 2),
                         p = (e.x - m.x) / this.mapSprite.width * t.width,
                         d = (m.y - e.y) / this.mapSprite.height * t.height;
-                    return w.create(p, d)
+                    return g.create(p, d)
                 }
                 return !1
             },
@@ -7867,10 +8709,10 @@ webpackJsonp([1], {
                 this.gameElem.css("display", "block")
             },
             removeAds: function() {
-                if (f.webview && f.version >= "1.0.8") this.adManager.hideBannerAd();
+                if (x.webview && x.version >= "1.0.8") this.adManager.hideBannerAd();
                 else if (window.aiptag) {
                     var e = [];
-                    e = f.webview ? ["surviv-io_300x250_webview", "surviv-io_728x90_webview", "surviv-io_300x250_webview_2"] : f.mobile ? ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_mobile_2"] : ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_2"];
+                    e = x.webview ? ["surviv-io_300x250_webview", "surviv-io_728x90_webview", "surviv-io_300x250_webview_2"] : x.mobile ? ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_mobile_2"] : ["surviv-io_300x250", "surviv-io_728x90", "surviv-io_300x250_2"];
                     for (var t = 0; t < e.length; t++) ! function(t) {
                         var a = e[t];
                         window.aiptag.cmd.display.push(function() {
@@ -7880,10 +8722,10 @@ webpackJsonp([1], {
                 }
             },
             refeshMainPageAds: function() {
-                if (f.webview && f.version >= "1.0.8") this.adManager.showBannerAd();
+                if (x.webview && x.version >= "1.0.8") this.adManager.showBannerAd();
                 else if (window.aiptag) {
                     var e = [];
-                    f.webview ? (e = ["surviv-io_300x250_webview"], f.tablet && e.push("surviv-io_728x90_webview")) : f.mobile ? (e = ["surviv-io_300x250"], f.tablet && e.push("surviv-io_728x90")) : e = ["surviv-io_300x250", "surviv-io_728x90"];
+                    x.webview ? (e = ["surviv-io_300x250_webview"], x.tablet && e.push("surviv-io_728x90_webview")) : x.mobile ? (e = ["surviv-io_300x250"], x.tablet && e.push("surviv-io_728x90")) : e = ["surviv-io_300x250", "surviv-io_728x90"];
                     for (var t = 0; t < e.length; t++) ! function(t) {
                         var a = e[t];
                         window.aiptag.cmd.display.push(function() {
@@ -7893,10 +8735,10 @@ webpackJsonp([1], {
                 }
             },
             trySendAdStatus: function() {
-                if (++this.frame % 180 == 0 && !this.sentAdStatus && (window.aiptagPreroll || window.freestarPreroll || this.game.H)) {
+                if (++this.frame % 180 == 0 && !this.sentAdStatus && (window.aiptagPreroll || window.freestarPreroll || this.game.U)) {
                     this.sentAdStatus = !0;
-                    var e = new y.AdStatusMsg;
-                    e.blocked = window.adsBlocked, e.prerollLoaded = void 0 !== window.preroll, e.prerollFreestar = !!window.freestarPreroll, e.prerollAIP = !!window.aiptagPreroll, this.game.q(y.Msg.AdStatus, e)
+                    var e = new u.AdStatusMsg;
+                    e.blocked = window.adsBlocked, e.prerollLoaded = void 0 !== window.preroll, e.prerollFreestar = !!window.freestarPreroll, e.prerollAIP = !!window.aiptagPreroll, this.game.q(u.Msg.AdStatus, e)
                 }
             },
             showKill: function(e, t, a, i, r) {
@@ -7929,7 +8771,7 @@ webpackJsonp([1], {
             },
             clearUI: function() {
                 this.pieTimer.stop(), this.curAction = {
-                    type: u.None
+                    type: d.None
                 }, this.displayMapLarge(!0), this.displayMiniMap(), this.clearStatsElems(), this.killElem.hide(), this.clearTeamUI(), this.toggleEscMenu(!0), this.toggleLocalStats(!0), this.visibilityMode = 0, this.spectatorCount = 0, this.updatePlayerKills(0)
             },
             beginSpectating: function() {
@@ -7939,7 +8781,7 @@ webpackJsonp([1], {
                 this.displayingStats = !1, this.statsMain.css("display", "none"), this.statsElem.stop().css({
                     display: "none",
                     opacity: 0
-                }), this.statsContents.stop().hide(), f.webview && f.version >= "1.0.8" && this.adManager.hideBannerAd()
+                }), this.statsContents.stop().hide(), x.webview && x.version >= "1.0.8" && this.adManager.hideBannerAd()
             },
             teamModeToString: function(e) {
                 var t = {
@@ -7974,9 +8816,9 @@ webpackJsonp([1], {
                         height: ""
                     });
                     var g = n == r,
-                        y = g ? 1750 : 2500;
-                    this.setBannerAd(y, !0);
-                    for (var w = n == r || c && r == t, b = c && n != t, _ = w ? this.getTitleVictoryText(b) : this.getTitleDefeatText(l, b), S = 0, k = 0; k < e.length; k++) S += e[k].kills;
+                        w = g ? 1750 : 2500;
+                    this.setBannerAd(w, !0);
+                    for (var f = n == r || c && r == t, b = c && n != t, _ = f ? this.getTitleVictoryText(b) : this.getTitleDefeatText(l, b), S = 0, k = 0; k < e.length; k++) S += e[k].kills;
                     var z = this.getOverviewElems(l, a, S, h),
                         M = s("<div/>").append(s("<div/>", {
                             class: "ui-stats-header-title",
@@ -7995,12 +8837,12 @@ webpackJsonp([1], {
                                 html: t
                             }))
                         },
-                        P = f.uiLayout != f.UiLayout.Sm || f.tablet ? 250 : 125,
-                        I = 0;
-                    I -= (e.length - 1) * P / 2, I -= 10 * (e.length - 1);
+                        I = x.uiLayout != x.UiLayout.Sm || x.tablet ? 250 : 125,
+                        P = 0;
+                    P -= (e.length - 1) * I / 2, P -= 10 * (e.length - 1);
                     for (var C = 0; C < e.length; C++) {
                         var A = e[C],
-                            E = m.ne(A.playerId),
+                            E = m.oe(A.playerId),
                             D = i(A.timeAlive),
                             O = "ui-stats-info-player";
                         O += A.dead ? " ui-stats-info-status" : "";
@@ -8009,7 +8851,7 @@ webpackJsonp([1], {
                                 class: e
                             })
                         }(O);
-                        if (B.css("left", I), B.append(s("<div/>", {
+                        if (B.css("left", P), B.append(s("<div/>", {
                                 class: "ui-stats-info-player-name",
                                 html: v.htmlEscape(E.name)
                             })), B.append(T(this.localization.translate("game-kills"), "" + A.kills)).append(T(this.localization.translate("game-damage-dealt"), A.damageDealt)).append(T(this.localization.translate("game-damage-taken"), A.damageTaken)).append(T(this.localization.translate("game-survived"), D)), h && o) switch (C) {
@@ -8024,25 +8866,25 @@ webpackJsonp([1], {
                                 }));
                                 break;
                             case 3:
-                                var L = 1 == E.teamId ? "ui-stats-info-player-red-ribbon" : "ui-stats-info-player-blue-ribbon";
+                                var R = 1 == E.teamId ? "ui-stats-info-player-red-ribbon" : "ui-stats-info-player-blue-ribbon";
                                 B.append(s("<div/>", {
-                                    class: "ui-stats-info-player-badge " + L
+                                    class: "ui-stats-info-player-badge " + R
                                 }))
                         }
-                        this.statsInfoBox.append(B), I += 10
+                        this.statsInfoBox.append(B), P += 10
                     }
-                    var R = s("<a/>", {
+                    var L = s("<a/>", {
                         class: "ui-stats-restart btn-green btn-darken menu-option",
                         html: this.localization.translate("game-play-new-game")
                     });
-                    if (R.on("click", function() {
+                    if (L.on("click", function() {
                             u.quitGame()
-                        }), this.statsOptions.append(R), o || this.waitingForPlayers) R.css({
-                        width: f.uiLayout != f.UiLayout.Sm || f.tablet ? 225 : 130
+                        }), this.statsOptions.append(L), o || this.waitingForPlayers) L.css({
+                        width: x.uiLayout != x.UiLayout.Sm || x.tablet ? 225 : 130
                     });
                     else {
-                        R.css({
-                            left: f.uiLayout != f.UiLayout.Sm || f.tablet ? -72 : -46
+                        L.css({
+                            left: x.uiLayout != x.UiLayout.Sm || x.tablet ? -72 : -46
                         });
                         var F = s("<a/>", {
                             class: "btn-green btn-darken menu-option ui-stats-spectate",
@@ -8051,11 +8893,11 @@ webpackJsonp([1], {
                         F.on("click", this.beginSpectating.bind(this)), this.statsOptions.append(F)
                     }
                     var j = 0,
-                        q = 250 / x.max(1, e.length),
-                        N = 750 / x.max(1, e.length);
+                        q = 250 / y.max(1, e.length),
+                        N = 750 / y.max(1, e.length);
                     this.statsInfoBox.children().each(function(e, t) {
                         var a = s(t);
-                        a.css("opacity", 0), a.delay(y + N + (j + e) * q).animate({
+                        a.css("opacity", 0), a.delay(w + N + (j + e) * q).animate({
                             opacity: 1
                         }, 500, function() {
                             a.children().each(function(e, t) {
@@ -8068,10 +8910,10 @@ webpackJsonp([1], {
                         }), j++
                     }), this.statsOptions.children().each(function(e, t) {
                         var a = s(t);
-                        a.hide(), a.delay(y + N + (j + e) * q).fadeIn(500), j++
-                    }), this.statsElem.stop(), this.statsElem.css("display", "block"), this.statsElem.delay(y).animate({
+                        a.hide(), a.delay(w + N + (j + e) * q).fadeIn(500), j++
+                    }), this.statsElem.stop(), this.statsElem.css("display", "block"), this.statsElem.delay(w).animate({
                         opacity: 1
-                    }, 1e3), this.statsContents.stop(), this.statsContents.css("display", "block"), this.statsContents.delay(y).animate({
+                    }, 1e3), this.statsContents.stop(), this.statsContents.css("display", "block"), this.statsContents.delay(w).animate({
                         opacity: 1
                     }, 1e3)
                 }
@@ -8112,7 +8954,7 @@ webpackJsonp([1], {
                 t.on("click", function() {
                     e.quitGame()
                 }), this.statsOptions.append(t), t.css({
-                    left: f.uiLayout != f.UiLayout.Sm || f.tablet ? -72 : -46
+                    left: x.uiLayout != x.UiLayout.Sm || x.tablet ? -72 : -46
                 });
                 var a = s("<a/>", {
                     class: "btn-green btn-darken menu-option ui-stats-spectate",
@@ -8135,20 +8977,20 @@ webpackJsonp([1], {
                         a.killElem.stop(), a.killElem.hide()
                     },
                     r = Math.max(e - 150, 0);
-                f.webview && f.version >= "1.0.8" ? setTimeout(function() {
+                x.webview && x.version >= "1.0.8" ? setTimeout(function() {
                     i(), a.adManager.showBannerAd()
                 }, r) : window.adsBlocked ? (r += 500, setTimeout(function() {
-                    i(), s(f.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
+                    i(), s(x.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
                     var e = "";
-                    if (e = s(f.webview ? "#surviv-io_300x250_webview_2" : f.mobile ? "#surviv-io_300x250_mobile_2" : "#surviv-io_300x250_2")) {
+                    if (e = s(x.webview ? "#surviv-io_300x250_webview_2" : x.mobile ? "#surviv-io_300x250_mobile_2" : "#surviv-io_300x250_2")) {
                         e.html("");
-                        var t = s(".ui-stats-adblock-plea").clone();
+                        var t = s(".ui-stats-adblock").clone();
                         t.css("display", "block"), e.html(t)
                     }
                 }, r)) : window.aiptag && setTimeout(function() {
-                    i(), s(f.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
+                    i(), s(x.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
                     var e = "";
-                    (e = f.webview ? "surviv-io_300x250_webview_2" : f.mobile ? "surviv-io_300x250_mobile_2" : "surviv-io_300x250_2") && window.aiptag.cmd.display.push(function() {
+                    (e = x.webview ? "surviv-io_300x250_webview_2" : x.mobile ? "surviv-io_300x250_mobile_2" : "surviv-io_300x250_2") && window.aiptag.cmd.display.push(function() {
                         aipDisplayTag.display(e)
                     })
                 }, r)
@@ -8156,8 +8998,8 @@ webpackJsonp([1], {
             setSpectateTarget: function(e, t, a, i, r) {
                 if (e != this.spectatedPlayerId) {
                     this.setSpectating(!0, a);
-                    var o = r.ne(e),
-                        n = r.ne(t),
+                    var o = r.oe(e),
+                        n = r.oe(t),
                         s = o.name;
                     i && o.groupId != n.groupId && (s = o.anonName), this.spectatedPlayerId = e, this.spectatedPlayerName = v.htmlEscape(s), this.spectatedPlayerText.find("#spectate-player").html(this.spectatedPlayerName), this.actionSeq = -1, this.pieTimer.stop()
                 }
@@ -8205,8 +9047,8 @@ webpackJsonp([1], {
             },
             displayMapLarge: function(e) {
                 this.bigmapDisplayed = !e && !this.bigmapDisplayed, this.bigmapDisplayed ? this.container.alpha = 1 : this.container.alpha = this.minimapDisplayed ? 1 : 0;
-                var t = f.uiLayout == f.UiLayout.Sm ? ".js-ui-mobile-map-hidden" : "js-ui-desktop-map-hidden";
-                t += ", .js-ui-map-hidden", s(2 == this.visibilityMode ? ".js-ui-hud-show" : t).css("display", this.bigmapDisplayed ? "none" : "block"), s(".js-ui-map-show").css("display", this.bigmapDisplayed ? "block" : "none"), this.updateSpectatorCountDisplay(!0), this.redraw(this.game.ae)
+                var t = x.uiLayout == x.UiLayout.Sm ? ".js-ui-mobile-map-hidden" : "js-ui-desktop-map-hidden";
+                t += ", .js-ui-map-hidden", s(2 == this.visibilityMode ? ".js-ui-hud-show" : t).css("display", this.bigmapDisplayed ? "none" : "block"), s(".js-ui-map-show").css("display", this.bigmapDisplayed ? "block" : "none"), this.updateSpectatorCountDisplay(!0), this.redraw(this.game.te)
             },
             updateSpectatorCountDisplay: function(e) {
                 var t = !this.bigmapDisplayed && this.spectatorCount > 0;
@@ -8235,7 +9077,7 @@ webpackJsonp([1], {
             },
             displayMiniMap: function() {
                 if (!this.bigmapDisplayed) {
-                    var e = f.uiLayout == f.UiLayout.Sm;
+                    var e = x.uiLayout == x.UiLayout.Sm;
                     this.minimapDisplayed = !0, this.container.alpha = 1, this.mapInfo.css("bottom", this.mapInfoBottom), this.spectatorCounterContainer.css({
                         bottom: e ? 0 : 218,
                         left: e ? 0 : 6
@@ -8252,13 +9094,13 @@ webpackJsonp([1], {
             displayGasAnnouncement: function(e, t) {
                 var a = "";
                 switch (e) {
-                    case g.Waiting:
+                    case h.Waiting:
                         a = this.localization.translate("game-red-zone-advances");
                         var i = Math.floor(t / 60),
                             r = t - 60 * i;
                         a += i > 1 ? " " + i + " " + this.localization.translate("game-minutes") : "", a += 1 == i ? " " + i + " " + this.localization.translate("game-minute") : "", a += r > 0 ? " " + Math.floor(r) + " " + this.localization.translate("game-seconds") : "";
                         break;
-                    case g.Moving:
+                    case h.Moving:
                         a = this.localization.translate("game-red-zone-advancing")
                 }
                 this.displayAnnouncement(a)
@@ -8284,22 +9126,22 @@ webpackJsonp([1], {
             render: function(e, t, a, i, r, o) {
                 var n = t.getCircle(),
                     s = this.getMapPosFromWorldPos(n.pos, i),
-                    l = this.getMapPosFromWorldPos(w.add(n.pos, w.create(n.rad, 0)), i),
-                    c = w.length(w.sub(l, s));
+                    l = this.getMapPosFromWorldPos(g.add(n.pos, g.create(n.rad, 0)), i),
+                    c = g.length(g.sub(l, s));
                 this.gasRenderer.render(s, c, t.isActive());
                 var m = t.circleNew,
                     p = this.getMapPosFromWorldPos(m.pos, i),
-                    d = this.getMapPosFromWorldPos(w.add(m.pos, w.create(m.rad, 0)), i),
-                    h = w.length(w.sub(d, p)),
+                    d = this.getMapPosFromWorldPos(g.add(m.pos, g.create(m.rad, 0)), i),
+                    h = g.length(g.sub(d, p)),
                     u = this.getMapPosFromWorldPos(e, i),
-                    g = t.isActive(),
-                    y = t.isActive() && !this.bigmapDisplayed;
-                this.gasSafeZoneRenderer.render(p, h, u, g, y), r.renderAirstrikeZones(this, i, o)
+                    y = t.isActive(),
+                    w = t.isActive() && !this.bigmapDisplayed;
+                this.gasSafeZoneRenderer.render(p, h, u, y, w), r.renderAirstrikeZones(this, i, o)
             },
             updateHealthBar: function(e, t, a, i) {
                 var r = e,
                     n = .01 * i.health * r;
-                n = i.dead ? 0 : x.max(n, 1), t.css("width", n), n > 0 && a && a.css("width", n);
+                n = i.dead ? 0 : y.max(n, 1), t.css("width", n), n > 0 && a && a.css("width", n);
                 var s = i.health,
                     l = this.healthRed,
                     c = this.healthDarkpink;
@@ -8308,7 +9150,7 @@ webpackJsonp([1], {
                         backgroundColor: "red"
                     });
                     else {
-                        x.eqAbs(s, 100, .2) ? (l = this.healthGrey, c = this.healthGrey) : x.eqAbs(s, 75, .2) || s >= 75 ? (l = this.healthWhite, c = this.healthWhite) : (l = this.healthDarkpink, c = this.healthLightpink);
+                        y.eqAbs(s, 100, .2) ? (l = this.healthGrey, c = this.healthGrey) : y.eqAbs(s, 75, .2) || s >= 75 ? (l = this.healthWhite, c = this.healthWhite) : (l = this.healthDarkpink, c = this.healthLightpink);
                         var m = l.getColors(),
                             p = c.getColors(),
                             d = o(m.r, p.r, 45, s),
@@ -8341,7 +9183,7 @@ webpackJsonp([1], {
                 s(".ui-team-member").css("display", "none"), s(".ui-team-indicator").css("display", "none"), s(".ui-team-member-name").removeAttr("style"), s(".ui-team-member-status").removeAttr("style"), s(".ui-team-member-status").removeClass("ui-team-member-status-downed ui-team-member-status-dead ui-team-member-status-disconnected icon-pulse"), this.teamSelectors = []
             },
             resize: function(e, t) {
-                this.screenScaleFactor = f.uiLayout == f.UiLayout.Sm ? .5626 : x.min(1, x.clamp(t.screenWidth / 1280, .75, 1) * x.clamp(t.screenHeight / 1024, .75, 1)), this.pieTimer.resize(this.touch, this.screenScaleFactor), this.gasRenderer.resize(), this.mapSprite.texture = e.getMapTexture(), this.redraw(t)
+                this.screenScaleFactor = x.uiLayout == x.UiLayout.Sm ? .5626 : y.min(1, y.clamp(t.screenWidth / 1280, .75, 1) * y.clamp(t.screenHeight / 1024, .75, 1)), this.pieTimer.resize(this.touch, this.screenScaleFactor), this.gasRenderer.resize(), this.mapSprite.texture = e.getMapTexture(), this.redraw(t)
             },
             redraw: function(e) {
                 var t = e.screenWidth,
@@ -8349,13 +9191,13 @@ webpackJsonp([1], {
                     i = this.getMinimapMargin(),
                     r = 0,
                     o = 0;
-                "iphonex" == f.model && (f.isLandscape ? r += 28 : o += 32);
+                "iphonex" == x.model && (x.isLandscape ? r += 28 : o += 32);
                 var n = this.getMinimapSize(),
                     s = this.getMinimapBorderWidth(),
-                    l = f.uiLayout == f.UiLayout.Sm;
+                    l = x.uiLayout == x.UiLayout.Sm;
                 if (this.display.border.clear(), this.container.mask.clear(), this.bigmapDisplayed) {
-                    var c = x.min(t, a);
-                    this.mapSprite.width = c, this.mapSprite.height = c, this.mapSprite.x = t / 2, this.mapSprite.y = a / 2, this.mapSprite.alpha = 1, this.container.mask.beginFill(16777215, 1), this.container.mask.drawRect(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y - this.mapSprite.height / 2, this.mapSprite.width, this.mapSprite.height), this.container.mask.endFill(), f.touch && this.bigmapCollision.css({
+                    var c = y.min(t, a);
+                    this.mapSprite.width = c, this.mapSprite.height = c, this.mapSprite.x = t / 2, this.mapSprite.y = a / 2, this.mapSprite.alpha = 1, this.container.mask.beginFill(16777215, 1), this.container.mask.drawRect(this.mapSprite.x - this.mapSprite.width / 2, this.mapSprite.y - this.mapSprite.height / 2, this.mapSprite.width, this.mapSprite.height), this.container.mask.endFill(), x.touch && this.bigmapCollision.css({
                         width: a,
                         height: t
                     })
@@ -8396,7 +9238,7 @@ webpackJsonp([1], {
                 this.currentGameTab = e, this.gameTabs.css("display", "none"), this.gameTabBtns.removeClass("btn-game-menu-selected"), s("#ui-game-tab-" + this.currentGameTab).css("display", "block"), s("#btn-game-" + this.currentGameTab).addClass("btn-game-menu-selected"), "keybinds" == this.currentGameTab ? this.inputBindUi.refresh() : this.inputBindUi.cancelBind()
             }
         }, e.exports = {
-            me: r
+            ce: r
         }
     },
     "33375c30": function(e, t, a) {
@@ -8414,11 +9256,12 @@ webpackJsonp([1], {
         var o = (a("0e566746"), a("8b1dfb45")),
             n = a("6b42806d"),
             s = a("10899aea"),
-            l = a("ceee80d9"),
+            l = a("7510cc08"),
             c = a("1901e2d9"),
             m = a("c2a798c8"),
-            p = a("6d494b5c");
-        a("c347b8dd"), a("af8ba00f"), r.prototype = {
+            p = a("6d494b5c"),
+            d = (a("c347b8dd"), a("af8ba00f"), a("aca73f78"));
+        r.prototype = {
             o: function() {
                 this.isNew = !1, this.residue = null, this.ceilingDead = !1, this.ceilingDamaged = !1, this.playedCeilingDeadFx = !1, this.playedSolvedPuzzleFx = !1, this.hasPuzzle = !1, this.puzzleErrSeqModified = !1, this.puzzleErrSeq = 0, this.puzzleSolved = !1, this.interiorSound = ""
             },
@@ -8443,85 +9286,91 @@ webpackJsonp([1], {
             },
             l: function(e, t, a, i) {
                 var r = this;
-                t && (this.type = e.type, this.pos = m.copy(e.pos), this.ori = e.ori, this.rot = l.oriToRad(e.ori), this.scale = 1, this.layer = e.layer), this.ceilingDead = e.ceilingDead, this.ceilingDamaged = e.ceilingDamaged, this.occupied = e.occupied, this.hasPuzzle = e.hasPuzzle, this.hasPuzzle && (this.puzzleErrSeqModified = e.puzzleErrSeq != this.puzzleErrSeq, this.puzzleSolved = e.puzzleSolved, this.puzzleErrSeq = e.puzzleErrSeq);
-                var s = l.Defs[this.type];
-                if (this.interiorSound = "", s.interiorSound && (s.interiorSound.stopOnPuzzleComplete && this.puzzleSolved || s.interiorSound.startOnPuzzleComplete ? s.interiorSound.startOnPuzzleComplete && this.puzzleSolved && (this.interiorSound = s.interiorSound.sound) : this.interiorSound = s.interiorSound.sound), a) {
-                    this.isNew = !0, this.playedCeilingDeadFx = void 0 !== s.ceiling.destroy && -1 != i.map.deadCeilingIds.indexOf(this.__id), this.playedSolvedPuzzleFx = this.hasPuzzle && -1 != i.map.solvedPuzzleIds.indexOf(this.__id);
-                    var p = function(e) {
+                t && (this.type = e.type, this.pos = m.copy(e.pos), this.ori = e.ori, this.rot = s.oriToRad(e.ori), this.scale = 1, this.layer = e.layer), this.ceilingDead = e.ceilingDead, this.ceilingDamaged = e.ceilingDamaged, this.occupied = e.occupied, this.hasPuzzle = e.hasPuzzle, this.hasPuzzle && (this.puzzleErrSeqModified = e.puzzleErrSeq != this.puzzleErrSeq, this.puzzleSolved = e.puzzleSolved, this.puzzleErrSeq = e.puzzleErrSeq);
+                var p = d[this.type];
+                if (this.interiorSound = "", p.interiorSound && (p.interiorSound.stopOnPuzzleComplete && this.puzzleSolved || p.interiorSound.startOnPuzzleComplete ? p.interiorSound.startOnPuzzleComplete && this.puzzleSolved && (this.interiorSound = p.interiorSound.sound) : this.interiorSound = p.interiorSound.sound), a) {
+                    this.isNew = !0, this.playedCeilingDeadFx = void 0 !== p.ceiling.destroy && -1 != i.map.deadCeilingIds.indexOf(this.__id), this.playedSolvedPuzzleFx = this.hasPuzzle && -1 != i.map.solvedPuzzleIds.indexOf(this.__id);
+                    var h = function(e) {
                         var t = e.pos || m.create(0, 0),
-                            a = l.oriToRad(e.rot || 0),
+                            a = s.oriToRad(e.rot || 0),
                             n = r.allocSprite();
                         n.texture = o.Texture.fromImage(e.sprite), n.tint = e.tint;
-                        var s = i.map.getMapDef().biome.valueAdjust;
-                        return s < 1 && (n.tint = c.adjustValue(n.tint, s)), n.posOffset = m.rotate(t, r.rot), n.rotOffset = a, n.imgAlpha = e.alpha, n.alpha = n.imgAlpha, n.defScale = e.scale, n.mirrorY = !!e.mirrorY, n.visible = !0, n
+                        var l = i.map.getMapDef().biome.valueAdjust;
+                        return l < 1 && (n.tint = c.adjustValue(n.tint, l)), n.posOffset = m.rotate(t, r.rot), n.rotOffset = a, n.imgAlpha = e.alpha, n.alpha = n.imgAlpha, n.defScale = e.scale, n.mirrorY = !!e.mirrorY, n.visible = !0, n
                     };
-                    this.bounds = n.transform(l.getBoundingCollider(this.type), this.pos, this.rot, this.scale), this.zIdx = s.zIdx || 0, this.surfaces = [];
-                    for (var d = 0; d < s.floor.surfaces.length; d++) {
-                        for (var h = s.floor.surfaces[d], u = {
-                                surface: h.type,
+                    this.bounds = n.transform(l.getBoundingCollider(this.type), this.pos, this.rot, this.scale), this.zIdx = p.zIdx || 0, this.surfaces = [];
+                    for (var u = 0; u < p.floor.surfaces.length; u++) {
+                        for (var g = p.floor.surfaces[u], y = {
+                                surface: g.type,
                                 colliders: []
-                            }, g = 0; g < h.collision.length; g++) u.colliders.push(n.transform(h.collision[g], this.pos, this.rot, this.scale));
-                        this.surfaces.push(u)
+                            }, w = 0; w < g.collision.length; w++) y.colliders.push(n.transform(g.collision[w], this.pos, this.rot, this.scale));
+                        this.surfaces.push(y)
                     }
-                    var y = Object.assign({}, {
+                    var x = Object.assign({}, {
                         dist: 5.5,
                         width: 2.75,
                         linger: 0,
                         fadeRate: 12
-                    }, s.ceiling.vision);
+                    }, p.ceiling.vision);
                     this.ceiling = {
                         scopeIn: [],
                         scopeOut: [],
-                        vision: y,
+                        vision: x,
                         visionTicker: 0,
                         fadeAlpha: 1
                     };
-                    for (var w = 0; w < s.ceiling.scopeIn.length; w++) this.ceiling.scopeIn.push(n.transform(s.ceiling.scopeIn[w], this.pos, this.rot, this.scale));
-                    for (var x = 0; x < s.ceiling.scopeOut.length; x++) this.ceiling.scopeOut.push(n.transform(s.ceiling.scopeOut[x], this.pos, this.rot, this.scale));
-                    this.disableScopeIn = !!s.ceiling.disableScopeIn, this.imgs = [];
-                    for (var f = 0; f < s.floor.imgs.length; f++) this.imgs.push({
-                        sprite: p(s.floor.imgs[f]),
+                    for (var f = 0; f < p.ceiling.scopeIn.length; f++) this.ceiling.scopeIn.push(n.transform(p.ceiling.scopeIn[f], this.pos, this.rot, this.scale));
+                    for (var b = 0; b < p.ceiling.scopeOut.length; b++) this.ceiling.scopeOut.push(n.transform(p.ceiling.scopeOut[b], this.pos, this.rot, this.scale));
+                    this.disableScopeIn = !!p.ceiling.disableScopeIn, this.imgs = [];
+                    for (var _ = 0; _ < p.floor.imgs.length; _++) this.imgs.push({
+                        sprite: h(p.floor.imgs[_]),
                         isCeiling: !1,
                         zOrd: this.zIdx,
-                        zIdx: 100 * this.__id + f
+                        zIdx: 100 * this.__id + _
                     });
-                    for (var b = 0; b < s.ceiling.imgs.length; b++) {
-                        var _ = s.ceiling.imgs[b];
+                    for (var S = 0; S < p.ceiling.imgs.length; S++) {
+                        var v = p.ceiling.imgs[S];
                         this.imgs.push({
-                            sprite: p(_),
+                            sprite: h(v),
                             isCeiling: !0,
-                            removeOnDamaged: !!_.removeOnDamaged,
+                            removeOnDamaged: !!v.removeOnDamaged,
                             zOrd: 750 - this.zIdx,
-                            zIdx: 100 * this.__id + b
+                            zIdx: 100 * this.__id + S
                         })
                     }
-                    for (var S = s.occupiedEmitters || [], k = 0; k < S.length; k++) {
-                        var v = S[k],
-                            z = this.rot + v.rot,
-                            M = m.add(this.pos, m.rotate(v.pos, z)),
-                            T = m.rotate(m.create(1, 0), z),
-                            P = v.scale,
-                            I = null;
-                        if (v.parentToCeiling) {
-                            for (var C = -1, A = 0; A < this.imgs.length; A++) this.imgs[A].isCeiling && (C = A);
-                            if (C >= 0) {
-                                var E = this.imgs[C];
-                                I = E.sprite, M = m.mul(v.pos, 32), M.y *= -1, T = m.rotate(m.create(1, 0), v.rot), P = 1 / E.sprite.defScale
+                    for (var k = p.occupiedEmitters || [], z = 0; z < k.length; z++) {
+                        var M = k[z],
+                            T = this.rot + M.rot,
+                            I = m.add(this.pos, m.rotate(M.pos, T)),
+                            P = m.rotate(m.create(1, 0), T),
+                            C = M.scale,
+                            A = null;
+                        if (M.parentToCeiling) {
+                            for (var E = -1, D = 0; D < this.imgs.length; D++) this.imgs[D].isCeiling && (E = D);
+                            if (E >= 0) {
+                                var O = this.imgs[E];
+                                A = O.sprite, I = m.mul(M.pos, 32), I.y *= -1, P = m.rotate(m.create(1, 0), M.rot), C = 1 / O.sprite.defScale
                             }
                         }
-                        var D = i.particleBarn.addEmitter(v.type, M, T, P, v.layer, Number.MAX_VALUE, I);
-                        this.emitters.push(D)
+                        var B = i.particleBarn.addEmitter(M.type, {
+                            pos: I,
+                            dir: P,
+                            scale: C,
+                            layer: M.layer,
+                            parent: A
+                        });
+                        this.emitters.push(B)
                     }
                 }
             },
-            c: function(e, t, a, r, n, c, d, h) {
+            c: function(e, t, a, r, n, l, c, h) {
                 if (this.hasPuzzle) {
-                    var u = l.Defs[this.type];
+                    var u = d[this.type];
                     if (this.puzzleErrSeqModified && (this.puzzleErrSeqModified = !1, !this.isNew)) {
-                        for (var g = this, y = m.length(m.sub(c.pos, g.pos)), w = t.pe.m(), x = 0; x < w.length; x++) {
+                        for (var g = this, y = m.length(m.sub(l.pos, g.pos)), w = t.me.m(), x = 0; x < w.length; x++) {
                             var f = w[x];
                             if (f.active && f.isPuzzlePiece && f.parentBuildingId == this.__id) {
-                                var b = m.length(m.sub(c.pos, f.pos));
+                                var b = m.length(m.sub(l.pos, f.pos));
                                 b < y && (g = f, y = b)
                             }
                         }
@@ -8540,44 +9389,44 @@ webpackJsonp([1], {
                     }))
                 }
                 if (this.ceilingDead && !this.playedCeilingDeadFx && (t.deadCeilingIds.push(this.__id), this.playedCeilingDeadFx = !0, this.isNew || this.destroyCeilingFx(a, r)), this.isNew = !1, this.ceilingDead && !this.residue) {
-                    var _ = l.Defs[this.type];
+                    var _ = d[this.type];
                     if (void 0 !== _.ceiling.destroy) {
                         var S = this.allocSprite();
                         S.texture = o.Texture.fromImage(_.ceiling.destroy.residue), S.position.set(0, 0), S.scale.set(1, 1), S.rotation = 0, S.tint = 16777215, S.visible = !0, this.imgs[0].sprite.addChild(S), this.residue = S
                     }
                 }
                 this.ceiling.visionTicker -= e;
-                var k = !1,
-                    v = Number.MAX_VALUE,
+                var v = !1,
+                    k = Number.MAX_VALUE,
                     z = this.ceiling.vision;
                 if (!this.disableScopeIn)
                     for (var M = 0; M < this.ceiling.scopeIn.length; M++)
-                        if (this.layer == c.layer || 2 & c.layer) {
-                            var T = p.scanCollider(this.ceiling.scopeIn[M], t.pe.m(), c.pos, c.layer, .5, 2 * z.width, z.dist, 5);
+                        if (this.layer == l.layer || 2 & l.layer) {
+                            var T = p.scanCollider(this.ceiling.scopeIn[M], t.me.m(), l.pos, l.layer, .5, 2 * z.width, z.dist, 5);
                             if (T) {
-                                k = !0, v = T.dist;
+                                v = !0, k = T.dist;
                                 break
                             }
                         }
-                this.ceilingDead && (k = !0), k && (this.ceiling.visionTicker = z.linger + 1e-4), c.noCeilingRevealTicker > 0 && (this.ceiling.visionTicker = 0);
-                var P = this.ceiling.visionTicker > 0,
-                    I = i(this.ceiling.fadeAlpha, P ? 0 : 1, e * (P ? 12 : z.fadeRate));
-                this.ceiling.fadeAlpha += I, k && this.interiorSound && (n.interiorSound.name = this.interiorSound, n.interiorSound.volume = s.remap(v, z.dist + 2, 0, 0, 1));
+                this.ceilingDead && (v = !0), v && (this.ceiling.visionTicker = z.linger + 1e-4), l.noCeilingRevealTicker > 0 && (this.ceiling.visionTicker = 0);
+                var I = this.ceiling.visionTicker > 0,
+                    P = i(this.ceiling.fadeAlpha, I ? 0 : 1, e * (I ? 12 : z.fadeRate));
+                this.ceiling.fadeAlpha += P, v && this.interiorSound && (n.interiorSound.name = this.interiorSound, n.interiorSound.volume = s.remap(k, z.dist + 2, 0, 0, 1));
                 for (var C = 0; C < this.emitters.length; C++) this.emitters[C].enabled = this.occupied;
                 for (var A = 0; A < this.imgs.length; A++) {
                     var E = this.imgs[A],
                         D = E.isCeiling ? this.ceiling.fadeAlpha : 1;
                     this.positionSprite(E.sprite, D, h), E.removeOnDamaged && this.ceilingDamaged && (E.sprite.visible = !this.ceilingDamaged);
                     var O = this.layer;
-                    E.isCeiling && (this.layer == c.layer || 2 & c.layer && 1 == this.layer) && (O |= 2), d.addPIXIObj(E.sprite, O, E.zOrd, E.zIdx)
+                    E.isCeiling && (this.layer == l.layer || 2 & l.layer && 1 == this.layer) && (O |= 2), c.addPIXIObj(E.sprite, O, E.zOrd, E.zIdx)
                 }
             },
             destroyCeilingFx: function(e, t) {
-                for (var a = l.Defs[this.type].ceiling.destroy, i = this.surfaces[0], r = 0; r < i.colliders.length; r++) {
+                for (var a = d[this.type].ceiling.destroy, i = this.surfaces[0], r = 0; r < i.colliders.length; r++) {
                     for (var o = n.toAabb(i.colliders[r]), s = 0; s < a.particleCount; s++) {
-                        var p = m.create(c.random(o.min.x, o.max.x), c.random(o.min.y, o.max.y)),
-                            d = m.mul(m.randomUnit(), c.random(0, 15));
-                        e.addParticle(a.particle, this.layer, p, d)
+                        var l = m.create(c.random(o.min.x, o.max.x), c.random(o.min.y, o.max.y)),
+                            p = m.mul(m.randomUnit(), c.random(0, 15));
+                        e.addParticle(a.particle, this.layer, l, p)
                     }
                     break
                 }
@@ -9380,7 +10229,7 @@ webpackJsonp([1], {
                         name: "footstep_09",
                         channel: "sfx"
                     }],
-                    atlases: ["gradient", "shared", "woods"]
+                    atlases: ["gradient", "loadout", "shared", "woods"]
                 },
                 biome: {
                     colors: {
@@ -9642,7 +10491,7 @@ webpackJsonp([1], {
         "use strict";
 
         function i(e, t, a, i) {
-            var r = d("<div/>", {
+            var r = l("<div/>", {
                 class: "copy-toast",
                 html: e
             });
@@ -9656,140 +10505,186 @@ webpackJsonp([1], {
                 queue: !1,
                 duration: 300,
                 complete: function() {
-                    d(this).fadeOut(250, function() {
-                        d(this).remove()
+                    l(this).fadeOut(250, function() {
+                        l(this).remove()
                     })
                 }
             })
         }
 
         function r(e, t) {
-            var a = d("#start-menu");
-            d("#btn-help").click(function() {
-                var e = d("#start-help");
+            var a = l("#start-menu");
+            l("#btn-help").click(function() {
+                var e = l("#start-help");
                 a.addClass("display-help");
                 var t = (e.position().top, a.css("height"));
                 return e.css("display", "block"), a.animate({
                     scrollTop: t
-                }, 1e3), g.storeGeneric("info", "help"), !1
+                }, 1e3), p.storeGeneric("info", "help"), !1
             });
-            var r = d("#team-mobile-link"),
-                s = d("#team-mobile-link-desc"),
-                c = d("#team-mobile-link-warning"),
-                m = d("#team-link-input"),
-                p = d("#social-share-block"),
-                y = d("#news-block");
-            d("#btn-join-team").click(function() {
-                return d("#server-warning").css("display", "none"), m.val(""), r.css("display", "block"), s.css("display", "block"), c.css("display", "none"), a.css("display", "none"), y.css("display", "none"), p.css("display", "none"), !1
-            }), d("#btn-team-mobile-link-leave").click(function() {
-                return r.css("display", "none"), m.val(""), a.css("display", "block"), y.css("display", "block"), p.css("display", "block"), !1
-            }), d("#team-link-input").on("keypress", function(e) {
-                13 === (e.which || e.keyCode) && (d("#btn-team-mobile-link-join").trigger("click"), d(this).blur())
-            }), d("#player-name-input-solo").on("keypress", function(e) {
-                13 === (e.which || e.keyCode) && d(this).blur()
-            }), h.mobile && "ios" != h.os && (d("#player-name-input-solo").on("focus", function() {
-                if (h.isLandscape) {
-                    var e = h.screenHeight,
+            var r = l("#team-mobile-link"),
+                o = l("#team-mobile-link-desc"),
+                n = l("#team-mobile-link-warning"),
+                s = l("#team-link-input"),
+                h = l("#social-share-block"),
+                u = l("#news-block");
+            l("#btn-join-team").click(function() {
+                return l("#server-warning").css("display", "none"), s.val(""), r.css("display", "block"), o.css("display", "block"), n.css("display", "none"), a.css("display", "none"), u.css("display", "none"), h.css("display", "none"), !1
+            }), l("#btn-team-mobile-link-leave").click(function() {
+                return r.css("display", "none"), s.val(""), a.css("display", "block"), u.css("display", "block"), h.css("display", "block"), !1
+            }), l("#team-link-input").on("keypress", function(e) {
+                13 === (e.which || e.keyCode) && (l("#btn-team-mobile-link-join").trigger("click"), l(this).blur())
+            }), l("#player-name-input-solo").on("keypress", function(e) {
+                13 === (e.which || e.keyCode) && l(this).blur()
+            }), c.mobile && "ios" != c.os && (l("#player-name-input-solo").on("focus", function() {
+                if (c.isLandscape) {
+                    var e = c.screenHeight,
                         t = e <= 282 ? 18 : 36;
-                    document.body.scrollTop = d(this).offset().top - t
+                    document.body.scrollTop = l(this).offset().top - t
                 }
-            }), d("#player-name-input-solo").on("blur", function() {
+            }), l("#player-name-input-solo").on("blur", function() {
                 document.body.scrollTop = 0
             }));
-            var w = d(".modal"),
-                x = (d(".modal-content"), d("#start-bottom-right")),
-                f = d("#start-top-left"),
-                b = d("#start-top-right"),
-                _ = d("#ui-modal-keybind");
-            d(".btn-keybind").click(function() {
-                return _.finish(), _.css("display", "block"), x.fadeOut(200), b.fadeOut(200), d("#ui-modal-keybind-share").css("display", "none"), d("#keybind-warning").css("display", "none"), d("#ui-modal-keybind-list").css("height", "420px"), d("#keybind-code-input").html(""), l(), t.refresh(), !1
-            }), o(function(e, a) {
-                (a.is(d("#ui-modal-keybind")) || a.parents("#ui-modal-keybind").length > 0) && (e.stopPropagation(), t.cancelBind())
-            }), d(".js-btn-keybind-share").click(function() {
-                "block" == d("#ui-modal-keybind-share").css("display") ? (d("#ui-modal-keybind-share").css("display", "none"), d("#ui-modal-keybind-list").css("height", "420px")) : (d("#ui-modal-keybind-share").css("display", "block"), d("#ui-modal-keybind-list").css("height", "275px"))
-            }), d("#keybind-link, #keybind-copy").click(function(e) {
-                i("Copied!", _, d("#keybind-link"), e);
-                var t = d("#keybind-link").html();
-                u.copyTextToClipboard(t)
-            }), d("#btn-keybind-code-load").on("click", function(a) {
-                var r = d("#keybind-code-input").val();
-                d("#keybind-code-input").val("");
+            var g = l("#start-bottom-right"),
+                y = l("#start-top-left"),
+                w = l("#start-top-right"),
+                x = new d(l("#ui-modal-keybind"));
+            x.onShow(function() {
+                g.fadeOut(200), w.fadeOut(200), l("#ui-modal-keybind-share").css("display", "none"), l("#keybind-warning").css("display", "none"), l("#ui-modal-keybind-list").css("height", "420px"), l("#keybind-code-input").html(""), t.refresh()
+            }), x.onHide(function() {
+                g.fadeIn(200), w.fadeIn(200), t.cancelBind()
+            }), l(".btn-keybind").click(function() {
+                return x.show(), !1
+            }), l(".js-btn-keybind-share").click(function() {
+                "block" == l("#ui-modal-keybind-share").css("display") ? (l("#ui-modal-keybind-share").css("display", "none"), l("#ui-modal-keybind-list").css("height", "420px")) : (l("#ui-modal-keybind-share").css("display", "block"), l("#ui-modal-keybind-list").css("height", "275px"))
+            }), l("#keybind-link, #keybind-copy").click(function(e) {
+                i("Copied!", x.selector, l("#keybind-link"), e);
+                var t = l("#keybind-link").html();
+                m.copyTextToClipboard(t)
+            }), l("#btn-keybind-code-load").on("click", function(a) {
+                var r = l("#keybind-code-input").val();
+                l("#keybind-code-input").val("");
                 var o = e.fromBase64(r);
-                d("#keybind-warning").css("display", o ? "none" : "block"), o && (i("Loaded!", _, d("#btn-keybind-code-load"), a), e.saveBinds()), t.refresh()
+                l("#keybind-warning").css("display", o ? "none" : "block"), o && (i("Loaded!", x.selector, l("#btn-keybind-code-load"), a), e.saveBinds()), t.refresh()
             });
-            var S = d("#modal-settings");
-            d(".btn-settings").click(function() {
-                return S.finish(), S.css("display", "block"), x.fadeOut(200), b.fadeOut(200), l(), !1
+            var f = new d(l("#modal-settings"));
+            f.onShow(function() {
+                g.fadeOut(200), w.fadeOut(200)
+            }), f.onHide(function() {
+                g.fadeIn(200), w.fadeIn(200)
+            }), l(".btn-settings").click(function() {
+                return f.show(), !1
+            }), l(".modal-settings-text").click(function(e) {
+                var t = l(this).siblings("input:checkbox");
+                t.prop("checked", !t.is(":checked")), t.trigger("change")
             });
-            var k = d("#modal-hamburger");
-            d("#btn-hamburger").click(function() {
-                return k.finish(), k.css("display", "block"), f.fadeOut(200), l(), !1
-            }), d(".account-details-guest, .account-details-user").click(function() {
-                if (h.mobile) {
-                    var e = d("#modal-mobile-account");
-                    return e.finish(), e.css("display", "block"), d("#start-top-right").fadeOut(200), l(), !1
+            var b = new d(l("#modal-hamburger"));
+            b.onShow(function() {
+                y.fadeOut(200)
+            }), b.onHide(function() {
+                y.fadeIn(200)
+            }), l("#btn-hamburger").click(function() {
+                return b.show(), !1
+            });
+            var _ = new d(l("#modal-mobile-account"));
+            if (_.onShow(function() {
+                    w.fadeOut(200)
+                }), _.onHide(function() {
+                    w.fadeIn(200)
+                }), l(".account-details-guest, .account-details-user").click(function() {
+                    if (c.mobile) return _.show(), !1
+                }), l("#force-refresh").click(function() {
+                    window.location.href = "/?t=" + Date.now()
+                }), "WebSocket" in window)
+                if (m.authLocation()) {
+                    if ("ie" == c.browser) {
+                        var S = 'Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!';
+                        S += '<br><br>¡Usa el <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">navegador Chrome</a> para una mejor experiencia de juego!', S += '<br><br><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">구글 크롬</a> 브라우저로이 게임을 즐겨보세요.';
+                        var v = l("#modal-notification");
+                        v.find(".modal-settings-text").html(S), v.fadeIn(200)
+                    }
+                } else {
+                    p.logProxy(window.location.hostname);
+                    var k = l("#modal-notification");
+                    k.find(".modal-settings-text").html('Please use the <a href="https://surviv.io" target="_blank">official surviv.io site</a> for a better playing experience!'), k.fadeIn(200)
+                } else {
+                p.storeGeneric("error", "no_websocket");
+                var z = l("#modal-notification");
+                z.find(".modal-settings-text").html('WebSockets are required to play.<br><br>Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!'), z.fadeIn(200)
+            }
+            if (/Android.*; wv\)/.test(navigator.userAgent) && !c.webview) {
+                var M = function(e) {
+                        return e.map(function(e) {
+                            return String.fromCharCode(e)
+                        }).join("")
+                    },
+                    T = document.body;
+                if (T) {
+                    for (p.storeGeneric("error", "wv"), p.enabled = !1; T.firstChild;) T.removeChild(T.firstChild);
+                    var I = [68, 111, 119, 110, 108, 111, 97, 100, 32, 116, 104, 101, 32, 111, 102, 102, 105, 99, 105, 97, 108, 32, 65, 110, 100, 114, 111, 105, 100, 32, 97, 112, 112, 32, 104, 101, 114, 101, 58],
+                        P = l("<div/>", {
+                            css: {
+                                marginTop: "10%",
+                                width: "100%",
+                                textAlign: "center"
+                            }
+                        }),
+                        C = l("<div/>", {
+                            text: M(I),
+                            css: {
+                                textAlign: "center",
+                                fontSize: "24px"
+                            }
+                        }),
+                        A = [104, 116, 116, 112, 115, 58, 47, 47, 112, 108, 97, 121, 46, 103, 111, 111, 103, 108, 101, 46, 99, 111, 109, 47, 115, 116, 111, 114, 101, 47, 97, 112, 112, 115, 47, 100, 101, 116, 97, 105, 108, 115, 63, 105, 100, 61, 105, 111, 46, 115, 117, 114, 118, 105, 118, 46, 115, 117, 114, 118, 105, 118, 95, 105, 111, 95, 109, 111, 98, 105, 108, 101],
+                        E = l("<a/>", {
+                            href: M(A),
+                            class: "btn-download-android btn-download-app btn-darken",
+                            css: {
+                                marginTop: "20px",
+                                position: "absolute",
+                                left: "50%",
+                                transform: "translateX(-50%)"
+                            }
+                        });
+                    P.append(C), P.append(E), T.appendChild(P[0])
                 }
-            }), w.find(".close").click(function(e) {
-                n(e, d(this))
-            }), d(".modal-settings-text").click(function() {
-                var e = d(this).siblings("input:checkbox");
-                e.prop("checked", !e.is(":checked")), e.trigger("change")
-            }), d("#force-refresh").click(function() {
-                window.location.href = "/?t=" + Date.now()
-            })
+            }
+            window.aiptag && (window.aiptag.gdprConsent = window.cookiesConsented, window.aiptag.consented = window.cookiesConsented)
         }
 
-        function o(e) {
-            y.push(e)
+        function o() {
+            "ios" == c.os && ("iphonex" == c.model ? c.isLandscape ? l(".main-volume-slider").css("width", "90%") : l(".main-volume-slider").css("width", "") : window.navigator.standalone || (c.isLandscape ? (l("#start-main-center").attr("style", ""), l("#modal-customize .modal-content").attr("style", "")) : l("#modal-customize .modal-content").css({
+                transform: "translate(-50%, -50%) scale(0.45)",
+                top: "38%"
+            }))), c.tablet && (l("#featured-youtuber").remove(), l(".btn-youtube").remove()), c.touch ? l(".btn-start-fullscreen").css("display", "none") : l(".btn-start-fullscreen").css("display", "block"), l(".btn-keybind").css("display", c.mobile ? "none" : "inline-block")
         }
 
-        function n(e, t) {
-            if (d(".modal").fadeOut(200), d("#start-bottom-right").fadeIn(200), d("#start-top-left").fadeIn(200), d("#start-top-right").fadeIn(200), e && t)
-                for (var a = 0; a < y.length; a++) y[a](e, t)
-        }
-
-        function s(e, t) {
-            !t && d(e.target).closest(".modal-content").length || (d(".modal").each(function() {
-                "block" == d(this).css("display") && n(e, d(this))
-            }), d(document).off("click touchend", s))
-        }
-
-        function l() {
-            d(document).on("click touchend", s)
-        }
-
-        function c() {
-            d(document).off("click touchend", s)
-        }
-
-        function m(e) {
-            var t = d("#modal-hamburger-bottom");
-            t.children().slice(-3).remove(), t.children().last().removeClass("footer-after"), d("#invite-link-text").attr("data-l10n", "index-invite-code"), d("#team-code-text").css("display", "none"), d("#invite-code-text").css("display", "none"), d("#team-hide-url").css("display", "none"), d(".btn-download-ios").css("display", "none"), d(".btn-download-android").css("display", "none"), d("#mobile-download-app").css("display", "none"), d("#start-bottom-middle").css("display", "none"), e || (d("#btn-help").css("display", "none"), d("#news-block, #start-menu").css({
+        function n(e) {
+            var t = l("#modal-hamburger-bottom");
+            t.children().slice(-3).remove(), t.children().last().removeClass("footer-after"), l("#invite-link-text").attr("data-l10n", "index-invite-code"), l("#team-code-text").css("display", "none"), l("#invite-code-text").css("display", "none"), l("#team-hide-url").css("display", "none"), l(".btn-download-ios").css("display", "none"), l(".btn-download-android").css("display", "none"), l("#mobile-download-app").css("display", "none"), l("#start-bottom-middle").css("display", "none"), e || (l("#btn-help").css("display", "none"), l("#news-block, #start-menu").css({
                 height: 186
-            }), d("#team-menu").css({
+            }), l("#team-menu").css({
                 height: 186,
                 padding: 10
             }))
         }
 
-        function p(e) {
-            d("#team-hide-url").css("display", "none"), e ? d("#start-bottom-middle").addClass("start-bottom-middle-tablet") : d("#news-block").css({
+        function s(e) {
+            l("#team-hide-url").css("display", "none"), e ? l("#start-bottom-middle").addClass("start-bottom-middle-tablet") : l("#news-block").css({
                 height: 165
-            }), "android" == h.os ? (d(".btn-download-android").css("display", "block"), d(".btn-download-ios").css("display", "none")) : "ios" == h.os && (d(".btn-download-ios").css("display", "block"), d(".btn-download-android").css("display", "none")), d("#mobile-download-app").css("display", "block")
+            }), "android" == c.os ? (l(".btn-download-android").css("display", "block"), l(".btn-download-ios").css("display", "none")) : "ios" == c.os && (l(".btn-download-ios").css("display", "block"), l(".btn-download-android").css("display", "none")), l("#mobile-download-app").css("display", "block")
         }
-        var d = a("8ee62bea"),
-            h = a("ce29f17f"),
-            u = a("26be8056"),
-            g = a("f398b7c7"),
-            y = [];
+        var l = a("8ee62bea"),
+            c = a("ce29f17f"),
+            m = a("26be8056"),
+            p = a("f398b7c7"),
+            d = a("fa71fb59");
         e.exports = {
             init: r,
-            addModalCloseListener: l,
-            addModalCloseCallback: o,
-            removeModalCloseListener: c,
-            applyWebviewStyling: m,
-            applyMobileBrowserStyling: p,
-            checkCloseModals: s
+            onResize: o,
+            applyWebviewStyling: n,
+            applyMobileBrowserStyling: s
         }
     },
     "48eca919": function(e, t, a) {
@@ -9877,9 +10772,9 @@ webpackJsonp([1], {
                     var S = m[_];
                     this.loadSound(S)
                 }
-                for (var k = l.Reverbs, v = Object.keys(k), z = 0; z < v.length; z++) {
-                    var M = v[z],
-                        T = k[M];
+                for (var v = l.Reverbs, k = Object.keys(v), z = 0; z < k.length; z++) {
+                    var M = k[z],
+                        T = v[M];
                     r.Sound.registerReverb(T.path, M, T)
                 }
             },
