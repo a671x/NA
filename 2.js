@@ -94,13 +94,7 @@
 
         function o(e) {
             var t = this;
-            this.touchElem = e, this.keys = {}, this.keysOld = {}, this.de = {
-                x: 0,
-                y: 0
-            }, this.he = {
-                x: 0,
-                y: 0
-            }, this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches = [], this.touchIdCounter = 0, this.leftTouch = null, this.rightTouch = null, this.lostFocus = !1, this.captureNextInputCb = null, this.bOnWindowFocus = function(e) {
+            this.touchElem = e, this.keys = {}, this.keysOld = {}, this.pe = s.create(0, 0), this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches = [], this.touchIdCounter = 0, this.leftTouch = null, this.rightTouch = null, this.lostFocus = !1, this.captureNextInputCb = null, this.bOnWindowFocus = function(e) {
                 t.onWindowFocus(e)
             }, this.bOnKeyDown = function(e) {
                 t.onKeyDown(e)
@@ -138,7 +132,8 @@
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            s = (a("c2a798c8"), Object.freeze({
+            s = a("c2a798c8"),
+            l = Object.freeze({
                 Backspace: 8,
                 Enter: 13,
                 Shift: 16,
@@ -196,29 +191,29 @@
                 Minus: 189,
                 FwdSlash: 191,
                 Tilde: 192
-            })),
-            l = Object.freeze({
+            }),
+            c = Object.freeze({
                 Left: 0,
                 Middle: 1,
                 Right: 2,
                 Thumb1: 3,
                 Thumb2: 4
             }),
-            c = Object.freeze({
+            m = Object.freeze({
                 None: 0,
                 Up: 1,
                 Down: 2
             }),
-            m = {
+            p = {
                 None: 0,
                 Key: 1,
                 MouseButton: 2,
                 MouseWheel: 3
             },
-            p = ["", "", "", "Cancel", "", "", "Help", "", "Backspace", "Tab", "", "", "Clear", "Enter", "Enter", "", "Shift", "Control", "Alt", "Pause", "Capslock", "Kana", "Eisu", "Junja", "Final", "Hanja", "", "ESC", "Convert", "Nonconvert", "Accept", "Modechange", "Space", "Page Up", "Page Down", "End", "Home", "←", "↑", "→", "↓", "Select", "Print", "Execute", "Printscreen", "Insert", "Delete", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Windows Key", "", "Context Menu", "", "Sleep", "Numpad 0", "Numpad 1", "Numpad 2", "Numpad 3", "Numpad 4", "Numpad 5", "Numpad 6", "Numpad 7", "Numpad 8", "Numpad 9", "*", "+", "Separator", "-", ".", "/", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24", "", "", "", "", "", "", "", "", "Num Lock", "Scroll Lock", "WIN_OEM_FJ_JISHO", "WIN_OEM_FJ_MASSHOU", "WIN_OEM_FJ_TOUROKU", "WIN_OEM_FJ_LOYA", "WIN_OEM_FJ_ROYA", "", "", "", "", "", "", "", "", "", "Circumflex", "!", '"', "#", "$", "%", "&", "_", "(", ")", "*", "+", "|", "Hyphen Minus", "{", "}", "~", "", "", "", "", "Volume Mute", "Volume Down", "Volume Up", "", "", ";", "=", ",", "-", ".", "/", "Backquote", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[", "\\", "]", "'", "", "Meta", "ALTGR", "", "WIN_ICO_HELP", "WIN_ICO_00", "", "WIN_ICO_CLEAR", "", "", "WIN_OEM_RESET", "WIN_OEM_JUMP", "WIN_OEM_PA1", "WIN_OEM_PA2", "WIN_OEM_PA3", "WIN_OEM_WSCTRL", "WIN_OEM_CUSEL", "WIN_OEM_ATTN", "WIN_OEM_FINISH", "WIN_OEM_COPY", "WIN_OEM_AUTO", "WIN_OEM_ENLW", "WIN_OEM_BACKTAB", "ATTN", "CRSEL", "EXSEL", "EREOF", "PLAY", "ZOOM", "", "PA1", "WIN_OEM_CLEAR", ""],
-            d = ["Left Mouse", "Middle Mouse", "Right Mouse", "Thumb Mouse 1", "Thumb Mouse 2"],
-            h = ["", "Mouse Wheel Up", "Mouse Wheel Down"],
-            u = function() {
+            d = ["", "", "", "Cancel", "", "", "Help", "", "Backspace", "Tab", "", "", "Clear", "Enter", "Enter", "", "Shift", "Control", "Alt", "Pause", "Capslock", "Kana", "Eisu", "Junja", "Final", "Hanja", "", "ESC", "Convert", "Nonconvert", "Accept", "Modechange", "Space", "Page Up", "Page Down", "End", "Home", "←", "↑", "→", "↓", "Select", "Print", "Execute", "Printscreen", "Insert", "Delete", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Windows Key", "", "Context Menu", "", "Sleep", "Numpad 0", "Numpad 1", "Numpad 2", "Numpad 3", "Numpad 4", "Numpad 5", "Numpad 6", "Numpad 7", "Numpad 8", "Numpad 9", "*", "+", "Separator", "-", ".", "/", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24", "", "", "", "", "", "", "", "", "Num Lock", "Scroll Lock", "WIN_OEM_FJ_JISHO", "WIN_OEM_FJ_MASSHOU", "WIN_OEM_FJ_TOUROKU", "WIN_OEM_FJ_LOYA", "WIN_OEM_FJ_ROYA", "", "", "", "", "", "", "", "", "", "Circumflex", "!", '"', "#", "$", "%", "&", "_", "(", ")", "*", "+", "|", "Hyphen Minus", "{", "}", "~", "", "", "", "", "Volume Mute", "Volume Down", "Volume Up", "", "", ";", "=", ",", "-", ".", "/", "Backquote", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[", "\\", "]", "'", "", "Meta", "ALTGR", "", "WIN_ICO_HELP", "WIN_ICO_00", "", "WIN_ICO_CLEAR", "", "", "WIN_OEM_RESET", "WIN_OEM_JUMP", "WIN_OEM_PA1", "WIN_OEM_PA2", "WIN_OEM_PA3", "WIN_OEM_WSCTRL", "WIN_OEM_CUSEL", "WIN_OEM_ATTN", "WIN_OEM_FINISH", "WIN_OEM_COPY", "WIN_OEM_AUTO", "WIN_OEM_ENLW", "WIN_OEM_BACKTAB", "ATTN", "CRSEL", "EXSEL", "EREOF", "PLAY", "ZOOM", "", "PA1", "WIN_OEM_CLEAR", ""],
+            h = ["Left Mouse", "Middle Mouse", "Right Mouse", "Thumb Mouse 1", "Thumb Mouse 2"],
+            u = ["", "Mouse Wheel Up", "Mouse Wheel Down"],
+            g = function() {
                 function e(t, a) {
                     i(this, e), this.type = t, this.code = a
                 }
@@ -230,11 +225,11 @@
                 }, {
                     key: "toString",
                     value: function() {
-                        return this.type == m.None ? "" : this.type == m.Key ? p[this.code] || "Key " + this.code : this.type == m.MouseButton ? d[this.code] || "Mouse " + this.code : h[this.code] || "Mouse Wheel " + this.code
+                        return this.type == p.None ? "" : this.type == p.Key ? d[this.code] || "Key " + this.code : this.type == p.MouseButton ? h[this.code] || "Mouse " + this.code : u[this.code] || "Mouse Wheel " + this.code
                     }
                 }]), e
             }(),
-            g = Object.freeze({
+            y = Object.freeze({
                 Move: 0,
                 Start: 1,
                 End: 2,
@@ -256,109 +251,109 @@
                 this.captureNextInputCb = e
             },
             checkCaptureInput: function(e, t, a) {
-                return !(!this.captureNextInputCb || !this.captureNextInputCb(e, new u(t, a)) || (this.captureNextInputCb = null, 0))
+                return !(!this.captureNextInputCb || !this.captureNextInputCb(e, new g(t, a)) || (this.captureNextInputCb = null, 0))
             },
             isInputValuePressed: function(e) {
                 switch (e.type) {
-                    case m.Key:
-                        return this.ue(e.code);
-                    case m.MouseButton:
-                        return this.ge(e.code);
-                    case m.MouseWheel:
-                        return this.ye() == e.code;
+                    case p.Key:
+                        return this.de(e.code);
+                    case p.MouseButton:
+                        return this.he(e.code);
+                    case p.MouseWheel:
+                        return this.ue() == e.code;
                     default:
                         return !1
                 }
             },
             isInputValueReleased: function(e) {
                 switch (e.type) {
-                    case m.Key:
-                        return this.we(e.code);
-                    case m.MouseButton:
-                        return this.xe(e.code);
-                    case m.MouseWheel:
-                        return this.ye() == e.code;
+                    case p.Key:
+                        return this.ge(e.code);
+                    case p.MouseButton:
+                        return this.ye(e.code);
+                    case p.MouseWheel:
+                        return this.ue() == e.code;
                     default:
                         return !1
                 }
             },
             isInputValueDown: function(e) {
                 switch (e.type) {
-                    case m.Key:
-                        return this.fe(e.code);
-                    case m.MouseButton:
-                        return this.be(e.code);
-                    case m.MouseWheel:
-                        return this.ye() == e.code;
+                    case p.Key:
+                        return this.we(e.code);
+                    case p.MouseButton:
+                        return this.xe(e.code);
+                    case p.MouseWheel:
+                        return this.ue() == e.code;
                     default:
                         return !1
                 }
             },
             onKeyDown: function(e) {
                 var t = e.keyCode;
-                9 == t && e.preventDefault(), this.checkCaptureInput(e, m.Key, t) || (this.keys[t] = !0)
+                9 == t && e.preventDefault(), this.checkCaptureInput(e, p.Key, t) || (this.keys[t] = !0)
             },
             onKeyUp: function(e) {
                 this.keys[e.keyCode] = !1
             },
-            fe: function(e) {
+            we: function(e) {
                 return !!this.keys[e]
             },
-            ue: function(e) {
+            de: function(e) {
                 return !this.keysOld[e] && !!this.keys[e]
             },
-            we: function(e) {
+            ge: function(e) {
                 return !!this.keysOld[e] && !this.keys[e]
             },
             onMouseMove: function(e) {
-                this.he = Object.assign({}, this.de), this.de.x = e.clientX, this.de.y = e.clientY
+                this.pe.x = e.clientX, this.pe.y = e.clientY
             },
             onMouseDown: function(e) {
                 var t = 0;
-                t = "which" in e ? e.which - 1 : e.button, this.checkCaptureInput(e, m.MouseButton, t) || (this.mouseButtons[t] = !0)
+                t = "which" in e ? e.which - 1 : e.button, this.checkCaptureInput(e, p.MouseButton, t) || (this.mouseButtons[t] = !0)
             },
             onMouseUp: function(e) {
                 var t = 0;
                 t = "which" in e ? e.which - 1 : e.button, this.mouseButtons[t] = !1
             },
             onMouseWheel: function(e) {
-                var t = e.deltaY < 0 ? c.Up : c.Down;
-                this.checkCaptureInput(e, m.MouseWheel, t) || (this.mouseWheelState = t)
-            },
-            be: function(e) {
-                return !!this.mouseButtons[e]
-            },
-            ge: function(e) {
-                return !this.mouseButtonsOld[e] && !!this.mouseButtons[e]
+                var t = e.deltaY < 0 ? m.Up : m.Down;
+                this.checkCaptureInput(e, p.MouseWheel, t) || (this.mouseWheelState = t)
             },
             xe: function(e) {
+                return !!this.mouseButtons[e]
+            },
+            he: function(e) {
+                return !this.mouseButtonsOld[e] && !!this.mouseButtons[e]
+            },
+            ye: function(e) {
                 return !!this.mouseButtonsOld[e] && !this.mouseButtons[e]
             },
-            ye: function() {
+            ue: function() {
                 return this.mouseWheelState
             },
             onTouchShared: function(e, t) {
-                e.cancelable && t != g.Cancel && e.preventDefault();
+                e.cancelable && t != y.Cancel && e.preventDefault();
                 for (var a = e.timeStamp || performance.now(), i = 0; i < e.changedTouches.length; i++) {
                     for (var o = e.changedTouches[i], n = o.identifier, s = o.clientX, l = o.clientY, c = null, m = 0; m < this.touches.length; m++)
                         if (this.touches[m].osId == n && !this.touches[m].isDead) {
                             c = this.touches[m];
                             break
                         }
-                    t != g.Start || c || (c = new r, this.touches.push(c), ++this.touchIdCounter, c.id = this.touchIdCounter, c.osId = n, c.posOld.x = s, c.posOld.y = l, c.posDown.x = s, c.posDown.y = l, c.startTime = a, c.isNew = !0, c.isDead = !1), t != g.End && t != g.Cancel || !c || (c.isDead = !0), c && (c.pos.x = s, c.pos.y = l, c.lastUpdateTime = a)
+                    t != y.Start || c || (c = new r, this.touches.push(c), ++this.touchIdCounter, c.id = this.touchIdCounter, c.osId = n, c.posOld.x = s, c.posOld.y = l, c.posDown.x = s, c.posDown.y = l, c.startTime = a, c.isNew = !0, c.isDead = !1), t != y.End && t != y.Cancel || !c || (c.isDead = !0), c && (c.pos.x = s, c.pos.y = l, c.lastUpdateTime = a)
                 }
             },
             onTouchMove: function(e) {
-                this.onTouchShared(e, g.Move)
+                this.onTouchShared(e, y.Move)
             },
             onTouchStart: function(e) {
-                this.onTouchShared(e, g.Start)
+                this.onTouchShared(e, y.Start)
             },
             onTouchEnd: function(e) {
-                this.onTouchShared(e, g.End)
+                this.onTouchShared(e, y.End)
             },
             onTouchCancel: function(e) {
-                this.onTouchShared(e, g.Cancel)
+                this.onTouchShared(e, y.Cancel)
             },
             getTouchById: function(e) {
                 for (var t = 0; t < this.touches.length; t++)
@@ -366,31 +361,14 @@
                 return null
             }
         }, e.exports = {
-            _e: o,
-            InputType: m,
-            InputValue: u,
-            Key: s,
-            MouseButton: l,
-            MouseWheel: c,
+            fe: o,
+            InputType: p,
+            InputValue: g,
+            Key: l,
+            MouseButton: c,
+            MouseWheel: m,
             Touch: r
         }
-    },
-    "4cddfd71": function(e, t, a) {
-        "use strict";
-        var i = {
-            main: a("d5ec3c16"),
-            main_spring: a("6afea591"),
-            desert: a("ef7c973f"),
-            faction: a("903f46c9"),
-            halloween: a("9d3c0d8b"),
-            potato: a("fc096113"),
-            potato_spring: a("fea0a94e"),
-            snow: a("4e269062"),
-            woods: a("45f86a38"),
-            woods_snow: a("0354ead9"),
-            woods_spring: a("b895abfa")
-        };
-        e.exports = i
     },
     "4e269062": function(e, t, a) {
         "use strict";
@@ -418,7 +396,7 @@
                         name: "snowball_pickup_01",
                         channel: "ui"
                     }],
-                    atlases: ["gradient", "shared", "snow"]
+                    atlases: ["gradient", "loadout", "shared", "snow"]
                 },
                 biome: {
                     colors: {
@@ -446,6 +424,639 @@
                 }
             };
         e.exports = i.mergeDeep({}, r, o)
+    },
+    "4edcdb13": function(e, t, a) {
+        "use strict";
+
+        function i(e, t) {
+            return r.mergeDeep({}, o[e], {
+                baseType: e
+            }, t)
+        }
+        var r = a("1901e2d9"),
+            o = {
+                "9mm": {
+                    name: "9mm",
+                    type: "ammo",
+                    subtype: "standard",
+                    minStackSize: 15,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 16756224,
+                        tintDark: 12550912
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                "762mm": {
+                    name: "7.62mm",
+                    type: "ammo",
+                    subtype: "standard",
+                    minStackSize: 10,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 26367,
+                        tintDark: 19903
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                "556mm": {
+                    name: "5.56mm",
+                    type: "ammo",
+                    subtype: "standard",
+                    minStackSize: 10,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 237056,
+                        tintDark: 161536
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                "12gauge": {
+                    name: "12 gauge",
+                    type: "ammo",
+                    subtype: "standard",
+                    minStackSize: 5,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 16711680,
+                        tintDark: 12517376
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                "50AE": {
+                    name: ".50 AE",
+                    type: "ammo",
+                    special: !0,
+                    minStackSize: 10,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 2697513,
+                        tintDark: 2039583
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                "308sub": {
+                    name: ".308 Subsonic",
+                    type: "ammo",
+                    special: !0,
+                    minStackSize: 10,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 3225600,
+                        tintDark: 2435840
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                flare: {
+                    name: "Flare",
+                    type: "ammo",
+                    special: !0,
+                    minStackSize: 1,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 13911552,
+                        tintDark: 13911552
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                "45acp": {
+                    name: ".45 ACP",
+                    type: "ammo",
+                    subtype: "standard",
+                    special: !0,
+                    minStackSize: 10,
+                    lootImg: {
+                        sprite: "loot-ammo-box.img",
+                        scale: .2,
+                        tint: 7930111,
+                        tintDark: 5963967
+                    },
+                    sound: {
+                        pickup: "ammo_pickup_01"
+                    }
+                },
+                bandage: {
+                    name: "Bandage",
+                    type: "heal",
+                    useTime: 3,
+                    heal: 15,
+                    maxHeal: 100,
+                    lootImg: {
+                        sprite: "loot-medical-bandage.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "bandage_pickup_01",
+                        use: "bandage_use_01"
+                    },
+                    emitter: "heal_01",
+                    aura: {
+                        sprite: "part-aura-circle-01.img",
+                        tint: 16711680
+                    }
+                },
+                healthkit: {
+                    name: "Med Kit",
+                    type: "heal",
+                    useTime: 6,
+                    heal: 100,
+                    maxHeal: 100,
+                    lootImg: {
+                        sprite: "loot-medical-healthkit.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "healthkit_pickup_01",
+                        use: "healthkit_use_01"
+                    },
+                    emitter: "heal_01",
+                    aura: {
+                        sprite: "part-aura-circle-01.img",
+                        tint: 16711680
+                    }
+                },
+                soda: {
+                    name: "Soda",
+                    type: "boost",
+                    useTime: 3,
+                    boost: 25,
+                    lootImg: {
+                        sprite: "loot-medical-soda.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "soda_pickup_01",
+                        use: "soda_use_01"
+                    },
+                    emitter: "boost_01",
+                    aura: {
+                        sprite: "part-aura-circle-01.img",
+                        tint: 1676544
+                    }
+                },
+                painkiller: {
+                    name: "Pills",
+                    type: "boost",
+                    useTime: 5,
+                    boost: 50,
+                    lootImg: {
+                        sprite: "loot-medical-pill.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "pills_pickup_01",
+                        use: "pills_use_01"
+                    },
+                    emitter: "boost_01",
+                    aura: {
+                        sprite: "part-aura-circle-01.img",
+                        tint: 1676544
+                    }
+                },
+                backpack00: {
+                    name: "Pouch",
+                    type: "backpack",
+                    level: 0,
+                    playerRad: .55,
+                    tint: 16777215,
+                    lootImg: {
+                        sprite: "loot-pack-00.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "pack_pickup_01"
+                    }
+                },
+                backpack01: {
+                    name: "Small Pack",
+                    type: "backpack",
+                    level: 1,
+                    playerRad: .65,
+                    tint: 6697728,
+                    lootImg: {
+                        sprite: "loot-pack-01.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "pack_pickup_01"
+                    }
+                },
+                backpack02: {
+                    name: "Regular Pack",
+                    type: "backpack",
+                    level: 2,
+                    tint: 26112,
+                    playerRad: .85,
+                    lootImg: {
+                        sprite: "loot-pack-02.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "pack_pickup_01"
+                    }
+                },
+                backpack03: {
+                    name: "Military Pack",
+                    type: "backpack",
+                    level: 3,
+                    tint: 6710835,
+                    playerRad: 1,
+                    lootImg: {
+                        sprite: "loot-pack-03.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "pack_pickup_01"
+                    }
+                },
+                helmet01: {
+                    name: "Level 1 Helmet",
+                    type: "helmet",
+                    level: 1,
+                    damageReduction: .25,
+                    skinImg: {
+                        baseTint: 3244031,
+                        baseTintRed: 10972011,
+                        baseTintBlue: 6459582,
+                        baseSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-helmet-01.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "helmet_pickup_01"
+                    }
+                },
+                helmet02: {
+                    name: "Level 2 Helmet",
+                    type: "helmet",
+                    level: 2,
+                    damageReduction: .4,
+                    skinImg: {
+                        baseTint: 13027014,
+                        baseTintRed: 10027008,
+                        baseTintBlue: 20642,
+                        baseSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-helmet-02.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "helmet_pickup_01"
+                    }
+                },
+                helmet03: {
+                    name: "Level 3 Helmet",
+                    type: "helmet",
+                    level: 3,
+                    damageReduction: .55,
+                    skinImg: {
+                        baseTint: 2434341,
+                        baseTintRed: 2491396,
+                        baseTintBlue: 334125,
+                        baseSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-helmet-03.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "helmet_pickup_01"
+                    }
+                },
+                helmet04: {
+                    name: "Level 4 Helmet",
+                    type: "helmet",
+                    level: 4,
+                    damageReduction: .7,
+                    skinImg: {
+                        baseTint: 2434341,
+                        baseTintRed: 2491396,
+                        baseTintBlue: 334125,
+                        baseSprite: "player-circle-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-helmet-03.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "helmet_pickup_01"
+                    }
+                },
+                chest01: {
+                    name: "Level 1 Vest",
+                    type: "chest",
+                    level: 1,
+                    damageReduction: .25,
+                    skinImg: {
+                        baseTint: 11842740,
+                        baseSprite: "player-armor-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-chest-01.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "chest_pickup_01"
+                    }
+                },
+                chest02: {
+                    name: "Level 2 Vest",
+                    type: "chest",
+                    level: 2,
+                    damageReduction: .38,
+                    skinImg: {
+                        baseTint: 4934475,
+                        baseSprite: "player-armor-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-chest-02.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "chest_pickup_01"
+                    }
+                },
+                chest03: {
+                    name: "Level 3 Vest",
+                    type: "chest",
+                    level: 3,
+                    damageReduction: .45,
+                    skinImg: {
+                        baseTint: 0,
+                        baseSprite: "player-armor-base-01.img"
+                    },
+                    lootImg: {
+                        sprite: "loot-chest-03.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "chest_pickup_01"
+                    }
+                },
+                "1xscope": {
+                    name: "1x Scope",
+                    type: "scope",
+                    level: 1,
+                    lootImg: {
+                        sprite: "loot-scope-00.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "scope_pickup_01"
+                    }
+                },
+                "2xscope": {
+                    name: "2x Scope",
+                    type: "scope",
+                    level: 2,
+                    lootImg: {
+                        sprite: "loot-scope-01.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "scope_pickup_01"
+                    }
+                },
+                "4xscope": {
+                    name: "4x Scope",
+                    type: "scope",
+                    level: 4,
+                    lootImg: {
+                        sprite: "loot-scope-02.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "scope_pickup_01"
+                    }
+                },
+                "8xscope": {
+                    name: "8x Scope",
+                    type: "scope",
+                    level: 8,
+                    lootImg: {
+                        sprite: "loot-scope-03.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "scope_pickup_01"
+                    }
+                },
+                "15xscope": {
+                    name: "15x Scope",
+                    type: "scope",
+                    level: 15,
+                    lootImg: {
+                        sprite: "loot-scope-04.img",
+                        tint: 16777215,
+                        border: "loot-circle-outer-01.img",
+                        borderTint: 0,
+                        scale: .2
+                    },
+                    sound: {
+                        pickup: "scope_pickup_01"
+                    }
+                }
+            },
+            n = {
+                helmet03_leader: i("helmet03", {
+                    name: "Leader Helmet",
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-leader.img"
+                    }
+                }),
+                helmet03_forest: i("helmet03", {
+                    name: "Shishigami no Kabuto",
+                    becomeWoodsKing: !0,
+                    mapIndicator: {
+                        sprite: "player-king-woods.img",
+                        tint: 65280,
+                        pulse: !0,
+                        pulseTint: 65280
+                    },
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-forest.img",
+                        spriteScale: .3
+                    },
+                    lootImg: {
+                        sprite: "player-helmet-forest.img",
+                        border: "loot-circle-outer-01.img",
+                        scale: .3,
+                        rot: .5 * Math.PI
+                    }
+                }),
+                helmet03_moon: i("helmet03", {
+                    name: "Tsukuyomi no Kabuto",
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-moon.img",
+                        spriteScale: .3
+                    }
+                }),
+                helmet03_lt: i("helmet03", {
+                    name: "Lieutenant Helmet",
+                    noDrop: !0,
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-lieutenant.img",
+                        spriteScale: .3
+                    }
+                }),
+                helmet03_lt_aged: i("helmet03", {
+                    name: "Lieutenant Helmet",
+                    becomeLieutenant: !0,
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-lieutenant.img",
+                        spriteScale: .3
+                    },
+                    lootImg: {
+                        sprite: "player-helmet-lieutenant.img",
+                        rot: .5 * Math.PI
+                    }
+                }),
+                helmet03_potato: i("helmet03", {
+                    name: "K-pot-ato",
+                    becomePotato: !0,
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-potato.img",
+                        spriteScale: .3
+                    },
+                    lootImg: {
+                        sprite: "player-helmet-potato.img",
+                        rot: .5 * Math.PI
+                    }
+                }),
+                helmet04_medic: i("helmet04", {
+                    name: "Medic Helmet",
+                    noDrop: !0,
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-medic.img",
+                        spriteScale: .3
+                    },
+                    lootImg: {
+                        sprite: "player-helmet-medic.img",
+                        scale: .3,
+                        rot: .5 * Math.PI
+                    }
+                }),
+                helmet04_leader: i("helmet04", {
+                    name: "Leader Helmet",
+                    noDrop: !0,
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-leader.img",
+                        spriteScale: .3
+                    },
+                    lootImg: {
+                        sprite: "player-helmet-leader.img",
+                        scale: .3,
+                        rot: .5 * Math.PI
+                    }
+                })
+            },
+            s = r.mergeDeep({}, o, n);
+        e.exports = s
     },
     51683873: function(e, t, a) {
         "use strict";
@@ -1044,6 +1655,8 @@
             "game-hud-machete_taiga": "Machete",
             "game-kukri_trad": "Tallow's Kukri",
             "game-hud-kukri_trad": "Kukri",
+            "game-bonesaw_rusted": "Bonesaw Rusted",
+            "game-hud-bonesaw_rusted": "Bonesaw",
             "game-stonehammer": "Stone Hammer",
             "game-hook": "Hook",
             "game-pan": "Pan",
@@ -1142,6 +1755,7 @@
             "game-red-leader": "Red Leader",
             "game-blue-leader": "Blue Leader",
             "game-lieutenant": "Lieutenant",
+            "game-medic": "Medic",
             "game-is-down": "is down",
             "game-is-dead": "is dead",
             "game-promoted-to": "promoted to",
@@ -1157,6 +1771,8 @@
             "game-perk-desc-4": "When taking fire, gain a short burst of speed.",
             "game-perk-title-5": "Rare Potato",
             "game-perk-desc-5": "Always rotate to a high quality weapon.",
+            "game-perk-title-6": "Mass Medicate",
+            "game-perk-desc-6": "Reviving and using medical items affects all nearby players.",
             "index-online": "online",
             "index-news-korea": "We've officially broken out our <span class='highlight'>Korean servers</span> into their own region. To play in this region, select <span class='highlight'>South Korea</span> from the region selector."
         };
@@ -1177,10 +1793,10 @@
             this.explosions = [], this.physicsParticles = []
         }
         var n = (a("8b1dfb45"), a("6b42806d")),
-            s = a("989ad62a"),
-            l = (a("34e32c48"), a("ceee80d9"), a("10899aea")),
-            c = a("1901e2d9"),
-            m = a("c2a798c8"),
+            s = (a("34e32c48"), a("10899aea")),
+            l = a("1901e2d9"),
+            c = a("c2a798c8"),
+            m = a("91649371"),
             p = (a("ce29f17f"), a("af8ba00f"), {
                 frag: {
                     burst: {
@@ -1385,23 +2001,23 @@
             });
         i.prototype = {
             init: function(e, t, a, i) {
-                this.pos = m.copy(e), this.vel = m.copy(t), this.layer = a, this.particle = i, this.ticker = 0, this.colCount = 0, this.active = !0
+                this.pos = c.copy(e), this.vel = c.copy(t), this.layer = a, this.particle = i, this.ticker = 0, this.colCount = 0, this.active = !0
             },
             update: function(e, t, a) {
-                var i = m.copy(this.pos);
-                this.pos = m.add(this.pos, m.mul(this.vel, e)), this.vel = m.mul(this.vel, 1 / (1 + 5 * e));
-                for (var r = [], o = t.pe.m(), s = 0; s < o.length; s++) {
-                    var l = o[s];
-                    l.active && !l.dead && c.sameLayer(this.layer, l.layer) && r.push(l.collider)
+                var i = c.copy(this.pos);
+                this.pos = c.add(this.pos, c.mul(this.vel, e)), this.vel = c.mul(this.vel, 1 / (1 + 5 * e));
+                for (var r = [], o = t.me.m(), s = 0; s < o.length; s++) {
+                    var m = o[s];
+                    m.active && !m.dead && l.sameLayer(this.layer, m.layer) && r.push(m.collider)
                 }
-                for (var p = a.Se.m(), d = 0; d < p.length; d++) {
+                for (var p = a.be.m(), d = 0; d < p.length; d++) {
                     var h = p[d];
-                    h.active && !h.dead && c.sameLayer(this.layer, h.layer) && r.push(n.createCircle(h.pos, h.rad, 0))
+                    h.active && !h.dead && l.sameLayer(this.layer, h.layer) && r.push(n.createCircle(h.pos, h.rad, 0))
                 }
                 for (var u = [], g = 0; g < r.length; g++) {
                     var y = n.intersectSegment(r[g], i, this.pos);
                     if (y) {
-                        var w = m.length(m.sub(y.point, i));
+                        var w = c.length(c.sub(y.point, i));
                         u.push({
                             point: y.point,
                             normal: y.normal,
@@ -1413,25 +2029,25 @@
                         return e.dist - t.dist
                     }), u.length > 0) {
                     var x = u[0],
-                        f = m.normalizeSafe(this.vel, m.create(1, 0)),
-                        b = m.length(this.vel),
-                        _ = m.sub(f, m.mul(x.normal, 2 * m.dot(x.normal, f))),
+                        f = c.normalizeSafe(this.vel, c.create(1, 0)),
+                        b = c.length(this.vel),
+                        _ = c.sub(f, c.mul(x.normal, 2 * c.dot(x.normal, f))),
                         S = this.colCount++ > 0 ? .35 : 1;
-                    this.pos = m.add(x.point, m.mul(x.normal, .01)), this.vel = m.mul(_, b * S)
+                    this.pos = c.add(x.point, c.mul(x.normal, .01)), this.vel = c.mul(_, b * S)
                 }
-                this.particle.pos = m.copy(this.pos), this.ticker += e, this.ticker >= this.particle.life && (this.particle.n(), this.active = !1)
+                this.particle.pos = c.copy(this.pos), this.ticker += e, this.ticker >= this.particle.life && (this.particle.n(), this.active = !1)
             }
         }, r.prototype = {
             o: function(e, t, a) {
-                var i = s.explosions[e].explosionEffectType,
+                var i = m[e].explosionEffectType,
                     r = p[i];
-                this.active = !0, this.done = !1, this.type = e, this.pos = m.copy(t), this.layer = a, this.ticker = 0, this.lifetime = r.lifetime, this.soundInstance = null, this.soundUpdateThrottle = 0
+                this.active = !0, this.done = !1, this.type = e, this.pos = c.copy(t), this.layer = a, this.ticker = 0, this.lifetime = r.lifetime, this.soundInstance = null, this.soundUpdateThrottle = 0
             },
             n: function() {
                 this.active = !1
             },
             c: function(e, t, a, i, r, o) {
-                var d = s.explosions[this.type].explosionEffectType,
+                var d = m[this.type].explosionEffectType,
                     h = p[d];
                 if (0 == this.ticker) {
                     var u = !0;
@@ -1439,11 +2055,11 @@
                         var g = n.createCircle(this.pos, .5);
                         r.insideBuildingCeiling(g, !0) && (u = !1)
                     }
-                    if (u && (h.burst.particle && a.addParticle(h.burst.particle, this.layer, this.pos, m.create(0, 0), h.burst.scale, 0, null), h.scatter))
+                    if (u && (h.burst.particle && a.addParticle(h.burst.particle, this.layer, this.pos, c.create(0, 0), h.burst.scale, 0, null), h.scatter))
                         for (var y = 0; y < h.scatter.count; y++) {
-                            var w = a.addParticle(h.scatter.particle, this.layer, this.pos, m.create(0, 0), 1, 0, null),
+                            var w = a.addParticle(h.scatter.particle, this.layer, this.pos, c.create(0, 0), 1, 0, null),
                                 x = t.addPhysicsParticle(),
-                                f = m.mul(m.randomUnit(), c.random(h.scatter.speed.min, h.scatter.speed.max));
+                                f = c.mul(c.randomUnit(), l.random(h.scatter.speed.min, h.scatter.speed.max));
                             x.init(this.pos, f, this.layer, w)
                         }
                     var b = r.getGroundSurface(this.pos, this.layer),
@@ -1457,9 +2073,9 @@
                             ignoreMinAllowable: !0
                         }), "water" == b.type)
                         for (var S = 0; S < h.rippleCount; S++) {
-                            var k = .5 * h.rippleCount,
-                                v = m.add(this.pos, m.mul(m.randomUnit(), c.random(0, k))),
-                                z = a.addRippleParticle(v, this.layer);
+                            var v = .5 * h.rippleCount,
+                                k = c.add(this.pos, c.mul(c.randomUnit(), l.random(0, v))),
+                                z = a.addRippleParticle(k, this.layer);
                             z.setDelay(.06 * S)
                         }
                 }
@@ -1467,8 +2083,8 @@
                     layer: this.layer,
                     muffled: !0
                 })) : this.soundUpdateThrottle -= e, this.ticker += e;
-                var M = l.min(this.ticker / h.shakeDur, 1),
-                    T = l.lerp(M, h.shakeStr, 0);
+                var M = s.min(this.ticker / h.shakeDur, 1),
+                    T = s.lerp(M, h.shakeStr, 0);
                 o.addShake(this.pos, T), this.ticker >= this.lifetime && (this.active = !1)
             }
         }, o.prototype = {
@@ -1501,7 +2117,7 @@
                 }
             }
         }, e.exports = {
-            ke: o
+            _e: o
         }
     },
     "61fc98e9": function(e, t, a) {
@@ -1544,21 +2160,21 @@
             m = a("ce29f17f"),
             p = a("26be8056"),
             d = function() {
-                function e(t, a, r, o, s) {
-                    var l = this;
-                    if (i(this, e), this.audioManager = s, this.playBtn = n("#btn-start-team"), this.serverWarning = n("#server-warning"), this.teamOptions = n("#btn-team-queue-mode-1, #btn-team-queue-mode-2, #btn-team-fill-auto, #btn-team-fill-none"), this.serverSelect = n("#team-server-select"), this.queueMode1 = n("#btn-team-queue-mode-1"), this.queueMode2 = n("#btn-team-queue-mode-2"), this.fillAuto = n("#btn-team-fill-auto"), this.fillNone = n("#btn-team-fill-none"), this.onLeave = null, this.config = t, this.pingTest = a, this.localization = r, this.joinGameFn = o, this.active = !1, this.joined = !1, this.create = !1, this.joiningGame = !1, this.ws = null, this.keepAliveTimeout = 0, this.siteInfo = {}, this.playerData = {}, this.roomData = {}, this.players = [], this.prevPlayerCount = 0, this.localPlayerId = 0, this.isLeader = !0, this.editingName = !1, this.displayedInvalidProtocolModal = !1, this.serverSelect.change(function() {
-                            var e = l.serverSelect.find(":selected").val();
-                            l.pingTest.start([e]), l.setRoomProperty("region", e)
+                function e(t, a, r, o, s, l) {
+                    var c = this;
+                    if (i(this, e), this.playBtn = n("#btn-start-team"), this.serverWarning = n("#server-warning"), this.teamOptions = n("#btn-team-queue-mode-1, #btn-team-queue-mode-2, #btn-team-fill-auto, #btn-team-fill-none"), this.serverSelect = n("#team-server-select"), this.queueMode1 = n("#btn-team-queue-mode-1"), this.queueMode2 = n("#btn-team-queue-mode-2"), this.fillAuto = n("#btn-team-fill-auto"), this.fillNone = n("#btn-team-fill-none"), this.config = t, this.pingTest = a, this.localization = r, this.audioManager = o, this.joinGameCb = s, this.leaveCb = l, this.active = !1, this.joined = !1, this.create = !1, this.joiningGame = !1, this.ws = null, this.keepAliveTimeout = 0, this.siteInfo = {}, this.playerData = {}, this.roomData = {}, this.players = [], this.prevPlayerCount = 0, this.localPlayerId = 0, this.isLeader = !0, this.editingName = !1, this.displayedInvalidProtocolModal = !1, this.serverSelect.change(function() {
+                            var e = c.serverSelect.find(":selected").val();
+                            c.pingTest.start([e]), c.setRoomProperty("region", e)
                         }), this.queueMode1.click(function() {
-                            l.setRoomProperty("gameModeIdx", 1)
+                            c.setRoomProperty("gameModeIdx", 1)
                         }), this.queueMode2.click(function() {
-                            l.setRoomProperty("gameModeIdx", 2)
+                            c.setRoomProperty("gameModeIdx", 2)
                         }), this.fillAuto.click(function() {
-                            l.setRoomProperty("autoFill", !0)
+                            c.setRoomProperty("autoFill", !0)
                         }), this.fillNone.click(function() {
-                            l.setRoomProperty("autoFill", !1)
+                            c.setRoomProperty("autoFill", !1)
                         }), this.playBtn.on("click", function() {
-                            l.tryStartGame()
+                            c.tryStartGame()
                         }), n("#team-copy-url, #team-desc-text").click(function(e) {
                             var t = n("<div/>", {
                                 class: "copy-toast",
@@ -1583,12 +2199,12 @@
                             p.copyTextToClipboard(a)
                         }), !m.webview && !m.mobile) {
                         this.hideUrl = !1;
-                        var c = this;
+                        var d = this;
                         n("#team-hide-url").click(function(e) {
-                            c.hideUrl = !c.hideUrl, n("#team-desc-text, #team-code-text").css({
-                                opacity: c.hideUrl ? 0 : 1
+                            d.hideUrl = !d.hideUrl, n("#team-desc-text, #team-code-text").css({
+                                opacity: d.hideUrl ? 0 : 1
                             }), n(this).css({
-                                "background-image": c.hideUrl ? "url(../img/gui/hide.svg)" : "url(../img/gui/eye.svg)"
+                                "background-image": d.hideUrl ? "url(../img/gui/hide.svg)" : "url(../img/gui/eye.svg)"
                             })
                         })
                     }
@@ -1655,7 +2271,7 @@
                         if (this.active) {
                             this.ws && this.ws.close(), this.ws = null, this.active = !1, this.joined = !1, this.joiningGame = !1, this.refreshUi(), this.config.set("gameModeIdx", this.roomData.gameModeIdx), this.config.set("teamAutoFill", this.roomData.autoFill), this.isLeader && this.config.set("region", this.roomData.region);
                             var t = "";
-                            e && "" != e && (t = r(e, this.localization)), this.onLeave(t)
+                            e && "" != e && (t = r(e, this.localization)), this.leaveCb(t)
                         }
                     }
                 }, {
@@ -1666,17 +2282,14 @@
                 }, {
                     key: "onMessage",
                     value: function(e, t) {
-                        var a = this;
                         switch (e) {
                             case "state":
                                 this.joined = !0;
-                                var i = this.roomData;
-                                this.roomData = t.room, this.players = t.players, this.localPlayerId = t.localPlayerId, this.isLeader = this.getPlayerById(this.localPlayerId).isLeader, this.isLeader && (this.roomData.region = i.region, this.roomData.autoFill = i.autoFill), this.refreshUi();
+                                var a = this.roomData;
+                                this.roomData = t.room, this.players = t.players, this.localPlayerId = t.localPlayerId, this.isLeader = this.getPlayerById(this.localPlayerId).isLeader, this.isLeader && (this.roomData.region = a.region, this.roomData.autoFill = a.autoFill), this.refreshUi();
                                 break;
                             case "joinGame":
-                                this.joiningGame = !0, this.joinGameFn(t, function() {
-                                    a.leave("join_game_failed")
-                                });
+                                this.joiningGame = !0, this.joinGameCb(t);
                                 break;
                             case "keepAlive":
                                 break;
@@ -1758,7 +2371,7 @@
                             } else this.roomData.findingGame || this.joiningGame ? f.html('<div class="ui-spinner" style="margin-right:16px"></div>' + this.localization.translate("index-joining-game") + "<span> ...</span>") : w ? f.html(this.localization.translate("index-game-in-progress") + "<span> ...</span>") : f.html(this.localization.translate("index-waiting-for-leader") + "<span> ...</span>"), f.css("display", "block"), b.css("display", "none");
                             var S = n("#team-menu-member-list");
                             S.empty();
-                            for (var k = 0; k < this.roomData.maxPlayers; k++) ! function(t) {
+                            for (var v = 0; v < this.roomData.maxPlayers; v++) ! function(t) {
                                 var a = {
                                     name: "",
                                     playerId: 0,
@@ -1791,7 +2404,7 @@
                                         type: "text",
                                         tabindex: 0,
                                         class: "name menu-option name-text name-self-input",
-                                        maxLength: l.Constants.kPlayerNameMaxLen
+                                        maxLength: l.Constants.PlayerNameMaxLen
                                     }), s.val(a.name);
                                     var m = function(t) {
                                             var i = p.sanitizeNameInput(s.val());
@@ -1823,17 +2436,17 @@
                                 c ? r.append(c) : r.append(n("<div/>", {
                                     class: "icon " + (a.inGame ? "icon-in-game" : "")
                                 })), S.append(r), s && s.focus()
-                            }(k);
+                            }(v);
                             n(".icon-kick", S).click(function(t) {
                                 var a = n(t.currentTarget).attr("data-playerid");
                                 e.sendMessage("kick", {
                                     playerId: a
                                 })
                             });
-                            var v = this.players.find(function(t) {
+                            var k = this.players.find(function(t) {
                                     return t.playerId == e.localPlayerId
                                 }),
-                                z = v && !v.inGame;
+                                z = k && !k.inGame;
                             !document.hasFocus() && this.prevPlayerCount < this.players.length && this.players.length > 1 && z && this.audioManager.playSound("notification_join_01", {
                                 channel: "ui"
                             }), this.prevPlayerCount = this.players.length
@@ -1865,10 +2478,10 @@
         function r(e, t, a, i, r) {
             var o, n;
             if (r === A(e, t, a, i) > 0)
-                for (o = t; o < a; o += i) n = P(o, e[o], e[o + 1], n);
+                for (o = t; o < a; o += i) n = I(o, e[o], e[o + 1], n);
             else
-                for (o = a - i; o >= t; o -= i) n = P(o, e[o], e[o + 1], n);
-            return n && S(n, n.next) && (I(n), n = n.next), n
+                for (o = a - i; o >= t; o -= i) n = I(o, e[o], e[o + 1], n);
+            return n && S(n, n.next) && (P(n), n = n.next), n
         }
 
         function o(e, t) {
@@ -1878,7 +2491,7 @@
             do {
                 if (a = !1, i.steiner || !S(i, i.next) && 0 !== _(i.prev, i, i.next)) i = i.next;
                 else {
-                    if (I(i), (i = t = i.prev) === i.next) break;
+                    if (P(i), (i = t = i.prev) === i.next) break;
                     a = !0
                 }
             } while (a || i !== t);
@@ -1889,7 +2502,7 @@
             if (e) {
                 !d && p && g(e, i, r, p);
                 for (var h, u, y = e; e.prev !== e.next;)
-                    if (h = e.prev, u = e.next, p ? l(e, i, r, p) : s(e)) t.push(h.i / a), t.push(e.i / a), t.push(u.i / a), I(e), e = u.next, y = u.next;
+                    if (h = e.prev, u = e.next, p ? l(e, i, r, p) : s(e)) t.push(h.i / a), t.push(e.i / a), t.push(u.i / a), P(e), e = u.next, y = u.next;
                     else if ((e = u) === y) {
                     d ? 1 === d ? (e = c(e, t, a), n(e, t, a, i, r, p, 2)) : 2 === d && m(e, t, a, i, r, p) : n(o(e), t, a, i, r, p, 1);
                     break
@@ -1935,7 +2548,7 @@
             do {
                 var r = i.prev,
                     o = i.next.next;
-                !S(r, o) && k(r, i, i.next, o) && z(r, o) && z(o, r) && (t.push(r.i / a), t.push(i.i / a), t.push(o.i / a), I(i), I(i.next), i = e = o), i = i.next
+                !S(r, o) && v(r, i, i.next, o) && z(r, o) && z(o, r) && (t.push(r.i / a), t.push(i.i / a), t.push(o.i / a), P(i), P(i.next), i = e = o), i = i.next
             } while (i !== e);
             return i
         }
@@ -2039,7 +2652,7 @@
         }
 
         function b(e, t) {
-            return e.next.i !== t.i && e.prev.i !== t.i && !v(e, t) && z(e, t) && z(t, e) && M(e, t)
+            return e.next.i !== t.i && e.prev.i !== t.i && !k(e, t) && z(e, t) && z(t, e) && M(e, t)
         }
 
         function _(e, t, a) {
@@ -2050,14 +2663,14 @@
             return e.x === t.x && e.y === t.y
         }
 
-        function k(e, t, a, i) {
+        function v(e, t, a, i) {
             return !!(S(e, t) && S(a, i) || S(e, i) && S(a, t)) || _(e, t, a) > 0 != _(e, t, i) > 0 && _(a, i, e) > 0 != _(a, i, t) > 0
         }
 
-        function v(e, t) {
+        function k(e, t) {
             var a = e;
             do {
-                if (a.i !== e.i && a.next.i !== e.i && a.i !== t.i && a.next.i !== t.i && k(a, a.next, e, t)) return !0;
+                if (a.i !== e.i && a.next.i !== e.i && a.i !== t.i && a.next.i !== t.i && v(a, a.next, e, t)) return !0;
                 a = a.next
             } while (a !== e);
             return !1
@@ -2086,12 +2699,12 @@
             return e.next = t, t.prev = e, a.next = r, r.prev = a, i.next = a, a.prev = i, o.next = i, i.prev = o, i
         }
 
-        function P(e, t, a, i) {
+        function I(e, t, a, i) {
             var r = new C(e, t, a);
             return i ? (r.next = i.next, r.prev = i, i.next.prev = r, i.next = r) : (r.prev = r, r.next = r), r
         }
 
-        function I(e) {
+        function P(e) {
             e.next.prev = e.prev, e.prev.next = e.next, e.prevZ && (e.prevZ.nextZ = e.nextZ), e.nextZ && (e.nextZ.prevZ = e.prevZ)
         }
 
@@ -2146,7 +2759,7 @@
                 },
                 assets: {
                     audio: [],
-                    atlases: ["gradient", "shared", "main"]
+                    atlases: ["gradient", "loadout", "shared", "main"]
                 },
                 biome: {
                     colors: {
@@ -2578,7 +3191,7 @@
                 args: a
             }
         }
-        var s, l, c, m, p, d, h, u, g, y, w, x, f, b, _, S, k, v, z, M, T, P, I, C, A, E, D, O, B, L, R, F, j, q, N, V, G, U, H, W, K, Z, X, Y, J, Q, $, ee = function() {
+        var s, l, c, m, p, d, h, u, g, y, w, x, f, b, _, S, v, k, z, M, T, I, P, C, A, E, D, O, B, R, L, F, j, q, N, V, G, U, H, W, K, Z, X, Y, J, Q, $, ee, te, ae = function() {
                 function e(e, t) {
                     for (var a = 0; a < t.length; a++) {
                         var i = t[a];
@@ -2589,18 +3202,19 @@
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            te = a("989ad62a"),
-            ae = (te.Anim, a("0e566746")),
-            ie = a("10899aea"),
-            re = a("c2a798c8"),
-            oe = function() {
+            ie = a("989ad62a"),
+            re = a("e3e76f15"),
+            oe = (ie.Anim, a("0e566746")),
+            ne = a("10899aea"),
+            se = a("c2a798c8"),
+            le = function() {
                 function e(t, a, i) {
-                    r(this, e), this.pivot = re.copy(t || re.create(0, 0)), this.rot = 0, this.pos = re.copy(i || re.create(0, 0))
+                    r(this, e), this.pivot = se.copy(t || se.create(0, 0)), this.rot = 0, this.pos = se.copy(i || se.create(0, 0))
                 }
-                return ee(e, [{
+                return ae(e, [{
                     key: "copy",
                     value: function(e) {
-                        re.set(this.pivot, e.pivot), this.rot = e.rot, re.set(this.pos, e.pos)
+                        se.set(this.pivot, e.pivot), this.rot = e.rot, se.set(this.pos, e.pos)
                     }
                 }, {
                     key: "rotate",
@@ -2610,113 +3224,125 @@
                 }, {
                     key: "offset",
                     value: function(e) {
-                        return this.pos = re.copy(e), this
+                        return this.pos = se.copy(e), this
                     }
                 }]), e
             }();
-        oe.identity = new oe(re.create(0, 0)), oe.lerp = function(e, t, a) {
-            var i = new oe;
-            return i.pos = re.lerp(e, t.pos, a.pos), i.rot = ie.lerp(e, t.rot, a.rot), i.pivot = re.lerp(e, t.pivot, a.pivot), i
+        le.identity = new le(se.create(0, 0)), le.lerp = function(e, t, a) {
+            var i = new le;
+            return i.pos = se.lerp(e, t.pos, a.pos), i.rot = ne.lerp(e, t.rot, a.rot), i.pivot = se.lerp(e, t.pivot, a.pivot), i
         };
-        var ne = {
+        var ce = {
             HandL: 0,
             HandR: 1,
             FootL: 2,
             FootR: 3
         };
-        ae(Object.keys(ne).length % 2 == 0);
-        var se = {
-                fists: (s = {}, i(s, ne.HandL, new oe(re.create(14, -12.25))), i(s, ne.HandR, new oe(re.create(14, 12.25))), s),
-                slash: (l = {}, i(l, ne.HandL, new oe(re.create(18, -8.25))), i(l, ne.HandR, new oe(re.create(6, 20.25))), l),
-                meleeTwoHanded: (c = {}, i(c, ne.HandL, new oe(re.create(10.5, -14.25))), i(c, ne.HandR, new oe(re.create(18, 6.25))), c),
-                meleeKatana: (m = {}, i(m, ne.HandL, new oe(re.create(8.5, 13.25))), i(m, ne.HandR, new oe(re.create(-3, 17.75))), m),
-                meleeNaginata: (p = {}, i(p, ne.HandL, new oe(re.create(19, -7.25))), i(p, ne.HandR, new oe(re.create(8.5, 24.25))), p),
-                machete: (d = {}, i(d, ne.HandL, new oe(re.create(14, -12.25))), i(d, ne.HandR, new oe(re.create(1, 17.75))), d),
-                rifle: (h = {}, i(h, ne.HandL, new oe(re.create(28, 5.25))), i(h, ne.HandR, new oe(re.create(14, 1.75))), h),
-                pistol: (u = {}, i(u, ne.HandL, new oe(re.create(14, 1.75))), i(u, ne.HandR, new oe(re.create(14, 1.75))), u),
-                dualPistol: (g = {}, i(g, ne.HandL, new oe(re.create(15.75, -8.75))), i(g, ne.HandR, new oe(re.create(15.75, 8.75))), g),
-                throwable: (y = {}, i(y, ne.HandL, new oe(re.create(15.75, -9.625))), i(y, ne.HandR, new oe(re.create(15.75, 9.625))), y),
-                downed: (w = {}, i(w, ne.HandL, new oe(re.create(14, -12.25))), i(w, ne.HandR, new oe(re.create(14, 12.25))), i(w, ne.FootL, new oe(re.create(-15.75, -9))), i(w, ne.FootR, new oe(re.create(-15.75, 9))), w)
+        oe(Object.keys(ce).length % 2 == 0);
+        var me = {
+                fists: (s = {}, i(s, ce.HandL, new le(se.create(14, -12.25))), i(s, ce.HandR, new le(se.create(14, 12.25))), s),
+                slash: (l = {}, i(l, ce.HandL, new le(se.create(18, -8.25))), i(l, ce.HandR, new le(se.create(6, 20.25))), l),
+                meleeTwoHanded: (c = {}, i(c, ce.HandL, new le(se.create(10.5, -14.25))), i(c, ce.HandR, new le(se.create(18, 6.25))), c),
+                meleeKatana: (m = {}, i(m, ce.HandL, new le(se.create(8.5, 13.25))), i(m, ce.HandR, new le(se.create(-3, 17.75))), m),
+                meleeNaginata: (p = {}, i(p, ce.HandL, new le(se.create(19, -7.25))), i(p, ce.HandR, new le(se.create(8.5, 24.25))), p),
+                machete: (d = {}, i(d, ce.HandL, new le(se.create(14, -12.25))), i(d, ce.HandR, new le(se.create(1, 17.75))), d),
+                rifle: (h = {}, i(h, ce.HandL, new le(se.create(28, 5.25))), i(h, ce.HandR, new le(se.create(14, 1.75))), h),
+                pistol: (u = {}, i(u, ce.HandL, new le(se.create(14, 1.75))), i(u, ce.HandR, new le(se.create(14, 1.75))), u),
+                dualPistol: (g = {}, i(g, ce.HandL, new le(se.create(15.75, -8.75))), i(g, ce.HandR, new le(se.create(15.75, 8.75))), g),
+                throwable: (y = {}, i(y, ce.HandL, new le(se.create(15.75, -9.625))), i(y, ce.HandR, new le(se.create(15.75, 9.625))), y),
+                downed: (w = {}, i(w, ce.HandL, new le(se.create(14, -12.25))), i(w, ce.HandR, new le(se.create(14, 12.25))), i(w, ce.FootL, new le(se.create(-15.75, -9))), i(w, ce.FootR, new le(se.create(-15.75, 9))), w)
             },
-            le = te.items.fists,
-            ce = te.items.hook,
-            me = te.items.woodaxe,
-            pe = te.items.stonehammer,
-            de = te.items.katana,
-            he = te.items.naginata,
-            ue = {
+            pe = re.fists.attack,
+            de = re.hook.attack,
+            he = re.woodaxe.attack,
+            ue = re.stonehammer.attack,
+            ge = re.katana.attack,
+            ye = re.naginata.attack,
+            we = re.pan.attack,
+            xe = re.saw.attack,
+            fe = {
                 none: {
                     keyframes: [],
                     effects: []
                 },
                 fists: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(le.damageTime, i({}, ne.HandR, new oe(re.create(29.75, 1.75)))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
+                    keyframes: [o(0, i({}, ce.HandR, new le(se.create(14, 12.25)))), o(pe.damageTimes[0], i({}, ce.HandR, new le(se.create(29.75, 1.75)))), o(pe.cooldownTime, i({}, ce.HandR, new le(se.create(14, 12.25))))],
                     effects: [n(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), n(pe.damageTimes[0], "animMeleeCollision", {})]
                 },
                 cut: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.25 * le.damageTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(.35 * -Math.PI))), o(1 * le.damageTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(.35 * Math.PI))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
+                    keyframes: [o(0, i({}, ce.HandR, new le(se.create(14, 12.25)))), o(.25 * pe.damageTimes[0], i({}, ce.HandR, new le(se.create(14, 12.25)).rotate(.35 * -Math.PI))), o(1.25 * pe.damageTimes[0], i({}, ce.HandR, new le(se.create(14, 12.25)).rotate(.35 * Math.PI))), o(pe.cooldownTime, i({}, ce.HandR, new le(se.create(14, 12.25))))],
                     effects: [n(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), n(pe.damageTimes[0], "animMeleeCollision", {})]
                 },
                 cutReverse: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(1, 17.75)))), o(.4 * le.damageTime, i({}, ne.HandR, new oe(re.create(25, 6.25)).rotate(.3 * Math.PI))), o(1 * le.damageTime, i({}, ne.HandR, new oe(re.create(25, 6.25)).rotate(.5 * -Math.PI))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(1, 17.75))))],
+                    keyframes: [o(0, i({}, ce.HandR, new le(se.create(1, 17.75)))), o(.4 * pe.damageTimes[0], i({}, ce.HandR, new le(se.create(25, 6.25)).rotate(.3 * Math.PI))), o(1.4 * pe.damageTimes[0], i({}, ce.HandR, new le(se.create(25, 6.25)).rotate(.5 * -Math.PI))), o(pe.cooldownTime, i({}, ce.HandR, new le(se.create(1, 17.75))))],
                     effects: [n(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), n(pe.damageTimes[0], "animMeleeCollision", {})]
                 },
                 thrust: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.4 * le.damageTime, i({}, ne.HandR, new oe(re.create(5, 12.25)).rotate(.1 * Math.PI))), o(1 * le.damageTime, i({}, ne.HandR, new oe(re.create(25, 6.25)).rotate(0 * -Math.PI))), o(le.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
+                    keyframes: [o(0, i({}, ce.HandR, new le(se.create(14, 12.25)))), o(.4 * pe.damageTimes[0], i({}, ce.HandR, new le(se.create(5, 12.25)).rotate(.1 * Math.PI))), o(1.4 * pe.damageTimes[0], i({}, ce.HandR, new le(se.create(25, 6.25)).rotate(0 * -Math.PI))), o(pe.cooldownTime, i({}, ce.HandR, new le(se.create(14, 12.25))))],
                     effects: [n(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), n(pe.damageTimes[0], "animMeleeCollision", {})]
                 },
                 slash: {
-                    keyframes: [o(0, (x = {}, i(x, ne.HandL, new oe(re.create(18, -8.25))), i(x, ne.HandR, new oe(re.create(6, 20.25))), x)), o(le.damageTime, (f = {}, i(f, ne.HandL, new oe(re.create(6, -22.25))), i(f, ne.HandR, new oe(re.create(6, 20.25)).rotate(.6 * -Math.PI)), f)), o(le.cooldownTime, (b = {}, i(b, ne.HandL, new oe(re.create(18, -8.25))), i(b, ne.HandR, new oe(re.create(6, 20.25)).rotate(0)), b))],
+                    keyframes: [o(0, (x = {}, i(x, ce.HandL, new le(se.create(18, -8.25))), i(x, ce.HandR, new le(se.create(6, 20.25))), x)), o(pe.damageTimes[0], (f = {}, i(f, ce.HandL, new le(se.create(6, -22.25))), i(f, ce.HandR, new le(se.create(6, 20.25)).rotate(.6 * -Math.PI)), f)), o(pe.cooldownTime, (b = {}, i(b, ce.HandL, new le(se.create(18, -8.25))), i(b, ce.HandR, new le(se.create(6, 20.25)).rotate(0)), b))],
                     effects: [n(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(le.damageTime, "animMeleeCollision", {})]
+                    }), n(pe.damageTimes[0], "animMeleeCollision", {})]
                 },
                 hook: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.25 * ce.damageTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(.1 * Math.PI))), o(.75 * ce.damageTime, i({}, ne.HandR, new oe(re.create(24, 1.75)))), o(.5 * ce.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25)).rotate(-.3 * Math.PI))), o(.5 * ce.cooldownTime, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
+                    keyframes: [o(0, i({}, ce.HandR, new le(se.create(14, 12.25)))), o(.25 * de.damageTimes[0], i({}, ce.HandR, new le(se.create(14, 12.25)).rotate(.1 * Math.PI))), o(de.damageTimes[0], i({}, ce.HandR, new le(se.create(24, 1.75)))), o(de.damageTimes[0] + .05, i({}, ce.HandR, new le(se.create(14, 12.25)).rotate(-.3 * Math.PI))), o(de.damageTimes[0] + .1, i({}, ce.HandR, new le(se.create(14, 12.25))))],
                     effects: [n(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(ce.damageTime, "animMeleeCollision", {})]
+                    }), n(de.damageTimes[0], "animMeleeCollision", {})]
                 },
                 pan: {
-                    keyframes: [o(0, i({}, ne.HandR, new oe(re.create(14, 12.25)))), o(.15, i({}, ne.HandR, new oe(re.create(22, -8.25)).rotate(.2 * -Math.PI))), o(.1, i({}, ne.HandR, new oe(re.create(28, -8.25)).rotate(.5 * Math.PI))), o(.3, i({}, ne.HandR, new oe(re.create(14, 12.25))))],
+                    keyframes: [o(0, i({}, ce.HandR, new le(se.create(14, 12.25)))), o(.15, i({}, ce.HandR, new le(se.create(22, -8.25)).rotate(.2 * -Math.PI))), o(.25, i({}, ce.HandR, new le(se.create(28, -8.25)).rotate(.5 * Math.PI))), o(.55, i({}, ce.HandR, new le(se.create(14, 12.25))))],
                     effects: [n(0, "animPlaySound", {
                         sound: "swing"
-                    }), n(te.items.pan.damageTime, "animMeleeCollision", {})]
+                    }), n(we.damageTimes[0], "animMeleeCollision", {})]
                 },
                 axeSwing: {
-                    keyframes: [o(0, (_ = {}, i(_, ne.HandL, new oe(re.create(10.5, -14.25))), i(_, ne.HandR, new oe(re.create(18, 6.25))), _)), o(.4 * me.damageTime, (S = {}, i(S, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * Math.PI)), i(S, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * Math.PI)), S)), o(.6 * me.damageTime, (k = {}, i(k, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * -Math.PI)), i(k, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * -Math.PI)), k)), o(me.cooldownTime, (v = {}, i(v, ne.HandL, new oe(re.create(10.5, -14.25))), i(v, ne.HandR, new oe(re.create(18, 6.25))), v))],
-                    effects: [n(me.damageTime, "animPlaySound", {
+                    keyframes: [o(0, (_ = {}, i(_, ce.HandL, new le(se.create(10.5, -14.25))), i(_, ce.HandR, new le(se.create(18, 6.25))), _)), o(.4 * he.damageTimes[0], (S = {}, i(S, ce.HandL, new le(se.create(9, -14.25)).rotate(.4 * Math.PI)), i(S, ce.HandR, new le(se.create(18, 6.25)).rotate(.4 * Math.PI)), S)), o(he.damageTimes[0], (v = {}, i(v, ce.HandL, new le(se.create(9, -14.25)).rotate(.4 * -Math.PI)), i(v, ce.HandR, new le(se.create(18, 6.25)).rotate(.4 * -Math.PI)), v)), o(he.cooldownTime, (k = {}, i(k, ce.HandL, new le(se.create(10.5, -14.25))), i(k, ce.HandR, new le(se.create(18, 6.25))), k))],
+                    effects: [n(he.damageTimes[0], "animPlaySound", {
                         sound: "swing"
-                    }), n(me.damageTime, "animMeleeCollision", {})]
+                    }), n(he.damageTimes[0], "animMeleeCollision", {})]
                 },
                 hammerSwing: {
-                    keyframes: [o(0, (z = {}, i(z, ne.HandL, new oe(re.create(10.5, -14.25))), i(z, ne.HandR, new oe(re.create(18, 6.25))), z)), o(.4 * pe.damageTime, (M = {}, i(M, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * Math.PI)), i(M, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * Math.PI)), M)), o(.6 * pe.damageTime, (T = {}, i(T, ne.HandL, new oe(re.create(9, -14.25)).rotate(.4 * -Math.PI)), i(T, ne.HandR, new oe(re.create(18, 6.25)).rotate(.4 * -Math.PI)), T)), o(pe.cooldownTime, (P = {}, i(P, ne.HandL, new oe(re.create(10.5, -14.25))), i(P, ne.HandR, new oe(re.create(18, 6.25))), P))],
-                    effects: [n(pe.damageTime, "animPlaySound", {
+                    keyframes: [o(0, (z = {}, i(z, ce.HandL, new le(se.create(10.5, -14.25))), i(z, ce.HandR, new le(se.create(18, 6.25))), z)), o(.4 * ue.damageTimes[0], (M = {}, i(M, ce.HandL, new le(se.create(9, -14.25)).rotate(.4 * Math.PI)), i(M, ce.HandR, new le(se.create(18, 6.25)).rotate(.4 * Math.PI)), M)), o(ue.damageTimes[0], (T = {}, i(T, ce.HandL, new le(se.create(9, -14.25)).rotate(.4 * -Math.PI)), i(T, ce.HandR, new le(se.create(18, 6.25)).rotate(.4 * -Math.PI)), T)), o(ue.cooldownTime, (I = {}, i(I, ce.HandL, new le(se.create(10.5, -14.25))), i(I, ce.HandR, new le(se.create(18, 6.25))), I))],
+                    effects: [n(ue.damageTimes[0], "animPlaySound", {
                         sound: "swing"
-                    }), n(pe.damageTime, "animMeleeCollision", {})]
+                    }), n(ue.damageTimes[0], "animMeleeCollision", {})]
                 },
                 katanaSwing: {
-                    keyframes: [o(0, (I = {}, i(I, ne.HandL, new oe(re.create(8.5, 13.25))), i(I, ne.HandR, new oe(re.create(-3, 17.75))), I)), o(.3 * de.damageTime, (C = {}, i(C, ne.HandL, new oe(re.create(8.5, 13.25)).rotate(.2 * Math.PI)), i(C, ne.HandR, new oe(re.create(-3, 17.75)).rotate(.2 * Math.PI)), C)), o(.6 * de.damageTime, (A = {}, i(A, ne.HandL, new oe(re.create(8.5, 13.25)).rotate(1.2 * -Math.PI)), i(A, ne.HandR, new oe(re.create(-3, 17.75)).rotate(1.2 * -Math.PI)), A)), o(de.cooldownTime, (E = {}, i(E, ne.HandL, new oe(re.create(8.5, 13.25))), i(E, ne.HandR, new oe(re.create(-3, 17.75))), E))],
-                    effects: [n(de.damageTime, "animPlaySound", {
+                    keyframes: [o(0, (P = {}, i(P, ce.HandL, new le(se.create(8.5, 13.25))), i(P, ce.HandR, new le(se.create(-3, 17.75))), P)), o(.3 * ge.damageTimes[0], (C = {}, i(C, ce.HandL, new le(se.create(8.5, 13.25)).rotate(.2 * Math.PI)), i(C, ce.HandR, new le(se.create(-3, 17.75)).rotate(.2 * Math.PI)), C)), o(.9 * ge.damageTimes[0], (A = {}, i(A, ce.HandL, new le(se.create(8.5, 13.25)).rotate(1.2 * -Math.PI)), i(A, ce.HandR, new le(se.create(-3, 17.75)).rotate(1.2 * -Math.PI)), A)), o(ge.cooldownTime, (E = {}, i(E, ce.HandL, new le(se.create(8.5, 13.25))), i(E, ce.HandR, new le(se.create(-3, 17.75))), E))],
+                    effects: [n(ge.damageTimes[0], "animPlaySound", {
                         sound: "swing"
-                    }), n(de.damageTime, "animMeleeCollision", {})]
+                    }), n(ge.damageTimes[0], "animMeleeCollision", {})]
                 },
                 naginataSwing: {
-                    keyframes: [o(0, (D = {}, i(D, ne.HandL, new oe(re.create(19, -7.25))), i(D, ne.HandR, new oe(re.create(8.5, 24.25))), D)), o(.3 * he.damageTime, (O = {}, i(O, ne.HandL, new oe(re.create(19, -7.25)).rotate(.3 * Math.PI)), i(O, ne.HandR, new oe(re.create(8.5, 24.25)).rotate(.3 * Math.PI)), O)), o(.6 * he.damageTime, (B = {}, i(B, ne.HandL, new oe(re.create(19, -7.25)).rotate(.85 * -Math.PI)), i(B, ne.HandR, new oe(re.create(8.5, 24.25)).rotate(.85 * -Math.PI)), B)), o(he.cooldownTime, (L = {}, i(L, ne.HandL, new oe(re.create(19, -7.25))), i(L, ne.HandR, new oe(re.create(8.5, 24.25))), L))],
-                    effects: [n(me.damageTime, "animPlaySound", {
+                    keyframes: [o(0, (D = {}, i(D, ce.HandL, new le(se.create(19, -7.25))), i(D, ce.HandR, new le(se.create(8.5, 24.25))), D)), o(.3 * ye.damageTimes[0], (O = {}, i(O, ce.HandL, new le(se.create(19, -7.25)).rotate(.3 * Math.PI)), i(O, ce.HandR, new le(se.create(8.5, 24.25)).rotate(.3 * Math.PI)), O)), o(.9 * ye.damageTimes[0], (B = {}, i(B, ce.HandL, new le(se.create(19, -7.25)).rotate(.85 * -Math.PI)), i(B, ce.HandR, new le(se.create(8.5, 24.25)).rotate(.85 * -Math.PI)), B)), o(ye.cooldownTime, (R = {}, i(R, ce.HandL, new le(se.create(19, -7.25))), i(R, ce.HandR, new le(se.create(8.5, 24.25))), R))],
+                    effects: [n(he.damageTimes[0], "animPlaySound", {
                         sound: "swing"
-                    }), n(me.damageTime, "animMeleeCollision", {})]
+                    }), n(he.damageTimes[0], "animMeleeCollision", {})]
+                },
+                sawSwing: {
+                    keyframes: [o(0, i({}, ce.HandR, new le(se.create(1, 17.75)))), o(.4 * xe.damageTimes[0], i({}, ce.HandR, new le(se.create(25, 6.25)).rotate(.3 * Math.PI))), o(xe.damageTimes[0], i({}, ce.HandR, new le(se.create(25, 6.25)).rotate(.3 * -Math.PI))), o(xe.damageTimes[1] - .1, i({}, ce.HandR, new le(se.create(25, 17.75)).rotate(.25 * -Math.PI))), o(.6 * xe.damageTimes[1], i({}, ce.HandR, new le(se.create(-36, 7.75)).rotate(.25 * -Math.PI))), o(xe.damageTimes[1] + .2, i({}, ce.HandR, new le(se.create(1, 17.75))))],
+                    effects: [n(0, "animPlaySound", {
+                        sound: "swing"
+                    }), n(.4, "animPlaySound", {
+                        sound: "swing"
+                    }), n(xe.damageTimes[0], "animMeleeCollision", {}), n(xe.damageTimes[1], "animMeleeCollision", {
+                        playerHit: "playerHit2"
+                    })]
                 },
                 cook: {
-                    keyframes: [o(0, (R = {}, i(R, ne.HandL, new oe(re.create(15.75, -9.625))), i(R, ne.HandR, new oe(re.create(15.75, 9.625))), R)), o(.1, (F = {}, i(F, ne.HandL, new oe(re.create(14, -1.75))), i(F, ne.HandR, new oe(re.create(14, 1.75))), F)), o(.2, (j = {}, i(j, ne.HandL, new oe(re.create(14, -1.75))), i(j, ne.HandR, new oe(re.create(14, 1.75))), j)), o(.1, (q = {}, i(q, ne.HandL, new oe(re.create(22.75, -1.75))), i(q, ne.HandR, new oe(re.create(1.75, 14))), q)), o(99999, (N = {}, i(N, ne.HandL, new oe(re.create(22.75, -1.75))), i(N, ne.HandR, new oe(re.create(1.75, 14))), N))],
+                    keyframes: [o(0, (L = {}, i(L, ce.HandL, new le(se.create(15.75, -9.625))), i(L, ce.HandR, new le(se.create(15.75, 9.625))), L)), o(.1, (F = {}, i(F, ce.HandL, new le(se.create(14, -1.75))), i(F, ce.HandR, new le(se.create(14, 1.75))), F)), o(.3, (j = {}, i(j, ce.HandL, new le(se.create(14, -1.75))), i(j, ce.HandR, new le(se.create(14, 1.75))), j)), o(.4, (q = {}, i(q, ce.HandL, new le(se.create(22.75, -1.75))), i(q, ce.HandR, new le(se.create(1.75, 14))), q)), o(99999, (N = {}, i(N, ce.HandL, new le(se.create(22.75, -1.75))), i(N, ce.HandR, new le(se.create(1.75, 14))), N))],
                     effects: [n(0, "animPlaySound", {
                         sound: "pullPin"
                     }), n(.1, "animSetThrowableState", {
@@ -2724,7 +3350,7 @@
                     })]
                 },
                 throw: {
-                    keyframes: [o(0, (V = {}, i(V, ne.HandL, new oe(re.create(22.75, -1.75))), i(V, ne.HandR, new oe(re.create(1.75, 14.175))), V)), o(.15, (G = {}, i(G, ne.HandL, new oe(re.create(5.25, -15.75))), i(G, ne.HandR, new oe(re.create(29.75, 1.75))), G)), o(te.player.throwTime, (U = {}, i(U, ne.HandL, new oe(re.create(15.75, -9.625))), i(U, ne.HandR, new oe(re.create(15.75, 9.625))), U))],
+                    keyframes: [o(0, (V = {}, i(V, ce.HandL, new le(se.create(22.75, -1.75))), i(V, ce.HandR, new le(se.create(1.75, 14.175))), V)), o(.15, (G = {}, i(G, ce.HandL, new le(se.create(5.25, -15.75))), i(G, ce.HandR, new le(se.create(29.75, 1.75))), G)), o(.15 + ie.player.throwTime, (U = {}, i(U, ce.HandL, new le(se.create(15.75, -9.625))), i(U, ce.HandR, new le(se.create(15.75, 9.625))), U))],
                     effects: [n(0, "animPlaySound", {
                         sound: "throwing"
                     }), n(0, "animSetThrowableState", {
@@ -2732,23 +3358,23 @@
                     }), n(0, "animThrowableParticles", {})]
                 },
                 crawl_forward: {
-                    keyframes: [o(te.player.crawlTime / 3, (H = {}, i(H, ne.HandL, new oe(re.create(19.25, -10.5))), i(H, ne.FootL, new oe(re.create(-20.25, -9))), H)), o(te.player.crawlTime / 3, (W = {}, i(W, ne.HandL, new oe(re.create(5.25, -15.75))), i(W, ne.FootL, new oe(re.create(-11.25, -9))), W)), o(te.player.crawlTime / 3, (K = {}, i(K, ne.HandL, new oe(re.create(14, -12.25))), i(K, ne.FootL, new oe(re.create(-15.75, -9))), K))],
+                    keyframes: [o(0, (H = {}, i(H, ce.HandL, new le(se.create(14, -12.25))), i(H, ce.FootL, new le(se.create(-15.75, -9))), H)), o(.33 * ie.player.crawlTime, (W = {}, i(W, ce.HandL, new le(se.create(19.25, -10.5))), i(W, ce.FootL, new le(se.create(-20.25, -9))), W)), o(.66 * ie.player.crawlTime, (K = {}, i(K, ce.HandL, new le(se.create(5.25, -15.75))), i(K, ce.FootL, new le(se.create(-11.25, -9))), K)), o(1 * ie.player.crawlTime, (Z = {}, i(Z, ce.HandL, new le(se.create(14, -12.25))), i(Z, ce.FootL, new le(se.create(-15.75, -9))), Z))],
                     effects: []
                 },
                 crawl_backward: {
-                    keyframes: [o(te.player.crawlTime / 3, (Z = {}, i(Z, ne.HandL, new oe(re.create(5.25, -15.75))), i(Z, ne.FootL, new oe(re.create(-11.25, -9))), Z)), o(te.player.crawlTime / 3, (X = {}, i(X, ne.HandL, new oe(re.create(19.25, -10.5))), i(X, ne.FootL, new oe(re.create(-20.25, -9))), X)), o(te.player.crawlTime / 3, (Y = {}, i(Y, ne.HandL, new oe(re.create(14, -12.25))), i(Y, ne.FootL, new oe(re.create(-15.75, -9))), Y))],
+                    keyframes: [o(0, (X = {}, i(X, ce.HandL, new le(se.create(14, -12.25))), i(X, ce.FootL, new le(se.create(-15.75, -9))), X)), o(.33 * ie.player.crawlTime, (Y = {}, i(Y, ce.HandL, new le(se.create(5.25, -15.75))), i(Y, ce.FootL, new le(se.create(-11.25, -9))), Y)), o(.66 * ie.player.crawlTime, (J = {}, i(J, ce.HandL, new le(se.create(19.25, -10.5))), i(J, ce.FootL, new le(se.create(-20.25, -9))), J)), o(1 * ie.player.crawlTime, (Q = {}, i(Q, ce.HandL, new le(se.create(14, -12.25))), i(Q, ce.FootL, new le(se.create(-15.75, -9))), Q))],
                     effects: []
                 },
                 revive: {
-                    keyframes: [o(0, (J = {}, i(J, ne.HandL, new oe(re.create(14, -12.25))), i(J, ne.HandR, new oe(re.create(14, 12.25))), J)), o(.2, (Q = {}, i(Q, ne.HandL, new oe(re.create(24.5, -8.75))), i(Q, ne.HandR, new oe(re.create(5.25, 21))), Q)), o(te.player.reviveDuration, ($ = {}, i($, ne.HandL, new oe(re.create(24.5, -8.75))), i($, ne.HandR, new oe(re.create(5.25, 21))), $))],
+                    keyframes: [o(0, ($ = {}, i($, ce.HandL, new le(se.create(14, -12.25))), i($, ce.HandR, new le(se.create(14, 12.25))), $)), o(.2, (ee = {}, i(ee, ce.HandL, new le(se.create(24.5, -8.75))), i(ee, ce.HandR, new le(se.create(5.25, 21))), ee)), o(.2 + ie.player.reviveDuration, (te = {}, i(te, ce.HandL, new le(se.create(24.5, -8.75))), i(te, ce.HandR, new le(se.create(5.25, 21))), te))],
                     effects: []
                 }
             };
         e.exports = {
-            Pose: oe,
-            Bones: ne,
-            IdlePoses: se,
-            Animations: ue
+            Pose: le,
+            Bones: ce,
+            IdlePoses: me,
+            Animations: fe
         }
     },
     "6d494b5c": function(e, t, a) {
@@ -2807,21 +3433,21 @@
                         b = l.length(f);
                     f = b > 1e-4 ? l.div(f, b) : l.create(1, 0);
                     for (var _ = [], S = 0; S < u; S++) {
-                        var k = S / n.max(u - 1, 1);
-                        _.push(l.add(w, l.mul(f, b * k)))
+                        var v = S / n.max(u - 1, 1);
+                        _.push(l.add(w, l.mul(f, b * v)))
                     }
-                    for (var v = s, z = 0; z < _.length; z++) {
+                    for (var k = s, z = 0; z < _.length; z++) {
                         var M = _[z],
                             T = o.intersectCircle(e, M, h);
                         if (T) {
-                            var P = l.neg(T.dir),
-                                I = p.intersectSegmentDist(t, M, P, h, v, i, !0),
-                                C = o.intersectSegment(e, M, l.add(M, l.mul(P, h))),
+                            var I = l.neg(T.dir),
+                                P = p.intersectSegmentDist(t, M, I, h, k, i, !0),
+                                C = o.intersectSegment(e, M, l.add(M, l.mul(I, h))),
                                 A = C ? l.length(l.sub(C.point, M)) : 0,
-                                E = C && A <= I;
+                                E = C && A <= P;
                             if (c.debug) {
                                 var D = E ? 65280 : 16711680;
-                                m.addRay(M, P, h, D)
+                                m.addRay(M, I, h, D)
                             }
                             if (E) return {
                                 dist: A
@@ -2850,9 +3476,9 @@
     },
     "6e13f3b7": function(e, t) {
         e.exports = {
-            shared: [{
+            loadout: [{
                 meta: {
-                    image: "shared-0-100-06ad4031.png",
+                    image: "loadout-0-100-ab5ddec5.png",
                     size: {
                         w: 4096,
                         h: 4096
@@ -2860,810 +3486,50 @@
                     scale: 1
                 },
                 frames: {
-                    "map-building-mansion-floor-01b.img": {
+                    "part-aura-circle-01.img": {
                         frame: {
-                            x: 2118,
+                            x: 508,
                             y: 2,
-                            w: 1825,
-                            h: 1218
+                            w: 284,
+                            h: 282
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 1825,
-                            h: 1218
+                            x: 2,
+                            y: 3,
+                            w: 284,
+                            h: 282
                         },
                         sourceSize: {
-                            w: 1826,
-                            h: 1218
+                            w: 288,
+                            h: 288
                         }
                     },
-                    "map-building-police-floor-01.img": {
+                    "ping-map-pulse.img": {
                         frame: {
                             x: 2,
                             y: 2,
-                            w: 2112,
-                            h: 1568
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 2112,
-                            h: 1568
-                        },
-                        sourceSize: {
-                            w: 2112,
-                            h: 1568
-                        }
-                    },
-                    "map-building-barn-floor-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 1574,
-                            w: 1600,
-                            h: 1088
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1600,
-                            h: 1088
-                        },
-                        sourceSize: {
-                            w: 1600,
-                            h: 1088
-                        }
-                    },
-                    "map-building-police-ceiling-02.img": {
-                        frame: {
-                            x: 1606,
-                            y: 1574,
-                            w: 530,
-                            h: 1080
+                            w: 502,
+                            h: 502
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 1,
-                            w: 530,
-                            h: 1080
-                        },
-                        sourceSize: {
-                            w: 530,
-                            h: 1082
-                        }
-                    },
-                    "map-building-cabin-floor.img": {
-                        frame: {
-                            x: 2140,
-                            y: 1574,
-                            w: 1216,
-                            h: 992
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1216,
-                            h: 992
-                        },
-                        sourceSize: {
-                            w: 1216,
-                            h: 992
-                        }
-                    },
-                    "map-bunker-crossing-compartment-floor-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 2666,
-                            w: 1503,
-                            h: 928
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1503,
-                            h: 928
-                        },
-                        sourceSize: {
-                            w: 1504,
-                            h: 928
-                        }
-                    },
-                    "map-building-bank-ceiling-02.img": {
-                        frame: {
-                            x: 3360,
-                            y: 1574,
-                            w: 556,
-                            h: 888
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 50,
-                            w: 556,
-                            h: 888
-                        },
-                        sourceSize: {
-                            w: 556,
-                            h: 940
-                        }
-                    },
-                    "map-bunker-conch-compartment-floor-01a.img": {
-                        frame: {
-                            x: 1509,
-                            y: 2666,
-                            w: 940,
-                            h: 880
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 52,
-                            y: 0,
-                            w: 940,
-                            h: 880
-                        },
-                        sourceSize: {
-                            w: 992,
-                            h: 880
-                        }
-                    },
-                    "map-bunker-storm-chamber-floor-01.img": {
-                        frame: {
-                            x: 2453,
-                            y: 2666,
-                            w: 1264,
-                            h: 870
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 48,
-                            w: 1264,
-                            h: 870
-                        },
-                        sourceSize: {
-                            w: 1280,
-                            h: 928
-                        }
-                    },
-                    "map-building-hut-floor-02.img": {
-                        frame: {
-                            x: 3721,
-                            y: 2666,
-                            w: 130,
-                            h: 767
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 0,
-                            w: 130,
-                            h: 767
-                        },
-                        sourceSize: {
-                            w: 136,
-                            h: 768
-                        }
-                    },
-                    "map-wall-18.img": {
-                        frame: {
-                            x: 3855,
-                            y: 2666,
-                            w: 32,
-                            h: 576
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 576
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 576
-                        }
-                    },
-                    "map-bunker-crossing-compartment-ceiling-01b.img": {
-                        frame: {
-                            x: 2,
-                            y: 3598,
-                            w: 720,
-                            h: 496
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 720,
-                            h: 496
-                        },
-                        sourceSize: {
-                            w: 720,
-                            h: 496
-                        }
-                    },
-                    "map-building-police-ceiling-01.img": {
-                        frame: {
-                            x: 726,
-                            y: 3598,
-                            w: 1008,
-                            h: 480
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1008,
-                            h: 480
-                        },
-                        sourceSize: {
-                            w: 1008,
-                            h: 480
-                        }
-                    },
-                    "map-building-police-ceiling-03.img": {
-                        frame: {
-                            x: 1738,
-                            y: 3598,
-                            w: 504,
-                            h: 480
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 504,
-                            h: 480
-                        },
-                        sourceSize: {
-                            w: 504,
-                            h: 480
-                        }
-                    },
-                    "map-building-bank-floor-02.img": {
-                        frame: {
-                            x: 2246,
-                            y: 3598,
-                            w: 864,
-                            h: 448
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 864,
-                            h: 448
-                        },
-                        sourceSize: {
-                            w: 1088,
-                            h: 448
-                        }
-                    },
-                    "map-building-hut-floor-01.img": {
-                        frame: {
-                            x: 3114,
-                            y: 3598,
-                            w: 448,
-                            h: 448
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 32,
-                            y: 32,
-                            w: 448,
-                            h: 448
+                            x: 5,
+                            y: 5,
+                            w: 502,
+                            h: 502
                         },
                         sourceSize: {
                             w: 512,
                             h: 512
                         }
                     },
-                    "map-wall-14.img": {
-                        frame: {
-                            x: 3891,
-                            y: 2666,
-                            w: 32,
-                            h: 448
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 448
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 448
-                        }
-                    },
-                    "map-wall-14-rounded.img": {
-                        frame: {
-                            x: 3566,
-                            y: 3598,
-                            w: 32,
-                            h: 448
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 448
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 448
-                        }
-                    },
-                    "map-wall-13-rounded.img": {
-                        frame: {
-                            x: 3602,
-                            y: 3598,
-                            w: 32,
-                            h: 416
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 416
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 416
-                        }
-                    },
-                    "map-wall-13.img": {
-                        frame: {
-                            x: 3638,
-                            y: 3598,
-                            w: 32,
-                            h: 416
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 416
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 416
-                        }
-                    },
-                    "map-wall-glass-12-2.img": {
-                        frame: {
-                            x: 3674,
-                            y: 3598,
-                            w: 64,
-                            h: 384
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 64,
-                            h: 384
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 384
-                        }
-                    },
-                    "map-wall-glass-12.img": {
-                        frame: {
-                            x: 3742,
-                            y: 3598,
-                            w: 32,
-                            h: 384
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 384
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 384
-                        }
-                    },
-                    "map-wall-12.img": {
-                        frame: {
-                            x: 3778,
-                            y: 3598,
-                            w: 32,
-                            h: 384
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 384
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 384
-                        }
-                    },
-                    "map-wall-12-rounded.img": {
-                        frame: {
-                            x: 3814,
-                            y: 3598,
-                            w: 32,
-                            h: 384
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 384
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 384
-                        }
-                    },
-                    "map-pipes-04.img": {
-                        frame: {
-                            x: 3850,
-                            y: 3598,
-                            w: 88,
-                            h: 352
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 88,
-                            h: 352
-                        },
-                        sourceSize: {
-                            w: 88,
-                            h: 352
-                        }
-                    },
-                    "map-wall-11.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2,
-                            w: 32,
-                            h: 352
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 352
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 352
-                        }
-                    },
-                    "map-wall-11-rounded.img": {
-                        frame: {
-                            x: 3947,
-                            y: 358,
-                            w: 32,
-                            h: 352
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 352
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 352
-                        }
-                    },
-                    "map-building-vault-ceiling.img": {
-                        frame: {
-                            x: 2118,
-                            y: 1224,
-                            w: 321,
-                            h: 337
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 321,
-                            h: 337
-                        },
-                        sourceSize: {
-                            w: 432,
-                            h: 337
-                        }
-                    },
-                    "map-saloon-bar-01.img": {
-                        frame: {
-                            x: 2443,
-                            y: 1224,
-                            w: 54,
-                            h: 324
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 54,
-                            h: 324
-                        },
-                        sourceSize: {
-                            w: 54,
-                            h: 324
-                        }
-                    },
-                    "map-building-shack-floor-01.img": {
-                        frame: {
-                            x: 2501,
-                            y: 1224,
-                            w: 381,
-                            h: 320
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 19,
-                            y: 20,
-                            w: 381,
-                            h: 320
-                        },
-                        sourceSize: {
-                            w: 420,
-                            h: 340
-                        }
-                    },
-                    "map-bunker-crossing-floor-01.img": {
-                        frame: {
-                            x: 2886,
-                            y: 1224,
-                            w: 320,
-                            h: 320
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 320,
-                            h: 320
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 320
-                        }
-                    },
-                    "map-building-shack-floor-02.img": {
-                        frame: {
-                            x: 3210,
-                            y: 1224,
-                            w: 320,
-                            h: 320
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 320,
-                            h: 320
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 320
-                        }
-                    },
-                    "map-wall-glass-10.img": {
-                        frame: {
-                            x: 3947,
-                            y: 714,
-                            w: 32,
-                            h: 320
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 320
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 320
-                        }
-                    },
-                    "map-wall-10-rounded.img": {
-                        frame: {
-                            x: 3947,
-                            y: 1038,
-                            w: 32,
-                            h: 320
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 320
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 320
-                        }
-                    },
-                    "map-wall-10.img": {
-                        frame: {
-                            x: 3947,
-                            y: 1362,
-                            w: 32,
-                            h: 320
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 320
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 320
-                        }
-                    },
-                    "map-building-outhouse-floor.img": {
-                        frame: {
-                            x: 3534,
-                            y: 1224,
-                            w: 240,
-                            h: 308
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 80,
-                            y: 4,
-                            w: 240,
-                            h: 308
-                        },
-                        sourceSize: {
-                            w: 400,
-                            h: 316
-                        }
-                    },
-                    "map-bunker-crossing-compartment-ceiling-01a.img": {
-                        frame: {
-                            x: 3778,
-                            y: 1224,
-                            w: 128,
-                            h: 304
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 304
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 304
-                        }
-                    },
-                    "map-pipes-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2,
-                            w: 90,
-                            h: 288
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 90,
-                            h: 288
-                        },
-                        sourceSize: {
-                            w: 90,
-                            h: 288
-                        }
-                    },
-                    "map-wall-09-rounded.img": {
-                        frame: {
-                            x: 3983,
-                            y: 294,
-                            w: 32,
-                            h: 288
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 288
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 288
-                        }
-                    },
-                    "map-wall-09.img": {
-                        frame: {
-                            x: 4019,
-                            y: 294,
-                            w: 32,
-                            h: 288
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 288
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 288
-                        }
-                    },
                     "part-shell-05.img": {
                         frame: {
-                            x: 3983,
-                            y: 586,
+                            x: 2,
+                            y: 508,
                             w: 63,
                             h: 260
                         },
@@ -3680,2691 +3546,20 @@
                             h: 260
                         }
                     },
-                    "map-wall-08-rounded.img": {
+                    "emote-circle-outer.img": {
                         frame: {
-                            x: 3983,
-                            y: 850,
-                            w: 32,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 256
-                        }
-                    },
-                    "map-wall-shack-right.img": {
-                        frame: {
-                            x: 4019,
-                            y: 850,
-                            w: 24,
-                            h: 241
+                            x: 69,
+                            y: 508,
+                            w: 252,
+                            h: 254
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
+                            x: 2,
                             y: 1,
-                            w: 24,
-                            h: 241
-                        },
-                        sourceSize: {
-                            w: 24,
-                            h: 242
-                        }
-                    },
-                    "gun-awc-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 1110,
-                            w: 60,
-                            h: 236
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 60,
-                            h: 236
-                        },
-                        sourceSize: {
-                            w: 60,
-                            h: 236
-                        }
-                    },
-                    "gun-awc-02.img": {
-                        frame: {
-                            x: 3983,
-                            y: 1350,
-                            w: 60,
-                            h: 236
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 60,
-                            h: 236
-                        },
-                        sourceSize: {
-                            w: 60,
-                            h: 236
-                        }
-                    },
-                    "gun-pkp-top-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 1590,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-usas-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 1826,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-ots38-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2062,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-m249-top-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2298,
-                            w: 56,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 232
-                        }
-                    },
-                    "gun-garand-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2534,
-                            w: 48,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 48,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 232
-                        }
-                    },
-                    "map-door-02.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2770,
-                            w: 80,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 80,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 80,
-                            h: 224
-                        }
-                    },
-                    "map-wall-07.img": {
-                        frame: {
-                            x: 4035,
-                            y: 2534,
-                            w: 32,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 224
-                        }
-                    },
-                    "map-wall-07-rounded.img": {
-                        frame: {
-                            x: 3983,
-                            y: 2998,
-                            w: 32,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 224
-                        }
-                    },
-                    "map-wall-shack-left.img": {
-                        frame: {
-                            x: 4047,
-                            y: 850,
-                            w: 24,
-                            h: 222
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 24,
-                            h: 222
-                        },
-                        sourceSize: {
-                            w: 24,
-                            h: 222
-                        }
-                    },
-                    "gun-scorpion-01.img": {
-                        frame: {
-                            x: 4019,
-                            y: 2998,
-                            w: 48,
-                            h: 208
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 48,
-                            h: 208
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 208
-                        }
-                    },
-                    "map-wall-outhouse-side.img": {
-                        frame: {
-                            x: 4047,
-                            y: 1110,
-                            w: 24,
-                            h: 198
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 24,
-                            h: 198
-                        },
-                        sourceSize: {
-                            w: 24,
-                            h: 198
-                        }
-                    },
-                    "gun-m4a1-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 3226,
-                            w: 48,
-                            h: 196
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 48,
-                            h: 196
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 196
-                        }
-                    },
-                    "map-pipes-05.img": {
-                        frame: {
-                            x: 3983,
-                            y: 3426,
-                            w: 90,
-                            h: 192
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 90,
-                            h: 192
-                        },
-                        sourceSize: {
-                            w: 90,
-                            h: 192
-                        }
-                    },
-                    "map-wall-06-rounded.img": {
-                        frame: {
-                            x: 4035,
-                            y: 3226,
-                            w: 32,
-                            h: 192
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 192
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 192
-                        }
-                    },
-                    "map-wall-06.img": {
-                        frame: {
-                            x: 3983,
-                            y: 3622,
-                            w: 32,
-                            h: 192
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 192
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 192
-                        }
-                    },
-                    "part-shell-02.img": {
-                        frame: {
-                            x: 3983,
-                            y: 3818,
-                            w: 63,
-                            h: 190
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 63,
-                            h: 190
-                        },
-                        sourceSize: {
-                            w: 63,
-                            h: 190
-                        }
-                    },
-                    "gun-long-01.img": {
-                        frame: {
-                            x: 4019,
-                            y: 3622,
-                            w: 32,
-                            h: 188
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 188
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 188
-                        }
-                    },
-                    "part-shell-03.img": {
-                        frame: {
-                            x: 3855,
-                            y: 3246,
-                            w: 63,
-                            h: 180
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 63,
-                            h: 180
-                        },
-                        sourceSize: {
-                            w: 63,
-                            h: 180
-                        }
-                    },
-                    "map-wall-05-rounded.img": {
-                        frame: {
-                            x: 3947,
-                            y: 1686,
-                            w: 32,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 160
-                        }
-                    },
-                    "map-wall-05.img": {
-                        frame: {
-                            x: 3947,
-                            y: 1850,
-                            w: 32,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 160
-                        }
-                    },
-                    "map-wall-04.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2014,
-                            w: 32,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 128
-                        }
-                    },
-                    "map-wall-04-rounded.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2146,
-                            w: 32,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 128
-                        }
-                    },
-                    "map-wall-outhouse-bot.img": {
-                        frame: {
-                            x: 3391,
-                            y: 3550,
-                            w: 72,
-                            h: 24
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 24
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 24
-                        }
-                    },
-                    "map-door-05.img": {
-                        frame: {
-                            x: 4047,
-                            y: 1350,
-                            w: 24,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 24,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 24,
-                            h: 128
-                        }
-                    },
-                    "map-door-01.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1590,
-                            w: 24,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 24,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 24,
-                            h: 128
-                        }
-                    },
-                    "map-door-03.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2410,
-                            w: 32,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 112
-                        }
-                    },
-                    "map-building-house-window-res-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2526,
-                            w: 32,
-                            h: 104
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 104
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 104
-                        }
-                    },
-                    "map-building-house-window-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2634,
-                            w: 32,
-                            h: 104
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 104
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 104
-                        }
-                    },
-                    "ping-map-airstrike.img": {
-                        frame: {
-                            x: 3891,
-                            y: 3118,
-                            w: 44,
-                            h: 103
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 42,
-                            y: 13,
-                            w: 44,
-                            h: 103
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-crate-06.img": {
-                        frame: {
-                            x: 3360,
-                            y: 2466,
-                            w: 164,
-                            h: 100
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 164,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 164,
-                            h: 100
-                        }
-                    },
-                    "trunk.img": {
-                        frame: {
-                            x: 3528,
-                            y: 2466,
-                            w: 106,
-                            h: 100
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 11,
-                            y: 14,
-                            w: 106,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "crab.img": {
-                        frame: {
-                            x: 3638,
-                            y: 2466,
-                            w: 100,
-                            h: 100
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 14,
-                            y: 14,
-                            w: 100,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "gun-short-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2742,
-                            w: 32,
-                            h: 100
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 100
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 100
-                        }
-                    },
-                    "dab-face.img": {
-                        frame: {
-                            x: 3742,
-                            y: 2466,
-                            w: 144,
-                            h: 98
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 23,
-                            w: 144,
-                            h: 98
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "forest.img": {
-                        frame: {
-                            x: 3721,
-                            y: 3437,
-                            w: 120,
-                            h: 98
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 15,
-                            w: 120,
-                            h: 98
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "baguette.img": {
-                        frame: {
-                            x: 3845,
-                            y: 3437,
-                            w: 98,
-                            h: 98
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 15,
-                            y: 15,
-                            w: 98,
-                            h: 98
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-wall-03-rounded.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2846,
-                            w: 32,
-                            h: 96
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 96
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 96
-                        }
-                    },
-                    "map-wall-03.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2946,
-                            w: 32,
-                            h: 96
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 96
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 96
-                        }
-                    },
-                    "ping-map-woods-king.img": {
-                        frame: {
-                            x: 2140,
-                            y: 2570,
-                            w: 92,
-                            h: 84
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 18,
-                            y: 22,
-                            w: 92,
-                            h: 84
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-throwable-snowball.img": {
-                        frame: {
-                            x: 2236,
-                            y: 2570,
-                            w: 84,
-                            h: 84
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 22,
-                            y: 22,
-                            w: 84,
-                            h: 84
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "cog.img": {
-                        frame: {
-                            x: 2324,
-                            y: 2570,
-                            w: 83,
-                            h: 84
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 22,
-                            y: 22,
-                            w: 83,
-                            h: 84
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-bunker-vent-01.img": {
-                        frame: {
-                            x: 2411,
-                            y: 2570,
-                            w: 82,
-                            h: 84
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 82,
-                            h: 84
-                        },
-                        sourceSize: {
-                            w: 84,
-                            h: 84
-                        }
-                    },
-                    "eye.img": {
-                        frame: {
-                            x: 2497,
-                            y: 2570,
-                            w: 126,
-                            h: 82
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 23,
-                            w: 126,
-                            h: 82
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "chicken.img": {
-                        frame: {
-                            x: 2627,
-                            y: 2570,
-                            w: 106,
-                            h: 82
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 11,
-                            y: 23,
-                            w: 106,
-                            h: 82
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-vending-res.img": {
-                        frame: {
-                            x: 2737,
-                            y: 2570,
-                            w: 93,
-                            h: 82
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 5,
-                            w: 93,
-                            h: 82
-                        },
-                        sourceSize: {
-                            w: 108,
-                            h: 94
-                        }
-                    },
-                    "audio-off.img": {
-                        frame: {
-                            x: 2834,
-                            y: 2570,
-                            w: 92,
-                            h: 80
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 18,
-                            y: 24,
-                            w: 92,
-                            h: 80
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "audio-on.img": {
-                        frame: {
-                            x: 2930,
-                            y: 2570,
-                            w: 92,
-                            h: 80
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 18,
-                            y: 24,
-                            w: 92,
-                            h: 80
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-pot-res-01.img": {
-                        frame: {
-                            x: 3983,
-                            y: 4012,
-                            w: 80,
-                            h: 80
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 32,
-                            y: 32,
-                            w: 80,
-                            h: 80
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "gun-dp28-top-01.img": {
-                        frame: {
-                            x: 3026,
-                            y: 2570,
-                            w: 80,
-                            h: 80
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 80,
-                            h: 80
-                        },
-                        sourceSize: {
-                            w: 80,
-                            h: 80
-                        }
-                    },
-                    "loot-weapon-fists.img": {
-                        frame: {
-                            x: 3110,
-                            y: 2570,
-                            w: 74,
-                            h: 78
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 27,
-                            y: 25,
-                            w: 74,
-                            h: 78
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-helmet-02.img": {
-                        frame: {
-                            x: 3188,
-                            y: 2570,
-                            w: 118,
-                            h: 76
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 26,
-                            w: 118,
-                            h: 76
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "proj-mirv-mini-01.img": {
-                        frame: {
-                            x: 3310,
-                            y: 2570,
-                            w: 84,
-                            h: 76
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 10,
-                            w: 84,
-                            h: 76
-                        },
-                        sourceSize: {
-                            w: 96,
-                            h: 96
-                        }
-                    },
-                    "map-piano-01.img": {
-                        frame: {
-                            x: 3398,
-                            y: 2570,
-                            w: 240,
-                            h: 75
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 240,
-                            h: 75
-                        },
-                        sourceSize: {
-                            w: 240,
-                            h: 75
-                        }
-                    },
-                    "map-deposit-box-02.img": {
-                        frame: {
-                            x: 3642,
-                            y: 2570,
-                            w: 160,
-                            h: 74
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 74
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 74
-                        }
-                    },
-                    "gg.img": {
-                        frame: {
-                            x: 3806,
-                            y: 2570,
-                            w: 114,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 7,
-                            y: 28,
-                            w: 114,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "unlock.img": {
-                        frame: {
-                            x: 3890,
-                            y: 2466,
-                            w: 48,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 0,
-                            w: 48,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 64
-                        }
-                    },
-                    "map-wall-02.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3046,
-                            w: 32,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 64
-                        }
-                    },
-                    "map-wall-02-rounded.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3114,
-                            w: 32,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 64
-                        }
-                    },
-                    "map-gun-mount-02.img": {
-                        frame: {
-                            x: 1509,
-                            y: 3550,
-                            w: 128,
-                            h: 44
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 44
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 56
-                        }
-                    },
-                    "map-gun-mount-03.img": {
-                        frame: {
-                            x: 1641,
-                            y: 3550,
-                            w: 128,
-                            h: 44
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 44
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 56
-                        }
-                    },
-                    "gun-m249-bot-01.img": {
-                        frame: {
-                            x: 1773,
-                            y: 3550,
-                            w: 76,
-                            h: 44
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 76,
-                            h: 44
-                        },
-                        sourceSize: {
-                            w: 76,
-                            h: 44
-                        }
-                    },
-                    "gun-pkp-bot-01.img": {
-                        frame: {
-                            x: 1853,
-                            y: 3550,
-                            w: 76,
-                            h: 44
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 76,
-                            h: 44
-                        },
-                        sourceSize: {
-                            w: 76,
-                            h: 44
-                        }
-                    },
-                    "ping-part-eighth-highlight.img": {
-                        frame: {
-                            x: 1933,
-                            y: 3550,
-                            w: 51,
-                            h: 43
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 20,
-                            w: 51,
-                            h: 43
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ping-part-eighth.img": {
-                        frame: {
-                            x: 1988,
-                            y: 3550,
-                            w: 51,
-                            h: 43
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 20,
-                            w: 51,
-                            h: 43
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-building-bank-window-res-01.img": {
-                        frame: {
-                            x: 2043,
-                            y: 3550,
-                            w: 44,
-                            h: 43
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 46,
-                            y: 55,
-                            w: 44,
-                            h: 43
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "pumpkin-play.img": {
-                        frame: {
-                            x: 2091,
-                            y: 3550,
-                            w: 40,
-                            h: 43
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 1,
-                            w: 40,
-                            h: 43
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 48
-                        }
-                    },
-                    "part-frag-lever-01.img": {
-                        frame: {
-                            x: 2135,
-                            y: 3550,
-                            w: 48,
-                            h: 40
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 40,
-                            y: 44,
-                            w: 48,
-                            h: 40
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "hatchet.img": {
-                        frame: {
-                            x: 2187,
-                            y: 3550,
-                            w: 44,
-                            h: 38
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 5,
-                            w: 44,
-                            h: 38
-                        },
-                        sourceSize: {
-                            w: 48,
-                            h: 48
-                        }
-                    },
-                    "player-feet-01.img": {
-                        frame: {
-                            x: 2235,
-                            y: 3550,
-                            w: 38,
-                            h: 38
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 38
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 38
-                        }
-                    },
-                    "player-hands-01.img": {
-                        frame: {
-                            x: 2277,
-                            y: 3550,
-                            w: 38,
-                            h: 38
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 38
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 38
-                        }
-                    },
-                    "map-barrel-04.img": {
-                        frame: {
-                            x: 2319,
-                            y: 3550,
-                            w: 89,
-                            h: 35
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 89,
-                            h: 35
-                        },
-                        sourceSize: {
-                            w: 89,
-                            h: 35
-                        }
-                    },
-                    "map-barrel-03.img": {
-                        frame: {
-                            x: 2412,
-                            y: 3550,
-                            w: 89,
-                            h: 35
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 89,
-                            h: 35
-                        },
-                        sourceSize: {
-                            w: 89,
-                            h: 35
-                        }
-                    },
-                    "map-switch-01.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1722,
-                            w: 30,
-                            h: 34
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 30,
-                            h: 34
-                        },
-                        sourceSize: {
-                            w: 30,
-                            h: 34
-                        }
-                    },
-                    "gun-qbb97-bot-01.img": {
-                        frame: {
-                            x: 2505,
-                            y: 3550,
-                            w: 64,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 64,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 32
-                        }
-                    },
-                    "map-bottle-03.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3182,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "map-bottle-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3218,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "dot.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3254,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 36,
-                            h: 36
-                        }
-                    },
-                    "map-bottle-02.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3290,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "map-wall-01-rounded.img": {
-                        frame: {
-                            x: 3947,
-                            y: 3326,
-                            w: 32,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 32
-                        }
-                    },
-                    "map-switch-02.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1760,
-                            w: 30,
-                            h: 32
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 30,
-                            h: 32
-                        },
-                        sourceSize: {
-                            w: 30,
-                            h: 34
-                        }
-                    },
-                    "ping-part-circle-auto-highlight.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1826,
-                            w: 29,
-                            h: 29
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 29,
-                            h: 29
-                        },
-                        sourceSize: {
-                            w: 29,
-                            h: 29
-                        }
-                    },
-                    "ping-part-circle.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1859,
-                            w: 28,
-                            h: 28
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 50,
-                            y: 50,
-                            w: 28,
-                            h: 28
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ping-part-circle-auto.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1891,
-                            w: 28,
-                            h: 28
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 28,
-                            h: 28
-                        },
-                        sourceSize: {
-                            w: 28,
-                            h: 28
-                        }
-                    },
-                    "ping-part-circle-highlight.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1923,
-                            w: 28,
-                            h: 28
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 50,
-                            y: 50,
-                            w: 28,
-                            h: 28
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ping-part-circle-auto-outer.img": {
-                        frame: {
-                            x: 4043,
-                            y: 1796,
-                            w: 28,
-                            h: 26
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 1,
-                            w: 28,
-                            h: 26
-                        },
-                        sourceSize: {
-                            w: 28,
-                            h: 28
-                        }
-                    },
-                    "map-wall-shack-top.img": {
-                        frame: {
-                            x: 2573,
-                            y: 3550,
-                            w: 360,
-                            h: 24
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 360,
-                            h: 24
-                        },
-                        sourceSize: {
-                            w: 360,
-                            h: 24
-                        }
-                    },
-                    "map-wall-shack-bot.img": {
-                        frame: {
-                            x: 2937,
-                            y: 3550,
-                            w: 242,
-                            h: 24
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 242,
-                            h: 24
-                        },
-                        sourceSize: {
-                            w: 242,
-                            h: 24
-                        }
-                    },
-                    "map-wall-outhouse-top.img": {
-                        frame: {
-                            x: 3183,
-                            y: 3550,
-                            w: 204,
-                            h: 24
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 204,
-                            h: 24
-                        },
-                        sourceSize: {
-                            w: 204,
-                            h: 24
-                        }
-                    },
-                    "gun-med-01.img": {
-                        frame: {
-                            x: 3947,
-                            y: 2278,
-                            w: 32,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 32,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 32,
-                            h: 128
-                        }
-                    }
-                }
-            }, {
-                meta: {
-                    image: "shared-1-100-029c2f67.png",
-                    size: {
-                        w: 4096,
-                        h: 4096
-                    },
-                    scale: 1
-                },
-                frames: {
-                    "map-building-house-floor-02.img": {
-                        frame: {
-                            x: 966,
-                            y: 2,
-                            w: 960,
-                            h: 864
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 960,
-                            h: 864
-                        },
-                        sourceSize: {
-                            w: 960,
-                            h: 864
-                        }
-                    },
-                    "map-building-house-floor-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 2,
-                            w: 960,
-                            h: 864
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 960,
-                            h: 864
-                        },
-                        sourceSize: {
-                            w: 960,
-                            h: 864
-                        }
-                    },
-                    "map-building-bank-floor-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 870,
-                            w: 1696,
-                            h: 802
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1696,
-                            h: 802
-                        },
-                        sourceSize: {
-                            w: 1696,
-                            h: 802
-                        }
-                    },
-                    "map-building-mansion-cellar-01a.img": {
-                        frame: {
-                            x: 1930,
-                            y: 2,
-                            w: 865,
-                            h: 801
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 865,
-                            h: 801
-                        },
-                        sourceSize: {
-                            w: 866,
-                            h: 802
-                        }
-                    },
-                    "map-building-warehouse-floor-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 1676,
-                            w: 1e3,
-                            h: 800
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1e3,
-                            h: 800
-                        },
-                        sourceSize: {
-                            w: 1e3,
-                            h: 800
-                        }
-                    },
-                    "map-building-mansion-ceiling.img": {
-                        frame: {
-                            x: 1006,
-                            y: 1676,
-                            w: 912,
-                            h: 800
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 32,
-                            w: 912,
-                            h: 800
-                        },
-                        sourceSize: {
-                            w: 1024,
-                            h: 864
-                        }
-                    },
-                    "map-building-warehouse-floor-02.img": {
-                        frame: {
-                            x: 2799,
-                            y: 2,
-                            w: 880,
-                            h: 800
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 880,
-                            h: 800
-                        },
-                        sourceSize: {
-                            w: 880,
-                            h: 800
-                        }
-                    },
-                    "map-building-bridge-lg-floor.img": {
-                        frame: {
-                            x: 2,
-                            y: 2480,
-                            w: 2016,
-                            h: 704
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 160,
-                            y: 256,
-                            w: 2016,
-                            h: 704
-                        },
-                        sourceSize: {
-                            w: 2336,
-                            h: 1216
-                        }
-                    },
-                    "map-bunker-egg-chamber-floor-01a.img": {
-                        frame: {
-                            x: 2799,
-                            y: 806,
-                            w: 722,
-                            h: 697
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 13,
-                            y: 0,
-                            w: 722,
-                            h: 697
-                        },
-                        sourceSize: {
-                            w: 738,
-                            h: 706
-                        }
-                    },
-                    "map-building-container-open-floor.img": {
-                        frame: {
-                            x: 2799,
-                            y: 1507,
-                            w: 180,
-                            h: 684
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 3,
-                            w: 180,
-                            h: 684
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 692
-                        }
-                    },
-                    "map-building-vault-floor.img": {
-                        frame: {
-                            x: 2983,
-                            y: 1507,
-                            w: 641,
-                            h: 674
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 641,
-                            h: 674
-                        },
-                        sourceSize: {
-                            w: 865,
-                            h: 674
-                        }
-                    },
-                    "map-building-dock-floor-01b.img": {
-                        frame: {
-                            x: 1930,
-                            y: 807,
-                            w: 162,
-                            h: 662
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 2,
-                            w: 162,
-                            h: 662
-                        },
-                        sourceSize: {
-                            w: 162,
-                            h: 664
-                        }
-                    },
-                    "map-building-house-ceiling.img": {
-                        frame: {
-                            x: 1922,
-                            y: 1676,
-                            w: 720,
-                            h: 648
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 720,
-                            h: 648
-                        },
-                        sourceSize: {
-                            w: 720,
-                            h: 648
-                        }
-                    },
-                    "map-building-police-floor-02.img": {
-                        frame: {
-                            x: 2096,
-                            y: 807,
-                            w: 609,
-                            h: 640
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 65,
-                            w: 609,
-                            h: 640
-                        },
-                        sourceSize: {
-                            w: 610,
-                            h: 1570
-                        }
-                    },
-                    "map-building-barn-ceiling-01.img": {
-                        frame: {
-                            x: 2022,
-                            y: 2480,
-                            w: 1200,
-                            h: 624
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1200,
-                            h: 624
-                        },
-                        sourceSize: {
-                            w: 1200,
-                            h: 624
-                        }
-                    },
-                    "map-building-teahouse-ceiling-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 3188,
-                            w: 934,
-                            h: 608
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 9,
-                            y: 16,
-                            w: 934,
-                            h: 608
-                        },
-                        sourceSize: {
-                            w: 960,
-                            h: 640
-                        }
-                    },
-                    "map-bunker-crossing-compartment-floor-02.img": {
-                        frame: {
-                            x: 3226,
-                            y: 2480,
-                            w: 317,
-                            h: 608
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 0,
-                            w: 317,
-                            h: 608
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 608
-                        }
-                    },
-                    "map-building-cabin-ceiling-01a.img": {
-                        frame: {
-                            x: 940,
-                            y: 3188,
-                            w: 912,
-                            h: 576
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 912,
-                            h: 576
-                        },
-                        sourceSize: {
-                            w: 912,
-                            h: 576
-                        }
-                    },
-                    "map-building-teahouse-floor-01.img": {
-                        frame: {
-                            x: 1856,
-                            y: 3188,
-                            w: 896,
-                            h: 576
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 896,
-                            h: 576
-                        },
-                        sourceSize: {
-                            w: 896,
-                            h: 576
-                        }
-                    },
-                    "map-bunker-conch-compartment-ceiling-01.img": {
-                        frame: {
-                            x: 2756,
-                            y: 3188,
-                            w: 488,
-                            h: 560
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 488,
-                            h: 560
-                        },
-                        sourceSize: {
-                            w: 488,
-                            h: 560
-                        }
-                    },
-                    "map-building-container-floor-01.img": {
-                        frame: {
-                            x: 1702,
-                            y: 870,
-                            w: 180,
-                            h: 531
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 180,
-                            h: 531
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 536
-                        }
-                    },
-                    "map-bunker-conch-compartment-floor-01b.img": {
-                        frame: {
-                            x: 3248,
-                            y: 3188,
-                            w: 400,
-                            h: 428
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 400,
-                            h: 428
-                        },
-                        sourceSize: {
-                            w: 400,
-                            h: 448
-                        }
-                    },
-                    "map-building-hut-ceiling-02.img": {
-                        frame: {
-                            x: 3683,
-                            y: 2,
-                            w: 378,
-                            h: 393
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 15,
-                            y: 15,
-                            w: 378,
-                            h: 393
-                        },
-                        sourceSize: {
-                            w: 408,
-                            h: 408
-                        }
-                    },
-                    "map-building-hut-ceiling-01.img": {
-                        frame: {
-                            x: 3683,
-                            y: 399,
-                            w: 378,
-                            h: 393
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 15,
-                            y: 15,
-                            w: 378,
-                            h: 393
-                        },
-                        sourceSize: {
-                            w: 408,
-                            h: 408
-                        }
-                    },
-                    "map-building-panicroom-ceiling.img": {
-                        frame: {
-                            x: 3683,
-                            y: 796,
-                            w: 288,
-                            h: 384
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 288,
-                            h: 384
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 384
-                        }
-                    },
-                    "map-building-panicroom-floor.img": {
-                        frame: {
-                            x: 3683,
-                            y: 1184,
-                            w: 288,
-                            h: 384
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 288,
-                            h: 384
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 384
-                        }
-                    },
-                    "map-bunker-storm-floor-02.img": {
-                        frame: {
-                            x: 3683,
-                            y: 1572,
-                            w: 320,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 320,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 384
-                        }
-                    },
-                    "map-building-container-open-ceiling-01.img": {
-                        frame: {
-                            x: 3683,
-                            y: 1956,
-                            w: 180,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 156,
-                            w: 180,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 692
-                        }
-                    },
-                    "map-building-container-ceiling-02.img": {
-                        frame: {
-                            x: 3867,
-                            y: 1956,
-                            w: 180,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 180,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 536
-                        }
-                    },
-                    "map-building-container-ceiling-03.img": {
-                        frame: {
-                            x: 3683,
-                            y: 2340,
-                            w: 180,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 180,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 536
-                        }
-                    },
-                    "map-building-container-ceiling-05.img": {
-                        frame: {
-                            x: 3867,
-                            y: 2340,
-                            w: 180,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 180,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 536
-                        }
-                    },
-                    "map-building-container-ceiling-01.img": {
-                        frame: {
-                            x: 3683,
-                            y: 2724,
-                            w: 180,
-                            h: 380
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 180,
-                            h: 380
-                        },
-                        sourceSize: {
-                            w: 180,
-                            h: 536
-                        }
-                    },
-                    "map-building-bank-ceiling-03.img": {
-                        frame: {
-                            x: 3683,
-                            y: 3108,
-                            w: 216,
-                            h: 360
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 192,
-                            w: 216,
-                            h: 360
-                        },
-                        sourceSize: {
-                            w: 216,
-                            h: 552
-                        }
-                    },
-                    "map-bunker-egg-chamber-ceiling-01.img": {
-                        frame: {
-                            x: 3683,
-                            y: 3472,
-                            w: 320,
-                            h: 304
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 144,
-                            w: 320,
-                            h: 304
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 448
-                        }
-                    },
-                    "map-building-shack-ceiling-03.img": {
-                        frame: {
-                            x: 2,
-                            y: 3800,
-                            w: 408,
-                            h: 288
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 24,
-                            y: 0,
-                            w: 408,
-                            h: 288
-                        },
-                        sourceSize: {
-                            w: 432,
-                            h: 336
-                        }
-                    },
-                    "map-bunker-generic-floor-01.img": {
-                        frame: {
-                            x: 2799,
-                            y: 2195,
-                            w: 295,
-                            h: 281
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 12,
-                            y: 0,
-                            w: 295,
-                            h: 281
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 288
-                        }
-                    },
-                    "map-bunker-generic-floor-02.img": {
-                        frame: {
-                            x: 3098,
-                            y: 2195,
-                            w: 295,
-                            h: 281
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 12,
-                            y: 0,
-                            w: 295,
-                            h: 281
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 288
-                        }
-                    },
-                    "map-stone-03.img": {
-                        frame: {
-                            x: 3397,
-                            y: 2195,
-                            w: 276,
-                            h: 272
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 6,
-                            y: 8,
-                            w: 276,
-                            h: 272
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 288
-                        }
-                    },
-                    "map-bush-04.img": {
-                        frame: {
-                            x: 414,
-                            y: 3800,
-                            w: 272,
-                            h: 260
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 14,
-                            y: 20,
-                            w: 272,
-                            h: 260
-                        },
-                        sourceSize: {
-                            w: 300,
-                            h: 300
-                        }
-                    },
-                    "map-tree-03.img": {
-                        frame: {
-                            x: 690,
-                            y: 3800,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "map-tree-07s.img": {
-                        frame: {
-                            x: 950,
-                            y: 3800,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
+                            w: 252,
+                            h: 254
                         },
                         sourceSize: {
                             w: 256,
@@ -6373,18 +3568,18 @@
                     },
                     "part-smoke-03.img": {
                         frame: {
-                            x: 1210,
-                            y: 3800,
-                            w: 256,
-                            h: 256
+                            x: 325,
+                            y: 508,
+                            w: 255,
+                            h: 251
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
+                            x: 2,
+                            y: 1,
+                            w: 255,
+                            h: 251
                         },
                         sourceSize: {
                             w: 256,
@@ -6393,208 +3588,288 @@
                     },
                     "part-smoke-02.img": {
                         frame: {
-                            x: 1470,
-                            y: 3800,
-                            w: 256,
-                            h: 256
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 256,
-                            h: 256
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "emote-circle-outer.img": {
-                        frame: {
-                            x: 1730,
-                            y: 3800,
-                            w: 252,
-                            h: 254
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 1,
-                            w: 252,
-                            h: 254
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "map-bunker-crossing-chamber-floor-02.img": {
-                        frame: {
-                            x: 1986,
-                            y: 3800,
-                            w: 704,
-                            h: 252
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 32,
-                            y: 320,
-                            w: 704,
-                            h: 252
-                        },
-                        sourceSize: {
-                            w: 736,
-                            h: 576
-                        }
-                    },
-                    "map-bunker-conch-floor-01.img": {
-                        frame: {
-                            x: 2694,
-                            y: 3800,
-                            w: 580,
-                            h: 252
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 10,
+                            x: 796,
                             y: 2,
-                            w: 580,
-                            h: 252
+                            w: 256,
+                            h: 250
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 3,
+                            w: 256,
+                            h: 250
                         },
                         sourceSize: {
-                            w: 600,
+                            w: 256,
                             h: 256
                         }
                     },
-                    "map-bunker-crossing-chamber-floor-03.img": {
+                    "gun-awc-02.img": {
                         frame: {
-                            x: 3278,
-                            y: 3800,
-                            w: 704,
-                            h: 248
+                            x: 796,
+                            y: 256,
+                            w: 47,
+                            h: 228
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 32,
-                            y: 324,
-                            w: 704,
-                            h: 248
+                            x: 9,
+                            y: 9,
+                            w: 47,
+                            h: 228
                         },
                         sourceSize: {
-                            w: 736,
-                            h: 576
+                            w: 60,
+                            h: 236
                         }
                     },
-                    "map-bunker-crossing-ceiling-01.img": {
+                    "gun-awc-01.img": {
                         frame: {
-                            x: 3867,
-                            y: 2724,
-                            w: 192,
-                            h: 230
+                            x: 847,
+                            y: 256,
+                            w: 47,
+                            h: 228
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 64,
-                            y: 0,
-                            w: 192,
-                            h: 230
+                            x: 9,
+                            y: 9,
+                            w: 47,
+                            h: 228
                         },
                         sourceSize: {
-                            w: 320,
-                            h: 288
+                            w: 60,
+                            h: 236
                         }
                     },
-                    "map-bunker-generic-ceiling-01.img": {
+                    "gun-m249-top-01.img": {
                         frame: {
-                            x: 1702,
-                            y: 1405,
-                            w: 192,
-                            h: 230
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 64,
-                            y: 0,
-                            w: 192,
-                            h: 230
-                        },
-                        sourceSize: {
-                            w: 320,
-                            h: 288
-                        }
-                    },
-                    "map-bed-01.img": {
-                        frame: {
-                            x: 3903,
-                            y: 3108,
-                            w: 96,
+                            x: 898,
+                            y: 256,
+                            w: 38,
                             h: 216
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 9,
+                            y: 17,
+                            w: 38,
+                            h: 216
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 232
+                        }
+                    },
+                    "gun-garand-01.img": {
+                        frame: {
+                            x: 940,
+                            y: 256,
+                            w: 34,
+                            h: 214
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 19,
+                            w: 34,
+                            h: 214
+                        },
+                        sourceSize: {
+                            w: 48,
+                            h: 232
+                        }
+                    },
+                    "gun-usas-01.img": {
+                        frame: {
+                            x: 978,
+                            y: 256,
+                            w: 43,
+                            h: 210
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 23,
+                            w: 43,
+                            h: 210
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 232
+                        }
+                    },
+                    "pad.img": {
+                        frame: {
+                            x: 796,
+                            y: 488,
+                            w: 208,
+                            h: 208
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 96,
-                            h: 216
+                            w: 208,
+                            h: 208
                         },
                         sourceSize: {
-                            w: 96,
-                            h: 216
+                            w: 208,
+                            h: 208
                         }
                     },
-                    "map-bunker-conch-chamber-ceiling-01.img": {
+                    "gun-scorpion-01.img": {
                         frame: {
-                            x: 1930,
-                            y: 1473,
-                            w: 496,
-                            h: 192
+                            x: 1008,
+                            y: 488,
+                            w: 41,
+                            h: 200
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 9,
+                            w: 41,
+                            h: 200
+                        },
+                        sourceSize: {
+                            w: 48,
+                            h: 208
+                        }
+                    },
+                    "gun-pkp-top-01.img": {
+                        frame: {
+                            x: 508,
+                            y: 288,
+                            w: 36,
+                            h: 194
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 13,
+                            y: 39,
+                            w: 36,
+                            h: 194
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 232
+                        }
+                    },
+                    "part-shell-02.img": {
+                        frame: {
+                            x: 548,
+                            y: 288,
+                            w: 63,
+                            h: 190
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 496,
-                            h: 192
+                            w: 63,
+                            h: 190
                         },
                         sourceSize: {
-                            w: 496,
-                            h: 192
+                            w: 63,
+                            h: 190
                         }
                     },
-                    "map-building-crossing-bathroom-ceiling.img": {
+                    "gun-m4a1-01.img": {
                         frame: {
-                            x: 2430,
-                            y: 1473,
-                            w: 288,
-                            h: 192
+                            x: 615,
+                            y: 288,
+                            w: 44,
+                            h: 189
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 8,
+                            w: 44,
+                            h: 189
+                        },
+                        sourceSize: {
+                            w: 48,
+                            h: 196
+                        }
+                    },
+                    "gun-long-01.img": {
+                        frame: {
+                            x: 663,
+                            y: 288,
+                            w: 31,
+                            h: 186
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 1,
+                            w: 31,
+                            h: 186
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 188
+                        }
+                    },
+                    "part-shell-03.img": {
+                        frame: {
+                            x: 698,
+                            y: 288,
+                            w: 63,
+                            h: 180
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 288,
-                            h: 192
+                            w: 63,
+                            h: 180
                         },
                         sourceSize: {
-                            w: 288,
-                            h: 192
+                            w: 63,
+                            h: 180
+                        }
+                    },
+                    "player-helmet-forest.img": {
+                        frame: {
+                            x: 584,
+                            y: 508,
+                            w: 150,
+                            h: 178
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: -1,
+                            y: -1,
+                            w: 150,
+                            h: 178
+                        },
+                        sourceSize: {
+                            w: 176,
+                            h: 176
                         }
                     },
                     "gun-saiga-01.img": {
                         frame: {
-                            x: 3975,
-                            y: 796,
+                            x: 738,
+                            y: 508,
                             w: 40,
                             h: 174
                         },
@@ -6611,10 +3886,30 @@
                             h: 196
                         }
                     },
+                    "player-wading-01.img": {
+                        frame: {
+                            x: 2,
+                            y: 772,
+                            w: 170,
+                            h: 170
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 170,
+                            h: 170
+                        },
+                        sourceSize: {
+                            w: 172,
+                            h: 172
+                        }
+                    },
                     "part-shell-04.img": {
                         frame: {
-                            x: 3975,
-                            y: 974,
+                            x: 176,
+                            y: 772,
                             w: 55,
                             h: 164
                         },
@@ -6631,31 +3926,31 @@
                             h: 164
                         }
                     },
-                    "map-wall-04-stone.img": {
+                    "loot-melee-machete-taiga.img": {
                         frame: {
-                            x: 4019,
-                            y: 796,
-                            w: 40,
-                            h: 160
+                            x: 235,
+                            y: 772,
+                            w: 44,
+                            h: 164
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 40,
-                            h: 160
+                            x: 72,
+                            y: 15,
+                            w: 44,
+                            h: 164
                         },
                         sourceSize: {
-                            w: 40,
-                            h: 160
+                            w: 192,
+                            h: 192
                         }
                     },
-                    "part-airdrop-02.img": {
+                    "part-airdrop-03.img": {
                         frame: {
-                            x: 3975,
-                            y: 1184,
-                            w: 38,
+                            x: 283,
+                            y: 772,
+                            w: 160,
                             h: 160
                         },
                         rotated: !1,
@@ -6663,18 +3958,18 @@
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 38,
+                            w: 160,
                             h: 160
                         },
                         sourceSize: {
-                            w: 38,
+                            w: 160,
                             h: 160
                         }
                     },
                     "part-airdrop-02x.img": {
                         frame: {
-                            x: 4017,
-                            y: 1184,
+                            x: 447,
+                            y: 772,
                             w: 38,
                             h: 160
                         },
@@ -6691,50 +3986,30 @@
                             h: 160
                         }
                     },
-                    "map-bed-res-02.img": {
+                    "part-airdrop-02.img": {
                         frame: {
-                            x: 3525,
-                            y: 806,
-                            w: 89,
-                            h: 158
+                            x: 489,
+                            y: 772,
+                            w: 38,
+                            h: 160
                         },
                         rotated: !1,
-                        trimmed: !0,
+                        trimmed: !1,
                         spriteSourceSize: {
-                            x: 4,
-                            y: 16,
-                            w: 89,
-                            h: 158
+                            x: 0,
+                            y: 0,
+                            w: 38,
+                            h: 160
                         },
                         sourceSize: {
-                            w: 96,
-                            h: 192
-                        }
-                    },
-                    "map-bed-res-01.img": {
-                        frame: {
-                            x: 3525,
-                            y: 968,
-                            w: 89,
-                            h: 158
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 16,
-                            w: 89,
-                            h: 158
-                        },
-                        sourceSize: {
-                            w: 96,
-                            h: 192
+                            w: 38,
+                            h: 160
                         }
                     },
                     "proj-bomb-iron-01.img": {
                         frame: {
-                            x: 3975,
-                            y: 1348,
+                            x: 531,
+                            y: 772,
                             w: 66,
                             h: 157
                         },
@@ -6751,10 +4026,10 @@
                             h: 160
                         }
                     },
-                    "proj-smoke-nopin.img": {
+                    "proj-smoke-pin.img": {
                         frame: {
-                            x: 3525,
-                            y: 1130,
+                            x: 601,
+                            y: 772,
                             w: 152,
                             h: 155
                         },
@@ -6771,40 +4046,100 @@
                             h: 160
                         }
                     },
-                    "map-tree-res-01.img": {
+                    "proj-smoke-nopin.img": {
                         frame: {
-                            x: 3628,
-                            y: 1749,
-                            w: 46,
-                            h: 46
+                            x: 757,
+                            y: 772,
+                            w: 152,
+                            h: 155
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 3,
+                            w: 152,
+                            h: 155
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 160
+                        }
+                    },
+                    "loot-melee-bonesaw-rusted.img": {
+                        frame: {
+                            x: 913,
+                            y: 772,
+                            w: 54,
+                            h: 155
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 81,
+                            y: 22,
+                            w: 54,
+                            h: 155
+                        },
+                        sourceSize: {
+                            w: 192,
+                            h: 192
+                        }
+                    },
+                    "loot-melee-kukri-trad.img": {
+                        frame: {
+                            x: 971,
+                            y: 772,
+                            w: 40,
+                            h: 155
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 70,
+                            y: 19,
+                            w: 40,
+                            h: 155
+                        },
+                        sourceSize: {
+                            w: 192,
+                            h: 192
+                        }
+                    },
+                    "player-circle-base-01.img": {
+                        frame: {
+                            x: 1056,
+                            y: 2,
+                            w: 146,
+                            h: 146
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 1,
                             y: 1,
-                            w: 46,
-                            h: 46
+                            w: 146,
+                            h: 146
                         },
                         sourceSize: {
-                            w: 48,
-                            h: 48
+                            w: 148,
+                            h: 148
                         }
                     },
-                    "map-crate-11.img": {
+                    "player-circle-base-02.img": {
                         frame: {
-                            x: 2646,
-                            y: 1676,
-                            w: 148,
-                            h: 148
+                            x: 1056,
+                            y: 152,
+                            w: 146,
+                            h: 146
                         },
                         rotated: !1,
-                        trimmed: !1,
+                        trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 148,
-                            h: 148
+                            x: 1,
+                            y: 1,
+                            w: 146,
+                            h: 146
                         },
                         sourceSize: {
                             w: 148,
@@ -6813,128 +4148,48 @@
                     },
                     "player-armor-base-01.img": {
                         frame: {
-                            x: 2646,
-                            y: 1828,
-                            w: 148,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 148,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 148,
-                            h: 148
-                        }
-                    },
-                    "loot-circle-inner-01.img": {
-                        frame: {
-                            x: 2646,
-                            y: 1980,
-                            w: 148,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 148,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 148,
-                            h: 148
-                        }
-                    },
-                    "player-circle-base-01.img": {
-                        frame: {
-                            x: 2646,
-                            y: 2132,
-                            w: 148,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 148,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 148,
-                            h: 148
-                        }
-                    },
-                    "map-crate-10.img": {
-                        frame: {
-                            x: 1922,
-                            y: 2328,
-                            w: 148,
-                            h: 148
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 148,
-                            h: 148
-                        },
-                        sourceSize: {
-                            w: 148,
-                            h: 148
-                        }
-                    },
-                    "map-sandbags-01.img": {
-                        frame: {
-                            x: 2074,
-                            y: 2328,
-                            w: 256,
+                            x: 1056,
+                            y: 302,
+                            w: 146,
                             h: 146
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 0,
+                            x: 1,
                             y: 1,
-                            w: 256,
-                            h: 146
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 148
-                        }
-                    },
-                    "map-sandbags-02.img": {
-                        frame: {
-                            x: 3867,
-                            y: 2958,
-                            w: 113,
-                            h: 146
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 18,
-                            y: 1,
-                            w: 113,
+                            w: 146,
                             h: 146
                         },
                         sourceSize: {
                             w: 148,
                             h: 148
+                        }
+                    },
+                    "player-helmet-moon.img": {
+                        frame: {
+                            x: 1056,
+                            y: 452,
+                            w: 120,
+                            h: 146
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 15,
+                            w: 120,
+                            h: 146
+                        },
+                        sourceSize: {
+                            w: 176,
+                            h: 176
                         }
                     },
                     "proj-smoke-nopin-nolever.img": {
                         frame: {
-                            x: 3984,
-                            y: 2958,
+                            x: 1056,
+                            y: 602,
                             w: 76,
                             h: 146
                         },
@@ -6951,2201 +4206,10 @@
                             h: 160
                         }
                     },
-                    "map-building-barn-ceiling-02.img": {
-                        frame: {
-                            x: 2334,
-                            y: 2328,
-                            w: 416,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 416,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 416,
-                            h: 144
-                        }
-                    },
-                    "proj-mirv-pin.img": {
-                        frame: {
-                            x: 3547,
-                            y: 2480,
-                            w: 102,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 2,
-                            w: 102,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 148
-                        }
-                    },
-                    "proj-mirv-nopin.img": {
-                        frame: {
-                            x: 3547,
-                            y: 2628,
-                            w: 102,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 26,
-                            y: 2,
-                            w: 102,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 148
-                        }
-                    },
-                    "proj-mirv-nopin-nolever.img": {
-                        frame: {
-                            x: 2709,
-                            y: 807,
-                            w: 76,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 26,
-                            y: 2,
-                            w: 76,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 148
-                        }
-                    },
-                    "part-woodchip-01.img": {
-                        frame: {
-                            x: 3903,
-                            y: 3328,
-                            w: 141,
-                            h: 140
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 1,
-                            w: 141,
-                            h: 140
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "part-book-01.img": {
-                        frame: {
-                            x: 3547,
-                            y: 2776,
-                            w: 104,
-                            h: 138
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 20,
-                            y: 3,
-                            w: 104,
-                            h: 138
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "part-pot-01.img": {
-                        frame: {
-                            x: 3547,
-                            y: 2918,
-                            w: 94,
-                            h: 136
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 25,
-                            y: 4,
-                            w: 94,
-                            h: 136
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-door-slot-02.img": {
-                        frame: {
-                            x: 4007,
-                            y: 1572,
-                            w: 38,
-                            h: 136
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 136
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 136
-                        }
-                    },
-                    "map-door-slot-01.img": {
-                        frame: {
-                            x: 4007,
-                            y: 1712,
-                            w: 38,
-                            h: 134
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 38,
-                            h: 134
-                        },
-                        sourceSize: {
-                            w: 38,
-                            h: 134
-                        }
-                    },
-                    "part-shell-01.img": {
-                        frame: {
-                            x: 4003,
-                            y: 3108,
-                            w: 56,
-                            h: 133
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 56,
-                            h: 133
-                        },
-                        sourceSize: {
-                            w: 56,
-                            h: 133
-                        }
-                    },
-                    "map-stone-res-06.img": {
-                        frame: {
-                            x: 3248,
-                            y: 3620,
-                            w: 288,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 288,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 128
-                        }
-                    },
-                    "spain.img": {
-                        frame: {
-                            x: 3540,
-                            y: 3620,
-                            w: 128,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "part-airdrop-04.img": {
-                        frame: {
-                            x: 4007,
-                            y: 3472,
-                            w: 54,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 54,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 54,
-                            h: 128
-                        }
-                    },
-                    "map-door-04.img": {
-                        frame: {
-                            x: 4007,
-                            y: 3604,
-                            w: 54,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 54,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 54,
-                            h: 128
-                        }
-                    },
-                    "gun-mp220-01.img": {
-                        frame: {
-                            x: 3618,
-                            y: 806,
-                            w: 40,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 40,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 40,
-                            h: 128
-                        }
-                    },
-                    "ping-map-danger.img": {
-                        frame: {
-                            x: 3618,
-                            y: 968,
-                            w: 40,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 44,
-                            y: 0,
-                            w: 40,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "bullets.img": {
-                        frame: {
-                            x: 2709,
-                            y: 955,
-                            w: 86,
-                            h: 124
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 21,
-                            y: 2,
-                            w: 86,
-                            h: 124
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-throwable-smoke.img": {
-                        frame: {
-                            x: 2709,
-                            y: 1083,
-                            w: 84,
-                            h: 122
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 22,
-                            y: 3,
-                            w: 84,
-                            h: 122
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ice-cream.img": {
-                        frame: {
-                            x: 2709,
-                            y: 1209,
-                            w: 66,
-                            h: 122
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 31,
-                            y: 3,
-                            w: 66,
-                            h: 122
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-throwable-mirv.img": {
-                        frame: {
-                            x: 2709,
-                            y: 1335,
-                            w: 82,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 23,
-                            y: 8,
-                            w: 82,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "pineapple.img": {
-                        frame: {
-                            x: 2722,
-                            y: 1473,
-                            w: 68,
-                            h: 112
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 30,
-                            y: 1,
-                            w: 68,
-                            h: 112
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "loot-medical-soda.img": {
-                        frame: {
-                            x: 3986,
-                            y: 3800,
-                            w: 60,
-                            h: 110
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 34,
-                            y: 9,
-                            w: 60,
-                            h: 110
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "ping-map-airdrop.img": {
-                        frame: {
-                            x: 3986,
-                            y: 3914,
-                            w: 74,
-                            h: 106
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 27,
-                            y: 10,
-                            w: 74,
-                            h: 106
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-saloon-bar-02.img": {
-                        frame: {
-                            x: 4007,
-                            y: 1850,
-                            w: 54,
-                            h: 92
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 54,
-                            h: 92
-                        },
-                        sourceSize: {
-                            w: 54,
-                            h: 92
-                        }
-                    },
-                    "map-deposit-box-01.img": {
-                        frame: {
-                            x: 2022,
-                            y: 3108,
-                            w: 160,
-                            h: 74
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 74
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 74
-                        }
-                    },
-                    "map-building-cabin-ceiling-01b.img": {
-                        frame: {
-                            x: 2186,
-                            y: 3108,
-                            w: 148,
-                            h: 74
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 148,
-                            h: 74
-                        },
-                        sourceSize: {
-                            w: 148,
-                            h: 76
-                        }
-                    },
-                    "cursor-01.img": {
-                        frame: {
-                            x: 2722,
-                            y: 1589,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "player-map-inner.img": {
-                        frame: {
-                            x: 2338,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "player-map-outer.img": {
-                        frame: {
-                            x: 2414,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "timer-background.img": {
-                        frame: {
-                            x: 2490,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "part-smoke-01.img": {
-                        frame: {
-                            x: 2566,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "cursor-03.img": {
-                        frame: {
-                            x: 2642,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "map-power-box-01.img": {
-                        frame: {
-                            x: 2718,
-                            y: 3108,
-                            w: 72,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 72,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "quit.img": {
-                        frame: {
-                            x: 2794,
-                            y: 3108,
-                            w: 68,
-                            h: 72
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 30,
-                            y: 28,
-                            w: 68,
-                            h: 72
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "player-patch-red.img": {
-                        frame: {
-                            x: 2866,
-                            y: 3108,
-                            w: 116,
-                            h: 70
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 22,
-                            y: 45,
-                            w: 116,
-                            h: 70
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
-                    "part-cloth-01.img": {
-                        frame: {
-                            x: 2986,
-                            y: 3108,
-                            w: 70,
-                            h: 70
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 70,
-                            h: 70
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "ping-indicator.img": {
-                        frame: {
-                            x: 3060,
-                            y: 3108,
-                            w: 88,
-                            h: 68
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 20,
-                            y: 60,
-                            w: 88,
-                            h: 68
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "part-snow-01.img": {
-                        frame: {
-                            x: 3152,
-                            y: 3108,
-                            w: 68,
-                            h: 68
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 68,
-                            h: 68
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "close.img": {
-                        frame: {
-                            x: 3224,
-                            y: 3108,
-                            w: 68,
-                            h: 68
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 2,
-                            y: 2,
-                            w: 68,
-                            h: 68
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "submit.img": {
-                        frame: {
-                            x: 3296,
-                            y: 3108,
-                            w: 66,
-                            h: 66
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 66,
-                            h: 66
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "checked.img": {
-                        frame: {
-                            x: 3366,
-                            y: 3108,
-                            w: 66,
-                            h: 66
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 3,
-                            y: 3,
-                            w: 66,
-                            h: 66
-                        },
-                        sourceSize: {
-                            w: 72,
-                            h: 72
-                        }
-                    },
-                    "resume.img": {
-                        frame: {
-                            x: 3436,
-                            y: 3108,
-                            w: 64,
-                            h: 66
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 36,
-                            y: 31,
-                            w: 64,
-                            h: 66
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "map-potato-res.img": {
-                        frame: {
-                            x: 4003,
-                            y: 3245,
-                            w: 56,
-                            h: 66
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 20,
-                            y: 15,
-                            w: 56,
-                            h: 66
-                        },
-                        sourceSize: {
-                            w: 96,
-                            h: 96
-                        }
-                    },
-                    "map-fire-ext-01.img": {
-                        frame: {
-                            x: 3504,
-                            y: 3108,
-                            w: 83,
-                            h: 65
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 1,
-                            w: 83,
-                            h: 65
-                        },
-                        sourceSize: {
-                            w: 84,
-                            h: 70
-                        }
-                    },
-                    "map-column-01.img": {
-                        frame: {
-                            x: 3591,
-                            y: 3108,
-                            w: 64,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 64,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 64
-                        }
-                    },
-                    "lock.img": {
-                        frame: {
-                            x: 3628,
-                            y: 1507,
-                            w: 48,
-                            h: 64
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 0,
-                            w: 48,
-                            h: 64
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 64
-                        }
-                    },
-                    "proj-frag-pin-part.img": {
-                        frame: {
-                            x: 3975,
-                            y: 1509,
-                            w: 58,
-                            h: 58
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 35,
-                            y: 35,
-                            w: 58,
-                            h: 58
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 128
-                        }
-                    },
-                    "skull-team.img": {
-                        frame: {
-                            x: 3628,
-                            y: 1575,
-                            w: 48,
-                            h: 56
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 4,
-                            w: 48,
-                            h: 56
-                        },
-                        sourceSize: {
-                            w: 64,
-                            h: 64
-                        }
-                    },
-                    "map-fire-ext-res.img": {
-                        frame: {
-                            x: 3628,
-                            y: 1635,
-                            w: 46,
-                            h: 56
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 36,
-                            y: 8,
-                            w: 46,
-                            h: 56
-                        },
-                        sourceSize: {
-                            w: 84,
-                            h: 70
-                        }
-                    },
-                    "map-gun-mount-04.img": {
-                        frame: {
-                            x: 3525,
-                            y: 1448,
-                            w: 128,
-                            h: 55
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 128,
-                            h: 55
-                        },
-                        sourceSize: {
-                            w: 128,
-                            h: 56
-                        }
-                    },
-                    "map-candle-01.img": {
-                        frame: {
-                            x: 3628,
-                            y: 1695,
-                            w: 50,
-                            h: 50
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 50,
-                            h: 50
-                        },
-                        sourceSize: {
-                            w: 52,
-                            h: 52
-                        }
-                    },
-                    "proj-smoke-pin.img": {
-                        frame: {
-                            x: 3525,
-                            y: 1289,
-                            w: 152,
-                            h: 155
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 3,
-                            w: 152,
-                            h: 155
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    }
-                }
-            }, {
-                meta: {
-                    image: "shared-2-100-010154a5.png",
-                    size: {
-                        w: 4096,
-                        h: 4096
-                    },
-                    scale: 1
-                },
-                frames: {
-                    "map-building-bridge-lg-ceiling.img": {
-                        frame: {
-                            x: 511,
-                            y: 2,
-                            w: 1088,
-                            h: 544
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 16,
-                            w: 1088,
-                            h: 544
-                        },
-                        sourceSize: {
-                            w: 1088,
-                            h: 576
-                        }
-                    },
-                    "map-building-bank-ceiling-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 2,
-                            w: 505,
-                            h: 552
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 48,
-                            w: 505,
-                            h: 552
-                        },
-                        sourceSize: {
-                            w: 505,
-                            h: 600
-                        }
-                    },
-                    "map-bunker-crossing-chamber-floor-01.img": {
-                        frame: {
-                            x: 1603,
-                            y: 2,
-                            w: 1826,
-                            h: 542
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1826,
-                            h: 542
-                        },
-                        sourceSize: {
-                            w: 1828,
-                            h: 544
-                        }
-                    },
-                    "map-tree-08f.img": {
-                        frame: {
-                            x: 2,
-                            y: 558,
-                            w: 512,
-                            h: 510
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 1,
-                            w: 512,
-                            h: 510
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 512
-                        }
-                    },
-                    "map-tree-08s.img": {
-                        frame: {
-                            x: 518,
-                            y: 558,
-                            w: 512,
-                            h: 510
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 1,
-                            w: 512,
-                            h: 510
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 512
-                        }
-                    },
-                    "map-silo-01.img": {
-                        frame: {
-                            x: 1034,
-                            y: 558,
-                            w: 504,
-                            h: 502
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 5,
-                            w: 504,
-                            h: 502
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 512
-                        }
-                    },
-                    "ping-map-pulse.img": {
-                        frame: {
-                            x: 1542,
-                            y: 558,
-                            w: 502,
-                            h: 502
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 5,
-                            y: 5,
-                            w: 502,
-                            h: 502
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 512
-                        }
-                    },
-                    "map-building-warehouse-ceiling-01.img": {
-                        frame: {
-                            x: 2048,
-                            y: 558,
-                            w: 832,
-                            h: 432
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 832,
-                            h: 432
-                        },
-                        sourceSize: {
-                            w: 832,
-                            h: 432
-                        }
-                    },
-                    "map-building-warehouse-ceiling-02.img": {
-                        frame: {
-                            x: 2,
-                            y: 1072,
-                            w: 720,
-                            h: 432
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 720,
-                            h: 432
-                        },
-                        sourceSize: {
-                            w: 720,
-                            h: 432
-                        }
-                    },
-                    "map-building-shack-floor-03.img": {
-                        frame: {
-                            x: 726,
-                            y: 1072,
-                            w: 568,
-                            h: 408
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 0,
-                            w: 568,
-                            h: 408
-                        },
-                        sourceSize: {
-                            w: 576,
-                            h: 448
-                        }
-                    },
-                    "map-bunker-conch-chamber-floor-02.img": {
-                        frame: {
-                            x: 1298,
-                            y: 1072,
-                            w: 1239,
-                            h: 406
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 29,
-                            w: 1239,
-                            h: 406
-                        },
-                        sourceSize: {
-                            w: 1306,
-                            h: 464
-                        }
-                    },
-                    "map-bunker-conch-chamber-floor-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 1508,
-                            w: 1391,
-                            h: 378
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 45,
-                            y: 45,
-                            w: 1391,
-                            h: 378
-                        },
-                        sourceSize: {
-                            w: 1520,
-                            h: 432
-                        }
-                    },
-                    "map-building-bridge-md-floor.img": {
-                        frame: {
-                            x: 1397,
-                            y: 1508,
-                            w: 896,
-                            h: 368
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 896,
-                            h: 368
-                        },
-                        sourceSize: {
-                            w: 896,
-                            h: 368
-                        }
-                    },
-                    "map-building-mansion-floor-01a.img": {
-                        frame: {
-                            x: 2541,
-                            y: 1072,
-                            w: 802,
-                            h: 317
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 5,
-                            w: 802,
-                            h: 317
-                        },
-                        sourceSize: {
-                            w: 802,
-                            h: 322
-                        }
-                    },
-                    "map-bunker-storm-chamber-ceiling-01.img": {
-                        frame: {
-                            x: 2297,
-                            y: 1508,
-                            w: 592,
-                            h: 304
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 112,
-                            w: 592,
-                            h: 304
-                        },
-                        sourceSize: {
-                            w: 592,
-                            h: 416
-                        }
-                    },
-                    "map-bunker-crossing-chamber-ceiling-01.img": {
-                        frame: {
-                            x: 2,
-                            y: 1890,
-                            w: 1136,
-                            h: 240
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 1136,
-                            h: 240
-                        },
-                        sourceSize: {
-                            w: 1136,
-                            h: 240
-                        }
-                    },
-                    "map-pipes-03.img": {
-                        frame: {
-                            x: 1142,
-                            y: 1890,
-                            w: 684,
-                            h: 236
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 684,
-                            h: 236
-                        },
-                        sourceSize: {
-                            w: 684,
-                            h: 236
-                        }
-                    },
-                    "map-hut-res-01.img": {
-                        frame: {
-                            x: 2884,
-                            y: 558,
-                            w: 236,
-                            h: 236
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 130,
-                            y: 136,
-                            w: 236,
-                            h: 236
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 512
-                        }
-                    },
-                    "map-chute-01.img": {
-                        frame: {
-                            x: 3124,
-                            y: 558,
-                            w: 232,
-                            h: 232
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 12,
-                            y: 12,
-                            w: 232,
-                            h: 232
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "map-building-mansion-cellar-01b.img": {
-                        frame: {
-                            x: 2893,
-                            y: 1508,
-                            w: 225,
-                            h: 230
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 225,
-                            h: 230
-                        },
-                        sourceSize: {
-                            w: 226,
-                            h: 230
-                        }
-                    },
-                    "map-building-mansion-floor-01c.img": {
-                        frame: {
-                            x: 3122,
-                            y: 1508,
-                            w: 225,
-                            h: 228
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 225,
-                            h: 228
-                        },
-                        sourceSize: {
-                            w: 226,
-                            h: 228
-                        }
-                    },
-                    "map-building-saferoom-floor.img": {
-                        frame: {
-                            x: 1830,
-                            y: 1890,
-                            w: 352,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 352,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 352,
-                            h: 224
-                        }
-                    },
-                    "map-building-saferoom-ceiling.img": {
-                        frame: {
-                            x: 2186,
-                            y: 1890,
-                            w: 352,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 352,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 352,
-                            h: 224
-                        }
-                    },
-                    "map-building-outhouse-ceiling.img": {
-                        frame: {
-                            x: 2542,
-                            y: 1890,
-                            w: 272,
-                            h: 224
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 64,
-                            y: 0,
-                            w: 272,
-                            h: 224
-                        },
-                        sourceSize: {
-                            w: 400,
-                            h: 316
-                        }
-                    },
-                    "map-bed-02.img": {
-                        frame: {
-                            x: 2818,
-                            y: 1890,
-                            w: 176,
-                            h: 216
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 176,
-                            h: 216
-                        },
-                        sourceSize: {
-                            w: 176,
-                            h: 216
-                        }
-                    },
-                    "map-building-teahouse-res-01.img": {
-                        frame: {
-                            x: 2998,
-                            y: 1890,
-                            w: 282,
-                            h: 208
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 115,
-                            y: 152,
-                            w: 282,
-                            h: 208
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 512
-                        }
-                    },
-                    "pad.img": {
-                        frame: {
-                            x: 2,
-                            y: 2134,
-                            w: 208,
-                            h: 208
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 208,
-                            h: 208
-                        },
-                        sourceSize: {
-                            w: 208,
-                            h: 208
-                        }
-                    },
-                    "map-building-shack-ceiling-01.img": {
-                        frame: {
-                            x: 214,
-                            y: 2134,
-                            w: 315,
-                            h: 207
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 315,
-                            h: 207
-                        },
-                        sourceSize: {
-                            w: 315,
-                            h: 255
-                        }
-                    },
-                    "map-vat-02.img": {
-                        frame: {
-                            x: 533,
-                            y: 2134,
-                            w: 200,
-                            h: 200
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 200,
-                            h: 200
-                        },
-                        sourceSize: {
-                            w: 200,
-                            h: 200
-                        }
-                    },
-                    "map-stone-res-02.img": {
-                        frame: {
-                            x: 737,
-                            y: 2134,
-                            w: 200,
-                            h: 200
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 200,
-                            h: 200
-                        },
-                        sourceSize: {
-                            w: 200,
-                            h: 200
-                        }
-                    },
-                    "map-building-shack-ceiling-02.img": {
-                        frame: {
-                            x: 2884,
-                            y: 798,
-                            w: 240,
-                            h: 192
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 240,
-                            h: 192
-                        },
-                        sourceSize: {
-                            w: 240,
-                            h: 240
-                        }
-                    },
-                    "map-hedgehog-01.img": {
-                        frame: {
-                            x: 3128,
-                            y: 798,
-                            w: 192,
-                            h: 192
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 192,
-                            h: 192
-                        },
-                        sourceSize: {
-                            w: 192,
-                            h: 192
-                        }
-                    },
-                    "map-building-mansion-floor-01d.img": {
-                        frame: {
-                            x: 941,
-                            y: 2134,
-                            w: 1089,
-                            h: 186
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 0,
-                            w: 1089,
-                            h: 186
-                        },
-                        sourceSize: {
-                            w: 1090,
-                            h: 194
-                        }
-                    },
-                    "map-shack-res-01.img": {
-                        frame: {
-                            x: 2034,
-                            y: 2134,
-                            w: 305,
-                            h: 181
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 60,
-                            y: 49,
-                            w: 305,
-                            h: 181
-                        },
-                        sourceSize: {
-                            w: 420,
-                            h: 340
-                        }
-                    },
-                    "map-bunker-conch-ceiling-01.img": {
-                        frame: {
-                            x: 2343,
-                            y: 2134,
-                            w: 380,
-                            h: 180
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 380,
-                            h: 180
-                        },
-                        sourceSize: {
-                            w: 380,
-                            h: 180
-                        }
-                    },
-                    "map-bunker-egg-chamber-floor-01b.img": {
-                        frame: {
-                            x: 2727,
-                            y: 2134,
-                            w: 192,
-                            h: 179
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 192,
-                            h: 179
-                        },
-                        sourceSize: {
-                            w: 194,
-                            h: 180
-                        }
-                    },
-                    "map-bunker-conch-chamber-ceiling-02.img": {
-                        frame: {
-                            x: 2923,
-                            y: 2134,
-                            w: 488,
-                            h: 176
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 488,
-                            h: 176
-                        },
-                        sourceSize: {
-                            w: 488,
-                            h: 176
-                        }
-                    },
-                    "map-shack-res-03.img": {
-                        frame: {
-                            x: 2,
-                            y: 2346,
-                            w: 220,
-                            h: 176
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 100,
-                            y: 69,
-                            w: 220,
-                            h: 176
-                        },
-                        sourceSize: {
-                            w: 420,
-                            h: 340
-                        }
-                    },
-                    "map-shack-res-02.img": {
-                        frame: {
-                            x: 226,
-                            y: 2346,
-                            w: 220,
-                            h: 176
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 100,
-                            y: 69,
-                            w: 220,
-                            h: 176
-                        },
-                        sourceSize: {
-                            w: 420,
-                            h: 340
-                        }
-                    },
-                    "map-smoke-res.img": {
-                        frame: {
-                            x: 450,
-                            y: 2346,
-                            w: 166,
-                            h: 174
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 49,
-                            y: 41,
-                            w: 166,
-                            h: 174
-                        },
-                        sourceSize: {
-                            w: 256,
-                            h: 256
-                        }
-                    },
-                    "map-pipes-02.img": {
-                        frame: {
-                            x: 620,
-                            y: 2346,
-                            w: 236,
-                            h: 172
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 236,
-                            h: 172
-                        },
-                        sourceSize: {
-                            w: 238,
-                            h: 172
-                        }
-                    },
-                    "player-wading-01.img": {
-                        frame: {
-                            x: 860,
-                            y: 2346,
-                            w: 172,
-                            h: 172
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 172,
-                            h: 172
-                        },
-                        sourceSize: {
-                            w: 172,
-                            h: 172
-                        }
-                    },
-                    "map-snow-07.img": {
-                        frame: {
-                            x: 1036,
-                            y: 2346,
-                            w: 496,
-                            h: 168
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 12,
-                            w: 496,
-                            h: 168
-                        },
-                        sourceSize: {
-                            w: 512,
-                            h: 192
-                        }
-                    },
-                    "map-crate-04.img": {
-                        frame: {
-                            x: 1536,
-                            y: 2346,
-                            w: 164,
-                            h: 164
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 164,
-                            h: 164
-                        },
-                        sourceSize: {
-                            w: 164,
-                            h: 164
-                        }
-                    },
-                    "map-stove-01.img": {
-                        frame: {
-                            x: 1704,
-                            y: 2346,
-                            w: 208,
-                            h: 161
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 8,
-                            w: 208,
-                            h: 161
-                        },
-                        sourceSize: {
-                            w: 224,
-                            h: 176
-                        }
-                    },
-                    "map-table-02.img": {
-                        frame: {
-                            x: 1916,
-                            y: 2346,
-                            w: 288,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 288,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 288,
-                            h: 160
-                        }
-                    },
-                    "map-airdrop-02.img": {
-                        frame: {
-                            x: 2208,
-                            y: 2346,
-                            w: 160,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
-                    "map-airdrop-01.img": {
-                        frame: {
-                            x: 2372,
-                            y: 2346,
-                            w: 160,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
-                    "map-building-dock-floor-01a.img": {
-                        frame: {
-                            x: 2536,
-                            y: 2346,
-                            w: 160,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 2,
-                            w: 160,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 162
-                        }
-                    },
-                    "part-airdrop-03.img": {
-                        frame: {
-                            x: 2700,
-                            y: 2346,
-                            w: 160,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
-                    "map-table-03.img": {
-                        frame: {
-                            x: 2864,
-                            y: 2346,
-                            w: 160,
-                            h: 160
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 160
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 160
-                        }
-                    },
-                    "map-wheel-01.img": {
-                        frame: {
-                            x: 3028,
-                            y: 2346,
-                            w: 312,
-                            h: 156
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 312,
-                            h: 156
-                        },
-                        sourceSize: {
-                            w: 312,
-                            h: 156
-                        }
-                    },
-                    "map-crate-res-03.img": {
-                        frame: {
-                            x: 2,
-                            y: 2526,
-                            w: 216,
-                            h: 154
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 1,
-                            w: 216,
-                            h: 154
-                        },
-                        sourceSize: {
-                            w: 216,
-                            h: 156
-                        }
-                    },
-                    "map-wheel-03.img": {
-                        frame: {
-                            x: 222,
-                            y: 2526,
-                            w: 312,
-                            h: 149
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 312,
-                            h: 149
-                        },
-                        sourceSize: {
-                            w: 312,
-                            h: 156
-                        }
-                    },
-                    "map-wheel-02.img": {
-                        frame: {
-                            x: 538,
-                            y: 2526,
-                            w: 297,
-                            h: 149
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 0,
-                            w: 297,
-                            h: 149
-                        },
-                        sourceSize: {
-                            w: 312,
-                            h: 156
-                        }
-                    },
-                    "map-crate-01.img": {
-                        frame: {
-                            x: 3284,
-                            y: 1890,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-crate-08.img": {
-                        frame: {
-                            x: 839,
-                            y: 2526,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
                     "loot-circle-outer-01.img": {
                         frame: {
-                            x: 987,
-                            y: 2526,
+                            x: 1056,
+                            y: 752,
                             w: 144,
                             h: 144
                         },
@@ -9162,50 +4226,10 @@
                             h: 146
                         }
                     },
-                    "map-stone-04.img": {
-                        frame: {
-                            x: 1135,
-                            y: 2526,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-stone-05.img": {
-                        frame: {
-                            x: 1283,
-                            y: 2526,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
                     "ping-border.img": {
                         frame: {
-                            x: 1431,
-                            y: 2526,
+                            x: 2,
+                            y: 946,
                             w: 144,
                             h: 144
                         },
@@ -9222,130 +4246,90 @@
                             h: 144
                         }
                     },
-                    "map-crate-09.img": {
+                    "loot-circle-outer-02.img": {
                         frame: {
-                            x: 1579,
-                            y: 2526,
+                            x: 150,
+                            y: 946,
                             w: 144,
                             h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-crate-07.img": {
-                        frame: {
-                            x: 1727,
-                            y: 2526,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-crate-02.img": {
-                        frame: {
-                            x: 1875,
-                            y: 2526,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-crate-03.img": {
-                        frame: {
-                            x: 2023,
-                            y: 2526,
-                            w: 144,
-                            h: 144
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 144,
-                            h: 144
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-bush-07.img": {
-                        frame: {
-                            x: 2171,
-                            y: 2526,
-                            w: 135,
-                            h: 143
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 6,
-                            y: 0,
-                            w: 135,
-                            h: 143
-                        },
-                        sourceSize: {
+                            x: 1,
+                            y: 1,
                             w: 144,
                             h: 144
+                        },
+                        sourceSize: {
+                            w: 146,
+                            h: 146
                         }
                     },
-                    "player-star.img": {
+                    "proj-mirv-nopin.img": {
                         frame: {
-                            x: 2310,
-                            y: 2526,
-                            w: 148,
-                            h: 142
+                            x: 298,
+                            y: 946,
+                            w: 102,
+                            h: 144
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 26,
+                            y: 2,
+                            w: 102,
+                            h: 144
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 148
+                        }
+                    },
+                    "proj-mirv-pin.img": {
+                        frame: {
+                            x: 404,
+                            y: 946,
+                            w: 102,
+                            h: 144
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 0,
-                            y: 3,
-                            w: 148,
-                            h: 142
+                            y: 2,
+                            w: 102,
+                            h: 144
                         },
                         sourceSize: {
-                            w: 148,
+                            w: 128,
+                            h: 148
+                        }
+                    },
+                    "proj-mirv-nopin-nolever.img": {
+                        frame: {
+                            x: 510,
+                            y: 946,
+                            w: 76,
+                            h: 144
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 26,
+                            y: 2,
+                            w: 76,
+                            h: 144
+                        },
+                        sourceSize: {
+                            w: 128,
                             h: 148
                         }
                     },
                     "star.img": {
                         frame: {
-                            x: 2462,
-                            y: 2526,
+                            x: 590,
+                            y: 946,
                             w: 148,
                             h: 142
                         },
@@ -9362,70 +4346,30 @@
                             h: 148
                         }
                     },
-                    "map-barrel-02.img": {
+                    "player-star.img": {
                         frame: {
-                            x: 2614,
-                            y: 2526,
-                            w: 142,
+                            x: 742,
+                            y: 946,
+                            w: 148,
                             h: 142
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 142,
-                            h: 142
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "player-ripple-01.img": {
-                        frame: {
-                            x: 2760,
-                            y: 2526,
-                            w: 142,
-                            h: 142
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
                             x: 0,
-                            y: 0,
-                            w: 142,
+                            y: 3,
+                            w: 148,
                             h: 142
                         },
                         sourceSize: {
-                            w: 142,
-                            h: 142
+                            w: 148,
+                            h: 148
                         }
                     },
                     "part-panel-01.img": {
                         frame: {
-                            x: 2906,
-                            y: 2526,
-                            w: 142,
-                            h: 142
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 142,
-                            h: 142
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-stone-01.img": {
-                        frame: {
-                            x: 3052,
-                            y: 2526,
+                            x: 894,
+                            y: 946,
                             w: 142,
                             h: 142
                         },
@@ -9444,8 +4388,8 @@
                     },
                     "part-plank-01.img": {
                         frame: {
-                            x: 3198,
-                            y: 2526,
+                            x: 1040,
+                            y: 946,
                             w: 142,
                             h: 142
                         },
@@ -9462,110 +4406,230 @@
                             h: 144
                         }
                     },
-                    "map-barrel-01.img": {
+                    "player-ripple-01.img": {
                         frame: {
-                            x: 2,
-                            y: 2684,
+                            x: 1206,
+                            y: 2,
                             w: 142,
                             h: 142
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 1,
-                            y: 1,
-                            w: 142,
-                            h: 142
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "player-base-01.img": {
-                        frame: {
-                            x: 148,
-                            y: 2684,
-                            w: 140,
-                            h: 140
                         },
                         rotated: !1,
                         trimmed: !1,
                         spriteSourceSize: {
                             x: 0,
                             y: 0,
-                            w: 140,
-                            h: 140
+                            w: 142,
+                            h: 142
                         },
                         sourceSize: {
-                            w: 140,
-                            h: 140
+                            w: 142,
+                            h: 142
                         }
                     },
-                    "map-bunker-vent-03.img": {
+                    "part-woodchip-01.img": {
                         frame: {
-                            x: 292,
-                            y: 2684,
-                            w: 132,
-                            h: 134
+                            x: 1206,
+                            y: 148,
+                            w: 141,
+                            h: 140
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 2,
                             y: 1,
-                            w: 132,
-                            h: 134
+                            w: 141,
+                            h: 140
                         },
                         sourceSize: {
-                            w: 136,
-                            h: 136
+                            w: 144,
+                            h: 144
                         }
                     },
-                    "map-bunker-vent-02.img": {
+                    "loot-circle-inner-01.img": {
                         frame: {
-                            x: 428,
-                            y: 2684,
-                            w: 132,
-                            h: 134
+                            x: 1206,
+                            y: 292,
+                            w: 140,
+                            h: 140
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 4,
+                            w: 140,
+                            h: 140
+                        },
+                        sourceSize: {
+                            w: 148,
+                            h: 148
+                        }
+                    },
+                    "part-book-01.img": {
+                        frame: {
+                            x: 1206,
+                            y: 436,
+                            w: 104,
+                            h: 138
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 20,
+                            y: 3,
+                            w: 104,
+                            h: 138
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 144
+                        }
+                    },
+                    "player-base-03.img": {
+                        frame: {
+                            x: 1206,
+                            y: 578,
+                            w: 136,
+                            h: 136
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
                             x: 2,
-                            y: 1,
-                            w: 132,
-                            h: 134
-                        },
-                        sourceSize: {
+                            y: 2,
                             w: 136,
                             h: 136
+                        },
+                        sourceSize: {
+                            w: 140,
+                            h: 140
                         }
                     },
-                    "map-outhouse-res.img": {
+                    "player-base-04.img": {
                         frame: {
-                            x: 564,
-                            y: 2684,
-                            w: 150,
-                            h: 132
+                            x: 1206,
+                            y: 718,
+                            w: 136,
+                            h: 136
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 125,
-                            y: 42,
-                            w: 150,
-                            h: 132
+                            x: 2,
+                            y: 2,
+                            w: 136,
+                            h: 136
                         },
                         sourceSize: {
-                            w: 400,
-                            h: 312
+                            w: 140,
+                            h: 140
+                        }
+                    },
+                    "player-base-01.img": {
+                        frame: {
+                            x: 1206,
+                            y: 858,
+                            w: 136,
+                            h: 136
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 136,
+                            h: 136
+                        },
+                        sourceSize: {
+                            w: 140,
+                            h: 140
+                        }
+                    },
+                    "player-base-02.img": {
+                        frame: {
+                            x: 2,
+                            y: 1094,
+                            w: 136,
+                            h: 136
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 136,
+                            h: 136
+                        },
+                        sourceSize: {
+                            w: 140,
+                            h: 140
+                        }
+                    },
+                    "player-base-05.img": {
+                        frame: {
+                            x: 142,
+                            y: 1094,
+                            w: 136,
+                            h: 136
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 136,
+                            h: 136
+                        },
+                        sourceSize: {
+                            w: 140,
+                            h: 140
+                        }
+                    },
+                    "part-pot-01.img": {
+                        frame: {
+                            x: 282,
+                            y: 1094,
+                            w: 94,
+                            h: 136
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 25,
+                            y: 4,
+                            w: 94,
+                            h: 136
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 144
+                        }
+                    },
+                    "part-shell-01.img": {
+                        frame: {
+                            x: 1136,
+                            y: 602,
+                            w: 56,
+                            h: 133
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 56,
+                            h: 133
+                        },
+                        sourceSize: {
+                            w: 56,
+                            h: 133
                         }
                     },
                     "player-king-woods.img": {
                         frame: {
-                            x: 718,
-                            y: 2684,
+                            x: 380,
+                            y: 1094,
                             w: 140,
                             h: 132
                         },
@@ -9584,8 +4648,8 @@
                     },
                     "part-plate-01.img": {
                         frame: {
-                            x: 862,
-                            y: 2684,
+                            x: 524,
+                            y: 1094,
                             w: 138,
                             h: 132
                         },
@@ -9602,90 +4666,10 @@
                             h: 144
                         }
                     },
-                    "map-table-res.img": {
-                        frame: {
-                            x: 1004,
-                            y: 2684,
-                            w: 131,
-                            h: 132
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 4,
-                            y: 5,
-                            w: 131,
-                            h: 132
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-bush-01.img": {
-                        frame: {
-                            x: 1139,
-                            y: 2684,
-                            w: 126,
-                            h: 130
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 7,
-                            w: 126,
-                            h: 130
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-bush-07x.img": {
-                        frame: {
-                            x: 1269,
-                            y: 2684,
-                            w: 126,
-                            h: 130
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 7,
-                            w: 126,
-                            h: 130
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-bush-01f.img": {
-                        frame: {
-                            x: 1399,
-                            y: 2684,
-                            w: 126,
-                            h: 130
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 8,
-                            y: 7,
-                            w: 126,
-                            h: 130
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
                     "part-splat-02.img": {
                         frame: {
-                            x: 1529,
-                            y: 2684,
+                            x: 666,
+                            y: 1094,
                             w: 123,
                             h: 130
                         },
@@ -9702,90 +4686,30 @@
                             h: 144
                         }
                     },
-                    "map-building-mansion-cellar-01c.img": {
+                    "gun-mp220-01.img": {
                         frame: {
-                            x: 1656,
-                            y: 2684,
-                            w: 354,
-                            h: 129
-                        },
-                        rotated: !1,
-                        trimmed: !0,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 354,
-                            h: 129
-                        },
-                        sourceSize: {
-                            w: 354,
+                            x: 793,
+                            y: 1094,
+                            w: 40,
                             h: 130
-                        }
-                    },
-                    "map-crate-res-01.img": {
-                        frame: {
-                            x: 2014,
-                            y: 2684,
-                            w: 138,
-                            h: 129
                         },
                         rotated: !1,
                         trimmed: !0,
                         spriteSourceSize: {
-                            x: 3,
-                            y: 9,
-                            w: 138,
-                            h: 129
-                        },
-                        sourceSize: {
-                            w: 144,
-                            h: 144
-                        }
-                    },
-                    "map-table-01.img": {
-                        frame: {
-                            x: 2156,
-                            y: 2684,
-                            w: 160,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
                             x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 128
+                            y: -1,
+                            w: 40,
+                            h: 130
                         },
                         sourceSize: {
-                            w: 160,
+                            w: 40,
                             h: 128
                         }
                     },
-                    "map-stairs-broken-01.img": {
+                    "indonesia.img": {
                         frame: {
-                            x: 2320,
-                            y: 2684,
-                            w: 160,
-                            h: 128
-                        },
-                        rotated: !1,
-                        trimmed: !1,
-                        spriteSourceSize: {
-                            x: 0,
-                            y: 0,
-                            w: 160,
-                            h: 128
-                        },
-                        sourceSize: {
-                            w: 160,
-                            h: 128
-                        }
-                    },
-                    "south-korea.img": {
-                        frame: {
-                            x: 2484,
-                            y: 2684,
+                            x: 837,
+                            y: 1094,
                             w: 128,
                             h: 128
                         },
@@ -9802,10 +4726,10 @@
                             h: 128
                         }
                     },
-                    "loot-ammo-box.img": {
+                    "israel.img": {
                         frame: {
-                            x: 2616,
-                            y: 2684,
+                            x: 969,
+                            y: 1094,
                             w: 128,
                             h: 128
                         },
@@ -9822,10 +4746,10 @@
                             h: 128
                         }
                     },
-                    "austria.img": {
+                    "italy.img": {
                         frame: {
-                            x: 2748,
-                            y: 2684,
+                            x: 1101,
+                            y: 1094,
                             w: 128,
                             h: 128
                         },
@@ -9842,10 +4766,10 @@
                             h: 128
                         }
                     },
-                    "slovakia.img": {
+                    "japan.img": {
                         frame: {
-                            x: 2880,
-                            y: 2684,
+                            x: 1352,
+                            y: 2,
                             w: 128,
                             h: 128
                         },
@@ -9862,10 +4786,10 @@
                             h: 128
                         }
                     },
-                    "singapore.img": {
+                    "loot-scope-04.img": {
                         frame: {
-                            x: 3012,
-                            y: 2684,
+                            x: 1352,
+                            y: 134,
                             w: 128,
                             h: 128
                         },
@@ -9882,10 +4806,270 @@
                             h: 128
                         }
                     },
-                    "uruguay.img": {
+                    "kazakhstan.img": {
                         frame: {
-                            x: 3144,
-                            y: 2684,
+                            x: 1352,
+                            y: 266,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ukraine.img": {
+                        frame: {
+                            x: 1352,
+                            y: 398,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "greece.img": {
+                        frame: {
+                            x: 1352,
+                            y: 530,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "guatemala.img": {
+                        frame: {
+                            x: 1352,
+                            y: 662,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-02.img": {
+                        frame: {
+                            x: 1352,
+                            y: 794,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "argentina.img": {
+                        frame: {
+                            x: 1352,
+                            y: 926,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "denmark.img": {
+                        frame: {
+                            x: 1352,
+                            y: 1058,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "georgia.img": {
+                        frame: {
+                            x: 2,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "czech-republic.img": {
+                        frame: {
+                            x: 134,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-01.img": {
+                        frame: {
+                            x: 266,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "australia.img": {
+                        frame: {
+                            x: 398,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "croatia.img": {
+                        frame: {
+                            x: 530,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "colombia.img": {
+                        frame: {
+                            x: 662,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "malaysia.img": {
+                        frame: {
+                            x: 794,
+                            y: 1234,
                             w: 128,
                             h: 128
                         },
@@ -9904,8 +5088,8 @@
                     },
                     "mexico.img": {
                         frame: {
-                            x: 3276,
-                            y: 2684,
+                            x: 926,
+                            y: 1234,
                             w: 128,
                             h: 128
                         },
@@ -9922,10 +5106,270 @@
                             h: 128
                         }
                     },
-                    "serbia.img": {
+                    "loot-weapon-deagle-dual.img": {
+                        frame: {
+                            x: 1058,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "netherlands.img": {
+                        frame: {
+                            x: 1190,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "new-zealand.img": {
+                        frame: {
+                            x: 1322,
+                            y: 1234,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "norway.img": {
+                        frame: {
+                            x: 1484,
+                            y: 2,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "peru.img": {
+                        frame: {
+                            x: 1484,
+                            y: 134,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "philippines.img": {
+                        frame: {
+                            x: 1484,
+                            y: 266,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "china.img": {
+                        frame: {
+                            x: 1484,
+                            y: 398,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "chile.img": {
+                        frame: {
+                            x: 1484,
+                            y: 530,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-00.img": {
+                        frame: {
+                            x: 1484,
+                            y: 662,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "austria.img": {
+                        frame: {
+                            x: 1484,
+                            y: 794,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "portugal.img": {
+                        frame: {
+                            x: 1484,
+                            y: 926,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-ammo-box.img": {
+                        frame: {
+                            x: 1484,
+                            y: 1058,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "finland.img": {
+                        frame: {
+                            x: 1484,
+                            y: 1190,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "belarus.img": {
                         frame: {
                             x: 2,
-                            y: 2830,
+                            y: 1366,
                             w: 128,
                             h: 128
                         },
@@ -9942,10 +5386,10 @@
                             h: 128
                         }
                     },
-                    "russia.img": {
+                    "republic-of-poland.img": {
                         frame: {
                             x: 134,
-                            y: 2830,
+                            y: 1366,
                             w: 128,
                             h: 128
                         },
@@ -9965,7 +5409,7 @@
                     "romania.img": {
                         frame: {
                             x: 266,
-                            y: 2830,
+                            y: 1366,
                             w: 128,
                             h: 128
                         },
@@ -9982,10 +5426,10 @@
                             h: 128
                         }
                     },
-                    "republic-of-poland.img": {
+                    "france.img": {
                         frame: {
                             x: 398,
-                            y: 2830,
+                            y: 1366,
                             w: 128,
                             h: 128
                         },
@@ -9998,3 +5442,3651 @@
                             h: 128
                         },
                         sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "germany.img": {
+                        frame: {
+                            x: 530,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "honduras.img": {
+                        frame: {
+                            x: 662,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "hong-kong.img": {
+                        frame: {
+                            x: 794,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "serbia.img": {
+                        frame: {
+                            x: 926,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "singapore.img": {
+                        frame: {
+                            x: 1058,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "hungary.img": {
+                        frame: {
+                            x: 1190,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "slovakia.img": {
+                        frame: {
+                            x: 1322,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "belgium.img": {
+                        frame: {
+                            x: 1454,
+                            y: 1366,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-scope-03.img": {
+                        frame: {
+                            x: 1616,
+                            y: 2,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "bolivia.img": {
+                        frame: {
+                            x: 1616,
+                            y: 134,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "south-korea.img": {
+                        frame: {
+                            x: 1616,
+                            y: 266,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "spain.img": {
+                        frame: {
+                            x: 1616,
+                            y: 398,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "bosnia-and-herzegovina.img": {
+                        frame: {
+                            x: 1616,
+                            y: 530,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "brazil.img": {
+                        frame: {
+                            x: 1616,
+                            y: 662,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "sweden.img": {
+                        frame: {
+                            x: 1616,
+                            y: 794,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "switzerland.img": {
+                        frame: {
+                            x: 1616,
+                            y: 926,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "taiwan.img": {
+                        frame: {
+                            x: 1616,
+                            y: 1058,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ecuador.img": {
+                        frame: {
+                            x: 1616,
+                            y: 1190,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "thailand.img": {
+                        frame: {
+                            x: 1616,
+                            y: 1322,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "canada.img": {
+                        frame: {
+                            x: 2,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "vietnam.img": {
+                        frame: {
+                            x: 134,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m93r-dual.img": {
+                        frame: {
+                            x: 266,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "trinidad-and-tobago.img": {
+                        frame: {
+                            x: 398,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "india.img": {
+                        frame: {
+                            x: 530,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "venezuela.img": {
+                        frame: {
+                            x: 662,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "turkey.img": {
+                        frame: {
+                            x: 794,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "uruguay.img": {
+                        frame: {
+                            x: 926,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "united-kingdom.img": {
+                        frame: {
+                            x: 1058,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "united-states-of-america.img": {
+                        frame: {
+                            x: 1190,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "russia.img": {
+                        frame: {
+                            x: 1322,
+                            y: 1498,
+                            w: 128,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 128,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-map-coming.img": {
+                        frame: {
+                            x: 1233,
+                            y: 1094,
+                            w: 112,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 8,
+                            w: 112,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 256
+                        }
+                    },
+                    "loot-weapon-flare-gun-dual.img": {
+                        frame: {
+                            x: 1454,
+                            y: 1498,
+                            w: 110,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 9,
+                            y: 0,
+                            w: 110,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m93r.img": {
+                        frame: {
+                            x: 1568,
+                            y: 1498,
+                            w: 100,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 14,
+                            y: 0,
+                            w: 100,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "player-helmet-potato.img": {
+                        frame: {
+                            x: 1748,
+                            y: 2,
+                            w: 99,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 27,
+                            y: 24,
+                            w: 99,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 176,
+                            h: 176
+                        }
+                    },
+                    "player-helmet-medic.img": {
+                        frame: {
+                            x: 1748,
+                            y: 134,
+                            w: 97,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 27,
+                            y: 24,
+                            w: 97,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 176,
+                            h: 176
+                        }
+                    },
+                    "player-helmet-leader.img": {
+                        frame: {
+                            x: 1748,
+                            y: 266,
+                            w: 97,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 27,
+                            y: 24,
+                            w: 97,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 176,
+                            h: 176
+                        }
+                    },
+                    "player-helmet-lieutenant.img": {
+                        frame: {
+                            x: 1748,
+                            y: 398,
+                            w: 97,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 27,
+                            y: 24,
+                            w: 97,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 176,
+                            h: 176
+                        }
+                    },
+                    "indicator.img": {
+                        frame: {
+                            x: 1748,
+                            y: 530,
+                            w: 90,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 0,
+                            w: 90,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-airdrop-04.img": {
+                        frame: {
+                            x: 1748,
+                            y: 662,
+                            w: 54,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !1,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 0,
+                            w: 54,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 54,
+                            h: 128
+                        }
+                    },
+                    "ping-map-danger.img": {
+                        frame: {
+                            x: 1806,
+                            y: 662,
+                            w: 40,
+                            h: 128
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 44,
+                            y: 0,
+                            w: 40,
+                            h: 128
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-team-airdrop.img": {
+                        frame: {
+                            x: 2,
+                            y: 1630,
+                            w: 126,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 126,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-team-airstrike.img": {
+                        frame: {
+                            x: 132,
+                            y: 1630,
+                            w: 126,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 126,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-team-help.img": {
+                        frame: {
+                            x: 262,
+                            y: 1630,
+                            w: 126,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 126,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-team-coming.img": {
+                        frame: {
+                            x: 392,
+                            y: 1630,
+                            w: 126,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 126,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-team-danger.img": {
+                        frame: {
+                            x: 522,
+                            y: 1630,
+                            w: 126,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 126,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "thinking-face.img": {
+                        frame: {
+                            x: 652,
+                            y: 1630,
+                            w: 124,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-ot38-dual.img": {
+                        frame: {
+                            x: 780,
+                            y: 1630,
+                            w: 121,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 1,
+                            w: 121,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-colt45-dual.img": {
+                        frame: {
+                            x: 905,
+                            y: 1630,
+                            w: 120,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 1,
+                            w: 120,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m4a1.img": {
+                        frame: {
+                            x: 1029,
+                            y: 1630,
+                            w: 116,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 1,
+                            w: 116,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m1014.img": {
+                        frame: {
+                            x: 1149,
+                            y: 1630,
+                            w: 110,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 9,
+                            y: 1,
+                            w: 110,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-ots38-dual.img": {
+                        frame: {
+                            x: 1263,
+                            y: 1630,
+                            w: 105,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 1,
+                            w: 105,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "gun-med-01.img": {
+                        frame: {
+                            x: 1748,
+                            y: 794,
+                            w: 30,
+                            h: 126
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 1,
+                            w: 30,
+                            h: 126
+                        },
+                        sourceSize: {
+                            w: 32,
+                            h: 128
+                        }
+                    },
+                    "proj-strobe-unarmed.img": {
+                        frame: {
+                            x: 1372,
+                            y: 1630,
+                            w: 147,
+                            h: 125
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 25,
+                            w: 147,
+                            h: 125
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 160
+                        }
+                    },
+                    "star-red.img": {
+                        frame: {
+                            x: 1523,
+                            y: 1630,
+                            w: 132,
+                            h: 125
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 6,
+                            w: 132,
+                            h: 125
+                        },
+                        sourceSize: {
+                            w: 148,
+                            h: 148
+                        }
+                    },
+                    "star-blue.img": {
+                        frame: {
+                            x: 1659,
+                            y: 1630,
+                            w: 132,
+                            h: 125
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 6,
+                            w: 132,
+                            h: 125
+                        },
+                        sourceSize: {
+                            w: 148,
+                            h: 148
+                        }
+                    },
+                    "alien-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 2,
+                            w: 124,
+                            h: 125
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 125
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "snowflake.img": {
+                        frame: {
+                            x: 1851,
+                            y: 131,
+                            w: 114,
+                            h: 125
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 2,
+                            w: 114,
+                            h: 125
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-dp28.img": {
+                        frame: {
+                            x: 1851,
+                            y: 260,
+                            w: 114,
+                            h: 125
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 2,
+                            w: 114,
+                            h: 125
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "imp-face.img": {
+                        frame: {
+                            x: 2,
+                            y: 1760,
+                            w: 126,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 2,
+                            w: 126,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "disappoint-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 389,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "sunglass-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 517,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "heart-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 645,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "happy-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 773,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-heal-01.img": {
+                        frame: {
+                            x: 1851,
+                            y: 901,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "joy-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 1029,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-log-01.img": {
+                        frame: {
+                            x: 1851,
+                            y: 1157,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "sad-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 1285,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "sob-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 1413,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "monocle-face.img": {
+                        frame: {
+                            x: 1851,
+                            y: 1541,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "angry-face.img": {
+                        frame: {
+                            x: 132,
+                            y: 1760,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "upsidedown-face.img": {
+                        frame: {
+                            x: 260,
+                            y: 1760,
+                            w: 124,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 124,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "campfire.img": {
+                        frame: {
+                            x: 388,
+                            y: 1760,
+                            w: 116,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 2,
+                            w: 116,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-an94.img": {
+                        frame: {
+                            x: 508,
+                            y: 1760,
+                            w: 114,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 2,
+                            w: 114,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-pkp.img": {
+                        frame: {
+                            x: 626,
+                            y: 1760,
+                            w: 114,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 2,
+                            w: 114,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m1a1.img": {
+                        frame: {
+                            x: 744,
+                            y: 1760,
+                            w: 113,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 2,
+                            w: 113,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-scorpion.img": {
+                        frame: {
+                            x: 861,
+                            y: 1760,
+                            w: 113,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 2,
+                            w: 113,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "trash.img": {
+                        frame: {
+                            x: 978,
+                            y: 1760,
+                            w: 108,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 10,
+                            y: 2,
+                            w: 108,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "thumbs-up.img": {
+                        frame: {
+                            x: 1090,
+                            y: 1760,
+                            w: 104,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 2,
+                            w: 104,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "bullets.img": {
+                        frame: {
+                            x: 1748,
+                            y: 924,
+                            w: 86,
+                            h: 124
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 21,
+                            y: 2,
+                            w: 86,
+                            h: 124
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-splat-01.img": {
+                        frame: {
+                            x: 1198,
+                            y: 1760,
+                            w: 126,
+                            h: 123
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 9,
+                            y: 9,
+                            w: 126,
+                            h: 123
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 144
+                        }
+                    },
+                    "loot-weapon-saiga.img": {
+                        frame: {
+                            x: 1328,
+                            y: 1760,
+                            w: 112,
+                            h: 123
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 3,
+                            w: 112,
+                            h: 123
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "tombstone.img": {
+                        frame: {
+                            x: 1444,
+                            y: 1760,
+                            w: 112,
+                            h: 123
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 0,
+                            w: 112,
+                            h: 123
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m39.img": {
+                        frame: {
+                            x: 1560,
+                            y: 1760,
+                            w: 108,
+                            h: 123
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 10,
+                            y: 3,
+                            w: 108,
+                            h: 123
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "police.img": {
+                        frame: {
+                            x: 1672,
+                            y: 1760,
+                            w: 100,
+                            h: 123
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 14,
+                            y: 2,
+                            w: 100,
+                            h: 123
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "perk-3.img": {
+                        frame: {
+                            x: 1776,
+                            y: 1760,
+                            w: 128,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 3,
+                            w: 128,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "perk-1.img": {
+                        frame: {
+                            x: 1979,
+                            y: 2,
+                            w: 128,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 3,
+                            w: 128,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "perk-2.img": {
+                        frame: {
+                            x: 1979,
+                            y: 128,
+                            w: 126,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 3,
+                            w: 126,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-bar.img": {
+                        frame: {
+                            x: 1979,
+                            y: 254,
+                            w: 126,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 3,
+                            w: 126,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "heart.img": {
+                        frame: {
+                            x: 1979,
+                            y: 380,
+                            w: 124,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 4,
+                            w: 124,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-boost-01.img": {
+                        frame: {
+                            x: 1979,
+                            y: 506,
+                            w: 122,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 3,
+                            w: 122,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "emote.img": {
+                        frame: {
+                            x: 1979,
+                            y: 632,
+                            w: 122,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 3,
+                            w: 122,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "surviv.img": {
+                        frame: {
+                            x: 1979,
+                            y: 758,
+                            w: 122,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 3,
+                            w: 122,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-mk12.img": {
+                        frame: {
+                            x: 1979,
+                            y: 884,
+                            w: 114,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 3,
+                            w: 114,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "cupcake.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1010,
+                            w: 108,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 10,
+                            y: 3,
+                            w: 108,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "candy-corn.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1136,
+                            w: 104,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 3,
+                            w: 104,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "snowman.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1262,
+                            w: 96,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 3,
+                            w: 96,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "perk-5.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1388,
+                            w: 90,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 3,
+                            w: 90,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-throwable-smoke.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1514,
+                            w: 84,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 22,
+                            y: 3,
+                            w: 84,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ice-cream.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1640,
+                            w: 66,
+                            h: 122
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 31,
+                            y: 3,
+                            w: 66,
+                            h: 122
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-awc.img": {
+                        frame: {
+                            x: 2,
+                            y: 1888,
+                            w: 122,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 1,
+                            y: 6,
+                            w: 122,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m249.img": {
+                        frame: {
+                            x: 128,
+                            y: 1888,
+                            w: 116,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 4,
+                            w: 116,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "proj-frag-pin-02.img": {
+                        frame: {
+                            x: 248,
+                            y: 1888,
+                            w: 110,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 6,
+                            w: 110,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "proj-frag-pin-01.img": {
+                        frame: {
+                            x: 362,
+                            y: 1888,
+                            w: 110,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 6,
+                            w: 110,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "proj-frag-nopin-02.img": {
+                        frame: {
+                            x: 476,
+                            y: 1888,
+                            w: 109,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 6,
+                            w: 109,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "proj-frag-nopin-01.img": {
+                        frame: {
+                            x: 589,
+                            y: 1888,
+                            w: 109,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 6,
+                            w: 109,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "proj-frag-nopin-nolever-02.img": {
+                        frame: {
+                            x: 1748,
+                            y: 1052,
+                            w: 90,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 6,
+                            w: 90,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "proj-frag-nopin-nolever-01.img": {
+                        frame: {
+                            x: 1748,
+                            y: 1177,
+                            w: 90,
+                            h: 121
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 6,
+                            w: 90,
+                            h: 121
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "chicken-dinner.img": {
+                        frame: {
+                            x: 702,
+                            y: 1888,
+                            w: 128,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 4,
+                            w: 128,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-splat-03.img": {
+                        frame: {
+                            x: 834,
+                            y: 1888,
+                            w: 123,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 13,
+                            y: 6,
+                            w: 123,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 144,
+                            h: 144
+                        }
+                    },
+                    "loot-weapon-usas.img": {
+                        frame: {
+                            x: 961,
+                            y: 1888,
+                            w: 122,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 3,
+                            y: 4,
+                            w: 122,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-qbb97.img": {
+                        frame: {
+                            x: 1087,
+                            y: 1888,
+                            w: 118,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 4,
+                            w: 118,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-pumpshotgun.img": {
+                        frame: {
+                            x: 1209,
+                            y: 1888,
+                            w: 118,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 4,
+                            w: 118,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "egg.img": {
+                        frame: {
+                            x: 1748,
+                            y: 1302,
+                            w: 98,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 15,
+                            y: 4,
+                            w: 98,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-colt45.img": {
+                        frame: {
+                            x: 1748,
+                            y: 1426,
+                            w: 96,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 4,
+                            w: 96,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-ots38.img": {
+                        frame: {
+                            x: 1331,
+                            y: 1888,
+                            w: 81,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 23,
+                            y: 4,
+                            w: 81,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-chest-02.img": {
+                        frame: {
+                            x: 1416,
+                            y: 1888,
+                            w: 76,
+                            h: 120
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 26,
+                            y: 4,
+                            w: 76,
+                            h: 120
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m1911-dual.img": {
+                        frame: {
+                            x: 1496,
+                            y: 1888,
+                            w: 128,
+                            h: 119
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 5,
+                            w: 128,
+                            h: 119
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m1100.img": {
+                        frame: {
+                            x: 1628,
+                            y: 1888,
+                            w: 119,
+                            h: 119
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 7,
+                            w: 119,
+                            h: 119
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m1911.img": {
+                        frame: {
+                            x: 1751,
+                            y: 1888,
+                            w: 107,
+                            h: 119
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 10,
+                            y: 5,
+                            w: 107,
+                            h: 119
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-hk416.img": {
+                        frame: {
+                            x: 1862,
+                            y: 1888,
+                            w: 105,
+                            h: 119
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 13,
+                            y: 4,
+                            w: 105,
+                            h: 119
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-potato-02.img": {
+                        frame: {
+                            x: 1971,
+                            y: 1888,
+                            w: 94,
+                            h: 119
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 17,
+                            y: 4,
+                            w: 94,
+                            h: 119
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "perk-4.img": {
+                        frame: {
+                            x: 2111,
+                            y: 2,
+                            w: 86,
+                            h: 119
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 21,
+                            y: 6,
+                            w: 86,
+                            h: 119
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m9-dual.img": {
+                        frame: {
+                            x: 1979,
+                            y: 1766,
+                            w: 128,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 5,
+                            w: 128,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "salt.img": {
+                        frame: {
+                            x: 2,
+                            y: 2013,
+                            w: 124,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 5,
+                            w: 124,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-sv98.img": {
+                        frame: {
+                            x: 130,
+                            y: 2013,
+                            w: 121,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 7,
+                            w: 121,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "donut.img": {
+                        frame: {
+                            x: 255,
+                            y: 2013,
+                            w: 120,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 5,
+                            w: 120,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "skull.img": {
+                        frame: {
+                            x: 379,
+                            y: 2013,
+                            w: 120,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 4,
+                            y: 5,
+                            w: 120,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ping-part-circle-auto-outer.img": {
+                        frame: {
+                            x: 2624,
+                            y: 732,
+                            w: 28,
+                            h: 26
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 0,
+                            y: 1,
+                            w: 28,
+                            h: 26
+                        },
+                        sourceSize: {
+                            w: 28,
+                            h: 28
+                        }
+                    },
+                    "part-feather-01.img": {
+                        frame: {
+                            x: 625,
+                            y: 2013,
+                            w: 118,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 5,
+                            w: 118,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-chest-01.img": {
+                        frame: {
+                            x: 747,
+                            y: 2013,
+                            w: 118,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 5,
+                            w: 118,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-feather-02.img": {
+                        frame: {
+                            x: 869,
+                            y: 2013,
+                            w: 118,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 5,
+                            w: 118,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-ump9.img": {
+                        frame: {
+                            x: 991,
+                            y: 2013,
+                            w: 114,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 5,
+                            w: 114,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-famas.img": {
+                        frame: {
+                            x: 1109,
+                            y: 2013,
+                            w: 112,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 5,
+                            w: 112,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-vector45.img": {
+                        frame: {
+                            x: 1225,
+                            y: 2013,
+                            w: 104,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 5,
+                            w: 104,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-m9.img": {
+                        frame: {
+                            x: 1333,
+                            y: 2013,
+                            w: 96,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 5,
+                            w: 96,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-chest-03.img": {
+                        frame: {
+                            x: 1433,
+                            y: 2013,
+                            w: 96,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 5,
+                            w: 96,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-pack-00.img": {
+                        frame: {
+                            x: 1533,
+                            y: 2013,
+                            w: 90,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 5,
+                            w: 90,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-pack-02.img": {
+                        frame: {
+                            x: 1627,
+                            y: 2013,
+                            w: 88,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 20,
+                            y: 5,
+                            w: 88,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-melee-bayonet-rugged.img": {
+                        frame: {
+                            x: 2111,
+                            y: 125,
+                            w: 36,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 46,
+                            y: 5,
+                            w: 36,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-melee-bayonet-woodland.img": {
+                        frame: {
+                            x: 2151,
+                            y: 125,
+                            w: 36,
+                            h: 118
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 46,
+                            y: 5,
+                            w: 36,
+                            h: 118
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "proj-strobe-arming.img": {
+                        frame: {
+                            x: 1719,
+                            y: 2013,
+                            w: 134,
+                            h: 117
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 13,
+                            y: 27,
+                            w: 134,
+                            h: 117
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 160
+                        }
+                    },
+                    "proj-strobe-armed.img": {
+                        frame: {
+                            x: 1857,
+                            y: 2013,
+                            w: 134,
+                            h: 117
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 13,
+                            y: 27,
+                            w: 134,
+                            h: 117
+                        },
+                        sourceSize: {
+                            w: 160,
+                            h: 160
+                        }
+                    },
+                    "loot-weapon-mosin.img": {
+                        frame: {
+                            x: 1995,
+                            y: 2013,
+                            w: 118,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 6,
+                            w: 118,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-leaf-06.img": {
+                        frame: {
+                            x: 2201,
+                            y: 2,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 6,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "gas.img": {
+                        frame: {
+                            x: 2201,
+                            y: 122,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 6,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-spark-02.img": {
+                        frame: {
+                            x: 2201,
+                            y: 242,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 120,
+                            h: 120
+                        }
+                    },
+                    "target.img": {
+                        frame: {
+                            x: 2201,
+                            y: 362,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 6,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-leaf-05.img": {
+                        frame: {
+                            x: 2201,
+                            y: 482,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 6,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-leaf-03.img": {
+                        frame: {
+                            x: 2201,
+                            y: 602,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 6,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-leaf-04.img": {
+                        frame: {
+                            x: 2201,
+                            y: 722,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 6,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-spark-01.img": {
+                        frame: {
+                            x: 2201,
+                            y: 842,
+                            w: 116,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 2,
+                            w: 116,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 120,
+                            h: 120
+                        }
+                    },
+                    "flex.img": {
+                        frame: {
+                            x: 2201,
+                            y: 962,
+                            w: 109,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 9,
+                            y: 6,
+                            w: 109,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-medical-bandage.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1082,
+                            w: 106,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 11,
+                            y: 6,
+                            w: 106,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-scar.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1202,
+                            w: 104,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 6,
+                            w: 104,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "acorn.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1322,
+                            w: 104,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 6,
+                            w: 104,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-pack-01.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1442,
+                            w: 94,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 17,
+                            y: 6,
+                            w: 94,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-flare-gun.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1562,
+                            w: 82,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 23,
+                            y: 6,
+                            w: 82,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-melee-bowie-frontier.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1682,
+                            w: 42,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 43,
+                            y: 6,
+                            w: 42,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-melee-bowie-vintage.img": {
+                        frame: {
+                            x: 2247,
+                            y: 1682,
+                            w: 42,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 43,
+                            y: 6,
+                            w: 42,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-melee-huntsman-burnished.img": {
+                        frame: {
+                            x: 2287,
+                            y: 1562,
+                            w: 24,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 52,
+                            y: 6,
+                            w: 24,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-melee-huntsman-rugged.img": {
+                        frame: {
+                            x: 2293,
+                            y: 1682,
+                            w: 24,
+                            h: 116
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 52,
+                            y: 6,
+                            w: 24,
+                            h: 116
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "sleepy.img": {
+                        frame: {
+                            x: 2,
+                            y: 2135,
+                            w: 124,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 2,
+                            y: 7,
+                            w: 124,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-garand.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1802,
+                            w: 112,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 8,
+                            y: 7,
+                            w: 112,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "pumpkin.img": {
+                        frame: {
+                            x: 2201,
+                            y: 1920,
+                            w: 106,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 11,
+                            y: 7,
+                            w: 106,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-pack-03.img": {
+                        frame: {
+                            x: 130,
+                            y: 2135,
+                            w: 104,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 7,
+                            w: 104,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-deagle.img": {
+                        frame: {
+                            x: 238,
+                            y: 2135,
+                            w: 104,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 12,
+                            y: 7,
+                            w: 104,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-mp5.img": {
+                        frame: {
+                            x: 346,
+                            y: 2135,
+                            w: 96,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 7,
+                            w: 96,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-spas12.img": {
+                        frame: {
+                            x: 446,
+                            y: 2135,
+                            w: 96,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 7,
+                            w: 96,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "tap.img": {
+                        frame: {
+                            x: 546,
+                            y: 2135,
+                            w: 96,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 16,
+                            y: 7,
+                            w: 96,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-weapon-ot38.img": {
+                        frame: {
+                            x: 646,
+                            y: 2135,
+                            w: 90,
+                            h: 114
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 19,
+                            y: 7,
+                            w: 90,
+                            h: 114
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-blossom-04.img": {
+                        frame: {
+                            x: 740,
+                            y: 2135,
+                            w: 115,
+                            h: 113
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 9,
+                            y: 9,
+                            w: 115,
+                            h: 113
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-melee-pan-black-side.img": {
+                        frame: {
+                            x: 2111,
+                            y: 247,
+                            w: 19,
+                            h: 113
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 55,
+                            y: 7,
+                            w: 19,
+                            h: 113
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "cattle.img": {
+                        frame: {
+                            x: 859,
+                            y: 2135,
+                            w: 118,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 5,
+                            y: 8,
+                            w: 118,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-shirt-01.img": {
+                        frame: {
+                            x: 981,
+                            y: 2135,
+                            w: 116,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 8,
+                            w: 116,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-shirt-02.img": {
+                        frame: {
+                            x: 1101,
+                            y: 2135,
+                            w: 116,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 8,
+                            w: 116,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-shirt-03.img": {
+                        frame: {
+                            x: 1221,
+                            y: 2135,
+                            w: 116,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 8,
+                            w: 116,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "loot-shirt-04.img": {
+                        frame: {
+                            x: 1341,
+                            y: 2135,
+                            w: 116,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 8,
+                            w: 116,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "part-blossom-03.img": {
+                        frame: {
+                            x: 1461,
+                            y: 2135,
+                            w: 115,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 6,
+                            y: 10,
+                            w: 115,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-308sub.img": {
+                        frame: {
+                            x: 1580,
+                            y: 2135,
+                            w: 113,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 8,
+                            w: 113,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-762mm.img": {
+                        frame: {
+                            x: 1697,
+                            y: 2135,
+                            w: 113,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 8,
+                            w: 113,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-box.img": {
+                        frame: {
+                            x: 1814,
+                            y: 2135,
+                            w: 113,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 8,
+                            w: 113,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-12gauge.img": {
+                        frame: {
+                            x: 1931,
+                            y: 2135,
+                            w: 113,
+                            h: 112
+                        },
+                        rotated: !1,
+                        trimmed: !0,
+                        spriteSourceSize: {
+                            x: 7,
+                            y: 8,
+                            w: 113,
+                            h: 112
+                        },
+                        sourceSize: {
+                            w: 128,
+                            h: 128
+                        }
+                    },
+                    "ammo-556mm.img": {
+                        frame: {
+                            x: 2048,
+                            y: 2135,
