@@ -10,7 +10,7 @@
         }
 
         function o(e) {
-            this.ga = [], this.ya = [], this.airstrikeZoneContainer = new n.Container, this.audioManager = e
+            this.wa = [], this.xa = [], this.airstrikeZoneContainer = new n.Container, this.audioManager = e
         }
         var n = a("8b1dfb45"),
             s = a("6b42806d"),
@@ -39,7 +39,7 @@
             c: function(e, t, a) {
                 this.ticker += e, this.gfx.visible = !0, this.ticker >= this.duration && (this.gfx.visible = !1, this.active = !1)
             },
-            Ft: function(e, t, a) {
+            qt: function(e, t, a) {
                 var i = e.getMapPosFromWorldPos(this.pos, t),
                     r = e.getMapPosFromWorldPos(p.add(this.pos, p.create(this.rad, 0)), t),
                     o = p.length(p.sub(r, i)),
@@ -51,50 +51,49 @@
             }
         }, o.prototype = {
             n: function() {
-                for (var e = 0; e < this.ga.length; e++) this.ga[e].n(this.audioManager)
+                for (var e = 0; e < this.wa.length; e++) this.wa[e].n(this.audioManager)
             },
-            Wt: function(e, t) {
-                for (var a = 0; a < this.ga.length; a++) this.ga[a].dirty = !0;
+            Zt: function(e, t) {
+                for (var a = 0; a < this.wa.length; a++) this.wa[a].dirty = !0;
                 for (var i = 0; i < e.length; i++) {
-                    for (var r = e[i], o = null, n = 0; n < this.ga.length; n++) {
-                        var s = this.ga[n];
+                    for (var r = e[i], o = null, n = 0; n < this.wa.length; n++) {
+                        var s = this.wa[n];
                         if (s.active && s.id == r.id) {
                             o = s;
                             break
                         }
                     }
-                    o || (o = this.wa(r, t)), o.dirty = !1, o.actionComplete = r.actionComplete
+                    o || (o = this.fa(r, t)), o.dirty = !1, o.actionComplete = r.actionComplete
                 }
-                for (var l = 0; l < this.ga.length; l++) {
-                    var c = this.ga[l];
+                for (var l = 0; l < this.wa.length; l++) {
+                    var c = this.wa[l];
                     c.active && c.dirty && c.n(this.audioManager)
                 }
             },
-            wa: function(e, t) {
-                for (var a = null, r = 0; r < this.ga.length; r++)
-                    if (!this.ga[r].active) {
-                        a = this.ga[r];
+            fa: function(e, t) {
+                for (var a = null, r = 0; r < this.wa.length; r++)
+                    if (!this.wa[r].active) {
+                        a = this.wa[r];
                         break
                     }
-                return a || (a = new i, this.ga.push(a)), a.o(e, t), a
+                return a || (a = new i, this.wa.push(a)), a.o(e, t), a
             },
-            Kt: function(e) {
-                for (var t = null, a = 0; a < this.ya.length; a++)
-                    if (!this.ya[a]) {
-                        t = this.ya[a];
+            Xt: function(e) {
+                for (var t = null, a = 0; a < this.xa.length; a++)
+                    if (!this.xa[a]) {
+                        t = this.xa[a];
                         break
                     }
-                return t || (t = new r(this.airstrikeZoneContainer), this.ya.push(t)), t.o(e.pos, e.rad, e.duration), t
+                return t || (t = new r(this.airstrikeZoneContainer), this.xa.push(t)), t.o(e.pos, e.rad, e.duration), t
             },
             c: function(e, t, a, i, r) {
-                for (var o = 0; o < this.ga.length; o++) {
-                    var n = this.ga[o];
+                for (var o = 0; o < this.wa.length; o++) {
+                    var n = this.wa[o];
                     if (n.active) {
                         var d = 0;
                         if (!(m.sameLayer(d, a.layer) || 2 & a.layer) || 2 & a.layer && i.insideStructureMask(s.createCircle(n.pos, 1)) || (d |= 2), n.pos = p.add(n.pos, p.mul(n.planeDir, e * n.config.planeVel)), n.actionComplete && (n.spriteUpdateTime = Math.min(n.spriteUpdateTime + e, 2), n.spriteUpdateTime, n.rad = c.lerp(n.spriteUpdateTime, n.config.planeRad, 1.25 * n.config.planeRad), n.alpha = c.lerp(n.spriteUpdateTime, .75, .5625), n.soundRangeMult = c.max(0, c.lerp(n.spriteUpdateTime, n.config.soundRangeMult, n.config.soundRangeMult - n.config.soundRangeDelta))), n.soundInstance) n.soundUpdateThrottle < 0 ? (this.audioManager.updateSound(n.soundInstance, "sfx", n.pos, {
                             layer: d,
                             rangeMult: n.config.soundRangeMult,
-                            muffled: !1,
                             ignoreMinAllowable: !0,
                             fallOff: n.config.fallOff
                         }), n.soundUpdateThrottle = .1) : n.soundUpdateThrottle -= e;
@@ -112,7 +111,6 @@
                                 layer: d,
                                 loop: !0,
                                 rangeMult: 2.5,
-                                muffled: !1,
                                 ignoreMinAllowable: !0,
                                 fallOff: n.config.fallOff,
                                 offset: g
@@ -121,22 +119,23 @@
                         r.addPIXIObj(n.sprite, d, 1501, n.id);
                         var w = t.pointToScreen(n.pos),
                             x = t.pixels(n.rad / t.ppu),
-                            f = n.alpha;
-                        1 == a.layer ? f = 0 : (a.ie.scopedIn || 1 & a.layer) && (f = .15), n.renderAlpha = c.lerp(3 * e, n.renderAlpha, f), n.sprite.position.set(w.x, w.y), n.sprite.scale.set(x, x), n.sprite.tint = 16776960, n.sprite.alpha = n.renderAlpha, n.sprite.visible = !0
+                            f = i.insideBuildingCeiling(s.createCircle(a.pos, .01), a.layer, !0),
+                            b = n.alpha;
+                        1 == a.layer ? b = 0 : (f || 1 & a.layer) && (b = .15), n.renderAlpha = c.lerp(3 * e, n.renderAlpha, b), n.sprite.position.set(w.x, w.y), n.sprite.scale.set(x, x), n.sprite.tint = 16776960, n.sprite.alpha = n.renderAlpha, n.sprite.visible = !0
                     }
                 }
-                for (var b = 0; b < this.ya.length; b++) {
-                    var _ = this.ya[b];
-                    _.active && _.c(e)
+                for (var _ = 0; _ < this.xa.length; _++) {
+                    var S = this.xa[_];
+                    S.active && S.c(e)
                 }
             },
             renderAirstrikeZones: function(e, t, a) {
-                for (var i = 0; i < this.ya.length; i++) {
-                    var r = this.ya[i];
-                    r.active && r.Ft(e, t, a)
+                for (var i = 0; i < this.xa.length; i++) {
+                    var r = this.xa[i];
+                    r.active && r.qt(e, t, a)
                 }
             }
         }, e.exports = {
-            ct: o
+            ht: o
         }
     },
