@@ -3,12 +3,12 @@
 
         function i() {
             var e = this;
-            this.nameInput = o("#player-name-input-solo"), this.serverSelect = o("#server-select-main"), this.playMode0Btn = o("#btn-start-mode-0"), this.playMode1Btn = o("#btn-start-mode-1"), this.playMode2Btn = o("#btn-start-mode-2"), this.muteBtns = o(".btn-sound-toggle"), this.aimLineBtn = o("#btn-game-aim-line"), this.masterSliders = o(".sl-master-volume"), this.soundSliders = o(".sl-sound-volume"), this.musicSliders = o(".sl-music-volume"), this.serverWarning = o("#server-warning"), this.languageSelect = o(".language-select"), this.startMenuWrapper = o("#start-menu-wrapper"), this.gameAreaWrapper = o("#game-area-wrapper"), this.errorModal = new k(o("#modal-notification")), this.refreshModal = new k(o("#modal-refresh")), this.config = new g, this.localization = new S, this.adManager = new p.AdManager(this.config), this.account = new m(this.config, this.localization, this.errorModal), this.loadoutMenu = new _(this.config, this.account), this.pingTest = new z, this.audioManager = new u, this.ambience = new h, this.teamMenu = new I(this.config, this.pingTest, this.localization, this.audioManager, this.onTeamMenuJoinGame.bind(this), this.onTeamMenuLeave.bind(this)), this.pixi = null, this.textureManager = null, this.input = null, this.inputBinds = null, this.inputBindUi = null, this.game = null, this.sessionId = r.random64(), this.loadComplete = !1, this.initialized = !1, this.active = !1, this.contextListener = function(e) {
+            this.nameInput = o("#player-name-input-solo"), this.serverSelect = o("#server-select-main"), this.playMode0Btn = o("#btn-start-mode-0"), this.playMode1Btn = o("#btn-start-mode-1"), this.playMode2Btn = o("#btn-start-mode-2"), this.muteBtns = o(".btn-sound-toggle"), this.aimLineBtn = o("#btn-game-aim-line"), this.masterSliders = o(".sl-master-volume"), this.soundSliders = o(".sl-sound-volume"), this.musicSliders = o(".sl-music-volume"), this.serverWarning = o("#server-warning"), this.languageSelect = o(".language-select"), this.startMenuWrapper = o("#start-menu-wrapper"), this.gameAreaWrapper = o("#game-area-wrapper"), this.startButtons = o(".start-button-container"), this.playLoading = o(".play-loading-outer"), this.errorModal = new k(o("#modal-notification")), this.refreshModal = new k(o("#modal-refresh")), this.config = new g, this.localization = new S, this.adManager = new p.AdManager(this.config), this.account = new m(this.config, this.localization, this.errorModal), this.loadoutMenu = new _(this.config, this.account), this.pingTest = new z, this.audioManager = new u, this.ambience = new h, this.teamMenu = new I(this.config, this.pingTest, this.localization, this.audioManager, this.onTeamMenuJoinGame.bind(this), this.onTeamMenuLeave.bind(this)), this.pixi = null, this.resourceManager = null, this.input = null, this.inputBinds = null, this.inputBindUi = null, this.game = null, this.domContentLoaded = !1, this.configLoaded = !1, this.initialized = !1, this.active = !1, this.sessionId = r.random64(), this.contextListener = function(e) {
                 e.preventDefault()
             }, this.errorMessage = "", this.quickPlayPendingModeIdx = -1, this.findGameAttempts = 0, this.findGameTime = 0, this.pauseTime = 0, this.wasPlayingVideo = !1, this.checkedPingTest = !1, this.hasFocus = !0, this.siteInfo = {}, this.siteInfoLoaded = !1, this.siteInfoApplied = !1;
             var t = function() {
                 e.config.load(function() {
-                    e.requestSiteInfo(), e.startPingTest(), e.loadComplete = !0
+                    e.configLoaded = !0, e.da()
                 })
             };
             y.webview && y.version > "1.0.0" ? this.loadWebviewDeps(t) : this.loadBrowserDeps(t)
@@ -38,7 +38,7 @@
             k = a("fa71fb59"),
             z = a("c4623452"),
             M = a("d84c74f8"),
-            T = a("076760a2"),
+            T = a("76205fa7"),
             I = a("61fc98e9"),
             P = a("d3da5587");
         a("f4d48896"), i.prototype = {
@@ -61,13 +61,14 @@
                             e.getElementById(a) || (i = e.createElement(t), i.id = a, i.onload = function() {}, i.src = o, n.parentNode.insertBefore(i, n))
                         }(document, "script", "cordova-js")
                 },
-                ma: function() {
+                da: function() {
                     var e = this;
-                    if (!this.initialized) {
-                        if (!this.loadComplete) return void setTimeout(function() {
-                            e.ma()
-                        }, 10);
-                        this.initialized = !0, this.config.teamAutoFill = !0, y.webview ? v.applyWebviewStyling(y.tablet) : y.mobile && v.applyMobileBrowserStyling(y.tablet), this.adManager.init(), this.account.init(), this.account.load(), y.webview && y.version >= "1.0.8" && setTimeout(function() {
+                    if (this.domContentLoaded && this.configLoaded && !this.initialized) {
+                        this.initialized = !0, this.config.teamAutoFill = !0, y.webview ? v.applyWebviewStyling(y.tablet) : y.mobile && v.applyMobileBrowserStyling(y.tablet);
+                        var t = this.config.get("language") || this.localization.detectLocale();
+                        this.config.set("language", t), this.localization.setLocale(t), this.startPingTest(), this.requestSiteInfo(this.localization.getLocale()), this.adManager.init(), this.account.init(), this.account.load(), this.account.profileMenu.changeAvatarPrompt.onShow(function() {
+                            e.loadoutMenu.init()
+                        }), y.webview && y.version >= "1.0.8" && setTimeout(function() {
                             e.adManager.showBannerAd()
                         }, 0), this.localization.localizeIndex(), this.nameInput.maxLength = c.Constants.PlayerNameMaxLen, this.playMode0Btn.on("click", function() {
                             e.tryQuickStartGame(0)
@@ -121,45 +122,43 @@
                         }), o("#btn-team-leave").on("click", function() {
                             window.history && window.history.replaceState("", "", "/"), e.game && e.game.n(), e.teamMenu.leave()
                         }), this.setDOMFromConfig(), this.setAppActive(!0);
-                        var t = document.getElementById("cvs"),
-                            a = window.devicePixelRatio > 1 ? 2 : 1;
+                        var a = document.getElementById("cvs"),
+                            i = window.devicePixelRatio > 1 ? 2 : 1;
                         "ios" == y.os && (n.settings.PRECISION_FRAGMENT = "highp");
-                        var i = function(e) {
+                        var s = function(e) {
                                 return new n.Application({
                                     width: window.innerWidth,
                                     height: window.innerHeight,
-                                    view: t,
+                                    view: a,
                                     antialias: !1,
-                                    resolution: a,
+                                    resolution: i,
                                     forceCanvas: e
                                 })
                             },
-                            s = null;
+                            l = null;
                         try {
-                            s = i(!1)
+                            l = s(!1)
                         } catch (e) {
-                            s = i(!0)
+                            l = s(!0)
                         }
-                        this.pixi = s, this.pixi.renderer.plugins.interaction.destroy(), this.pixi.ticker.add(this.update, this), this.pixi.renderer.backgroundColor = 7378501, this.textureManager = new T.TextureManager(this.pixi.renderer, this.config), setTimeout(function() {
-                            e.audioManager.preloadSounds(), e.textureManager.loadAtlasList(["gradient", "loadout", "shared", "main"])
-                        }, 0), this.input = new f.fe(t), this.inputBinds = new b.InputBinds(this.input, this.config), this.inputBindUi = new b.InputBindUi(this.input, this.inputBinds);
-                        var l = function() {
+                        this.pixi = l, this.pixi.renderer.plugins.interaction.destroy(), this.pixi.ticker.add(this.update, this), this.pixi.renderer.backgroundColor = 7378501, this.resourceManager = new T.ResourceManager(this.pixi.renderer, this.audioManager, this.config), this.resourceManager.preloadAssets(), this.input = new f._e(a), this.inputBinds = new b.InputBinds(this.input, this.config), this.inputBindUi = new b.InputBindUi(this.input, this.inputBinds);
+                        var m = function() {
                                 e.game.o(), e.findGameAttempts = 0, e.ambience.onGameStart(), e.adManager.onGameStart()
                             },
-                            m = function(t) {
-                                e.game.n(), e.errorMessage = e.localization.translate(t || ""), e.teamMenu.onGameComplete(), e.ambience.onGameComplete(e.audioManager), e.setAppActive(!0), "index-invalid-protocol" == t && e.showInvalidProtocolModal()
+                            p = function(t) {
+                                e.game.n(), e.errorMessage = e.localization.translate(t || ""), e.teamMenu.onGameComplete(), e.ambience.onGameComplete(e.audioManager), e.setAppActive(!0), e.setPlayLockout(!1), "index-invalid-protocol" == t && e.showInvalidProtocolModal()
                             };
-                        this.game = new x.Xt(this.pixi, this.audioManager, this.localization, this.config, this.input, this.inputBinds, this.inputBindUi, this.adManager, this.ambience, this.textureManager, l, m), this.onResize(), this.tryJoinTeam(!1), v.init(this.inputBinds, this.inputBindUi), P.loadStaticDomImages(), this.tryApplySiteInfo();
-                        var p = this.config.get("loadId"),
-                            d = this.config.get("unloadId");
-                        p && p != d && console.log("Probable session crash detected!"), this.config.set("loadId", this.sessionId), this.onConfigModified(), this.config.addModifiedListener(this.onConfigModified.bind(this))
+                        this.game = new x.Jt(this.pixi, this.audioManager, this.localization, this.config, this.input, this.inputBinds, this.inputBindUi, this.adManager, this.ambience, this.resourceManager, m, p), this.onResize(), this.tryJoinTeam(!1), v.init(this.inputBinds, this.inputBindUi), this.tryApplySiteInfo(), P.loadStaticDomImages();
+                        var d = this.config.get("loadId"),
+                            h = this.config.get("unloadId");
+                        d && d != h && console.log("Probable session crash detected!"), this.config.set("loadId", this.sessionId), this.onConfigModified(), this.config.addModifiedListener(this.onConfigModified.bind(this))
                     }
                 },
                 onUnload: function() {
                     this.teamMenu.leave(), this.config.set("unloadId", this.sessionId)
                 },
                 onResize: function() {
-                    y.onResize(), v.onResize(), this.pixi && this.pixi.renderer.resize(y.screenWidth, y.screenHeight), this.game && this.game.initialized && this.game.Dt(), this.refreshUi()
+                    y.onResize(), v.onResize(), this.pixi && this.pixi.renderer.resize(y.screenWidth, y.screenHeight), this.game && this.game.initialized && this.game.Bt(), this.refreshUi()
                 },
                 onPause: function() {
                     y.webview && (this.pauseTime = Date.now(), this.audioManager.setMute(!0), "ios" == y.os && this.pixi && this.pixi.ticker.remove(this.pixi.render, this.pixi))
@@ -171,15 +170,15 @@
                     var e = this.config.get("regionSelected") ? [this.config.get("region")] : this.pingTest.getRegionList();
                     this.pingTest.start(e)
                 },
-                requestSiteInfo: function() {
-                    var e = this,
-                        t = d.resolveUrl("/api/site_info?language=" + this.localization.getLocale());
-                    o.ajax(t).done(function(t, a) {
-                        e.siteInfo = t || {}, e.teamMenu.siteInfo = e.siteInfo, e.siteInfoLoaded = !0, e.tryApplySiteInfo()
+                requestSiteInfo: function(e) {
+                    var t = this,
+                        a = d.resolveUrl("/api/site_info?language=" + e);
+                    o.ajax(a).done(function(e, a) {
+                        t.siteInfo = e || {}, t.teamMenu.siteInfo = t.siteInfo, t.siteInfoLoaded = !0, t.tryApplySiteInfo()
                     })
                 },
                 tryApplySiteInfo: function() {
-                    if (!this.siteInfoApplied && this.siteInfoLoaded && this.initialized) {
+                    if (!this.siteInfoApplied && this.siteInfoLoaded) {
                         var e = this.siteInfo.pops;
                         if (e)
                             for (var t = Object.keys(e), a = 0; a < t.length; a++) {
@@ -204,23 +203,47 @@
                         var g = o("#featured-youtuber"),
                             w = this.siteInfo.youtube;
                         if (w && o(".btn-youtuber").attr("href", this.siteInfo.youtube.link).html(this.siteInfo.youtube.name), g.css("display", w ? "block" : "none"), this.siteInfo.promptConsent && M.showCookieConsent(this.config), window.adsBlocked) {
-                            if (["US"].includes(this.siteInfo.country)) {
-                                var x = o("#ad-block-left").find(".surviv-shirts");
-                                x && (x.addClass("surviv-shirts"), x.css("display", "block")), o(".adblock-plea").remove()
+                            var x = ["US", "GB", "DE"],
+                                f = ["en", "en", "de"],
+                                b = ["https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3Asurviv.io&ref=w_bl_sl_s_ap_web_7141123011", "https://www.amazon.co.uk/s?rh=n%3A83450031%2Cp_4%3Asurviv.io&ref=w_bl_sl_s_ap_web_83450031", "https://www.amazon.de/s?rh=n%3A77028031%2Cp_4%3Asurviv.io&ref=w_bl_sl_s_ap_web_77028031"],
+                                _ = x.indexOf(this.siteInfo.country);
+                            if (-1 != _) {
+                                var S = o(".surviv-shirts");
+                                if (S) {
+                                    var v = "surviv-shirts-" + f[_];
+                                    S.addClass("surviv-shirts " + v), S.find("a").attr("href", b[_]), o("#ad-block-left").find(".surviv-shirts").css("display", "block")
+                                }
+                                o(".adblock-plea").remove()
                             } else {
-                                var f = o("#ad-block-left").find(".adblock-plea");
-                                f && (f.addClass("adblock-plea"), f.css("display", "block")), o(".surviv-shirts").remove()
+                                var k = o("#ad-block-left").find(".adblock-plea");
+                                k && (k.addClass("adblock-plea"), k.css("display", "block")), o(".surviv-shirts").remove()
                             }
-                            var b = document.getElementById("survivio_300x250_main");
-                            b && (b.style.display = "none");
-                            var _ = document.getElementById("surviv-io_300x250");
-                            _ && (_.style.display = "none")
+                            var z = document.getElementById("survivio_300x250_main");
+                            z && (z.style.display = "none");
+                            var T = document.getElementById("surviv-io_300x250");
+                            T && (T.style.display = "none")
                         }
                         this.siteInfoApplied = !0
                     }
                 },
                 setAppActive: function(e) {
                     this.active = e, this.quickPlayPendingModeIdx = -1, this.sessionGames++, this.refreshUi(), e && this.errorModal.hide()
+                },
+                setPlayLockout: function(e) {
+                    var t = this,
+                        a = e ? 0 : 1e3;
+                    this.startButtons.stop().delay(a).animate({
+                        opacity: e ? .5 : 1
+                    }, 250), this.playLoading.stop().delay(a).animate({
+                        opacity: e ? 1 : 0
+                    }, {
+                        duration: 250,
+                        start: function() {
+                            t.playLoading.css({
+                                "pointer-events": e ? "initial" : "none"
+                            })
+                        }
+                    })
                 },
                 onTeamMenuJoinGame: function(e) {
                     this.joinGame(e)
@@ -334,7 +357,7 @@
                 joinGame: function(e) {
                     var t = this;
                     if (!this.game) return void setTimeout(function() {
-                        t.joinGameImpl(o, e)
+                        t.joinGame(e)
                     }, 250);
                     for (var a = "https:" == window.location.protocol || e && e.useHttps, i = a ? "wss:" : "ws:", r = (a ? e.hosts : e.addrs) || [], o = [], n = 0; n < r.length; n++) o.push(i + "//" + r[n] + "/play?gameId=" + e.gameId);
                     ! function e(a, i) {
@@ -344,7 +367,7 @@
                         var o = function() {
                             e(a, i)
                         };
-                        t.game.Ne(r, i.data, o)
+                        t.game.Ge(r, i.data, o)
                     }(o, e)
                 },
                 onJoinGameError: function(e) {
@@ -367,11 +390,11 @@
                         }
                         this.checkedPingTest = !0
                     }
-                    if (this.audioManager.c(e), this.ambience.update(e, this.audioManager, !this.active), this.teamMenu.update(e), this.wasPlayingVideo != this.adManager.isPlayingVideo) {
+                    if (this.resourceManager.update(e), this.audioManager.c(e), this.ambience.update(e, this.audioManager, !this.active), this.teamMenu.update(e), this.wasPlayingVideo != this.adManager.isPlayingVideo) {
                         var a = this.adManager.isPlayingVideo ? 0 : this.config.get("masterVolume");
                         this.audioManager.setMasterVolume(a)
                     }
-                    this.wasPlayingVideo = this.adManager.isPlayingVideo, this.game && this.game.initialized && this.game.playing && (this.active && this.setAppActive(!1), this.game.c(e)), this.input.flush()
+                    this.wasPlayingVideo = this.adManager.isPlayingVideo, this.game && this.game.initialized && this.game.playing && (this.active && (this.setAppActive(!1), this.setPlayLockout(!0)), this.game.c(e)), this.input.flush()
                 }
             }, a("927ff3fc"),
             function() {
@@ -383,13 +406,9 @@
             }();
         var C = new i;
         document.addEventListener("DOMContentLoaded", function(e) {
-            setTimeout(function() {
-                C.ma()
-            }, 0)
+            C.domContentLoaded = !0, C.da()
         }), window.addEventListener("load", function() {
-            setTimeout(function() {
-                C.ma()
-            }, 0)
+            C.domContentLoaded = !0, C.da()
         }), window.addEventListener("unload", function(e) {
             C.onUnload()
         }), "#_=_" == window.location.hash && (window.location.hash = "", history.pushState("", document.title, window.location.pathname)), window.addEventListener("resize", function() {
@@ -397,7 +416,7 @@
         }), window.addEventListener("hashchange", function() {
             C.tryJoinTeam(!1)
         }), window.addEventListener("beforeunload", function(e) {
-            if (C.game && C.game.Ot() && !y.webview) {
+            if (C.game && C.game.Rt() && !y.webview) {
                 var t = "Do you want to reload the game?";
                 return e.returnValue = t, t
             }
@@ -416,8 +435,9 @@
                     line: a,
                     column: i,
                     stacktrace: o.stack,
-                    browser: navigator.userAgent
+                    browser: navigator.userAgent,
+                    protocol: s.protocolVersion
                 },
-                s = JSON.stringify(n); - 1 === A.indexOf(s) && (A.push(s), /tpc.googlesyndication.com/.test(s) || (/surviv\.io\/js\/.*\.js/.test(s) && -1 == n.stacktrace.indexOf("chrome-extension://") && -1 == n.stacktrace.indexOf("cdn.rawgit.com") ? -1 !== n.msg.indexOf("TypeError: null is not an object (evaluating 't.transform._parentID=-1')") ? w.logError(s) : w.logWindowOnAppError(s) : w.logWindowOnError(s)))
+                l = JSON.stringify(n); - 1 === A.indexOf(l) && (A.push(l), /tpc.googlesyndication.com/.test(l) || (/surviv\.io\/js\/.*\.js/.test(l) && -1 == n.stacktrace.indexOf("chrome-extension://") && -1 == n.stacktrace.indexOf("cdn.rawgit.com") ? -1 !== n.msg.indexOf("TypeError: null is not an object (evaluating 't.transform._parentID=-1')") ? w.logError(l) : w.logWindowOnAppError(l) : w.logWindowOnError(l)))
         }
     },
