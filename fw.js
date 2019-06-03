@@ -1,7 +1,7 @@
     "989ad62a": function(e, t, a) {
         "use strict";
         e.exports = {
-            protocolVersion: 56,
+            protocolVersion: 57,
             Input: {
                 MoveLeft: 0,
                 MoveRight: 1,
@@ -114,7 +114,7 @@
                 freeSwitchCooldown: 1,
                 bleedTickRate: 1,
                 reviveDuration: 8,
-                reviveMaxRange: 5,
+                reviveRange: 5,
                 crawlTime: .75,
                 emoteSoftCooldown: 2,
                 emoteHardCooldown: 6,
@@ -162,6 +162,7 @@
             projectile: {
                 maxHeight: 5
             },
+            structureLayerCount: 2,
             abilities: {
                 ability_stim: {
                     cooldown: 12,
