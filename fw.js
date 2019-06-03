@@ -1,298 +1,282 @@
-    "4b8d140f": function(e, t, a) {
+    "989ad62a": function(e, t, a) {
         "use strict";
-
-        function i(e, t) {
-            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-        }
-
-        function r() {
-            this.id = 0, this.pos = {
-                x: 0,
-                y: 0
-            }, this.posOld = {
-                x: 0,
-                y: 0
-            }, this.posDown = {
-                x: 0,
-                y: 0
-            }, this.startTime = 0, this.lastUpdateTime = 0, this.isNew = !0, this.isDead = !1, this.osId = 0
-        }
-
-        function o(e) {
-            var t = this;
-            this.touchElem = e, this.keys = {}, this.keysOld = {}, this.he = s.create(0, 0), this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches = [], this.touchIdCounter = 0, this.leftTouch = null, this.rightTouch = null, this.lostFocus = !1, this.captureNextInputCb = null, this.bOnWindowFocus = function(e) {
-                t.onWindowFocus(e)
-            }, this.bOnKeyDown = function(e) {
-                t.onKeyDown(e)
-            }, this.bOnKeyUp = function(e) {
-                t.onKeyUp(e)
-            }, this.bOnMouseMove = function(e) {
-                t.onMouseMove(e)
-            }, this.bOnMouseDown = function(e) {
-                t.onMouseDown(e)
-            }, this.bOnMouseUp = function(e) {
-                t.onMouseUp(e)
-            }, this.bOnMouseWheel = function(e) {
-                t.onMouseWheel(e)
-            }, this.bOnTouchMove = function(e) {
-                t.onTouchMove(e)
-            }, this.bOnTouchStart = function(e) {
-                t.onTouchStart(e)
-            }, this.bOnTouchEnd = function(e) {
-                t.onTouchEnd(e)
-            }, this.bOnTouchCancel = function(e) {
-                t.onTouchCancel(e)
-            }, window.addEventListener("focus", this.bOnWindowFocus, !1), window.addEventListener("blur", this.bOnWindowFocus, !1), window.addEventListener("keydown", this.bOnKeyDown, !1), window.addEventListener("keyup", this.bOnKeyUp, !1), window.addEventListener("mousemove", this.bOnMouseMove, !1), window.addEventListener("mousedown", this.bOnMouseDown, !1), window.addEventListener("mouseup", this.bOnMouseUp, !1), window.addEventListener("wheel", this.bOnMouseWheel, {
-                capture: !1,
-                passive: !0
-            }), this.touchElem.addEventListener("touchmove", this.bOnTouchMove, !1), this.touchElem.addEventListener("touchstart", this.bOnTouchStart, !1), this.touchElem.addEventListener("touchend", this.bOnTouchEnd, !1), this.touchElem.addEventListener("touchcancel", this.bOnTouchCancel, !1)
-        }
-        var n = function() {
-                function e(e, t) {
-                    for (var a = 0; a < t.length; a++) {
-                        var i = t[a];
-                        i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
-                    }
-                }
-                return function(t, a, i) {
-                    return a && e(t.prototype, a), i && e(t, i), t
-                }
-            }(),
-            s = a("c2a798c8"),
-            l = Object.freeze({
-                Backspace: 8,
-                Enter: 13,
-                Shift: 16,
-                Control: 17,
-                Alt: 18,
-                Escape: 27,
-                Space: 32,
-                Left: 37,
-                Up: 38,
-                Right: 39,
-                Down: 40,
-                Zero: 48,
-                One: 49,
-                Two: 50,
-                Three: 51,
-                Four: 52,
-                Five: 53,
-                Six: 54,
-                Seven: 55,
-                Eight: 56,
-                Nine: 57,
-                A: 65,
-                B: 66,
-                C: 67,
-                D: 68,
-                E: 69,
-                F: 70,
-                G: 71,
-                L: 76,
-                M: 77,
-                N: 78,
-                P: 80,
-                Q: 81,
-                R: 82,
-                S: 83,
-                T: 84,
-                V: 86,
-                W: 87,
-                X: 88,
-                Windows: 91,
-                ContextMenu: 93,
-                F1: 112,
-                F2: 113,
-                F3: 114,
-                F4: 115,
-                F5: 116,
-                F6: 117,
-                F7: 118,
-                F8: 119,
-                F9: 120,
-                F10: 121,
-                F11: 122,
-                F12: 123,
-                Plus: 187,
-                Minus: 189,
-                FwdSlash: 191,
-                Tilde: 192
-            }),
-            c = Object.freeze({
-                Left: 0,
-                Middle: 1,
-                Right: 2,
-                Thumb1: 3,
-                Thumb2: 4
-            }),
-            m = Object.freeze({
+        e.exports = {
+            protocolVersion: 56,
+            Input: {
+                MoveLeft: 0,
+                MoveRight: 1,
+                MoveUp: 2,
+                MoveDown: 3,
+                Fire: 4,
+                Reload: 5,
+                Cancel: 6,
+                Interact: 7,
+                Revive: 8,
+                Use: 9,
+                Loot: 10,
+                EquipPrimary: 11,
+                EquipSecondary: 12,
+                EquipMelee: 13,
+                EquipThrowable: 14,
+                EquipFragGrenade: 15,
+                EquipSmokeGrenade: 16,
+                EquipNextWeap: 17,
+                EquipPrevWeap: 18,
+                EquipLastWeap: 19,
+                EquipOtherGun: 20,
+                EquipPrevScope: 21,
+                EquipNextScope: 22,
+                UseBandage: 23,
+                UseHealthKit: 24,
+                UseSoda: 25,
+                UsePainkiller: 26,
+                StowWeapons: 27,
+                SwapWeapSlots: 28,
+                ToggleMap: 29,
+                CycleUIMode: 30,
+                EmoteMenu: 31,
+                TeamPingMenu: 32,
+                Fullscreen: 33,
+                HideUI: 34,
+                TeamPingSingle: 35,
+                Count: 36
+            },
+            EmoteSlot: {
+                Top: 0,
+                Right: 1,
+                Bottom: 2,
+                Left: 3,
+                Win: 4,
+                Death: 5,
+                Count: 6
+            },
+            WeaponSlot: {
+                Primary: 0,
+                Secondary: 1,
+                Melee: 2,
+                Throwable: 3,
+                Count: 4
+            },
+            WeaponType: ["gun", "gun", "melee", "throwable"],
+            DamageType: {
+                Player: 0,
+                Bleeding: 1,
+                Gas: 2,
+                Airdrop: 3,
+                Airstrike: 4
+            },
+            Action: {
                 None: 0,
-                Up: 1,
-                Down: 2
-            }),
-            p = {
+                Reload: 1,
+                ReloadAlt: 2,
+                UseItem: 3,
+                Revive: 4
+            },
+            Anim: {
                 None: 0,
-                Key: 1,
-                MouseButton: 2,
-                MouseWheel: 3
+                Melee: 1,
+                Cook: 2,
+                Throw: 3,
+                CrawlForward: 4,
+                CrawlBackward: 5,
+                Revive: 6
             },
-            d = ["", "", "", "Cancel", "", "", "Help", "", "Backspace", "Tab", "", "", "Clear", "Enter", "Enter", "", "Shift", "Control", "Alt", "Pause", "Capslock", "Kana", "Eisu", "Junja", "Final", "Hanja", "", "ESC", "Convert", "Nonconvert", "Accept", "Modechange", "Space", "Page Up", "Page Down", "End", "Home", "←", "↑", "→", "↓", "Select", "Print", "Execute", "Printscreen", "Insert", "Delete", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Windows Key", "", "Context Menu", "", "Sleep", "Numpad 0", "Numpad 1", "Numpad 2", "Numpad 3", "Numpad 4", "Numpad 5", "Numpad 6", "Numpad 7", "Numpad 8", "Numpad 9", "*", "+", "Separator", "-", ".", "/", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24", "", "", "", "", "", "", "", "", "Num Lock", "Scroll Lock", "WIN_OEM_FJ_JISHO", "WIN_OEM_FJ_MASSHOU", "WIN_OEM_FJ_TOUROKU", "WIN_OEM_FJ_LOYA", "WIN_OEM_FJ_ROYA", "", "", "", "", "", "", "", "", "", "Circumflex", "!", '"', "#", "$", "%", "&", "_", "(", ")", "*", "+", "|", "Hyphen Minus", "{", "}", "~", "", "", "", "", "Volume Mute", "Volume Down", "Volume Up", "", "", ";", "=", ",", "-", ".", "/", "Backquote", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[", "\\", "]", "'", "", "Meta", "ALTGR", "", "WIN_ICO_HELP", "WIN_ICO_00", "", "WIN_ICO_CLEAR", "", "", "WIN_OEM_RESET", "WIN_OEM_JUMP", "WIN_OEM_PA1", "WIN_OEM_PA2", "WIN_OEM_PA3", "WIN_OEM_WSCTRL", "WIN_OEM_CUSEL", "WIN_OEM_ATTN", "WIN_OEM_FINISH", "WIN_OEM_COPY", "WIN_OEM_AUTO", "WIN_OEM_ENLW", "WIN_OEM_BACKTAB", "ATTN", "CRSEL", "EXSEL", "EREOF", "PLAY", "ZOOM", "", "PA1", "WIN_OEM_CLEAR", ""],
-            h = ["Left Mouse", "Middle Mouse", "Right Mouse", "Thumb Mouse 1", "Thumb Mouse 2"],
-            u = ["", "Mouse Wheel Up", "Mouse Wheel Down"],
-            g = function() {
-                function e(t, a) {
-                    i(this, e), this.type = t, this.code = a
-                }
-                return n(e, [{
-                    key: "equals",
-                    value: function(e) {
-                        return this.type == e.type && this.code == e.code
-                    }
-                }, {
-                    key: "toString",
-                    value: function() {
-                        return this.type == p.None ? "" : this.type == p.Key ? d[this.code] || "Key " + this.code : this.type == p.MouseButton ? h[this.code] || "Mouse " + this.code : u[this.code] || "Mouse Wheel " + this.code
-                    }
-                }]), e
-            }(),
-            y = Object.freeze({
-                Move: 0,
-                Start: 1,
-                End: 2,
-                Cancel: 3
-            });
-        o.prototype = {
-            n: function() {
-                window.removeEventListener("focus", this.bOnWindowFocus), window.removeEventListener("blur", this.bOnWindowFocus), window.removeEventListener("keydown", this.bOnKeyDown), window.removeEventListener("keyup", this.bOnKeyUp), window.removeEventListener("mousemove", this.bOnMouseMove), window.removeEventListener("mousedown", this.bOnMouseDown), window.removeEventListener("mouseup", this.bOnMouseUp), window.removeEventListener("wheel", this.bOnMouseWheel), this.touchElem.removeEventListener("touchmove", this.bOnTouchMove), this.touchElem.removeEventListener("touchstart", this.bOnTouchStart), this.touchElem.removeEventListener("touchend", this.bOnTouchEnd), this.touchElem.removeEventListener("touchcancel", this.bOnTouchCancel)
+            Role: {
+                None: 0,
+                FactionLeader: 1,
+                Lieutenant: 2,
+                WoodsKing: 3,
+                RarePotato: 5,
+                Medic: 6
             },
-            onWindowFocus: function() {
-                this.keys = {}, this.keysOld = {}, this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches.length = 0, this.lostFocus = !0
+            GasMode: {
+                Inactive: 0,
+                Waiting: 1,
+                Moving: 2
             },
-            flush: function() {
-                this.keysOld = Object.assign({}, this.keys), this.mouseButtonsOld = Object.assign({}, this.mouseButtons), this.mouseWheelState = 0;
-                for (var e = 0; e < this.touches.length; e++) this.touches[e].posOld.x = this.touches[e].pos.x, this.touches[e].posOld.y = this.touches[e].pos.y, this.touches[e].isNew = !1, this.touches[e].isDead && (this.touches.splice(e, 1), --e);
-                this.lostFocus = !1
+            Plane: {
+                Airdrop: 0,
+                Airstrike: 1
             },
-            captureNextInput: function(e) {
-                this.captureNextInputCb = e
+            map: {
+                gridSize: 16,
+                shoreVariation: 3,
+                grassVariation: 2
             },
-            checkCaptureInput: function(e, t, a) {
-                return !(!this.captureNextInputCb || !this.captureNextInputCb(e, new g(t, a)) || (this.captureNextInputCb = null, 0))
+            player: {
+                radius: 1,
+                maxVisualRadius: 3.75,
+                maxInteractionRad: 3.5,
+                health: 100,
+                reviveHealth: 24,
+                boostBreakpoints: [1, 1, 1.5, .5],
+                baseSwitchDelay: .25,
+                freeSwitchCooldown: 1,
+                bleedTickRate: 1,
+                reviveDuration: 8,
+                reviveMaxRange: 5,
+                crawlTime: .75,
+                emoteSoftCooldown: 2,
+                emoteHardCooldown: 6,
+                emoteThreshold: 6,
+                throwableMaxMouseDist: 18,
+                cookTime: .1,
+                throwTime: .3,
+                meleeHeight: .25,
+                touchLootRadMult: 1.4,
+                medicHealRange: 8,
+                medicReviveRange: 6
             },
-            isInputValuePressed: function(e) {
-                switch (e.type) {
-                    case p.Key:
-                        return this.ue(e.code);
-                    case p.MouseButton:
-                        return this.ge(e.code);
-                    case p.MouseWheel:
-                        return this.ye() == e.code;
-                    default:
-                        return !1
-                }
+            defaultEmoteLoadout: ["emote_happyface", "emote_thumbsup", "emote_surviv", "emote_sadface", "", ""],
+            airdrop: {
+                actionOffset: 0,
+                fallTime: 8,
+                crushDamage: 100,
+                planeVel: 48,
+                planeRad: 150,
+                soundRangeMult: 2.5,
+                soundRangeDelta: .25,
+                soundRangeMax: 92,
+                fallOff: 0
             },
-            isInputValueReleased: function(e) {
-                switch (e.type) {
-                    case p.Key:
-                        return this.we(e.code);
-                    case p.MouseButton:
-                        return this.xe(e.code);
-                    case p.MouseWheel:
-                        return this.ye() == e.code;
-                    default:
-                        return !1
-                }
+            airstrike: {
+                actionOffset: 0,
+                bombJitter: 4,
+                bombOffset: 2,
+                bombVel: 3,
+                bombCount: 20,
+                planeVel: 350,
+                planeRad: 120,
+                soundRangeMult: 18,
+                soundRangeDelta: 18,
+                soundRangeMax: 48,
+                fallOff: 1.25
             },
-            isInputValueDown: function(e) {
-                switch (e.type) {
-                    case p.Key:
-                        return this.fe(e.code);
-                    case p.MouseButton:
-                        return this.be(e.code);
-                    case p.MouseWheel:
-                        return this.ye() == e.code;
-                    default:
-                        return !1
-                }
+            groupColors: [16776960, 16711935, 65535, 16733184],
+            teamColors: [13369344, 32511],
+            bullet: {
+                maxReflect: 3,
+                reflectDistDecay: 1.5,
+                height: .25
             },
-            onKeyDown: function(e) {
-                var t = e.keyCode;
-                9 == t && e.preventDefault(), this.checkCaptureInput(e, p.Key, t) || (this.keys[t] = !0)
+            projectile: {
+                maxHeight: 5
             },
-            onKeyUp: function(e) {
-                this.keys[e.keyCode] = !1
-            },
-            fe: function(e) {
-                return !!this.keys[e]
-            },
-            ue: function(e) {
-                return !this.keysOld[e] && !!this.keys[e]
-            },
-            we: function(e) {
-                return !!this.keysOld[e] && !this.keys[e]
-            },
-            onMouseMove: function(e) {
-                this.he.x = e.clientX, this.he.y = e.clientY
-            },
-            onMouseDown: function(e) {
-                var t = 0;
-                t = "which" in e ? e.which - 1 : e.button, this.checkCaptureInput(e, p.MouseButton, t) || (this.mouseButtons[t] = !0)
-            },
-            onMouseUp: function(e) {
-                var t = 0;
-                t = "which" in e ? e.which - 1 : e.button, this.mouseButtons[t] = !1
-            },
-            onMouseWheel: function(e) {
-                var t = e.deltaY < 0 ? m.Up : m.Down;
-                this.checkCaptureInput(e, p.MouseWheel, t) || (this.mouseWheelState = t)
-            },
-            be: function(e) {
-                return !!this.mouseButtons[e]
-            },
-            ge: function(e) {
-                return !this.mouseButtonsOld[e] && !!this.mouseButtons[e]
-            },
-            xe: function(e) {
-                return !!this.mouseButtonsOld[e] && !this.mouseButtons[e]
-            },
-            ye: function() {
-                return this.mouseWheelState
-            },
-            onTouchShared: function(e, t) {
-                e.cancelable && t != y.Cancel && e.preventDefault();
-                for (var a = e.timeStamp || performance.now(), i = 0; i < e.changedTouches.length; i++) {
-                    for (var o = e.changedTouches[i], n = o.identifier, s = o.clientX, l = o.clientY, c = null, m = 0; m < this.touches.length; m++)
-                        if (this.touches[m].osId == n && !this.touches[m].isDead) {
-                            c = this.touches[m];
-                            break
-                        }
-                    t != y.Start || c || (c = new r, this.touches.push(c), ++this.touchIdCounter, c.id = this.touchIdCounter, c.osId = n, c.posOld.x = s, c.posOld.y = l, c.posDown.x = s, c.posDown.y = l, c.startTime = a, c.isNew = !0, c.isDead = !1), t != y.End && t != y.Cancel || !c || (c.isDead = !0), c && (c.pos.x = s, c.pos.y = l, c.lastUpdateTime = a)
+            abilities: {
+                ability_stim: {
+                    cooldown: 12,
+                    useTime: 0,
+                    buffTime: 4,
+                    sound: {
+                        use: "",
+                        effect: "ability_stim_01"
+                    },
+                    emitter: "stim_01"
                 }
             },
-            onTouchMove: function(e) {
-                this.onTouchShared(e, y.Move)
+            tracerColors: {
+                "9mm": {
+                    regular: 16704198,
+                    saturated: 16767411,
+                    alphaRate: .92,
+                    alphaMin: .14
+                },
+                "762mm": {
+                    regular: 12965630,
+                    saturated: 11257087,
+                    alphaRate: .94,
+                    alphaMin: .2
+                },
+                "12gauge": {
+                    regular: 16702684,
+                    saturated: 16702684
+                },
+                "556mm": {
+                    regular: 11141010,
+                    saturated: 11141010,
+                    alphaRate: .92,
+                    alphaMin: .14
+                },
+                "50AE": {
+                    regular: 16773256,
+                    saturated: 16773256
+                },
+                "308sub": {
+                    regular: 2435840,
+                    saturated: 4608e3,
+                    alphaRate: .92,
+                    alphaMin: .07
+                },
+                flare: {
+                    regular: 14869218,
+                    saturated: 14869218
+                },
+                "45acp": {
+                    regular: 15515391,
+                    saturated: 15183103
+                },
+                shrapnel: {
+                    regular: 3355443,
+                    saturated: 3355443
+                },
+                frag: {
+                    regular: 13303808,
+                    saturated: 13303808
+                }
             },
-            onTouchStart: function(e) {
-                this.onTouchShared(e, y.Start)
+            scopeZoomRadius: {
+                desktop: {
+                    "1xscope": 28,
+                    "2xscope": 36,
+                    "4xscope": 48,
+                    "8xscope": 68,
+                    "15xscope": 104
+                },
+                mobile: {
+                    "1xscope": 32,
+                    "2xscope": 40,
+                    "4xscope": 48,
+                    "8xscope": 64,
+                    "15xscope": 88
+                }
             },
-            onTouchEnd: function(e) {
-                this.onTouchShared(e, y.End)
+            bagSizes: {
+                "9mm": [120, 240, 330, 420],
+                "762mm": [90, 180, 240, 300],
+                "556mm": [90, 180, 240, 300],
+                "12gauge": [15, 30, 60, 90],
+                "50AE": [49, 98, 147, 196],
+                "308sub": [10, 20, 30, 40],
+                flare: [2, 4, 6, 8],
+                "45acp": [90, 180, 240, 300],
+                frag: [3, 6, 9, 12],
+                smoke: [3, 6, 9, 12],
+                strobe: [2, 3, 4, 5],
+                mirv: [2, 4, 6, 8],
+                snowball: [10, 20, 30, 40],
+                potato: [10, 20, 30, 40],
+                bandage: [5, 10, 15, 30],
+                healthkit: [1, 2, 3, 4],
+                soda: [2, 5, 10, 15],
+                painkiller: [1, 2, 3, 4],
+                "1xscope": [1, 1, 1, 1],
+                "2xscope": [1, 1, 1, 1],
+                "4xscope": [1, 1, 1, 1],
+                "8xscope": [1, 1, 1, 1],
+                "15xscope": [1, 1, 1, 1]
             },
-            onTouchCancel: function(e) {
-                this.onTouchShared(e, y.Cancel)
-            },
-            getTouchById: function(e) {
-                for (var t = 0; t < this.touches.length; t++)
-                    if (this.touches[t].id == e) return this.touches[t];
-                return null
+            lootRadius: {
+                outfit: 1,
+                melee: 1.25,
+                gun: 1.25,
+                throwable: 1,
+                ammo: 1.2,
+                heal: 1,
+                boost: 1,
+                backpack: 1,
+                helmet: 1,
+                chest: 1,
+                scope: 1
             }
-        }, e.exports = {
-            _e: o,
-            InputType: p,
-            InputValue: g,
-            Key: l,
-            MouseButton: c,
-            MouseWheel: m,
-            Touch: r
         }
     },
