@@ -20,7 +20,7 @@
 
         function o(e) {
             var t = this;
-            this.touchElem = e, this.keys = {}, this.keysOld = {}, this.pe = s.create(0, 0), this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches = [], this.touchIdCounter = 0, this.leftTouch = null, this.rightTouch = null, this.lostFocus = !1, this.captureNextInputCb = null, this.bOnWindowFocus = function(e) {
+            this.touchElem = e, this.keys = {}, this.keysOld = {}, this.he = s.create(0, 0), this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches = [], this.touchIdCounter = 0, this.leftTouch = null, this.rightTouch = null, this.lostFocus = !1, this.captureNextInputCb = null, this.bOnWindowFocus = function(e) {
                 t.onWindowFocus(e)
             }, this.bOnKeyDown = function(e) {
                 t.onKeyDown(e)
@@ -182,11 +182,11 @@
             isInputValuePressed: function(e) {
                 switch (e.type) {
                     case p.Key:
-                        return this.de(e.code);
+                        return this.ue(e.code);
                     case p.MouseButton:
-                        return this.he(e.code);
+                        return this.ge(e.code);
                     case p.MouseWheel:
-                        return this.ue() == e.code;
+                        return this.ye() == e.code;
                     default:
                         return !1
                 }
@@ -194,11 +194,11 @@
             isInputValueReleased: function(e) {
                 switch (e.type) {
                     case p.Key:
-                        return this.ge(e.code);
+                        return this.we(e.code);
                     case p.MouseButton:
-                        return this.ye(e.code);
+                        return this.xe(e.code);
                     case p.MouseWheel:
-                        return this.ue() == e.code;
+                        return this.ye() == e.code;
                     default:
                         return !1
                 }
@@ -206,11 +206,11 @@
             isInputValueDown: function(e) {
                 switch (e.type) {
                     case p.Key:
-                        return this.we(e.code);
+                        return this.fe(e.code);
                     case p.MouseButton:
-                        return this.xe(e.code);
+                        return this.be(e.code);
                     case p.MouseWheel:
-                        return this.ue() == e.code;
+                        return this.ye() == e.code;
                     default:
                         return !1
                 }
@@ -222,17 +222,17 @@
             onKeyUp: function(e) {
                 this.keys[e.keyCode] = !1
             },
-            we: function(e) {
+            fe: function(e) {
                 return !!this.keys[e]
             },
-            de: function(e) {
+            ue: function(e) {
                 return !this.keysOld[e] && !!this.keys[e]
             },
-            ge: function(e) {
+            we: function(e) {
                 return !!this.keysOld[e] && !this.keys[e]
             },
             onMouseMove: function(e) {
-                this.pe.x = e.clientX, this.pe.y = e.clientY
+                this.he.x = e.clientX, this.he.y = e.clientY
             },
             onMouseDown: function(e) {
                 var t = 0;
@@ -246,16 +246,16 @@
                 var t = e.deltaY < 0 ? m.Up : m.Down;
                 this.checkCaptureInput(e, p.MouseWheel, t) || (this.mouseWheelState = t)
             },
-            xe: function(e) {
+            be: function(e) {
                 return !!this.mouseButtons[e]
             },
-            he: function(e) {
+            ge: function(e) {
                 return !this.mouseButtonsOld[e] && !!this.mouseButtons[e]
             },
-            ye: function(e) {
+            xe: function(e) {
                 return !!this.mouseButtonsOld[e] && !this.mouseButtons[e]
             },
-            ue: function() {
+            ye: function() {
                 return this.mouseWheelState
             },
             onTouchShared: function(e, t) {
@@ -287,7 +287,7 @@
                 return null
             }
         }, e.exports = {
-            fe: o,
+            _e: o,
             InputType: p,
             InputValue: g,
             Key: l,
