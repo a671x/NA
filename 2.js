@@ -11,7 +11,7 @@
 
         function r(e, t, a, i, r, o, c, m, d, h) {
             var u = this;
-            this.game = e, this.particleBarn = a, this.localization = r, this.touch = c, this.inputBinds = m, this.inputBindUi = d, this.adManager = h, this.pieTimer = new M.ee, this.gameElem = s("#ui-game"), this.statsMain = s("#ui-stats"), this.statsElem = s("#ui-stats-bg"), this.statsContentsContainer = s("#ui-stats-contents"), this.statsContents = s("#ui-stats-contents-inner"), this.statsHeader = s("#ui-stats-header"), this.statsInfoBox = s("#ui-stats-info-box"), this.statsOptions = s("#ui-stats-options"), this.statsAds = s(".ui-stats-ad-container"), this.statsLogo = s("#ui-stats-logo"), this.killElem = s("#ui-kills"), this.killText = s("#ui-kill-text"), this.killCount = s("#ui-kill-count"), this.killTimeout = null, this.escMenuElem = s("#ui-game-menu"), this.escMenuDisplayed = !1, this.topLeft = s("#ui-top-left"), this.topCenter = s("#ui-top-center-scopes"), this.waitingForPlayers = !0, this.waitingText = s("#ui-waiting-text"), this.spectating = !1, this.prevSpectatorCount = 0, this.spectatorCount = 0, this.spectatorCounterDisplayed = !1, this.spectatorCounterContainer = s("#ui-spec-counter"), this.spectatorCounter = s("#ui-spec-counter-number"), this.spectateMode = s(".ui-spectate-mode"), this.spectatedPlayerText = s("#ui-spectate-text"), this.spectatedPlayerName = "", this.spectatedPlayerId = 0, this.spectateModeStats = s("#ui-spectate-stats"), this.spectateModeStatsData = s("#ui-spectate-stats-data"), this.spectateOptionsWrapper = s("#ui-spectate-options-wrapper"), this.rightCenter = s("#ui-right-center"), this.leaderboardAlive = s("#ui-leaderboard-alive"), this.playersAlive = s(".js-ui-players-alive"), this.leaderboardAliveFaction = s("#ui-leaderboard-alive-faction"), this.playersAliveRed = s(".js-ui-players-alive-red"), this.playersAliveBlue = s(".js-ui-players-alive-blue"), this.playersAliveRedCounter = 0, this.playersAliveBlueCounter = 0, this.playerKills = s(".js-ui-player-kills"), this.kills = 0, this.announcement = s("#ui-announcement"), this.mapContainer = s("#ui-map-container"), this.mapContainerBottom = 52, this.mapInfo = s("#ui-map-info"), this.mapInfoBottom = 218, this.gasState = {}, this.gasIcon = s("#ui-gas-icon"), this.gasTimer = s("#ui-gas-timer"), this.mapMinimizeButton = s("#ui-map-minimize"), this.menuDisplayButton = s("#ui-menu-display"), this.bottomCenterRight = s("#ui-bottom-center-right"), s("#ui-map-wrapper").css("display", "block"), s("#ui-team").css("display", "block"), this.actionSeq = -1, this.displayMapDirty = !1, this.displayMapClear = !1, s(".ui-map-expand").on("mousedown", function(e) {
+            this.game = e, this.particleBarn = a, this.localization = r, this.touch = c, this.inputBinds = m, this.inputBindUi = d, this.adManager = h, this.pieTimer = new M.J, this.gameElem = s("#ui-game"), this.statsMain = s("#ui-stats"), this.statsElem = s("#ui-stats-bg"), this.statsContentsContainer = s("#ui-stats-contents"), this.statsContents = s("#ui-stats-contents-inner"), this.statsHeader = s("#ui-stats-header"), this.statsInfoBox = s("#ui-stats-info-box"), this.statsOptions = s("#ui-stats-options"), this.statsAds = s(".ui-stats-ad-container"), this.statsLogo = s("#ui-stats-logo"), this.killElem = s("#ui-kills"), this.killText = s("#ui-kill-text"), this.killCount = s("#ui-kill-count"), this.killTimeout = null, this.escMenuElem = s("#ui-game-menu"), this.escMenuDisplayed = !1, this.topLeft = s("#ui-top-left"), this.topCenter = s("#ui-top-center-scopes"), this.waitingForPlayers = !0, this.waitingText = s("#ui-waiting-text"), this.spectating = !1, this.prevSpectatorCount = 0, this.spectatorCount = 0, this.spectatorCounterDisplayed = !1, this.spectatorCounterContainer = s("#ui-spec-counter"), this.spectatorCounter = s("#ui-spec-counter-number"), this.spectateMode = s(".ui-spectate-mode"), this.spectatedPlayerText = s("#ui-spectate-text"), this.spectatedPlayerName = "", this.spectatedPlayerId = 0, this.spectateModeStats = s("#ui-spectate-stats"), this.spectateModeStatsData = s("#ui-spectate-stats-data"), this.spectateOptionsWrapper = s("#ui-spectate-options-wrapper"), this.rightCenter = s("#ui-right-center"), this.leaderboardAlive = s("#ui-leaderboard-alive"), this.playersAlive = s(".js-ui-players-alive"), this.leaderboardAliveFaction = s("#ui-leaderboard-alive-faction"), this.playersAliveRed = s(".js-ui-players-alive-red"), this.playersAliveBlue = s(".js-ui-players-alive-blue"), this.playersAliveRedCounter = 0, this.playersAliveBlueCounter = 0, this.playerKills = s(".js-ui-player-kills"), this.kills = 0, this.announcement = s("#ui-announcement"), this.mapContainer = s("#ui-map-container"), this.mapContainerBottom = 52, this.mapInfo = s("#ui-map-info"), this.mapInfoBottom = 218, this.gasState = {}, this.gasIcon = s("#ui-gas-icon"), this.gasTimer = s("#ui-gas-timer"), this.mapMinimizeButton = s("#ui-map-minimize"), this.menuDisplayButton = s("#ui-menu-display"), this.bottomCenterRight = s("#ui-bottom-center-right"), s("#ui-map-wrapper").css("display", "block"), s("#ui-team").css("display", "block"), this.actionSeq = -1, this.displayMapDirty = !1, this.displayMapClear = !1, s(".ui-map-expand").on("mousedown", function(e) {
                 e.stopPropagation()
             }), s(".ui-map-expand").on("click", function(e) {
                 x.touch ? u.bigmapDisplayed || u.displayMapLarge() : x.uiLayout == x.UiLayout.Lg && u.displayMapLarge(u.bigmapDisplayed)
@@ -90,7 +90,7 @@
                     var e = s(this).data("slot");
                     s(this).is(":hover") && w.weapDraggedId != e && (w.swapWeapSlots = !0, w.weapDropped = !0)
                 }), w.swapWeapSlots || w.resetWeapSlotStyling())
-            })), this.mapSpriteBarn = new z.MapSpriteBarn, this.te = new k.ae(this.mapSpriteBarn), this.playerMapSprites = [], this.playerPingSprites = {}, this.container = new l.Container, this.container.mask = new l.Graphics, this.display = {
+            })), this.mapSpriteBarn = new z.MapSpriteBarn, this.$ = new k.ee(this.mapSpriteBarn), this.playerMapSprites = [], this.playerPingSprites = {}, this.container = new l.Container, this.container.mask = new l.Graphics, this.display = {
                 gas: this.gasRenderer.display,
                 gasSafeZone: this.gasSafeZoneRenderer.display,
                 airstrikeZones: i.airstrikeZoneContainer,
@@ -101,7 +101,7 @@
             }, this.mapSprite = new l.Sprite(l.Texture.EMPTY), this.mapSprite.anchor = new l.Point(.5, .5), this.container.addChild(this.mapSprite), this.container.addChild(this.display.gas), this.container.addChild(this.display.gasSafeZone), this.container.addChild(this.display.airstrikeZones), this.container.addChild(this.display.mapSprites), this.container.addChild(this.display.teammates), this.container.addChild(this.display.player), this.container.addChild(this.display.border), this.bigmapDisplayed = !1, this.screenScaleFactor = 1;
             var f = this.getMinimapMargin(),
                 b = this.getMinimapSize();
-            this.minimapPos = g.create(f + b / 2, e.ie.screenHeight - b / 2 - f), this.dead = !1, this.audioManager = t, this.muteButton = s("#ui-mute-ingame"), this.muteButtonImage = this.muteButton.find("img"), this.muteOffImg = "audio-off.img", this.muteOnImg = "audio-on.img";
+            this.minimapPos = g.create(f + b / 2, e.te.screenHeight - b / 2 - f), this.dead = !1, this.audioManager = t, this.muteButton = s("#ui-mute-ingame"), this.muteButtonImage = this.muteButton.find("img"), this.muteOffImg = "audio-off.img", this.muteOnImg = "audio-on.img";
             var T = this.audioManager.mute;
             this.muteButtonImage.attr("src", T ? this.muteOffImg : this.muteOnImg), this.muteButton.on("mousedown", function(e) {
                 e.stopPropagation()
@@ -199,10 +199,10 @@
                 this.adManager.onGameComplete(t)
             },
             c: function(e, t, a, i, r, o, n, s, l) {
-                var p = t.re,
-                    u = t.oe,
+                var p = t.ae,
+                    u = t.ie,
                     b = t;
-                this.weapsDirty && this.resetWeapSlotStyling(), this.weapsDirty = !1, this.te.ne(e);
+                this.weapsDirty && this.resetWeapSlotStyling(), this.weapsDirty = !1, this.$.re(e);
                 var _ = y.max(Math.floor(i.duration * (1 - i.circleT)), 0),
                     S = {
                         mode: i.mode,
@@ -230,7 +230,7 @@
                             w[t.action.item] && (P = this.localization.translate("game-using"), C = this.localization.translate("game-" + t.action.item));
                             break;
                         case d.Revive:
-                            var A = o.se(t.action.targetId).name;
+                            var A = o.oe(t.action.targetId).name;
                             P = this.localization.translate("game-reviving"), C = b.downed ? "" : A
                     }
                     "" == P && "" == C || ("svo" == this.localization.translate("word-order") ? (I += P || "", I += C ? " " + C : "") : "sov" == this.localization.translate("word-order") && (I += C ? C + " " : "", I += P ? " " + P : ""), this.pieTimer.start(I, t.action.time, t.action.duration))
@@ -241,7 +241,7 @@
                         min: g.sub(n.pos, E),
                         max: g.add(n.pos, E)
                     },
-                    O = o.se(t.__id).groupId,
+                    O = o.oe(t.__id).groupId,
                     B = o.getGroupInfo(O);
                 if (!B) {
                     var R = {
@@ -256,9 +256,9 @@
                 for (var L = x.uiLayout == x.UiLayout.Sm, F = B.playerIds.length, j = 0; j < F; j++) {
                     var q = this.teamSelectors[j],
                         N = B.playerIds[j],
-                        V = o.se(N),
+                        V = o.oe(N),
                         G = N == b.__id,
-                        U = o.le(N);
+                        U = o.ne(N);
                     if (U && s > 1) {
                         q.groupIdDisplayed || (q.groupId.css("display", "block"), q.groupIdDisplayed = !0), this.updateTeam(j, v.htmlEscape(V.name), U.health, {
                             disconnected: U.disconnected,
@@ -304,7 +304,7 @@
                     oe.groupIdDisplayed && (oe.groupId.css("display", "none"), oe.groupIdDisplayed = !1)
                 }
                 if (a.factionMode) {
-                    var le = o.se(b.__id);
+                    var le = o.oe(b.__id);
                     if (this.flairId != le.teamId) {
                         this.flairId = le.teamId;
                         var ce = 1 == this.flairId ? "red" : "blue";
@@ -319,7 +319,7 @@
                 })), this.updatePlayerMapSprites(e, t, o, a), this.mapSpriteBarn.update(e, this, a), this.pieTimer.update(e, n), this.trySendAdStatus()
             },
             updatePlayerMapSprites: function(e, t, a, i) {
-                for (var r = this, o = a.se(t.__id), n = (a.getGroupInfo(o.groupId), a.getTeamInfo(o.teamId), 0), s = function(e, t, a, i, o, s, c) {
+                for (var r = this, o = a.oe(t.__id), n = (a.getGroupInfo(o.groupId), a.getTeamInfo(o.teamId), 0), s = function(e, t, a, i, o, s, c) {
                         if (n >= r.playerMapSprites.length) {
                             var m = r.mapSpriteBarn.addSprite();
                             r.playerMapSprites.push(m)
@@ -329,7 +329,7 @@
                     }, c = Object.keys(a.playerStatus), m = 0; m < c.length; m++) {
                     var p = a.playerStatus[c[m]],
                         d = p.playerId,
-                        h = a.se(d),
+                        h = a.oe(d),
                         u = h.groupId == o.groupId,
                         y = 65535 + 2 * d;
                     d == o.playerId && (y += 131070), p.factionLeader && (y += 65535);
@@ -371,9 +371,9 @@
                     if (s.mapEvent) c(1.5 * (x.uiLayout == x.UiLayout.Sm ? .15 : .2), s.tint).release(), m(s.tint).release();
                     else {
                         var p = 16777215,
-                            d = r.se(i),
-                            h = r.se(a),
-                            u = r.le(a);
+                            d = r.oe(i),
+                            h = r.oe(a),
+                            u = r.ne(a);
                         d && h && u && (p = u.factionLeader ? 65280 : d.groupId == h.groupId ? r.getGroupColor(a) : r.getTeamColor(h.teamId)), this.playerPingSprites[a] || (this.playerPingSprites[a] = []);
                         for (var y = this.playerPingSprites[a], w = 0; w < y.length; w++) y[w].free();
                         var f = x.uiLayout == x.UiLayout.Sm ? .15 : .2,
@@ -386,8 +386,8 @@
             updateMapSprite: function(e, t, a, i) {
                 e.displayed && (void 0 != e.life && (e.life -= i, e.displayed = e.life > 0, e.maxLife - e.life < .1 ? t.alpha = (e.maxLife - e.life) / .1 : e.life < .5 ? t.alpha = y.max(e.life / .5, 0) : t.alpha = 1), e.pulse && e.displayed && (e.scale = e.scale + i / 2.5, t.scale.set(e.scale, e.scale)), t.visible = a && t.alpha > 0)
             },
-            ce: function(e) {
-                this.te.me(e)
+            se: function(e) {
+                this.$.le(e)
             },
             getMapPosFromWorldPos: function(e, t) {
                 var a = this.mapSprite.x - this.mapSprite.width / 2 + e.x / t.width * this.mapSprite.width,
@@ -555,7 +555,7 @@
                     P -= (e.length - 1) * I / 2, P -= 10 * (e.length - 1);
                     for (var C = 0; C < e.length; C++) {
                         var A = e[C],
-                            E = m.se(A.playerId),
+                            E = m.oe(A.playerId),
                             D = i(A.timeAlive),
                             O = "ui-stats-info-player";
                         O += A.dead ? " ui-stats-info-status" : "";
@@ -623,9 +623,7 @@
                         }), j++
                     }), this.statsOptions.children().each(function(e, t) {
                         var a = s(t);
-                        a.hide();
-                        var i = w + N + (j + e) * q + 500;
-                        a.delay(i).fadeIn(500), j++
+                        a.hide(), a.delay(w + N + (j + e) * q).fadeIn(500), j++
                     }), this.statsElem.stop(), this.statsElem.css("display", "block"), this.statsElem.delay(w).animate({
                         opacity: 1
                     }, 1e3), this.statsContents.stop(), this.statsContents.css("display", "block"), this.statsContents.delay(w).animate({
@@ -679,9 +677,7 @@
                 var i = 0;
                 this.statsOptions.children().each(function(e, t) {
                     var a = s(t);
-                    a.hide();
-                    var r = 4100 + 300 * (i + e) + 300;
-                    a.delay(r).fadeIn(750), i++
+                    a.hide(), a.delay(4100 + 300 * (i + e)).fadeIn(750), i++
                 }), this.statsElem.stop(), this.statsElem.css("display", "block"), this.statsElem.delay(2500).animate({
                     opacity: 1
                 }, 1e3), this.statsContents.stop(), this.statsContents.css("display", "block"), this.statsContents.delay(2500).animate({
@@ -696,7 +692,7 @@
                     r = Math.max(e - 150, 0);
                 x.webview && x.version >= "1.0.8" ? setTimeout(function() {
                     i(), a.adManager.showBannerAd()
-                }, r) : window.adsBlocked ? setTimeout(function() {
+                }, r) : window.adsBlocked ? (r += 500, setTimeout(function() {
                     i(), s(x.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
                     var e = "";
                     if (e = s(x.webview ? "#surviv-io_300x250_webview_2" : x.mobile ? "#surviv-io_300x250_mobile_2" : "#surviv-io_300x250_2")) {
@@ -704,7 +700,7 @@
                         var t = s(".ui-stats-adblock").clone();
                         t.css("display", "block"), e.html(t)
                     }
-                }, r + 500) : window.aiptag && setTimeout(function() {
+                }, r)) : window.aiptag && setTimeout(function() {
                     i(), s(x.mobile ? "#ui-stats-ad-container-mobile" : "#ui-stats-ad-container-desktop").css("display", "inline-block");
                     var e = "";
                     (e = x.webview ? "surviv-io_300x250_webview_2" : x.mobile ? "surviv-io_300x250_mobile_2" : "surviv-io_300x250_2") && window.aiptag.cmd.display.push(function() {
@@ -715,8 +711,8 @@
             setSpectateTarget: function(e, t, a, i, r) {
                 if (e != this.spectatedPlayerId) {
                     this.setSpectating(!0, a);
-                    var o = r.se(e),
-                        n = r.se(t),
+                    var o = r.oe(e),
+                        n = r.oe(t),
                         s = o.name;
                     i && o.groupId != n.groupId && (s = o.anonName), this.spectatedPlayerId = e, this.spectatedPlayerName = v.htmlEscape(s), this.spectatedPlayerText.find("#spectate-player").html(this.spectatedPlayerName), this.actionSeq = -1, this.pieTimer.stop()
                 }
@@ -765,7 +761,7 @@
             displayMapLarge: function(e) {
                 this.bigmapDisplayed = !e && !this.bigmapDisplayed, this.bigmapDisplayed ? this.container.alpha = 1 : this.container.alpha = this.minimapDisplayed ? 1 : 0;
                 var t = x.uiLayout == x.UiLayout.Sm ? ".js-ui-mobile-map-hidden" : "js-ui-desktop-map-hidden";
-                t += ", .js-ui-map-hidden", s(2 == this.visibilityMode ? ".js-ui-hud-show" : t).css("display", this.bigmapDisplayed ? "none" : "block"), s(".js-ui-map-show").css("display", this.bigmapDisplayed ? "block" : "none"), this.updateSpectatorCountDisplay(!0), this.redraw(this.game.ie)
+                t += ", .js-ui-map-hidden", s(2 == this.visibilityMode ? ".js-ui-hud-show" : t).css("display", this.bigmapDisplayed ? "none" : "block"), s(".js-ui-map-show").css("display", this.bigmapDisplayed ? "block" : "none"), this.updateSpectatorCountDisplay(!0), this.redraw(this.game.te)
             },
             updateSpectatorCountDisplay: function(e) {
                 var t = !this.bigmapDisplayed && this.spectatorCount > 0;
@@ -955,6 +951,6 @@
                 this.currentGameTab = e, this.gameTabs.css("display", "none"), this.gameTabBtns.removeClass("btn-game-menu-selected"), s("#ui-game-tab-" + this.currentGameTab).css("display", "block"), s("#btn-game-" + this.currentGameTab).addClass("btn-game-menu-selected"), "keybinds" == this.currentGameTab ? this.inputBindUi.refresh() : this.inputBindUi.cancelBind()
             }
         }, e.exports = {
-            pe: r
+            ce: r
         }
     }
