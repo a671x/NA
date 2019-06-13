@@ -98,58 +98,46 @@
                 return b.show(), !1
             });
             var _ = new d(l("#modal-mobile-account"));
-            if (_.onShow(function() {
-                    w.fadeOut(200)
-                }), _.onHide(function() {
-                    w.fadeIn(200)
-                }), l(".account-details-guest, .account-details-user").click(function() {
-                    if (c.mobile) return _.show(), !1
-                }), l("#force-refresh").click(function() {
-                    window.location.href = "/?t=" + Date.now()
-                }), "WebSocket" in window)
-                if (m.authLocation()) {
-                    if ("ie" == c.browser) {
-                        var S = 'Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!';
-                        S += '<br><br>¡Usa el <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">navegador Chrome</a> para una mejor experiencia de juego!', S += '<br><br><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">구글 크롬</a> 브라우저로이 게임을 즐겨보세요.';
-                        var v = l("#modal-notification");
-                        v.find(".modal-settings-text").html(S), v.fadeIn(200)
-                    }
-                } else {
-                    p.logProxy(window.location.hostname);
-                    var k = l("#modal-notification");
-                    k.find(".modal-settings-text").html('Please use the <a href="https://surviv.io" target="_blank">official surviv.io site</a> for a better playing experience!'), k.fadeIn(200)
-                } else {
-                p.storeGeneric("error", "no_websocket");
-                var z = l("#modal-notification");
-                z.find(".modal-settings-text").html('WebSockets are required to play.<br><br>Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!'), z.fadeIn(200)
-            }
-            if (/Android.*; wv\)/.test(navigator.userAgent) && !c.webview) {
-                var M = function(e) {
+            _.onShow(function() {
+                w.fadeOut(200)
+            }), _.onHide(function() {
+                w.fadeIn(200)
+            }), l(".account-details-guest, .account-details-user").click(function() {
+                if (c.mobile) return _.show(), !1
+            }), l("#force-refresh").click(function() {
+                window.location.href = "/?t=" + Date.now()
+            });
+            var S = new d(l("#modal-notification")),
+                v = function() {
+                    return "WebSocket" in window ? m.Y() ? "ie" == c.browser ? 'Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!<br><br>¡Usa el <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">navegador Chrome</a> para una mejor experiencia de juego!<br><br><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">구글 크롬</a> 브라우저로이 게임을 즐겨보세요.' : void 0 : 'Please use the <a href="https://surviv.io" target="_blank">official surviv.io site</a> for a better playing experience!' : 'WebSockets are required to play.<br><br>Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!'
+                }();
+            if (v && (S.selector.find(".modal-settings-text").html(v), S.show()), m.K(), /Android.*; wv\)/.test(navigator.userAgent) && !c.webview) {
+                var k = function(e) {
                         return e.map(function(e) {
                             return String.fromCharCode(e)
                         }).join("")
                     },
-                    T = document.body;
-                if (T) {
-                    for (p.storeGeneric("error", "wv"), p.enabled = !1; T.firstChild;) T.removeChild(T.firstChild);
-                    var I = [68, 111, 119, 110, 108, 111, 97, 100, 32, 116, 104, 101, 32, 111, 102, 102, 105, 99, 105, 97, 108, 32, 65, 110, 100, 114, 111, 105, 100, 32, 97, 112, 112, 32, 104, 101, 114, 101, 58],
-                        P = l("<div/>", {
+                    z = document.body;
+                if (z) {
+                    for (p.storeGeneric("error", "wv"), p.enabled = !1; z.firstChild;) z.removeChild(z.firstChild);
+                    var M = [68, 111, 119, 110, 108, 111, 97, 100, 32, 116, 104, 101, 32, 111, 102, 102, 105, 99, 105, 97, 108, 32, 65, 110, 100, 114, 111, 105, 100, 32, 97, 112, 112, 32, 104, 101, 114, 101, 58],
+                        T = l("<div/>", {
                             css: {
                                 marginTop: "10%",
                                 width: "100%",
                                 textAlign: "center"
                             }
                         }),
-                        C = l("<div/>", {
-                            text: M(I),
+                        I = l("<div/>", {
+                            text: k(M),
                             css: {
                                 textAlign: "center",
                                 fontSize: "24px"
                             }
                         }),
-                        A = [104, 116, 116, 112, 115, 58, 47, 47, 112, 108, 97, 121, 46, 103, 111, 111, 103, 108, 101, 46, 99, 111, 109, 47, 115, 116, 111, 114, 101, 47, 97, 112, 112, 115, 47, 100, 101, 116, 97, 105, 108, 115, 63, 105, 100, 61, 105, 111, 46, 115, 117, 114, 118, 105, 118, 46, 115, 117, 114, 118, 105, 118, 95, 105, 111, 95, 109, 111, 98, 105, 108, 101],
-                        E = l("<a/>", {
-                            href: M(A),
+                        P = [104, 116, 116, 112, 115, 58, 47, 47, 112, 108, 97, 121, 46, 103, 111, 111, 103, 108, 101, 46, 99, 111, 109, 47, 115, 116, 111, 114, 101, 47, 97, 112, 112, 115, 47, 100, 101, 116, 97, 105, 108, 115, 63, 105, 100, 61, 105, 111, 46, 115, 117, 114, 118, 105, 118, 46, 115, 117, 114, 118, 105, 118, 95, 105, 111, 95, 109, 111, 98, 105, 108, 101],
+                        C = l("<a/>", {
+                            href: k(P),
                             class: "btn-download-android btn-download-app btn-darken",
                             css: {
                                 marginTop: "20px",
@@ -158,7 +146,7 @@
                                 transform: "translateX(-50%)"
                             }
                         });
-                    P.append(C), P.append(E), T.appendChild(P[0])
+                    T.append(I), T.append(C), z.appendChild(T[0])
                 }
             }
             window.aiptag && (window.aiptag.gdprConsent = window.cookiesConsented, window.aiptag.consented = window.cookiesConsented)
