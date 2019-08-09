@@ -1,7 +1,7 @@
     "989ad62a": function(e, t, a) {
         "use strict";
         e.exports = {
-            protocolVersion: 60,
+            protocolVersion: 61,
             Input: {
                 MoveLeft: 0,
                 MoveRight: 1,
@@ -81,14 +81,6 @@
                 CrawlBackward: 5,
                 Revive: 6
             },
-            Role: {
-                None: 0,
-                FactionLeader: 1,
-                Lieutenant: 2,
-                WoodsKing: 3,
-                RarePotato: 5,
-                Medic: 6
-            },
             GasMode: {
                 Inactive: 0,
                 Waiting: 1,
@@ -163,18 +155,6 @@
                 maxHeight: 5
             },
             structureLayerCount: 2,
-            abilities: {
-                ability_stim: {
-                    cooldown: 12,
-                    useTime: 0,
-                    buffTime: 4,
-                    sound: {
-                        use: "",
-                        effect: "ability_stim_01"
-                    },
-                    emitter: "stim_01"
-                }
-            },
             tracerColors: {
                 "9mm": {
                     regular: 16704198,
@@ -281,7 +261,8 @@
                 backpack: 1,
                 helmet: 1,
                 chest: 1,
-                scope: 1
+                scope: 1,
+                perk: 1.25
             }
         }
     },
