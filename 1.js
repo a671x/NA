@@ -534,7 +534,7 @@
                 }),
                 helmet03_forest: i("helmet03", {
                     name: "Shishigami no Kabuto",
-                    becomeWoodsKing: !0,
+                    role: "woods_king",
                     mapIndicator: {
                         sprite: "player-king-woods.img",
                         tint: 65280,
@@ -578,7 +578,7 @@
                 }),
                 helmet03_lt_aged: i("helmet03", {
                     name: "Lieutenant Helmet",
-                    becomeLieutenant: !0,
+                    role: "lieutenant",
                     skinImg: {
                         baseTint: 16777215,
                         baseTintRed: 16777215,
@@ -593,7 +593,7 @@
                 }),
                 helmet03_potato: i("helmet03", {
                     name: "K-pot-ato",
-                    becomePotato: !0,
+                    perk: "rare_potato",
                     skinImg: {
                         baseTint: 16777215,
                         baseTintRed: 16777215,
@@ -603,6 +603,21 @@
                     },
                     lootImg: {
                         sprite: "player-helmet-potato.img",
+                        rot: .5 * Math.PI
+                    }
+                }),
+                helmet03_dm01: i("helmet03", {
+                    name: "Marksman Helmet",
+                    perk: "endless_ammo",
+                    skinImg: {
+                        baseTint: 16777215,
+                        baseTintRed: 16777215,
+                        baseTintBlue: 16777215,
+                        baseSprite: "player-helmet-dm-01.img",
+                        spriteScale: .3
+                    },
+                    lootImg: {
+                        sprite: "player-helmet-dm-01.img",
                         rot: .5 * Math.PI
                     }
                 }),
