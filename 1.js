@@ -1,659 +1,287 @@
-    "4edcdb13": function(e, t, a) {
+    "989ad62a": function(e, t, a) {
         "use strict";
-
-        function i(e, t) {
-            return r.mergeDeep({}, o[e], {
-                baseType: e
-            }, t)
-        }
-        var r = a("1901e2d9"),
-            o = {
-                "9mm": {
-                    name: "9mm",
-                    type: "ammo",
-                    minStackSize: 15,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 16756224,
-                        tintDark: 12550912
-                    },
+        e.exports = {
+            protocolVersion: 60,
+            Input: {
+                MoveLeft: 0,
+                MoveRight: 1,
+                MoveUp: 2,
+                MoveDown: 3,
+                Fire: 4,
+                Reload: 5,
+                Cancel: 6,
+                Interact: 7,
+                Revive: 8,
+                Use: 9,
+                Loot: 10,
+                EquipPrimary: 11,
+                EquipSecondary: 12,
+                EquipMelee: 13,
+                EquipThrowable: 14,
+                EquipFragGrenade: 15,
+                EquipSmokeGrenade: 16,
+                EquipNextWeap: 17,
+                EquipPrevWeap: 18,
+                EquipLastWeap: 19,
+                EquipOtherGun: 20,
+                EquipPrevScope: 21,
+                EquipNextScope: 22,
+                UseBandage: 23,
+                UseHealthKit: 24,
+                UseSoda: 25,
+                UsePainkiller: 26,
+                StowWeapons: 27,
+                SwapWeapSlots: 28,
+                ToggleMap: 29,
+                CycleUIMode: 30,
+                EmoteMenu: 31,
+                TeamPingMenu: 32,
+                Fullscreen: 33,
+                HideUI: 34,
+                TeamPingSingle: 35,
+                Count: 36
+            },
+            EmoteSlot: {
+                Top: 0,
+                Right: 1,
+                Bottom: 2,
+                Left: 3,
+                Win: 4,
+                Death: 5,
+                Count: 6
+            },
+            WeaponSlot: {
+                Primary: 0,
+                Secondary: 1,
+                Melee: 2,
+                Throwable: 3,
+                Count: 4
+            },
+            WeaponType: ["gun", "gun", "melee", "throwable"],
+            DamageType: {
+                Player: 0,
+                Bleeding: 1,
+                Gas: 2,
+                Airdrop: 3,
+                Airstrike: 4
+            },
+            Action: {
+                None: 0,
+                Reload: 1,
+                ReloadAlt: 2,
+                UseItem: 3,
+                Revive: 4
+            },
+            Anim: {
+                None: 0,
+                Melee: 1,
+                Cook: 2,
+                Throw: 3,
+                CrawlForward: 4,
+                CrawlBackward: 5,
+                Revive: 6
+            },
+            Role: {
+                None: 0,
+                FactionLeader: 1,
+                Lieutenant: 2,
+                WoodsKing: 3,
+                RarePotato: 5,
+                Medic: 6
+            },
+            GasMode: {
+                Inactive: 0,
+                Waiting: 1,
+                Moving: 2
+            },
+            Plane: {
+                Airdrop: 0,
+                Airstrike: 1
+            },
+            map: {
+                gridSize: 16,
+                shoreVariation: 3,
+                grassVariation: 2
+            },
+            player: {
+                radius: 1,
+                maxVisualRadius: 3.75,
+                maxInteractionRad: 3.5,
+                health: 100,
+                reviveHealth: 24,
+                boostBreakpoints: [1, 1, 1.5, .5],
+                baseSwitchDelay: .25,
+                freeSwitchCooldown: 1,
+                bleedTickRate: 1,
+                reviveDuration: 8,
+                reviveRange: 5,
+                crawlTime: .75,
+                emoteSoftCooldown: 2,
+                emoteHardCooldown: 6,
+                emoteThreshold: 6,
+                throwableMaxMouseDist: 18,
+                cookTime: .1,
+                throwTime: .3,
+                meleeHeight: .25,
+                touchLootRadMult: 1.4,
+                medicHealRange: 8,
+                medicReviveRange: 6
+            },
+            defaultEmoteLoadout: ["emote_happyface", "emote_thumbsup", "emote_surviv", "emote_sadface", "", ""],
+            airdrop: {
+                actionOffset: 0,
+                fallTime: 8,
+                crushDamage: 100,
+                planeVel: 48,
+                planeRad: 150,
+                soundRangeMult: 2.5,
+                soundRangeDelta: .25,
+                soundRangeMax: 92,
+                fallOff: 0
+            },
+            airstrike: {
+                actionOffset: 0,
+                bombJitter: 4,
+                bombOffset: 2,
+                bombVel: 3,
+                bombCount: 20,
+                planeVel: 350,
+                planeRad: 120,
+                soundRangeMult: 18,
+                soundRangeDelta: 18,
+                soundRangeMax: 48,
+                fallOff: 1.25
+            },
+            groupColors: [16776960, 16711935, 65535, 16733184],
+            teamColors: [13369344, 32511],
+            bullet: {
+                maxReflect: 3,
+                reflectDistDecay: 1.5,
+                height: .25
+            },
+            projectile: {
+                maxHeight: 5
+            },
+            structureLayerCount: 2,
+            abilities: {
+                ability_stim: {
+                    cooldown: 12,
+                    useTime: 0,
+                    buffTime: 4,
                     sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                "762mm": {
-                    name: "7.62mm",
-                    type: "ammo",
-                    minStackSize: 10,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 26367,
-                        tintDark: 19903
+                        use: "",
+                        effect: "ability_stim_01"
                     },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                "556mm": {
-                    name: "5.56mm",
-                    type: "ammo",
-                    minStackSize: 10,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 237056,
-                        tintDark: 161536
-                    },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                "12gauge": {
-                    name: "12 gauge",
-                    type: "ammo",
-                    minStackSize: 5,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 16711680,
-                        tintDark: 12517376
-                    },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                "50AE": {
-                    name: ".50 AE",
-                    type: "ammo",
-                    special: !0,
-                    minStackSize: 10,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 2697513,
-                        tintDark: 2039583
-                    },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                "308sub": {
-                    name: ".308 Subsonic",
-                    type: "ammo",
-                    special: !0,
-                    minStackSize: 10,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 3225600,
-                        tintDark: 2435840
-                    },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                flare: {
-                    name: "Flare",
-                    type: "ammo",
-                    special: !0,
-                    minStackSize: 1,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 13911552,
-                        tintDark: 13911552
-                    },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                "45acp": {
-                    name: ".45 ACP",
-                    type: "ammo",
-                    special: !0,
-                    minStackSize: 10,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 7930111,
-                        tintDark: 5963967
-                    },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                potato_ammo: {
-                    name: "Potato Ammo",
-                    type: "ammo",
-                    special: !0,
-                    hideUi: !0,
-                    minStackSize: 10,
-                    lootImg: {
-                        sprite: "loot-ammo-box.img",
-                        scale: .2,
-                        tint: 7618334,
-                        tintDark: 7618334
-                    },
-                    sound: {
-                        pickup: "ammo_pickup_01"
-                    }
-                },
-                bandage: {
-                    name: "Bandage",
-                    type: "heal",
-                    useTime: 3,
-                    heal: 15,
-                    maxHeal: 100,
-                    lootImg: {
-                        sprite: "loot-medical-bandage.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "bandage_pickup_01",
-                        use: "bandage_use_01"
-                    },
-                    emitter: "heal_01",
-                    aura: {
-                        sprite: "part-aura-circle-01.img",
-                        tint: 16711680
-                    }
-                },
-                healthkit: {
-                    name: "Med Kit",
-                    type: "heal",
-                    useTime: 6,
-                    heal: 100,
-                    maxHeal: 100,
-                    lootImg: {
-                        sprite: "loot-medical-healthkit.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "healthkit_pickup_01",
-                        use: "healthkit_use_01"
-                    },
-                    emitter: "heal_01",
-                    aura: {
-                        sprite: "part-aura-circle-01.img",
-                        tint: 16711680
-                    }
-                },
-                soda: {
-                    name: "Soda",
-                    type: "boost",
-                    useTime: 3,
-                    boost: 25,
-                    lootImg: {
-                        sprite: "loot-medical-soda.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "soda_pickup_01",
-                        use: "soda_use_01"
-                    },
-                    emitter: "boost_01",
-                    aura: {
-                        sprite: "part-aura-circle-01.img",
-                        tint: 1676544
-                    }
-                },
-                painkiller: {
-                    name: "Pills",
-                    type: "boost",
-                    useTime: 5,
-                    boost: 50,
-                    lootImg: {
-                        sprite: "loot-medical-pill.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "pills_pickup_01",
-                        use: "pills_use_01"
-                    },
-                    emitter: "boost_01",
-                    aura: {
-                        sprite: "part-aura-circle-01.img",
-                        tint: 1676544
-                    }
-                },
-                backpack00: {
-                    name: "Pouch",
-                    type: "backpack",
-                    level: 0,
-                    playerRad: .55,
-                    tint: 16777215,
-                    lootImg: {
-                        sprite: "loot-pack-00.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "pack_pickup_01"
-                    }
-                },
-                backpack01: {
-                    name: "Small Pack",
-                    type: "backpack",
-                    level: 1,
-                    playerRad: .65,
-                    tint: 6697728,
-                    lootImg: {
-                        sprite: "loot-pack-01.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "pack_pickup_01"
-                    }
-                },
-                backpack02: {
-                    name: "Regular Pack",
-                    type: "backpack",
-                    level: 2,
-                    tint: 26112,
-                    playerRad: .85,
-                    lootImg: {
-                        sprite: "loot-pack-02.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "pack_pickup_01"
-                    }
-                },
-                backpack03: {
-                    name: "Military Pack",
-                    type: "backpack",
-                    level: 3,
-                    tint: 6710835,
-                    playerRad: 1,
-                    lootImg: {
-                        sprite: "loot-pack-03.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "pack_pickup_01"
-                    }
-                },
-                helmet01: {
-                    name: "Level 1 Helmet",
-                    type: "helmet",
-                    level: 1,
-                    damageReduction: .25,
-                    skinImg: {
-                        baseTint: 3244031,
-                        baseTintRed: 10972011,
-                        baseTintBlue: 6459582,
-                        baseSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-helmet-01.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "helmet_pickup_01"
-                    }
-                },
-                helmet02: {
-                    name: "Level 2 Helmet",
-                    type: "helmet",
-                    level: 2,
-                    damageReduction: .4,
-                    skinImg: {
-                        baseTint: 13027014,
-                        baseTintRed: 10027008,
-                        baseTintBlue: 20642,
-                        baseSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-helmet-02.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "helmet_pickup_01"
-                    }
-                },
-                helmet03: {
-                    name: "Level 3 Helmet",
-                    type: "helmet",
-                    level: 3,
-                    damageReduction: .55,
-                    skinImg: {
-                        baseTint: 2434341,
-                        baseTintRed: 2491396,
-                        baseTintBlue: 334125,
-                        baseSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-helmet-03.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "helmet_pickup_01"
-                    }
-                },
-                helmet04: {
-                    name: "Level 4 Helmet",
-                    type: "helmet",
-                    level: 4,
-                    damageReduction: .7,
-                    skinImg: {
-                        baseTint: 2434341,
-                        baseTintRed: 2491396,
-                        baseTintBlue: 334125,
-                        baseSprite: "player-circle-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-helmet-03.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "helmet_pickup_01"
-                    }
-                },
-                chest01: {
-                    name: "Level 1 Vest",
-                    type: "chest",
-                    level: 1,
-                    damageReduction: .25,
-                    skinImg: {
-                        baseTint: 11842740,
-                        baseSprite: "player-armor-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-chest-01.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "chest_pickup_01"
-                    }
-                },
-                chest02: {
-                    name: "Level 2 Vest",
-                    type: "chest",
-                    level: 2,
-                    damageReduction: .38,
-                    skinImg: {
-                        baseTint: 4934475,
-                        baseSprite: "player-armor-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-chest-02.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "chest_pickup_01"
-                    }
-                },
-                chest03: {
-                    name: "Level 3 Vest",
-                    type: "chest",
-                    level: 3,
-                    damageReduction: .45,
-                    skinImg: {
-                        baseTint: 0,
-                        baseSprite: "player-armor-base-01.img"
-                    },
-                    lootImg: {
-                        sprite: "loot-chest-03.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "chest_pickup_01"
-                    }
-                },
-                "1xscope": {
-                    name: "1x Scope",
-                    type: "scope",
-                    level: 1,
-                    lootImg: {
-                        sprite: "loot-scope-00.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "scope_pickup_01"
-                    }
-                },
-                "2xscope": {
-                    name: "2x Scope",
-                    type: "scope",
-                    level: 2,
-                    lootImg: {
-                        sprite: "loot-scope-01.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "scope_pickup_01"
-                    }
-                },
-                "4xscope": {
-                    name: "4x Scope",
-                    type: "scope",
-                    level: 4,
-                    lootImg: {
-                        sprite: "loot-scope-02.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "scope_pickup_01"
-                    }
-                },
-                "8xscope": {
-                    name: "8x Scope",
-                    type: "scope",
-                    level: 8,
-                    lootImg: {
-                        sprite: "loot-scope-03.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "scope_pickup_01"
-                    }
-                },
-                "15xscope": {
-                    name: "15x Scope",
-                    type: "scope",
-                    level: 15,
-                    lootImg: {
-                        sprite: "loot-scope-04.img",
-                        tint: 16777215,
-                        border: "loot-circle-outer-01.img",
-                        borderTint: 0,
-                        scale: .2
-                    },
-                    sound: {
-                        pickup: "scope_pickup_01"
-                    }
+                    emitter: "stim_01"
                 }
             },
-            n = {
-                helmet03_leader: i("helmet03", {
-                    name: "Leader Helmet",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-leader.img"
-                    }
-                }),
-                helmet03_forest: i("helmet03", {
-                    name: "Shishigami no Kabuto",
-                    role: "woods_king",
-                    mapIndicator: {
-                        sprite: "player-king-woods.img",
-                        tint: 65280,
-                        pulse: !0,
-                        pulseTint: 65280
-                    },
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-forest.img",
-                        spriteScale: .3
-                    },
-                    lootImg: {
-                        sprite: "player-helmet-forest.img",
-                        border: "loot-circle-outer-01.img",
-                        scale: .3,
-                        rot: .5 * Math.PI
-                    }
-                }),
-                helmet03_moon: i("helmet03", {
-                    name: "Tsukuyomi no Kabuto",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-moon.img",
-                        spriteScale: .3
-                    }
-                }),
-                helmet03_lt: i("helmet03", {
-                    name: "Lieutenant Helmet",
-                    noDrop: !0,
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-lieutenant.img",
-                        spriteScale: .3
-                    }
-                }),
-                helmet03_lt_aged: i("helmet03", {
-                    name: "Lieutenant Helmet",
-                    role: "lieutenant",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-lieutenant.img",
-                        spriteScale: .3
-                    },
-                    lootImg: {
-                        sprite: "player-helmet-lieutenant.img",
-                        rot: .5 * Math.PI
-                    }
-                }),
-                helmet03_potato: i("helmet03", {
-                    name: "K-pot-ato",
-                    perk: "rare_potato",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-potato.img",
-                        spriteScale: .3
-                    },
-                    lootImg: {
-                        sprite: "player-helmet-potato.img",
-                        rot: .5 * Math.PI
-                    }
-                }),
-                helmet03_dm01: i("helmet03", {
-                    name: "Marksman Helmet",
-                    perk: "endless_ammo",
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-dm-01.img",
-                        spriteScale: .3
-                    },
-                    lootImg: {
-                        sprite: "player-helmet-dm-01.img",
-                        rot: .5 * Math.PI
-                    }
-                }),
-                helmet04_medic: i("helmet04", {
-                    name: "Medic Helmet",
-                    noDrop: !0,
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-medic.img",
-                        spriteScale: .3
-                    },
-                    lootImg: {
-                        sprite: "player-helmet-medic.img",
-                        scale: .3,
-                        rot: .5 * Math.PI
-                    }
-                }),
-                helmet04_leader: i("helmet04", {
-                    name: "Leader Helmet",
-                    noDrop: !0,
-                    skinImg: {
-                        baseTint: 16777215,
-                        baseTintRed: 16777215,
-                        baseTintBlue: 16777215,
-                        baseSprite: "player-helmet-leader.img",
-                        spriteScale: .3
-                    },
-                    lootImg: {
-                        sprite: "player-helmet-leader.img",
-                        scale: .3,
-                        rot: .5 * Math.PI
-                    }
-                })
+            tracerColors: {
+                "9mm": {
+                    regular: 16704198,
+                    saturated: 16767411,
+                    alphaRate: .92,
+                    alphaMin: .14
+                },
+                "762mm": {
+                    regular: 12965630,
+                    saturated: 11257087,
+                    alphaRate: .94,
+                    alphaMin: .2
+                },
+                "12gauge": {
+                    regular: 16702684,
+                    saturated: 16702684
+                },
+                "556mm": {
+                    regular: 11141010,
+                    saturated: 11141010,
+                    alphaRate: .92,
+                    alphaMin: .14
+                },
+                "50AE": {
+                    regular: 16773256,
+                    saturated: 16773256
+                },
+                "308sub": {
+                    regular: 2435840,
+                    saturated: 4608e3,
+                    alphaRate: .92,
+                    alphaMin: .07
+                },
+                flare: {
+                    regular: 14869218,
+                    saturated: 14869218
+                },
+                "45acp": {
+                    regular: 15515391,
+                    saturated: 15183103
+                },
+                shrapnel: {
+                    regular: 3355443,
+                    saturated: 3355443
+                },
+                frag: {
+                    regular: 13303808,
+                    saturated: 13303808
+                },
+                potato: {
+                    regular: 0,
+                    saturated: 0
+                }
             },
-            s = r.mergeDeep({}, o, n);
-        e.exports = s
+            scopeZoomRadius: {
+                desktop: {
+                    "1xscope": 28,
+                    "2xscope": 36,
+                    "4xscope": 48,
+                    "8xscope": 68,
+                    "15xscope": 104
+                },
+                mobile: {
+                    "1xscope": 32,
+                    "2xscope": 40,
+                    "4xscope": 48,
+                    "8xscope": 64,
+                    "15xscope": 88
+                }
+            },
+            bagSizes: {
+                "9mm": [120, 240, 330, 420],
+                "762mm": [90, 180, 240, 300],
+                "556mm": [90, 180, 240, 300],
+                "12gauge": [15, 30, 60, 90],
+                "50AE": [49, 98, 147, 196],
+                "308sub": [10, 20, 30, 40],
+                flare: [2, 4, 6, 8],
+                "45acp": [90, 180, 240, 300],
+                frag: [3, 6, 9, 12],
+                smoke: [3, 6, 9, 12],
+                strobe: [2, 3, 4, 5],
+                mirv: [2, 4, 6, 8],
+                snowball: [10, 20, 30, 40],
+                potato: [10, 20, 30, 40],
+                bandage: [5, 10, 15, 30],
+                healthkit: [1, 2, 3, 4],
+                soda: [2, 5, 10, 15],
+                painkiller: [1, 2, 3, 4],
+                "1xscope": [1, 1, 1, 1],
+                "2xscope": [1, 1, 1, 1],
+                "4xscope": [1, 1, 1, 1],
+                "8xscope": [1, 1, 1, 1],
+                "15xscope": [1, 1, 1, 1]
+            },
+            lootRadius: {
+                outfit: 1,
+                melee: 1.25,
+                gun: 1.25,
+                throwable: 1,
+                ammo: 1.2,
+                heal: 1,
+                boost: 1,
+                backpack: 1,
+                helmet: 1,
+                chest: 1,
+                scope: 1
+            }
+        }
     },
