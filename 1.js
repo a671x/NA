@@ -1,8 +1,7 @@
-        function s(e, t) {
-            t.players = [];
-            for (var a = e.readUint8(), i = 0; i < a; i++) {
-                var r = {};
-                r.hasData = e.readBoolean(), r.hasData && (r.pos = e.readVec(0, 0, 1024, 1024, 11), r.visible = e.readBoolean(), r.dead = e.readBoolean(), r.downed = e.readBoolean(), r.factionLeader = e.readBoolean()), t.players.push(r)
+            if (t.weapsDirty = e.readBoolean(), t.weapsDirty) {
+                t.curWeapIdx = e.readBits(2), t.weapons = [];
+                for (var n = 0; n < x.WeaponSlot.Count; n++) {
+                    var s = {};
+                    s.type = e.readItemType(), s.ammo = e.readUint8(), t.weapons.push(s)
+                }
             }
-            e.readAlignToNextByte()
-        }
