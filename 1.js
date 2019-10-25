@@ -78,11 +78,11 @@
                         visionTicker: 0,
                         fadeAlpha: 1
                     };
-                    for (var b = 0; b < p.ceiling.zoomRegions.length; b++) {
-                        var _ = p.ceiling.zoomRegions[b];
+                    for (var _ = 0; _ < p.ceiling.zoomRegions.length; _++) {
+                        var b = p.ceiling.zoomRegions[_];
                         this.ceiling.zoomRegions.push({
-                            zoomIn: _.zoomIn ? s.transform(_.zoomIn, this.pos, this.rot, this.scale) : null,
-                            zoomOut: _.zoomOut ? s.transform(_.zoomOut, this.pos, this.rot, this.scale) : null
+                            zoomIn: b.zoomIn ? s.transform(b.zoomIn, this.pos, this.rot, this.scale) : null,
+                            zoomOut: b.zoomOut ? s.transform(b.zoomOut, this.pos, this.rot, this.scale) : null
                         })
                     }
                     this.imgs = [];
@@ -146,11 +146,11 @@
                 if (this.hasPuzzle) {
                     var g = h[this.type];
                     if (this.puzzleErrSeqModified && (this.puzzleErrSeqModified = !1, !this.isNew)) {
-                        for (var y = this, w = m.length(m.sub(l.pos, y.pos)), f = t.ye.p(), b = 0; b < f.length; b++) {
-                            var _ = f[b];
-                            if (_.active && _.isPuzzlePiece && _.parentBuildingId == this.__id) {
-                                var x = m.length(m.sub(l.pos, _.pos));
-                                x < w && (y = _, w = x)
+                        for (var y = this, w = m.length(m.sub(l.pos, y.pos)), f = t._e.p(), _ = 0; _ < f.length; _++) {
+                            var b = f[_];
+                            if (b.active && b.isPuzzlePiece && b.parentBuildingId == this.__id) {
+                                var x = m.length(m.sub(l.pos, b.pos));
+                                x < w && (y = b, w = x)
                             }
                         }
                         i.playSound(g.puzzle.sound.fail, {
@@ -177,7 +177,7 @@
                 this.ceiling.visionTicker -= e;
                 for (var z = this.ceiling.vision, k = !1, I = 0; I < this.ceiling.zoomRegions.length; I++) {
                     var T = this.ceiling.zoomRegions[I].zoomIn;
-                    if (T && (this.layer == l.layer || 2 & l.layer) && p.scanCollider(T, t.ye.p(), l.pos, l.layer, .5, 2 * z.width, z.dist, 5)) {
+                    if (T && (this.layer == l.layer || 2 & l.layer) && p.scanCollider(T, t._e.p(), l.pos, l.layer, .5, 2 * z.width, z.dist, 5)) {
                         k = !0;
                         break
                     }
