@@ -1,70 +1,298 @@
-    "753d6e4b": function (e, t, a) {
+    "4b8d140f": function(e, t, a) {
         "use strict";
 
-        function r(e) {
-            o(void 0 !== e), this.creator = {
-                type: e
-            }, this.mt = [], this.activeCount = 0
+        function r(e, t) {
+            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
         }
 
-        function i(e) {
-            this.idToObj = {}, this.types = {}, this.seenCount = 0
+        function i() {
+            this.id = 0, this.pos = {
+                x: 0,
+                y: 0
+            }, this.posOld = {
+                x: 0,
+                y: 0
+            }, this.posDown = {
+                x: 0,
+                y: 0
+            }, this.startTime = 0, this.lastUpdateTime = 0, this.isNew = !0, this.isDead = !1, this.osId = 0
         }
-        var o = a("0e566746"),
-            s = a("f398b7c7");
-        r.prototype = {
-            alloc: function () {
-                for (var e = null, t = 0; t < this.mt.length; t++)
-                    if (!this.mt[t].active) {
-                        e = this.mt[t];
-                        break
+
+        function o(e) {
+            var t = this;
+            this.touchElem = e, this.keys = {}, this.keysOld = {}, this.we = n.create(0, 0), this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches = [], this.touchIdCounter = 0, this.lostFocus = !1, this.captureNextInputCb = null, this.bOnWindowFocus = function(e) {
+                t.onWindowFocus(e)
+            }, this.bOnKeyDown = function(e) {
+                t.onKeyDown(e)
+            }, this.bOnKeyUp = function(e) {
+                t.onKeyUp(e)
+            }, this.bOnMouseMove = function(e) {
+                t.onMouseMove(e)
+            }, this.bOnMouseDown = function(e) {
+                t.onMouseDown(e)
+            }, this.bOnMouseUp = function(e) {
+                t.onMouseUp(e)
+            }, this.bOnMouseWheel = function(e) {
+                t.onMouseWheel(e)
+            }, this.bOnTouchMove = function(e) {
+                t.onTouchMove(e)
+            }, this.bOnTouchStart = function(e) {
+                t.onTouchStart(e)
+            }, this.bOnTouchEnd = function(e) {
+                t.onTouchEnd(e)
+            }, this.bOnTouchCancel = function(e) {
+                t.onTouchCancel(e)
+            }, window.addEventListener("focus", this.bOnWindowFocus, !1), window.addEventListener("blur", this.bOnWindowFocus, !1), window.addEventListener("keydown", this.bOnKeyDown, !1), window.addEventListener("keyup", this.bOnKeyUp, !1), window.addEventListener("mousemove", this.bOnMouseMove, !1), window.addEventListener("mousedown", this.bOnMouseDown, !1), window.addEventListener("mouseup", this.bOnMouseUp, !1), window.addEventListener("wheel", this.bOnMouseWheel, {
+                capture: !1,
+                passive: !0
+            }), this.touchElem.addEventListener("touchmove", this.bOnTouchMove, !1), this.touchElem.addEventListener("touchstart", this.bOnTouchStart, !1), this.touchElem.addEventListener("touchend", this.bOnTouchEnd, !1), this.touchElem.addEventListener("touchcancel", this.bOnTouchCancel, !1)
+        }
+        var s = function() {
+                function e(e, t) {
+                    for (var a = 0; a < t.length; a++) {
+                        var r = t[a];
+                        r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                     }
-                return e || (e = new this.creator.type, this.mt.push(e)), e.active = !0, e.o(), this.activeCount++, e
+                }
+                return function(t, a, r) {
+                    return a && e(t.prototype, a), r && e(t, r), t
+                }
+            }(),
+            n = a("c2a798c8"),
+            l = Object.freeze({
+                Backspace: 8,
+                Enter: 13,
+                Shift: 16,
+                Control: 17,
+                Alt: 18,
+                Escape: 27,
+                Space: 32,
+                Left: 37,
+                Up: 38,
+                Right: 39,
+                Down: 40,
+                Zero: 48,
+                One: 49,
+                Two: 50,
+                Three: 51,
+                Four: 52,
+                Five: 53,
+                Six: 54,
+                Seven: 55,
+                Eight: 56,
+                Nine: 57,
+                A: 65,
+                B: 66,
+                C: 67,
+                D: 68,
+                E: 69,
+                F: 70,
+                G: 71,
+                L: 76,
+                M: 77,
+                N: 78,
+                P: 80,
+                Q: 81,
+                R: 82,
+                S: 83,
+                T: 84,
+                V: 86,
+                W: 87,
+                X: 88,
+                Windows: 91,
+                ContextMenu: 93,
+                F1: 112,
+                F2: 113,
+                F3: 114,
+                F4: 115,
+                F5: 116,
+                F6: 117,
+                F7: 118,
+                F8: 119,
+                F9: 120,
+                F10: 121,
+                F11: 122,
+                F12: 123,
+                Plus: 187,
+                Minus: 189,
+                FwdSlash: 191,
+                Tilde: 192
+            }),
+            c = Object.freeze({
+                Left: 0,
+                Middle: 1,
+                Right: 2,
+                Thumb1: 3,
+                Thumb2: 4
+            }),
+            m = Object.freeze({
+                None: 0,
+                Up: 1,
+                Down: 2
+            }),
+            p = {
+                None: 0,
+                Key: 1,
+                MouseButton: 2,
+                MouseWheel: 3
             },
-            free: function (e) {
-                if (e.n(), e.active = !1, this.activeCount--, this.mt.length > 128 && this.activeCount < this.mt.length / 2) {
-                    for (var t = [], a = 0; a < this.mt.length; a++) this.mt[a].active && t.push(this.mt[a]);
-                    this.mt = t
+            h = ["", "", "", "Cancel", "", "", "Help", "", "Backspace", "Tab", "", "", "Clear", "Enter", "Enter", "", "Shift", "Control", "Alt", "Pause", "Capslock", "Kana", "Eisu", "Junja", "Final", "Hanja", "", "ESC", "Convert", "Nonconvert", "Accept", "Modechange", "Space", "Page Up", "Page Down", "End", "Home", "←", "↑", "→", "↓", "Select", "Print", "Execute", "Printscreen", "Insert", "Delete", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Windows Key", "", "Context Menu", "", "Sleep", "Numpad 0", "Numpad 1", "Numpad 2", "Numpad 3", "Numpad 4", "Numpad 5", "Numpad 6", "Numpad 7", "Numpad 8", "Numpad 9", "*", "+", "Separator", "-", ".", "/", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24", "", "", "", "", "", "", "", "", "Num Lock", "Scroll Lock", "WIN_OEM_FJ_JISHO", "WIN_OEM_FJ_MASSHOU", "WIN_OEM_FJ_TOUROKU", "WIN_OEM_FJ_LOYA", "WIN_OEM_FJ_ROYA", "", "", "", "", "", "", "", "", "", "Circumflex", "!", '"', "#", "$", "%", "&", "_", "(", ")", "*", "+", "|", "Hyphen Minus", "{", "}", "~", "", "", "", "", "Volume Mute", "Volume Down", "Volume Up", "", "", ";", "=", ",", "-", ".", "/", "Backquote", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[", "\\", "]", "'", "", "Meta", "ALTGR", "", "WIN_ICO_HELP", "WIN_ICO_00", "", "WIN_ICO_CLEAR", "", "", "WIN_OEM_RESET", "WIN_OEM_JUMP", "WIN_OEM_PA1", "WIN_OEM_PA2", "WIN_OEM_PA3", "WIN_OEM_WSCTRL", "WIN_OEM_CUSEL", "WIN_OEM_ATTN", "WIN_OEM_FINISH", "WIN_OEM_COPY", "WIN_OEM_AUTO", "WIN_OEM_ENLW", "WIN_OEM_BACKTAB", "ATTN", "CRSEL", "EXSEL", "EREOF", "PLAY", "ZOOM", "", "PA1", "WIN_OEM_CLEAR", ""],
+            d = ["Left Mouse", "Middle Mouse", "Right Mouse", "Thumb Mouse 1", "Thumb Mouse 2"],
+            u = ["", "Mouse Wheel Up", "Mouse Wheel Down"],
+            g = function() {
+                function e(t, a) {
+                    r(this, e), this.type = t, this.code = a
+                }
+                return s(e, [{
+                    key: "equals",
+                    value: function(e) {
+                        return this.type == e.type && this.code == e.code
+                    }
+                }, {
+                    key: "toString",
+                    value: function() {
+                        return this.type == p.None ? "" : this.type == p.Key ? h[this.code] || "Key " + this.code : this.type == p.MouseButton ? d[this.code] || "Mouse " + this.code : u[this.code] || "Mouse Wheel " + this.code
+                    }
+                }]), e
+            }(),
+            y = Object.freeze({
+                Move: 0,
+                Start: 1,
+                End: 2,
+                Cancel: 3
+            });
+        o.prototype = {
+            n: function() {
+                this.touches = [], this.touchIdCounter = 0
+            },
+            onWindowFocus: function() {
+                this.keys = {}, this.keysOld = {}, this.mouseButtons = {}, this.mouseButtonsOld = {}, this.mouseWheelState = 0, this.touches.length = 0, this.lostFocus = !0
+            },
+            flush: function() {
+                this.keysOld = Object.assign({}, this.keys), this.mouseButtonsOld = Object.assign({}, this.mouseButtons), this.mouseWheelState = 0;
+                for (var e = 0; e < this.touches.length; e++) this.touches[e].posOld.x = this.touches[e].pos.x, this.touches[e].posOld.y = this.touches[e].pos.y, this.touches[e].isNew = !1, this.touches[e].isDead && (this.touches.splice(e, 1), --e);
+                this.lostFocus = !1
+            },
+            captureNextInput: function(e) {
+                this.captureNextInputCb = e
+            },
+            checkCaptureInput: function(e, t, a) {
+                return !(!this.captureNextInputCb || !this.captureNextInputCb(e, new g(t, a)) || (this.captureNextInputCb = null, 0))
+            },
+            isInputValuePressed: function(e) {
+                switch (e.type) {
+                    case p.Key:
+                        return this.fe(e.code);
+                    case p.MouseButton:
+                        return this.be(e.code);
+                    case p.MouseWheel:
+                        return this._e() == e.code;
+                    default:
+                        return !1
                 }
             },
-            p: function () {
-                return this.mt
-            }
-        }, i.prototype = {
-            registerType: function (e, t) {
-                this.types[e] = t
-            },
-            getObjById: function (e) {
-                return this.idToObj[e]
-            },
-            getTypeById: function (e, t) {
-                var a = this.getObjById(e);
-                if (!a) {
-                    var r = {
-                        instId: s.instanceId,
-                        id: e,
-                        ids: Object.keys(this.idToObj),
-                        stream: t._view._view
-                    };
-                    return s.logError("getTypeById" + JSON.stringify(r)), s.storeGeneric("objectPoolErr", "getTypeById"), 0
+            isInputValueReleased: function(e) {
+                switch (e.type) {
+                    case p.Key:
+                        return this.xe(e.code);
+                    case p.MouseButton:
+                        return this.Se(e.code);
+                    case p.MouseWheel:
+                        return this._e() == e.code;
+                    default:
+                        return !1
                 }
-                return a.__type
             },
-            updateObjFull: function (e, t, a, r) {
-                var i = this.getObjById(t),
-                    o = !1;
-                return void 0 === i && (i = this.types[e].alloc(), i.__id = t, i.__type = e, this.idToObj[t] = i, this.seenCount++, o = !0), i.c(a, !0, o, r), i
+            isInputValueDown: function(e) {
+                switch (e.type) {
+                    case p.Key:
+                        return this.ve(e.code);
+                    case p.MouseButton:
+                        return this.ze(e.code);
+                    case p.MouseWheel:
+                        return this._e() == e.code;
+                    default:
+                        return !1
+                }
             },
-            updateObjPart: function (e, t, a) {
-                var r = this.getObjById(e);
-                r ? r.c(t, !1, !1, a) : (console.log("updateObjPart, missing object", e), s.storeGeneric("objectPoolErr", "updateObjPart"))
+            onKeyDown: function(e) {
+                var t = e.keyCode;
+                9 == t && e.preventDefault(), this.checkCaptureInput(e, p.Key, t) || (this.keys[t] = !0)
             },
-            deleteObj: function (e) {
-                var t = this.getObjById(e);
-                void 0 === t ? (console.log("deleteObj, missing object", e), s.storeGeneric("objectPoolErr", "deleteObj")) : (this.types[t.__type].free(t), delete this.idToObj[e])
+            onKeyUp: function(e) {
+                this.keys[e.keyCode] = !1
+            },
+            ve: function(e) {
+                return !!this.keys[e]
+            },
+            fe: function(e) {
+                return !this.keysOld[e] && !!this.keys[e]
+            },
+            xe: function(e) {
+                return !!this.keysOld[e] && !this.keys[e]
+            },
+            onMouseMove: function(e) {
+                this.we.x = e.clientX, this.we.y = e.clientY
+            },
+            onMouseDown: function(e) {
+                var t = 0;
+                t = "which" in e ? e.which - 1 : e.button, this.checkCaptureInput(e, p.MouseButton, t) || (this.mouseButtons[t] = !0)
+            },
+            onMouseUp: function(e) {
+                var t = 0;
+                t = "which" in e ? e.which - 1 : e.button, this.mouseButtons[t] = !1, 3 != t && 4 != t || e.preventDefault()
+            },
+            onMouseWheel: function(e) {
+                var t = e.deltaY < 0 ? m.Up : m.Down;
+                this.checkCaptureInput(e, p.MouseWheel, t) || (this.mouseWheelState = t)
+            },
+            ze: function(e) {
+                return !!this.mouseButtons[e]
+            },
+            be: function(e) {
+                return !this.mouseButtonsOld[e] && !!this.mouseButtons[e]
+            },
+            Se: function(e) {
+                return !!this.mouseButtonsOld[e] && !this.mouseButtons[e]
+            },
+            _e: function() {
+                return this.mouseWheelState
+            },
+            onTouchShared: function(e, t) {
+                e.cancelable && t != y.Cancel && e.preventDefault();
+                for (var a = e.timeStamp || performance.now(), r = 0; r < e.changedTouches.length; r++) {
+                    for (var o = e.changedTouches[r], s = o.identifier, n = o.clientX, l = o.clientY, c = null, m = 0; m < this.touches.length; m++)
+                        if (this.touches[m].osId == s && !this.touches[m].isDead) {
+                            c = this.touches[m];
+                            break
+                        }
+                    t != y.Start || c || (c = new i, this.touches.push(c), ++this.touchIdCounter, c.id = this.touchIdCounter, c.osId = s, c.posOld.x = n, c.posOld.y = l, c.posDown.x = n, c.posDown.y = l, c.startTime = a, c.isNew = !0, c.isDead = !1), t != y.End && t != y.Cancel || !c || (c.isDead = !0), c && (c.pos.x = n, c.pos.y = l, c.lastUpdateTime = a)
+                }
+            },
+            onTouchMove: function(e) {
+                this.onTouchShared(e, y.Move)
+            },
+            onTouchStart: function(e) {
+                this.onTouchShared(e, y.Start)
+            },
+            onTouchEnd: function(e) {
+                this.onTouchShared(e, y.End)
+            },
+            onTouchCancel: function(e) {
+                this.onTouchShared(e, y.Cancel)
+            },
+            getTouchById: function(e) {
+                for (var t = 0; t < this.touches.length; t++)
+                    if (this.touches[t].id == e) return this.touches[t];
+                return null
             }
         }, e.exports = {
-            Pool: r,
-            Creator: i
+            ke: o,
+            InputType: p,
+            InputValue: g,
+            Key: l,
+            MouseButton: c,
+            MouseWheel: m,
+            Touch: i
         }
     },
